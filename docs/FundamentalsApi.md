@@ -25,7 +25,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
@@ -65,7 +65,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
@@ -105,7 +105,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
@@ -145,7 +145,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
