@@ -17,7 +17,7 @@ import re  # noqa: F401
 import six
 
 from intrinio_sdk.models.security_screen_clause import SecurityScreenClause  # noqa: F401,E501
-from intrinio_sdk.models.security_screen_group import SecurityScreenGroup  # noqa: F401,E501
+  # noqa: F401,E501
 
 
 class SecurityScreenGroup(object):
