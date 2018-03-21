@@ -31,10 +31,22 @@ git add .
 # Commits the tracked changes and prepares them to be pushed to a remote repository. 
 git commit -m "$release_note"
 
-git remote add origin git@github.com:${git_user_id}/${git_repo_id}.git
+# Sets the new remote
+git_remote=`git remote`
+if [ "$git_remote" = "" ]; then # git remote not defined
+
+    if [ "$GIT_TOKEN" = "" ]; then
+        echo "[INFO] \$GIT_TOKEN (environment variable) is not set. Using the git credential in your environment."
+        git remote add origin https://github.com/${git_user_id}/${git_repo_id}.git
+    else
+        git remote add origin https://${git_user_id}:${GIT_TOKEN}@github.com/${git_user_id}/${git_repo_id}.git
+    fi
+
+fi
 
 git pull origin master
 
 # Pushes (Forces) the changes in the local repository up to the remote repository
 echo "Git pushing to https://github.com/${git_user_id}/${git_repo_id}.git"
-git push origin master --force
+git push origin master 2>&1 | grep -v 'To https'
+
