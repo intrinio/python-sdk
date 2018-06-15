@@ -247,7 +247,7 @@ security_api = intrinio_sdk.SecurityApi()
 
 identifier = 'identifier_example' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2013-10-20' # date | Return prices on or after the date (optional)
-end_date = '2013-10-20' # date | Return prices on or beore the date (optional)
+end_date = '2013-10-20' # date | Return prices on or before the date (optional)
 frequency = 'daily' # str | Return stock prices in the given frequency (optional) (default to daily)
 next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
  **start_date** | **date**| Return prices on or after the date | [optional] 
- **end_date** | **date**| Return prices on or beore the date | [optional] 
+ **end_date** | **date**| Return prices on or before the date | [optional] 
  **frequency** | **str**| Return stock prices in the given frequency | [optional] [default to daily]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
