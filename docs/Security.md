@@ -19,9 +19,6 @@ Name | Type | Description | Notes
 **composite_figi** | **str** | The country-composite OpenFIGI identifier | [optional] 
 **share_class_figi** | **str** | The global-composite OpenFIGI identifier | [optional] 
 **figi_uniqueid** | **str** | The OpenFIGI unique ID | [optional] 
-**isin** | **str** | The International Securities Identification Number | [optional] 
-**cusip** | **str** | An identifier provided by the Committee on Uniform Security Identification Procedures (U.S.) | [optional] 
-**sedol** | **str** | An identifier provided by the Stock Exchange Daily Official List (U.K.) | [optional] 
 **active** | **bool** | If true, the Security is active and has been recently traded | [optional] 
 **etf** | **bool** | If true, this Security is an ETF | [optional] 
 **delisted** | **bool** | If true, the Security is no longer traded on the exchange | [optional] 
@@ -31,6 +28,7 @@ Name | Type | Description | Notes
 **last_stock_price** | **date** | The date of the last recorded stock price (or the most recent trading day) | [optional] 
 **last_stock_price_adjustment** | **date** | The date of the last stock price adjustment (dividend, split, etc) | [optional] 
 **last_corporate_action** | **date** | The date of the last corporate action | [optional] 
+**previous_tickers** | **list[str]** | Previous tickers used by this security | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

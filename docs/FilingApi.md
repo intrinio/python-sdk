@@ -10,9 +10,11 @@ Method | HTTP request | Description
 
 
 # **filter_filings**
-> list[Filing] filter_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, next_page=next_page)
+> ApiResponseFilings filter_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, next_page=next_page)
 
 Filter Filings
+
+Returns filings that match the specified filters
 
 ### Example
 ```python
@@ -22,7 +24,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 filing_api = intrinio_sdk.FilingApi()
 
@@ -51,14 +53,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Filing]**](Filing.md)
+[**ApiResponseFilings**](ApiResponseFilings.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_filings**
-> list[Filing] get_all_filings(next_page=next_page)
+> ApiResponseFilings get_all_filings(next_page=next_page)
 
 Get All Filings
+
+Returns all filings
 
 ### Example
 ```python
@@ -68,7 +72,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 filing_api = intrinio_sdk.FilingApi()
 
@@ -89,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Filing]**](Filing.md)
+[**ApiResponseFilings**](ApiResponseFilings.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -97,6 +101,8 @@ Name | Type | Description  | Notes
 > Filing get_filing_by_id(id)
 
 Get a Filing by ID
+
+Return the filing with the given ID
 
 ### Example
 ```python
@@ -106,7 +112,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 filing_api = intrinio_sdk.FilingApi()
 

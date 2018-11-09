@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **start_date** | **date** | The period start date | [optional] 
 **end_date** | **date** | The period start date | [optional] 
 **filing_date** | **date** | The date and time when the Fundamental was filed with the SEC | [optional] 
-**calculated** | **bool** | If true, this Fundamental was calculated by Intrinio and not actually reported by the Company | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,7 +25,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_fundamental_reported_financials**
-> list[ReportedFinancial] get_fundamental_reported_financials(id)
+> ApiResponseReportedFinancials get_fundamental_reported_financials(id)
 
 Get Reported Financials for a Fundamental
 
@@ -65,7 +65,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
@@ -86,12 +86,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ReportedFinancial]**](ReportedFinancial.md)
+[**ApiResponseReportedFinancials**](ApiResponseReportedFinancials.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_fundamental_standardized_financials**
-> list[StandardizedFinancial] get_fundamental_standardized_financials(id)
+> ApiResponseStandardizedFinancials get_fundamental_standardized_financials(id)
 
 Get Standardized Financials for a Fundamental
 
@@ -105,7 +105,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[StandardizedFinancial]**](StandardizedFinancial.md)
+[**ApiResponseStandardizedFinancials**](ApiResponseStandardizedFinancials.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -145,7 +145,7 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api-key'] = 'YOUR_API_KEY'
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
