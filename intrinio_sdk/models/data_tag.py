@@ -38,7 +38,7 @@ class DataTag(object):
         'statement_type': 'str',
         'parent': 'str',
         'factor': 'str',
-        'balance': 'float',
+        'balance': 'str',
         'type': 'str',
         'unit': 'str'
     }
@@ -266,7 +266,7 @@ class DataTag(object):
         Whether the Data Tag represents a credit or debit  # noqa: E501
 
         :return: The balance of this DataTag.  # noqa: E501
-        :rtype: float
+        :rtype: str
         """
         return self._balance
 
@@ -277,7 +277,7 @@ class DataTag(object):
         Whether the Data Tag represents a credit or debit  # noqa: E501
 
         :param balance: The balance of this DataTag.  # noqa: E501
-        :type: float
+        :type: str
         """
 
         self._balance = balance

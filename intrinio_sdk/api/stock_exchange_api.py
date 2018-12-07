@@ -46,7 +46,7 @@ class StockExchangeApi(object):
         :param str city: Filter by city
         :param str country: Filter by country
         :param str country_code: Filter by ISO country code
-        :return: list[StockExchange]
+        :return: ApiResponseStockExchanges
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -70,7 +70,7 @@ class StockExchangeApi(object):
         :param str city: Filter by city
         :param str country: Filter by country
         :param str country_code: Filter by ISO country code
-        :return: list[StockExchange]
+        :return: ApiResponseStockExchanges
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -124,7 +124,7 @@ class StockExchangeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[StockExchange]',  # noqa: E501
+            response_type='ApiResponseStockExchanges',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -142,7 +142,7 @@ class StockExchangeApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :return: list[StockExchange]
+        :return: ApiResponseStockExchanges
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -163,7 +163,7 @@ class StockExchangeApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :return: list[StockExchange]
+        :return: ApiResponseStockExchanges
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -211,7 +211,7 @@ class StockExchangeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[StockExchange]',  # noqa: E501
+            response_type='ApiResponseStockExchanges',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

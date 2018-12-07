@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **filter_stock_exchanges**
-> list[StockExchange] filter_stock_exchanges(city=city, country=country, country_code=country_code)
+> ApiResponseStockExchanges filter_stock_exchanges(city=city, country=country, country_code=country_code)
 
 Filter Stock Exchanges
 
@@ -52,12 +52,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[StockExchange]**](StockExchange.md)
+[**ApiResponseStockExchanges**](ApiResponseStockExchanges.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_stock_exchanges**
-> list[StockExchange] get_all_stock_exchanges()
+> ApiResponseStockExchanges get_all_stock_exchanges()
 
 Get All Stock Exchanges
 
@@ -88,7 +88,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[StockExchange]**](StockExchange.md)
+[**ApiResponseStockExchanges**](ApiResponseStockExchanges.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -616,7 +616,7 @@ class IndexApi(object):
         :param date end_date: Get historical data on or before this date
         :param str sort_order: Sort by date `asc` or `desc`
         :param str next_page: Gets the next page of data from a previous API call
-        :return: object
+        :return: ApiResponseEconomicIndexHistoricalData
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -644,7 +644,7 @@ class IndexApi(object):
         :param date end_date: Get historical data on or before this date
         :param str sort_order: Sort by date `asc` or `desc`
         :param str next_page: Gets the next page of data from a previous API call
-        :return: object
+        :return: ApiResponseEconomicIndexHistoricalData
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -714,7 +714,7 @@ class IndexApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='ApiResponseEconomicIndexHistoricalData',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

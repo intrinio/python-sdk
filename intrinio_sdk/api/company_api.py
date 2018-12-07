@@ -1291,7 +1291,7 @@ class CompanyApi(object):
         :param str statement_code: The statement code (required)
         :param str fiscal_period: The fiscal period (required)
         :param int fiscal_year: The fiscal year (required)
-        :return: list[Fundamental]
+        :return: Fundamental
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1316,7 +1316,7 @@ class CompanyApi(object):
         :param str statement_code: The statement code (required)
         :param str fiscal_period: The fiscal period (required)
         :param int fiscal_year: The fiscal year (required)
-        :return: list[Fundamental]
+        :return: Fundamental
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1388,7 +1388,7 @@ class CompanyApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Fundamental]',  # noqa: E501
+            response_type='Fundamental',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

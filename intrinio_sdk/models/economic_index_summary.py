@@ -37,7 +37,7 @@ class EconomicIndexSummary(object):
         'continent': 'str',
         'country': 'str',
         'update_frequency': 'str',
-        'last_updated': 'date',
+        'last_updated': 'datetime',
         'observation_start': 'date',
         'observation_end': 'date',
         'seasonal_adjustment': 'str',
@@ -242,7 +242,7 @@ class EconomicIndexSummary(object):
         When the Index was updated last  # noqa: E501
 
         :return: The last_updated of this EconomicIndexSummary.  # noqa: E501
-        :rtype: date
+        :rtype: datetime
         """
         return self._last_updated
 
@@ -253,7 +253,7 @@ class EconomicIndexSummary(object):
         When the Index was updated last  # noqa: E501
 
         :param last_updated: The last_updated of this EconomicIndexSummary.  # noqa: E501
-        :type: date
+        :type: datetime
         """
 
         self._last_updated = last_updated

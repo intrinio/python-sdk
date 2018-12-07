@@ -159,6 +159,7 @@ Class | Method | HTTP request | Description
  - [ApiResponseStockExchangeSecurities](docs/ApiResponseStockExchangeSecurities.md)
  - [ApiResponseStockExchangeStockPriceAdjustments](docs/ApiResponseStockExchangeStockPriceAdjustments.md)
  - [ApiResponseStockExchangeStockPrices](docs/ApiResponseStockExchangeStockPrices.md)
+ - [ApiResponseStockExchanges](docs/ApiResponseStockExchanges.md)
  - [ApiResponseStockMarketIndexHistoricalData](docs/ApiResponseStockMarketIndexHistoricalData.md)
  - [ApiResponseStockMarketIndices](docs/ApiResponseStockMarketIndices.md)
  - [Company](docs/Company.md)

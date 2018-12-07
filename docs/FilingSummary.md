@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID of the Filing | [optional] 
 **filing_date** | **date** | The date when the filing was submitted to the SEC by the company | [optional] 
-**accepted_date** | **str** | The date and time when the filing was accepted by SEC | [optional] 
+**accepted_date** | **datetime** | The date and time when the filing was accepted by SEC | [optional] 
 **period_end_date** | **date** | The ending date of the fiscal period for the filing | [optional] 
 **report_type** | **str** | The filing report type | [optional] 
 **sec_unique_id** | **str** | A unique identifier for the filing provided by the SEC | [optional] 

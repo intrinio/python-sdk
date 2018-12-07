@@ -33,7 +33,7 @@ class CompanyNewsSummary(object):
     swagger_types = {
         'id': 'str',
         'title': 'str',
-        'publication_date': 'date',
+        'publication_date': 'str',
         'url': 'str',
         'summary': 'str'
     }
@@ -120,7 +120,7 @@ class CompanyNewsSummary(object):
         The publication date of the news article  # noqa: E501
 
         :return: The publication_date of this CompanyNewsSummary.  # noqa: E501
-        :rtype: date
+        :rtype: str
         """
         return self._publication_date
 
@@ -131,7 +131,7 @@ class CompanyNewsSummary(object):
         The publication date of the news article  # noqa: E501
 
         :param publication_date: The publication_date of this CompanyNewsSummary.  # noqa: E501
-        :type: date
+        :type: str
         """
 
         self._publication_date = publication_date

@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lookup_company_fundamental**
-> list[Fundamental] lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
+> Fundamental lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
 
 Lookup a Fundamental for a Company
 
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Fundamental]**](Fundamental.md)
+[**Fundamental**](Fundamental.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

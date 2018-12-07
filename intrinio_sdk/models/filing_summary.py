@@ -33,7 +33,7 @@ class FilingSummary(object):
     swagger_types = {
         'id': 'str',
         'filing_date': 'date',
-        'accepted_date': 'str',
+        'accepted_date': 'datetime',
         'period_end_date': 'date',
         'report_type': 'str',
         'sec_unique_id': 'str',
@@ -140,7 +140,7 @@ class FilingSummary(object):
         The date and time when the filing was accepted by SEC  # noqa: E501
 
         :return: The accepted_date of this FilingSummary.  # noqa: E501
-        :rtype: str
+        :rtype: datetime
         """
         return self._accepted_date
 
@@ -151,7 +151,7 @@ class FilingSummary(object):
         The date and time when the filing was accepted by SEC  # noqa: E501
 
         :param accepted_date: The accepted_date of this FilingSummary.  # noqa: E501
-        :type: str
+        :type: datetime
         """
 
         self._accepted_date = accepted_date
