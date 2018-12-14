@@ -32,7 +32,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
 city = 'city_example' # str | Filter by city (optional)
-country = 'country_example' # str | Filter by country (optional)
+country = 'CHINA' # str | Filter by country (optional)
 country_code = 'country_code_example' # str | Filter by ISO country code (optional)
 
 try:
@@ -109,7 +109,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = 'identifier_example' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = 'XSHG' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 
 try:
     api_response = stock_exchange_api.get_stock_exchange_by_id(identifier)
@@ -149,9 +149,9 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = 'identifier_example' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-date = '2013-10-20' # date | The date for which to return price adjustments (optional)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+date = '2018-08-14' # date | The date for which to return price adjustments (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = stock_exchange_api.get_stock_exchange_price_adjustments(identifier, date=date, next_page=next_page)
@@ -193,9 +193,9 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = 'identifier_example' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-date = '2013-10-20' # date | The date for which to return prices (optional)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+date = '2018-08-14' # date | The date for which to return prices (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = stock_exchange_api.get_stock_exchange_prices(identifier, date=date, next_page=next_page)
@@ -237,8 +237,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = 'identifier_example' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = stock_exchange_api.get_stock_exchange_securities(identifier, next_page=next_page)

@@ -318,51 +318,51 @@ class FundamentalsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def lookup_fundamental(self, identifier, statement_code, fiscal_period, fiscal_year, **kwargs):  # noqa: E501
+    def lookup_fundamental(self, identifier, statement_code, fiscal_year, fiscal_period, **kwargs):  # noqa: E501
         """Lookup a Fundamental  # noqa: E501
 
         Returns the Fundamental for the Company with the given `identifier` and with the given parameters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.lookup_fundamental(identifier, statement_code, fiscal_period, fiscal_year, async=True)
+        >>> thread = api.lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str identifier: A Company identifier (Ticker, CIK, LEI, Intrinio ID) (required)
         :param str statement_code: The statement code (required)
-        :param str fiscal_period: The fiscal period (required)
         :param int fiscal_year: The fiscal year (required)
+        :param str fiscal_period: The fiscal period (required)
         :return: Fundamental
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.lookup_fundamental_with_http_info(identifier, statement_code, fiscal_period, fiscal_year, **kwargs)  # noqa: E501
+            return self.lookup_fundamental_with_http_info(identifier, statement_code, fiscal_year, fiscal_period, **kwargs)  # noqa: E501
         else:
-            (data) = self.lookup_fundamental_with_http_info(identifier, statement_code, fiscal_period, fiscal_year, **kwargs)  # noqa: E501
+            (data) = self.lookup_fundamental_with_http_info(identifier, statement_code, fiscal_year, fiscal_period, **kwargs)  # noqa: E501
             return data
 
-    def lookup_fundamental_with_http_info(self, identifier, statement_code, fiscal_period, fiscal_year, **kwargs):  # noqa: E501
+    def lookup_fundamental_with_http_info(self, identifier, statement_code, fiscal_year, fiscal_period, **kwargs):  # noqa: E501
         """Lookup a Fundamental  # noqa: E501
 
         Returns the Fundamental for the Company with the given `identifier` and with the given parameters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.lookup_fundamental_with_http_info(identifier, statement_code, fiscal_period, fiscal_year, async=True)
+        >>> thread = api.lookup_fundamental_with_http_info(identifier, statement_code, fiscal_year, fiscal_period, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str identifier: A Company identifier (Ticker, CIK, LEI, Intrinio ID) (required)
         :param str statement_code: The statement code (required)
-        :param str fiscal_period: The fiscal period (required)
         :param int fiscal_year: The fiscal year (required)
+        :param str fiscal_period: The fiscal period (required)
         :return: Fundamental
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['identifier', 'statement_code', 'fiscal_period', 'fiscal_year']  # noqa: E501
+        all_params = ['identifier', 'statement_code', 'fiscal_year', 'fiscal_period']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -385,14 +385,14 @@ class FundamentalsApi(object):
         if ('statement_code' not in params or
                 params['statement_code'] is None):
             raise ValueError("Missing the required parameter `statement_code` when calling `lookup_fundamental`")  # noqa: E501
-        # verify the required parameter 'fiscal_period' is set
-        if ('fiscal_period' not in params or
-                params['fiscal_period'] is None):
-            raise ValueError("Missing the required parameter `fiscal_period` when calling `lookup_fundamental`")  # noqa: E501
         # verify the required parameter 'fiscal_year' is set
         if ('fiscal_year' not in params or
                 params['fiscal_year'] is None):
             raise ValueError("Missing the required parameter `fiscal_year` when calling `lookup_fundamental`")  # noqa: E501
+        # verify the required parameter 'fiscal_period' is set
+        if ('fiscal_period' not in params or
+                params['fiscal_period'] is None):
+            raise ValueError("Missing the required parameter `fiscal_period` when calling `lookup_fundamental`")  # noqa: E501
 
         collection_formats = {}
 
@@ -401,10 +401,10 @@ class FundamentalsApi(object):
             path_params['identifier'] = params['identifier']  # noqa: E501
         if 'statement_code' in params:
             path_params['statement_code'] = params['statement_code']  # noqa: E501
-        if 'fiscal_period' in params:
-            path_params['fiscal_period'] = params['fiscal_period']  # noqa: E501
         if 'fiscal_year' in params:
             path_params['fiscal_year'] = params['fiscal_year']  # noqa: E501
+        if 'fiscal_period' in params:
+            path_params['fiscal_period'] = params['fiscal_period']  # noqa: E501
 
         query_params = []
 

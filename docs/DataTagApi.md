@@ -29,12 +29,12 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_tag_api = intrinio_sdk.DataTagApi()
 
-tag = 'tag_example' # str | Tag (optional)
-type = 'type_example' # str | Type (optional)
-parent = 'parent_example' # str | ID of tag parent (optional)
-statement_code = 'statement_code_example' # str | Statement Code (optional)
+tag = '' # str | Tag (optional)
+type = '' # str | Type (optional)
+parent = '' # str | ID of tag parent (optional)
+statement_code = 'income_statement' # str | Statement Code (optional)
 fs_template = 'industrial' # str | Template (optional) (default to industrial)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = data_tag_api.filter_data_tags(tag=tag, type=type, parent=parent, statement_code=statement_code, fs_template=fs_template, next_page=next_page)
@@ -79,7 +79,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_tag_api = intrinio_sdk.DataTagApi()
 
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = data_tag_api.get_all_data_tags(next_page=next_page)
@@ -119,7 +119,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_tag_api = intrinio_sdk.DataTagApi()
 
-identifier = 'identifier_example' # str | The Intrinio ID or the code-name of the Data Tag
+identifier = 'marketcap' # str | The Intrinio ID or the code-name of the Data Tag
 
 try:
     api_response = data_tag_api.get_data_tag_by_id(identifier)
@@ -159,7 +159,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_tag_api = intrinio_sdk.DataTagApi()
 
-query = 'query_example' # str | 
+query = 'revenue' # str | 
 
 try:
     api_response = data_tag_api.search_data_tags(query)

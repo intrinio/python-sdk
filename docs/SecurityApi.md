@@ -32,7 +32,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = security_api.get_all_securities(next_page=next_page)
@@ -70,7 +70,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = 'identifier_example' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 try:
     api_response = security_api.get_security_by_id(identifier)
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_data_point_number**
-> DataPointNumber get_security_data_point_number(identifier, tag)
+> float get_security_data_point_number(identifier, tag)
 
 Get Security Data Point (Number)
 
@@ -110,8 +110,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = 'identifier_example' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+tag = '52_week_high' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = security_api.get_security_data_point_number(identifier, tag)
@@ -129,12 +129,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointNumber**](DataPointNumber.md)
+**float**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_data_point_text**
-> DataPointText get_security_data_point_text(identifier, tag)
+> str get_security_data_point_text(identifier, tag)
 
 Get Security Data Point (Text)
 
@@ -152,8 +152,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = 'identifier_example' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+tag = 'figi' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = security_api.get_security_data_point_text(identifier, tag)
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointText**](DataPointText.md)
+**str**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -194,13 +194,13 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = 'identifier_example' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
-type = 'type_example' # str | Filter by type, when applicable (optional)
-start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
-end_date = '2013-10-20' # date | Get historical date on or before this date (optional)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+tag = 'volume' # str | An Intrinio data tag ID or code-name
+type = '' # str | Filter by type, when applicable (optional)
+start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
+end_date = '2019-01-01' # date | Get historical date on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = security_api.get_security_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
@@ -246,10 +246,10 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = 'identifier_example' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2013-10-20' # date | Return price adjustments on or after the date (optional)
-end_date = '2013-10-20' # date | Return price adjustments on or before the date (optional)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+start_date = '2018-01-01' # date | Return price adjustments on or after the date (optional)
+end_date = '2019-01-01' # date | Return price adjustments on or before the date (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = security_api.get_security_stock_price_adjustments(identifier, start_date=start_date, end_date=end_date, next_page=next_page)
@@ -292,11 +292,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = 'identifier_example' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2013-10-20' # date | Return prices on or after the date (optional)
-end_date = '2013-10-20' # date | Return prices on or before the date (optional)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+start_date = '2018-01-01' # date | Return prices on or after the date (optional)
+end_date = '2019-01-01' # date | Return prices on or before the date (optional)
 frequency = 'daily' # str | Return stock prices in the given frequency (optional) (default to daily)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = security_api.get_security_stock_prices(identifier, start_date=start_date, end_date=end_date, frequency=frequency, next_page=next_page)
@@ -340,7 +340,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-logic = intrinio_sdk.SecurityScreenGroup() # SecurityScreenGroup | The logic to screen with, consisting of operators, clauses, and nested groups (optional)
+logic = intrinio_sdk.SecurityScreenGroup() # SecurityScreenGroup | The logic to screen with, consisting of operators, clauses, and nested groups.<br/> See <a href=\"/documentation/screener_v2\" target=\"_blank\">screener documentation</a> for details on how to construct conditions. (optional)
 order_column = 'order_column_example' # str | Results returned sorted by this column (optional)
 order_direction = 'asc' # str | Sort order to use with the order_column (optional) (default to asc)
 primary_only = false # bool | Return only primary securities (optional) (default to false)
@@ -356,7 +356,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **logic** | [**SecurityScreenGroup**](SecurityScreenGroup.md)| The logic to screen with, consisting of operators, clauses, and nested groups | [optional] 
+ **logic** | [**SecurityScreenGroup**](SecurityScreenGroup.md)| The logic to screen with, consisting of operators, clauses, and nested groups.&lt;br/&gt; See &lt;a href&#x3D;\&quot;/documentation/screener_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;screener documentation&lt;/a&gt; for details on how to construct conditions. | [optional] 
  **order_column** | **str**| Results returned sorted by this column | [optional] 
  **order_direction** | **str**| Sort order to use with the order_column | [optional] [default to asc]
  **primary_only** | **bool**| Return only primary securities | [optional] [default to false]
@@ -386,7 +386,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-query = 'query_example' # str | 
+query = 'Apple' # str | 
 
 try:
     api_response = security_api.search_securities(query)

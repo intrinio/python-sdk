@@ -28,11 +28,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 filing_api = intrinio_sdk.FilingApi()
 
-company = 'company_example' # str | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
-report_type = 'report_type_example' # str | Filter by report type (optional)
-start_date = '2013-10-20' # date | Filed on or after the given date (optional)
-end_date = '2013-10-20' # date | Filed before or after the given date (optional)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+company = 'AAPL' # str | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
+report_type = '' # str | Filter by report type (optional)
+start_date = '2015-01-01' # date | Filed on or after the given date (optional)
+end_date = '2019-01-01' # date | Filed before or after the given date (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = filing_api.filter_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, next_page=next_page)
@@ -76,7 +76,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 filing_api = intrinio_sdk.FilingApi()
 
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = filing_api.get_all_filings(next_page=next_page)
@@ -116,7 +116,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 filing_api = intrinio_sdk.FilingApi()
 
-id = 'id_example' # str | The Intrinio ID of the Filing
+id = 'fil_7Kn2P6' # str | The Intrinio ID of the Filing
 
 try:
     api_response = filing_api.get_filing_by_id(id)

@@ -32,7 +32,7 @@ type = 'type_example' # str | Filter by type, when applicable (optional)
 start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
 end_date = '2013-10-20' # date | Get historical date on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = historical_data_api.get_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)

@@ -45,7 +45,7 @@ class DataPointApi(object):
         :param async bool
         :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
         :param str tag: An Intrinio data tag ID or code-name (required)
-        :return: DataPointNumber
+        :return: float
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -68,7 +68,7 @@ class DataPointApi(object):
         :param async bool
         :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
         :param str tag: An Intrinio data tag ID or code-name (required)
-        :return: DataPointNumber
+        :return: float
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -115,7 +115,7 @@ class DataPointApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['text/plain; charset=utf-8'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['ApiKeyAuth']  # noqa: E501
@@ -128,7 +128,7 @@ class DataPointApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DataPointNumber',  # noqa: E501
+            response_type='float',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -148,7 +148,7 @@ class DataPointApi(object):
         :param async bool
         :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
         :param str tag: An Intrinio data tag ID or code-name (required)
-        :return: DataPointText
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -171,7 +171,7 @@ class DataPointApi(object):
         :param async bool
         :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
         :param str tag: An Intrinio data tag ID or code-name (required)
-        :return: DataPointText
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -218,7 +218,7 @@ class DataPointApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['text/plain; charset=utf-8'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['ApiKeyAuth']  # noqa: E501
@@ -231,7 +231,7 @@ class DataPointApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DataPointText',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

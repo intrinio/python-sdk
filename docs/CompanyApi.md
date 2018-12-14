@@ -39,13 +39,13 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-last_filing_date = '2013-10-20' # date | Last filing date (optional)
-sic = 'sic_example' # str | Standard Industrial Classification code (optional)
-template = 'template_example' # str | Template (optional)
-sector = 'sector_example' # str | Industry sector (optional)
-industry_category = 'industry_category_example' # str | Industry category (optional)
-industry_group = 'industry_group_example' # str | Industry group (optional)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+last_filing_date = '2011-07-15' # date | Last filing date (optional)
+sic = '3350' # str | Standard Industrial Classification code (optional)
+template = 'industrial' # str | Template (optional)
+sector = 'Basic Materials' # str | Industry sector (optional)
+industry_category = 'Metals & Mining' # str | Industry category (optional)
+industry_group = 'Aluminum' # str | Industry group (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = company_api.filter_companies(last_filing_date=last_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, next_page=next_page)
@@ -91,16 +91,16 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-filed_after = '2013-10-20' # date | Filed on or after this date (optional)
-filed_before = '2013-10-20' # date | Filed on or before this date (optional)
-reported_only = true # bool | Only as-reported fundamentals (optional)
-fiscal_year = 56 # int | Only for the given fiscal year (optional)
-statement_code = 'statement_code_example' # str | Only of the given statement code (optional)
-type = 'type_example' # str | Only of the given type (optional)
-start_date = '2013-10-20' # date | Only on or after the given date (optional)
-end_date = '2013-10-20' # date | Only on or after the given date (optional)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+filed_after = '2017-01-01' # date | Filed on or after this date (optional)
+filed_before = '2018-01-01' # date | Filed on or before this date (optional)
+reported_only = false # bool | Only as-reported fundamentals (optional)
+fiscal_year = 2017 # int | Only for the given fiscal year (optional)
+statement_code = '' # str | Only of the given statement code (optional)
+type = '' # str | Only of the given type (optional)
+start_date = '2017-01-01' # date | Only on or after the given date (optional)
+end_date = '2018-01-01' # date | Only on or before the given date (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = company_api.filter_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, start_date=start_date, end_date=end_date, next_page=next_page)
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
  **statement_code** | **str**| Only of the given statement code | [optional] 
  **type** | **str**| Only of the given type | [optional] 
  **start_date** | **date**| Only on or after the given date | [optional] 
- **end_date** | **date**| Only on or after the given date | [optional] 
+ **end_date** | **date**| Only on or before the given date | [optional] 
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -147,7 +147,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = company_api.get_all_companies(next_page=next_page)
@@ -187,7 +187,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = company_api.get_all_company_news(next_page=next_page)
@@ -225,7 +225,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
 
 try:
     api_response = company_api.get_company(identifier)
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_company_data_point_number**
-> DataPointNumber get_company_data_point_number(identifier, tag)
+> float get_company_data_point_number(identifier, tag)
 
 Get Company Data Point (Number)
 
@@ -265,8 +265,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+tag = 'marketcap' # str | An Intrinio data tag
 
 try:
     api_response = company_api.get_company_data_point_number(identifier, tag)
@@ -284,12 +284,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointNumber**](DataPointNumber.md)
+**float**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_company_data_point_text**
-> DataPointText get_company_data_point_text(identifier, tag)
+> str get_company_data_point_text(identifier, tag)
 
 Get Company Data Point (Text)
 
@@ -307,8 +307,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+tag = 'marketcap' # str | An Intrinio data tag
 
 try:
     api_response = company_api.get_company_data_point_text(identifier, tag)
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointText**](DataPointText.md)
+**str**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -349,8 +349,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = company_api.get_company_filings(identifier, next_page=next_page)
@@ -391,8 +391,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = company_api.get_company_fundamentals(identifier, next_page=next_page)
@@ -433,13 +433,13 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag = 'tag_example' # str | Item
-type = 'type_example' # str | Filter by type, when applicable (optional)
-start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
-end_date = '2013-10-20' # date | Get historical data on or before this date (optional)
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+tag = 'marketcap' # str | Item
+type = '' # str | Filter by type, when applicable (optional)
+start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
+end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = company_api.get_company_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
@@ -485,8 +485,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = company_api.get_company_news(identifier, next_page=next_page)
@@ -527,8 +527,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = company_api.get_company_securities(identifier, next_page=next_page)
@@ -569,10 +569,10 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-statement_code = 'statement_code_example' # str | The statement code
-fiscal_period = 'fiscal_period_example' # str | The fiscal period
-fiscal_year = 56 # int | The fiscal year
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+statement_code = 'income_statement' # str | The statement code
+fiscal_period = 'FY' # str | The fiscal period
+fiscal_year = 2017 # int | The fiscal year
 
 try:
     api_response = company_api.lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
@@ -615,7 +615,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-query = 'query_example' # str | Search parameters
+query = 'Apple' # str | Search parameters
 
 try:
     api_response = company_api.search_companies(query)

@@ -61,8 +61,6 @@ from intrinio_sdk.models.company_filing import CompanyFiling
 from intrinio_sdk.models.company_news import CompanyNews
 from intrinio_sdk.models.company_news_summary import CompanyNewsSummary
 from intrinio_sdk.models.company_summary import CompanySummary
-from intrinio_sdk.models.data_point_number import DataPointNumber
-from intrinio_sdk.models.data_point_text import DataPointText
 from intrinio_sdk.models.data_tag import DataTag
 from intrinio_sdk.models.data_tag_summary import DataTagSummary
 from intrinio_sdk.models.economic_index import EconomicIndex

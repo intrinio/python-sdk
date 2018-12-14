@@ -44,6 +44,7 @@ class Security(object):
         'composite_ticker': 'str',
         'alternate_tickers': 'list[str]',
         'figi': 'str',
+        'cik': 'str',
         'composite_figi': 'str',
         'share_class_figi': 'str',
         'figi_uniqueid': 'str',
@@ -73,6 +74,7 @@ class Security(object):
         'composite_ticker': 'composite_ticker',
         'alternate_tickers': 'alternate_tickers',
         'figi': 'figi',
+        'cik': 'cik',
         'composite_figi': 'composite_figi',
         'share_class_figi': 'share_class_figi',
         'figi_uniqueid': 'figi_uniqueid',
@@ -88,7 +90,7 @@ class Security(object):
         'previous_tickers': 'previous_tickers'
     }
 
-    def __init__(self, id=None, company_id=None, name=None, type=None, code=None, share_class=None, currency=None, round_lot_size=None, ticker=None, exchange_ticker=None, composite_ticker=None, alternate_tickers=None, figi=None, composite_figi=None, share_class_figi=None, figi_uniqueid=None, active=None, etf=None, delisted=None, primary_listing=None, primary_security=None, first_stock_price=None, last_stock_price=None, last_stock_price_adjustment=None, last_corporate_action=None, previous_tickers=None):  # noqa: E501
+    def __init__(self, id=None, company_id=None, name=None, type=None, code=None, share_class=None, currency=None, round_lot_size=None, ticker=None, exchange_ticker=None, composite_ticker=None, alternate_tickers=None, figi=None, cik=None, composite_figi=None, share_class_figi=None, figi_uniqueid=None, active=None, etf=None, delisted=None, primary_listing=None, primary_security=None, first_stock_price=None, last_stock_price=None, last_stock_price_adjustment=None, last_corporate_action=None, previous_tickers=None):  # noqa: E501
         """Security - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -104,6 +106,7 @@ class Security(object):
         self._composite_ticker = None
         self._alternate_tickers = None
         self._figi = None
+        self._cik = None
         self._composite_figi = None
         self._share_class_figi = None
         self._figi_uniqueid = None
@@ -145,6 +148,8 @@ class Security(object):
             self.alternate_tickers = alternate_tickers
         if figi is not None:
             self.figi = figi
+        if cik is not None:
+            self.cik = cik
         if composite_figi is not None:
             self.composite_figi = composite_figi
         if share_class_figi is not None:
@@ -470,6 +475,29 @@ class Security(object):
         """
 
         self._figi = figi
+
+    @property
+    def cik(self):
+        """Gets the cik of this Security.  # noqa: E501
+
+        Central Index Key issued by the SEC, which is the unique identifier for all owner filings  # noqa: E501
+
+        :return: The cik of this Security.  # noqa: E501
+        :rtype: str
+        """
+        return self._cik
+
+    @cik.setter
+    def cik(self, cik):
+        """Sets the cik of this Security.
+
+        Central Index Key issued by the SEC, which is the unique identifier for all owner filings  # noqa: E501
+
+        :param cik: The cik of this Security.  # noqa: E501
+        :type: str
+        """
+
+        self._cik = cik
 
     @property
     def composite_figi(self):

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_data_point_number**
-> DataPointNumber get_data_point_number(identifier, tag)
+> float get_data_point_number(identifier, tag)
 
 Get a Data Point (Number)
 
@@ -27,8 +27,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_point_api = intrinio_sdk.DataPointApi()
 
-identifier = 'identifier_example' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
+tag = 'marketcap' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = data_point_api.get_data_point_number(identifier, tag)
@@ -46,12 +46,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointNumber**](DataPointNumber.md)
+**float**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_data_point_text**
-> DataPointText get_data_point_text(identifier, tag)
+> str get_data_point_text(identifier, tag)
 
 Get a Data Point (Text)
 
@@ -69,8 +69,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_point_api = intrinio_sdk.DataPointApi()
 
-identifier = 'identifier_example' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
+tag = 'marketcap' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = data_point_api.get_data_point_text(identifier, tag)
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointText**](DataPointText.md)
+**str**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

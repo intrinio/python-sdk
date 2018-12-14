@@ -41,7 +41,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = index_api.get_all_economic_indices(next_page=next_page)
@@ -79,7 +79,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = index_api.get_all_sic_indices(next_page=next_page)
@@ -117,7 +117,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = index_api.get_all_stock_market_indices(next_page=next_page)
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_economic_index_data_point_number**
-> DataPointNumber get_economic_index_data_point_number(identifier, tag)
+> float get_economic_index_data_point_number(identifier, tag)
 
 Get Economic Index Data Point (Number)
 
@@ -214,12 +214,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointNumber**](DataPointNumber.md)
+**float**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_economic_index_data_point_text**
-> DataPointText get_economic_index_data_point_text(identifier, tag)
+> str get_economic_index_data_point_text(identifier, tag)
 
 Get Economic Index Data Point (Text)
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointText**](DataPointText.md)
+**str**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -285,7 +285,7 @@ type = 'type_example' # str | Filter by type, when applicable (optional)
 start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
 end_date = '2013-10-20' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = index_api.get_economic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sic_index_data_point_number**
-> DataPointNumber get_sic_index_data_point_number(identifier, tag)
+> float get_sic_index_data_point_number(identifier, tag)
 
 Get SIC Index Data Point (Number)
 
@@ -388,12 +388,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointNumber**](DataPointNumber.md)
+**float**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sic_index_data_point_text**
-> DataPointText get_sic_index_data_point_text(identifier, tag)
+> str get_sic_index_data_point_text(identifier, tag)
 
 Get SIC Index Data Point (Text)
 
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointText**](DataPointText.md)
+**str**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -459,7 +459,7 @@ type = 'type_example' # str | Filter by type, when applicable (optional)
 start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
 end_date = '2013-10-20' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = index_api.get_sic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_stock_market_index_data_point_number**
-> DataPointNumber get_stock_market_index_data_point_number(identifier, tag)
+> float get_stock_market_index_data_point_number(identifier, tag)
 
 Get Stock Market Index Data Point (Number)
 
@@ -562,12 +562,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointNumber**](DataPointNumber.md)
+**float**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_stock_market_index_data_point_text**
-> DataPointText get_stock_market_index_data_point_text(identifier, tag)
+> str get_stock_market_index_data_point_text(identifier, tag)
 
 Get Stock Market Index Data Point (Text)
 
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointText**](DataPointText.md)
+**str**
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -633,7 +633,7 @@ type = 'type_example' # str | Filter by type, when applicable (optional)
 start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
 end_date = '2013-10-20' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-next_page = 'next_page_example' # str | Gets the next page of data from a previous API call (optional)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
     api_response = index_api.get_stock_market_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)

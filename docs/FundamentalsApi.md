@@ -29,7 +29,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
-id = 'id_example' # str | The Intrinio ID for the Fundamental
+id = 'fun_ge9LlE' # str | The Intrinio ID for the Fundamental
 
 try:
     api_response = fundamentals_api.get_fundamental_by_id(id)
@@ -69,7 +69,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
-id = 'id_example' # str | The Intrinio ID for the Fundamental
+id = 'fun_ge9LlE' # str | The Intrinio ID for the Fundamental
 
 try:
     api_response = fundamentals_api.get_fundamental_reported_financials(id)
@@ -109,7 +109,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
-id = 'id_example' # str | The Intrinio ID for the Fundamental
+id = 'fun_ge9LlE' # str | The Intrinio ID for the Fundamental
 
 try:
     api_response = fundamentals_api.get_fundamental_standardized_financials(id)
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lookup_fundamental**
-> Fundamental lookup_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
+> Fundamental lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period)
 
 Lookup a Fundamental
 
@@ -149,13 +149,13 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
-identifier = 'identifier_example' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-statement_code = 'statement_code_example' # str | The statement code
-fiscal_period = 'fiscal_period_example' # str | The fiscal period
-fiscal_year = 56 # int | The fiscal year
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+statement_code = 'income_statement' # str | The statement code
+fiscal_year = 2017 # int | The fiscal year
+fiscal_period = 'FY' # str | The fiscal period
 
 try:
-    api_response = fundamentals_api.lookup_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
+    api_response = fundamentals_api.lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundamentalsApi->lookup_fundamental: %s\n" % e)
@@ -167,8 +167,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
  **statement_code** | **str**| The statement code | 
- **fiscal_period** | **str**| The fiscal period | 
  **fiscal_year** | **int**| The fiscal year | 
+ **fiscal_period** | **str**| The fiscal period | 
 
 ### Return type
 

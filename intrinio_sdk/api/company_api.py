@@ -166,7 +166,7 @@ class CompanyApi(object):
         :param str statement_code: Only of the given statement code
         :param str type: Only of the given type
         :param date start_date: Only on or after the given date
-        :param date end_date: Only on or after the given date
+        :param date end_date: Only on or before the given date
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseCompanyFundamentals
                  If the method is called asynchronously,
@@ -197,7 +197,7 @@ class CompanyApi(object):
         :param str statement_code: Only of the given statement code
         :param str type: Only of the given type
         :param date start_date: Only on or after the given date
-        :param date end_date: Only on or after the given date
+        :param date end_date: Only on or before the given date
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseCompanyFundamentals
                  If the method is called asynchronously,
@@ -564,7 +564,7 @@ class CompanyApi(object):
         :param async bool
         :param str identifier: A Company identifier (Ticker, CIK, LEI, Intrinio ID) (required)
         :param str tag: An Intrinio data tag (required)
-        :return: DataPointNumber
+        :return: float
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -587,7 +587,7 @@ class CompanyApi(object):
         :param async bool
         :param str identifier: A Company identifier (Ticker, CIK, LEI, Intrinio ID) (required)
         :param str tag: An Intrinio data tag (required)
-        :return: DataPointNumber
+        :return: float
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -634,7 +634,7 @@ class CompanyApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['text/plain; charset=utf-8'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['ApiKeyAuth']  # noqa: E501
@@ -647,7 +647,7 @@ class CompanyApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DataPointNumber',  # noqa: E501
+            response_type='float',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -667,7 +667,7 @@ class CompanyApi(object):
         :param async bool
         :param str identifier: A Company identifier (Ticker, CIK, LEI, Intrinio ID) (required)
         :param str tag: An Intrinio data tag (required)
-        :return: DataPointText
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -690,7 +690,7 @@ class CompanyApi(object):
         :param async bool
         :param str identifier: A Company identifier (Ticker, CIK, LEI, Intrinio ID) (required)
         :param str tag: An Intrinio data tag (required)
-        :return: DataPointText
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -737,7 +737,7 @@ class CompanyApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['text/plain; charset=utf-8'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['ApiKeyAuth']  # noqa: E501
@@ -750,7 +750,7 @@ class CompanyApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DataPointText',  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
