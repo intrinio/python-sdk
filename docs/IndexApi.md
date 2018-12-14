@@ -155,7 +155,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
+identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
 
 try:
     api_response = index_api.get_economic_index_by_id(identifier)
@@ -195,8 +195,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
+tag = 'level' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = index_api.get_economic_index_data_point_number(identifier, tag)
@@ -237,8 +237,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
+tag = 'level' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = index_api.get_economic_index_data_point_text(identifier, tag)
@@ -279,11 +279,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
-type = 'type_example' # str | Filter by type, when applicable (optional)
-start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
-end_date = '2013-10-20' # date | Get historical data on or before this date (optional)
+identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
+tag = 'level' # str | An Intrinio data tag ID or code-name
+type = '' # str | Filter by type, when applicable (optional)
+start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
+end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
@@ -329,7 +329,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
+identifier = '$SIC.1' # str | An Index Identifier (symbol, Intrinio ID)
 
 try:
     api_response = index_api.get_sic_index_by_id(identifier)
@@ -369,8 +369,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = '$SIC.1' # str | An Index Identifier (symbol, Intrinio ID)
+tag = 'level' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = index_api.get_sic_index_data_point_number(identifier, tag)
@@ -411,8 +411,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = '$SIC.1' # str | An Index Identifier (symbol, Intrinio ID)
+tag = 'level' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = index_api.get_sic_index_data_point_text(identifier, tag)
@@ -453,11 +453,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
-type = 'type_example' # str | Filter by type, when applicable (optional)
-start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
-end_date = '2013-10-20' # date | Get historical data on or before this date (optional)
+identifier = '$SIC.1' # str | An Index Identifier (symbol, Intrinio ID)
+tag = 'marketcap' # str | An Intrinio data tag ID or code-name
+type = '' # str | Filter by type, when applicable (optional)
+start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
+end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
@@ -503,7 +503,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
+identifier = '$DJI' # str | An Index Identifier (symbol, Intrinio ID)
 
 try:
     api_response = index_api.get_stock_market_index_by_id(identifier)
@@ -543,8 +543,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = '$DJI' # str | An Index Identifier (symbol, Intrinio ID)
+tag = 'level' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = index_api.get_stock_market_index_data_point_number(identifier, tag)
@@ -585,8 +585,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
+identifier = '$DJI' # str | An Index Identifier (symbol, Intrinio ID)
+tag = 'level' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = index_api.get_stock_market_index_data_point_text(identifier, tag)
@@ -627,11 +627,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-identifier = 'identifier_example' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
-type = 'type_example' # str | Filter by type, when applicable (optional)
-start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
-end_date = '2013-10-20' # date | Get historical data on or before this date (optional)
+identifier = '$DJI' # str | An Index Identifier (symbol, Intrinio ID)
+tag = 'level' # str | An Intrinio data tag ID or code-name
+type = '' # str | Filter by type, when applicable (optional)
+start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
+end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
@@ -679,7 +679,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-query = 'query_example' # str | Search query
+query = 'GDP' # str | Search query
 
 try:
     api_response = index_api.search_economic_indices(query)
@@ -719,7 +719,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-query = 'query_example' # str | Search query
+query = 'agriculture' # str | Search query
 
 try:
     api_response = index_api.search_sic_indices(query)
@@ -759,7 +759,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-query = 'query_example' # str | Search query
+query = 'dow' # str | Search query
 
 try:
     api_response = index_api.search_stock_markets_indices(query)

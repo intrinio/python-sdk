@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **industry_category** | **str** | The company&#39;s operating industry category | [optional] 
 **industry_group** | **str** | The company&#39;s operating industry group | [optional] 
 **template** | **str** | The financial statement template used by Intrinio to standardize the as reported data | [optional] 
-**standardized_active** | **bool** | If true, the company has standardized and as reported fundamental data via the Intrinio API; if false, the company has as-reported data only | [optional] 
+**standardized_active** | **bool** | If true, the company has standardized and as reported fundamental data via the Intrinio API; if False, the company has as-reported data only | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

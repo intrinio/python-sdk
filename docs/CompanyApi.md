@@ -39,7 +39,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-last_filing_date = '2011-07-15' # date | Last filing date (optional)
+last_filing_date = '' # date | Last filing date (optional)
 sic = '3350' # str | Standard Industrial Classification code (optional)
 template = 'industrial' # str | Template (optional)
 sector = 'Basic Materials' # str | Industry sector (optional)
@@ -92,14 +92,14 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 company_api = intrinio_sdk.CompanyApi()
 
 identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-filed_after = '2017-01-01' # date | Filed on or after this date (optional)
-filed_before = '2018-01-01' # date | Filed on or before this date (optional)
-reported_only = false # bool | Only as-reported fundamentals (optional)
+filed_after = '' # date | Filed on or after this date (optional)
+filed_before = '' # date | Filed on or before this date (optional)
+reported_only = False # bool | Only as-reported fundamentals (optional)
 fiscal_year = 2017 # int | Only for the given fiscal year (optional)
 statement_code = '' # str | Only of the given statement code (optional)
 type = '' # str | Only of the given type (optional)
-start_date = '2017-01-01' # date | Only on or after the given date (optional)
-end_date = '2018-01-01' # date | Only on or before the given date (optional)
+start_date = '' # date | Only on or after the given date (optional)
+end_date = '' # date | Only on or before the given date (optional)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:

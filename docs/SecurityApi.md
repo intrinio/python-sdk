@@ -343,7 +343,7 @@ security_api = intrinio_sdk.SecurityApi()
 logic = intrinio_sdk.SecurityScreenGroup() # SecurityScreenGroup | The logic to screen with, consisting of operators, clauses, and nested groups.<br/> See <a href=\"/documentation/screener_v2\" target=\"_blank\">screener documentation</a> for details on how to construct conditions. (optional)
 order_column = 'order_column_example' # str | Results returned sorted by this column (optional)
 order_direction = 'asc' # str | Sort order to use with the order_column (optional) (default to asc)
-primary_only = false # bool | Return only primary securities (optional) (default to false)
+primary_only = False # bool | Return only primary securities (optional) (default to False)
 
 try:
     api_response = security_api.screen_securities(logic=logic, order_column=order_column, order_direction=order_direction, primary_only=primary_only)
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
  **logic** | [**SecurityScreenGroup**](SecurityScreenGroup.md)| The logic to screen with, consisting of operators, clauses, and nested groups.&lt;br/&gt; See &lt;a href&#x3D;\&quot;/documentation/screener_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;screener documentation&lt;/a&gt; for details on how to construct conditions. | [optional] 
  **order_column** | **str**| Results returned sorted by this column | [optional] 
  **order_direction** | **str**| Sort order to use with the order_column | [optional] [default to asc]
- **primary_only** | **bool**| Return only primary securities | [optional] [default to false]
+ **primary_only** | **bool**| Return only primary securities | [optional] [default to False]
 
 ### Return type
 

@@ -26,11 +26,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 historical_data_api = intrinio_sdk.HistoricalDataApi()
 
-identifier = 'identifier_example' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag = 'tag_example' # str | An Intrinio data tag ID or code-name
-type = 'type_example' # str | Filter by type, when applicable (optional)
-start_date = '2013-10-20' # date | Get historical data on or after this date (optional)
-end_date = '2013-10-20' # date | Get historical date on or before this date (optional)
+identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
+tag = 'marketcap' # str | An Intrinio data tag ID or code-name
+type = '' # str | Filter by type, when applicable (optional)
+start_date = '2015-01-01' # date | Get historical data on or after this date (optional)
+end_date = '2019-01-01' # date | Get historical date on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
