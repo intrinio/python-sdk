@@ -12,10 +12,18 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 
 Python 2.7 and 3.4+
 
-## Installation & Usage
-### Option 1: pip install
+## Installation
 
-You can install directly from GitHub:
+```sh
+pip install intrinio-sdk
+```
+
+Then import the package:
+```python
+import intrinio_sdk 
+```
+
+## Installation from Github
 
 ```sh
 pip install git+https://github.com/intrinio/python-sdk.git
@@ -27,7 +35,7 @@ Then import the package:
 import intrinio_sdk 
 ```
 
-### Option 2: Setuptools
+## Installation from python-sdk repo
 
 Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
 
