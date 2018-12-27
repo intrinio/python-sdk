@@ -5,8 +5,8 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**filter_data_tags**](DataTagApi.md#filter_data_tags) | **GET** /data_tags/filter | Filter Data Tags
-[**get_all_data_tags**](DataTagApi.md#get_all_data_tags) | **GET** /data_tags | Get All Data Tags
-[**get_data_tag_by_id**](DataTagApi.md#get_data_tag_by_id) | **GET** /data_tags/{identifier} | Get a Data Tag by ID
+[**get_all_data_tags**](DataTagApi.md#get_all_data_tags) | **GET** /data_tags | All Data Tags
+[**get_data_tag_by_id**](DataTagApi.md#get_data_tag_by_id) | **GET** /data_tags/{identifier} | Lookup Data Tag
 [**search_data_tags**](DataTagApi.md#search_data_tags) | **GET** /data_tags/search | Search Data Tags
 
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 # **get_all_data_tags**
 > ApiResponseDataTags get_all_data_tags(next_page=next_page)
 
-Get All Data Tags
+All Data Tags
 
 Returns All Data Tags
 
@@ -103,9 +103,9 @@ Name | Type | Description  | Notes
 # **get_data_tag_by_id**
 > DataTag get_data_tag_by_id(identifier)
 
-Get a Data Tag by ID
+Lookup Data Tag
 
-Returns a Data Tag with the specified `identifier`
+Returns the Data Tag with the given `identifier`
 
 ### Example
 ```python

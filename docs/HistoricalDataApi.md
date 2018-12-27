@@ -4,13 +4,13 @@ All URIs are relative to *https://api-v2.intrinio.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_historical_data**](HistoricalDataApi.md#get_historical_data) | **GET** /historical_data/{identifier}/{tag} | Get Historical Data
+[**get_historical_data**](HistoricalDataApi.md#get_historical_data) | **GET** /historical_data/{identifier}/{tag} | Historical Data
 
 
 # **get_historical_data**
 > ApiResponseHistoricalData get_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
 
-Get Historical Data
+Historical Data
 
 Returns historical values for the given `tag` and the entity represented by the given `identifier`
 

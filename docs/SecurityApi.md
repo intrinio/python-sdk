@@ -4,13 +4,16 @@ All URIs are relative to *https://api-v2.intrinio.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_all_securities**](SecurityApi.md#get_all_securities) | **GET** /securities | Get All Securiites
-[**get_security_by_id**](SecurityApi.md#get_security_by_id) | **GET** /securities/{identifier} | Get a Security by ID
-[**get_security_data_point_number**](SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Get Security Data Point (Number)
-[**get_security_data_point_text**](SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Get Security Data Point (Text)
-[**get_security_historical_data**](SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Get Security Historical Data
-[**get_security_stock_price_adjustments**](SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Get Stock Price Adjustments for Security
-[**get_security_stock_prices**](SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Get Stock Prices for Security
+[**get_all_securities**](SecurityApi.md#get_all_securities) | **GET** /securities | All Securities
+[**get_security_by_id**](SecurityApi.md#get_security_by_id) | **GET** /securities/{identifier} | Lookup Security
+[**get_security_data_point_number**](SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Data Point (Number) for Security
+[**get_security_data_point_text**](SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
+[**get_security_historical_data**](SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
+[**get_security_latest_dividend_record**](SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Lastest Dividend Record for Security
+[**get_security_latest_earnings_record**](SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Lastest Earnings Record for Security
+[**get_security_realtime_price**](SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
+[**get_security_stock_price_adjustments**](SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Stock Price Adjustments by Security
+[**get_security_stock_prices**](SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Stock Prices by Security
 [**screen_securities**](SecurityApi.md#screen_securities) | **POST** /securities/screen | Screen Securities
 [**search_securities**](SecurityApi.md#search_securities) | **GET** /securities/search | Search Securities
 
@@ -18,7 +21,7 @@ Method | HTTP request | Description
 # **get_all_securities**
 > ApiResponseSecurities get_all_securities(next_page=next_page)
 
-Get All Securiites
+All Securities
 
 ### Example
 ```python
@@ -56,7 +59,9 @@ Name | Type | Description  | Notes
 # **get_security_by_id**
 > Security get_security_by_id(identifier)
 
-Get a Security by ID
+Lookup Security
+
+Returns the Security with the given `identifier`
 
 ### Example
 ```python
@@ -94,7 +99,7 @@ Name | Type | Description  | Notes
 # **get_security_data_point_number**
 > float get_security_data_point_number(identifier, tag)
 
-Get Security Data Point (Number)
+Data Point (Number) for Security
 
 Returns a numeric value for the given `tag` for the Security with the given `identifier`
 
@@ -136,7 +141,7 @@ Name | Type | Description  | Notes
 # **get_security_data_point_text**
 > str get_security_data_point_text(identifier, tag)
 
-Get Security Data Point (Text)
+Data Point (Text) for Security
 
 Returns a text value for the given `tag` for the Security with the given `identifier`
 
@@ -176,9 +181,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_historical_data**
-> ApiResponseSecurityHistoricalData get_security_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+> ApiResponseSecurityHistoricalData get_security_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
 
-Get Security Historical Data
+Historical Data for Security
 
 Returns historical values for the given `tag` and the Security with the given `identifier`
 
@@ -196,6 +201,7 @@ security_api = intrinio_sdk.SecurityApi()
 
 identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 tag = 'volume' # str | An Intrinio data tag ID or code-name
+frequency = 'daily' # str | Return historical data in the given frequency (optional) (default to daily)
 type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
 end_date = '2019-01-01' # date | Get historical date on or before this date (optional)
@@ -203,7 +209,7 @@ sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to 
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = security_api.get_security_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+    api_response = security_api.get_security_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_historical_data: %s\n" % e)
@@ -215,6 +221,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
  **tag** | **str**| An Intrinio data tag ID or code-name | 
+ **frequency** | **str**| Return historical data in the given frequency | [optional] [default to daily]
  **type** | **str**| Filter by type, when applicable | [optional] 
  **start_date** | **date**| Get historical data on or after this date | [optional] 
  **end_date** | **date**| Get historical date on or before this date | [optional] 
@@ -227,12 +234,134 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_security_latest_dividend_record**
+> DividendRecord get_security_latest_dividend_record(identifier)
+
+Lastest Dividend Record for Security
+
+Returns the latest available dividend information for the Security with the given `identifier`
+
+### Example
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+security_api = intrinio_sdk.SecurityApi()
+
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+
+try:
+    api_response = security_api.get_security_latest_dividend_record(identifier)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SecurityApi->get_security_latest_dividend_record: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
+
+### Return type
+
+[**DividendRecord**](DividendRecord.md)
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_security_latest_earnings_record**
+> EarningsRecord get_security_latest_earnings_record(identifier)
+
+Lastest Earnings Record for Security
+
+Returns latest available earnings information for the Security with the given `identifier`
+
+### Example
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+security_api = intrinio_sdk.SecurityApi()
+
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+
+try:
+    api_response = security_api.get_security_latest_earnings_record(identifier)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SecurityApi->get_security_latest_earnings_record: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
+
+### Return type
+
+[**EarningsRecord**](EarningsRecord.md)
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_security_realtime_price**
+> RealtimeStockPrice get_security_realtime_price(identifier, source=source)
+
+Realtime Stock Price for Security
+
+Return the realtime stock price for the Security with the given `identifier`
+
+### Example
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+security_api = intrinio_sdk.SecurityApi()
+
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+source = '' # str | Return the realtime price from the specified data source (optional)
+
+try:
+    api_response = security_api.get_security_realtime_price(identifier, source=source)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SecurityApi->get_security_realtime_price: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
+ **source** | **str**| Return the realtime price from the specified data source | [optional] 
+
+### Return type
+
+[**RealtimeStockPrice**](RealtimeStockPrice.md)
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_security_stock_price_adjustments**
 > ApiResponseSecurityStockPriceAdjustments get_security_stock_price_adjustments(identifier, start_date=start_date, end_date=end_date, next_page=next_page)
 
-Get Stock Price Adjustments for Security
+Stock Price Adjustments by Security
 
-Return stock price adjustments for the Security with the given `identifier`
+Returns stock price adjustments for the Security with the given `identifier`
 
 ### Example
 ```python
@@ -276,9 +405,9 @@ Name | Type | Description  | Notes
 # **get_security_stock_prices**
 > ApiResponseSecurityStockPrices get_security_stock_prices(identifier, start_date=start_date, end_date=end_date, frequency=frequency, next_page=next_page)
 
-Get Stock Prices for Security
+Stock Prices by Security
 
-Return stock prices for the Security with the given `identifier`
+Return end-of-day stock prices for the Security with the given `identifier`
 
 ### Example
 ```python
@@ -326,7 +455,7 @@ Name | Type | Description  | Notes
 
 Screen Securities
 
-Screen securities using complex logic
+Screen Securities using complex logic
 
 ### Example
 ```python
