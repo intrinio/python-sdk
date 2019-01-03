@@ -17,7 +17,7 @@ import re  # noqa: F401
 import six
 
 from intrinio_sdk.models.security_summary import SecuritySummary  # noqa: F401,E501
-from intrinio_sdk.models.stock_price_adjustment import StockPriceAdjustment  # noqa: F401,E501
+from intrinio_sdk.models.stock_price_adjustment_summary import StockPriceAdjustmentSummary  # noqa: F401,E501
 
 
 class ApiResponseSecurityStockPriceAdjustments(object):
@@ -34,7 +34,7 @@ class ApiResponseSecurityStockPriceAdjustments(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'stock_price_adjustments': 'list[StockPriceAdjustment]',
+        'stock_price_adjustments': 'list[StockPriceAdjustmentSummary]',
         'security': 'SecuritySummary',
         'next_page': 'str'
     }
@@ -67,7 +67,7 @@ class ApiResponseSecurityStockPriceAdjustments(object):
         The stock price adjustments for the Security  # noqa: E501
 
         :return: The stock_price_adjustments of this ApiResponseSecurityStockPriceAdjustments.  # noqa: E501
-        :rtype: list[StockPriceAdjustment]
+        :rtype: list[StockPriceAdjustmentSummary]
         """
         return self._stock_price_adjustments
 
@@ -78,7 +78,7 @@ class ApiResponseSecurityStockPriceAdjustments(object):
         The stock price adjustments for the Security  # noqa: E501
 
         :param stock_price_adjustments: The stock_price_adjustments of this ApiResponseSecurityStockPriceAdjustments.  # noqa: E501
-        :type: list[StockPriceAdjustment]
+        :type: list[StockPriceAdjustmentSummary]
         """
 
         self._stock_price_adjustments = stock_price_adjustments

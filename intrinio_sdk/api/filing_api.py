@@ -145,9 +145,9 @@ class FilingApi(object):
             collection_formats=collection_formats)
 
     def filter_notes(self, **kwargs):  # noqa: E501
-        """Filter SEC filing notes  # noqa: E501
+        """Filter Filing Notes  # noqa: E501
 
-        Returns SEC filing notes matching the supplied criteria  # noqa: E501
+        Returns Filing Notes that match the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.filter_notes(async=True)
@@ -173,9 +173,9 @@ class FilingApi(object):
             return data
 
     def filter_notes_with_http_info(self, **kwargs):  # noqa: E501
-        """Filter SEC filing notes  # noqa: E501
+        """Filter Filing Notes  # noqa: E501
 
-        Returns SEC filing notes matching the supplied criteria  # noqa: E501
+        Returns Filing Notes that match the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.filter_notes_with_http_info(async=True)
@@ -351,9 +351,9 @@ class FilingApi(object):
             collection_formats=collection_formats)
 
     def get_all_notes(self, **kwargs):  # noqa: E501
-        """Get All SEC filing notes  # noqa: E501
+        """All Filing Notes  # noqa: E501
 
-        Return All notes from SEC Filings, most-recent first  # noqa: E501
+        Return all Notes from all Filings, most-recent first  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_all_notes(async=True)
@@ -373,9 +373,9 @@ class FilingApi(object):
             return data
 
     def get_all_notes_with_http_info(self, **kwargs):  # noqa: E501
-        """Get All SEC filing notes  # noqa: E501
+        """All Filing Notes  # noqa: E501
 
-        Return All notes from SEC Filings, most-recent first  # noqa: E501
+        Return all Notes from all Filings, most-recent first  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_all_notes_with_http_info(async=True)
@@ -537,7 +537,7 @@ class FilingApi(object):
             collection_formats=collection_formats)
 
     def get_note(self, identifier, **kwargs):  # noqa: E501
-        """Get an SEC filing note by ID  # noqa: E501
+        """Filing Note by ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -559,7 +559,7 @@ class FilingApi(object):
             return data
 
     def get_note_with_http_info(self, identifier, **kwargs):  # noqa: E501
-        """Get an SEC filing note by ID  # noqa: E501
+        """Filing Note by ID  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -634,7 +634,7 @@ class FilingApi(object):
             collection_formats=collection_formats)
 
     def get_note_html(self, identifier, **kwargs):  # noqa: E501
-        """Returns the content of an SEC filing note as originally filed  # noqa: E501
+        """Filing Note HTML  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -655,7 +655,7 @@ class FilingApi(object):
             return data
 
     def get_note_html_with_http_info(self, identifier, **kwargs):  # noqa: E501
-        """Returns the content of an SEC filing note as originally filed  # noqa: E501
+        """Filing Note HTML  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -727,7 +727,7 @@ class FilingApi(object):
             collection_formats=collection_formats)
 
     def get_note_text(self, identifier, **kwargs):  # noqa: E501
-        """Returns the content of an SEC filing note stripped of HTML  # noqa: E501
+        """Filing Note Text  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -748,7 +748,7 @@ class FilingApi(object):
             return data
 
     def get_note_text_with_http_info(self, identifier, **kwargs):  # noqa: E501
-        """Returns the content of an SEC filing note stripped of HTML  # noqa: E501
+        """Filing Note Text  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -822,7 +822,7 @@ class FilingApi(object):
     def search_notes(self, query, **kwargs):  # noqa: E501
         """Search Filing Notes  # noqa: E501
 
-        Searches SEC filing notes using the text in `query`  # noqa: E501
+        Searches for Filing Notes using the `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.search_notes(query, async=True)
@@ -847,7 +847,7 @@ class FilingApi(object):
     def search_notes_with_http_info(self, query, **kwargs):  # noqa: E501
         """Search Filing Notes  # noqa: E501
 
-        Searches SEC filing notes using the text in `query`  # noqa: E501
+        Searches for Filing Notes using the `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.search_notes_with_http_info(query, async=True)

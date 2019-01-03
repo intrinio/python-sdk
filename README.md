@@ -5,7 +5,7 @@ To get an API key, [sign up here](https://intrinio.com/).
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
 - API version: 2.1.0
-- Package version: 1.1.0
+- Package version: 1.1.1
 
 
 ## Requirements.
@@ -102,13 +102,13 @@ Class | Method | HTTP request | Description
 *DataTagApi* | [**get_data_tag_by_id**](docs/DataTagApi.md#get_data_tag_by_id) | **GET** /data_tags/{identifier} | Lookup Data Tag
 *DataTagApi* | [**search_data_tags**](docs/DataTagApi.md#search_data_tags) | **GET** /data_tags/search | Search Data Tags
 *FilingApi* | [**filter_filings**](docs/FilingApi.md#filter_filings) | **GET** /filings/filter | Filter Filings
-*FilingApi* | [**filter_notes**](docs/FilingApi.md#filter_notes) | **GET** /filings/notes/filter | Filter SEC filing notes
+*FilingApi* | [**filter_notes**](docs/FilingApi.md#filter_notes) | **GET** /filings/notes/filter | Filter Filing Notes
 *FilingApi* | [**get_all_filings**](docs/FilingApi.md#get_all_filings) | **GET** /filings | All Filings
-*FilingApi* | [**get_all_notes**](docs/FilingApi.md#get_all_notes) | **GET** /filings/notes | Get All SEC filing notes
+*FilingApi* | [**get_all_notes**](docs/FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
 *FilingApi* | [**get_filing_by_id**](docs/FilingApi.md#get_filing_by_id) | **GET** /filings/{id} | Lookup Filing
-*FilingApi* | [**get_note**](docs/FilingApi.md#get_note) | **GET** /filings/notes/{identifier} | Get an SEC filing note by ID
-*FilingApi* | [**get_note_html**](docs/FilingApi.md#get_note_html) | **GET** /filings/notes/{identifier}/html | Returns the content of an SEC filing note as originally filed
-*FilingApi* | [**get_note_text**](docs/FilingApi.md#get_note_text) | **GET** /filings/notes/{identifier}/text | Returns the content of an SEC filing note stripped of HTML
+*FilingApi* | [**get_note**](docs/FilingApi.md#get_note) | **GET** /filings/notes/{identifier} | Filing Note by ID
+*FilingApi* | [**get_note_html**](docs/FilingApi.md#get_note_html) | **GET** /filings/notes/{identifier}/html | Filing Note HTML
+*FilingApi* | [**get_note_text**](docs/FilingApi.md#get_note_text) | **GET** /filings/notes/{identifier}/text | Filing Note Text
 *FilingApi* | [**search_notes**](docs/FilingApi.md#search_notes) | **GET** /filings/notes/search | Search Filing Notes
 *FundamentalsApi* | [**get_fundamental_by_id**](docs/FundamentalsApi.md#get_fundamental_by_id) | **GET** /fundamentals/{id} | Fundamental by ID
 *FundamentalsApi* | [**get_fundamental_reported_financials**](docs/FundamentalsApi.md#get_fundamental_reported_financials) | **GET** /fundamentals/{id}/reported_financials | Reported Financials
