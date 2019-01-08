@@ -38,7 +38,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_economic_indices(async=True)
+        >>> thread = api.get_all_economic_indices(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -59,7 +59,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_economic_indices_with_http_info(async=True)
+        >>> thread = api.get_all_economic_indices_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -116,7 +116,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='ApiResponseEconomicIndices',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -127,7 +127,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_sic_indices(async=True)
+        >>> thread = api.get_all_sic_indices(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -148,7 +148,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_sic_indices_with_http_info(async=True)
+        >>> thread = api.get_all_sic_indices_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -205,7 +205,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='ApiResponseSICIndices',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -216,7 +216,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_stock_market_indices(async=True)
+        >>> thread = api.get_all_stock_market_indices(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -237,7 +237,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_stock_market_indices_with_http_info(async=True)
+        >>> thread = api.get_all_stock_market_indices_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -294,7 +294,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='ApiResponseStockMarketIndices',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -305,7 +305,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_economic_index_by_id(identifier, async=True)
+        >>> thread = api.get_economic_index_by_id(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -326,7 +326,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_economic_index_by_id_with_http_info(identifier, async=True)
+        >>> thread = api.get_economic_index_by_id_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -387,7 +387,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='EconomicIndex',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -399,7 +399,7 @@ class IndexApi(object):
         Returns a numeric value for the given `tag` for the Economic Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_economic_index_data_point_number(identifier, tag, async=True)
+        >>> thread = api.get_economic_index_data_point_number(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -422,7 +422,7 @@ class IndexApi(object):
         Returns a numeric value for the given `tag` for the Economic Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_economic_index_data_point_number_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_economic_index_data_point_number_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -490,7 +490,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='float',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -502,7 +502,7 @@ class IndexApi(object):
         Returns a text value for the given `tag` for the Economic Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_economic_index_data_point_text(identifier, tag, async=True)
+        >>> thread = api.get_economic_index_data_point_text(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -525,7 +525,7 @@ class IndexApi(object):
         Returns a text value for the given `tag` for the Economic Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_economic_index_data_point_text_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_economic_index_data_point_text_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -593,7 +593,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -605,7 +605,7 @@ class IndexApi(object):
         Returns historical values for the given `tag` and the Economic Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_economic_index_historical_data(identifier, tag, async=True)
+        >>> thread = api.get_economic_index_historical_data(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -633,7 +633,7 @@ class IndexApi(object):
         Returns historical values for the given `tag` and the Economic Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_economic_index_historical_data_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_economic_index_historical_data_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -716,7 +716,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='ApiResponseEconomicIndexHistoricalData',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -727,7 +727,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sic_index_by_id(identifier, async=True)
+        >>> thread = api.get_sic_index_by_id(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -748,7 +748,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sic_index_by_id_with_http_info(identifier, async=True)
+        >>> thread = api.get_sic_index_by_id_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -809,7 +809,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='SICIndex',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -821,7 +821,7 @@ class IndexApi(object):
         Returns a numeric value for the given `tag` for the SIC Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sic_index_data_point_number(identifier, tag, async=True)
+        >>> thread = api.get_sic_index_data_point_number(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -844,7 +844,7 @@ class IndexApi(object):
         Returns a numeric value for the given `tag` for the SIC Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sic_index_data_point_number_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_sic_index_data_point_number_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -912,7 +912,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='float',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -924,7 +924,7 @@ class IndexApi(object):
         Returns a text value for the given `tag` for the SIC Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sic_index_data_point_text(identifier, tag, async=True)
+        >>> thread = api.get_sic_index_data_point_text(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -947,7 +947,7 @@ class IndexApi(object):
         Returns a text value for the given `tag` for the SIC Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sic_index_data_point_text_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_sic_index_data_point_text_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1015,7 +1015,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1027,7 +1027,7 @@ class IndexApi(object):
         Returns historical values for the given `tag` and the SIC Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sic_index_historical_data(identifier, tag, async=True)
+        >>> thread = api.get_sic_index_historical_data(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1055,7 +1055,7 @@ class IndexApi(object):
         Returns historical values for the given `tag` and the SIC Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sic_index_historical_data_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_sic_index_historical_data_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1138,7 +1138,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='ApiResponseSICIndexHistoricalData',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1149,7 +1149,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_market_index_by_id(identifier, async=True)
+        >>> thread = api.get_stock_market_index_by_id(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1170,7 +1170,7 @@ class IndexApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_market_index_by_id_with_http_info(identifier, async=True)
+        >>> thread = api.get_stock_market_index_by_id_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1231,7 +1231,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='StockMarketIndex',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1243,7 +1243,7 @@ class IndexApi(object):
         Returns a numeric value for the given `tag` for the Stock Market Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_market_index_data_point_number(identifier, tag, async=True)
+        >>> thread = api.get_stock_market_index_data_point_number(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1266,7 +1266,7 @@ class IndexApi(object):
         Returns a numeric value for the given `tag` for the Stock Market Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_market_index_data_point_number_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_stock_market_index_data_point_number_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1334,7 +1334,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='float',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1346,7 +1346,7 @@ class IndexApi(object):
         Returns a text value for the given `tag` for the Stock Market Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_market_index_data_point_text(identifier, tag, async=True)
+        >>> thread = api.get_stock_market_index_data_point_text(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1369,7 +1369,7 @@ class IndexApi(object):
         Returns a text value for the given `tag` for the Stock Market Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_market_index_data_point_text_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_stock_market_index_data_point_text_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1437,7 +1437,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1449,7 +1449,7 @@ class IndexApi(object):
         Returns historical values for the given `tag` and the Stock Market Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_market_index_historical_data(identifier, tag, async=True)
+        >>> thread = api.get_stock_market_index_historical_data(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1477,7 +1477,7 @@ class IndexApi(object):
         Returns historical values for the given `tag` and the Stock Market Index with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_market_index_historical_data_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_stock_market_index_historical_data_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1560,7 +1560,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='ApiResponseStockMarketIndexHistoricalData',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1572,7 +1572,7 @@ class IndexApi(object):
         Searches for indices using the text in `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_economic_indices(query, async=True)
+        >>> thread = api.search_economic_indices(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1594,7 +1594,7 @@ class IndexApi(object):
         Searches for indices using the text in `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_economic_indices_with_http_info(query, async=True)
+        >>> thread = api.search_economic_indices_with_http_info(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1655,7 +1655,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='ApiResponseEconomicIndices',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1667,7 +1667,7 @@ class IndexApi(object):
         Searches for indices using the text in `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_sic_indices(query, async=True)
+        >>> thread = api.search_sic_indices(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1689,7 +1689,7 @@ class IndexApi(object):
         Searches for indices using the text in `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_sic_indices_with_http_info(query, async=True)
+        >>> thread = api.search_sic_indices_with_http_info(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1750,7 +1750,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='ApiResponseSICIndices',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1762,7 +1762,7 @@ class IndexApi(object):
         Searches for indices using the text in `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_stock_markets_indices(query, async=True)
+        >>> thread = api.search_stock_markets_indices(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1784,7 +1784,7 @@ class IndexApi(object):
         Searches for indices using the text in `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_stock_markets_indices_with_http_info(query, async=True)
+        >>> thread = api.search_stock_markets_indices_with_http_info(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1845,7 +1845,7 @@ class IndexApi(object):
             files=local_var_files,
             response_type='ApiResponseStockMarketIndices',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

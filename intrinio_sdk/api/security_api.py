@@ -38,7 +38,7 @@ class SecurityApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_securities(async=True)
+        >>> thread = api.get_all_securities(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -59,7 +59,7 @@ class SecurityApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_securities_with_http_info(async=True)
+        >>> thread = api.get_all_securities_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -116,7 +116,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='ApiResponseSecurities',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -128,7 +128,7 @@ class SecurityApi(object):
         Returns the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_by_id(identifier, async=True)
+        >>> thread = api.get_security_by_id(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -150,7 +150,7 @@ class SecurityApi(object):
         Returns the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_by_id_with_http_info(identifier, async=True)
+        >>> thread = api.get_security_by_id_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -211,7 +211,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='Security',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -223,7 +223,7 @@ class SecurityApi(object):
         Returns a numeric value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_data_point_number(identifier, tag, async=True)
+        >>> thread = api.get_security_data_point_number(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -246,7 +246,7 @@ class SecurityApi(object):
         Returns a numeric value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_data_point_number_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_security_data_point_number_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -314,7 +314,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='float',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -326,7 +326,7 @@ class SecurityApi(object):
         Returns a text value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_data_point_text(identifier, tag, async=True)
+        >>> thread = api.get_security_data_point_text(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -349,7 +349,7 @@ class SecurityApi(object):
         Returns a text value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_data_point_text_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_security_data_point_text_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -417,7 +417,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -429,7 +429,7 @@ class SecurityApi(object):
         Returns historical values for the given `tag` and the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_historical_data(identifier, tag, async=True)
+        >>> thread = api.get_security_historical_data(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -458,7 +458,7 @@ class SecurityApi(object):
         Returns historical values for the given `tag` and the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_historical_data_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_security_historical_data_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -544,7 +544,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='ApiResponseSecurityHistoricalData',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -556,7 +556,7 @@ class SecurityApi(object):
         Returns the latest available dividend information for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_latest_dividend_record(identifier, async=True)
+        >>> thread = api.get_security_latest_dividend_record(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -578,7 +578,7 @@ class SecurityApi(object):
         Returns the latest available dividend information for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_latest_dividend_record_with_http_info(identifier, async=True)
+        >>> thread = api.get_security_latest_dividend_record_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -639,7 +639,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='DividendRecord',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -651,7 +651,7 @@ class SecurityApi(object):
         Returns latest available earnings information for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_latest_earnings_record(identifier, async=True)
+        >>> thread = api.get_security_latest_earnings_record(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -673,7 +673,7 @@ class SecurityApi(object):
         Returns latest available earnings information for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_latest_earnings_record_with_http_info(identifier, async=True)
+        >>> thread = api.get_security_latest_earnings_record_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -734,7 +734,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='EarningsRecord',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -746,7 +746,7 @@ class SecurityApi(object):
         Return the realtime stock price for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_realtime_price(identifier, async=True)
+        >>> thread = api.get_security_realtime_price(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -769,7 +769,7 @@ class SecurityApi(object):
         Return the realtime stock price for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_realtime_price_with_http_info(identifier, async=True)
+        >>> thread = api.get_security_realtime_price_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -833,7 +833,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='RealtimeStockPrice',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -845,7 +845,7 @@ class SecurityApi(object):
         Returns stock price adjustments for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_stock_price_adjustments(identifier, async=True)
+        >>> thread = api.get_security_stock_price_adjustments(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -870,7 +870,7 @@ class SecurityApi(object):
         Returns stock price adjustments for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_stock_price_adjustments_with_http_info(identifier, async=True)
+        >>> thread = api.get_security_stock_price_adjustments_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -940,7 +940,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='ApiResponseSecurityStockPriceAdjustments',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -952,7 +952,7 @@ class SecurityApi(object):
         Return end-of-day stock prices for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_stock_prices(identifier, async=True)
+        >>> thread = api.get_security_stock_prices(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -978,7 +978,7 @@ class SecurityApi(object):
         Return end-of-day stock prices for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_security_stock_prices_with_http_info(identifier, async=True)
+        >>> thread = api.get_security_stock_prices_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1051,7 +1051,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='ApiResponseSecurityStockPrices',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1063,7 +1063,7 @@ class SecurityApi(object):
         Screen Securities using complex logic  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.screen_securities(async=True)
+        >>> thread = api.screen_securities(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1088,7 +1088,7 @@ class SecurityApi(object):
         Screen Securities using complex logic  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.screen_securities_with_http_info(async=True)
+        >>> thread = api.screen_securities_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1158,7 +1158,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='list[SecurityScreenResult]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1170,7 +1170,7 @@ class SecurityApi(object):
         Searches for Securities matching the text `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_securities(query, async=True)
+        >>> thread = api.search_securities(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1192,7 +1192,7 @@ class SecurityApi(object):
         Searches for Securities matching the text `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_securities_with_http_info(query, async=True)
+        >>> thread = api.search_securities_with_http_info(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1253,7 +1253,7 @@ class SecurityApi(object):
             files=local_var_files,
             response_type='ApiResponseSecurities',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

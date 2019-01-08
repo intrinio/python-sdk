@@ -39,7 +39,7 @@ class FilingApi(object):
         Returns Filings that match the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_filings(company, async=True)
+        >>> thread = api.filter_filings(company, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -65,7 +65,7 @@ class FilingApi(object):
         Returns Filings that match the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_filings_with_http_info(company, async=True)
+        >>> thread = api.filter_filings_with_http_info(company, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -138,7 +138,7 @@ class FilingApi(object):
             files=local_var_files,
             response_type='ApiResponseFilings',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -150,7 +150,7 @@ class FilingApi(object):
         Returns Filing Notes that match the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_notes(async=True)
+        >>> thread = api.filter_notes(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -178,7 +178,7 @@ class FilingApi(object):
         Returns Filing Notes that match the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_notes_with_http_info(async=True)
+        >>> thread = api.filter_notes_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -253,7 +253,7 @@ class FilingApi(object):
             files=local_var_files,
             response_type='ApiResponseFilingNotes',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -265,7 +265,7 @@ class FilingApi(object):
         Returns all Filings  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_filings(async=True)
+        >>> thread = api.get_all_filings(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -287,7 +287,7 @@ class FilingApi(object):
         Returns all Filings  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_filings_with_http_info(async=True)
+        >>> thread = api.get_all_filings_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -344,7 +344,7 @@ class FilingApi(object):
             files=local_var_files,
             response_type='ApiResponseFilings',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -356,7 +356,7 @@ class FilingApi(object):
         Return all Notes from all Filings, most-recent first  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_notes(async=True)
+        >>> thread = api.get_all_notes(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -378,7 +378,7 @@ class FilingApi(object):
         Return all Notes from all Filings, most-recent first  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_notes_with_http_info(async=True)
+        >>> thread = api.get_all_notes_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -435,7 +435,7 @@ class FilingApi(object):
             files=local_var_files,
             response_type='ApiResponseFilingNotes',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -447,7 +447,7 @@ class FilingApi(object):
         Returns the Filing with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_filing_by_id(id, async=True)
+        >>> thread = api.get_filing_by_id(id, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -469,7 +469,7 @@ class FilingApi(object):
         Returns the Filing with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_filing_by_id_with_http_info(id, async=True)
+        >>> thread = api.get_filing_by_id_with_http_info(id, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -530,7 +530,7 @@ class FilingApi(object):
             files=local_var_files,
             response_type='Filing',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -541,7 +541,7 @@ class FilingApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_note(identifier, async=True)
+        >>> thread = api.get_note(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -563,7 +563,7 @@ class FilingApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_note_with_http_info(identifier, async=True)
+        >>> thread = api.get_note_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -627,7 +627,7 @@ class FilingApi(object):
             files=local_var_files,
             response_type='FilingNote',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -638,7 +638,7 @@ class FilingApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_note_html(identifier, async=True)
+        >>> thread = api.get_note_html(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -659,7 +659,7 @@ class FilingApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_note_html_with_http_info(identifier, async=True)
+        >>> thread = api.get_note_html_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -720,7 +720,7 @@ class FilingApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -731,7 +731,7 @@ class FilingApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_note_text(identifier, async=True)
+        >>> thread = api.get_note_text(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -752,7 +752,7 @@ class FilingApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_note_text_with_http_info(identifier, async=True)
+        >>> thread = api.get_note_text_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -813,7 +813,7 @@ class FilingApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -825,7 +825,7 @@ class FilingApi(object):
         Searches for Filing Notes using the `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_notes(query, async=True)
+        >>> thread = api.search_notes(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -850,7 +850,7 @@ class FilingApi(object):
         Searches for Filing Notes using the `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_notes_with_http_info(query, async=True)
+        >>> thread = api.search_notes_with_http_info(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -922,7 +922,7 @@ class FilingApi(object):
             files=local_var_files,
             response_type='ApiResponseFilingNotesSearch',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

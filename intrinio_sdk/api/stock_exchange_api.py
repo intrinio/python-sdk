@@ -39,7 +39,7 @@ class StockExchangeApi(object):
         Returns Stock Exchanges matching the given filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_stock_exchanges(async=True)
+        >>> thread = api.filter_stock_exchanges(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -63,7 +63,7 @@ class StockExchangeApi(object):
         Returns Stock Exchanges matching the given filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_stock_exchanges_with_http_info(async=True)
+        >>> thread = api.filter_stock_exchanges_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -126,7 +126,7 @@ class StockExchangeApi(object):
             files=local_var_files,
             response_type='ApiResponseStockExchanges',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -138,7 +138,7 @@ class StockExchangeApi(object):
         Returns all Stock Exchanges  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_stock_exchanges(async=True)
+        >>> thread = api.get_all_stock_exchanges(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -159,7 +159,7 @@ class StockExchangeApi(object):
         Returns all Stock Exchanges  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_stock_exchanges_with_http_info(async=True)
+        >>> thread = api.get_all_stock_exchanges_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -213,7 +213,7 @@ class StockExchangeApi(object):
             files=local_var_files,
             response_type='ApiResponseStockExchanges',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -225,7 +225,7 @@ class StockExchangeApi(object):
         Returns the Stock Exchange with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_by_id(identifier, async=True)
+        >>> thread = api.get_stock_exchange_by_id(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -247,7 +247,7 @@ class StockExchangeApi(object):
         Returns the Stock Exchange with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_by_id_with_http_info(identifier, async=True)
+        >>> thread = api.get_stock_exchange_by_id_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -308,7 +308,7 @@ class StockExchangeApi(object):
             files=local_var_files,
             response_type='StockExchange',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -320,7 +320,7 @@ class StockExchangeApi(object):
         Returns stock price adjustments for the Stock Exchange with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_price_adjustments(identifier, async=True)
+        >>> thread = api.get_stock_exchange_price_adjustments(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -344,7 +344,7 @@ class StockExchangeApi(object):
         Returns stock price adjustments for the Stock Exchange with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_price_adjustments_with_http_info(identifier, async=True)
+        >>> thread = api.get_stock_exchange_price_adjustments_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -411,7 +411,7 @@ class StockExchangeApi(object):
             files=local_var_files,
             response_type='ApiResponseStockExchangeStockPriceAdjustments',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -423,7 +423,7 @@ class StockExchangeApi(object):
         Returns end-of-day stock prices for Securities on the Stock Exchange with `identifier` and on the `price_date` (or the latest date that prices are available)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_prices(identifier, async=True)
+        >>> thread = api.get_stock_exchange_prices(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -447,7 +447,7 @@ class StockExchangeApi(object):
         Returns end-of-day stock prices for Securities on the Stock Exchange with `identifier` and on the `price_date` (or the latest date that prices are available)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_prices_with_http_info(identifier, async=True)
+        >>> thread = api.get_stock_exchange_prices_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -514,7 +514,7 @@ class StockExchangeApi(object):
             files=local_var_files,
             response_type='ApiResponseStockExchangeStockPrices',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -526,7 +526,7 @@ class StockExchangeApi(object):
         Returns realtime stock prices for the Stock Exchange with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_realtime_prices(identifier, async=True)
+        >>> thread = api.get_stock_exchange_realtime_prices(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -550,7 +550,7 @@ class StockExchangeApi(object):
         Returns realtime stock prices for the Stock Exchange with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_realtime_prices_with_http_info(identifier, async=True)
+        >>> thread = api.get_stock_exchange_realtime_prices_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -617,7 +617,7 @@ class StockExchangeApi(object):
             files=local_var_files,
             response_type='ApiResponseStockExchangeRealtimeStockPrices',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -629,7 +629,7 @@ class StockExchangeApi(object):
         Returns Securities traded on the Stock Exchange with `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_securities(identifier, async=True)
+        >>> thread = api.get_stock_exchange_securities(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -652,7 +652,7 @@ class StockExchangeApi(object):
         Returns Securities traded on the Stock Exchange with `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stock_exchange_securities_with_http_info(identifier, async=True)
+        >>> thread = api.get_stock_exchange_securities_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -716,7 +716,7 @@ class StockExchangeApi(object):
             files=local_var_files,
             response_type='ApiResponseStockExchangeSecurities',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

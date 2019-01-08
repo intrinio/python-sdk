@@ -39,7 +39,7 @@ class CompanyApi(object):
         Returns Companies matching the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_companies(async=True)
+        >>> thread = api.filter_companies(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -67,7 +67,7 @@ class CompanyApi(object):
         Returns Companies matching the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_companies_with_http_info(async=True)
+        >>> thread = api.filter_companies_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -142,7 +142,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseCompanies',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -154,7 +154,7 @@ class CompanyApi(object):
         Returns Fundamentals for the Company with the given `identifier` and matching the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_company_fundamentals(identifier, async=True)
+        >>> thread = api.filter_company_fundamentals(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -185,7 +185,7 @@ class CompanyApi(object):
         Returns Fundamentals for the Company with the given `identifier` and matching the specified filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_company_fundamentals_with_http_info(identifier, async=True)
+        >>> thread = api.filter_company_fundamentals_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -273,7 +273,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseCompanyFundamentals',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -285,7 +285,7 @@ class CompanyApi(object):
         Returns all Companies  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_companies(async=True)
+        >>> thread = api.get_all_companies(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -307,7 +307,7 @@ class CompanyApi(object):
         Returns all Companies  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_companies_with_http_info(async=True)
+        >>> thread = api.get_all_companies_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -364,7 +364,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseCompanies',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -376,7 +376,7 @@ class CompanyApi(object):
         Returns all News for all Companies  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_company_news(async=True)
+        >>> thread = api.get_all_company_news(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -398,7 +398,7 @@ class CompanyApi(object):
         Returns all News for all Companies  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_company_news_with_http_info(async=True)
+        >>> thread = api.get_all_company_news_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -455,7 +455,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseNews',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -467,7 +467,7 @@ class CompanyApi(object):
         Returns the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company(identifier, async=True)
+        >>> thread = api.get_company(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -489,7 +489,7 @@ class CompanyApi(object):
         Returns the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_with_http_info(identifier, async=True)
+        >>> thread = api.get_company_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -550,7 +550,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='Company',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -562,7 +562,7 @@ class CompanyApi(object):
         Returns a numeric value for the given `tag` for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_data_point_number(identifier, tag, async=True)
+        >>> thread = api.get_company_data_point_number(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -585,7 +585,7 @@ class CompanyApi(object):
         Returns a numeric value for the given `tag` for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_data_point_number_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_company_data_point_number_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -653,7 +653,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='float',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -665,7 +665,7 @@ class CompanyApi(object):
         Returns a text value for the given `tag` for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_data_point_text(identifier, tag, async=True)
+        >>> thread = api.get_company_data_point_text(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -688,7 +688,7 @@ class CompanyApi(object):
         Returns a text value for the given `tag` for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_data_point_text_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_company_data_point_text_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -756,7 +756,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -768,7 +768,7 @@ class CompanyApi(object):
         Returns a complete list of SEC filings for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_filings(identifier, async=True)
+        >>> thread = api.get_company_filings(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -791,7 +791,7 @@ class CompanyApi(object):
         Returns a complete list of SEC filings for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_filings_with_http_info(identifier, async=True)
+        >>> thread = api.get_company_filings_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -855,7 +855,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseCompanyFilings',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -867,7 +867,7 @@ class CompanyApi(object):
         Returns all Fundamentals for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_fundamentals(identifier, async=True)
+        >>> thread = api.get_company_fundamentals(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -890,7 +890,7 @@ class CompanyApi(object):
         Returns all Fundamentals for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_fundamentals_with_http_info(identifier, async=True)
+        >>> thread = api.get_company_fundamentals_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -954,7 +954,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseCompanyFundamentals',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -966,7 +966,7 @@ class CompanyApi(object):
         Returns historical values for the given `tag` and the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_historical_data(identifier, tag, async=True)
+        >>> thread = api.get_company_historical_data(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -995,7 +995,7 @@ class CompanyApi(object):
         Returns historical values for the given `tag` and the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_historical_data_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_company_historical_data_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1081,7 +1081,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseCompanyHistoricalData',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1093,7 +1093,7 @@ class CompanyApi(object):
         Returns news for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_news(identifier, async=True)
+        >>> thread = api.get_company_news(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1116,7 +1116,7 @@ class CompanyApi(object):
         Returns news for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_news_with_http_info(identifier, async=True)
+        >>> thread = api.get_company_news_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1180,7 +1180,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseCompanyNews',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1192,7 +1192,7 @@ class CompanyApi(object):
         Returns Securities for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_securities(identifier, async=True)
+        >>> thread = api.get_company_securities(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1215,7 +1215,7 @@ class CompanyApi(object):
         Returns Securities for the Company with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_company_securities_with_http_info(identifier, async=True)
+        >>> thread = api.get_company_securities_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1279,7 +1279,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseCompanySecurities',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1291,7 +1291,7 @@ class CompanyApi(object):
         Returns the Fundamental for the Company with the given `identifier` and with the given parameters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year, async=True)
+        >>> thread = api.lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1316,7 +1316,7 @@ class CompanyApi(object):
         Returns the Fundamental for the Company with the given `identifier` and with the given parameters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.lookup_company_fundamental_with_http_info(identifier, statement_code, fiscal_period, fiscal_year, async=True)
+        >>> thread = api.lookup_company_fundamental_with_http_info(identifier, statement_code, fiscal_period, fiscal_year, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1398,7 +1398,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='Fundamental',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1410,7 +1410,7 @@ class CompanyApi(object):
         Searches for Companies matching the text `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_companies(query, async=True)
+        >>> thread = api.search_companies(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1432,7 +1432,7 @@ class CompanyApi(object):
         Searches for Companies matching the text `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_companies_with_http_info(query, async=True)
+        >>> thread = api.search_companies_with_http_info(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -1493,7 +1493,7 @@ class CompanyApi(object):
             files=local_var_files,
             response_type='ApiResponseCompanies',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

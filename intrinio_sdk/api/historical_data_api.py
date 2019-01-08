@@ -39,7 +39,7 @@ class HistoricalDataApi(object):
         Returns historical values for the given `tag` and the entity represented by the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_historical_data(identifier, tag, async=True)
+        >>> thread = api.get_historical_data(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -67,7 +67,7 @@ class HistoricalDataApi(object):
         Returns historical values for the given `tag` and the entity represented by the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_historical_data_with_http_info(identifier, tag, async=True)
+        >>> thread = api.get_historical_data_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -150,7 +150,7 @@ class HistoricalDataApi(object):
             files=local_var_files,
             response_type='ApiResponseHistoricalData',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

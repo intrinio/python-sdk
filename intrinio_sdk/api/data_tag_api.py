@@ -39,7 +39,7 @@ class DataTagApi(object):
         Returns Data Tags that match the given filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_data_tags(async=True)
+        >>> thread = api.filter_data_tags(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -66,7 +66,7 @@ class DataTagApi(object):
         Returns Data Tags that match the given filters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.filter_data_tags_with_http_info(async=True)
+        >>> thread = api.filter_data_tags_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -138,7 +138,7 @@ class DataTagApi(object):
             files=local_var_files,
             response_type='ApiResponseDataTags',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -150,7 +150,7 @@ class DataTagApi(object):
         Returns All Data Tags  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_data_tags(async=True)
+        >>> thread = api.get_all_data_tags(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -172,7 +172,7 @@ class DataTagApi(object):
         Returns All Data Tags  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_data_tags_with_http_info(async=True)
+        >>> thread = api.get_all_data_tags_with_http_info(_async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -229,7 +229,7 @@ class DataTagApi(object):
             files=local_var_files,
             response_type='ApiResponseDataTags',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -241,7 +241,7 @@ class DataTagApi(object):
         Returns the Data Tag with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_data_tag_by_id(identifier, async=True)
+        >>> thread = api.get_data_tag_by_id(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -263,7 +263,7 @@ class DataTagApi(object):
         Returns the Data Tag with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_data_tag_by_id_with_http_info(identifier, async=True)
+        >>> thread = api.get_data_tag_by_id_with_http_info(identifier, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -324,7 +324,7 @@ class DataTagApi(object):
             files=local_var_files,
             response_type='DataTag',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -336,7 +336,7 @@ class DataTagApi(object):
         Searches for Data Tags matching the text `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_data_tags(query, async=True)
+        >>> thread = api.search_data_tags(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -358,7 +358,7 @@ class DataTagApi(object):
         Searches for Data Tags matching the text `query`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_data_tags_with_http_info(query, async=True)
+        >>> thread = api.search_data_tags_with_http_info(query, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -419,7 +419,7 @@ class DataTagApi(object):
             files=local_var_files,
             response_type='ApiResponseDataTags',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -39,7 +39,7 @@ class FundamentalsApi(object):
         Returns detailed fundamental data for the given `id`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_fundamental_by_id(id, async=True)
+        >>> thread = api.get_fundamental_by_id(id, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -61,7 +61,7 @@ class FundamentalsApi(object):
         Returns detailed fundamental data for the given `id`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_fundamental_by_id_with_http_info(id, async=True)
+        >>> thread = api.get_fundamental_by_id_with_http_info(id, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -122,7 +122,7 @@ class FundamentalsApi(object):
             files=local_var_files,
             response_type='Fundamental',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -134,7 +134,7 @@ class FundamentalsApi(object):
         Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_fundamental_reported_financials(id, async=True)
+        >>> thread = api.get_fundamental_reported_financials(id, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -156,7 +156,7 @@ class FundamentalsApi(object):
         Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_fundamental_reported_financials_with_http_info(id, async=True)
+        >>> thread = api.get_fundamental_reported_financials_with_http_info(id, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -217,7 +217,7 @@ class FundamentalsApi(object):
             files=local_var_files,
             response_type='ApiResponseReportedFinancials',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -229,7 +229,7 @@ class FundamentalsApi(object):
         Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies fundamentals. For example, it is possible to compare total revenues between two companies as of a certain point in time, or within a single company across multiple time periods. This is not possible using the as reported financial statements because of the inherent complexity of reporting standards.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_fundamental_standardized_financials(id, async=True)
+        >>> thread = api.get_fundamental_standardized_financials(id, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -251,7 +251,7 @@ class FundamentalsApi(object):
         Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies fundamentals. For example, it is possible to compare total revenues between two companies as of a certain point in time, or within a single company across multiple time periods. This is not possible using the as reported financial statements because of the inherent complexity of reporting standards.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_fundamental_standardized_financials_with_http_info(id, async=True)
+        >>> thread = api.get_fundamental_standardized_financials_with_http_info(id, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -312,7 +312,7 @@ class FundamentalsApi(object):
             files=local_var_files,
             response_type='ApiResponseStandardizedFinancials',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -324,7 +324,7 @@ class FundamentalsApi(object):
         Returns the Fundamental for the Company with the given `identifier` and with the given parameters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period, async=True)
+        >>> thread = api.lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -349,7 +349,7 @@ class FundamentalsApi(object):
         Returns the Fundamental for the Company with the given `identifier` and with the given parameters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.lookup_fundamental_with_http_info(identifier, statement_code, fiscal_year, fiscal_period, async=True)
+        >>> thread = api.lookup_fundamental_with_http_info(identifier, statement_code, fiscal_year, fiscal_period, _async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -431,7 +431,7 @@ class FundamentalsApi(object):
             files=local_var_files,
             response_type='Fundamental',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
