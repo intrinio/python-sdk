@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **type** | **str** | The type of Fundamental | [optional] 
 **start_date** | **date** | The period start date | [optional] 
 **end_date** | **date** | The period start date | [optional] 
-**filing_date** | **date** | The date and time when the Fundamental was filed with the SEC | [optional] 
+**filing_date** | **datetime** | The date and time when the Fundamental was filed with the SEC | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

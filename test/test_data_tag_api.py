@@ -29,13 +29,6 @@ class TestDataTagApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_filter_data_tags(self):
-        """Test case for filter_data_tags
-
-        Filter Data Tags  # noqa: E501
-        """
-        pass
-
     def test_get_all_data_tags(self):
         """Test case for get_all_data_tags
 

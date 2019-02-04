@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_historical_data**
-> ApiResponseHistoricalData get_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+> ApiResponseHistoricalData get_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
 Historical Data
 
@@ -32,10 +32,11 @@ type = '' # str | Filter by type, when applicable (optional)
 start_date = '2015-01-01' # date | Get historical data on or after this date (optional)
 end_date = '2019-01-01' # date | Get historical date on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = historical_data_api.get_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+    api_response = historical_data_api.get_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling HistoricalDataApi->get_historical_data: %s\n" % e)
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
  **start_date** | **date**| Get historical data on or after this date | [optional] 
  **end_date** | **date**| Get historical date on or before this date | [optional] 
  **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type

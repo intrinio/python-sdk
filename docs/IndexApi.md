@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **get_all_economic_indices**
-> ApiResponseEconomicIndices get_all_economic_indices(next_page=next_page)
+> ApiResponseEconomicIndices get_all_economic_indices(page_size=page_size, next_page=next_page)
 
 All Economic Indices
 
@@ -41,10 +41,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = index_api.get_all_economic_indices(next_page=next_page)
+    api_response = index_api.get_all_economic_indices(page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_all_economic_indices: %s\n" % e)
@@ -54,6 +55,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_sic_indices**
-> ApiResponseSICIndices get_all_sic_indices(next_page=next_page)
+> ApiResponseSICIndices get_all_sic_indices(page_size=page_size, next_page=next_page)
 
 All SIC Indices
 
@@ -79,10 +81,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = index_api.get_all_sic_indices(next_page=next_page)
+    api_response = index_api.get_all_sic_indices(page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_all_sic_indices: %s\n" % e)
@@ -92,6 +95,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -101,7 +105,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_stock_market_indices**
-> ApiResponseStockMarketIndices get_all_stock_market_indices(next_page=next_page)
+> ApiResponseStockMarketIndices get_all_stock_market_indices(page_size=page_size, next_page=next_page)
 
 All Stock Market Indices
 
@@ -117,10 +121,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = index_api.get_all_stock_market_indices(next_page=next_page)
+    api_response = index_api.get_all_stock_market_indices(page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_all_stock_market_indices: %s\n" % e)
@@ -130,6 +135,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -261,7 +267,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_economic_index_historical_data**
-> ApiResponseEconomicIndexHistoricalData get_economic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+> ApiResponseEconomicIndexHistoricalData get_economic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
 Historical Data for an Economic Index
 
@@ -285,10 +291,11 @@ type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
 end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = index_api.get_economic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+    api_response = index_api.get_economic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_economic_index_historical_data: %s\n" % e)
@@ -304,6 +311,7 @@ Name | Type | Description  | Notes
  **start_date** | **date**| Get historical data on or after this date | [optional] 
  **end_date** | **date**| Get historical data on or before this date | [optional] 
  **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -435,7 +443,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sic_index_historical_data**
-> ApiResponseSICIndexHistoricalData get_sic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+> ApiResponseSICIndexHistoricalData get_sic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
 Historical Data for an SIC Index
 
@@ -459,10 +467,11 @@ type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
 end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = index_api.get_sic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+    api_response = index_api.get_sic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_sic_index_historical_data: %s\n" % e)
@@ -478,6 +487,7 @@ Name | Type | Description  | Notes
  **start_date** | **date**| Get historical data on or after this date | [optional] 
  **end_date** | **date**| Get historical data on or before this date | [optional] 
  **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -609,7 +619,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_stock_market_index_historical_data**
-> ApiResponseStockMarketIndexHistoricalData get_stock_market_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+> ApiResponseStockMarketIndexHistoricalData get_stock_market_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
 Historical Data for Stock Market Index
 
@@ -633,10 +643,11 @@ type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
 end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = index_api.get_stock_market_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+    api_response = index_api.get_stock_market_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_stock_market_index_historical_data: %s\n" % e)
@@ -652,6 +663,7 @@ Name | Type | Description  | Notes
  **start_date** | **date**| Get historical data on or after this date | [optional] 
  **end_date** | **date**| Get historical data on or before this date | [optional] 
  **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -661,7 +673,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_economic_indices**
-> ApiResponseEconomicIndices search_economic_indices(query)
+> ApiResponseEconomicIndicesSearch search_economic_indices(query, page_size=page_size)
 
 Search Economic Indices
 
@@ -680,9 +692,10 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 index_api = intrinio_sdk.IndexApi()
 
 query = 'GDP' # str | Search query
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 
 try:
-    api_response = index_api.search_economic_indices(query)
+    api_response = index_api.search_economic_indices(query, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->search_economic_indices: %s\n" % e)
@@ -693,15 +706,16 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Search query | 
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
 
 ### Return type
 
-[**ApiResponseEconomicIndices**](ApiResponseEconomicIndices.md)
+[**ApiResponseEconomicIndicesSearch**](ApiResponseEconomicIndicesSearch.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_sic_indices**
-> ApiResponseSICIndices search_sic_indices(query)
+> ApiResponseSICIndicesSearch search_sic_indices(query, page_size=page_size)
 
 Search SIC Indices
 
@@ -720,9 +734,10 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 index_api = intrinio_sdk.IndexApi()
 
 query = 'agriculture' # str | Search query
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 
 try:
-    api_response = index_api.search_sic_indices(query)
+    api_response = index_api.search_sic_indices(query, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->search_sic_indices: %s\n" % e)
@@ -733,15 +748,16 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Search query | 
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
 
 ### Return type
 
-[**ApiResponseSICIndices**](ApiResponseSICIndices.md)
+[**ApiResponseSICIndicesSearch**](ApiResponseSICIndicesSearch.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_stock_markets_indices**
-> ApiResponseStockMarketIndices search_stock_markets_indices(query)
+> ApiResponseStockMarketIndicesSearch search_stock_markets_indices(query, page_size=page_size)
 
 Search Stock Market Indices
 
@@ -760,9 +776,10 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 index_api = intrinio_sdk.IndexApi()
 
 query = 'dow' # str | Search query
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 
 try:
-    api_response = index_api.search_stock_markets_indices(query)
+    api_response = index_api.search_stock_markets_indices(query, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->search_stock_markets_indices: %s\n" % e)
@@ -773,10 +790,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Search query | 
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
 
 ### Return type
 
-[**ApiResponseStockMarketIndices**](ApiResponseStockMarketIndices.md)
+[**ApiResponseStockMarketIndicesSearch**](ApiResponseStockMarketIndicesSearch.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -64,6 +64,13 @@ class TestSecurityApi(unittest.TestCase):
         """
         pass
 
+    def test_get_security_intraday_prices(self):
+        """Test case for get_security_intraday_prices
+
+        Intraday Stock Prices for Security  # noqa: E501
+        """
+        pass
+
     def test_get_security_latest_dividend_record(self):
         """Test case for get_security_latest_dividend_record
 

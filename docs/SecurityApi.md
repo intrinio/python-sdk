@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_security_data_point_number**](SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Data Point (Number) for Security
 [**get_security_data_point_text**](SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
 [**get_security_historical_data**](SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
+[**get_security_intraday_prices**](SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
 [**get_security_latest_dividend_record**](SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Lastest Dividend Record for Security
 [**get_security_latest_earnings_record**](SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Lastest Earnings Record for Security
 [**get_security_realtime_price**](SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
@@ -19,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **get_all_securities**
-> ApiResponseSecurities get_all_securities(next_page=next_page)
+> ApiResponseSecurities get_all_securities(page_size=page_size, next_page=next_page)
 
 All Securities
 
@@ -35,10 +36,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = security_api.get_all_securities(next_page=next_page)
+    api_response = security_api.get_all_securities(page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_all_securities: %s\n" % e)
@@ -48,6 +50,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -181,7 +184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_historical_data**
-> ApiResponseSecurityHistoricalData get_security_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+> ApiResponseSecurityHistoricalData get_security_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
 Historical Data for Security
 
@@ -206,10 +209,11 @@ type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
 end_date = '2019-01-01' # date | Get historical date on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = security_api.get_security_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, next_page=next_page)
+    api_response = security_api.get_security_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_historical_data: %s\n" % e)
@@ -226,11 +230,62 @@ Name | Type | Description  | Notes
  **start_date** | **date**| Get historical data on or after this date | [optional] 
  **end_date** | **date**| Get historical date on or before this date | [optional] 
  **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
 
 [**ApiResponseSecurityHistoricalData**](ApiResponseSecurityHistoricalData.md)
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_security_intraday_prices**
+> ApiResponseSecurityIntradayPrices get_security_intraday_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time)
+
+Intraday Stock Prices for Security
+
+Return intraday stock prices for the Security with the given `identifier`
+
+### Example
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+security_api = intrinio_sdk.SecurityApi()
+
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+source = '' # str | Return intraday prices from the specified data source (optional)
+start_date = '2018-01-01' # date | Return intraday prices starting at the specified date (optional)
+start_time = '4200' # str | Return intraday prices starting at the specified time on the `start_date` (timezone is UTC) (optional)
+end_date = '2018-01-01' # date | Return intraday prices stopping at the specified date (optional)
+end_time = '4200' # str | Return intraday prices stopping at the specified time on the `end_date` (timezone is UTC) (optional)
+
+try:
+    api_response = security_api.get_security_intraday_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SecurityApi->get_security_intraday_prices: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
+ **source** | **str**| Return intraday prices from the specified data source | [optional] 
+ **start_date** | **date**| Return intraday prices starting at the specified date | [optional] 
+ **start_time** | **str**| Return intraday prices starting at the specified time on the &#x60;start_date&#x60; (timezone is UTC) | [optional] 
+ **end_date** | **date**| Return intraday prices stopping at the specified date | [optional] 
+ **end_time** | **str**| Return intraday prices stopping at the specified time on the &#x60;end_date&#x60; (timezone is UTC) | [optional] 
+
+### Return type
+
+[**ApiResponseSecurityIntradayPrices**](ApiResponseSecurityIntradayPrices.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -357,7 +412,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_stock_price_adjustments**
-> ApiResponseSecurityStockPriceAdjustments get_security_stock_price_adjustments(identifier, start_date=start_date, end_date=end_date, next_page=next_page)
+> ApiResponseSecurityStockPriceAdjustments get_security_stock_price_adjustments(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 
 Stock Price Adjustments by Security
 
@@ -378,10 +433,11 @@ security_api = intrinio_sdk.SecurityApi()
 identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # date | Return price adjustments on or after the date (optional)
 end_date = '2019-01-01' # date | Return price adjustments on or before the date (optional)
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = security_api.get_security_stock_price_adjustments(identifier, start_date=start_date, end_date=end_date, next_page=next_page)
+    api_response = security_api.get_security_stock_price_adjustments(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_stock_price_adjustments: %s\n" % e)
@@ -394,6 +450,7 @@ Name | Type | Description  | Notes
  **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
  **start_date** | **date**| Return price adjustments on or after the date | [optional] 
  **end_date** | **date**| Return price adjustments on or before the date | [optional] 
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -403,7 +460,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_stock_prices**
-> ApiResponseSecurityStockPrices get_security_stock_prices(identifier, start_date=start_date, end_date=end_date, frequency=frequency, next_page=next_page)
+> ApiResponseSecurityStockPrices get_security_stock_prices(identifier, start_date=start_date, end_date=end_date, frequency=frequency, page_size=page_size, next_page=next_page)
 
 Stock Prices by Security
 
@@ -425,10 +482,11 @@ identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, In
 start_date = '2018-01-01' # date | Return prices on or after the date (optional)
 end_date = '2019-01-01' # date | Return prices on or before the date (optional)
 frequency = 'daily' # str | Return stock prices in the given frequency (optional) (default to daily)
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = security_api.get_security_stock_prices(identifier, start_date=start_date, end_date=end_date, frequency=frequency, next_page=next_page)
+    api_response = security_api.get_security_stock_prices(identifier, start_date=start_date, end_date=end_date, frequency=frequency, page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_stock_prices: %s\n" % e)
@@ -442,6 +500,7 @@ Name | Type | Description  | Notes
  **start_date** | **date**| Return prices on or after the date | [optional] 
  **end_date** | **date**| Return prices on or before the date | [optional] 
  **frequency** | **str**| Return stock prices in the given frequency | [optional] [default to daily]
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -451,7 +510,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **screen_securities**
-> list[SecurityScreenResult] screen_securities(logic=logic, order_column=order_column, order_direction=order_direction, primary_only=primary_only)
+> list[SecurityScreenResult] screen_securities(logic=logic, order_column=order_column, order_direction=order_direction, primary_only=primary_only, page_size=page_size)
 
 Screen Securities
 
@@ -473,9 +532,10 @@ logic = intrinio_sdk.SecurityScreenGroup() # SecurityScreenGroup | The logic to 
 order_column = 'order_column_example' # str | Results returned sorted by this column (optional)
 order_direction = 'asc' # str | Sort order to use with the order_column (optional) (default to asc)
 primary_only = False # bool | Return only primary securities (optional) (default to False)
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 
 try:
-    api_response = security_api.screen_securities(logic=logic, order_column=order_column, order_direction=order_direction, primary_only=primary_only)
+    api_response = security_api.screen_securities(logic=logic, order_column=order_column, order_direction=order_direction, primary_only=primary_only, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->screen_securities: %s\n" % e)
@@ -489,6 +549,7 @@ Name | Type | Description  | Notes
  **order_column** | **str**| Results returned sorted by this column | [optional] 
  **order_direction** | **str**| Sort order to use with the order_column | [optional] [default to asc]
  **primary_only** | **bool**| Return only primary securities | [optional] [default to False]
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
 
 ### Return type
 
@@ -497,7 +558,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_securities**
-> ApiResponseSecurities search_securities(query)
+> ApiResponseSecuritiesSearch search_securities(query, page_size=page_size)
 
 Search Securities
 
@@ -516,9 +577,10 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 security_api = intrinio_sdk.SecurityApi()
 
 query = 'Apple' # str | 
+page_size = 100 # float | The number of results to return (optional) (default to 100)
 
 try:
-    api_response = security_api.search_securities(query)
+    api_response = security_api.search_securities(query, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->search_securities: %s\n" % e)
@@ -529,10 +591,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**|  | 
+ **page_size** | **float**| The number of results to return | [optional] [default to 100]
 
 ### Return type
 
-[**ApiResponseSecurities**](ApiResponseSecurities.md)
+[**ApiResponseSecuritiesSearch**](ApiResponseSecuritiesSearch.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

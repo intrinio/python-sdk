@@ -29,13 +29,6 @@ class TestStockExchangeApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_filter_stock_exchanges(self):
-        """Test case for filter_stock_exchanges
-
-        Filter Stock Exchanges  # noqa: E501
-        """
-        pass
-
     def test_get_all_stock_exchanges(self):
         """Test case for get_all_stock_exchanges
 

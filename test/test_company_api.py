@@ -29,20 +29,6 @@ class TestCompanyApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_filter_companies(self):
-        """Test case for filter_companies
-
-        Filter Companies  # noqa: E501
-        """
-        pass
-
-    def test_filter_company_fundamentals(self):
-        """Test case for filter_company_fundamentals
-
-        Filter Fundamentals by Company  # noqa: E501
-        """
-        pass
-
     def test_get_all_companies(self):
         """Test case for get_all_companies
 

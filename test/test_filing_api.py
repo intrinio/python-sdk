@@ -29,20 +29,6 @@ class TestFilingApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_filter_filings(self):
-        """Test case for filter_filings
-
-        Filter Filings  # noqa: E501
-        """
-        pass
-
-    def test_filter_notes(self):
-        """Test case for filter_notes
-
-        Filter Filing Notes  # noqa: E501
-        """
-        pass
-
     def test_get_all_filings(self):
         """Test case for get_all_filings
 
