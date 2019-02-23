@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.1.1
-- Package version: 2.0.0
+- API version: 2.2.0
+- Package version: 2.0.1
 
 
 ## Requirements.
@@ -105,6 +105,9 @@ Class | Method | HTTP request | Description
 *FilingApi* | [**get_note_html**](docs/FilingApi.md#get_note_html) | **GET** /filings/notes/{identifier}/html | Filing Note HTML
 *FilingApi* | [**get_note_text**](docs/FilingApi.md#get_note_text) | **GET** /filings/notes/{identifier}/text | Filing Note Text
 *FilingApi* | [**search_notes**](docs/FilingApi.md#search_notes) | **GET** /filings/notes/search | Search Filing Notes
+*ForexApi* | [**get_forex_currencies**](docs/ForexApi.md#get_forex_currencies) | **GET** /forex/currencies | Forex Currencies
+*ForexApi* | [**get_forex_pairs**](docs/ForexApi.md#get_forex_pairs) | **GET** /forex/pairs | Forex Currency Pairs
+*ForexApi* | [**get_forex_prices**](docs/ForexApi.md#get_forex_prices) | **GET** /forex/prices/{pair}/{timeframe} | Forex Currency Prices
 *FundamentalsApi* | [**get_fundamental_by_id**](docs/FundamentalsApi.md#get_fundamental_by_id) | **GET** /fundamentals/{id} | Fundamental by ID
 *FundamentalsApi* | [**get_fundamental_reported_financials**](docs/FundamentalsApi.md#get_fundamental_reported_financials) | **GET** /fundamentals/{id}/reported_financials | Reported Financials
 *FundamentalsApi* | [**get_fundamental_standardized_financials**](docs/FundamentalsApi.md#get_fundamental_standardized_financials) | **GET** /fundamentals/{id}/standardized_financials | Standardized Financials
@@ -169,6 +172,9 @@ Class | Method | HTTP request | Description
  - [ApiResponseFilingNotes](docs/ApiResponseFilingNotes.md)
  - [ApiResponseFilingNotesSearch](docs/ApiResponseFilingNotesSearch.md)
  - [ApiResponseFilings](docs/ApiResponseFilings.md)
+ - [ApiResponseForexCurrencies](docs/ApiResponseForexCurrencies.md)
+ - [ApiResponseForexPairs](docs/ApiResponseForexPairs.md)
+ - [ApiResponseForexPrices](docs/ApiResponseForexPrices.md)
  - [ApiResponseHistoricalData](docs/ApiResponseHistoricalData.md)
  - [ApiResponseMunicipalities](docs/ApiResponseMunicipalities.md)
  - [ApiResponseMunicipalitiyFinancials](docs/ApiResponseMunicipalitiyFinancials.md)
@@ -208,6 +214,9 @@ Class | Method | HTTP request | Description
  - [FilingNoteFiling](docs/FilingNoteFiling.md)
  - [FilingNoteSummary](docs/FilingNoteSummary.md)
  - [FilingSummary](docs/FilingSummary.md)
+ - [ForexCurrency](docs/ForexCurrency.md)
+ - [ForexPair](docs/ForexPair.md)
+ - [ForexPrice](docs/ForexPrice.md)
  - [Fundamental](docs/Fundamental.md)
  - [FundamentalSummary](docs/FundamentalSummary.md)
  - [HistoricalData](docs/HistoricalData.md)
