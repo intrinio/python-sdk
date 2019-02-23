@@ -69,10 +69,10 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 company_api = intrinio_sdk.CompanyApi()
 
 try:
-    api_response = company_api.filter_companies()
+    api_response = company_api.get_company('AAPL')
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->filter_companies: %s\n" % e)
+    print("Exception when calling CompanyApi.get_company: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
