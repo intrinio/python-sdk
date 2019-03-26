@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **last_stock_price_adjustment** | **date** | The date of the last stock price adjustment (dividend, split, etc) | [optional] 
 **last_corporate_action** | **date** | The date of the last corporate action | [optional] 
 **previous_tickers** | **list[str]** | Previous tickers used by this security | [optional] 
+**listing_exchange_mic** | **str** | The MIC code of the exchange on which this security primarily trades | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

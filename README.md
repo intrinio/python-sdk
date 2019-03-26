@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.2.0
-- Package version: 2.1.0
+- API version: 2.5.0
+- Package version: 2.2.0
 
 
 ## Requirements.
@@ -93,6 +93,15 @@ Class | Method | HTTP request | Description
 *CompanyApi* | [**get_company_securities**](docs/CompanyApi.md#get_company_securities) | **GET** /companies/{identifier}/securities | All Securities by Company
 *CompanyApi* | [**lookup_company_fundamental**](docs/CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
 *CompanyApi* | [**search_companies**](docs/CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
+*CryptoApi* | [**get_crypto_book_asks**](docs/CryptoApi.md#get_crypto_book_asks) | **GET** /crypto/book/asks | Crypto Book Asks
+*CryptoApi* | [**get_crypto_book_bids**](docs/CryptoApi.md#get_crypto_book_bids) | **GET** /crypto/book/bids | Crypto Book Bids
+*CryptoApi* | [**get_crypto_book_summary**](docs/CryptoApi.md#get_crypto_book_summary) | **GET** /crypto/book | Crypto Book Summary
+*CryptoApi* | [**get_crypto_currencies**](docs/CryptoApi.md#get_crypto_currencies) | **GET** /crypto/currencies | Crypto Currencies
+*CryptoApi* | [**get_crypto_exchanges**](docs/CryptoApi.md#get_crypto_exchanges) | **GET** /crypto/exchanges | Crypto Exchanges
+*CryptoApi* | [**get_crypto_pairs**](docs/CryptoApi.md#get_crypto_pairs) | **GET** /crypto/pairs | Crypto Pairs
+*CryptoApi* | [**get_crypto_prices**](docs/CryptoApi.md#get_crypto_prices) | **GET** /crypto/prices | Crypto Prices
+*CryptoApi* | [**get_crypto_snapshot**](docs/CryptoApi.md#get_crypto_snapshot) | **GET** /crypto/snapshot | Crypto Snapshot
+*CryptoApi* | [**get_crypto_stats**](docs/CryptoApi.md#get_crypto_stats) | **GET** /crypto/stats | Crypto Stats
 *DataPointApi* | [**get_data_point_number**](docs/DataPointApi.md#get_data_point_number) | **GET** /data_point/{identifier}/{tag}/number | Data Point (Number)
 *DataPointApi* | [**get_data_point_text**](docs/DataPointApi.md#get_data_point_text) | **GET** /data_point/{identifier}/{tag}/text | Data Point (Text)
 *DataTagApi* | [**get_all_data_tags**](docs/DataTagApi.md#get_all_data_tags) | **GET** /data_tags | All Data Tags
@@ -134,6 +143,10 @@ Class | Method | HTTP request | Description
 *MunicipalityApi* | [**get_all_municipalities**](docs/MunicipalityApi.md#get_all_municipalities) | **GET** /municipalities | All Municipalities
 *MunicipalityApi* | [**get_municipality_by_id**](docs/MunicipalityApi.md#get_municipality_by_id) | **GET** /municipalities/{id} | Municipality by ID
 *MunicipalityApi* | [**get_municipality_financials**](docs/MunicipalityApi.md#get_municipality_financials) | **GET** /municipalities/{id}/financials | Financials for a Municipality
+*OptionsApi* | [**get_options**](docs/OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
+*OptionsApi* | [**get_options_chain**](docs/OptionsApi.md#get_options_chain) | **GET** /options/chain/{symbol}/{expiration} | Options Chain
+*OptionsApi* | [**get_options_expirations**](docs/OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
+*OptionsApi* | [**get_options_prices**](docs/OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 *SecurityApi* | [**get_all_securities**](docs/SecurityApi.md#get_all_securities) | **GET** /securities | All Securities
 *SecurityApi* | [**get_security_by_id**](docs/SecurityApi.md#get_security_by_id) | **GET** /securities/{identifier} | Lookup Security
 *SecurityApi* | [**get_security_data_point_number**](docs/SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Data Point (Number) for Security
@@ -142,6 +155,37 @@ Class | Method | HTTP request | Description
 *SecurityApi* | [**get_security_intraday_prices**](docs/SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
 *SecurityApi* | [**get_security_latest_dividend_record**](docs/SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Lastest Dividend Record for Security
 *SecurityApi* | [**get_security_latest_earnings_record**](docs/SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Lastest Earnings Record for Security
+*SecurityApi* | [**get_security_price_technicals_adi**](docs/SecurityApi.md#get_security_price_technicals_adi) | **GET** /securities/{identifier}/prices/technicals/adi | Accumulation/Distribution Index
+*SecurityApi* | [**get_security_price_technicals_adtv**](docs/SecurityApi.md#get_security_price_technicals_adtv) | **GET** /securities/{identifier}/prices/technicals/adtv | Average Daily Trading Volume
+*SecurityApi* | [**get_security_price_technicals_adx**](docs/SecurityApi.md#get_security_price_technicals_adx) | **GET** /securities/{identifier}/prices/technicals/adx | Average Directional Index
+*SecurityApi* | [**get_security_price_technicals_ao**](docs/SecurityApi.md#get_security_price_technicals_ao) | **GET** /securities/{identifier}/prices/technicals/ao | Awesome Oscillator
+*SecurityApi* | [**get_security_price_technicals_atr**](docs/SecurityApi.md#get_security_price_technicals_atr) | **GET** /securities/{identifier}/prices/technicals/atr | Average True Range
+*SecurityApi* | [**get_security_price_technicals_bb**](docs/SecurityApi.md#get_security_price_technicals_bb) | **GET** /securities/{identifier}/prices/technicals/bb | Bollinger Bands
+*SecurityApi* | [**get_security_price_technicals_cci**](docs/SecurityApi.md#get_security_price_technicals_cci) | **GET** /securities/{identifier}/prices/technicals/cci | Commodity Channel Index
+*SecurityApi* | [**get_security_price_technicals_cmf**](docs/SecurityApi.md#get_security_price_technicals_cmf) | **GET** /securities/{identifier}/prices/technicals/cmf | Chaikin Money Flow
+*SecurityApi* | [**get_security_price_technicals_dc**](docs/SecurityApi.md#get_security_price_technicals_dc) | **GET** /securities/{identifier}/prices/technicals/dc | Donchian Channel
+*SecurityApi* | [**get_security_price_technicals_dpo**](docs/SecurityApi.md#get_security_price_technicals_dpo) | **GET** /securities/{identifier}/prices/technicals/dpo | Detrended Price Oscillator
+*SecurityApi* | [**get_security_price_technicals_eom**](docs/SecurityApi.md#get_security_price_technicals_eom) | **GET** /securities/{identifier}/prices/technicals/eom | Ease of Movement
+*SecurityApi* | [**get_security_price_technicals_fi**](docs/SecurityApi.md#get_security_price_technicals_fi) | **GET** /securities/{identifier}/prices/technicals/fi | Force Index
+*SecurityApi* | [**get_security_price_technicals_ichimoku**](docs/SecurityApi.md#get_security_price_technicals_ichimoku) | **GET** /securities/{identifier}/prices/technicals/ichimoku | Ichimoku Kinko Hyo
+*SecurityApi* | [**get_security_price_technicals_kc**](docs/SecurityApi.md#get_security_price_technicals_kc) | **GET** /securities/{identifier}/prices/technicals/kc | Keltner Channel
+*SecurityApi* | [**get_security_price_technicals_kst**](docs/SecurityApi.md#get_security_price_technicals_kst) | **GET** /securities/{identifier}/prices/technicals/kst | Know Sure Thing
+*SecurityApi* | [**get_security_price_technicals_macd**](docs/SecurityApi.md#get_security_price_technicals_macd) | **GET** /securities/{identifier}/prices/technicals/macd | Moving Average Convergence Divergence
+*SecurityApi* | [**get_security_price_technicals_mfi**](docs/SecurityApi.md#get_security_price_technicals_mfi) | **GET** /securities/{identifier}/prices/technicals/mfi | Money Flow Index
+*SecurityApi* | [**get_security_price_technicals_mi**](docs/SecurityApi.md#get_security_price_technicals_mi) | **GET** /securities/{identifier}/prices/technicals/mi | Mass Index
+*SecurityApi* | [**get_security_price_technicals_nvi**](docs/SecurityApi.md#get_security_price_technicals_nvi) | **GET** /securities/{identifier}/prices/technicals/nvi | Negative Volume Index
+*SecurityApi* | [**get_security_price_technicals_obv**](docs/SecurityApi.md#get_security_price_technicals_obv) | **GET** /securities/{identifier}/prices/technicals/obv | On-balance Volume
+*SecurityApi* | [**get_security_price_technicals_obv_mean**](docs/SecurityApi.md#get_security_price_technicals_obv_mean) | **GET** /securities/{identifier}/prices/technicals/obv_mean | On-balance Volume Mean
+*SecurityApi* | [**get_security_price_technicals_rsi**](docs/SecurityApi.md#get_security_price_technicals_rsi) | **GET** /securities/{identifier}/prices/technicals/rsi | Relative Strength Index
+*SecurityApi* | [**get_security_price_technicals_sma**](docs/SecurityApi.md#get_security_price_technicals_sma) | **GET** /securities/{identifier}/prices/technicals/sma | Simple Moving Average
+*SecurityApi* | [**get_security_price_technicals_sr**](docs/SecurityApi.md#get_security_price_technicals_sr) | **GET** /securities/{identifier}/prices/technicals/sr | Stochastic Oscillator
+*SecurityApi* | [**get_security_price_technicals_trix**](docs/SecurityApi.md#get_security_price_technicals_trix) | **GET** /securities/{identifier}/prices/technicals/trix | Triple Exponential Average
+*SecurityApi* | [**get_security_price_technicals_tsi**](docs/SecurityApi.md#get_security_price_technicals_tsi) | **GET** /securities/{identifier}/prices/technicals/tsi | True Strength Index
+*SecurityApi* | [**get_security_price_technicals_uo**](docs/SecurityApi.md#get_security_price_technicals_uo) | **GET** /securities/{identifier}/prices/technicals/uo | Ultimate Oscillator
+*SecurityApi* | [**get_security_price_technicals_vi**](docs/SecurityApi.md#get_security_price_technicals_vi) | **GET** /securities/{identifier}/prices/technicals/vi | Vortex Indicator
+*SecurityApi* | [**get_security_price_technicals_vpt**](docs/SecurityApi.md#get_security_price_technicals_vpt) | **GET** /securities/{identifier}/prices/technicals/vpt | Volume-price Trend
+*SecurityApi* | [**get_security_price_technicals_vwap**](docs/SecurityApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
+*SecurityApi* | [**get_security_price_technicals_wr**](docs/SecurityApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
 *SecurityApi* | [**get_security_realtime_price**](docs/SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
 *SecurityApi* | [**get_security_stock_price_adjustments**](docs/SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Stock Price Adjustments by Security
 *SecurityApi* | [**get_security_stock_prices**](docs/SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Stock Prices by Security
@@ -153,10 +197,42 @@ Class | Method | HTTP request | Description
 *StockExchangeApi* | [**get_stock_exchange_prices**](docs/StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
 *StockExchangeApi* | [**get_stock_exchange_realtime_prices**](docs/StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
 *StockExchangeApi* | [**get_stock_exchange_securities**](docs/StockExchangeApi.md#get_stock_exchange_securities) | **GET** /stock_exchanges/{identifier}/securities | Securities by Exchange
+*TechnicalApi* | [**get_security_price_technicals_adi**](docs/TechnicalApi.md#get_security_price_technicals_adi) | **GET** /securities/{identifier}/prices/technicals/adi | Accumulation/Distribution Index
+*TechnicalApi* | [**get_security_price_technicals_adtv**](docs/TechnicalApi.md#get_security_price_technicals_adtv) | **GET** /securities/{identifier}/prices/technicals/adtv | Average Daily Trading Volume
+*TechnicalApi* | [**get_security_price_technicals_adx**](docs/TechnicalApi.md#get_security_price_technicals_adx) | **GET** /securities/{identifier}/prices/technicals/adx | Average Directional Index
+*TechnicalApi* | [**get_security_price_technicals_ao**](docs/TechnicalApi.md#get_security_price_technicals_ao) | **GET** /securities/{identifier}/prices/technicals/ao | Awesome Oscillator
+*TechnicalApi* | [**get_security_price_technicals_atr**](docs/TechnicalApi.md#get_security_price_technicals_atr) | **GET** /securities/{identifier}/prices/technicals/atr | Average True Range
+*TechnicalApi* | [**get_security_price_technicals_bb**](docs/TechnicalApi.md#get_security_price_technicals_bb) | **GET** /securities/{identifier}/prices/technicals/bb | Bollinger Bands
+*TechnicalApi* | [**get_security_price_technicals_cci**](docs/TechnicalApi.md#get_security_price_technicals_cci) | **GET** /securities/{identifier}/prices/technicals/cci | Commodity Channel Index
+*TechnicalApi* | [**get_security_price_technicals_cmf**](docs/TechnicalApi.md#get_security_price_technicals_cmf) | **GET** /securities/{identifier}/prices/technicals/cmf | Chaikin Money Flow
+*TechnicalApi* | [**get_security_price_technicals_dc**](docs/TechnicalApi.md#get_security_price_technicals_dc) | **GET** /securities/{identifier}/prices/technicals/dc | Donchian Channel
+*TechnicalApi* | [**get_security_price_technicals_dpo**](docs/TechnicalApi.md#get_security_price_technicals_dpo) | **GET** /securities/{identifier}/prices/technicals/dpo | Detrended Price Oscillator
+*TechnicalApi* | [**get_security_price_technicals_eom**](docs/TechnicalApi.md#get_security_price_technicals_eom) | **GET** /securities/{identifier}/prices/technicals/eom | Ease of Movement
+*TechnicalApi* | [**get_security_price_technicals_fi**](docs/TechnicalApi.md#get_security_price_technicals_fi) | **GET** /securities/{identifier}/prices/technicals/fi | Force Index
+*TechnicalApi* | [**get_security_price_technicals_ichimoku**](docs/TechnicalApi.md#get_security_price_technicals_ichimoku) | **GET** /securities/{identifier}/prices/technicals/ichimoku | Ichimoku Kinko Hyo
+*TechnicalApi* | [**get_security_price_technicals_kc**](docs/TechnicalApi.md#get_security_price_technicals_kc) | **GET** /securities/{identifier}/prices/technicals/kc | Keltner Channel
+*TechnicalApi* | [**get_security_price_technicals_kst**](docs/TechnicalApi.md#get_security_price_technicals_kst) | **GET** /securities/{identifier}/prices/technicals/kst | Know Sure Thing
+*TechnicalApi* | [**get_security_price_technicals_macd**](docs/TechnicalApi.md#get_security_price_technicals_macd) | **GET** /securities/{identifier}/prices/technicals/macd | Moving Average Convergence Divergence
+*TechnicalApi* | [**get_security_price_technicals_mfi**](docs/TechnicalApi.md#get_security_price_technicals_mfi) | **GET** /securities/{identifier}/prices/technicals/mfi | Money Flow Index
+*TechnicalApi* | [**get_security_price_technicals_mi**](docs/TechnicalApi.md#get_security_price_technicals_mi) | **GET** /securities/{identifier}/prices/technicals/mi | Mass Index
+*TechnicalApi* | [**get_security_price_technicals_nvi**](docs/TechnicalApi.md#get_security_price_technicals_nvi) | **GET** /securities/{identifier}/prices/technicals/nvi | Negative Volume Index
+*TechnicalApi* | [**get_security_price_technicals_obv**](docs/TechnicalApi.md#get_security_price_technicals_obv) | **GET** /securities/{identifier}/prices/technicals/obv | On-balance Volume
+*TechnicalApi* | [**get_security_price_technicals_obv_mean**](docs/TechnicalApi.md#get_security_price_technicals_obv_mean) | **GET** /securities/{identifier}/prices/technicals/obv_mean | On-balance Volume Mean
+*TechnicalApi* | [**get_security_price_technicals_rsi**](docs/TechnicalApi.md#get_security_price_technicals_rsi) | **GET** /securities/{identifier}/prices/technicals/rsi | Relative Strength Index
+*TechnicalApi* | [**get_security_price_technicals_sma**](docs/TechnicalApi.md#get_security_price_technicals_sma) | **GET** /securities/{identifier}/prices/technicals/sma | Simple Moving Average
+*TechnicalApi* | [**get_security_price_technicals_sr**](docs/TechnicalApi.md#get_security_price_technicals_sr) | **GET** /securities/{identifier}/prices/technicals/sr | Stochastic Oscillator
+*TechnicalApi* | [**get_security_price_technicals_trix**](docs/TechnicalApi.md#get_security_price_technicals_trix) | **GET** /securities/{identifier}/prices/technicals/trix | Triple Exponential Average
+*TechnicalApi* | [**get_security_price_technicals_tsi**](docs/TechnicalApi.md#get_security_price_technicals_tsi) | **GET** /securities/{identifier}/prices/technicals/tsi | True Strength Index
+*TechnicalApi* | [**get_security_price_technicals_uo**](docs/TechnicalApi.md#get_security_price_technicals_uo) | **GET** /securities/{identifier}/prices/technicals/uo | Ultimate Oscillator
+*TechnicalApi* | [**get_security_price_technicals_vi**](docs/TechnicalApi.md#get_security_price_technicals_vi) | **GET** /securities/{identifier}/prices/technicals/vi | Vortex Indicator
+*TechnicalApi* | [**get_security_price_technicals_vpt**](docs/TechnicalApi.md#get_security_price_technicals_vpt) | **GET** /securities/{identifier}/prices/technicals/vpt | Volume-price Trend
+*TechnicalApi* | [**get_security_price_technicals_vwap**](docs/TechnicalApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
+*TechnicalApi* | [**get_security_price_technicals_wr**](docs/TechnicalApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
 
 
 ## Documentation For Models
 
+ - [AccumulationDistributionIndexTechnicalValue](docs/AccumulationDistributionIndexTechnicalValue.md)
  - [ApiResponseCompanies](docs/ApiResponseCompanies.md)
  - [ApiResponseCompaniesSearch](docs/ApiResponseCompaniesSearch.md)
  - [ApiResponseCompanyFilings](docs/ApiResponseCompanyFilings.md)
@@ -164,6 +240,15 @@ Class | Method | HTTP request | Description
  - [ApiResponseCompanyHistoricalData](docs/ApiResponseCompanyHistoricalData.md)
  - [ApiResponseCompanyNews](docs/ApiResponseCompanyNews.md)
  - [ApiResponseCompanySecurities](docs/ApiResponseCompanySecurities.md)
+ - [ApiResponseCryptoBook](docs/ApiResponseCryptoBook.md)
+ - [ApiResponseCryptoBookAsks](docs/ApiResponseCryptoBookAsks.md)
+ - [ApiResponseCryptoBookBids](docs/ApiResponseCryptoBookBids.md)
+ - [ApiResponseCryptoCurrencies](docs/ApiResponseCryptoCurrencies.md)
+ - [ApiResponseCryptoExchanges](docs/ApiResponseCryptoExchanges.md)
+ - [ApiResponseCryptoPairs](docs/ApiResponseCryptoPairs.md)
+ - [ApiResponseCryptoPrices](docs/ApiResponseCryptoPrices.md)
+ - [ApiResponseCryptoSnapshot](docs/ApiResponseCryptoSnapshot.md)
+ - [ApiResponseCryptoStats](docs/ApiResponseCryptoStats.md)
  - [ApiResponseDataTags](docs/ApiResponseDataTags.md)
  - [ApiResponseDataTagsSearch](docs/ApiResponseDataTagsSearch.md)
  - [ApiResponseEconomicIndexHistoricalData](docs/ApiResponseEconomicIndexHistoricalData.md)
@@ -179,16 +264,51 @@ Class | Method | HTTP request | Description
  - [ApiResponseMunicipalities](docs/ApiResponseMunicipalities.md)
  - [ApiResponseMunicipalitiyFinancials](docs/ApiResponseMunicipalitiyFinancials.md)
  - [ApiResponseNews](docs/ApiResponseNews.md)
+ - [ApiResponseOptionPrices](docs/ApiResponseOptionPrices.md)
+ - [ApiResponseOptions](docs/ApiResponseOptions.md)
+ - [ApiResponseOptionsChain](docs/ApiResponseOptionsChain.md)
+ - [ApiResponseOptionsExpirations](docs/ApiResponseOptionsExpirations.md)
  - [ApiResponseReportedFinancials](docs/ApiResponseReportedFinancials.md)
  - [ApiResponseSICIndexHistoricalData](docs/ApiResponseSICIndexHistoricalData.md)
  - [ApiResponseSICIndices](docs/ApiResponseSICIndices.md)
  - [ApiResponseSICIndicesSearch](docs/ApiResponseSICIndicesSearch.md)
  - [ApiResponseSecurities](docs/ApiResponseSecurities.md)
  - [ApiResponseSecuritiesSearch](docs/ApiResponseSecuritiesSearch.md)
+ - [ApiResponseSecurityAccumulationDistributionIndex](docs/ApiResponseSecurityAccumulationDistributionIndex.md)
+ - [ApiResponseSecurityAverageDailyTradingVolume](docs/ApiResponseSecurityAverageDailyTradingVolume.md)
+ - [ApiResponseSecurityAverageDirectionalIndex](docs/ApiResponseSecurityAverageDirectionalIndex.md)
+ - [ApiResponseSecurityAverageTrueRange](docs/ApiResponseSecurityAverageTrueRange.md)
+ - [ApiResponseSecurityAwesomeOscillator](docs/ApiResponseSecurityAwesomeOscillator.md)
+ - [ApiResponseSecurityBollingerBands](docs/ApiResponseSecurityBollingerBands.md)
+ - [ApiResponseSecurityChaikinMoneyFlow](docs/ApiResponseSecurityChaikinMoneyFlow.md)
+ - [ApiResponseSecurityCommodityChannelIndex](docs/ApiResponseSecurityCommodityChannelIndex.md)
+ - [ApiResponseSecurityDetrendedPriceOscillator](docs/ApiResponseSecurityDetrendedPriceOscillator.md)
+ - [ApiResponseSecurityDonchianChannel](docs/ApiResponseSecurityDonchianChannel.md)
+ - [ApiResponseSecurityEaseOfMovement](docs/ApiResponseSecurityEaseOfMovement.md)
+ - [ApiResponseSecurityForceIndex](docs/ApiResponseSecurityForceIndex.md)
  - [ApiResponseSecurityHistoricalData](docs/ApiResponseSecurityHistoricalData.md)
+ - [ApiResponseSecurityIchimokuKinkoHyo](docs/ApiResponseSecurityIchimokuKinkoHyo.md)
  - [ApiResponseSecurityIntradayPrices](docs/ApiResponseSecurityIntradayPrices.md)
+ - [ApiResponseSecurityKeltnerChannel](docs/ApiResponseSecurityKeltnerChannel.md)
+ - [ApiResponseSecurityKnowSureThing](docs/ApiResponseSecurityKnowSureThing.md)
+ - [ApiResponseSecurityMassIndex](docs/ApiResponseSecurityMassIndex.md)
+ - [ApiResponseSecurityMoneyFlowIndex](docs/ApiResponseSecurityMoneyFlowIndex.md)
+ - [ApiResponseSecurityMovingAverageConvergenceDivergence](docs/ApiResponseSecurityMovingAverageConvergenceDivergence.md)
+ - [ApiResponseSecurityNegativeVolumeIndex](docs/ApiResponseSecurityNegativeVolumeIndex.md)
+ - [ApiResponseSecurityOnBalanceVolume](docs/ApiResponseSecurityOnBalanceVolume.md)
+ - [ApiResponseSecurityOnBalanceVolumeMean](docs/ApiResponseSecurityOnBalanceVolumeMean.md)
+ - [ApiResponseSecurityRelativeStrengthIndex](docs/ApiResponseSecurityRelativeStrengthIndex.md)
+ - [ApiResponseSecuritySimpleMovingAverage](docs/ApiResponseSecuritySimpleMovingAverage.md)
+ - [ApiResponseSecurityStochasticOscillator](docs/ApiResponseSecurityStochasticOscillator.md)
  - [ApiResponseSecurityStockPriceAdjustments](docs/ApiResponseSecurityStockPriceAdjustments.md)
  - [ApiResponseSecurityStockPrices](docs/ApiResponseSecurityStockPrices.md)
+ - [ApiResponseSecurityTripleExponentialAverage](docs/ApiResponseSecurityTripleExponentialAverage.md)
+ - [ApiResponseSecurityTrueStrengthIndex](docs/ApiResponseSecurityTrueStrengthIndex.md)
+ - [ApiResponseSecurityUltimateOscillator](docs/ApiResponseSecurityUltimateOscillator.md)
+ - [ApiResponseSecurityVolumePriceTrend](docs/ApiResponseSecurityVolumePriceTrend.md)
+ - [ApiResponseSecurityVolumeWeightedAveragePrice](docs/ApiResponseSecurityVolumeWeightedAveragePrice.md)
+ - [ApiResponseSecurityVortexIndicator](docs/ApiResponseSecurityVortexIndicator.md)
+ - [ApiResponseSecurityWilliamsR](docs/ApiResponseSecurityWilliamsR.md)
  - [ApiResponseStandardizedFinancials](docs/ApiResponseStandardizedFinancials.md)
  - [ApiResponseStockExchangeRealtimeStockPrices](docs/ApiResponseStockExchangeRealtimeStockPrices.md)
  - [ApiResponseStockExchangeSecurities](docs/ApiResponseStockExchangeSecurities.md)
@@ -198,15 +318,36 @@ Class | Method | HTTP request | Description
  - [ApiResponseStockMarketIndexHistoricalData](docs/ApiResponseStockMarketIndexHistoricalData.md)
  - [ApiResponseStockMarketIndices](docs/ApiResponseStockMarketIndices.md)
  - [ApiResponseStockMarketIndicesSearch](docs/ApiResponseStockMarketIndicesSearch.md)
+ - [AverageDailyTradingVolumeTechnicalValue](docs/AverageDailyTradingVolumeTechnicalValue.md)
+ - [AverageDirectionalIndexTechnicalValue](docs/AverageDirectionalIndexTechnicalValue.md)
+ - [AverageTrueRangeTechnicalValue](docs/AverageTrueRangeTechnicalValue.md)
+ - [AwesomeOscillatorTechnicalValue](docs/AwesomeOscillatorTechnicalValue.md)
+ - [BollingerBandsTechnicalValue](docs/BollingerBandsTechnicalValue.md)
+ - [ChaikinMoneyFlowTechnicalValue](docs/ChaikinMoneyFlowTechnicalValue.md)
+ - [CommodityChannelIndexTechnicalValue](docs/CommodityChannelIndexTechnicalValue.md)
  - [Company](docs/Company.md)
  - [CompanyFiling](docs/CompanyFiling.md)
  - [CompanyNews](docs/CompanyNews.md)
  - [CompanyNewsSummary](docs/CompanyNewsSummary.md)
  - [CompanySummary](docs/CompanySummary.md)
+ - [CryptoAsk](docs/CryptoAsk.md)
+ - [CryptoBid](docs/CryptoBid.md)
+ - [CryptoBookEntry](docs/CryptoBookEntry.md)
+ - [CryptoCurrency](docs/CryptoCurrency.md)
+ - [CryptoExchange](docs/CryptoExchange.md)
+ - [CryptoExchangeSummary](docs/CryptoExchangeSummary.md)
+ - [CryptoPair](docs/CryptoPair.md)
+ - [CryptoPairSummary](docs/CryptoPairSummary.md)
+ - [CryptoPrice](docs/CryptoPrice.md)
+ - [CryptoSnapshot](docs/CryptoSnapshot.md)
+ - [CryptoStat](docs/CryptoStat.md)
  - [DataTag](docs/DataTag.md)
  - [DataTagSummary](docs/DataTagSummary.md)
+ - [DetrendedPriceOscillatorTechnicalValue](docs/DetrendedPriceOscillatorTechnicalValue.md)
  - [DividendRecord](docs/DividendRecord.md)
+ - [DonchianChannelTechnicalValue](docs/DonchianChannelTechnicalValue.md)
  - [EarningsRecord](docs/EarningsRecord.md)
+ - [EaseOfMovementTechnicalValue](docs/EaseOfMovementTechnicalValue.md)
  - [EconomicIndex](docs/EconomicIndex.md)
  - [EconomicIndexSummary](docs/EconomicIndexSummary.md)
  - [Filing](docs/Filing.md)
@@ -214,18 +355,33 @@ Class | Method | HTTP request | Description
  - [FilingNoteFiling](docs/FilingNoteFiling.md)
  - [FilingNoteSummary](docs/FilingNoteSummary.md)
  - [FilingSummary](docs/FilingSummary.md)
+ - [ForceIndexTechnicalValue](docs/ForceIndexTechnicalValue.md)
  - [ForexCurrency](docs/ForexCurrency.md)
  - [ForexPair](docs/ForexPair.md)
  - [ForexPrice](docs/ForexPrice.md)
  - [Fundamental](docs/Fundamental.md)
  - [FundamentalSummary](docs/FundamentalSummary.md)
  - [HistoricalData](docs/HistoricalData.md)
+ - [IchimokuKinkoHyoTechnicalValue](docs/IchimokuKinkoHyoTechnicalValue.md)
  - [IntradayStockPrice](docs/IntradayStockPrice.md)
+ - [KeltnerChannelTechnicalValue](docs/KeltnerChannelTechnicalValue.md)
+ - [KnowSureThingTechnicalValue](docs/KnowSureThingTechnicalValue.md)
+ - [MassIndexTechnicalValue](docs/MassIndexTechnicalValue.md)
+ - [MoneyFlowIndexTechnicalValue](docs/MoneyFlowIndexTechnicalValue.md)
+ - [MovingAverageConvergenceDivergenceTechnicalValue](docs/MovingAverageConvergenceDivergenceTechnicalValue.md)
  - [Municipality](docs/Municipality.md)
  - [MunicipalityFinancial](docs/MunicipalityFinancial.md)
+ - [NegativeVolumeIndexTechnicalValue](docs/NegativeVolumeIndexTechnicalValue.md)
+ - [OnBalanceVolumeMeanTechnicalValue](docs/OnBalanceVolumeMeanTechnicalValue.md)
+ - [OnBalanceVolumeTechnicalValue](docs/OnBalanceVolumeTechnicalValue.md)
+ - [Option](docs/Option.md)
+ - [OptionChain](docs/OptionChain.md)
+ - [OptionPrice](docs/OptionPrice.md)
  - [RealtimeStockPrice](docs/RealtimeStockPrice.md)
  - [RealtimeStockPriceSecurity](docs/RealtimeStockPriceSecurity.md)
+ - [RelativeStrengthIndexTechnicalValue](docs/RelativeStrengthIndexTechnicalValue.md)
  - [ReportedFinancial](docs/ReportedFinancial.md)
+ - [ReportedFinancialDimension](docs/ReportedFinancialDimension.md)
  - [ReportedTag](docs/ReportedTag.md)
  - [SICIndex](docs/SICIndex.md)
  - [Security](docs/Security.md)
@@ -234,7 +390,9 @@ Class | Method | HTTP request | Description
  - [SecurityScreenResult](docs/SecurityScreenResult.md)
  - [SecurityScreenResultData](docs/SecurityScreenResultData.md)
  - [SecuritySummary](docs/SecuritySummary.md)
+ - [SimpleMovingAverageTechnicalValue](docs/SimpleMovingAverageTechnicalValue.md)
  - [StandardizedFinancial](docs/StandardizedFinancial.md)
+ - [StochasticOscillatorTechnicalValue](docs/StochasticOscillatorTechnicalValue.md)
  - [StockExchange](docs/StockExchange.md)
  - [StockMarketIndex](docs/StockMarketIndex.md)
  - [StockMarketIndexSummary](docs/StockMarketIndexSummary.md)
@@ -242,4 +400,12 @@ Class | Method | HTTP request | Description
  - [StockPriceAdjustment](docs/StockPriceAdjustment.md)
  - [StockPriceAdjustmentSummary](docs/StockPriceAdjustmentSummary.md)
  - [StockPriceSummary](docs/StockPriceSummary.md)
+ - [TechnicalIndicator](docs/TechnicalIndicator.md)
+ - [TripleExponentialAverageTechnicalValue](docs/TripleExponentialAverageTechnicalValue.md)
+ - [TrueStrengthIndexTechnicalValue](docs/TrueStrengthIndexTechnicalValue.md)
+ - [UltimateOscillatorTechnicalValue](docs/UltimateOscillatorTechnicalValue.md)
+ - [VolumePriceTrendTechnicalValue](docs/VolumePriceTrendTechnicalValue.md)
+ - [VolumeWeightedAveragePriceValue](docs/VolumeWeightedAveragePriceValue.md)
+ - [VortexIndicatorTechnicalValue](docs/VortexIndicatorTechnicalValue.md)
+ - [WilliamsRTechnicalValue](docs/WilliamsRTechnicalValue.md)
 

@@ -69,7 +69,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
-id = 'fun_ge9LlE' # str | The Intrinio ID for the Fundamental
+id = 'AAPL-income_statement-2018-Q1' # str | The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental
 
 try:
     api_response = fundamentals_api.get_fundamental_reported_financials(id)
@@ -82,7 +82,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| The Intrinio ID for the Fundamental | 
+ **id** | **str**| The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental | 
 
 ### Return type
 
@@ -109,7 +109,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 fundamentals_api = intrinio_sdk.FundamentalsApi()
 
-id = 'fun_ge9LlE' # str | The Intrinio ID for the Fundamental
+id = 'AAPL-income_statement-2018-Q1' # str | The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental
 
 try:
     api_response = fundamentals_api.get_fundamental_standardized_financials(id)
@@ -122,7 +122,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| The Intrinio ID for the Fundamental | 
+ **id** | **str**| The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental | 
 
 ### Return type
 

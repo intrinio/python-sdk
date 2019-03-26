@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 Data Point (Number) for Company
 
-Returns a numeric value for the given `tag` for the Company with the given `identifier`
+$$v2_company_data_point_number_description$$
 
 ### Example
 ```python
@@ -173,8 +173,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data tag
+identifier = '$$v2_company_data_point_identifier_default$$' # str | $$v2_company_data_point_identifier_description$$
+tag = '$$v2_company_data_point_item_number_default$$' # str | $$v2_company_data_point_item_description$$
 
 try:
     api_response = company_api.get_company_data_point_number(identifier, tag)
@@ -187,8 +187,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **tag** | **str**| An Intrinio data tag | 
+ **identifier** | **str**| $$v2_company_data_point_identifier_description$$ | 
+ **tag** | **str**| $$v2_company_data_point_item_description$$ | 
 
 ### Return type
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 Data Point (Text) for Company
 
-Returns a text value for the given `tag` for the Company with the given `identifier`
+$$v2_company_data_point_text_description$$
 
 ### Example
 ```python
@@ -215,8 +215,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data tag
+identifier = '$$v2_company_data_point_identifier_default$$' # str | $$v2_company_data_point_identifier_description$$
+tag = '$$v2_company_data_point_item_text_default$$' # str | $$v2_company_data_point_item_description$$
 
 try:
     api_response = company_api.get_company_data_point_text(identifier, tag)
@@ -229,8 +229,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **tag** | **str**| An Intrinio data tag | 
+ **identifier** | **str**| $$v2_company_data_point_identifier_description$$ | 
+ **tag** | **str**| $$v2_company_data_point_item_description$$ | 
 
 ### Return type
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 Historical Data for Company
 
-Returns historical values for the given `tag` and the Company with the given `identifier`
+$$v2_company_historical_data_description$$
 
 ### Example
 ```python
@@ -361,8 +361,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data-tag
+identifier = '$$v2_company_historical_data_identifier_default$$' # str | $$v2_company_historical_data_identifier_description$$
+tag = '$$v2_company_historical_data_item_default$$' # str | $$v2_company_historical_data_item_description$$
 frequency = 'daily' # str | Return historical data in the given frequency (optional) (default to daily)
 type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
@@ -382,8 +382,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **tag** | **str**| An Intrinio data-tag | 
+ **identifier** | **str**| $$v2_company_historical_data_identifier_description$$ | 
+ **tag** | **str**| $$v2_company_historical_data_item_description$$ | 
  **frequency** | **str**| Return historical data in the given frequency | [optional] [default to daily]
  **type** | **str**| Filter by type, when applicable | [optional] 
  **start_date** | **date**| Get historical data on or after this date | [optional] 

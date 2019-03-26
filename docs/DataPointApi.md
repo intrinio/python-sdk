@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Data Point (Number)
 
-Returns a numeric value for the given `tag` and the entity with the given `identifier`
+$$v2_data_point_number_description$$
 
 ### Example
 ```python
@@ -27,8 +27,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_point_api = intrinio_sdk.DataPointApi()
 
-identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data tag ID or code-name
+identifier = '$$v2_data_point_identifier_default$$' # str | $$v2_data_point_identifier_description$$
+tag = '$$v2_data_point_item_number_default$$' # str | $$v2_data_point_item_description$$
 
 try:
     api_response = data_point_api.get_data_point_number(identifier, tag)
@@ -41,8 +41,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) | 
- **tag** | **str**| An Intrinio data tag ID or code-name | 
+ **identifier** | **str**| $$v2_data_point_identifier_description$$ | 
+ **tag** | **str**| $$v2_data_point_item_description$$ | 
 
 ### Return type
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 Data Point (Text)
 
-Returns a text value for the given `tag` and the entity with the given `identifier`
+$$v2_data_point_text_description$$
 
 ### Example
 ```python
@@ -69,8 +69,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_point_api = intrinio_sdk.DataPointApi()
 
-identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data tag ID or code-name
+identifier = '$$v2_data_point_identifier_default$$' # str | $$v2_data_point_identifier_description$$
+tag = '$$v2_data_point_item_text_default$$' # str | $$v2_data_point_item_description$$
 
 try:
     api_response = data_point_api.get_data_point_text(identifier, tag)
@@ -83,8 +83,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) | 
- **tag** | **str**| An Intrinio data tag ID or code-name | 
+ **identifier** | **str**| $$v2_data_point_identifier_description$$ | 
+ **tag** | **str**| $$v2_data_point_item_description$$ | 
 
 ### Return type
 
