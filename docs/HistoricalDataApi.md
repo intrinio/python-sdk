@@ -42,7 +42,7 @@ try:
 except ApiException as e:
     print("Exception when calling HistoricalDataApi->get_historical_data: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

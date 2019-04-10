@@ -36,7 +36,7 @@ try:
 except ApiException as e:
     print("Exception when calling DataPointApi->get_data_point_number: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -80,7 +80,7 @@ try:
 except ApiException as e:
     print("Exception when calling DataPointApi->get_data_point_text: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

@@ -37,7 +37,7 @@ try:
 except ApiException as e:
     print("Exception when calling FundamentalsApi->get_fundamental_by_id: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -79,7 +79,7 @@ try:
 except ApiException as e:
     print("Exception when calling FundamentalsApi->get_fundamental_reported_financials: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -121,7 +121,7 @@ try:
 except ApiException as e:
     print("Exception when calling FundamentalsApi->get_fundamental_standardized_financials: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -166,7 +166,7 @@ try:
 except ApiException as e:
     print("Exception when calling FundamentalsApi->lookup_fundamental: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

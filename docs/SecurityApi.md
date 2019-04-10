@@ -78,7 +78,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_all_securities: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -121,7 +121,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_by_id: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -164,7 +164,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_data_point_number: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -208,7 +208,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_data_point_text: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -259,7 +259,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_historical_data: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -314,7 +314,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_intraday_prices: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -361,7 +361,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_latest_dividend_record: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -403,7 +403,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_latest_earnings_record: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -449,7 +449,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_adi: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -500,7 +500,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_adtv: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -552,7 +552,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_adx: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -605,7 +605,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_ao: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -658,7 +658,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_atr: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -712,7 +712,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_bb: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -767,7 +767,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_cci: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -820,7 +820,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_cmf: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -873,7 +873,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_dc: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -927,7 +927,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_dpo: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -980,7 +980,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_eom: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1031,7 +1031,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_fi: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1084,7 +1084,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_ichimoku: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1138,7 +1138,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_kc: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1198,7 +1198,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_kst: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1261,7 +1261,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_macd: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1316,7 +1316,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_mfi: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1369,7 +1369,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_mi: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1421,7 +1421,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_nvi: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1471,7 +1471,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_obv: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1522,7 +1522,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_obv_mean: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1575,7 +1575,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_rsi: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1629,7 +1629,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_sma: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1683,7 +1683,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_sr: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1736,7 +1736,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_trix: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1790,7 +1790,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_tsi: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1849,7 +1849,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_uo: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1906,7 +1906,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_vi: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1957,7 +1957,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_vpt: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2007,7 +2007,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_vwap: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2058,7 +2058,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_wr: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2106,7 +2106,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_realtime_price: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2153,7 +2153,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_stock_price_adjustments: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2204,7 +2204,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_stock_prices: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2255,7 +2255,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->screen_securities: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2302,7 +2302,7 @@ try:
 except ApiException as e:
     print("Exception when calling SecurityApi->search_securities: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

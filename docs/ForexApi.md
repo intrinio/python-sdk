@@ -35,7 +35,7 @@ try:
 except ApiException as e:
     print("Exception when calling ForexApi->get_forex_currencies: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -73,7 +73,7 @@ try:
 except ApiException as e:
     print("Exception when calling ForexApi->get_forex_pairs: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -120,7 +120,7 @@ try:
 except ApiException as e:
     print("Exception when calling ForexApi->get_forex_prices: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

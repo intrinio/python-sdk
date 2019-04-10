@@ -42,7 +42,7 @@ try:
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_all_stock_exchanges: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -87,7 +87,7 @@ try:
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_by_id: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -132,7 +132,7 @@ try:
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_price_adjustments: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -180,7 +180,7 @@ try:
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_prices: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -228,7 +228,7 @@ try:
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_realtime_prices: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -275,7 +275,7 @@ try:
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_securities: %s\n" % e)
     
-# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
