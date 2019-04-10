@@ -84,6 +84,39 @@ class StockPriceAdjustment(object):
         :rtype: date
         """
         return self._date
+        
+    @property
+    def date_dict(self):
+        """Gets the date of this StockPriceAdjustment.  # noqa: E501
+
+        The date on which the adjustment occurred. The adjustment should be applied to all stock prices before this date. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The date of this StockPriceAdjustment.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'date': value }
+
+        
+        return result
+        
 
     @date.setter
     def date(self, date):
@@ -107,6 +140,39 @@ class StockPriceAdjustment(object):
         :rtype: float
         """
         return self._factor
+        
+    @property
+    def factor_dict(self):
+        """Gets the factor of this StockPriceAdjustment.  # noqa: E501
+
+        The factor by which to multiply stock prices before this date, in order to calculate historically-adjusted stock prices. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The factor of this StockPriceAdjustment.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.factor
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'factor': value }
+
+        
+        return result
+        
 
     @factor.setter
     def factor(self, factor):
@@ -130,6 +196,39 @@ class StockPriceAdjustment(object):
         :rtype: float
         """
         return self._dividend
+        
+    @property
+    def dividend_dict(self):
+        """Gets the dividend of this StockPriceAdjustment.  # noqa: E501
+
+        The dividend amount, if a dividend was paid. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The dividend of this StockPriceAdjustment.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.dividend
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'dividend': value }
+
+        
+        return result
+        
 
     @dividend.setter
     def dividend(self, dividend):
@@ -153,6 +252,39 @@ class StockPriceAdjustment(object):
         :rtype: str
         """
         return self._dividend_currency
+        
+    @property
+    def dividend_currency_dict(self):
+        """Gets the dividend_currency of this StockPriceAdjustment.  # noqa: E501
+
+        The currency of the dividend, if known. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The dividend_currency of this StockPriceAdjustment.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.dividend_currency
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'dividend_currency': value }
+
+        
+        return result
+        
 
     @dividend_currency.setter
     def dividend_currency(self, dividend_currency):
@@ -176,6 +308,39 @@ class StockPriceAdjustment(object):
         :rtype: float
         """
         return self._split_ratio
+        
+    @property
+    def split_ratio_dict(self):
+        """Gets the split_ratio of this StockPriceAdjustment.  # noqa: E501
+
+        The ratio of the stock split, if a stock split occurred. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The split_ratio of this StockPriceAdjustment.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.split_ratio
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'split_ratio': value }
+
+        
+        return result
+        
 
     @split_ratio.setter
     def split_ratio(self, split_ratio):
@@ -199,6 +364,39 @@ class StockPriceAdjustment(object):
         :rtype: SecuritySummary
         """
         return self._security
+        
+    @property
+    def security_dict(self):
+        """Gets the security of this StockPriceAdjustment.  # noqa: E501
+
+        The Security of the stock price as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The security of this StockPriceAdjustment.  # noqa: E501
+        :rtype: SecuritySummary
+        """
+
+        result = None
+
+        value = self.security
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'security': value }
+
+        
+        return result
+        
 
     @security.setter
     def security(self, security):

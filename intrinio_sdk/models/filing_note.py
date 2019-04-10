@@ -74,6 +74,39 @@ class FilingNote(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this FilingNote.  # noqa: E501
+
+        The Intrinio ID of the note as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this FilingNote.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -97,6 +130,39 @@ class FilingNote(object):
         :rtype: str
         """
         return self._xbrl_tag
+        
+    @property
+    def xbrl_tag_dict(self):
+        """Gets the xbrl_tag of this FilingNote.  # noqa: E501
+
+        The XBRL Tag used for the note as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The xbrl_tag of this FilingNote.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.xbrl_tag
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'xbrl_tag': value }
+
+        
+        return result
+        
 
     @xbrl_tag.setter
     def xbrl_tag(self, xbrl_tag):
@@ -120,6 +186,39 @@ class FilingNote(object):
         :rtype: str
         """
         return self._content
+        
+    @property
+    def content_dict(self):
+        """Gets the content of this FilingNote.  # noqa: E501
+
+        The plain text (after html has been removed) of the note, or text including html if the content_format parameter has been set to html as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The content of this FilingNote.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.content
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'content': value }
+
+        
+        return result
+        
 
     @content.setter
     def content(self, content):
@@ -142,6 +241,38 @@ class FilingNote(object):
         :rtype: FilingNoteFiling
         """
         return self._filing
+        
+    @property
+    def filing_dict(self):
+        """Gets the filing of this FilingNote.  # noqa: E501
+
+
+        :return: The filing of this FilingNote.  # noqa: E501
+        :rtype: FilingNoteFiling
+        """
+
+        result = None
+
+        value = self.filing
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'filing': value }
+
+        
+        return result
+        
 
     @filing.setter
     def filing(self, filing):

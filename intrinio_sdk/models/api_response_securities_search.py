@@ -58,6 +58,38 @@ class ApiResponseSecuritiesSearch(object):
         :rtype: list[SecuritySummary]
         """
         return self._securities
+        
+    @property
+    def securities_dict(self):
+        """Gets the securities of this ApiResponseSecuritiesSearch.  # noqa: E501
+
+
+        :return: The securities of this ApiResponseSecuritiesSearch.  # noqa: E501
+        :rtype: list[SecuritySummary]
+        """
+
+        result = None
+
+        value = self.securities
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'securities': value }
+
+        
+        return result
+        
 
     @securities.setter
     def securities(self, securities):

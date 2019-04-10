@@ -63,6 +63,38 @@ class ApiResponseSecurities(object):
         :rtype: list[SecuritySummary]
         """
         return self._securities
+        
+    @property
+    def securities_dict(self):
+        """Gets the securities of this ApiResponseSecurities.  # noqa: E501
+
+
+        :return: The securities of this ApiResponseSecurities.  # noqa: E501
+        :rtype: list[SecuritySummary]
+        """
+
+        result = None
+
+        value = self.securities
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'securities': value }
+
+        
+        return result
+        
 
     @securities.setter
     def securities(self, securities):
@@ -85,6 +117,39 @@ class ApiResponseSecurities(object):
         :rtype: str
         """
         return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseSecurities.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseSecurities.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
 
     @next_page.setter
     def next_page(self, next_page):

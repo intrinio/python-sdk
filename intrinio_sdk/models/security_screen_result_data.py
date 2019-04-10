@@ -67,6 +67,39 @@ class SecurityScreenResultData(object):
         :rtype: str
         """
         return self._tag
+        
+    @property
+    def tag_dict(self):
+        """Gets the tag of this SecurityScreenResultData.  # noqa: E501
+
+        The data tag that was screened-for as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The tag of this SecurityScreenResultData.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.tag
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'tag': value }
+
+        
+        return result
+        
 
     @tag.setter
     def tag(self, tag):
@@ -90,6 +123,39 @@ class SecurityScreenResultData(object):
         :rtype: str
         """
         return self._number_value
+        
+    @property
+    def number_value_dict(self):
+        """Gets the number_value of this SecurityScreenResultData.  # noqa: E501
+
+        The numeric value for the tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The number_value of this SecurityScreenResultData.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.number_value
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'number_value': value }
+
+        
+        return result
+        
 
     @number_value.setter
     def number_value(self, number_value):
@@ -113,6 +179,39 @@ class SecurityScreenResultData(object):
         :rtype: str
         """
         return self._text_value
+        
+    @property
+    def text_value_dict(self):
+        """Gets the text_value of this SecurityScreenResultData.  # noqa: E501
+
+        The text value for the tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The text_value of this SecurityScreenResultData.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.text_value
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'text_value': value }
+
+        
+        return result
+        
 
     @text_value.setter
     def text_value(self, text_value):

@@ -65,6 +65,39 @@ class ApiResponseStockExchangeRealtimeStockPrices(object):
         :rtype: list[RealtimeStockPrice]
         """
         return self._stock_prices
+        
+    @property
+    def stock_prices_dict(self):
+        """Gets the stock_prices of this ApiResponseStockExchangeRealtimeStockPrices.  # noqa: E501
+
+        The realtime stock prices for all Securities traded on the Stock Exchange as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The stock_prices of this ApiResponseStockExchangeRealtimeStockPrices.  # noqa: E501
+        :rtype: list[RealtimeStockPrice]
+        """
+
+        result = None
+
+        value = self.stock_prices
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'stock_prices': value }
+
+        
+        return result
+        
 
     @stock_prices.setter
     def stock_prices(self, stock_prices):
@@ -88,6 +121,39 @@ class ApiResponseStockExchangeRealtimeStockPrices(object):
         :rtype: StockExchange
         """
         return self._stock_exchange
+        
+    @property
+    def stock_exchange_dict(self):
+        """Gets the stock_exchange of this ApiResponseStockExchangeRealtimeStockPrices.  # noqa: E501
+
+        The Stock Exchange resolved from the given identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The stock_exchange of this ApiResponseStockExchangeRealtimeStockPrices.  # noqa: E501
+        :rtype: StockExchange
+        """
+
+        result = None
+
+        value = self.stock_exchange
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'stock_exchange': value }
+
+        
+        return result
+        
 
     @stock_exchange.setter
     def stock_exchange(self, stock_exchange):

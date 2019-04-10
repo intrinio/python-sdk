@@ -92,6 +92,39 @@ class CryptoPair(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this CryptoPair.  # noqa: E501
+
+        The Crypto Currency Pair name. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this CryptoPair.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -115,6 +148,39 @@ class CryptoPair(object):
         :rtype: str
         """
         return self._code
+        
+    @property
+    def code_dict(self):
+        """Gets the code of this CryptoPair.  # noqa: E501
+
+        The Crypto Currency Pair code. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The code of this CryptoPair.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'code': value }
+
+        
+        return result
+        
 
     @code.setter
     def code(self, code):
@@ -138,6 +204,39 @@ class CryptoPair(object):
         :rtype: str
         """
         return self._first_price_date
+        
+    @property
+    def first_price_date_dict(self):
+        """Gets the first_price_date of this CryptoPair.  # noqa: E501
+
+        The earliest date that daily historical pricing is available for. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The first_price_date of this CryptoPair.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.first_price_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'first_price_date': value }
+
+        
+        return result
+        
 
     @first_price_date.setter
     def first_price_date(self, first_price_date):
@@ -161,6 +260,39 @@ class CryptoPair(object):
         :rtype: str
         """
         return self._last_price_date
+        
+    @property
+    def last_price_date_dict(self):
+        """Gets the last_price_date of this CryptoPair.  # noqa: E501
+
+        The most recent date that daily historical pricing is available for. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_price_date of this CryptoPair.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.last_price_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_price_date': value }
+
+        
+        return result
+        
 
     @last_price_date.setter
     def last_price_date(self, last_price_date):
@@ -184,6 +316,39 @@ class CryptoPair(object):
         :rtype: bool
         """
         return self._book_depth_available
+        
+    @property
+    def book_depth_available_dict(self):
+        """Gets the book_depth_available of this CryptoPair.  # noqa: E501
+
+        A boolean, representing whether this pair has book depth data available or not. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The book_depth_available of this CryptoPair.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.book_depth_available
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'book_depth_available': value }
+
+        
+        return result
+        
 
     @book_depth_available.setter
     def book_depth_available(self, book_depth_available):
@@ -207,6 +372,39 @@ class CryptoPair(object):
         :rtype: bool
         """
         return self._history_available
+        
+    @property
+    def history_available_dict(self):
+        """Gets the history_available of this CryptoPair.  # noqa: E501
+
+        A boolean, representing whether this pair has historical price data available or not. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The history_available of this CryptoPair.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.history_available
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'history_available': value }
+
+        
+        return result
+        
 
     @history_available.setter
     def history_available(self, history_available):
@@ -230,6 +428,39 @@ class CryptoPair(object):
         :rtype: bool
         """
         return self._snapshot_available
+        
+    @property
+    def snapshot_available_dict(self):
+        """Gets the snapshot_available of this CryptoPair.  # noqa: E501
+
+        A boolean, representing whether this pair has snapshot data available or not. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The snapshot_available of this CryptoPair.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.snapshot_available
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'snapshot_available': value }
+
+        
+        return result
+        
 
     @snapshot_available.setter
     def snapshot_available(self, snapshot_available):
@@ -253,6 +484,39 @@ class CryptoPair(object):
         :rtype: bool
         """
         return self._trades_available
+        
+    @property
+    def trades_available_dict(self):
+        """Gets the trades_available of this CryptoPair.  # noqa: E501
+
+        A boolean, representing whether this pair has trade data available or not. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The trades_available of this CryptoPair.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.trades_available
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'trades_available': value }
+
+        
+        return result
+        
 
     @trades_available.setter
     def trades_available(self, trades_available):

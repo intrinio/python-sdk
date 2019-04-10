@@ -169,6 +169,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._quarter
+        
+    @property
+    def quarter_dict(self):
+        """Gets the quarter of this EarningsRecord.  # noqa: E501
+
+        The letter “Q” followed by the quarter number the earnings information applies to as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The quarter of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.quarter
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'quarter': value }
+
+        
+        return result
+        
 
     @quarter.setter
     def quarter(self, quarter):
@@ -192,6 +225,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._time_of_day
+        
+    @property
+    def time_of_day_dict(self):
+        """Gets the time_of_day of this EarningsRecord.  # noqa: E501
+
+        Indicates the time of the announcement as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The time_of_day of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.time_of_day
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'time_of_day': value }
+
+        
+        return result
+        
 
     @time_of_day.setter
     def time_of_day(self, time_of_day):
@@ -221,6 +287,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._broadcast_url
+        
+    @property
+    def broadcast_url_dict(self):
+        """Gets the broadcast_url of this EarningsRecord.  # noqa: E501
+
+        Link for Conference Call recording as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The broadcast_url of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.broadcast_url
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'broadcast_url': value }
+
+        
+        return result
+        
 
     @broadcast_url.setter
     def broadcast_url(self, broadcast_url):
@@ -244,6 +343,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._transcript_url
+        
+    @property
+    def transcript_url_dict(self):
+        """Gets the transcript_url of this EarningsRecord.  # noqa: E501
+
+        Link to the earnings release transcript as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The transcript_url of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.transcript_url
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'transcript_url': value }
+
+        
+        return result
+        
 
     @transcript_url.setter
     def transcript_url(self, transcript_url):
@@ -267,6 +399,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._transcript_quarter
+        
+    @property
+    def transcript_quarter_dict(self):
+        """Gets the transcript_quarter of this EarningsRecord.  # noqa: E501
+
+        The letter “Q” followed by the quarter number the earnings transcript applies to as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The transcript_quarter of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.transcript_quarter
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'transcript_quarter': value }
+
+        
+        return result
+        
 
     @transcript_quarter.setter
     def transcript_quarter(self, transcript_quarter):
@@ -290,6 +455,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._transcript_fiscal_year
+        
+    @property
+    def transcript_fiscal_year_dict(self):
+        """Gets the transcript_fiscal_year of this EarningsRecord.  # noqa: E501
+
+        Fiscal year in YYYY format for the earnings transcript as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The transcript_fiscal_year of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.transcript_fiscal_year
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'transcript_fiscal_year': value }
+
+        
+        return result
+        
 
     @transcript_fiscal_year.setter
     def transcript_fiscal_year(self, transcript_fiscal_year):
@@ -313,6 +511,39 @@ class EarningsRecord(object):
         :rtype: date
         """
         return self._conference_call_date
+        
+    @property
+    def conference_call_date_dict(self):
+        """Gets the conference_call_date of this EarningsRecord.  # noqa: E501
+
+        Date of the conference call as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The conference_call_date of this EarningsRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.conference_call_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'conference_call_date': value }
+
+        
+        return result
+        
 
     @conference_call_date.setter
     def conference_call_date(self, conference_call_date):
@@ -336,6 +567,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._conference_call_time
+        
+    @property
+    def conference_call_time_dict(self):
+        """Gets the conference_call_time of this EarningsRecord.  # noqa: E501
+
+        Published time of the conference call as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The conference_call_time of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.conference_call_time
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'conference_call_time': value }
+
+        
+        return result
+        
 
     @conference_call_time.setter
     def conference_call_time(self, conference_call_time):
@@ -359,6 +623,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._conference_call_phone_number
+        
+    @property
+    def conference_call_phone_number_dict(self):
+        """Gets the conference_call_phone_number of this EarningsRecord.  # noqa: E501
+
+        Publicly available phone number for replay conference call as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The conference_call_phone_number of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.conference_call_phone_number
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'conference_call_phone_number': value }
+
+        
+        return result
+        
 
     @conference_call_phone_number.setter
     def conference_call_phone_number(self, conference_call_phone_number):
@@ -382,6 +679,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._conference_call_passcode
+        
+    @property
+    def conference_call_passcode_dict(self):
+        """Gets the conference_call_passcode of this EarningsRecord.  # noqa: E501
+
+        Passcode for replay conference call as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The conference_call_passcode of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.conference_call_passcode
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'conference_call_passcode': value }
+
+        
+        return result
+        
 
     @conference_call_passcode.setter
     def conference_call_passcode(self, conference_call_passcode):
@@ -405,6 +735,39 @@ class EarningsRecord(object):
         :rtype: date
         """
         return self._last_confirmation_date
+        
+    @property
+    def last_confirmation_date_dict(self):
+        """Gets the last_confirmation_date of this EarningsRecord.  # noqa: E501
+
+        Date of last earnings date update by a WSH analyst as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_confirmation_date of this EarningsRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.last_confirmation_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_confirmation_date': value }
+
+        
+        return result
+        
 
     @last_confirmation_date.setter
     def last_confirmation_date(self, last_confirmation_date):
@@ -428,6 +791,39 @@ class EarningsRecord(object):
         :rtype: date
         """
         return self._board_of_directors_meeting_date
+        
+    @property
+    def board_of_directors_meeting_date_dict(self):
+        """Gets the board_of_directors_meeting_date of this EarningsRecord.  # noqa: E501
+
+        Date of Board/Shareholder Meeting as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The board_of_directors_meeting_date of this EarningsRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.board_of_directors_meeting_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'board_of_directors_meeting_date': value }
+
+        
+        return result
+        
 
     @board_of_directors_meeting_date.setter
     def board_of_directors_meeting_date(self, board_of_directors_meeting_date):
@@ -451,6 +847,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._board_of_directors_meeting_type
+        
+    @property
+    def board_of_directors_meeting_type_dict(self):
+        """Gets the board_of_directors_meeting_type of this EarningsRecord.  # noqa: E501
+
+        The type of meeting - \"B\" indicates a Board of Directors meeting and \"S\" indicates a Shareholder meeting as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The board_of_directors_meeting_type of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.board_of_directors_meeting_type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'board_of_directors_meeting_type': value }
+
+        
+        return result
+        
 
     @board_of_directors_meeting_type.setter
     def board_of_directors_meeting_type(self, board_of_directors_meeting_type):
@@ -480,6 +909,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._company_website
+        
+    @property
+    def company_website_dict(self):
+        """Gets the company_website of this EarningsRecord.  # noqa: E501
+
+        Website link for the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The company_website of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.company_website
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'company_website': value }
+
+        
+        return result
+        
 
     @company_website.setter
     def company_website(self, company_website):
@@ -503,6 +965,39 @@ class EarningsRecord(object):
         :rtype: date
         """
         return self._q1_date
+        
+    @property
+    def q1_date_dict(self):
+        """Gets the q1_date of this EarningsRecord.  # noqa: E501
+
+        Earnings Date for 1st quarter as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The q1_date of this EarningsRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.q1_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'q1_date': value }
+
+        
+        return result
+        
 
     @q1_date.setter
     def q1_date(self, q1_date):
@@ -526,6 +1021,39 @@ class EarningsRecord(object):
         :rtype: date
         """
         return self._q2_date
+        
+    @property
+    def q2_date_dict(self):
+        """Gets the q2_date of this EarningsRecord.  # noqa: E501
+
+        Earnings Date for 2nd quarter as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The q2_date of this EarningsRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.q2_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'q2_date': value }
+
+        
+        return result
+        
 
     @q2_date.setter
     def q2_date(self, q2_date):
@@ -549,6 +1077,39 @@ class EarningsRecord(object):
         :rtype: date
         """
         return self._q3_date
+        
+    @property
+    def q3_date_dict(self):
+        """Gets the q3_date of this EarningsRecord.  # noqa: E501
+
+        Earnings Date for 3rd quarter as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The q3_date of this EarningsRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.q3_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'q3_date': value }
+
+        
+        return result
+        
 
     @q3_date.setter
     def q3_date(self, q3_date):
@@ -572,6 +1133,39 @@ class EarningsRecord(object):
         :rtype: date
         """
         return self._q4_date
+        
+    @property
+    def q4_date_dict(self):
+        """Gets the q4_date of this EarningsRecord.  # noqa: E501
+
+        Earnings Date for 4th quarter as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The q4_date of this EarningsRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.q4_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'q4_date': value }
+
+        
+        return result
+        
 
     @q4_date.setter
     def q4_date(self, q4_date):
@@ -595,6 +1189,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._type
+        
+    @property
+    def type_dict(self):
+        """Gets the type of this EarningsRecord.  # noqa: E501
+
+        The nature of the next reported earnings date - \"V\" indicates a Verified date, \"T\" indicates that the date was gathered from the company, but is still considered Tentative, and \"I\" indicates that the date is forecased or Inferred as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The type of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'type': value }
+
+        
+        return result
+        
 
     @type.setter
     def type(self, type):
@@ -624,6 +1251,39 @@ class EarningsRecord(object):
         :rtype: date
         """
         return self._next_earnings_date
+        
+    @property
+    def next_earnings_date_dict(self):
+        """Gets the next_earnings_date of this EarningsRecord.  # noqa: E501
+
+        Next earnings date as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_earnings_date of this EarningsRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.next_earnings_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_earnings_date': value }
+
+        
+        return result
+        
 
     @next_earnings_date.setter
     def next_earnings_date(self, next_earnings_date):
@@ -647,6 +1307,39 @@ class EarningsRecord(object):
         :rtype: str
         """
         return self._next_earnings_quarter
+        
+    @property
+    def next_earnings_quarter_dict(self):
+        """Gets the next_earnings_quarter of this EarningsRecord.  # noqa: E501
+
+        The quarter of the next earnings release as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_earnings_quarter of this EarningsRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_earnings_quarter
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_earnings_quarter': value }
+
+        
+        return result
+        
 
     @next_earnings_quarter.setter
     def next_earnings_quarter(self, next_earnings_quarter):
@@ -670,6 +1363,39 @@ class EarningsRecord(object):
         :rtype: int
         """
         return self._next_earnings_fiscal_year
+        
+    @property
+    def next_earnings_fiscal_year_dict(self):
+        """Gets the next_earnings_fiscal_year of this EarningsRecord.  # noqa: E501
+
+        The fiscal year associated with next earnings date and next earnings quarter as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_earnings_fiscal_year of this EarningsRecord.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.next_earnings_fiscal_year
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_earnings_fiscal_year': value }
+
+        
+        return result
+        
 
     @next_earnings_fiscal_year.setter
     def next_earnings_fiscal_year(self, next_earnings_fiscal_year):
@@ -692,6 +1418,38 @@ class EarningsRecord(object):
         :rtype: SecuritySummary
         """
         return self._security
+        
+    @property
+    def security_dict(self):
+        """Gets the security of this EarningsRecord.  # noqa: E501
+
+
+        :return: The security of this EarningsRecord.  # noqa: E501
+        :rtype: SecuritySummary
+        """
+
+        result = None
+
+        value = self.security
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'security': value }
+
+        
+        return result
+        
 
     @security.setter
     def security(self, security):

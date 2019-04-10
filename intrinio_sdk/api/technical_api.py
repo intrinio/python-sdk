@@ -1732,9 +1732,8 @@ class TechnicalApi(object):
         :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
         :param int roc1: The number of observations, per period, to calculate the rate-of-change for RCMA1
         :param int roc2: The number of observations, per period, to calculate the rate-of-change for RCMA2
-        :param int roc3: The number of observations, per period, to calculate the rate-of-change for RCMA2
-        :param int roc4: The number of observations, per period, to calculate the rate-of-change for RCMA3
-        :param int roc5: The number of observations, per period, to calculate the rate-of-change for RCMA4
+        :param int roc3: The number of observations, per period, to calculate the rate-of-change for RCMA3
+        :param int roc4: The number of observations, per period, to calculate the rate-of-change for RCMA4
         :param int sma1: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1
         :param int sma2: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2
         :param int sma3: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3
@@ -1768,9 +1767,8 @@ class TechnicalApi(object):
         :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
         :param int roc1: The number of observations, per period, to calculate the rate-of-change for RCMA1
         :param int roc2: The number of observations, per period, to calculate the rate-of-change for RCMA2
-        :param int roc3: The number of observations, per period, to calculate the rate-of-change for RCMA2
-        :param int roc4: The number of observations, per period, to calculate the rate-of-change for RCMA3
-        :param int roc5: The number of observations, per period, to calculate the rate-of-change for RCMA4
+        :param int roc3: The number of observations, per period, to calculate the rate-of-change for RCMA3
+        :param int roc4: The number of observations, per period, to calculate the rate-of-change for RCMA4
         :param int sma1: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1
         :param int sma2: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2
         :param int sma3: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3
@@ -1785,7 +1783,7 @@ class TechnicalApi(object):
                  returns the request thread.
         """
 
-        all_params = ['identifier', 'roc1', 'roc2', 'roc3', 'roc4', 'roc5', 'sma1', 'sma2', 'sma3', 'sma4', 'price_key', 'start_date', 'end_date', 'page_size', 'next_page']  # noqa: E501
+        all_params = ['identifier', 'roc1', 'roc2', 'roc3', 'roc4', 'sma1', 'sma2', 'sma3', 'sma4', 'price_key', 'start_date', 'end_date', 'page_size', 'next_page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1805,8 +1803,8 @@ class TechnicalApi(object):
                 params['identifier'] is None):
             raise ValueError("Missing the required parameter `identifier` when calling `get_security_price_technicals_kst`")  # noqa: E501
 
-        if 'roc5' in params and params['roc5'] < 3:  # noqa: E501
-            raise ValueError("Invalid value for parameter `roc5` when calling `get_security_price_technicals_kst`, must be a value greater than or equal to `3`")  # noqa: E501
+        if 'roc4' in params and params['roc4'] < 3:  # noqa: E501
+            raise ValueError("Invalid value for parameter `roc4` when calling `get_security_price_technicals_kst`, must be a value greater than or equal to `3`")  # noqa: E501
         if 'sma4' in params and params['sma4'] < 3:  # noqa: E501
             raise ValueError("Invalid value for parameter `sma4` when calling `get_security_price_technicals_kst`, must be a value greater than or equal to `3`")  # noqa: E501
         if 'page_size' in params and params['page_size'] > 10000:  # noqa: E501
@@ -1823,11 +1821,9 @@ class TechnicalApi(object):
         if 'roc2' in params:
             query_params.append(('roc2', params['roc2']))  # noqa: E501
         if 'roc3' in params:
-            query_params.append(('roc2', params['roc3']))  # noqa: E501
+            query_params.append(('roc3', params['roc3']))  # noqa: E501
         if 'roc4' in params:
-            query_params.append(('roc3', params['roc4']))  # noqa: E501
-        if 'roc5' in params:
-            query_params.append(('roc4', params['roc5']))  # noqa: E501
+            query_params.append(('roc4', params['roc4']))  # noqa: E501
         if 'sma1' in params:
             query_params.append(('sma1', params['sma1']))  # noqa: E501
         if 'sma2' in params:

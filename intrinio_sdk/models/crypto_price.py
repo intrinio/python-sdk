@@ -82,6 +82,39 @@ class CryptoPrice(object):
         :rtype: str
         """
         return self._time
+        
+    @property
+    def time_dict(self):
+        """Gets the time of this CryptoPrice.  # noqa: E501
+
+        The date and time of the beginning of the timeframe (in UTC). The open prices would be at this time, while close prices would be at this time plus the timeframe. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The time of this CryptoPrice.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.time
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'time': value }
+
+        
+        return result
+        
 
     @time.setter
     def time(self, time):
@@ -105,6 +138,39 @@ class CryptoPrice(object):
         :rtype: float
         """
         return self._open
+        
+    @property
+    def open_dict(self):
+        """Gets the open of this CryptoPrice.  # noqa: E501
+
+        The opening price of the timeframe. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The open of this CryptoPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.open
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'open': value }
+
+        
+        return result
+        
 
     @open.setter
     def open(self, open):
@@ -128,6 +194,39 @@ class CryptoPrice(object):
         :rtype: float
         """
         return self._high
+        
+    @property
+    def high_dict(self):
+        """Gets the high of this CryptoPrice.  # noqa: E501
+
+        The high price of the timeframe. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The high of this CryptoPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.high
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'high': value }
+
+        
+        return result
+        
 
     @high.setter
     def high(self, high):
@@ -151,6 +250,39 @@ class CryptoPrice(object):
         :rtype: float
         """
         return self._low
+        
+    @property
+    def low_dict(self):
+        """Gets the low of this CryptoPrice.  # noqa: E501
+
+        The low price of the timeframe. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The low of this CryptoPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.low
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'low': value }
+
+        
+        return result
+        
 
     @low.setter
     def low(self, low):
@@ -174,6 +306,39 @@ class CryptoPrice(object):
         :rtype: float
         """
         return self._close
+        
+    @property
+    def close_dict(self):
+        """Gets the close of this CryptoPrice.  # noqa: E501
+
+        The closing price of the timeframe. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The close of this CryptoPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.close
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'close': value }
+
+        
+        return result
+        
 
     @close.setter
     def close(self, close):
@@ -197,6 +362,39 @@ class CryptoPrice(object):
         :rtype: float
         """
         return self._volume
+        
+    @property
+    def volume_dict(self):
+        """Gets the volume of this CryptoPrice.  # noqa: E501
+
+        The volume during the timeframe. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The volume of this CryptoPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.volume
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'volume': value }
+
+        
+        return result
+        
 
     @volume.setter
     def volume(self, volume):

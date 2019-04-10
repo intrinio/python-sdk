@@ -92,6 +92,39 @@ class FundamentalSummary(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this FundamentalSummary.  # noqa: E501
+
+        The Intrinio ID of the Fundamental as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this FundamentalSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -115,6 +148,39 @@ class FundamentalSummary(object):
         :rtype: str
         """
         return self._statement_code
+        
+    @property
+    def statement_code_dict(self):
+        """Gets the statement_code of this FundamentalSummary.  # noqa: E501
+
+        The code of the financial statement that the Fundamental represents as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The statement_code of this FundamentalSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.statement_code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'statement_code': value }
+
+        
+        return result
+        
 
     @statement_code.setter
     def statement_code(self, statement_code):
@@ -138,6 +204,39 @@ class FundamentalSummary(object):
         :rtype: float
         """
         return self._fiscal_year
+        
+    @property
+    def fiscal_year_dict(self):
+        """Gets the fiscal_year of this FundamentalSummary.  # noqa: E501
+
+        The fiscal year as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The fiscal_year of this FundamentalSummary.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.fiscal_year
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'fiscal_year': value }
+
+        
+        return result
+        
 
     @fiscal_year.setter
     def fiscal_year(self, fiscal_year):
@@ -161,6 +260,39 @@ class FundamentalSummary(object):
         :rtype: str
         """
         return self._fiscal_period
+        
+    @property
+    def fiscal_period_dict(self):
+        """Gets the fiscal_period of this FundamentalSummary.  # noqa: E501
+
+        The fiscal period as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The fiscal_period of this FundamentalSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.fiscal_period
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'fiscal_period': value }
+
+        
+        return result
+        
 
     @fiscal_period.setter
     def fiscal_period(self, fiscal_period):
@@ -184,6 +316,39 @@ class FundamentalSummary(object):
         :rtype: str
         """
         return self._type
+        
+    @property
+    def type_dict(self):
+        """Gets the type of this FundamentalSummary.  # noqa: E501
+
+        The type of Fundamental as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The type of this FundamentalSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'type': value }
+
+        
+        return result
+        
 
     @type.setter
     def type(self, type):
@@ -213,6 +378,39 @@ class FundamentalSummary(object):
         :rtype: date
         """
         return self._start_date
+        
+    @property
+    def start_date_dict(self):
+        """Gets the start_date of this FundamentalSummary.  # noqa: E501
+
+        The period start date as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The start_date of this FundamentalSummary.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.start_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'start_date': value }
+
+        
+        return result
+        
 
     @start_date.setter
     def start_date(self, start_date):
@@ -236,6 +434,39 @@ class FundamentalSummary(object):
         :rtype: date
         """
         return self._end_date
+        
+    @property
+    def end_date_dict(self):
+        """Gets the end_date of this FundamentalSummary.  # noqa: E501
+
+        The period start date as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The end_date of this FundamentalSummary.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.end_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'end_date': value }
+
+        
+        return result
+        
 
     @end_date.setter
     def end_date(self, end_date):
@@ -259,6 +490,39 @@ class FundamentalSummary(object):
         :rtype: datetime
         """
         return self._filing_date
+        
+    @property
+    def filing_date_dict(self):
+        """Gets the filing_date of this FundamentalSummary.  # noqa: E501
+
+        The date and time when the Fundamental was filed with the SEC as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The filing_date of this FundamentalSummary.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.filing_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'filing_date': value }
+
+        
+        return result
+        
 
     @filing_date.setter
     def filing_date(self, filing_date):

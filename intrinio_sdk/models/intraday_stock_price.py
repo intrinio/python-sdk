@@ -92,6 +92,39 @@ class IntradayStockPrice(object):
         :rtype: datetime
         """
         return self._time
+        
+    @property
+    def time_dict(self):
+        """Gets the time of this IntradayStockPrice.  # noqa: E501
+
+        The timestamp that the `last_price` represents. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The time of this IntradayStockPrice.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.time
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'time': value }
+
+        
+        return result
+        
 
     @time.setter
     def time(self, time):
@@ -115,6 +148,39 @@ class IntradayStockPrice(object):
         :rtype: float
         """
         return self._last_price
+        
+    @property
+    def last_price_dict(self):
+        """Gets the last_price of this IntradayStockPrice.  # noqa: E501
+
+        The price of the last trade. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_price of this IntradayStockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.last_price
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_price': value }
+
+        
+        return result
+        
 
     @last_price.setter
     def last_price(self, last_price):
@@ -138,6 +204,39 @@ class IntradayStockPrice(object):
         :rtype: float
         """
         return self._ask_price
+        
+    @property
+    def ask_price_dict(self):
+        """Gets the ask_price of this IntradayStockPrice.  # noqa: E501
+
+        The price of the top ask order. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ask_price of this IntradayStockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.ask_price
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ask_price': value }
+
+        
+        return result
+        
 
     @ask_price.setter
     def ask_price(self, ask_price):
@@ -161,6 +260,39 @@ class IntradayStockPrice(object):
         :rtype: float
         """
         return self._ask_size
+        
+    @property
+    def ask_size_dict(self):
+        """Gets the ask_size of this IntradayStockPrice.  # noqa: E501
+
+        The size of the top ask order. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ask_size of this IntradayStockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.ask_size
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ask_size': value }
+
+        
+        return result
+        
 
     @ask_size.setter
     def ask_size(self, ask_size):
@@ -184,6 +316,39 @@ class IntradayStockPrice(object):
         :rtype: float
         """
         return self._bid_price
+        
+    @property
+    def bid_price_dict(self):
+        """Gets the bid_price of this IntradayStockPrice.  # noqa: E501
+
+        The price of the top bid order. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The bid_price of this IntradayStockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.bid_price
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'bid_price': value }
+
+        
+        return result
+        
 
     @bid_price.setter
     def bid_price(self, bid_price):
@@ -207,6 +372,39 @@ class IntradayStockPrice(object):
         :rtype: float
         """
         return self._bid_size
+        
+    @property
+    def bid_size_dict(self):
+        """Gets the bid_size of this IntradayStockPrice.  # noqa: E501
+
+        The size of the top bid order. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The bid_size of this IntradayStockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.bid_size
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'bid_size': value }
+
+        
+        return result
+        
 
     @bid_size.setter
     def bid_size(self, bid_size):
@@ -230,6 +428,39 @@ class IntradayStockPrice(object):
         :rtype: float
         """
         return self._volume
+        
+    @property
+    def volume_dict(self):
+        """Gets the volume of this IntradayStockPrice.  # noqa: E501
+
+        The number of shares exchanged during the trading day on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The volume of this IntradayStockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.volume
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'volume': value }
+
+        
+        return result
+        
 
     @volume.setter
     def volume(self, volume):
@@ -253,6 +484,39 @@ class IntradayStockPrice(object):
         :rtype: str
         """
         return self._source
+        
+    @property
+    def source_dict(self):
+        """Gets the source of this IntradayStockPrice.  # noqa: E501
+
+        The source of the data. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The source of this IntradayStockPrice.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.source
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'source': value }
+
+        
+        return result
+        
 
     @source.setter
     def source(self, source):

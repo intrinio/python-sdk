@@ -58,6 +58,38 @@ class ApiResponseForexCurrencies(object):
         :rtype: list[ForexCurrency]
         """
         return self._currencies
+        
+    @property
+    def currencies_dict(self):
+        """Gets the currencies of this ApiResponseForexCurrencies.  # noqa: E501
+
+
+        :return: The currencies of this ApiResponseForexCurrencies.  # noqa: E501
+        :rtype: list[ForexCurrency]
+        """
+
+        result = None
+
+        value = self.currencies
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'currencies': value }
+
+        
+        return result
+        
 
     @currencies.setter
     def currencies(self, currencies):

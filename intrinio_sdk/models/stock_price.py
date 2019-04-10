@@ -124,6 +124,39 @@ class StockPrice(object):
         :rtype: date
         """
         return self._date
+        
+    @property
+    def date_dict(self):
+        """Gets the date of this StockPrice.  # noqa: E501
+
+        The calendar date that the stock price represents. For non-daily stock prices, this represents the last day in the period (end of the week, month, quarter, year, etc) as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The date of this StockPrice.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'date': value }
+
+        
+        return result
+        
 
     @date.setter
     def date(self, date):
@@ -147,6 +180,39 @@ class StockPrice(object):
         :rtype: bool
         """
         return self._intraperiod
+        
+    @property
+    def intraperiod_dict(self):
+        """Gets the intraperiod of this StockPrice.  # noqa: E501
+
+        If true, the stock price represents an unfinished period (be it day, week, quarter, month, or year), meaning that the close price is the latest price available, not the official close price for the period as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The intraperiod of this StockPrice.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.intraperiod
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'intraperiod': value }
+
+        
+        return result
+        
 
     @intraperiod.setter
     def intraperiod(self, intraperiod):
@@ -170,6 +236,39 @@ class StockPrice(object):
         :rtype: str
         """
         return self._frequency
+        
+    @property
+    def frequency_dict(self):
+        """Gets the frequency of this StockPrice.  # noqa: E501
+
+        The type of period that the stock price represents as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The frequency of this StockPrice.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.frequency
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'frequency': value }
+
+        
+        return result
+        
 
     @frequency.setter
     def frequency(self, frequency):
@@ -199,6 +298,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._open
+        
+    @property
+    def open_dict(self):
+        """Gets the open of this StockPrice.  # noqa: E501
+
+        The price at the beginning of the period as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The open of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.open
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'open': value }
+
+        
+        return result
+        
 
     @open.setter
     def open(self, open):
@@ -222,6 +354,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._high
+        
+    @property
+    def high_dict(self):
+        """Gets the high of this StockPrice.  # noqa: E501
+
+        The highest price over the span of the period as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The high of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.high
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'high': value }
+
+        
+        return result
+        
 
     @high.setter
     def high(self, high):
@@ -245,6 +410,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._low
+        
+    @property
+    def low_dict(self):
+        """Gets the low of this StockPrice.  # noqa: E501
+
+        The lowest price over the span of the period as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The low of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.low
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'low': value }
+
+        
+        return result
+        
 
     @low.setter
     def low(self, low):
@@ -268,6 +466,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._close
+        
+    @property
+    def close_dict(self):
+        """Gets the close of this StockPrice.  # noqa: E501
+
+        The price at the end of the period as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The close of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.close
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'close': value }
+
+        
+        return result
+        
 
     @close.setter
     def close(self, close):
@@ -291,6 +522,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._volume
+        
+    @property
+    def volume_dict(self):
+        """Gets the volume of this StockPrice.  # noqa: E501
+
+        The number of shares exchanged during the period as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The volume of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.volume
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'volume': value }
+
+        
+        return result
+        
 
     @volume.setter
     def volume(self, volume):
@@ -314,6 +578,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._adj_open
+        
+    @property
+    def adj_open_dict(self):
+        """Gets the adj_open of this StockPrice.  # noqa: E501
+
+        The price at the beginning of the period, adjusted for splits and dividends as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The adj_open of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.adj_open
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'adj_open': value }
+
+        
+        return result
+        
 
     @adj_open.setter
     def adj_open(self, adj_open):
@@ -337,6 +634,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._adj_high
+        
+    @property
+    def adj_high_dict(self):
+        """Gets the adj_high of this StockPrice.  # noqa: E501
+
+        The highest price over the span of the period, adjusted for splits and dividends as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The adj_high of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.adj_high
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'adj_high': value }
+
+        
+        return result
+        
 
     @adj_high.setter
     def adj_high(self, adj_high):
@@ -360,6 +690,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._adj_low
+        
+    @property
+    def adj_low_dict(self):
+        """Gets the adj_low of this StockPrice.  # noqa: E501
+
+        The lowest price over the span of the period, adjusted for splits and dividends as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The adj_low of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.adj_low
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'adj_low': value }
+
+        
+        return result
+        
 
     @adj_low.setter
     def adj_low(self, adj_low):
@@ -383,6 +746,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._adj_close
+        
+    @property
+    def adj_close_dict(self):
+        """Gets the adj_close of this StockPrice.  # noqa: E501
+
+        The price at the end of the period, adjusted for splits and dividends as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The adj_close of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.adj_close
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'adj_close': value }
+
+        
+        return result
+        
 
     @adj_close.setter
     def adj_close(self, adj_close):
@@ -406,6 +802,39 @@ class StockPrice(object):
         :rtype: float
         """
         return self._adj_volume
+        
+    @property
+    def adj_volume_dict(self):
+        """Gets the adj_volume of this StockPrice.  # noqa: E501
+
+        The number of shares exchanged during the period, adjusted for splits and dividends as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The adj_volume of this StockPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.adj_volume
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'adj_volume': value }
+
+        
+        return result
+        
 
     @adj_volume.setter
     def adj_volume(self, adj_volume):
@@ -429,6 +858,39 @@ class StockPrice(object):
         :rtype: SecuritySummary
         """
         return self._security
+        
+    @property
+    def security_dict(self):
+        """Gets the security of this StockPrice.  # noqa: E501
+
+        The Security of the stock price as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The security of this StockPrice.  # noqa: E501
+        :rtype: SecuritySummary
+        """
+
+        result = None
+
+        value = self.security
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'security': value }
+
+        
+        return result
+        
 
     @security.setter
     def security(self, security):

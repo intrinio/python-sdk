@@ -212,6 +212,39 @@ class Company(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this Company.  # noqa: E501
+
+        The Intrinio ID of the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -235,6 +268,39 @@ class Company(object):
         :rtype: str
         """
         return self._ticker
+        
+    @property
+    def ticker_dict(self):
+        """Gets the ticker of this Company.  # noqa: E501
+
+        The stock market ticker symbol associated with the company's common stock securities as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ticker of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.ticker
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ticker': value }
+
+        
+        return result
+        
 
     @ticker.setter
     def ticker(self, ticker):
@@ -258,6 +324,39 @@ class Company(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this Company.  # noqa: E501
+
+        The company's common name as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -281,6 +380,39 @@ class Company(object):
         :rtype: str
         """
         return self._lei
+        
+    @property
+    def lei_dict(self):
+        """Gets the lei of this Company.  # noqa: E501
+
+        The Legal Entity Identifier (LEI) assigned to the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The lei of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.lei
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'lei': value }
+
+        
+        return result
+        
 
     @lei.setter
     def lei(self, lei):
@@ -304,6 +436,39 @@ class Company(object):
         :rtype: str
         """
         return self._legal_name
+        
+    @property
+    def legal_name_dict(self):
+        """Gets the legal_name of this Company.  # noqa: E501
+
+        The company's official legal name as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The legal_name of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.legal_name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'legal_name': value }
+
+        
+        return result
+        
 
     @legal_name.setter
     def legal_name(self, legal_name):
@@ -327,6 +492,39 @@ class Company(object):
         :rtype: str
         """
         return self._stock_exchange
+        
+    @property
+    def stock_exchange_dict(self):
+        """Gets the stock_exchange of this Company.  # noqa: E501
+
+        The Stock Exchange where the company's common stock is primarily traded as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The stock_exchange of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.stock_exchange
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'stock_exchange': value }
+
+        
+        return result
+        
 
     @stock_exchange.setter
     def stock_exchange(self, stock_exchange):
@@ -350,6 +548,39 @@ class Company(object):
         :rtype: str
         """
         return self._sic
+        
+    @property
+    def sic_dict(self):
+        """Gets the sic of this Company.  # noqa: E501
+
+        The Standard Industrial Classification (SIC) determined by the company and filed with the SEC as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The sic of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.sic
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'sic': value }
+
+        
+        return result
+        
 
     @sic.setter
     def sic(self, sic):
@@ -373,6 +604,39 @@ class Company(object):
         :rtype: str
         """
         return self._short_description
+        
+    @property
+    def short_description_dict(self):
+        """Gets the short_description of this Company.  # noqa: E501
+
+        A one or two sentence description of the company's operations as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The short_description of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.short_description
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'short_description': value }
+
+        
+        return result
+        
 
     @short_description.setter
     def short_description(self, short_description):
@@ -396,6 +660,39 @@ class Company(object):
         :rtype: str
         """
         return self._long_description
+        
+    @property
+    def long_description_dict(self):
+        """Gets the long_description of this Company.  # noqa: E501
+
+        A one paragraph description of the company's operations and other corporate actions as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The long_description of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.long_description
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'long_description': value }
+
+        
+        return result
+        
 
     @long_description.setter
     def long_description(self, long_description):
@@ -419,6 +716,39 @@ class Company(object):
         :rtype: str
         """
         return self._ceo
+        
+    @property
+    def ceo_dict(self):
+        """Gets the ceo of this Company.  # noqa: E501
+
+        The Chief Executive Officer of the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ceo of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.ceo
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ceo': value }
+
+        
+        return result
+        
 
     @ceo.setter
     def ceo(self, ceo):
@@ -442,6 +772,39 @@ class Company(object):
         :rtype: str
         """
         return self._company_url
+        
+    @property
+    def company_url_dict(self):
+        """Gets the company_url of this Company.  # noqa: E501
+
+        The URL of the company's primary corporate website or primary internet property as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The company_url of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.company_url
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'company_url': value }
+
+        
+        return result
+        
 
     @company_url.setter
     def company_url(self, company_url):
@@ -465,6 +828,39 @@ class Company(object):
         :rtype: str
         """
         return self._business_address
+        
+    @property
+    def business_address_dict(self):
+        """Gets the business_address of this Company.  # noqa: E501
+
+        The company's business address as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The business_address of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.business_address
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'business_address': value }
+
+        
+        return result
+        
 
     @business_address.setter
     def business_address(self, business_address):
@@ -488,6 +884,39 @@ class Company(object):
         :rtype: str
         """
         return self._mailing_address
+        
+    @property
+    def mailing_address_dict(self):
+        """Gets the mailing_address of this Company.  # noqa: E501
+
+        The mailing address reported by the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The mailing_address of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.mailing_address
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'mailing_address': value }
+
+        
+        return result
+        
 
     @mailing_address.setter
     def mailing_address(self, mailing_address):
@@ -511,6 +940,39 @@ class Company(object):
         :rtype: str
         """
         return self._business_phone_no
+        
+    @property
+    def business_phone_no_dict(self):
+        """Gets the business_phone_no of this Company.  # noqa: E501
+
+        The phone number reported by the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The business_phone_no of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.business_phone_no
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'business_phone_no': value }
+
+        
+        return result
+        
 
     @business_phone_no.setter
     def business_phone_no(self, business_phone_no):
@@ -534,6 +996,39 @@ class Company(object):
         :rtype: str
         """
         return self._hq_address1
+        
+    @property
+    def hq_address1_dict(self):
+        """Gets the hq_address1 of this Company.  # noqa: E501
+
+        The company's headquarters address - line 1 as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The hq_address1 of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.hq_address1
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'hq_address1': value }
+
+        
+        return result
+        
 
     @hq_address1.setter
     def hq_address1(self, hq_address1):
@@ -557,6 +1052,39 @@ class Company(object):
         :rtype: str
         """
         return self._hq_address2
+        
+    @property
+    def hq_address2_dict(self):
+        """Gets the hq_address2 of this Company.  # noqa: E501
+
+        The company's headquarters address - line 2 as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The hq_address2 of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.hq_address2
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'hq_address2': value }
+
+        
+        return result
+        
 
     @hq_address2.setter
     def hq_address2(self, hq_address2):
@@ -580,6 +1108,39 @@ class Company(object):
         :rtype: str
         """
         return self._hq_address_city
+        
+    @property
+    def hq_address_city_dict(self):
+        """Gets the hq_address_city of this Company.  # noqa: E501
+
+        The company's headquarters city as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The hq_address_city of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.hq_address_city
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'hq_address_city': value }
+
+        
+        return result
+        
 
     @hq_address_city.setter
     def hq_address_city(self, hq_address_city):
@@ -603,6 +1164,39 @@ class Company(object):
         :rtype: str
         """
         return self._hq_address_postal_code
+        
+    @property
+    def hq_address_postal_code_dict(self):
+        """Gets the hq_address_postal_code of this Company.  # noqa: E501
+
+        The company's headquarters postal code as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The hq_address_postal_code of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.hq_address_postal_code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'hq_address_postal_code': value }
+
+        
+        return result
+        
 
     @hq_address_postal_code.setter
     def hq_address_postal_code(self, hq_address_postal_code):
@@ -626,6 +1220,39 @@ class Company(object):
         :rtype: str
         """
         return self._entity_legal_form
+        
+    @property
+    def entity_legal_form_dict(self):
+        """Gets the entity_legal_form of this Company.  # noqa: E501
+
+        The company's legal organization form as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The entity_legal_form of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.entity_legal_form
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'entity_legal_form': value }
+
+        
+        return result
+        
 
     @entity_legal_form.setter
     def entity_legal_form(self, entity_legal_form):
@@ -649,6 +1276,39 @@ class Company(object):
         :rtype: str
         """
         return self._cik
+        
+    @property
+    def cik_dict(self):
+        """Gets the cik of this Company.  # noqa: E501
+
+        The Central Index Key (CIK) assigned to the company by the SEC as a unique identifier, used in SEC filings as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The cik of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.cik
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'cik': value }
+
+        
+        return result
+        
 
     @cik.setter
     def cik(self, cik):
@@ -672,6 +1332,39 @@ class Company(object):
         :rtype: date
         """
         return self._latest_filing_date
+        
+    @property
+    def latest_filing_date_dict(self):
+        """Gets the latest_filing_date of this Company.  # noqa: E501
+
+        The date of the company's last filing with the SEC as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The latest_filing_date of this Company.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.latest_filing_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'latest_filing_date': value }
+
+        
+        return result
+        
 
     @latest_filing_date.setter
     def latest_filing_date(self, latest_filing_date):
@@ -695,6 +1388,39 @@ class Company(object):
         :rtype: str
         """
         return self._hq_state
+        
+    @property
+    def hq_state_dict(self):
+        """Gets the hq_state of this Company.  # noqa: E501
+
+        The state (US & Canada Only) where the company headquarters are located as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The hq_state of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.hq_state
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'hq_state': value }
+
+        
+        return result
+        
 
     @hq_state.setter
     def hq_state(self, hq_state):
@@ -718,6 +1444,39 @@ class Company(object):
         :rtype: str
         """
         return self._hq_country
+        
+    @property
+    def hq_country_dict(self):
+        """Gets the hq_country of this Company.  # noqa: E501
+
+        The country where the company headquarters are located as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The hq_country of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.hq_country
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'hq_country': value }
+
+        
+        return result
+        
 
     @hq_country.setter
     def hq_country(self, hq_country):
@@ -741,6 +1500,39 @@ class Company(object):
         :rtype: str
         """
         return self._inc_state
+        
+    @property
+    def inc_state_dict(self):
+        """Gets the inc_state of this Company.  # noqa: E501
+
+        The state (US & Canada Only) where the company is incorporated as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The inc_state of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.inc_state
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'inc_state': value }
+
+        
+        return result
+        
 
     @inc_state.setter
     def inc_state(self, inc_state):
@@ -764,6 +1556,39 @@ class Company(object):
         :rtype: str
         """
         return self._inc_country
+        
+    @property
+    def inc_country_dict(self):
+        """Gets the inc_country of this Company.  # noqa: E501
+
+        The country where the company is incorporated as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The inc_country of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.inc_country
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'inc_country': value }
+
+        
+        return result
+        
 
     @inc_country.setter
     def inc_country(self, inc_country):
@@ -787,6 +1612,39 @@ class Company(object):
         :rtype: int
         """
         return self._employees
+        
+    @property
+    def employees_dict(self):
+        """Gets the employees of this Company.  # noqa: E501
+
+        The number of employees working for the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The employees of this Company.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.employees
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'employees': value }
+
+        
+        return result
+        
 
     @employees.setter
     def employees(self, employees):
@@ -809,6 +1667,38 @@ class Company(object):
         :rtype: str
         """
         return self._entity_status
+        
+    @property
+    def entity_status_dict(self):
+        """Gets the entity_status of this Company.  # noqa: E501
+
+
+        :return: The entity_status of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.entity_status
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'entity_status': value }
+
+        
+        return result
+        
 
     @entity_status.setter
     def entity_status(self, entity_status):
@@ -831,6 +1721,39 @@ class Company(object):
         :rtype: str
         """
         return self._sector
+        
+    @property
+    def sector_dict(self):
+        """Gets the sector of this Company.  # noqa: E501
+
+        The company's operating sector as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The sector of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.sector
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'sector': value }
+
+        
+        return result
+        
 
     @sector.setter
     def sector(self, sector):
@@ -854,6 +1777,39 @@ class Company(object):
         :rtype: str
         """
         return self._industry_category
+        
+    @property
+    def industry_category_dict(self):
+        """Gets the industry_category of this Company.  # noqa: E501
+
+        The company's operating industry category as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The industry_category of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.industry_category
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'industry_category': value }
+
+        
+        return result
+        
 
     @industry_category.setter
     def industry_category(self, industry_category):
@@ -877,6 +1833,39 @@ class Company(object):
         :rtype: str
         """
         return self._industry_group
+        
+    @property
+    def industry_group_dict(self):
+        """Gets the industry_group of this Company.  # noqa: E501
+
+        The company's operating industry group as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The industry_group of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.industry_group
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'industry_group': value }
+
+        
+        return result
+        
 
     @industry_group.setter
     def industry_group(self, industry_group):
@@ -900,6 +1889,39 @@ class Company(object):
         :rtype: str
         """
         return self._template
+        
+    @property
+    def template_dict(self):
+        """Gets the template of this Company.  # noqa: E501
+
+        The financial statement template used by Intrinio to standardize the as reported data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The template of this Company.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.template
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'template': value }
+
+        
+        return result
+        
 
     @template.setter
     def template(self, template):
@@ -923,6 +1945,39 @@ class Company(object):
         :rtype: bool
         """
         return self._standardized_active
+        
+    @property
+    def standardized_active_dict(self):
+        """Gets the standardized_active of this Company.  # noqa: E501
+
+        If true, the company has standardized and as reported fundamental data via the Intrinio API; if false, the company has as-reported data only as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The standardized_active of this Company.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.standardized_active
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'standardized_active': value }
+
+        
+        return result
+        
 
     @standardized_active.setter
     def standardized_active(self, standardized_active):

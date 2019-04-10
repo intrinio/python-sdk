@@ -69,6 +69,38 @@ class ApiResponseForexPrices(object):
         :rtype: list[ForexPrice]
         """
         return self._prices
+        
+    @property
+    def prices_dict(self):
+        """Gets the prices of this ApiResponseForexPrices.  # noqa: E501
+
+
+        :return: The prices of this ApiResponseForexPrices.  # noqa: E501
+        :rtype: list[ForexPrice]
+        """
+
+        result = None
+
+        value = self.prices
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'prices': value }
+
+        
+        return result
+        
 
     @prices.setter
     def prices(self, prices):
@@ -91,6 +123,39 @@ class ApiResponseForexPrices(object):
         :rtype: ForexPair
         """
         return self._pair
+        
+    @property
+    def pair_dict(self):
+        """Gets the pair of this ApiResponseForexPrices.  # noqa: E501
+
+        The Forex currency pair for which prices were requested as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The pair of this ApiResponseForexPrices.  # noqa: E501
+        :rtype: ForexPair
+        """
+
+        result = None
+
+        value = self.pair
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'pair': value }
+
+        
+        return result
+        
 
     @pair.setter
     def pair(self, pair):
@@ -114,6 +179,39 @@ class ApiResponseForexPrices(object):
         :rtype: str
         """
         return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseForexPrices.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseForexPrices.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
 
     @next_page.setter
     def next_page(self, next_page):

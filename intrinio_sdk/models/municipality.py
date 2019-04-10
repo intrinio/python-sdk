@@ -147,6 +147,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this Municipality.  # noqa: E501
+
+        The Intrinio ID for Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -170,6 +203,39 @@ class Municipality(object):
         :rtype: float
         """
         return self._census_id
+        
+    @property
+    def census_id_dict(self):
+        """Gets the census_id of this Municipality.  # noqa: E501
+
+        The ID for the census as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The census_id of this Municipality.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.census_id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'census_id': value }
+
+        
+        return result
+        
 
     @census_id.setter
     def census_id(self, census_id):
@@ -193,6 +259,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._government_name
+        
+    @property
+    def government_name_dict(self):
+        """Gets the government_name of this Municipality.  # noqa: E501
+
+        The government name of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The government_name of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.government_name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'government_name': value }
+
+        
+        return result
+        
 
     @government_name.setter
     def government_name(self, government_name):
@@ -216,6 +315,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._government_type
+        
+    @property
+    def government_type_dict(self):
+        """Gets the government_type of this Municipality.  # noqa: E501
+
+        The type of government of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The government_type of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.government_type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'government_type': value }
+
+        
+        return result
+        
 
     @government_type.setter
     def government_type(self, government_type):
@@ -239,6 +371,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._primary_contact_type
+        
+    @property
+    def primary_contact_type_dict(self):
+        """Gets the primary_contact_type of this Municipality.  # noqa: E501
+
+        The primary contact type of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The primary_contact_type of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.primary_contact_type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'primary_contact_type': value }
+
+        
+        return result
+        
 
     @primary_contact_type.setter
     def primary_contact_type(self, primary_contact_type):
@@ -262,6 +427,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._address1
+        
+    @property
+    def address1_dict(self):
+        """Gets the address1 of this Municipality.  # noqa: E501
+
+        The first line of the address as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The address1 of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.address1
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'address1': value }
+
+        
+        return result
+        
 
     @address1.setter
     def address1(self, address1):
@@ -285,6 +483,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._address2
+        
+    @property
+    def address2_dict(self):
+        """Gets the address2 of this Municipality.  # noqa: E501
+
+        The second line of the address (i.e. suite number) as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The address2 of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.address2
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'address2': value }
+
+        
+        return result
+        
 
     @address2.setter
     def address2(self, address2):
@@ -308,6 +539,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._city
+        
+    @property
+    def city_dict(self):
+        """Gets the city of this Municipality.  # noqa: E501
+
+        The city in which the Municipality is located in as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The city of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.city
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'city': value }
+
+        
+        return result
+        
 
     @city.setter
     def city(self, city):
@@ -331,6 +595,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._state
+        
+    @property
+    def state_dict(self):
+        """Gets the state of this Municipality.  # noqa: E501
+
+        The state in which the Municipality is located in as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The state of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.state
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'state': value }
+
+        
+        return result
+        
 
     @state.setter
     def state(self, state):
@@ -354,6 +651,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._zip
+        
+    @property
+    def zip_dict(self):
+        """Gets the zip of this Municipality.  # noqa: E501
+
+        The zip code in which the Municipality is located in as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The zip of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.zip
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'zip': value }
+
+        
+        return result
+        
 
     @zip.setter
     def zip(self, zip):
@@ -377,6 +707,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._web_site
+        
+    @property
+    def web_site_dict(self):
+        """Gets the web_site of this Municipality.  # noqa: E501
+
+        The web site of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The web_site of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.web_site
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'web_site': value }
+
+        
+        return result
+        
 
     @web_site.setter
     def web_site(self, web_site):
@@ -400,6 +763,39 @@ class Municipality(object):
         :rtype: float
         """
         return self._population
+        
+    @property
+    def population_dict(self):
+        """Gets the population of this Municipality.  # noqa: E501
+
+        The population of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The population of this Municipality.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.population
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'population': value }
+
+        
+        return result
+        
 
     @population.setter
     def population(self, population):
@@ -423,6 +819,39 @@ class Municipality(object):
         :rtype: float
         """
         return self._population_as_of_year
+        
+    @property
+    def population_as_of_year_dict(self):
+        """Gets the population_as_of_year of this Municipality.  # noqa: E501
+
+        The year from which the population of the Municipality was measured as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The population_as_of_year of this Municipality.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.population_as_of_year
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'population_as_of_year': value }
+
+        
+        return result
+        
 
     @population_as_of_year.setter
     def population_as_of_year(self, population_as_of_year):
@@ -446,6 +875,39 @@ class Municipality(object):
         :rtype: float
         """
         return self._enrollment
+        
+    @property
+    def enrollment_dict(self):
+        """Gets the enrollment of this Municipality.  # noqa: E501
+
+        The enrollment of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The enrollment of this Municipality.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.enrollment
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'enrollment': value }
+
+        
+        return result
+        
 
     @enrollment.setter
     def enrollment(self, enrollment):
@@ -469,6 +931,39 @@ class Municipality(object):
         :rtype: float
         """
         return self._enrollment_as_of_year
+        
+    @property
+    def enrollment_as_of_year_dict(self):
+        """Gets the enrollment_as_of_year of this Municipality.  # noqa: E501
+
+        The year from which the enrollment of the Municipality was measured as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The enrollment_as_of_year of this Municipality.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.enrollment_as_of_year
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'enrollment_as_of_year': value }
+
+        
+        return result
+        
 
     @enrollment_as_of_year.setter
     def enrollment_as_of_year(self, enrollment_as_of_year):
@@ -492,6 +987,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._area_name
+        
+    @property
+    def area_name_dict(self):
+        """Gets the area_name of this Municipality.  # noqa: E501
+
+        The name of the area of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The area_name of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.area_name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'area_name': value }
+
+        
+        return result
+        
 
     @area_name.setter
     def area_name(self, area_name):
@@ -515,6 +1043,39 @@ class Municipality(object):
         :rtype: str
         """
         return self._area_type
+        
+    @property
+    def area_type_dict(self):
+        """Gets the area_type of this Municipality.  # noqa: E501
+
+        The type of area of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The area_type of this Municipality.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.area_type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'area_type': value }
+
+        
+        return result
+        
 
     @area_type.setter
     def area_type(self, area_type):
@@ -538,6 +1099,39 @@ class Municipality(object):
         :rtype: float
         """
         return self._latitude
+        
+    @property
+    def latitude_dict(self):
+        """Gets the latitude of this Municipality.  # noqa: E501
+
+        The latitude of the location of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The latitude of this Municipality.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.latitude
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'latitude': value }
+
+        
+        return result
+        
 
     @latitude.setter
     def latitude(self, latitude):
@@ -561,6 +1155,39 @@ class Municipality(object):
         :rtype: float
         """
         return self._longitude
+        
+    @property
+    def longitude_dict(self):
+        """Gets the longitude of this Municipality.  # noqa: E501
+
+        The longitude of the location of the Municipality as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The longitude of this Municipality.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.longitude
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'longitude': value }
+
+        
+        return result
+        
 
     @longitude.setter
     def longitude(self, longitude):

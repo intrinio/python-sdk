@@ -44,6 +44,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilingApi->get_all_filings: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -96,6 +98,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilingApi->get_all_notes: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -143,6 +147,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilingApi->get_filing_by_id: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -182,6 +188,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilingApi->get_note: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -221,6 +229,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilingApi->get_note_html: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -259,6 +269,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilingApi->get_note_text: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -303,6 +315,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilingApi->search_notes: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

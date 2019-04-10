@@ -75,6 +75,38 @@ class ApiResponseSecurityRelativeStrengthIndex(object):
         :rtype: list[RelativeStrengthIndexTechnicalValue]
         """
         return self._technicals
+        
+    @property
+    def technicals_dict(self):
+        """Gets the technicals of this ApiResponseSecurityRelativeStrengthIndex.  # noqa: E501
+
+
+        :return: The technicals of this ApiResponseSecurityRelativeStrengthIndex.  # noqa: E501
+        :rtype: list[RelativeStrengthIndexTechnicalValue]
+        """
+
+        result = None
+
+        value = self.technicals
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'technicals': value }
+
+        
+        return result
+        
 
     @technicals.setter
     def technicals(self, technicals):
@@ -97,6 +129,39 @@ class ApiResponseSecurityRelativeStrengthIndex(object):
         :rtype: TechnicalIndicator
         """
         return self._indicator
+        
+    @property
+    def indicator_dict(self):
+        """Gets the indicator of this ApiResponseSecurityRelativeStrengthIndex.  # noqa: E501
+
+        The name and symbol of the technical indicator as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The indicator of this ApiResponseSecurityRelativeStrengthIndex.  # noqa: E501
+        :rtype: TechnicalIndicator
+        """
+
+        result = None
+
+        value = self.indicator
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'indicator': value }
+
+        
+        return result
+        
 
     @indicator.setter
     def indicator(self, indicator):
@@ -120,6 +185,39 @@ class ApiResponseSecurityRelativeStrengthIndex(object):
         :rtype: SecuritySummary
         """
         return self._security
+        
+    @property
+    def security_dict(self):
+        """Gets the security of this ApiResponseSecurityRelativeStrengthIndex.  # noqa: E501
+
+        The Security of the Stock Price as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The security of this ApiResponseSecurityRelativeStrengthIndex.  # noqa: E501
+        :rtype: SecuritySummary
+        """
+
+        result = None
+
+        value = self.security
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'security': value }
+
+        
+        return result
+        
 
     @security.setter
     def security(self, security):
@@ -143,6 +241,39 @@ class ApiResponseSecurityRelativeStrengthIndex(object):
         :rtype: str
         """
         return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseSecurityRelativeStrengthIndex.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseSecurityRelativeStrengthIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
 
     @next_page.setter
     def next_page(self, next_page):

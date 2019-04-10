@@ -102,6 +102,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this DataTag.  # noqa: E501
+
+        The Intrinio ID for the Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -125,6 +158,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this DataTag.  # noqa: E501
+
+        The readable name of the Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -148,6 +214,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._tag
+        
+    @property
+    def tag_dict(self):
+        """Gets the tag of this DataTag.  # noqa: E501
+
+        The code-name of the Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The tag of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.tag
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'tag': value }
+
+        
+        return result
+        
 
     @tag.setter
     def tag(self, tag):
@@ -171,6 +270,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._statement_code
+        
+    @property
+    def statement_code_dict(self):
+        """Gets the statement_code of this DataTag.  # noqa: E501
+
+        The code of the financial statement to which this Data Tag belongs as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The statement_code of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.statement_code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'statement_code': value }
+
+        
+        return result
+        
 
     @statement_code.setter
     def statement_code(self, statement_code):
@@ -194,6 +326,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._statement_type
+        
+    @property
+    def statement_type_dict(self):
+        """Gets the statement_type of this DataTag.  # noqa: E501
+
+        The format of the financial statment to which this Data Tag belongs as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The statement_type of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.statement_type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'statement_type': value }
+
+        
+        return result
+        
 
     @statement_type.setter
     def statement_type(self, statement_type):
@@ -223,6 +388,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._parent
+        
+    @property
+    def parent_dict(self):
+        """Gets the parent of this DataTag.  # noqa: E501
+
+        The parent Data Tag forming the statement relationship with the factor as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The parent of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.parent
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'parent': value }
+
+        
+        return result
+        
 
     @parent.setter
     def parent(self, parent):
@@ -246,6 +444,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._factor
+        
+    @property
+    def factor_dict(self):
+        """Gets the factor of this DataTag.  # noqa: E501
+
+        The operator forming the statement relationship between the child Data Tag (or Data Tags) and the parent Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The factor of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.factor
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'factor': value }
+
+        
+        return result
+        
 
     @factor.setter
     def factor(self, factor):
@@ -269,6 +500,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._balance
+        
+    @property
+    def balance_dict(self):
+        """Gets the balance of this DataTag.  # noqa: E501
+
+        Whether the Data Tag represents a credit or debit as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The balance of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'balance': value }
+
+        
+        return result
+        
 
     @balance.setter
     def balance(self, balance):
@@ -292,6 +556,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._type
+        
+    @property
+    def type_dict(self):
+        """Gets the type of this DataTag.  # noqa: E501
+
+        The nature of the Data Tag, operating or nonoperating as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The type of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'type': value }
+
+        
+        return result
+        
 
     @type.setter
     def type(self, type):
@@ -315,6 +612,39 @@ class DataTag(object):
         :rtype: str
         """
         return self._unit
+        
+    @property
+    def unit_dict(self):
+        """Gets the unit of this DataTag.  # noqa: E501
+
+        The unit of the Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The unit of this DataTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.unit
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'unit': value }
+
+        
+        return result
+        
 
     @unit.setter
     def unit(self, unit):

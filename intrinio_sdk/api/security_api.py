@@ -228,15 +228,15 @@ class SecurityApi(object):
     def get_security_data_point_number(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Number) for Security  # noqa: E501
 
-        $$v2_security_data_point_number_description$$  # noqa: E501
+        Returns a numeric value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_data_point_number(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_data_point_identifier_description$$ (required)
-        :param str tag: $$v2_security_data_point_item_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: float
                  If the method is called asynchronously,
                  returns the request thread.
@@ -251,15 +251,15 @@ class SecurityApi(object):
     def get_security_data_point_number_with_http_info(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Number) for Security  # noqa: E501
 
-        $$v2_security_data_point_number_description$$  # noqa: E501
+        Returns a numeric value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_data_point_number_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_data_point_identifier_description$$ (required)
-        :param str tag: $$v2_security_data_point_item_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: float
                  If the method is called asynchronously,
                  returns the request thread.
@@ -331,14 +331,14 @@ class SecurityApi(object):
     def get_security_data_point_text(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Text) for Security  # noqa: E501
 
-        $$v2_security_data_point_text_description$$  # noqa: E501
+        Returns a text value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_data_point_text(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_data_point_identifier_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
         :param str tag: An Intrinio data tag ID or code-name (required)
         :return: str
                  If the method is called asynchronously,
@@ -354,14 +354,14 @@ class SecurityApi(object):
     def get_security_data_point_text_with_http_info(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Text) for Security  # noqa: E501
 
-        $$v2_security_data_point_text_description$$  # noqa: E501
+        Returns a text value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_data_point_text_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_data_point_identifier_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
         :param str tag: An Intrinio data tag ID or code-name (required)
         :return: str
                  If the method is called asynchronously,
@@ -434,15 +434,15 @@ class SecurityApi(object):
     def get_security_historical_data(self, identifier, tag, **kwargs):  # noqa: E501
         """Historical Data for Security  # noqa: E501
 
-        $$v2_security_historical_data_description$$  # noqa: E501
+        Returns historical values for the given `tag` and the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_historical_data(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_historical_data_identifier_description$$ (required)
-        :param str tag: $$v2_security_data_point_item_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :param str frequency: Return historical data in the given frequency
         :param str type: Filter by type, when applicable
         :param date start_date: Get historical data on or after this date
@@ -464,15 +464,15 @@ class SecurityApi(object):
     def get_security_historical_data_with_http_info(self, identifier, tag, **kwargs):  # noqa: E501
         """Historical Data for Security  # noqa: E501
 
-        $$v2_security_historical_data_description$$  # noqa: E501
+        Returns historical values for the given `tag` and the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_historical_data_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_historical_data_identifier_description$$ (required)
-        :param str tag: $$v2_security_data_point_item_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :param str frequency: Return historical data in the given frequency
         :param str type: Filter by type, when applicable
         :param date start_date: Get historical data on or after this date
@@ -567,7 +567,7 @@ class SecurityApi(object):
     def get_security_intraday_prices(self, identifier, **kwargs):  # noqa: E501
         """Intraday Stock Prices for Security  # noqa: E501
 
-        $$v2_security_intraday_prices_description$$  # noqa: E501
+        Return intraday stock prices for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_intraday_prices(identifier, _async=True)
@@ -594,7 +594,7 @@ class SecurityApi(object):
     def get_security_intraday_prices_with_http_info(self, identifier, **kwargs):  # noqa: E501
         """Intraday Stock Prices for Security  # noqa: E501
 
-        $$v2_security_intraday_prices_description$$  # noqa: E501
+        Return intraday stock prices for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_intraday_prices_with_http_info(identifier, _async=True)
@@ -2568,9 +2568,8 @@ class SecurityApi(object):
         :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
         :param int roc1: The number of observations, per period, to calculate the rate-of-change for RCMA1
         :param int roc2: The number of observations, per period, to calculate the rate-of-change for RCMA2
-        :param int roc3: The number of observations, per period, to calculate the rate-of-change for RCMA2
-        :param int roc4: The number of observations, per period, to calculate the rate-of-change for RCMA3
-        :param int roc5: The number of observations, per period, to calculate the rate-of-change for RCMA4
+        :param int roc3: The number of observations, per period, to calculate the rate-of-change for RCMA3
+        :param int roc4: The number of observations, per period, to calculate the rate-of-change for RCMA4
         :param int sma1: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1
         :param int sma2: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2
         :param int sma3: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3
@@ -2604,9 +2603,8 @@ class SecurityApi(object):
         :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
         :param int roc1: The number of observations, per period, to calculate the rate-of-change for RCMA1
         :param int roc2: The number of observations, per period, to calculate the rate-of-change for RCMA2
-        :param int roc3: The number of observations, per period, to calculate the rate-of-change for RCMA2
-        :param int roc4: The number of observations, per period, to calculate the rate-of-change for RCMA3
-        :param int roc5: The number of observations, per period, to calculate the rate-of-change for RCMA4
+        :param int roc3: The number of observations, per period, to calculate the rate-of-change for RCMA3
+        :param int roc4: The number of observations, per period, to calculate the rate-of-change for RCMA4
         :param int sma1: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1
         :param int sma2: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2
         :param int sma3: The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3
@@ -2621,7 +2619,7 @@ class SecurityApi(object):
                  returns the request thread.
         """
 
-        all_params = ['identifier', 'roc1', 'roc2', 'roc3', 'roc4', 'roc5', 'sma1', 'sma2', 'sma3', 'sma4', 'price_key', 'start_date', 'end_date', 'page_size', 'next_page']  # noqa: E501
+        all_params = ['identifier', 'roc1', 'roc2', 'roc3', 'roc4', 'sma1', 'sma2', 'sma3', 'sma4', 'price_key', 'start_date', 'end_date', 'page_size', 'next_page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2641,8 +2639,8 @@ class SecurityApi(object):
                 params['identifier'] is None):
             raise ValueError("Missing the required parameter `identifier` when calling `get_security_price_technicals_kst`")  # noqa: E501
 
-        if 'roc5' in params and params['roc5'] < 3:  # noqa: E501
-            raise ValueError("Invalid value for parameter `roc5` when calling `get_security_price_technicals_kst`, must be a value greater than or equal to `3`")  # noqa: E501
+        if 'roc4' in params and params['roc4'] < 3:  # noqa: E501
+            raise ValueError("Invalid value for parameter `roc4` when calling `get_security_price_technicals_kst`, must be a value greater than or equal to `3`")  # noqa: E501
         if 'sma4' in params and params['sma4'] < 3:  # noqa: E501
             raise ValueError("Invalid value for parameter `sma4` when calling `get_security_price_technicals_kst`, must be a value greater than or equal to `3`")  # noqa: E501
         if 'page_size' in params and params['page_size'] > 10000:  # noqa: E501
@@ -2659,11 +2657,9 @@ class SecurityApi(object):
         if 'roc2' in params:
             query_params.append(('roc2', params['roc2']))  # noqa: E501
         if 'roc3' in params:
-            query_params.append(('roc2', params['roc3']))  # noqa: E501
+            query_params.append(('roc3', params['roc3']))  # noqa: E501
         if 'roc4' in params:
-            query_params.append(('roc3', params['roc4']))  # noqa: E501
-        if 'roc5' in params:
-            query_params.append(('roc4', params['roc5']))  # noqa: E501
+            query_params.append(('roc4', params['roc4']))  # noqa: E501
         if 'sma1' in params:
             query_params.append(('sma1', params['sma1']))  # noqa: E501
         if 'sma2' in params:

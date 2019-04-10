@@ -62,6 +62,39 @@ class TrueStrengthIndexTechnicalValue(object):
         :rtype: datetime
         """
         return self._date_time
+        
+    @property
+    def date_time_dict(self):
+        """Gets the date_time of this TrueStrengthIndexTechnicalValue.  # noqa: E501
+
+        The date_time of the observation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The date_time of this TrueStrengthIndexTechnicalValue.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.date_time
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'date_time': value }
+
+        
+        return result
+        
 
     @date_time.setter
     def date_time(self, date_time):
@@ -85,6 +118,39 @@ class TrueStrengthIndexTechnicalValue(object):
         :rtype: float
         """
         return self._tsi
+        
+    @property
+    def tsi_dict(self):
+        """Gets the tsi of this TrueStrengthIndexTechnicalValue.  # noqa: E501
+
+        The True Strength Index calculation value as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The tsi of this TrueStrengthIndexTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.tsi
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'tsi': value }
+
+        
+        return result
+        
 
     @tsi.setter
     def tsi(self, tsi):

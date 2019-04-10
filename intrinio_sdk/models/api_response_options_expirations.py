@@ -57,6 +57,39 @@ class ApiResponseOptionsExpirations(object):
         :rtype: list[str]
         """
         return self._expirations
+        
+    @property
+    def expirations_dict(self):
+        """Gets the expirations of this ApiResponseOptionsExpirations.  # noqa: E501
+
+        A list of option expiration dates in descending order as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The expirations of this ApiResponseOptionsExpirations.  # noqa: E501
+        :rtype: list[str]
+        """
+
+        result = None
+
+        value = self.expirations
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'expirations': value }
+
+        
+        return result
+        
 
     @expirations.setter
     def expirations(self, expirations):

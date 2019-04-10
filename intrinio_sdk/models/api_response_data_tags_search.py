@@ -58,6 +58,38 @@ class ApiResponseDataTagsSearch(object):
         :rtype: list[DataTag]
         """
         return self._tags
+        
+    @property
+    def tags_dict(self):
+        """Gets the tags of this ApiResponseDataTagsSearch.  # noqa: E501
+
+
+        :return: The tags of this ApiResponseDataTagsSearch.  # noqa: E501
+        :rtype: list[DataTag]
+        """
+
+        result = None
+
+        value = self.tags
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'tags': value }
+
+        
+        return result
+        
 
     @tags.setter
     def tags(self, tags):

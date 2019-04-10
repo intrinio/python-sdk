@@ -72,6 +72,39 @@ class FilingNoteFiling(object):
         :rtype: str
         """
         return self._cik
+        
+    @property
+    def cik_dict(self):
+        """Gets the cik of this FilingNoteFiling.  # noqa: E501
+
+        The Central Index Key (CIK) assigned to the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The cik of this FilingNoteFiling.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.cik
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'cik': value }
+
+        
+        return result
+        
 
     @cik.setter
     def cik(self, cik):
@@ -95,6 +128,39 @@ class FilingNoteFiling(object):
         :rtype: str
         """
         return self._report_type
+        
+    @property
+    def report_type_dict(self):
+        """Gets the report_type of this FilingNoteFiling.  # noqa: E501
+
+        The type of report (10-Q, 10-K, etc) filed as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The report_type of this FilingNoteFiling.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.report_type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'report_type': value }
+
+        
+        return result
+        
 
     @report_type.setter
     def report_type(self, report_type):
@@ -118,6 +184,39 @@ class FilingNoteFiling(object):
         :rtype: date
         """
         return self._period_end_date
+        
+    @property
+    def period_end_date_dict(self):
+        """Gets the period_end_date of this FilingNoteFiling.  # noqa: E501
+
+        The ending date of the fiscal period for the filing as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The period_end_date of this FilingNoteFiling.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.period_end_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'period_end_date': value }
+
+        
+        return result
+        
 
     @period_end_date.setter
     def period_end_date(self, period_end_date):
@@ -141,6 +240,39 @@ class FilingNoteFiling(object):
         :rtype: date
         """
         return self._filing_date
+        
+    @property
+    def filing_date_dict(self):
+        """Gets the filing_date of this FilingNoteFiling.  # noqa: E501
+
+        The date the report was filed with the SEC as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The filing_date of this FilingNoteFiling.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.filing_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'filing_date': value }
+
+        
+        return result
+        
 
     @filing_date.setter
     def filing_date(self, filing_date):

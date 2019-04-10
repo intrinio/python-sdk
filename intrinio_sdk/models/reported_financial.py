@@ -69,6 +69,38 @@ class ReportedFinancial(object):
         :rtype: ReportedTag
         """
         return self._xbrl_tag
+        
+    @property
+    def xbrl_tag_dict(self):
+        """Gets the xbrl_tag of this ReportedFinancial.  # noqa: E501
+
+
+        :return: The xbrl_tag of this ReportedFinancial.  # noqa: E501
+        :rtype: ReportedTag
+        """
+
+        result = None
+
+        value = self.xbrl_tag
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'xbrl_tag': value }
+
+        
+        return result
+        
 
     @xbrl_tag.setter
     def xbrl_tag(self, xbrl_tag):
@@ -91,6 +123,39 @@ class ReportedFinancial(object):
         :rtype: float
         """
         return self._value
+        
+    @property
+    def value_dict(self):
+        """Gets the value of this ReportedFinancial.  # noqa: E501
+
+        The value reported for the XBRL Tag within the scope of the Fundamental as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The value of this ReportedFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.value
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'value': value }
+
+        
+        return result
+        
 
     @value.setter
     def value(self, value):
@@ -114,6 +179,39 @@ class ReportedFinancial(object):
         :rtype: list[ReportedFinancialDimension]
         """
         return self._dimensions
+        
+    @property
+    def dimensions_dict(self):
+        """Gets the dimensions of this ReportedFinancial.  # noqa: E501
+
+        The combination of XBRL axis and members that defines the dimensionalization of this fact (if any) as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The dimensions of this ReportedFinancial.  # noqa: E501
+        :rtype: list[ReportedFinancialDimension]
+        """
+
+        result = None
+
+        value = self.dimensions
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'dimensions': value }
+
+        
+        return result
+        
 
     @dimensions.setter
     def dimensions(self, dimensions):

@@ -102,6 +102,39 @@ class StockMarketIndex(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this StockMarketIndex.  # noqa: E501
+
+        Intrinio ID for the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this StockMarketIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -125,6 +158,39 @@ class StockMarketIndex(object):
         :rtype: str
         """
         return self._symbol
+        
+    @property
+    def symbol_dict(self):
+        """Gets the symbol of this StockMarketIndex.  # noqa: E501
+
+        The symbol used to identify the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The symbol of this StockMarketIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.symbol
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'symbol': value }
+
+        
+        return result
+        
 
     @symbol.setter
     def symbol(self, symbol):
@@ -148,6 +214,39 @@ class StockMarketIndex(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this StockMarketIndex.  # noqa: E501
+
+        The name of the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this StockMarketIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -171,6 +270,39 @@ class StockMarketIndex(object):
         :rtype: str
         """
         return self._continent
+        
+    @property
+    def continent_dict(self):
+        """Gets the continent of this StockMarketIndex.  # noqa: E501
+
+        The continent of the country of focus for the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The continent of this StockMarketIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.continent
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'continent': value }
+
+        
+        return result
+        
 
     @continent.setter
     def continent(self, continent):
@@ -194,6 +326,39 @@ class StockMarketIndex(object):
         :rtype: str
         """
         return self._country
+        
+    @property
+    def country_dict(self):
+        """Gets the country of this StockMarketIndex.  # noqa: E501
+
+        The country of focus for the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The country of this StockMarketIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.country
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'country': value }
+
+        
+        return result
+        
 
     @country.setter
     def country(self, country):
@@ -217,6 +382,39 @@ class StockMarketIndex(object):
         :rtype: str
         """
         return self._update_frequency
+        
+    @property
+    def update_frequency_dict(self):
+        """Gets the update_frequency of this StockMarketIndex.  # noqa: E501
+
+        How often the Index is updated as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The update_frequency of this StockMarketIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.update_frequency
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'update_frequency': value }
+
+        
+        return result
+        
 
     @update_frequency.setter
     def update_frequency(self, update_frequency):
@@ -240,6 +438,39 @@ class StockMarketIndex(object):
         :rtype: datetime
         """
         return self._last_updated
+        
+    @property
+    def last_updated_dict(self):
+        """Gets the last_updated of this StockMarketIndex.  # noqa: E501
+
+        When the Index was updated last as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_updated of this StockMarketIndex.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.last_updated
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_updated': value }
+
+        
+        return result
+        
 
     @last_updated.setter
     def last_updated(self, last_updated):
@@ -263,6 +494,39 @@ class StockMarketIndex(object):
         :rtype: str
         """
         return self._description
+        
+    @property
+    def description_dict(self):
+        """Gets the description of this StockMarketIndex.  # noqa: E501
+
+        A paragraph describing the index and its scope as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The description of this StockMarketIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.description
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'description': value }
+
+        
+        return result
+        
 
     @description.setter
     def description(self, description):
@@ -286,6 +550,39 @@ class StockMarketIndex(object):
         :rtype: date
         """
         return self._observation_start
+        
+    @property
+    def observation_start_dict(self):
+        """Gets the observation_start of this StockMarketIndex.  # noqa: E501
+
+        The earliest date for which data is available as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The observation_start of this StockMarketIndex.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.observation_start
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'observation_start': value }
+
+        
+        return result
+        
 
     @observation_start.setter
     def observation_start(self, observation_start):
@@ -309,6 +606,39 @@ class StockMarketIndex(object):
         :rtype: date
         """
         return self._observation_end
+        
+    @property
+    def observation_end_dict(self):
+        """Gets the observation_end of this StockMarketIndex.  # noqa: E501
+
+        The latest date for which data is available as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The observation_end of this StockMarketIndex.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.observation_end
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'observation_end': value }
+
+        
+        return result
+        
 
     @observation_end.setter
     def observation_end(self, observation_end):

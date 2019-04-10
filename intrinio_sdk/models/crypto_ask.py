@@ -62,6 +62,39 @@ class CryptoAsk(object):
         :rtype: float
         """
         return self._price
+        
+    @property
+    def price_dict(self):
+        """Gets the price of this CryptoAsk.  # noqa: E501
+
+        The ask price of the book entry. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The price of this CryptoAsk.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.price
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'price': value }
+
+        
+        return result
+        
 
     @price.setter
     def price(self, price):
@@ -85,6 +118,39 @@ class CryptoAsk(object):
         :rtype: float
         """
         return self._size
+        
+    @property
+    def size_dict(self):
+        """Gets the size of this CryptoAsk.  # noqa: E501
+
+        The size for the ask price of the book entry. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The size of this CryptoAsk.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.size
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'size': value }
+
+        
+        return result
+        
 
     @size.setter
     def size(self, size):

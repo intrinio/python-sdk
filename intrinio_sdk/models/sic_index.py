@@ -77,6 +77,39 @@ class SICIndex(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this SICIndex.  # noqa: E501
+
+        Intrinio ID for the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this SICIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -100,6 +133,39 @@ class SICIndex(object):
         :rtype: str
         """
         return self._symbol
+        
+    @property
+    def symbol_dict(self):
+        """Gets the symbol of this SICIndex.  # noqa: E501
+
+        The symbol used to identify the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The symbol of this SICIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.symbol
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'symbol': value }
+
+        
+        return result
+        
 
     @symbol.setter
     def symbol(self, symbol):
@@ -123,6 +189,39 @@ class SICIndex(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this SICIndex.  # noqa: E501
+
+        The name of the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this SICIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -146,6 +245,39 @@ class SICIndex(object):
         :rtype: str
         """
         return self._continent
+        
+    @property
+    def continent_dict(self):
+        """Gets the continent of this SICIndex.  # noqa: E501
+
+        The continent of the country of focus for the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The continent of this SICIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.continent
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'continent': value }
+
+        
+        return result
+        
 
     @continent.setter
     def continent(self, continent):
@@ -169,6 +301,39 @@ class SICIndex(object):
         :rtype: str
         """
         return self._country
+        
+    @property
+    def country_dict(self):
+        """Gets the country of this SICIndex.  # noqa: E501
+
+        The country of focus for the Index as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The country of this SICIndex.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.country
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'country': value }
+
+        
+        return result
+        
 
     @country.setter
     def country(self, country):

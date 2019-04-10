@@ -75,6 +75,39 @@ class ApiResponseSecurityIntradayPrices(object):
         :rtype: list[IntradayStockPrice]
         """
         return self._intraday_prices
+        
+    @property
+    def intraday_prices_dict(self):
+        """Gets the intraday_prices of this ApiResponseSecurityIntradayPrices.  # noqa: E501
+
+        The intraday stock prices for the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The intraday_prices of this ApiResponseSecurityIntradayPrices.  # noqa: E501
+        :rtype: list[IntradayStockPrice]
+        """
+
+        result = None
+
+        value = self.intraday_prices
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'intraday_prices': value }
+
+        
+        return result
+        
 
     @intraday_prices.setter
     def intraday_prices(self, intraday_prices):
@@ -98,6 +131,39 @@ class ApiResponseSecurityIntradayPrices(object):
         :rtype: SecuritySummary
         """
         return self._security
+        
+    @property
+    def security_dict(self):
+        """Gets the security of this ApiResponseSecurityIntradayPrices.  # noqa: E501
+
+        The Security resolved from the given identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The security of this ApiResponseSecurityIntradayPrices.  # noqa: E501
+        :rtype: SecuritySummary
+        """
+
+        result = None
+
+        value = self.security
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'security': value }
+
+        
+        return result
+        
 
     @security.setter
     def security(self, security):
@@ -121,6 +187,39 @@ class ApiResponseSecurityIntradayPrices(object):
         :rtype: str
         """
         return self._source
+        
+    @property
+    def source_dict(self):
+        """Gets the source of this ApiResponseSecurityIntradayPrices.  # noqa: E501
+
+        The source of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The source of this ApiResponseSecurityIntradayPrices.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.source
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'source': value }
+
+        
+        return result
+        
 
     @source.setter
     def source(self, source):
@@ -150,6 +249,39 @@ class ApiResponseSecurityIntradayPrices(object):
         :rtype: str
         """
         return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseSecurityIntradayPrices.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseSecurityIntradayPrices.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
 
     @next_page.setter
     def next_page(self, next_page):

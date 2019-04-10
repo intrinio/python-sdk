@@ -58,6 +58,38 @@ class ApiResponseStockMarketIndicesSearch(object):
         :rtype: list[StockMarketIndexSummary]
         """
         return self._indices
+        
+    @property
+    def indices_dict(self):
+        """Gets the indices of this ApiResponseStockMarketIndicesSearch.  # noqa: E501
+
+
+        :return: The indices of this ApiResponseStockMarketIndicesSearch.  # noqa: E501
+        :rtype: list[StockMarketIndexSummary]
+        """
+
+        result = None
+
+        value = self.indices
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'indices': value }
+
+        
+        return result
+        
 
     @indices.setter
     def indices(self, indices):

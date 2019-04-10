@@ -77,6 +77,39 @@ class CryptoCurrency(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this CryptoCurrency.  # noqa: E501
+
+        The common name of the crypto currency. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this CryptoCurrency.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -100,6 +133,39 @@ class CryptoCurrency(object):
         :rtype: str
         """
         return self._code
+        
+    @property
+    def code_dict(self):
+        """Gets the code of this CryptoCurrency.  # noqa: E501
+
+        A code representing the crypto currency. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The code of this CryptoCurrency.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'code': value }
+
+        
+        return result
+        
 
     @code.setter
     def code(self, code):
@@ -123,6 +189,39 @@ class CryptoCurrency(object):
         :rtype: str
         """
         return self._symbol
+        
+    @property
+    def symbol_dict(self):
+        """Gets the symbol of this CryptoCurrency.  # noqa: E501
+
+        The symbol of the Crypto Currency. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The symbol of this CryptoCurrency.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.symbol
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'symbol': value }
+
+        
+        return result
+        
 
     @symbol.setter
     def symbol(self, symbol):
@@ -146,6 +245,39 @@ class CryptoCurrency(object):
         :rtype: str
         """
         return self._first_price_date
+        
+    @property
+    def first_price_date_dict(self):
+        """Gets the first_price_date of this CryptoCurrency.  # noqa: E501
+
+        The earliest date that daily historical pricing is available for. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The first_price_date of this CryptoCurrency.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.first_price_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'first_price_date': value }
+
+        
+        return result
+        
 
     @first_price_date.setter
     def first_price_date(self, first_price_date):
@@ -169,6 +301,39 @@ class CryptoCurrency(object):
         :rtype: str
         """
         return self._last_price_date
+        
+    @property
+    def last_price_date_dict(self):
+        """Gets the last_price_date of this CryptoCurrency.  # noqa: E501
+
+        The most recent date that daily historical pricing is available for. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_price_date of this CryptoCurrency.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.last_price_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_price_date': value }
+
+        
+        return result
+        
 
     @last_price_date.setter
     def last_price_date(self, last_price_date):

@@ -59,6 +59,39 @@ class ApiResponseCryptoStats(object):
         :rtype: list[CryptoStat]
         """
         return self._stats
+        
+    @property
+    def stats_dict(self):
+        """Gets the stats of this ApiResponseCryptoStats.  # noqa: E501
+
+        A list of Crypto Currencies and their stats. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The stats of this ApiResponseCryptoStats.  # noqa: E501
+        :rtype: list[CryptoStat]
+        """
+
+        result = None
+
+        value = self.stats
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'stats': value }
+
+        
+        return result
+        
 
     @stats.setter
     def stats(self, stats):

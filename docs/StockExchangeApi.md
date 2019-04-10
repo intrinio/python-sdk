@@ -41,6 +41,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_all_stock_exchanges: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -77,13 +79,15 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 
 try:
     api_response = stock_exchange_api.get_stock_exchange_by_id(identifier)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_by_id: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -117,7 +121,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 date = '2018-08-14' # date | The date for which to return price adjustments (optional)
 page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
@@ -127,6 +131,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_price_adjustments: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -163,7 +169,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 date = '2018-08-14' # date | The date for which to return prices (optional)
 page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
@@ -173,6 +179,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_prices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -209,7 +217,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 source = '' # str | Return realtime prices from the specified data source (optional)
 page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
@@ -219,6 +227,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_realtime_prices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -255,7 +265,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 page_size = 100 # float | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
@@ -264,6 +274,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StockExchangeApi->get_stock_exchange_securities: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

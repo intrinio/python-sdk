@@ -67,6 +67,39 @@ class DonchianChannelTechnicalValue(object):
         :rtype: datetime
         """
         return self._date_time
+        
+    @property
+    def date_time_dict(self):
+        """Gets the date_time of this DonchianChannelTechnicalValue.  # noqa: E501
+
+        The date_time of the observation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The date_time of this DonchianChannelTechnicalValue.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.date_time
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'date_time': value }
+
+        
+        return result
+        
 
     @date_time.setter
     def date_time(self, date_time):
@@ -90,6 +123,39 @@ class DonchianChannelTechnicalValue(object):
         :rtype: float
         """
         return self._lower_bound
+        
+    @property
+    def lower_bound_dict(self):
+        """Gets the lower_bound of this DonchianChannelTechnicalValue.  # noqa: E501
+
+        The lower bound value of the Donchian Channel calculation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The lower_bound of this DonchianChannelTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.lower_bound
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'lower_bound': value }
+
+        
+        return result
+        
 
     @lower_bound.setter
     def lower_bound(self, lower_bound):
@@ -113,6 +179,39 @@ class DonchianChannelTechnicalValue(object):
         :rtype: float
         """
         return self._upper_bound
+        
+    @property
+    def upper_bound_dict(self):
+        """Gets the upper_bound of this DonchianChannelTechnicalValue.  # noqa: E501
+
+        The upper bound value of the Donchian Channel calculation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The upper_bound of this DonchianChannelTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.upper_bound
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'upper_bound': value }
+
+        
+        return result
+        
 
     @upper_bound.setter
     def upper_bound(self, upper_bound):

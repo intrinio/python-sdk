@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Data Point (Number)
 
-$$v2_data_point_number_description$$
+Returns a numeric value for the given `tag` and the entity with the given `identifier``
 
 ### Example
 ```python
@@ -27,22 +27,24 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_point_api = intrinio_sdk.DataPointApi()
 
-identifier = '$$v2_data_point_identifier_default$$' # str | $$v2_data_point_identifier_description$$
-tag = '$$v2_data_point_item_number_default$$' # str | $$v2_data_point_item_description$$
+identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
+tag = 'marketcap' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 try:
     api_response = data_point_api.get_data_point_number(identifier, tag)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataPointApi->get_data_point_number: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| $$v2_data_point_identifier_description$$ | 
- **tag** | **str**| $$v2_data_point_item_description$$ | 
+ **identifier** | **str**| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) | 
+ **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
 
 ### Return type
 
@@ -55,7 +57,7 @@ Name | Type | Description  | Notes
 
 Data Point (Text)
 
-$$v2_data_point_text_description$$
+Returns a text value for the given `tag` for the Security with the given `identifier`
 
 ### Example
 ```python
@@ -69,22 +71,24 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 data_point_api = intrinio_sdk.DataPointApi()
 
-identifier = '$$v2_data_point_identifier_default$$' # str | $$v2_data_point_identifier_description$$
-tag = '$$v2_data_point_item_text_default$$' # str | $$v2_data_point_item_description$$
+identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
+tag = 'ceo' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 try:
     api_response = data_point_api.get_data_point_text(identifier, tag)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataPointApi->get_data_point_text: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| $$v2_data_point_identifier_description$$ | 
- **tag** | **str**| $$v2_data_point_item_description$$ | 
+ **identifier** | **str**| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) | 
+ **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
 
 ### Return type
 

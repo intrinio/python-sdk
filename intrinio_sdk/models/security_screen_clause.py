@@ -67,6 +67,39 @@ class SecurityScreenClause(object):
         :rtype: str
         """
         return self._field
+        
+    @property
+    def field_dict(self):
+        """Gets the field of this SecurityScreenClause.  # noqa: E501
+
+        The field to use when screening, such as an Intrinio Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The field of this SecurityScreenClause.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.field
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'field': value }
+
+        
+        return result
+        
 
     @field.setter
     def field(self, field):
@@ -90,6 +123,39 @@ class SecurityScreenClause(object):
         :rtype: str
         """
         return self._operator
+        
+    @property
+    def operator_dict(self):
+        """Gets the operator of this SecurityScreenClause.  # noqa: E501
+
+        The logic operator to use when screening as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The operator of this SecurityScreenClause.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.operator
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'operator': value }
+
+        
+        return result
+        
 
     @operator.setter
     def operator(self, operator):
@@ -119,6 +185,39 @@ class SecurityScreenClause(object):
         :rtype: str
         """
         return self._value
+        
+    @property
+    def value_dict(self):
+        """Gets the value of this SecurityScreenClause.  # noqa: E501
+
+        The value to screen by as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The value of this SecurityScreenClause.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.value
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'value': value }
+
+        
+        return result
+        
 
     @value.setter
     def value(self, value):

@@ -82,6 +82,39 @@ class IchimokuKinkoHyoTechnicalValue(object):
         :rtype: datetime
         """
         return self._date_time
+        
+    @property
+    def date_time_dict(self):
+        """Gets the date_time of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+
+        The date_time of the observation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The date_time of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.date_time
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'date_time': value }
+
+        
+        return result
+        
 
     @date_time.setter
     def date_time(self, date_time):
@@ -105,6 +138,39 @@ class IchimokuKinkoHyoTechnicalValue(object):
         :rtype: float
         """
         return self._chikou_span
+        
+    @property
+    def chikou_span_dict(self):
+        """Gets the chikou_span of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+
+        The Chikou Span (Lagging Span) value of the Ichimoku Kinko Hyo calculation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The chikou_span of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.chikou_span
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'chikou_span': value }
+
+        
+        return result
+        
 
     @chikou_span.setter
     def chikou_span(self, chikou_span):
@@ -128,6 +194,39 @@ class IchimokuKinkoHyoTechnicalValue(object):
         :rtype: float
         """
         return self._kijun_sen
+        
+    @property
+    def kijun_sen_dict(self):
+        """Gets the kijun_sen of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+
+        The Kijun-sen (Base Line) value of the Ichimoku Kinko Hyo calculation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The kijun_sen of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.kijun_sen
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'kijun_sen': value }
+
+        
+        return result
+        
 
     @kijun_sen.setter
     def kijun_sen(self, kijun_sen):
@@ -151,6 +250,39 @@ class IchimokuKinkoHyoTechnicalValue(object):
         :rtype: float
         """
         return self._senkou_span_a
+        
+    @property
+    def senkou_span_a_dict(self):
+        """Gets the senkou_span_a of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+
+        The Senkou Span A (Leading Span A) value of the Ichimoku Kinko Hyo calculation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The senkou_span_a of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.senkou_span_a
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'senkou_span_a': value }
+
+        
+        return result
+        
 
     @senkou_span_a.setter
     def senkou_span_a(self, senkou_span_a):
@@ -174,6 +306,39 @@ class IchimokuKinkoHyoTechnicalValue(object):
         :rtype: float
         """
         return self._senkou_span_b
+        
+    @property
+    def senkou_span_b_dict(self):
+        """Gets the senkou_span_b of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+
+        The Senkou Span B (Leading Span B) value of the Ichimoku Kinko Hyo calculation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The senkou_span_b of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.senkou_span_b
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'senkou_span_b': value }
+
+        
+        return result
+        
 
     @senkou_span_b.setter
     def senkou_span_b(self, senkou_span_b):
@@ -197,6 +362,39 @@ class IchimokuKinkoHyoTechnicalValue(object):
         :rtype: float
         """
         return self._tenkan_sen
+        
+    @property
+    def tenkan_sen_dict(self):
+        """Gets the tenkan_sen of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+
+        The Tenskan-sen (Conversion Line) value of the Ichimoku Kinko Hyo calculation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The tenkan_sen of this IchimokuKinkoHyoTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.tenkan_sen
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'tenkan_sen': value }
+
+        
+        return result
+        
 
     @tenkan_sen.setter
     def tenkan_sen(self, tenkan_sen):

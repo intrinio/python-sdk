@@ -43,6 +43,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CryptoApi->get_crypto_book_asks: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -87,6 +89,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CryptoApi->get_crypto_book_bids: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -132,6 +136,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CryptoApi->get_crypto_book_summary: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -175,6 +181,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CryptoApi->get_crypto_currencies: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -215,6 +223,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CryptoApi->get_crypto_exchanges: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -258,6 +268,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CryptoApi->get_crypto_pairs: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -311,6 +323,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CryptoApi->get_crypto_prices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -363,6 +377,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CryptoApi->get_crypto_snapshot: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -406,6 +422,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CryptoApi->get_crypto_stats: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

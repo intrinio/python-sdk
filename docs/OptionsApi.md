@@ -45,6 +45,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OptionsApi->get_options: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -101,6 +103,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OptionsApi->get_options_chain: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -150,6 +154,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OptionsApi->get_options_expirations: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -196,6 +202,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OptionsApi->get_options_prices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

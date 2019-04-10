@@ -51,6 +51,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_all_companies: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -99,6 +101,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_all_company_news: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -140,6 +144,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_company: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -159,7 +165,7 @@ Name | Type | Description  | Notes
 
 Data Point (Number) for Company
 
-$$v2_company_data_point_number_description$$
+Returns a numeric value for the given `tag` for the Company with the given `identifier`
 
 ### Example
 ```python
@@ -173,22 +179,24 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = '$$v2_company_data_point_identifier_default$$' # str | $$v2_company_data_point_identifier_description$$
-tag = '$$v2_company_data_point_item_number_default$$' # str | $$v2_company_data_point_item_description$$
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+tag = 'marketcap' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 try:
     api_response = company_api.get_company_data_point_number(identifier, tag)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_company_data_point_number: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| $$v2_company_data_point_identifier_description$$ | 
- **tag** | **str**| $$v2_company_data_point_item_description$$ | 
+ **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
+ **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
 
 ### Return type
 
@@ -201,7 +209,7 @@ Name | Type | Description  | Notes
 
 Data Point (Text) for Company
 
-$$v2_company_data_point_text_description$$
+Returns a text value for the given `tag` for the Company with the given `identifier`
 
 ### Example
 ```python
@@ -215,22 +223,24 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = '$$v2_company_data_point_identifier_default$$' # str | $$v2_company_data_point_identifier_description$$
-tag = '$$v2_company_data_point_item_text_default$$' # str | $$v2_company_data_point_item_description$$
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+tag = 'ceo' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 try:
     api_response = company_api.get_company_data_point_text(identifier, tag)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_company_data_point_text: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| $$v2_company_data_point_identifier_description$$ | 
- **tag** | **str**| $$v2_company_data_point_item_description$$ | 
+ **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
+ **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
 
 ### Return type
 
@@ -266,6 +276,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_company_filings: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -318,6 +330,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_company_fundamentals: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -347,7 +361,7 @@ Name | Type | Description  | Notes
 
 Historical Data for Company
 
-$$v2_company_historical_data_description$$
+Returns historical values for the given `tag` and the Company with the given `identifier`
 
 ### Example
 ```python
@@ -361,8 +375,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-identifier = '$$v2_company_historical_data_identifier_default$$' # str | $$v2_company_historical_data_identifier_description$$
-tag = '$$v2_company_historical_data_item_default$$' # str | $$v2_company_historical_data_item_description$$
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
+tag = 'marketcap' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 frequency = 'daily' # str | Return historical data in the given frequency (optional) (default to daily)
 type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
@@ -376,14 +390,16 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_company_historical_data: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| $$v2_company_historical_data_identifier_description$$ | 
- **tag** | **str**| $$v2_company_historical_data_item_description$$ | 
+ **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
+ **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
  **frequency** | **str**| Return historical data in the given frequency | [optional] [default to daily]
  **type** | **str**| Filter by type, when applicable | [optional] 
  **start_date** | **date**| Get historical data on or after this date | [optional] 
@@ -426,6 +442,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_company_news: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -469,6 +487,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->get_company_securities: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -513,6 +533,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->lookup_company_fundamental: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -557,6 +579,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompanyApi->search_companies: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

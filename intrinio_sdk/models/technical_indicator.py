@@ -62,6 +62,39 @@ class TechnicalIndicator(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this TechnicalIndicator.  # noqa: E501
+
+        The name of the Technical Indicator as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this TechnicalIndicator.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -85,6 +118,39 @@ class TechnicalIndicator(object):
         :rtype: str
         """
         return self._symbol
+        
+    @property
+    def symbol_dict(self):
+        """Gets the symbol of this TechnicalIndicator.  # noqa: E501
+
+        The symbol of the Technical Indicator as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The symbol of this TechnicalIndicator.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.symbol
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'symbol': value }
+
+        
+        return result
+        
 
     @symbol.setter
     def symbol(self, symbol):

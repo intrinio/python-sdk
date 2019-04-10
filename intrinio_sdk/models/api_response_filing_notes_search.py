@@ -58,6 +58,38 @@ class ApiResponseFilingNotesSearch(object):
         :rtype: list[FilingNoteSummary]
         """
         return self._filing_notes
+        
+    @property
+    def filing_notes_dict(self):
+        """Gets the filing_notes of this ApiResponseFilingNotesSearch.  # noqa: E501
+
+
+        :return: The filing_notes of this ApiResponseFilingNotesSearch.  # noqa: E501
+        :rtype: list[FilingNoteSummary]
+        """
+
+        result = None
+
+        value = self.filing_notes
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'filing_notes': value }
+
+        
+        return result
+        
 
     @filing_notes.setter
     def filing_notes(self, filing_notes):

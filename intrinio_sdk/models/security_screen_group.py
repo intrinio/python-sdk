@@ -70,6 +70,39 @@ class SecurityScreenGroup(object):
         :rtype: str
         """
         return self._operator
+        
+    @property
+    def operator_dict(self):
+        """Gets the operator of this SecurityScreenGroup.  # noqa: E501
+
+        The logic operator for the group (AND, OR, NOT) as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The operator of this SecurityScreenGroup.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.operator
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'operator': value }
+
+        
+        return result
+        
 
     @operator.setter
     def operator(self, operator):
@@ -93,6 +126,39 @@ class SecurityScreenGroup(object):
         :rtype: list[SecurityScreenClause]
         """
         return self._clauses
+        
+    @property
+    def clauses_dict(self):
+        """Gets the clauses of this SecurityScreenGroup.  # noqa: E501
+
+        The logic clauses in the group as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The clauses of this SecurityScreenGroup.  # noqa: E501
+        :rtype: list[SecurityScreenClause]
+        """
+
+        result = None
+
+        value = self.clauses
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'clauses': value }
+
+        
+        return result
+        
 
     @clauses.setter
     def clauses(self, clauses):
@@ -116,6 +182,39 @@ class SecurityScreenGroup(object):
         :rtype: list[SecurityScreenGroup]
         """
         return self._groups
+        
+    @property
+    def groups_dict(self):
+        """Gets the groups of this SecurityScreenGroup.  # noqa: E501
+
+        The nested groups within the group as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The groups of this SecurityScreenGroup.  # noqa: E501
+        :rtype: list[SecurityScreenGroup]
+        """
+
+        result = None
+
+        value = self.groups
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'groups': value }
+
+        
+        return result
+        
 
     @groups.setter
     def groups(self, groups):

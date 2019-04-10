@@ -76,6 +76,39 @@ class ApiResponseCryptoBookBids(object):
         :rtype: list[CryptoBookEntry]
         """
         return self._bids
+        
+    @property
+    def bids_dict(self):
+        """Gets the bids of this ApiResponseCryptoBookBids.  # noqa: E501
+
+        The bid prices and their respective sizes, in descending order of price. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The bids of this ApiResponseCryptoBookBids.  # noqa: E501
+        :rtype: list[CryptoBookEntry]
+        """
+
+        result = None
+
+        value = self.bids
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'bids': value }
+
+        
+        return result
+        
 
     @bids.setter
     def bids(self, bids):
@@ -98,6 +131,38 @@ class ApiResponseCryptoBookBids(object):
         :rtype: CryptoPairSummary
         """
         return self._pair
+        
+    @property
+    def pair_dict(self):
+        """Gets the pair of this ApiResponseCryptoBookBids.  # noqa: E501
+
+
+        :return: The pair of this ApiResponseCryptoBookBids.  # noqa: E501
+        :rtype: CryptoPairSummary
+        """
+
+        result = None
+
+        value = self.pair
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'pair': value }
+
+        
+        return result
+        
 
     @pair.setter
     def pair(self, pair):
@@ -119,6 +184,38 @@ class ApiResponseCryptoBookBids(object):
         :rtype: CryptoExchangeSummary
         """
         return self._exchange
+        
+    @property
+    def exchange_dict(self):
+        """Gets the exchange of this ApiResponseCryptoBookBids.  # noqa: E501
+
+
+        :return: The exchange of this ApiResponseCryptoBookBids.  # noqa: E501
+        :rtype: CryptoExchangeSummary
+        """
+
+        result = None
+
+        value = self.exchange
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'exchange': value }
+
+        
+        return result
+        
 
     @exchange.setter
     def exchange(self, exchange):
@@ -141,6 +238,39 @@ class ApiResponseCryptoBookBids(object):
         :rtype: str
         """
         return self._last_updated
+        
+    @property
+    def last_updated_dict(self):
+        """Gets the last_updated of this ApiResponseCryptoBookBids.  # noqa: E501
+
+        The UTC timestamp of when the order book was last updated. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_updated of this ApiResponseCryptoBookBids.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.last_updated
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_updated': value }
+
+        
+        return result
+        
 
     @last_updated.setter
     def last_updated(self, last_updated):

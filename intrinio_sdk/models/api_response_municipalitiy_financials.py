@@ -64,6 +64,38 @@ class ApiResponseMunicipalitiyFinancials(object):
         :rtype: list[MunicipalityFinancial]
         """
         return self._financials
+        
+    @property
+    def financials_dict(self):
+        """Gets the financials of this ApiResponseMunicipalitiyFinancials.  # noqa: E501
+
+
+        :return: The financials of this ApiResponseMunicipalitiyFinancials.  # noqa: E501
+        :rtype: list[MunicipalityFinancial]
+        """
+
+        result = None
+
+        value = self.financials
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'financials': value }
+
+        
+        return result
+        
 
     @financials.setter
     def financials(self, financials):
@@ -85,6 +117,38 @@ class ApiResponseMunicipalitiyFinancials(object):
         :rtype: Municipality
         """
         return self._municipality
+        
+    @property
+    def municipality_dict(self):
+        """Gets the municipality of this ApiResponseMunicipalitiyFinancials.  # noqa: E501
+
+
+        :return: The municipality of this ApiResponseMunicipalitiyFinancials.  # noqa: E501
+        :rtype: Municipality
+        """
+
+        result = None
+
+        value = self.municipality
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'municipality': value }
+
+        
+        return result
+        
 
     @municipality.setter
     def municipality(self, municipality):

@@ -72,6 +72,39 @@ class DataTagSummary(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this DataTagSummary.  # noqa: E501
+
+        The Intrinio ID for the Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this DataTagSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -95,6 +128,39 @@ class DataTagSummary(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this DataTagSummary.  # noqa: E501
+
+        The readable name of the Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this DataTagSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -118,6 +184,39 @@ class DataTagSummary(object):
         :rtype: str
         """
         return self._tag
+        
+    @property
+    def tag_dict(self):
+        """Gets the tag of this DataTagSummary.  # noqa: E501
+
+        The code-name of the Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The tag of this DataTagSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.tag
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'tag': value }
+
+        
+        return result
+        
 
     @tag.setter
     def tag(self, tag):
@@ -141,6 +240,39 @@ class DataTagSummary(object):
         :rtype: str
         """
         return self._unit
+        
+    @property
+    def unit_dict(self):
+        """Gets the unit of this DataTagSummary.  # noqa: E501
+
+        The unit of the Data Tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The unit of this DataTagSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.unit
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'unit': value }
+
+        
+        return result
+        
 
     @unit.setter
     def unit(self, unit):

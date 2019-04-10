@@ -82,6 +82,39 @@ class CryptoExchange(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this CryptoExchange.  # noqa: E501
+
+        The Crypto Exchange name. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this CryptoExchange.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -105,6 +138,39 @@ class CryptoExchange(object):
         :rtype: str
         """
         return self._code
+        
+    @property
+    def code_dict(self):
+        """Gets the code of this CryptoExchange.  # noqa: E501
+
+        The Crypto Exchange code. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The code of this CryptoExchange.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'code': value }
+
+        
+        return result
+        
 
     @code.setter
     def code(self, code):
@@ -128,6 +194,39 @@ class CryptoExchange(object):
         :rtype: bool
         """
         return self._book_depth_available
+        
+    @property
+    def book_depth_available_dict(self):
+        """Gets the book_depth_available of this CryptoExchange.  # noqa: E501
+
+        A boolean, representing whether book depth data is provided by this exchange or not. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The book_depth_available of this CryptoExchange.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.book_depth_available
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'book_depth_available': value }
+
+        
+        return result
+        
 
     @book_depth_available.setter
     def book_depth_available(self, book_depth_available):
@@ -151,6 +250,39 @@ class CryptoExchange(object):
         :rtype: bool
         """
         return self._history_available
+        
+    @property
+    def history_available_dict(self):
+        """Gets the history_available of this CryptoExchange.  # noqa: E501
+
+        A boolean, representing whether historical data is provided by this exchange or not. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The history_available of this CryptoExchange.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.history_available
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'history_available': value }
+
+        
+        return result
+        
 
     @history_available.setter
     def history_available(self, history_available):
@@ -174,6 +306,39 @@ class CryptoExchange(object):
         :rtype: bool
         """
         return self._snapshot_available
+        
+    @property
+    def snapshot_available_dict(self):
+        """Gets the snapshot_available of this CryptoExchange.  # noqa: E501
+
+        A boolean, representing whether snpashot data is provided by this exchange or not. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The snapshot_available of this CryptoExchange.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.snapshot_available
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'snapshot_available': value }
+
+        
+        return result
+        
 
     @snapshot_available.setter
     def snapshot_available(self, snapshot_available):
@@ -197,6 +362,39 @@ class CryptoExchange(object):
         :rtype: bool
         """
         return self._trades_available
+        
+    @property
+    def trades_available_dict(self):
+        """Gets the trades_available of this CryptoExchange.  # noqa: E501
+
+        A boolean, representing whether trade data is provided by this exchange or not. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The trades_available of this CryptoExchange.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.trades_available
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'trades_available': value }
+
+        
+        return result
+        
 
     @trades_available.setter
     def trades_available(self, trades_available):

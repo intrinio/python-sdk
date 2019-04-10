@@ -97,6 +97,39 @@ class FilingSummary(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this FilingSummary.  # noqa: E501
+
+        The Intrinio ID of the Filing as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this FilingSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -120,6 +153,39 @@ class FilingSummary(object):
         :rtype: date
         """
         return self._filing_date
+        
+    @property
+    def filing_date_dict(self):
+        """Gets the filing_date of this FilingSummary.  # noqa: E501
+
+        The date when the filing was submitted to the SEC by the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The filing_date of this FilingSummary.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.filing_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'filing_date': value }
+
+        
+        return result
+        
 
     @filing_date.setter
     def filing_date(self, filing_date):
@@ -143,6 +209,39 @@ class FilingSummary(object):
         :rtype: datetime
         """
         return self._accepted_date
+        
+    @property
+    def accepted_date_dict(self):
+        """Gets the accepted_date of this FilingSummary.  # noqa: E501
+
+        The date and time when the filing was accepted by SEC as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The accepted_date of this FilingSummary.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.accepted_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'accepted_date': value }
+
+        
+        return result
+        
 
     @accepted_date.setter
     def accepted_date(self, accepted_date):
@@ -166,6 +265,39 @@ class FilingSummary(object):
         :rtype: date
         """
         return self._period_end_date
+        
+    @property
+    def period_end_date_dict(self):
+        """Gets the period_end_date of this FilingSummary.  # noqa: E501
+
+        The ending date of the fiscal period for the filing as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The period_end_date of this FilingSummary.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.period_end_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'period_end_date': value }
+
+        
+        return result
+        
 
     @period_end_date.setter
     def period_end_date(self, period_end_date):
@@ -189,6 +321,39 @@ class FilingSummary(object):
         :rtype: str
         """
         return self._report_type
+        
+    @property
+    def report_type_dict(self):
+        """Gets the report_type of this FilingSummary.  # noqa: E501
+
+        The filing report type as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The report_type of this FilingSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.report_type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'report_type': value }
+
+        
+        return result
+        
 
     @report_type.setter
     def report_type(self, report_type):
@@ -212,6 +377,39 @@ class FilingSummary(object):
         :rtype: str
         """
         return self._sec_unique_id
+        
+    @property
+    def sec_unique_id_dict(self):
+        """Gets the sec_unique_id of this FilingSummary.  # noqa: E501
+
+        A unique identifier for the filing provided by the SEC as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The sec_unique_id of this FilingSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.sec_unique_id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'sec_unique_id': value }
+
+        
+        return result
+        
 
     @sec_unique_id.setter
     def sec_unique_id(self, sec_unique_id):
@@ -235,6 +433,39 @@ class FilingSummary(object):
         :rtype: str
         """
         return self._filing_url
+        
+    @property
+    def filing_url_dict(self):
+        """Gets the filing_url of this FilingSummary.  # noqa: E501
+
+        The URL to the filing page on the SEC site as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The filing_url of this FilingSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.filing_url
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'filing_url': value }
+
+        
+        return result
+        
 
     @filing_url.setter
     def filing_url(self, filing_url):
@@ -258,6 +489,39 @@ class FilingSummary(object):
         :rtype: str
         """
         return self._report_url
+        
+    @property
+    def report_url_dict(self):
+        """Gets the report_url of this FilingSummary.  # noqa: E501
+
+        The URL to the actual report on the SEC site as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The report_url of this FilingSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.report_url
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'report_url': value }
+
+        
+        return result
+        
 
     @report_url.setter
     def report_url(self, report_url):
@@ -281,6 +545,39 @@ class FilingSummary(object):
         :rtype: str
         """
         return self._instance_url
+        
+    @property
+    def instance_url_dict(self):
+        """Gets the instance_url of this FilingSummary.  # noqa: E501
+
+        The URL for the XBRL filing for the report as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The instance_url of this FilingSummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.instance_url
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'instance_url': value }
+
+        
+        return result
+        
 
     @instance_url.setter
     def instance_url(self, instance_url):

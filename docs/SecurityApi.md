@@ -77,6 +77,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_all_securities: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -111,13 +113,15 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 try:
     api_response = security_api.get_security_by_id(identifier)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_by_id: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -137,7 +141,7 @@ Name | Type | Description  | Notes
 
 Data Point (Number) for Security
 
-$$v2_security_data_point_number_description$$
+Returns a numeric value for the given `tag` for the Security with the given `identifier`
 
 ### Example
 ```python
@@ -151,22 +155,24 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_security_data_point_identifier_default$$' # str | $$v2_security_data_point_identifier_description$$
-tag = '$$v2_security_data_point_item_number_default$$' # str | $$v2_security_data_point_item_description$$
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+tag = 'close_price' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 try:
     api_response = security_api.get_security_data_point_number(identifier, tag)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_data_point_number: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| $$v2_security_data_point_identifier_description$$ | 
- **tag** | **str**| $$v2_security_data_point_item_description$$ | 
+ **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
+ **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
 
 ### Return type
 
@@ -179,7 +185,7 @@ Name | Type | Description  | Notes
 
 Data Point (Text) for Security
 
-$$v2_security_data_point_text_description$$
+Returns a text value for the given `tag` for the Security with the given `identifier`
 
 ### Example
 ```python
@@ -193,21 +199,23 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_security_data_point_identifier_default$$' # str | $$v2_security_data_point_identifier_description$$
-tag = '$$v2_security_data_point_item_text_default$$' # str | An Intrinio data tag ID or code-name
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+tag = 'figi' # str | An Intrinio data tag ID or code-name
 
 try:
     api_response = security_api.get_security_data_point_text(identifier, tag)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_data_point_text: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| $$v2_security_data_point_identifier_description$$ | 
+ **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
  **tag** | **str**| An Intrinio data tag ID or code-name | 
 
 ### Return type
@@ -221,7 +229,7 @@ Name | Type | Description  | Notes
 
 Historical Data for Security
 
-$$v2_security_historical_data_description$$
+Returns historical values for the given `tag` and the Security with the given `identifier`
 
 ### Example
 ```python
@@ -235,8 +243,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_security_historical_data_identifier_default$$' # str | $$v2_security_historical_data_identifier_description$$
-tag = '$$v2_security_historical_data_item_default$$' # str | $$v2_security_data_point_item_description$$
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+tag = 'adj_close_price' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 frequency = 'daily' # str | Return historical data in the given frequency (optional) (default to daily)
 type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
@@ -250,14 +258,16 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_historical_data: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| $$v2_security_historical_data_identifier_description$$ | 
- **tag** | **str**| $$v2_security_data_point_item_description$$ | 
+ **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
+ **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
  **frequency** | **str**| Return historical data in the given frequency | [optional] [default to daily]
  **type** | **str**| Filter by type, when applicable | [optional] 
  **start_date** | **date**| Get historical data on or after this date | [optional] 
@@ -277,7 +287,7 @@ Name | Type | Description  | Notes
 
 Intraday Stock Prices for Security
 
-$$v2_security_intraday_prices_description$$
+Return intraday stock prices for the Security with the given `identifier`
 
 ### Example
 ```python
@@ -291,7 +301,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 source = '' # str | Return intraday prices from the specified data source (optional)
 start_date = '2018-01-01' # date | Return intraday prices starting at the specified date (optional)
 start_time = '4200' # str | Return intraday prices starting at the specified time on the `start_date` (timezone is UTC) (optional)
@@ -303,6 +313,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_intraday_prices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -341,13 +353,15 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 try:
     api_response = security_api.get_security_latest_dividend_record(identifier)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_latest_dividend_record: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -381,13 +395,15 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 
 try:
     api_response = security_api.get_security_latest_earnings_record(identifier)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_latest_earnings_record: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -421,7 +437,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -432,6 +448,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_adi: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -469,7 +487,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 22 # int | The number of observations, per period, to calculate Average Daily Trading Volume (optional) (default to 22)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -481,6 +499,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_adtv: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -519,7 +539,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Average Directional Index (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -531,6 +551,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_adx: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -569,7 +591,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 short_period = 5 # int | The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional) (default to 5)
 long_period = 34 # int | The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional) (default to 34)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -582,6 +604,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_ao: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -621,7 +645,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Average True Range (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -633,6 +657,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_atr: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -671,7 +697,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Bollinger Bands (optional) (default to 20)
 standard_deviations = 2.0 # float | The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional) (default to 2.0)
 price_key = 'close' # str | The Stock Price field to use when calculating Bollinger Bands (optional) (default to close)
@@ -685,6 +711,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_bb: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -725,7 +753,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Commodity Channel Index (optional) (default to 20)
 constant = 0.015 # float | The number of observations, per period, to calculate Commodity Channel Index (optional) (default to 0.015)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -738,6 +766,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_cci: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -777,7 +807,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Chaikin Money Flow (optional) (default to 20)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -789,6 +819,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_cmf: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -827,7 +859,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Donchian Channel (optional) (default to 20)
 price_key = 'close' # str | The Stock Price field to use when calculating Donchian Channel (optional) (default to close)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -840,6 +872,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_dc: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -879,7 +913,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Detrended Price Oscillator (optional) (default to 20)
 price_key = 'close' # str | The Stock Price field to use when calculating Detrended Price Oscillator (optional) (default to close)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -892,6 +926,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_dpo: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -931,7 +967,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Ease of Movement (optional) (default to 20)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -943,6 +979,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_eom: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -981,7 +1019,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -992,6 +1030,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_fi: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1029,7 +1069,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 low_period = 9 # int | The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional) (default to 9)
 medium_period = 26 # int | The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional) (default to 26)
 high_period = 52 # int | The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo (optional) (default to 52)
@@ -1043,6 +1083,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_ichimoku: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1083,7 +1125,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 10 # int | The number of observations, per period, to calculate Kelter Channel (optional) (default to 10)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -1095,6 +1137,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_kc: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1115,7 +1159,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_price_technicals_kst**
-> ApiResponseSecurityKnowSureThing get_security_price_technicals_kst(identifier, roc1=roc1, roc2=roc2, roc3=roc3, roc4=roc4, roc5=roc5, sma1=sma1, sma2=sma2, sma3=sma3, sma4=sma4, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+> ApiResponseSecurityKnowSureThing get_security_price_technicals_kst(identifier, roc1=roc1, roc2=roc2, roc3=roc3, roc4=roc4, sma1=sma1, sma2=sma2, sma3=sma3, sma4=sma4, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 
 Know Sure Thing
 
@@ -1133,12 +1177,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 roc1 = 10 # int | The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional) (default to 10)
 roc2 = 15 # int | The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional) (default to 15)
-roc3 = 15 # int | The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional) (default to 15)
-roc4 = 20 # int | The number of observations, per period, to calculate the rate-of-change for RCMA3 (optional) (default to 20)
-roc5 = 30 # int | The number of observations, per period, to calculate the rate-of-change for RCMA4 (optional) (default to 30)
+roc3 = 20 # int | The number of observations, per period, to calculate the rate-of-change for RCMA3 (optional) (default to 20)
+roc4 = 30 # int | The number of observations, per period, to calculate the rate-of-change for RCMA4 (optional) (default to 30)
 sma1 = 10 # int | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1 (optional) (default to 10)
 sma2 = 10 # int | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2 (optional) (default to 10)
 sma3 = 10 # int | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3 (optional) (default to 10)
@@ -1150,10 +1193,12 @@ page_size = 100 # int | The number of results to return (optional) (default to 1
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = security_api.get_security_price_technicals_kst(identifier, roc1=roc1, roc2=roc2, roc3=roc3, roc4=roc4, roc5=roc5, sma1=sma1, sma2=sma2, sma3=sma3, sma4=sma4, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+    api_response = security_api.get_security_price_technicals_kst(identifier, roc1=roc1, roc2=roc2, roc3=roc3, roc4=roc4, sma1=sma1, sma2=sma2, sma3=sma3, sma4=sma4, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_kst: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1163,9 +1208,8 @@ Name | Type | Description  | Notes
  **identifier** | **str**| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | 
  **roc1** | **int**| The number of observations, per period, to calculate the rate-of-change for RCMA1 | [optional] [default to 10]
  **roc2** | **int**| The number of observations, per period, to calculate the rate-of-change for RCMA2 | [optional] [default to 15]
- **roc3** | **int**| The number of observations, per period, to calculate the rate-of-change for RCMA2 | [optional] [default to 15]
- **roc4** | **int**| The number of observations, per period, to calculate the rate-of-change for RCMA3 | [optional] [default to 20]
- **roc5** | **int**| The number of observations, per period, to calculate the rate-of-change for RCMA4 | [optional] [default to 30]
+ **roc3** | **int**| The number of observations, per period, to calculate the rate-of-change for RCMA3 | [optional] [default to 20]
+ **roc4** | **int**| The number of observations, per period, to calculate the rate-of-change for RCMA4 | [optional] [default to 30]
  **sma1** | **int**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1 | [optional] [default to 10]
  **sma2** | **int**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2 | [optional] [default to 10]
  **sma3** | **int**| The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3 | [optional] [default to 10]
@@ -1201,7 +1245,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 fast_period = 12 # int | The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional) (default to 12)
 slow_period = 26 # int | The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional) (default to 26)
 signal_period = 9 # int | The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence (optional) (default to 9)
@@ -1216,6 +1260,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_macd: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1257,7 +1303,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Money Flow Index (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -1269,6 +1315,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_mfi: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1307,7 +1355,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 ema_period = 9 # int | The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional) (default to 9)
 sum_period = 25 # int | The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional) (default to 25)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -1320,6 +1368,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_mi: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1359,7 +1409,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -1370,6 +1420,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_nvi: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1407,7 +1459,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -1418,6 +1470,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_obv: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1455,7 +1509,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 10 # int | The number of observations, per period, to calculate On-balance Volume Mean (optional) (default to 10)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -1467,6 +1521,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_obv_mean: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1505,7 +1561,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Relative Strength Index (optional) (default to 14)
 price_key = 'close' # str | The Stock Price field to use when calculating Relative Strength Index (optional) (default to close)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -1518,6 +1574,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_rsi: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1557,7 +1615,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Simple Moving Average (optional) (default to 20)
 price_key = 'close' # str | The Stock Price field to use when calculating Simple Moving Average (optional) (default to close)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -1570,6 +1628,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_sma: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1609,7 +1669,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate %K of Stochastic Oscillator (optional) (default to 14)
 signal_period = 3 # int | The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional) (default to 3)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -1622,6 +1682,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_sr: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1661,7 +1723,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 15 # int | The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional) (default to 15)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -1673,6 +1735,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_trix: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1711,7 +1775,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 low_period = 13 # int | The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional) (default to 13)
 high_period = 25 # int | The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional) (default to 25)
 price_key = 'close' # str | The Stock Price field to use when calculating True Strength Index (optional) (default to close)
@@ -1725,6 +1789,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_tsi: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1765,7 +1831,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 short_period = 7 # int | The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional) (default to 7)
 medium_period = 14 # int | The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional) (default to 14)
 long_period = 28 # int | The number of observations, per period, to calculate the long period for Ultimate Oscillator (optional) (default to 28)
@@ -1782,6 +1848,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_uo: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1825,7 +1893,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Vortex Indicator (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -1837,6 +1905,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_vi: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1875,7 +1945,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -1886,6 +1956,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_vpt: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1923,7 +1995,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -1934,6 +2006,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_vwap: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -1971,7 +2045,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to look-back when calculating Williams %R (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -1983,6 +2057,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_price_technicals_wr: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2021,7 +2097,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 source = '' # str | Return the realtime price from the specified data source (optional)
 
 try:
@@ -2029,6 +2105,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_realtime_price: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2063,7 +2141,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # date | Return price adjustments on or after the date (optional)
 end_date = '2019-01-01' # date | Return price adjustments on or before the date (optional)
 page_size = 100 # float | The number of results to return (optional) (default to 100)
@@ -2074,6 +2152,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_stock_price_adjustments: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2111,7 +2191,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # date | Return prices on or after the date (optional)
 end_date = '2019-01-01' # date | Return prices on or before the date (optional)
 frequency = 'daily' # str | Return stock prices in the given frequency (optional) (default to daily)
@@ -2123,6 +2203,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->get_security_stock_prices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2172,6 +2254,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->screen_securities: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -2217,6 +2301,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->search_securities: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

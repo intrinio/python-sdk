@@ -70,6 +70,39 @@ class ApiResponseSecurityStockPrices(object):
         :rtype: list[StockPriceSummary]
         """
         return self._stock_prices
+        
+    @property
+    def stock_prices_dict(self):
+        """Gets the stock_prices of this ApiResponseSecurityStockPrices.  # noqa: E501
+
+        The stock prices for the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The stock_prices of this ApiResponseSecurityStockPrices.  # noqa: E501
+        :rtype: list[StockPriceSummary]
+        """
+
+        result = None
+
+        value = self.stock_prices
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'stock_prices': value }
+
+        
+        return result
+        
 
     @stock_prices.setter
     def stock_prices(self, stock_prices):
@@ -93,6 +126,39 @@ class ApiResponseSecurityStockPrices(object):
         :rtype: SecuritySummary
         """
         return self._security
+        
+    @property
+    def security_dict(self):
+        """Gets the security of this ApiResponseSecurityStockPrices.  # noqa: E501
+
+        The Security resolved from the given identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The security of this ApiResponseSecurityStockPrices.  # noqa: E501
+        :rtype: SecuritySummary
+        """
+
+        result = None
+
+        value = self.security
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'security': value }
+
+        
+        return result
+        
 
     @security.setter
     def security(self, security):
@@ -116,6 +182,39 @@ class ApiResponseSecurityStockPrices(object):
         :rtype: str
         """
         return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseSecurityStockPrices.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseSecurityStockPrices.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
 
     @next_page.setter
     def next_page(self, next_page):

@@ -262,6 +262,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._fiscal_year
+        
+    @property
+    def fiscal_year_dict(self):
+        """Gets the fiscal_year of this MunicipalityFinancial.  # noqa: E501
+
+        The fiscal year from which the financial data came from as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The fiscal_year of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.fiscal_year
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'fiscal_year': value }
+
+        
+        return result
+        
 
     @fiscal_year.setter
     def fiscal_year(self, fiscal_year):
@@ -285,6 +318,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._current_assets
+        
+    @property
+    def current_assets_dict(self):
+        """Gets the current_assets of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide holdings that can be liquidated on short notice as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The current_assets of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.current_assets
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'current_assets': value }
+
+        
+        return result
+        
 
     @current_assets.setter
     def current_assets(self, current_assets):
@@ -308,6 +374,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._non_current_assets
+        
+    @property
+    def non_current_assets_dict(self):
+        """Gets the non_current_assets of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide holdings not intended for near-term liquidation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The non_current_assets of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.non_current_assets
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'non_current_assets': value }
+
+        
+        return result
+        
 
     @non_current_assets.setter
     def non_current_assets(self, non_current_assets):
@@ -331,6 +430,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._deferred_outflows
+        
+    @property
+    def deferred_outflows_dict(self):
+        """Gets the deferred_outflows of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide consumptions of net position applicable to a future year as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The deferred_outflows of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.deferred_outflows
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'deferred_outflows': value }
+
+        
+        return result
+        
 
     @deferred_outflows.setter
     def deferred_outflows(self, deferred_outflows):
@@ -354,6 +486,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_assets
+        
+    @property
+    def total_assets_dict(self):
+        """Gets the total_assets of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide holdings as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_assets of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_assets
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_assets': value }
+
+        
+        return result
+        
 
     @total_assets.setter
     def total_assets(self, total_assets):
@@ -377,6 +542,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_assets_plus_deferred_outflows
+        
+    @property
+    def total_assets_plus_deferred_outflows_dict(self):
+        """Gets the total_assets_plus_deferred_outflows of this MunicipalityFinancial.  # noqa: E501
+
+        Sum of government-wide total assets and deferred outflows of resources as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_assets_plus_deferred_outflows of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_assets_plus_deferred_outflows
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_assets_plus_deferred_outflows': value }
+
+        
+        return result
+        
 
     @total_assets_plus_deferred_outflows.setter
     def total_assets_plus_deferred_outflows(self, total_assets_plus_deferred_outflows):
@@ -400,6 +598,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._current_liabilities
+        
+    @property
+    def current_liabilities_dict(self):
+        """Gets the current_liabilities of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide liabilities that typically become due within one year as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The current_liabilities of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.current_liabilities
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'current_liabilities': value }
+
+        
+        return result
+        
 
     @current_liabilities.setter
     def current_liabilities(self, current_liabilities):
@@ -423,6 +654,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._current_portion_of_long_term_debt
+        
+    @property
+    def current_portion_of_long_term_debt_dict(self):
+        """Gets the current_portion_of_long_term_debt of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide portion of long term obligations, such as bond and loan debt coming due within the next year as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The current_portion_of_long_term_debt of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.current_portion_of_long_term_debt
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'current_portion_of_long_term_debt': value }
+
+        
+        return result
+        
 
     @current_portion_of_long_term_debt.setter
     def current_portion_of_long_term_debt(self, current_portion_of_long_term_debt):
@@ -446,6 +710,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._net_pension_liability
+        
+    @property
+    def net_pension_liability_dict(self):
+        """Gets the net_pension_liability of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide liability for employee pensions net of the fiduciary net position of pension plans in which the government has an interest as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The net_pension_liability of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.net_pension_liability
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'net_pension_liability': value }
+
+        
+        return result
+        
 
     @net_pension_liability.setter
     def net_pension_liability(self, net_pension_liability):
@@ -469,6 +766,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._net_opeb_liability
+        
+    @property
+    def net_opeb_liability_dict(self):
+        """Gets the net_opeb_liability of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide liability for other postemployment benefits (OPEB). These are benefits (such as death benefits, life insurance, disability, and long-term care) that are paid in the period after employment and that are provided separately from a pension plan, as well as healthcare benefits paid in the period after employment, regardless of the manner in which they are provided. OPEB does not include termination benefits or termination payments for sick leave. Liability is reported net of any OPEB assets the government may control. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The net_opeb_liability of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.net_opeb_liability
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'net_opeb_liability': value }
+
+        
+        return result
+        
 
     @net_opeb_liability.setter
     def net_opeb_liability(self, net_opeb_liability):
@@ -492,6 +822,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._all_other_long_term_debt
+        
+    @property
+    def all_other_long_term_debt_dict(self):
+        """Gets the all_other_long_term_debt of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide liabilities not elsewhere classified as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The all_other_long_term_debt of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.all_other_long_term_debt
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'all_other_long_term_debt': value }
+
+        
+        return result
+        
 
     @all_other_long_term_debt.setter
     def all_other_long_term_debt(self, all_other_long_term_debt):
@@ -515,6 +878,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_liabilities
+        
+    @property
+    def total_liabilities_dict(self):
+        """Gets the total_liabilities of this MunicipalityFinancial.  # noqa: E501
+
+        The sum of the Municipality's all other long term debt, net open liability, net pension liability, and current portion of long term debt as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_liabilities of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_liabilities
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_liabilities': value }
+
+        
+        return result
+        
 
     @total_liabilities.setter
     def total_liabilities(self, total_liabilities):
@@ -538,6 +934,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._deferred_inflows
+        
+    @property
+    def deferred_inflows_dict(self):
+        """Gets the deferred_inflows of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide acquisitions of net position applicable to a future year as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The deferred_inflows of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.deferred_inflows
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'deferred_inflows': value }
+
+        
+        return result
+        
 
     @deferred_inflows.setter
     def deferred_inflows(self, deferred_inflows):
@@ -561,6 +990,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_liabilities_plus_deferred_inflows
+        
+    @property
+    def total_liabilities_plus_deferred_inflows_dict(self):
+        """Gets the total_liabilities_plus_deferred_inflows of this MunicipalityFinancial.  # noqa: E501
+
+        Sum of government-wide liabilities and deferred inflows of resources as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_liabilities_plus_deferred_inflows of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_liabilities_plus_deferred_inflows
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_liabilities_plus_deferred_inflows': value }
+
+        
+        return result
+        
 
     @total_liabilities_plus_deferred_inflows.setter
     def total_liabilities_plus_deferred_inflows(self, total_liabilities_plus_deferred_inflows):
@@ -584,6 +1046,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_net_position
+        
+    @property
+    def total_net_position_dict(self):
+        """Gets the total_net_position of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide assets and deferred outflows less government-wide liabilities and deferred inflows as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_net_position of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_net_position
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_net_position': value }
+
+        
+        return result
+        
 
     @total_net_position.setter
     def total_net_position(self, total_net_position):
@@ -607,6 +1102,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_unrestricted_net_position
+        
+    @property
+    def total_unrestricted_net_position_dict(self):
+        """Gets the total_unrestricted_net_position of this MunicipalityFinancial.  # noqa: E501
+
+        Net amount of government-wide assets, deferred outflows of resources, liabilities, and deferred inflows of resources that are not included in the determination of net investment in capital assets or the restricted components of net position as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_unrestricted_net_position of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_unrestricted_net_position
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_unrestricted_net_position': value }
+
+        
+        return result
+        
 
     @total_unrestricted_net_position.setter
     def total_unrestricted_net_position(self, total_unrestricted_net_position):
@@ -630,6 +1158,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_expenses
+        
+    @property
+    def total_expenses_dict(self):
+        """Gets the total_expenses of this MunicipalityFinancial.  # noqa: E501
+
+        Decreases in net position that occurred during the past year, government-wide as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_expenses of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_expenses
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_expenses': value }
+
+        
+        return result
+        
 
     @total_expenses.setter
     def total_expenses(self, total_expenses):
@@ -653,6 +1214,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._charges_for_services
+        
+    @property
+    def charges_for_services_dict(self):
+        """Gets the charges_for_services of this MunicipalityFinancial.  # noqa: E501
+
+        Charges for services is the term used for a broad category of program revenues that arise from charges to customers, applicants, or others who purchase, use, or directly benefit from the goods, services, or privileges provided, or are otherwise directly affected by the services. Revenues in this category include fees charged for specific services, such as water use or garbage collection; licenses and permits, such as dog licenses, liquor licenses, and building permits; operating special assessments, such as for street cleaning or special street lighting; and any other amounts charged to service recipients. Fines and forfeitures are also included in this category because they result from direct charges to those who are otherwise directly affected by a program or service, even though they receive no benefit. Payments from other governments for goods or services should be reported in this category. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The charges_for_services of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.charges_for_services
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'charges_for_services': value }
+
+        
+        return result
+        
 
     @charges_for_services.setter
     def charges_for_services(self, charges_for_services):
@@ -676,6 +1270,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._operating_grants_and_contributions
+        
+    @property
+    def operating_grants_and_contributions_dict(self):
+        """Gets the operating_grants_and_contributions of this MunicipalityFinancial.  # noqa: E501
+
+        Program-specific grants and contributions - includes revenues arising from mandatory and voluntary nonexchange transactions with other governments, organizations, or individuals that are restricted for use in a particular program. Some grants and contributions consist of capital assets or resources that are restricted for capital purposes—to purchase, construct, or renovate capital assets associated with a specific program. These should be reported separately from grants and contributions that may be used either for operating expenses or for capital expenditures of the program at the discretion of the reporting government. These categories of program revenue are specifically attributable to a program and reduce the net expense of that program to the reporting government. For example, a state may provide an operating grant to a county sheriff's department for a drug-awareness-and-enforcement program. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The operating_grants_and_contributions of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.operating_grants_and_contributions
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'operating_grants_and_contributions': value }
+
+        
+        return result
+        
 
     @operating_grants_and_contributions.setter
     def operating_grants_and_contributions(self, operating_grants_and_contributions):
@@ -699,6 +1326,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._capital_grants_and_contributions
+        
+    @property
+    def capital_grants_and_contributions_dict(self):
+        """Gets the capital_grants_and_contributions of this MunicipalityFinancial.  # noqa: E501
+
+        Program-specific grants and contributions - includes revenues arising from mandatory and voluntary nonexchange transactions with other governments, organizations, or individuals that are restricted for use in a particular program. Some grants and contributions consist of capital assets or resources that are restricted for capital purposes—to purchase, construct, or renovate capital assets associated with a specific program. These should be reported separately from grants and contributions that may be used either for operating expenses or for capital expenditures of the program at the discretion of the reporting government. These categories of program revenue are specifically attributable to a program and reduce the net expense of that program to the reporting government. For example, a state may provide a capital grant to finance construction of a new jail. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The capital_grants_and_contributions of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.capital_grants_and_contributions
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'capital_grants_and_contributions': value }
+
+        
+        return result
+        
 
     @capital_grants_and_contributions.setter
     def capital_grants_and_contributions(self, capital_grants_and_contributions):
@@ -722,6 +1382,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._general_revenues
+        
+    @property
+    def general_revenues_dict(self):
+        """Gets the general_revenues of this MunicipalityFinancial.  # noqa: E501
+
+        All revenues are general revenues unless they are required to be reported as program revenues. All taxes, even those that are levied for a specific purpose, are general revenues and should be reported by type of tax—for example, sales tax, property tax, franchise tax, income tax. All other nontax revenues (including interest, grants, and contributions) that do not meet the criteria to be reported as program revenues should also be reported as general revenues. General revenues should be reported after total net expense of the government's functions. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The general_revenues of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.general_revenues
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'general_revenues': value }
+
+        
+        return result
+        
 
     @general_revenues.setter
     def general_revenues(self, general_revenues):
@@ -745,6 +1438,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._other_revenues
+        
+    @property
+    def other_revenues_dict(self):
+        """Gets the other_revenues of this MunicipalityFinancial.  # noqa: E501
+
+        Government-wide revenues not elsewhere classified as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The other_revenues of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.other_revenues
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'other_revenues': value }
+
+        
+        return result
+        
 
     @other_revenues.setter
     def other_revenues(self, other_revenues):
@@ -768,6 +1494,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_revenues
+        
+    @property
+    def total_revenues_dict(self):
+        """Gets the total_revenues of this MunicipalityFinancial.  # noqa: E501
+
+        Increases in net position that occurred during the past year, government-wide as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_revenues of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_revenues
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_revenues': value }
+
+        
+        return result
+        
 
     @total_revenues.setter
     def total_revenues(self, total_revenues):
@@ -791,6 +1550,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._change_in_net_assets
+        
+    @property
+    def change_in_net_assets_dict(self):
+        """Gets the change_in_net_assets of this MunicipalityFinancial.  # noqa: E501
+
+        Difference between the government's net position at the end of the fiscal year and the government's net position at the beginning of the fiscal year as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The change_in_net_assets of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.change_in_net_assets
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'change_in_net_assets': value }
+
+        
+        return result
+        
 
     @change_in_net_assets.setter
     def change_in_net_assets(self, change_in_net_assets):
@@ -814,6 +1606,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._non_spendable_general_fund_balance
+        
+    @property
+    def non_spendable_general_fund_balance_dict(self):
+        """Gets the non_spendable_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        The portion of general fund balance classified as nonspendable. The nonspendable fund balance classification includes amounts that cannot be spent because they are either (a) not in spendable form or (b) legally or contractually required to be maintained intact. The “not in spendable form” criterion includes items that are not expected to be converted to cash, for example, inventories and prepaid amounts. It also includes the long-term amount of loans and notes receivable, as well as property acquired for resale. However, if the use of the proceeds from the collection of those receivables or from the sale of those properties is restricted, committed, or assigned, then they should be included in the appropriate fund balance classification (restricted, committed, or assigned), rather than nonspendable fund balance. The corpus (or principal) of a permanent fund is an example of an amount that is legally or contractually required to be maintained intact. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The non_spendable_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.non_spendable_general_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'non_spendable_general_fund_balance': value }
+
+        
+        return result
+        
 
     @non_spendable_general_fund_balance.setter
     def non_spendable_general_fund_balance(self, non_spendable_general_fund_balance):
@@ -837,6 +1662,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._restricted_general_fund_balance
+        
+    @property
+    def restricted_general_fund_balance_dict(self):
+        """Gets the restricted_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        The portion of general fund balance classified as restricted. Fund balance should be reported as restricted when constraints placed on the use of resources are either (a) Externally imposed by creditors (such as through debt covenants), grantors, contributors, or laws or regulations of other governments or (b) Imposed by law through constitutional provisions or enabling legislation. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The restricted_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.restricted_general_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'restricted_general_fund_balance': value }
+
+        
+        return result
+        
 
     @restricted_general_fund_balance.setter
     def restricted_general_fund_balance(self, restricted_general_fund_balance):
@@ -860,6 +1718,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._committed_general_fund_balance
+        
+    @property
+    def committed_general_fund_balance_dict(self):
+        """Gets the committed_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        The portion of general fund balance classified as committed. Amounts that can only be used for specific purposes pursuant to constraints imposed by formal action of the government’s highest level of decision-making authority should be reported as committed fund balance. Those committed amounts cannot be used for any other purpose unless the government removes or changes the specified use by taking the same type of action (for example, legislation, resolution, ordinance) it employed to previously commit those amounts. The authorization specifying the purposes for which amounts can be used should have the consent of both the legislative and executive branches of the government, if applicable. Committed fund balance also should incorporate contractual obligations to the extent that existing resources in the fund have been specifically committed for use in satisfying those contractual requirements. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The committed_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.committed_general_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'committed_general_fund_balance': value }
+
+        
+        return result
+        
 
     @committed_general_fund_balance.setter
     def committed_general_fund_balance(self, committed_general_fund_balance):
@@ -883,6 +1774,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._unassigned_general_fund_balance
+        
+    @property
+    def unassigned_general_fund_balance_dict(self):
+        """Gets the unassigned_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        The portion of general fund balance classified as unassigned. Unassigned fund balance is the residual classification for the general fund. This classification represents fund balance that has not been assigned to other funds and that has not been restricted, committed, or assigned to specific purposes within the general fund. The general fund should be the only fund that reports a positive unassigned fund balance amount. In other governmental funds, if expenditures incurred for specific purposes exceeded the amounts restricted, committed, or assigned to those purposes, it may be necessary to report a negative unassigned fund balance. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The unassigned_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.unassigned_general_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'unassigned_general_fund_balance': value }
+
+        
+        return result
+        
 
     @unassigned_general_fund_balance.setter
     def unassigned_general_fund_balance(self, unassigned_general_fund_balance):
@@ -906,6 +1830,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._assigned_general_fund_balance
+        
+    @property
+    def assigned_general_fund_balance_dict(self):
+        """Gets the assigned_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        The portion of general fund balance classified as assigned. Amounts that are constrained by the government’s intent to be used for specific purposes, but are neither restricted nor committed, should be reported as assigned fund balance, except for stabilization arrangements.. Intent should be expressed by (a) the governing body itself or (b) a body (a budget or finance committee, for example) or official to which the governing body has delegated the authority to assign amounts to be used for specific purposes. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The assigned_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.assigned_general_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'assigned_general_fund_balance': value }
+
+        
+        return result
+        
 
     @assigned_general_fund_balance.setter
     def assigned_general_fund_balance(self, assigned_general_fund_balance):
@@ -929,6 +1886,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_general_fund_balance
+        
+    @property
+    def total_general_fund_balance_dict(self):
+        """Gets the total_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        General fund balance in all classifications. Fund balance is the difference between governmental fund assets and deferred outflows of resources, and liabilities and deferred inflows of resources. It is sometimes referred to as fund equity. The general fund is used to account for and report all financial resources not accounted for and reported in another governmental fund. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_general_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_general_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_general_fund_balance': value }
+
+        
+        return result
+        
 
     @total_general_fund_balance.setter
     def total_general_fund_balance(self, total_general_fund_balance):
@@ -952,6 +1942,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._non_spendable_governmental_fund_balance
+        
+    @property
+    def non_spendable_governmental_fund_balance_dict(self):
+        """Gets the non_spendable_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        For all governmental funds, the aggregate of fund balances that are classified as nonspendable. The nonspendable fund balance classification includes amounts that cannot be spent because they are either (a) not in spendable form or (b) legally or contractually required to be maintained intact. The “not in spendable form” criterion includes items that are not expected to be converted to cash, for example, inventories and prepaid amounts. It also includes the long-term amount of loans and notes receivable, as well as property acquired for resale. However, if the use of the proceeds from the collection of those receivables or from the sale of those properties is restricted, committed, or assigned, then they should be included in the appropriate fund balance classification (restricted, committed, or assigned), rather than nonspendable fund balance. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The non_spendable_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.non_spendable_governmental_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'non_spendable_governmental_fund_balance': value }
+
+        
+        return result
+        
 
     @non_spendable_governmental_fund_balance.setter
     def non_spendable_governmental_fund_balance(self, non_spendable_governmental_fund_balance):
@@ -975,6 +1998,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._restricted_governmental_fund_balance
+        
+    @property
+    def restricted_governmental_fund_balance_dict(self):
+        """Gets the restricted_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        For all governmental funds, the aggregate of fund balances that are classified as restricted. Fund balance should be reported as restricted when constraints placed on the use of resources are either (a) Externally imposed by creditors (such as through debt covenants), grantors, contributors, or laws or regulations of other governments; or (b) Imposed by law through constitutional provisions or enabling legislation. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The restricted_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.restricted_governmental_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'restricted_governmental_fund_balance': value }
+
+        
+        return result
+        
 
     @restricted_governmental_fund_balance.setter
     def restricted_governmental_fund_balance(self, restricted_governmental_fund_balance):
@@ -998,6 +2054,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._committed_governmental_fund_balance
+        
+    @property
+    def committed_governmental_fund_balance_dict(self):
+        """Gets the committed_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        For all governmental funds, the aggregate of fund balances that are classified as committed. Amounts that can only be used for specific purposes pursuant to constraints imposed by formal action of the government’s highest level of decision-making authority should be reported as committed fund balance. Those committed amounts cannot be used for any other purpose unless the government removes or changes the specified use by taking the same type of action (for example, legislation, resolution, ordinance) it employed to previously commit those amounts. The authorization specifying the purposes for which amounts can be used should have the consent of both the legislative and executive branches of the government, if applicable. Committed fund balance also should incorporate contractual obligations to the extent that existing resources in the fund have been specifically committed for use in satisfying those contractual requirements. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The committed_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.committed_governmental_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'committed_governmental_fund_balance': value }
+
+        
+        return result
+        
 
     @committed_governmental_fund_balance.setter
     def committed_governmental_fund_balance(self, committed_governmental_fund_balance):
@@ -1021,6 +2110,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._unassigned_governmental_fund_balance
+        
+    @property
+    def unassigned_governmental_fund_balance_dict(self):
+        """Gets the unassigned_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        For all governmental funds, the aggregate of fund balances that are classified as unassigned. Unassigned fund balance is the residual classification for the general fund. This classification represents fund balance that has not been assigned to other funds and that has not been restricted, committed, or assigned to specific purposes within the general fund. The general fund should be the only fund that reports a positive unassigned fund balance amount. In other governmental funds, if expenditures incurred for specific purposes exceeded the amounts restricted, committed, or assigned to those purposes, it may be necessary to report a negative unassigned fund balance. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The unassigned_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.unassigned_governmental_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'unassigned_governmental_fund_balance': value }
+
+        
+        return result
+        
 
     @unassigned_governmental_fund_balance.setter
     def unassigned_governmental_fund_balance(self, unassigned_governmental_fund_balance):
@@ -1044,6 +2166,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._assigned_governmental_fund_balance
+        
+    @property
+    def assigned_governmental_fund_balance_dict(self):
+        """Gets the assigned_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        For all governmental funds, the aggregate of fund balances that are classified as assigned. Amounts that are constrained by the government’s intent to be used for specific purposes, but are neither restricted nor committed, should be reported as assigned fund balance, except for stabilization arrangements.. Intent should be expressed by (a) the governing body itself or (b) a body (a budget or finance committee, for example) or official to which the governing body has delegated the authority to assign amounts to be used for specific purposes. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The assigned_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.assigned_governmental_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'assigned_governmental_fund_balance': value }
+
+        
+        return result
+        
 
     @assigned_governmental_fund_balance.setter
     def assigned_governmental_fund_balance(self, assigned_governmental_fund_balance):
@@ -1067,6 +2222,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._total_governmental_fund_balance
+        
+    @property
+    def total_governmental_fund_balance_dict(self):
+        """Gets the total_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+
+        For all governmental funds, the aggregate of all fund balances in any classification. Fund balance is the difference between governmental fund assets and deferred outflows of resources, and liabilities and deferred inflows of resources. It is sometimes referred to as fund equity. Governmental funds are used to account for general government activities that are financed primarily through taxes, intergovernmental revenues, and other nonexchange revenues. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_governmental_fund_balance of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_governmental_fund_balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_governmental_fund_balance': value }
+
+        
+        return result
+        
 
     @total_governmental_fund_balance.setter
     def total_governmental_fund_balance(self, total_governmental_fund_balance):
@@ -1090,6 +2278,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._general_fund_revenues
+        
+    @property
+    def general_fund_revenues_dict(self):
+        """Gets the general_fund_revenues of this MunicipalityFinancial.  # noqa: E501
+
+        Increases in financial resources attributable to the general fund. The general fund is used to account for and report all financial resources not accounted for and reported in another governmental fund. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The general_fund_revenues of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.general_fund_revenues
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'general_fund_revenues': value }
+
+        
+        return result
+        
 
     @general_fund_revenues.setter
     def general_fund_revenues(self, general_fund_revenues):
@@ -1113,6 +2334,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._general_fund_expenditures
+        
+    @property
+    def general_fund_expenditures_dict(self):
+        """Gets the general_fund_expenditures of this MunicipalityFinancial.  # noqa: E501
+
+        Decreases in financial resources attributable to the general fund. The general fund is used to account for and report all financial resources not accounted for and reported in another governmental fund. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The general_fund_expenditures of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.general_fund_expenditures
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'general_fund_expenditures': value }
+
+        
+        return result
+        
 
     @general_fund_expenditures.setter
     def general_fund_expenditures(self, general_fund_expenditures):
@@ -1136,6 +2390,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._general_fund_revenues_over_under_expenditure
+        
+    @property
+    def general_fund_revenues_over_under_expenditure_dict(self):
+        """Gets the general_fund_revenues_over_under_expenditure of this MunicipalityFinancial.  # noqa: E501
+
+        Difference between general fund revenues and expenditures.  If positive, this amount is called a surplus.  If negative, it represents a deficit. The general fund is used to account for and report all financial resources not accounted for and reported in another governmental fund. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The general_fund_revenues_over_under_expenditure of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.general_fund_revenues_over_under_expenditure
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'general_fund_revenues_over_under_expenditure': value }
+
+        
+        return result
+        
 
     @general_fund_revenues_over_under_expenditure.setter
     def general_fund_revenues_over_under_expenditure(self, general_fund_revenues_over_under_expenditure):
@@ -1159,6 +2446,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._governmental_fund_revenues
+        
+    @property
+    def governmental_fund_revenues_dict(self):
+        """Gets the governmental_fund_revenues of this MunicipalityFinancial.  # noqa: E501
+
+        Increases in financial resources attributable to any governmental fund. Governmental funds are used to account for general government activities that are financed primarily through taxes, intergovernmental revenues, and other nonexchange revenues. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The governmental_fund_revenues of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.governmental_fund_revenues
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'governmental_fund_revenues': value }
+
+        
+        return result
+        
 
     @governmental_fund_revenues.setter
     def governmental_fund_revenues(self, governmental_fund_revenues):
@@ -1182,6 +2502,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._governmental_fund_expenditures
+        
+    @property
+    def governmental_fund_expenditures_dict(self):
+        """Gets the governmental_fund_expenditures of this MunicipalityFinancial.  # noqa: E501
+
+        Decreases in financial resources attributable to any governmental fund. Governmental funds are used to account for general government activities that are financed primarily through taxes, intergovernmental revenues, and other nonexchange revenues. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The governmental_fund_expenditures of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.governmental_fund_expenditures
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'governmental_fund_expenditures': value }
+
+        
+        return result
+        
 
     @governmental_fund_expenditures.setter
     def governmental_fund_expenditures(self, governmental_fund_expenditures):
@@ -1205,6 +2558,39 @@ class MunicipalityFinancial(object):
         :rtype: float
         """
         return self._governmental_fund_revenues_over_under_expenditure
+        
+    @property
+    def governmental_fund_revenues_over_under_expenditure_dict(self):
+        """Gets the governmental_fund_revenues_over_under_expenditure of this MunicipalityFinancial.  # noqa: E501
+
+        Difference between revenues and expenditures attributable to all governmental funds.  If positive, this amount is called a surplus.  If negative, it represents a deficit. Governmental funds are used to account for general government activities that are financed primarily through taxes, intergovernmental revenues, and other nonexchange revenues. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The governmental_fund_revenues_over_under_expenditure of this MunicipalityFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.governmental_fund_revenues_over_under_expenditure
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'governmental_fund_revenues_over_under_expenditure': value }
+
+        
+        return result
+        
 
     @governmental_fund_revenues_over_under_expenditure.setter
     def governmental_fund_revenues_over_under_expenditure(self, governmental_fund_revenues_over_under_expenditure):

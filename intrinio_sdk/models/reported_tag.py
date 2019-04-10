@@ -87,6 +87,39 @@ class ReportedTag(object):
         :rtype: str
         """
         return self._tag
+        
+    @property
+    def tag_dict(self):
+        """Gets the tag of this ReportedTag.  # noqa: E501
+
+        The tag code as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The tag of this ReportedTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.tag
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'tag': value }
+
+        
+        return result
+        
 
     @tag.setter
     def tag(self, tag):
@@ -110,6 +143,39 @@ class ReportedTag(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this ReportedTag.  # noqa: E501
+
+        The tag name as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this ReportedTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -133,6 +199,39 @@ class ReportedTag(object):
         :rtype: str
         """
         return self._balance
+        
+    @property
+    def balance_dict(self):
+        """Gets the balance of this ReportedTag.  # noqa: E501
+
+        Whether the tag represents a credit or debit as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The balance of this ReportedTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.balance
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'balance': value }
+
+        
+        return result
+        
 
     @balance.setter
     def balance(self, balance):
@@ -156,6 +255,39 @@ class ReportedTag(object):
         :rtype: str
         """
         return self._unit
+        
+    @property
+    def unit_dict(self):
+        """Gets the unit of this ReportedTag.  # noqa: E501
+
+        The unit of the tag as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The unit of this ReportedTag.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.unit
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'unit': value }
+
+        
+        return result
+        
 
     @unit.setter
     def unit(self, unit):
@@ -179,6 +311,39 @@ class ReportedTag(object):
         :rtype: bool
         """
         return self._abstract
+        
+    @property
+    def abstract_dict(self):
+        """Gets the abstract of this ReportedTag.  # noqa: E501
+
+        If true, the tag is an abstract and does not represent a nominal value as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The abstract of this ReportedTag.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.abstract
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'abstract': value }
+
+        
+        return result
+        
 
     @abstract.setter
     def abstract(self, abstract):
@@ -202,6 +367,39 @@ class ReportedTag(object):
         :rtype: int
         """
         return self._sequence
+        
+    @property
+    def sequence_dict(self):
+        """Gets the sequence of this ReportedTag.  # noqa: E501
+
+        The vertical sequence of the tag when displayed in the financial statement as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The sequence of this ReportedTag.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.sequence
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'sequence': value }
+
+        
+        return result
+        
 
     @sequence.setter
     def sequence(self, sequence):
@@ -225,6 +423,39 @@ class ReportedTag(object):
         :rtype: int
         """
         return self._depth
+        
+    @property
+    def depth_dict(self):
+        """Gets the depth of this ReportedTag.  # noqa: E501
+
+        The horizontal depth of the tag when displayed in the financial statement as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The depth of this ReportedTag.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.depth
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'depth': value }
+
+        
+        return result
+        
 
     @depth.setter
     def depth(self, depth):

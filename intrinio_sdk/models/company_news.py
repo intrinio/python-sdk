@@ -84,6 +84,39 @@ class CompanyNews(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this CompanyNews.  # noqa: E501
+
+        The Intrinio ID for the news article as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this CompanyNews.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -107,6 +140,39 @@ class CompanyNews(object):
         :rtype: str
         """
         return self._title
+        
+    @property
+    def title_dict(self):
+        """Gets the title of this CompanyNews.  # noqa: E501
+
+        The title of the news article as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The title of this CompanyNews.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.title
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'title': value }
+
+        
+        return result
+        
 
     @title.setter
     def title(self, title):
@@ -130,6 +196,39 @@ class CompanyNews(object):
         :rtype: datetime
         """
         return self._publication_date
+        
+    @property
+    def publication_date_dict(self):
+        """Gets the publication_date of this CompanyNews.  # noqa: E501
+
+        The publication date of the news article as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The publication_date of this CompanyNews.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.publication_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'publication_date': value }
+
+        
+        return result
+        
 
     @publication_date.setter
     def publication_date(self, publication_date):
@@ -153,6 +252,39 @@ class CompanyNews(object):
         :rtype: str
         """
         return self._url
+        
+    @property
+    def url_dict(self):
+        """Gets the url of this CompanyNews.  # noqa: E501
+
+        The url of the news article as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The url of this CompanyNews.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.url
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'url': value }
+
+        
+        return result
+        
 
     @url.setter
     def url(self, url):
@@ -176,6 +308,39 @@ class CompanyNews(object):
         :rtype: str
         """
         return self._summary
+        
+    @property
+    def summary_dict(self):
+        """Gets the summary of this CompanyNews.  # noqa: E501
+
+        A summary of the news article as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The summary of this CompanyNews.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.summary
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'summary': value }
+
+        
+        return result
+        
 
     @summary.setter
     def summary(self, summary):
@@ -199,6 +364,39 @@ class CompanyNews(object):
         :rtype: CompanySummary
         """
         return self._company
+        
+    @property
+    def company_dict(self):
+        """Gets the company of this CompanyNews.  # noqa: E501
+
+        The Company that the Fundamental was belongs to as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The company of this CompanyNews.  # noqa: E501
+        :rtype: CompanySummary
+        """
+
+        result = None
+
+        value = self.company
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'company': value }
+
+        
+        return result
+        
 
     @company.setter
     def company(self, company):

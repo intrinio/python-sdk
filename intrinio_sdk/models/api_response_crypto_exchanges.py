@@ -59,6 +59,39 @@ class ApiResponseCryptoExchanges(object):
         :rtype: list[CryptoExchange]
         """
         return self._exchanges
+        
+    @property
+    def exchanges_dict(self):
+        """Gets the exchanges of this ApiResponseCryptoExchanges.  # noqa: E501
+
+        A list of Crypto Exchanges for the given Crypto Currency Pair sorted alphabetically by code. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The exchanges of this ApiResponseCryptoExchanges.  # noqa: E501
+        :rtype: list[CryptoExchange]
+        """
+
+        result = None
+
+        value = self.exchanges
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'exchanges': value }
+
+        
+        return result
+        
 
     @exchanges.setter
     def exchanges(self, exchanges):

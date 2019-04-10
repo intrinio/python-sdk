@@ -5,7 +5,7 @@ To get an API key, [sign up here](https://intrinio.com/).
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
 - API version: 2.5.0
-- Package version: 2.2.0
+- Package version: 2.2.1
 
 
 ## Requirements.
@@ -64,15 +64,21 @@ import intrinio_sdk
 from intrinio_sdk.rest import ApiException
 from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY' 
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+security_api = intrinio_sdk.SecurityApi()
+
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+start_date = '2019-01-02' # date | Return intraday prices starting at the specified date (optional)
+end_date = '2019-01-04' # date | Return intraday prices stopping at the specified date (optional)
 
 try:
-    api_response = company_api.filter_companies()
-    pprint(api_response)
+    api_response = security_api.get_security_intraday_prices(identifier, start_date=start_date, end_date=end_date)
+    pprint(api_response.intraday_prices)
 except ApiException as e:
-    print("Exception when calling CompanyApi->filter_companies: %s\n" % e)
+    print("Exception when calling SecurityApi->get_security_intraday_prices: %s\n" % e)
+
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.intraday_prices_dict) 
 ```
 
 ## Documentation for API Endpoints

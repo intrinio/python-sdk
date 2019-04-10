@@ -67,6 +67,39 @@ class ForexCurrency(object):
         :rtype: str
         """
         return self._code
+        
+    @property
+    def code_dict(self):
+        """Gets the code of this ForexCurrency.  # noqa: E501
+
+        The ISO 4217 currency code as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The code of this ForexCurrency.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'code': value }
+
+        
+        return result
+        
 
     @code.setter
     def code(self, code):
@@ -90,6 +123,39 @@ class ForexCurrency(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this ForexCurrency.  # noqa: E501
+
+        The name of the currency as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this ForexCurrency.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -113,6 +179,39 @@ class ForexCurrency(object):
         :rtype: str
         """
         return self._country
+        
+    @property
+    def country_dict(self):
+        """Gets the country of this ForexCurrency.  # noqa: E501
+
+        The country in which the currency is used as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The country of this ForexCurrency.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.country
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'country': value }
+
+        
+        return result
+        
 
     @country.setter
     def country(self, country):

@@ -58,6 +58,38 @@ class ApiResponseForexPairs(object):
         :rtype: list[ForexPair]
         """
         return self._pairs
+        
+    @property
+    def pairs_dict(self):
+        """Gets the pairs of this ApiResponseForexPairs.  # noqa: E501
+
+
+        :return: The pairs of this ApiResponseForexPairs.  # noqa: E501
+        :rtype: list[ForexPair]
+        """
+
+        result = None
+
+        value = self.pairs
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'pairs': value }
+
+        
+        return result
+        
 
     @pairs.setter
     def pairs(self, pairs):

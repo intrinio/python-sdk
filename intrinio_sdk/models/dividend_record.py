@@ -104,6 +104,39 @@ class DividendRecord(object):
         :rtype: float
         """
         return self._ex_dividend
+        
+    @property
+    def ex_dividend_dict(self):
+        """Gets the ex_dividend of this DividendRecord.  # noqa: E501
+
+        Amount of dividend in US dollars as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ex_dividend of this DividendRecord.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.ex_dividend
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ex_dividend': value }
+
+        
+        return result
+        
 
     @ex_dividend.setter
     def ex_dividend(self, ex_dividend):
@@ -127,6 +160,39 @@ class DividendRecord(object):
         :rtype: str
         """
         return self._currency
+        
+    @property
+    def currency_dict(self):
+        """Gets the currency of this DividendRecord.  # noqa: E501
+
+        The 3-digit currency code the dividend amount was reported in as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The currency of this DividendRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.currency
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'currency': value }
+
+        
+        return result
+        
 
     @currency.setter
     def currency(self, currency):
@@ -150,6 +216,39 @@ class DividendRecord(object):
         :rtype: date
         """
         return self._announcement_date
+        
+    @property
+    def announcement_date_dict(self):
+        """Gets the announcement_date of this DividendRecord.  # noqa: E501
+
+        Date dividend was announced as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The announcement_date of this DividendRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.announcement_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'announcement_date': value }
+
+        
+        return result
+        
 
     @announcement_date.setter
     def announcement_date(self, announcement_date):
@@ -173,6 +272,39 @@ class DividendRecord(object):
         :rtype: date
         """
         return self._record_date
+        
+    @property
+    def record_date_dict(self):
+        """Gets the record_date of this DividendRecord.  # noqa: E501
+
+        Date before which holders-of-record will receive the dividend as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The record_date of this DividendRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.record_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'record_date': value }
+
+        
+        return result
+        
 
     @record_date.setter
     def record_date(self, record_date):
@@ -196,6 +328,39 @@ class DividendRecord(object):
         :rtype: date
         """
         return self._pay_date
+        
+    @property
+    def pay_date_dict(self):
+        """Gets the pay_date of this DividendRecord.  # noqa: E501
+
+        Date the divdiend was paid as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The pay_date of this DividendRecord.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.pay_date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'pay_date': value }
+
+        
+        return result
+        
 
     @pay_date.setter
     def pay_date(self, pay_date):
@@ -219,6 +384,39 @@ class DividendRecord(object):
         :rtype: str
         """
         return self._frequency
+        
+    @property
+    def frequency_dict(self):
+        """Gets the frequency of this DividendRecord.  # noqa: E501
+
+        Identifies payment frequency of announced dividend as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The frequency of this DividendRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.frequency
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'frequency': value }
+
+        
+        return result
+        
 
     @frequency.setter
     def frequency(self, frequency):
@@ -242,6 +440,39 @@ class DividendRecord(object):
         :rtype: str
         """
         return self._status
+        
+    @property
+    def status_dict(self):
+        """Gets the status of this DividendRecord.  # noqa: E501
+
+        Status of the dividend as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The status of this DividendRecord.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.status
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'status': value }
+
+        
+        return result
+        
 
     @status.setter
     def status(self, status):
@@ -271,6 +502,39 @@ class DividendRecord(object):
         :rtype: float
         """
         return self._forward_yield
+        
+    @property
+    def forward_yield_dict(self):
+        """Gets the forward_yield of this DividendRecord.  # noqa: E501
+
+        The forward dividend yield as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The forward_yield of this DividendRecord.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.forward_yield
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'forward_yield': value }
+
+        
+        return result
+        
 
     @forward_yield.setter
     def forward_yield(self, forward_yield):
@@ -294,6 +558,39 @@ class DividendRecord(object):
         :rtype: float
         """
         return self._forward_rate
+        
+    @property
+    def forward_rate_dict(self):
+        """Gets the forward_rate of this DividendRecord.  # noqa: E501
+
+        The forward dividend rate as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The forward_rate of this DividendRecord.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.forward_rate
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'forward_rate': value }
+
+        
+        return result
+        
 
     @forward_rate.setter
     def forward_rate(self, forward_rate):
@@ -316,6 +613,38 @@ class DividendRecord(object):
         :rtype: SecuritySummary
         """
         return self._security
+        
+    @property
+    def security_dict(self):
+        """Gets the security of this DividendRecord.  # noqa: E501
+
+
+        :return: The security of this DividendRecord.  # noqa: E501
+        :rtype: SecuritySummary
+        """
+
+        result = None
+
+        value = self.security
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'security': value }
+
+        
+        return result
+        
 
     @security.setter
     def security(self, security):

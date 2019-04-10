@@ -102,6 +102,39 @@ class ForexPrice(object):
         :rtype: str
         """
         return self._occurred_at
+        
+    @property
+    def occurred_at_dict(self):
+        """Gets the occurred_at of this ForexPrice.  # noqa: E501
+
+        The timestamp of the beginning of the timeframe. The open prices would be at this time, while close prices would be at this time plus the timeframe. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The occurred_at of this ForexPrice.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.occurred_at
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'occurred_at': value }
+
+        
+        return result
+        
 
     @occurred_at.setter
     def occurred_at(self, occurred_at):
@@ -125,6 +158,39 @@ class ForexPrice(object):
         :rtype: float
         """
         return self._open_bid
+        
+    @property
+    def open_bid_dict(self):
+        """Gets the open_bid of this ForexPrice.  # noqa: E501
+
+        Open bid as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The open_bid of this ForexPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.open_bid
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'open_bid': value }
+
+        
+        return result
+        
 
     @open_bid.setter
     def open_bid(self, open_bid):
@@ -148,6 +214,39 @@ class ForexPrice(object):
         :rtype: float
         """
         return self._high_bid
+        
+    @property
+    def high_bid_dict(self):
+        """Gets the high_bid of this ForexPrice.  # noqa: E501
+
+        High bid as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The high_bid of this ForexPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.high_bid
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'high_bid': value }
+
+        
+        return result
+        
 
     @high_bid.setter
     def high_bid(self, high_bid):
@@ -171,6 +270,39 @@ class ForexPrice(object):
         :rtype: float
         """
         return self._low_bid
+        
+    @property
+    def low_bid_dict(self):
+        """Gets the low_bid of this ForexPrice.  # noqa: E501
+
+        Low bid as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The low_bid of this ForexPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.low_bid
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'low_bid': value }
+
+        
+        return result
+        
 
     @low_bid.setter
     def low_bid(self, low_bid):
@@ -194,6 +326,39 @@ class ForexPrice(object):
         :rtype: float
         """
         return self._close_bid
+        
+    @property
+    def close_bid_dict(self):
+        """Gets the close_bid of this ForexPrice.  # noqa: E501
+
+        Close bid as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The close_bid of this ForexPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.close_bid
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'close_bid': value }
+
+        
+        return result
+        
 
     @close_bid.setter
     def close_bid(self, close_bid):
@@ -217,6 +382,39 @@ class ForexPrice(object):
         :rtype: float
         """
         return self._open_ask
+        
+    @property
+    def open_ask_dict(self):
+        """Gets the open_ask of this ForexPrice.  # noqa: E501
+
+        Open ask as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The open_ask of this ForexPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.open_ask
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'open_ask': value }
+
+        
+        return result
+        
 
     @open_ask.setter
     def open_ask(self, open_ask):
@@ -240,6 +438,39 @@ class ForexPrice(object):
         :rtype: float
         """
         return self._high_ask
+        
+    @property
+    def high_ask_dict(self):
+        """Gets the high_ask of this ForexPrice.  # noqa: E501
+
+        High ask as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The high_ask of this ForexPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.high_ask
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'high_ask': value }
+
+        
+        return result
+        
 
     @high_ask.setter
     def high_ask(self, high_ask):
@@ -263,6 +494,39 @@ class ForexPrice(object):
         :rtype: float
         """
         return self._low_ask
+        
+    @property
+    def low_ask_dict(self):
+        """Gets the low_ask of this ForexPrice.  # noqa: E501
+
+        Low ask as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The low_ask of this ForexPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.low_ask
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'low_ask': value }
+
+        
+        return result
+        
 
     @low_ask.setter
     def low_ask(self, low_ask):
@@ -286,6 +550,39 @@ class ForexPrice(object):
         :rtype: float
         """
         return self._close_ask
+        
+    @property
+    def close_ask_dict(self):
+        """Gets the close_ask of this ForexPrice.  # noqa: E501
+
+        Close ask as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The close_ask of this ForexPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.close_ask
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'close_ask': value }
+
+        
+        return result
+        
 
     @close_ask.setter
     def close_ask(self, close_ask):
@@ -309,6 +606,39 @@ class ForexPrice(object):
         :rtype: int
         """
         return self._total_ticks
+        
+    @property
+    def total_ticks_dict(self):
+        """Gets the total_ticks of this ForexPrice.  # noqa: E501
+
+        Total ticks as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_ticks of this ForexPrice.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.total_ticks
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_ticks': value }
+
+        
+        return result
+        
 
     @total_ticks.setter
     def total_ticks(self, total_ticks):

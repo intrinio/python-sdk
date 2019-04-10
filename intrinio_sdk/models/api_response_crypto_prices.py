@@ -81,6 +81,39 @@ class ApiResponseCryptoPrices(object):
         :rtype: list[CryptoPrice]
         """
         return self._prices
+        
+    @property
+    def prices_dict(self):
+        """Gets the prices of this ApiResponseCryptoPrices.  # noqa: E501
+
+        All the BAR prices, time, and volume. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The prices of this ApiResponseCryptoPrices.  # noqa: E501
+        :rtype: list[CryptoPrice]
+        """
+
+        result = None
+
+        value = self.prices
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'prices': value }
+
+        
+        return result
+        
 
     @prices.setter
     def prices(self, prices):
@@ -103,6 +136,38 @@ class ApiResponseCryptoPrices(object):
         :rtype: CryptoPairSummary
         """
         return self._pair
+        
+    @property
+    def pair_dict(self):
+        """Gets the pair of this ApiResponseCryptoPrices.  # noqa: E501
+
+
+        :return: The pair of this ApiResponseCryptoPrices.  # noqa: E501
+        :rtype: CryptoPairSummary
+        """
+
+        result = None
+
+        value = self.pair
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'pair': value }
+
+        
+        return result
+        
 
     @pair.setter
     def pair(self, pair):
@@ -124,6 +189,38 @@ class ApiResponseCryptoPrices(object):
         :rtype: CryptoExchangeSummary
         """
         return self._exchange
+        
+    @property
+    def exchange_dict(self):
+        """Gets the exchange of this ApiResponseCryptoPrices.  # noqa: E501
+
+
+        :return: The exchange of this ApiResponseCryptoPrices.  # noqa: E501
+        :rtype: CryptoExchangeSummary
+        """
+
+        result = None
+
+        value = self.exchange
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'exchange': value }
+
+        
+        return result
+        
 
     @exchange.setter
     def exchange(self, exchange):
@@ -146,6 +243,39 @@ class ApiResponseCryptoPrices(object):
         :rtype: str
         """
         return self._timeframe
+        
+    @property
+    def timeframe_dict(self):
+        """Gets the timeframe of this ApiResponseCryptoPrices.  # noqa: E501
+
+        The time interval for the crypto currency prices. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The timeframe of this ApiResponseCryptoPrices.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.timeframe
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'timeframe': value }
+
+        
+        return result
+        
 
     @timeframe.setter
     def timeframe(self, timeframe):
@@ -169,6 +299,39 @@ class ApiResponseCryptoPrices(object):
         :rtype: str
         """
         return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseCryptoPrices.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseCryptoPrices.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
 
     @next_page.setter
     def next_page(self, next_page):

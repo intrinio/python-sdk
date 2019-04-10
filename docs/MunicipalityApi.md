@@ -45,6 +45,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MunicipalityApi->get_all_municipalities: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -97,6 +99,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MunicipalityApi->get_municipality_by_id: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -138,6 +142,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MunicipalityApi->get_municipality_financials: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

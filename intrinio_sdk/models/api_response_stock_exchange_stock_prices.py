@@ -70,6 +70,39 @@ class ApiResponseStockExchangeStockPrices(object):
         :rtype: list[StockPrice]
         """
         return self._stock_prices
+        
+    @property
+    def stock_prices_dict(self):
+        """Gets the stock_prices of this ApiResponseStockExchangeStockPrices.  # noqa: E501
+
+        The stock prices for all Securities traded on the Stock Exchange on the given date as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The stock_prices of this ApiResponseStockExchangeStockPrices.  # noqa: E501
+        :rtype: list[StockPrice]
+        """
+
+        result = None
+
+        value = self.stock_prices
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'stock_prices': value }
+
+        
+        return result
+        
 
     @stock_prices.setter
     def stock_prices(self, stock_prices):
@@ -93,6 +126,39 @@ class ApiResponseStockExchangeStockPrices(object):
         :rtype: StockExchange
         """
         return self._stock_exchange
+        
+    @property
+    def stock_exchange_dict(self):
+        """Gets the stock_exchange of this ApiResponseStockExchangeStockPrices.  # noqa: E501
+
+        The Stock Exchange resolved from the given identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The stock_exchange of this ApiResponseStockExchangeStockPrices.  # noqa: E501
+        :rtype: StockExchange
+        """
+
+        result = None
+
+        value = self.stock_exchange
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'stock_exchange': value }
+
+        
+        return result
+        
 
     @stock_exchange.setter
     def stock_exchange(self, stock_exchange):
@@ -116,6 +182,39 @@ class ApiResponseStockExchangeStockPrices(object):
         :rtype: str
         """
         return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseStockExchangeStockPrices.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseStockExchangeStockPrices.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
 
     @next_page.setter
     def next_page(self, next_page):

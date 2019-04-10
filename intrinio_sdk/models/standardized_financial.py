@@ -63,6 +63,38 @@ class StandardizedFinancial(object):
         :rtype: DataTagSummary
         """
         return self._data_tag
+        
+    @property
+    def data_tag_dict(self):
+        """Gets the data_tag of this StandardizedFinancial.  # noqa: E501
+
+
+        :return: The data_tag of this StandardizedFinancial.  # noqa: E501
+        :rtype: DataTagSummary
+        """
+
+        result = None
+
+        value = self.data_tag
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'data_tag': value }
+
+        
+        return result
+        
 
     @data_tag.setter
     def data_tag(self, data_tag):
@@ -85,6 +117,39 @@ class StandardizedFinancial(object):
         :rtype: float
         """
         return self._value
+        
+    @property
+    def value_dict(self):
+        """Gets the value of this StandardizedFinancial.  # noqa: E501
+
+        The value for the Data Tag within the scope of the Fundamental as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The value of this StandardizedFinancial.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.value
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'value': value }
+
+        
+        return result
+        
 
     @value.setter
     def value(self, value):

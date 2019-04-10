@@ -59,6 +59,39 @@ class ApiResponseCryptoCurrencies(object):
         :rtype: list[CryptoCurrency]
         """
         return self._currencies
+        
+    @property
+    def currencies_dict(self):
+        """Gets the currencies of this ApiResponseCryptoCurrencies.  # noqa: E501
+
+        A list of Crypto Currencies for the given Crypto Exchange sorted by alphabetically by symbol. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The currencies of this ApiResponseCryptoCurrencies.  # noqa: E501
+        :rtype: list[CryptoCurrency]
+        """
+
+        result = None
+
+        value = self.currencies
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'currencies': value }
+
+        
+        return result
+        
 
     @currencies.setter
     def currencies(self, currencies):

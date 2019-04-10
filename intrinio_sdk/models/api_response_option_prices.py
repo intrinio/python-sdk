@@ -70,6 +70,39 @@ class ApiResponseOptionPrices(object):
         :rtype: list[OptionPrice]
         """
         return self._prices
+        
+    @property
+    def prices_dict(self):
+        """Gets the prices of this ApiResponseOptionPrices.  # noqa: E501
+
+        A list of option prices in descending order by date as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The prices of this ApiResponseOptionPrices.  # noqa: E501
+        :rtype: list[OptionPrice]
+        """
+
+        result = None
+
+        value = self.prices
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'prices': value }
+
+        
+        return result
+        
 
     @prices.setter
     def prices(self, prices):
@@ -92,6 +125,38 @@ class ApiResponseOptionPrices(object):
         :rtype: Option
         """
         return self._option
+        
+    @property
+    def option_dict(self):
+        """Gets the option of this ApiResponseOptionPrices.  # noqa: E501
+
+
+        :return: The option of this ApiResponseOptionPrices.  # noqa: E501
+        :rtype: Option
+        """
+
+        result = None
+
+        value = self.option
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'option': value }
+
+        
+        return result
+        
 
     @option.setter
     def option(self, option):
@@ -114,6 +179,39 @@ class ApiResponseOptionPrices(object):
         :rtype: str
         """
         return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseOptionPrices.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseOptionPrices.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
 
     @next_page.setter
     def next_page(self, next_page):

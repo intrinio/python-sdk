@@ -127,6 +127,39 @@ class CryptoSnapshot(object):
         :rtype: str
         """
         return self._last_updated
+        
+    @property
+    def last_updated_dict(self):
+        """Gets the last_updated of this CryptoSnapshot.  # noqa: E501
+
+        UTC timestamp of when the snapshot was last updated. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_updated of this CryptoSnapshot.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.last_updated
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_updated': value }
+
+        
+        return result
+        
 
     @last_updated.setter
     def last_updated(self, last_updated):
@@ -150,6 +183,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._bid
+        
+    @property
+    def bid_dict(self):
+        """Gets the bid of this CryptoSnapshot.  # noqa: E501
+
+        The bid for the Crypto Currency Pair on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The bid of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.bid
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'bid': value }
+
+        
+        return result
+        
 
     @bid.setter
     def bid(self, bid):
@@ -173,6 +239,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._bid_size
+        
+    @property
+    def bid_size_dict(self):
+        """Gets the bid_size of this CryptoSnapshot.  # noqa: E501
+
+        The size of the bid for the Crypto Currency Pair on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The bid_size of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.bid_size
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'bid_size': value }
+
+        
+        return result
+        
 
     @bid_size.setter
     def bid_size(self, bid_size):
@@ -196,6 +295,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._ask
+        
+    @property
+    def ask_dict(self):
+        """Gets the ask of this CryptoSnapshot.  # noqa: E501
+
+        The ask for the Crypto Currency Pair on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ask of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.ask
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ask': value }
+
+        
+        return result
+        
 
     @ask.setter
     def ask(self, ask):
@@ -219,6 +351,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._ask_size
+        
+    @property
+    def ask_size_dict(self):
+        """Gets the ask_size of this CryptoSnapshot.  # noqa: E501
+
+        The size of the ask for the Crypto Currency Pair on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ask_size of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.ask_size
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ask_size': value }
+
+        
+        return result
+        
 
     @ask_size.setter
     def ask_size(self, ask_size):
@@ -242,6 +407,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._change
+        
+    @property
+    def change_dict(self):
+        """Gets the change of this CryptoSnapshot.  # noqa: E501
+
+        The notional change in price over the last 24 hours. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The change of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.change
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'change': value }
+
+        
+        return result
+        
 
     @change.setter
     def change(self, change):
@@ -265,6 +463,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._change_percent
+        
+    @property
+    def change_percent_dict(self):
+        """Gets the change_percent of this CryptoSnapshot.  # noqa: E501
+
+        The percent change in price over the last 24 hours. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The change_percent of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.change_percent
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'change_percent': value }
+
+        
+        return result
+        
 
     @change_percent.setter
     def change_percent(self, change_percent):
@@ -288,6 +519,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._volume
+        
+    @property
+    def volume_dict(self):
+        """Gets the volume of this CryptoSnapshot.  # noqa: E501
+
+        The volume of the Crypto Currency Pair on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The volume of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.volume
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'volume': value }
+
+        
+        return result
+        
 
     @volume.setter
     def volume(self, volume):
@@ -311,6 +575,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._open
+        
+    @property
+    def open_dict(self):
+        """Gets the open of this CryptoSnapshot.  # noqa: E501
+
+        The opening price of the currency on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The open of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.open
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'open': value }
+
+        
+        return result
+        
 
     @open.setter
     def open(self, open):
@@ -334,6 +631,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._high
+        
+    @property
+    def high_dict(self):
+        """Gets the high of this CryptoSnapshot.  # noqa: E501
+
+        The highest price of the currency on the exchange for the last 24 hours. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The high of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.high
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'high': value }
+
+        
+        return result
+        
 
     @high.setter
     def high(self, high):
@@ -357,6 +687,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._low
+        
+    @property
+    def low_dict(self):
+        """Gets the low of this CryptoSnapshot.  # noqa: E501
+
+        The lowest price of the currency on the exchange for the last 24 hours. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The low of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.low
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'low': value }
+
+        
+        return result
+        
 
     @low.setter
     def low(self, low):
@@ -380,6 +743,39 @@ class CryptoSnapshot(object):
         :rtype: str
         """
         return self._last_trade_side
+        
+    @property
+    def last_trade_side_dict(self):
+        """Gets the last_trade_side of this CryptoSnapshot.  # noqa: E501
+
+        The side of the last trade, either buy or sell. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_trade_side of this CryptoSnapshot.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.last_trade_side
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_trade_side': value }
+
+        
+        return result
+        
 
     @last_trade_side.setter
     def last_trade_side(self, last_trade_side):
@@ -403,6 +799,39 @@ class CryptoSnapshot(object):
         :rtype: str
         """
         return self._last_trade_time
+        
+    @property
+    def last_trade_time_dict(self):
+        """Gets the last_trade_time of this CryptoSnapshot.  # noqa: E501
+
+        UTC timestamp of the last trade for the Crypto Currency Pair on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_trade_time of this CryptoSnapshot.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.last_trade_time
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_trade_time': value }
+
+        
+        return result
+        
 
     @last_trade_time.setter
     def last_trade_time(self, last_trade_time):
@@ -426,6 +855,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._last_trade_price
+        
+    @property
+    def last_trade_price_dict(self):
+        """Gets the last_trade_price of this CryptoSnapshot.  # noqa: E501
+
+        The price of the last trade for the Crypto Currency Pair on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_trade_price of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.last_trade_price
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_trade_price': value }
+
+        
+        return result
+        
 
     @last_trade_price.setter
     def last_trade_price(self, last_trade_price):
@@ -449,6 +911,39 @@ class CryptoSnapshot(object):
         :rtype: float
         """
         return self._last_trade_size
+        
+    @property
+    def last_trade_size_dict(self):
+        """Gets the last_trade_size of this CryptoSnapshot.  # noqa: E501
+
+        The size of the last trade for the Crypto Currency Pair on the exchange. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_trade_size of this CryptoSnapshot.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.last_trade_size
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_trade_size': value }
+
+        
+        return result
+        
 
     @last_trade_size.setter
     def last_trade_size(self, last_trade_size):

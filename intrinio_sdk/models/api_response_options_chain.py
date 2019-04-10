@@ -33,44 +33,77 @@ class ApiResponseOptionsChain(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'chains': 'list[OptionChain]'
+        'chain': 'list[OptionChain]'
     }
 
     attribute_map = {
-        'chains': 'chains'
+        'chain': 'chain'
     }
 
-    def __init__(self, chains=None):  # noqa: E501
+    def __init__(self, chain=None):  # noqa: E501
         """ApiResponseOptionsChain - a model defined in Swagger"""  # noqa: E501
 
-        self._chains = None
+        self._chain = None
         self.discriminator = None
 
-        if chains is not None:
-            self.chains = chains
+        if chain is not None:
+            self.chain = chain
 
     @property
-    def chains(self):
-        """Gets the chains of this ApiResponseOptionsChain.  # noqa: E501
+    def chain(self):
+        """Gets the chain of this ApiResponseOptionsChain.  # noqa: E501
 
         A list of options for the provided expiration date their respective option prices.  # noqa: E501
 
-        :return: The chains of this ApiResponseOptionsChain.  # noqa: E501
+        :return: The chain of this ApiResponseOptionsChain.  # noqa: E501
         :rtype: list[OptionChain]
         """
-        return self._chains
+        return self._chain
+        
+    @property
+    def chain_dict(self):
+        """Gets the chain of this ApiResponseOptionsChain.  # noqa: E501
 
-    @chains.setter
-    def chains(self, chains):
-        """Sets the chains of this ApiResponseOptionsChain.
+        A list of options for the provided expiration date their respective option prices. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The chain of this ApiResponseOptionsChain.  # noqa: E501
+        :rtype: list[OptionChain]
+        """
+
+        result = None
+
+        value = self.chain
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'chain': value }
+
+        
+        return result
+        
+
+    @chain.setter
+    def chain(self, chain):
+        """Sets the chain of this ApiResponseOptionsChain.
 
         A list of options for the provided expiration date their respective option prices.  # noqa: E501
 
-        :param chains: The chains of this ApiResponseOptionsChain.  # noqa: E501
+        :param chain: The chain of this ApiResponseOptionsChain.  # noqa: E501
         :type: list[OptionChain]
         """
 
-        self._chains = chains
+        self._chain = chain
 
     def to_dict(self):
         """Returns the model properties as a dict"""

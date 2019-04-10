@@ -102,6 +102,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this SecuritySummary.  # noqa: E501
+
+        The Intrinio ID for Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -125,6 +158,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._company_id
+        
+    @property
+    def company_id_dict(self):
+        """Gets the company_id of this SecuritySummary.  # noqa: E501
+
+        The Intrinio ID for the Company for which the Security is issued as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The company_id of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.company_id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'company_id': value }
+
+        
+        return result
+        
 
     @company_id.setter
     def company_id(self, company_id):
@@ -148,6 +214,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this SecuritySummary.  # noqa: E501
+
+        The name of the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -171,6 +270,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._code
+        
+    @property
+    def code_dict(self):
+        """Gets the code of this SecuritySummary.  # noqa: E501
+
+        A 2-3 digit code classifying the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The code of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'code': value }
+
+        
+        return result
+        
 
     @code.setter
     def code(self, code):
@@ -194,6 +326,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._currency
+        
+    @property
+    def currency_dict(self):
+        """Gets the currency of this SecuritySummary.  # noqa: E501
+
+        The currency in which the Security is traded on the exchange as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The currency of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.currency
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'currency': value }
+
+        
+        return result
+        
 
     @currency.setter
     def currency(self, currency):
@@ -217,6 +382,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._ticker
+        
+    @property
+    def ticker_dict(self):
+        """Gets the ticker of this SecuritySummary.  # noqa: E501
+
+        The common/local ticker of the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ticker of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.ticker
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ticker': value }
+
+        
+        return result
+        
 
     @ticker.setter
     def ticker(self, ticker):
@@ -240,6 +438,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._composite_ticker
+        
+    @property
+    def composite_ticker_dict(self):
+        """Gets the composite_ticker of this SecuritySummary.  # noqa: E501
+
+        The country-composite ticker of the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The composite_ticker of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.composite_ticker
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'composite_ticker': value }
+
+        
+        return result
+        
 
     @composite_ticker.setter
     def composite_ticker(self, composite_ticker):
@@ -263,6 +494,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._figi
+        
+    @property
+    def figi_dict(self):
+        """Gets the figi of this SecuritySummary.  # noqa: E501
+
+        The OpenFIGI identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The figi of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.figi
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'figi': value }
+
+        
+        return result
+        
 
     @figi.setter
     def figi(self, figi):
@@ -286,6 +550,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._composite_figi
+        
+    @property
+    def composite_figi_dict(self):
+        """Gets the composite_figi of this SecuritySummary.  # noqa: E501
+
+        The country-composite OpenFIGI identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The composite_figi of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.composite_figi
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'composite_figi': value }
+
+        
+        return result
+        
 
     @composite_figi.setter
     def composite_figi(self, composite_figi):
@@ -309,6 +606,39 @@ class SecuritySummary(object):
         :rtype: str
         """
         return self._share_class_figi
+        
+    @property
+    def share_class_figi_dict(self):
+        """Gets the share_class_figi of this SecuritySummary.  # noqa: E501
+
+        The global-composite OpenFIGI identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The share_class_figi of this SecuritySummary.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.share_class_figi
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'share_class_figi': value }
+
+        
+        return result
+        
 
     @share_class_figi.setter
     def share_class_figi(self, share_class_figi):

@@ -67,6 +67,39 @@ class ForexPair(object):
         :rtype: str
         """
         return self._code
+        
+    @property
+    def code_dict(self):
+        """Gets the code of this ForexPair.  # noqa: E501
+
+        The common code of the currency pair as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The code of this ForexPair.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'code': value }
+
+        
+        return result
+        
 
     @code.setter
     def code(self, code):
@@ -90,6 +123,39 @@ class ForexPair(object):
         :rtype: str
         """
         return self._base_currency
+        
+    @property
+    def base_currency_dict(self):
+        """Gets the base_currency of this ForexPair.  # noqa: E501
+
+        The ISO 4217 currency code of the base currency as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The base_currency of this ForexPair.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.base_currency
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'base_currency': value }
+
+        
+        return result
+        
 
     @base_currency.setter
     def base_currency(self, base_currency):
@@ -113,6 +179,39 @@ class ForexPair(object):
         :rtype: str
         """
         return self._quote_currency
+        
+    @property
+    def quote_currency_dict(self):
+        """Gets the quote_currency of this ForexPair.  # noqa: E501
+
+        The ISO 4217 currency code of the quote currency as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The quote_currency of this ForexPair.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.quote_currency
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'quote_currency': value }
+
+        
+        return result
+        
 
     @quote_currency.setter
     def quote_currency(self, quote_currency):

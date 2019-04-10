@@ -77,6 +77,39 @@ class RealtimeStockPriceSecurity(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this RealtimeStockPriceSecurity.  # noqa: E501
+
+        The Intrinio ID for Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this RealtimeStockPriceSecurity.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -100,6 +133,39 @@ class RealtimeStockPriceSecurity(object):
         :rtype: str
         """
         return self._ticker
+        
+    @property
+    def ticker_dict(self):
+        """Gets the ticker of this RealtimeStockPriceSecurity.  # noqa: E501
+
+        The common/local ticker of the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ticker of this RealtimeStockPriceSecurity.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.ticker
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ticker': value }
+
+        
+        return result
+        
 
     @ticker.setter
     def ticker(self, ticker):
@@ -123,6 +189,39 @@ class RealtimeStockPriceSecurity(object):
         :rtype: str
         """
         return self._exchange_ticker
+        
+    @property
+    def exchange_ticker_dict(self):
+        """Gets the exchange_ticker of this RealtimeStockPriceSecurity.  # noqa: E501
+
+        The exchange-level ticker as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The exchange_ticker of this RealtimeStockPriceSecurity.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.exchange_ticker
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'exchange_ticker': value }
+
+        
+        return result
+        
 
     @exchange_ticker.setter
     def exchange_ticker(self, exchange_ticker):
@@ -146,6 +245,39 @@ class RealtimeStockPriceSecurity(object):
         :rtype: str
         """
         return self._figi
+        
+    @property
+    def figi_dict(self):
+        """Gets the figi of this RealtimeStockPriceSecurity.  # noqa: E501
+
+        The OpenFIGI identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The figi of this RealtimeStockPriceSecurity.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.figi
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'figi': value }
+
+        
+        return result
+        
 
     @figi.setter
     def figi(self, figi):
@@ -169,6 +301,39 @@ class RealtimeStockPriceSecurity(object):
         :rtype: str
         """
         return self._composite_figi
+        
+    @property
+    def composite_figi_dict(self):
+        """Gets the composite_figi of this RealtimeStockPriceSecurity.  # noqa: E501
+
+        The country-composite OpenFIGI identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The composite_figi of this RealtimeStockPriceSecurity.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.composite_figi
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'composite_figi': value }
+
+        
+        return result
+        
 
     @composite_figi.setter
     def composite_figi(self, composite_figi):

@@ -69,6 +69,38 @@ class ApiResponseStockMarketIndexHistoricalData(object):
         :rtype: list[HistoricalData]
         """
         return self._historical_data
+        
+    @property
+    def historical_data_dict(self):
+        """Gets the historical_data of this ApiResponseStockMarketIndexHistoricalData.  # noqa: E501
+
+
+        :return: The historical_data of this ApiResponseStockMarketIndexHistoricalData.  # noqa: E501
+        :rtype: list[HistoricalData]
+        """
+
+        result = None
+
+        value = self.historical_data
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'historical_data': value }
+
+        
+        return result
+        
 
     @historical_data.setter
     def historical_data(self, historical_data):
@@ -90,6 +122,38 @@ class ApiResponseStockMarketIndexHistoricalData(object):
         :rtype: StockMarketIndexSummary
         """
         return self._index
+        
+    @property
+    def index_dict(self):
+        """Gets the index of this ApiResponseStockMarketIndexHistoricalData.  # noqa: E501
+
+
+        :return: The index of this ApiResponseStockMarketIndexHistoricalData.  # noqa: E501
+        :rtype: StockMarketIndexSummary
+        """
+
+        result = None
+
+        value = self.index
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'index': value }
+
+        
+        return result
+        
 
     @index.setter
     def index(self, index):
@@ -112,6 +176,39 @@ class ApiResponseStockMarketIndexHistoricalData(object):
         :rtype: str
         """
         return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseStockMarketIndexHistoricalData.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseStockMarketIndexHistoricalData.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
 
     @next_page.setter
     def next_page(self, next_page):

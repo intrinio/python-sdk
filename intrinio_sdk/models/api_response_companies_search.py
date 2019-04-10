@@ -58,6 +58,38 @@ class ApiResponseCompaniesSearch(object):
         :rtype: list[CompanySummary]
         """
         return self._companies
+        
+    @property
+    def companies_dict(self):
+        """Gets the companies of this ApiResponseCompaniesSearch.  # noqa: E501
+
+
+        :return: The companies of this ApiResponseCompaniesSearch.  # noqa: E501
+        :rtype: list[CompanySummary]
+        """
+
+        result = None
+
+        value = self.companies
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'companies': value }
+
+        
+        return result
+        
 
     @companies.setter
     def companies(self, companies):

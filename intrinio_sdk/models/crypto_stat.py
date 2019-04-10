@@ -92,6 +92,39 @@ class CryptoStat(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this CryptoStat.  # noqa: E501
+
+        The common name of the crypto currency. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this CryptoStat.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -115,6 +148,39 @@ class CryptoStat(object):
         :rtype: str
         """
         return self._code
+        
+    @property
+    def code_dict(self):
+        """Gets the code of this CryptoStat.  # noqa: E501
+
+        A code representing the crypto currency. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The code of this CryptoStat.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'code': value }
+
+        
+        return result
+        
 
     @code.setter
     def code(self, code):
@@ -138,6 +204,39 @@ class CryptoStat(object):
         :rtype: str
         """
         return self._symbol
+        
+    @property
+    def symbol_dict(self):
+        """Gets the symbol of this CryptoStat.  # noqa: E501
+
+        The symbol of the Crypto Currency. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The symbol of this CryptoStat.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.symbol
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'symbol': value }
+
+        
+        return result
+        
 
     @symbol.setter
     def symbol(self, symbol):
@@ -161,6 +260,39 @@ class CryptoStat(object):
         :rtype: float
         """
         return self._market_cap_usd
+        
+    @property
+    def market_cap_usd_dict(self):
+        """Gets the market_cap_usd of this CryptoStat.  # noqa: E501
+
+        The market cap of the Crypto Currency in USD. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The market_cap_usd of this CryptoStat.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.market_cap_usd
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'market_cap_usd': value }
+
+        
+        return result
+        
 
     @market_cap_usd.setter
     def market_cap_usd(self, market_cap_usd):
@@ -184,6 +316,39 @@ class CryptoStat(object):
         :rtype: float
         """
         return self._available_supply
+        
+    @property
+    def available_supply_dict(self):
+        """Gets the available_supply of this CryptoStat.  # noqa: E501
+
+        The available supply of the Crypto Currency. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The available_supply of this CryptoStat.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.available_supply
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'available_supply': value }
+
+        
+        return result
+        
 
     @available_supply.setter
     def available_supply(self, available_supply):
@@ -207,6 +372,39 @@ class CryptoStat(object):
         :rtype: float
         """
         return self._total_supply
+        
+    @property
+    def total_supply_dict(self):
+        """Gets the total_supply of this CryptoStat.  # noqa: E501
+
+        The total supply of the Crypto Currency. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The total_supply of this CryptoStat.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.total_supply
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'total_supply': value }
+
+        
+        return result
+        
 
     @total_supply.setter
     def total_supply(self, total_supply):
@@ -230,6 +428,39 @@ class CryptoStat(object):
         :rtype: float
         """
         return self._max_supply
+        
+    @property
+    def max_supply_dict(self):
+        """Gets the max_supply of this CryptoStat.  # noqa: E501
+
+        The maxmium supply of coins available to mine. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The max_supply of this CryptoStat.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.max_supply
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'max_supply': value }
+
+        
+        return result
+        
 
     @max_supply.setter
     def max_supply(self, max_supply):
@@ -253,6 +484,39 @@ class CryptoStat(object):
         :rtype: str
         """
         return self._last_updated
+        
+    @property
+    def last_updated_dict(self):
+        """Gets the last_updated of this CryptoStat.  # noqa: E501
+
+        UTC timestamp of when the data was last updated. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_updated of this CryptoStat.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.last_updated
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_updated': value }
+
+        
+        return result
+        
 
     @last_updated.setter
     def last_updated(self, last_updated):

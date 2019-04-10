@@ -70,6 +70,38 @@ class ApiResponseCryptoSnapshot(object):
         :rtype: CryptoPairSummary
         """
         return self._pair
+        
+    @property
+    def pair_dict(self):
+        """Gets the pair of this ApiResponseCryptoSnapshot.  # noqa: E501
+
+
+        :return: The pair of this ApiResponseCryptoSnapshot.  # noqa: E501
+        :rtype: CryptoPairSummary
+        """
+
+        result = None
+
+        value = self.pair
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'pair': value }
+
+        
+        return result
+        
 
     @pair.setter
     def pair(self, pair):
@@ -91,6 +123,38 @@ class ApiResponseCryptoSnapshot(object):
         :rtype: CryptoExchangeSummary
         """
         return self._exchange
+        
+    @property
+    def exchange_dict(self):
+        """Gets the exchange of this ApiResponseCryptoSnapshot.  # noqa: E501
+
+
+        :return: The exchange of this ApiResponseCryptoSnapshot.  # noqa: E501
+        :rtype: CryptoExchangeSummary
+        """
+
+        result = None
+
+        value = self.exchange
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'exchange': value }
+
+        
+        return result
+        
 
     @exchange.setter
     def exchange(self, exchange):
@@ -112,6 +176,38 @@ class ApiResponseCryptoSnapshot(object):
         :rtype: CryptoSnapshot
         """
         return self._snapshot
+        
+    @property
+    def snapshot_dict(self):
+        """Gets the snapshot of this ApiResponseCryptoSnapshot.  # noqa: E501
+
+
+        :return: The snapshot of this ApiResponseCryptoSnapshot.  # noqa: E501
+        :rtype: CryptoSnapshot
+        """
+
+        result = None
+
+        value = self.snapshot
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'snapshot': value }
+
+        
+        return result
+        
 
     @snapshot.setter
     def snapshot(self, snapshot):

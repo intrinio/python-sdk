@@ -62,6 +62,39 @@ class HistoricalData(object):
         :rtype: date
         """
         return self._date
+        
+    @property
+    def date_dict(self):
+        """Gets the date of this HistoricalData.  # noqa: E501
+
+        The date that the value is present as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The date of this HistoricalData.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'date': value }
+
+        
+        return result
+        
 
     @date.setter
     def date(self, date):
@@ -85,6 +118,39 @@ class HistoricalData(object):
         :rtype: float
         """
         return self._value
+        
+    @property
+    def value_dict(self):
+        """Gets the value of this HistoricalData.  # noqa: E501
+
+        The historical value as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The value of this HistoricalData.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.value
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'value': value }
+
+        
+        return result
+        
 
     @value.setter
     def value(self, value):

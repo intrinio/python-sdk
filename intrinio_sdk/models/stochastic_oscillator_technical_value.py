@@ -67,6 +67,39 @@ class StochasticOscillatorTechnicalValue(object):
         :rtype: datetime
         """
         return self._date_time
+        
+    @property
+    def date_time_dict(self):
+        """Gets the date_time of this StochasticOscillatorTechnicalValue.  # noqa: E501
+
+        The date_time of the observation as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The date_time of this StochasticOscillatorTechnicalValue.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.date_time
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'date_time': value }
+
+        
+        return result
+        
 
     @date_time.setter
     def date_time(self, date_time):
@@ -90,6 +123,39 @@ class StochasticOscillatorTechnicalValue(object):
         :rtype: float
         """
         return self._sr
+        
+    @property
+    def sr_dict(self):
+        """Gets the sr of this StochasticOscillatorTechnicalValue.  # noqa: E501
+
+        The Stochastic Oscillator calculation value as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The sr of this StochasticOscillatorTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.sr
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'sr': value }
+
+        
+        return result
+        
 
     @sr.setter
     def sr(self, sr):
@@ -113,6 +179,39 @@ class StochasticOscillatorTechnicalValue(object):
         :rtype: float
         """
         return self._sr_signal
+        
+    @property
+    def sr_signal_dict(self):
+        """Gets the sr_signal of this StochasticOscillatorTechnicalValue.  # noqa: E501
+
+        The Stochastic Oscillator signal line value as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The sr_signal of this StochasticOscillatorTechnicalValue.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.sr_signal
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'sr_signal': value }
+
+        
+        return result
+        
 
     @sr_signal.setter
     def sr_signal(self, sr_signal):

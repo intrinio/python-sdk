@@ -49,6 +49,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_all_economic_indices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -89,6 +91,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_all_sic_indices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -129,6 +133,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_all_stock_market_indices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -168,6 +174,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_economic_index_by_id: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -209,6 +217,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_economic_index_data_point_number: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -251,6 +261,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_economic_index_data_point_text: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -299,6 +311,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_economic_index_historical_data: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -344,6 +358,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_sic_index_by_id: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -385,6 +401,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_sic_index_data_point_number: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -427,6 +445,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_sic_index_data_point_text: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -475,6 +495,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_sic_index_historical_data: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -520,6 +542,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_stock_market_index_by_id: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -561,6 +585,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_stock_market_index_data_point_number: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -603,6 +629,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_stock_market_index_data_point_text: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -651,6 +679,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->get_stock_market_index_historical_data: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -699,6 +729,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->search_economic_indices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -741,6 +773,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->search_sic_indices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -783,6 +817,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IndexApi->search_stock_markets_indices: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

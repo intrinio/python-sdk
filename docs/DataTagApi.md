@@ -41,6 +41,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataTagApi->get_all_data_tags: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -87,6 +89,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataTagApi->get_data_tag_by_id: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters
@@ -128,6 +132,8 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataTagApi->search_data_tags: %s\n" % e)
+    
+# Note: To convert API response properties to a Pandas DataFrame, try pd.DataFrame(api_response.property_name_dict) 
 ```
 
 ### Parameters

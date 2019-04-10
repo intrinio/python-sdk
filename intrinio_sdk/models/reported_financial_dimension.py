@@ -62,6 +62,39 @@ class ReportedFinancialDimension(object):
         :rtype: str
         """
         return self._axis
+        
+    @property
+    def axis_dict(self):
+        """Gets the axis of this ReportedFinancialDimension.  # noqa: E501
+
+        The axis of the dimension as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The axis of this ReportedFinancialDimension.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.axis
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'axis': value }
+
+        
+        return result
+        
 
     @axis.setter
     def axis(self, axis):
@@ -85,6 +118,39 @@ class ReportedFinancialDimension(object):
         :rtype: str
         """
         return self._member
+        
+    @property
+    def member_dict(self):
+        """Gets the member of this ReportedFinancialDimension.  # noqa: E501
+
+        The member of the axis as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The member of this ReportedFinancialDimension.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.member
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'member': value }
+
+        
+        return result
+        
 
     @member.setter
     def member(self, member):

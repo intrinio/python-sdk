@@ -192,6 +192,39 @@ class Security(object):
         :rtype: str
         """
         return self._id
+        
+    @property
+    def id_dict(self):
+        """Gets the id of this Security.  # noqa: E501
+
+        The Intrinio ID for the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The id of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'id': value }
+
+        
+        return result
+        
 
     @id.setter
     def id(self, id):
@@ -215,6 +248,39 @@ class Security(object):
         :rtype: str
         """
         return self._company_id
+        
+    @property
+    def company_id_dict(self):
+        """Gets the company_id of this Security.  # noqa: E501
+
+        The Intrinio ID for the company for which the Security is issued as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The company_id of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.company_id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'company_id': value }
+
+        
+        return result
+        
 
     @company_id.setter
     def company_id(self, company_id):
@@ -238,6 +304,39 @@ class Security(object):
         :rtype: str
         """
         return self._name
+        
+    @property
+    def name_dict(self):
+        """Gets the name of this Security.  # noqa: E501
+
+        The name of the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The name of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.name
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'name': value }
+
+        
+        return result
+        
 
     @name.setter
     def name(self, name):
@@ -261,6 +360,39 @@ class Security(object):
         :rtype: str
         """
         return self._type
+        
+    @property
+    def type_dict(self):
+        """Gets the type of this Security.  # noqa: E501
+
+        The Security's type as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The type of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.type
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'type': value }
+
+        
+        return result
+        
 
     @type.setter
     def type(self, type):
@@ -284,6 +416,39 @@ class Security(object):
         :rtype: str
         """
         return self._code
+        
+    @property
+    def code_dict(self):
+        """Gets the code of this Security.  # noqa: E501
+
+        A 2-3 digit code classifying the Security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The code of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.code
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'code': value }
+
+        
+        return result
+        
 
     @code.setter
     def code(self, code):
@@ -307,6 +472,39 @@ class Security(object):
         :rtype: str
         """
         return self._share_class
+        
+    @property
+    def share_class_dict(self):
+        """Gets the share_class of this Security.  # noqa: E501
+
+        The Security's share class (if applicable) as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The share_class of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.share_class
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'share_class': value }
+
+        
+        return result
+        
 
     @share_class.setter
     def share_class(self, share_class):
@@ -330,6 +528,39 @@ class Security(object):
         :rtype: str
         """
         return self._currency
+        
+    @property
+    def currency_dict(self):
+        """Gets the currency of this Security.  # noqa: E501
+
+        The currency in which the Security is traded on the exchange as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The currency of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.currency
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'currency': value }
+
+        
+        return result
+        
 
     @currency.setter
     def currency(self, currency):
@@ -353,6 +584,39 @@ class Security(object):
         :rtype: float
         """
         return self._round_lot_size
+        
+    @property
+    def round_lot_size_dict(self):
+        """Gets the round_lot_size of this Security.  # noqa: E501
+
+        The normal unit of trading as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The round_lot_size of this Security.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.round_lot_size
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'round_lot_size': value }
+
+        
+        return result
+        
 
     @round_lot_size.setter
     def round_lot_size(self, round_lot_size):
@@ -376,6 +640,39 @@ class Security(object):
         :rtype: str
         """
         return self._ticker
+        
+    @property
+    def ticker_dict(self):
+        """Gets the ticker of this Security.  # noqa: E501
+
+        The common ticker as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ticker of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.ticker
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ticker': value }
+
+        
+        return result
+        
 
     @ticker.setter
     def ticker(self, ticker):
@@ -399,6 +696,39 @@ class Security(object):
         :rtype: str
         """
         return self._exchange_ticker
+        
+    @property
+    def exchange_ticker_dict(self):
+        """Gets the exchange_ticker of this Security.  # noqa: E501
+
+        The exchange-level ticker as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The exchange_ticker of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.exchange_ticker
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'exchange_ticker': value }
+
+        
+        return result
+        
 
     @exchange_ticker.setter
     def exchange_ticker(self, exchange_ticker):
@@ -422,6 +752,39 @@ class Security(object):
         :rtype: str
         """
         return self._composite_ticker
+        
+    @property
+    def composite_ticker_dict(self):
+        """Gets the composite_ticker of this Security.  # noqa: E501
+
+        The country-composite ticker as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The composite_ticker of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.composite_ticker
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'composite_ticker': value }
+
+        
+        return result
+        
 
     @composite_ticker.setter
     def composite_ticker(self, composite_ticker):
@@ -445,6 +808,39 @@ class Security(object):
         :rtype: list[str]
         """
         return self._alternate_tickers
+        
+    @property
+    def alternate_tickers_dict(self):
+        """Gets the alternate_tickers of this Security.  # noqa: E501
+
+        Alternate formats of the common ticker as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The alternate_tickers of this Security.  # noqa: E501
+        :rtype: list[str]
+        """
+
+        result = None
+
+        value = self.alternate_tickers
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'alternate_tickers': value }
+
+        
+        return result
+        
 
     @alternate_tickers.setter
     def alternate_tickers(self, alternate_tickers):
@@ -468,6 +864,39 @@ class Security(object):
         :rtype: str
         """
         return self._figi
+        
+    @property
+    def figi_dict(self):
+        """Gets the figi of this Security.  # noqa: E501
+
+        The exchange-level OpenFIGI identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The figi of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.figi
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'figi': value }
+
+        
+        return result
+        
 
     @figi.setter
     def figi(self, figi):
@@ -491,6 +920,39 @@ class Security(object):
         :rtype: str
         """
         return self._cik
+        
+    @property
+    def cik_dict(self):
+        """Gets the cik of this Security.  # noqa: E501
+
+        Central Index Key issued by the SEC, which is the unique identifier for all owner filings as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The cik of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.cik
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'cik': value }
+
+        
+        return result
+        
 
     @cik.setter
     def cik(self, cik):
@@ -514,6 +976,39 @@ class Security(object):
         :rtype: str
         """
         return self._composite_figi
+        
+    @property
+    def composite_figi_dict(self):
+        """Gets the composite_figi of this Security.  # noqa: E501
+
+        The country-composite OpenFIGI identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The composite_figi of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.composite_figi
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'composite_figi': value }
+
+        
+        return result
+        
 
     @composite_figi.setter
     def composite_figi(self, composite_figi):
@@ -537,6 +1032,39 @@ class Security(object):
         :rtype: str
         """
         return self._share_class_figi
+        
+    @property
+    def share_class_figi_dict(self):
+        """Gets the share_class_figi of this Security.  # noqa: E501
+
+        The global-composite OpenFIGI identifier as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The share_class_figi of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.share_class_figi
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'share_class_figi': value }
+
+        
+        return result
+        
 
     @share_class_figi.setter
     def share_class_figi(self, share_class_figi):
@@ -560,6 +1088,39 @@ class Security(object):
         :rtype: str
         """
         return self._figi_uniqueid
+        
+    @property
+    def figi_uniqueid_dict(self):
+        """Gets the figi_uniqueid of this Security.  # noqa: E501
+
+        The OpenFIGI unique ID as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The figi_uniqueid of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.figi_uniqueid
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'figi_uniqueid': value }
+
+        
+        return result
+        
 
     @figi_uniqueid.setter
     def figi_uniqueid(self, figi_uniqueid):
@@ -583,6 +1144,39 @@ class Security(object):
         :rtype: bool
         """
         return self._active
+        
+    @property
+    def active_dict(self):
+        """Gets the active of this Security.  # noqa: E501
+
+        If true, the Security is active and has been recently traded as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The active of this Security.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.active
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'active': value }
+
+        
+        return result
+        
 
     @active.setter
     def active(self, active):
@@ -606,6 +1200,39 @@ class Security(object):
         :rtype: bool
         """
         return self._etf
+        
+    @property
+    def etf_dict(self):
+        """Gets the etf of this Security.  # noqa: E501
+
+        If true, this Security is an ETF as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The etf of this Security.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.etf
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'etf': value }
+
+        
+        return result
+        
 
     @etf.setter
     def etf(self, etf):
@@ -629,6 +1256,39 @@ class Security(object):
         :rtype: bool
         """
         return self._delisted
+        
+    @property
+    def delisted_dict(self):
+        """Gets the delisted of this Security.  # noqa: E501
+
+        If true, the Security is no longer traded on the exchange as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The delisted of this Security.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.delisted
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'delisted': value }
+
+        
+        return result
+        
 
     @delisted.setter
     def delisted(self, delisted):
@@ -652,6 +1312,39 @@ class Security(object):
         :rtype: bool
         """
         return self._primary_listing
+        
+    @property
+    def primary_listing_dict(self):
+        """Gets the primary_listing of this Security.  # noqa: E501
+
+        If true, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The primary_listing of this Security.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.primary_listing
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'primary_listing': value }
+
+        
+        return result
+        
 
     @primary_listing.setter
     def primary_listing(self, primary_listing):
@@ -675,6 +1368,39 @@ class Security(object):
         :rtype: bool
         """
         return self._primary_security
+        
+    @property
+    def primary_security_dict(self):
+        """Gets the primary_security of this Security.  # noqa: E501
+
+        If true, the Security is considered by Intrinio to be the primary Security for its company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The primary_security of this Security.  # noqa: E501
+        :rtype: bool
+        """
+
+        result = None
+
+        value = self.primary_security
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'primary_security': value }
+
+        
+        return result
+        
 
     @primary_security.setter
     def primary_security(self, primary_security):
@@ -698,6 +1424,39 @@ class Security(object):
         :rtype: date
         """
         return self._first_stock_price
+        
+    @property
+    def first_stock_price_dict(self):
+        """Gets the first_stock_price of this Security.  # noqa: E501
+
+        The date of the first recorded stock price as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The first_stock_price of this Security.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.first_stock_price
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'first_stock_price': value }
+
+        
+        return result
+        
 
     @first_stock_price.setter
     def first_stock_price(self, first_stock_price):
@@ -721,6 +1480,39 @@ class Security(object):
         :rtype: date
         """
         return self._last_stock_price
+        
+    @property
+    def last_stock_price_dict(self):
+        """Gets the last_stock_price of this Security.  # noqa: E501
+
+        The date of the last recorded stock price (or the most recent trading day) as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_stock_price of this Security.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.last_stock_price
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_stock_price': value }
+
+        
+        return result
+        
 
     @last_stock_price.setter
     def last_stock_price(self, last_stock_price):
@@ -744,6 +1536,39 @@ class Security(object):
         :rtype: date
         """
         return self._last_stock_price_adjustment
+        
+    @property
+    def last_stock_price_adjustment_dict(self):
+        """Gets the last_stock_price_adjustment of this Security.  # noqa: E501
+
+        The date of the last stock price adjustment (dividend, split, etc) as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_stock_price_adjustment of this Security.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.last_stock_price_adjustment
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_stock_price_adjustment': value }
+
+        
+        return result
+        
 
     @last_stock_price_adjustment.setter
     def last_stock_price_adjustment(self, last_stock_price_adjustment):
@@ -767,6 +1592,39 @@ class Security(object):
         :rtype: date
         """
         return self._last_corporate_action
+        
+    @property
+    def last_corporate_action_dict(self):
+        """Gets the last_corporate_action of this Security.  # noqa: E501
+
+        The date of the last corporate action as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The last_corporate_action of this Security.  # noqa: E501
+        :rtype: date
+        """
+
+        result = None
+
+        value = self.last_corporate_action
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'last_corporate_action': value }
+
+        
+        return result
+        
 
     @last_corporate_action.setter
     def last_corporate_action(self, last_corporate_action):
@@ -790,6 +1648,39 @@ class Security(object):
         :rtype: list[str]
         """
         return self._previous_tickers
+        
+    @property
+    def previous_tickers_dict(self):
+        """Gets the previous_tickers of this Security.  # noqa: E501
+
+        Previous tickers used by this security as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The previous_tickers of this Security.  # noqa: E501
+        :rtype: list[str]
+        """
+
+        result = None
+
+        value = self.previous_tickers
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'previous_tickers': value }
+
+        
+        return result
+        
 
     @previous_tickers.setter
     def previous_tickers(self, previous_tickers):
@@ -813,6 +1704,39 @@ class Security(object):
         :rtype: str
         """
         return self._listing_exchange_mic
+        
+    @property
+    def listing_exchange_mic_dict(self):
+        """Gets the listing_exchange_mic of this Security.  # noqa: E501
+
+        The MIC code of the exchange on which this security primarily trades as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The listing_exchange_mic of this Security.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.listing_exchange_mic
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'listing_exchange_mic': value }
+
+        
+        return result
+        
 
     @listing_exchange_mic.setter
     def listing_exchange_mic(self, listing_exchange_mic):

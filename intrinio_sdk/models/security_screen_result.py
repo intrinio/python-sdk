@@ -64,6 +64,38 @@ class SecurityScreenResult(object):
         :rtype: SecuritySummary
         """
         return self._security
+        
+    @property
+    def security_dict(self):
+        """Gets the security of this SecurityScreenResult.  # noqa: E501
+
+
+        :return: The security of this SecurityScreenResult.  # noqa: E501
+        :rtype: SecuritySummary
+        """
+
+        result = None
+
+        value = self.security
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'security': value }
+
+        
+        return result
+        
 
     @security.setter
     def security(self, security):
@@ -85,6 +117,38 @@ class SecurityScreenResult(object):
         :rtype: list[SecurityScreenResultData]
         """
         return self._data
+        
+    @property
+    def data_dict(self):
+        """Gets the data of this SecurityScreenResult.  # noqa: E501
+
+
+        :return: The data of this SecurityScreenResult.  # noqa: E501
+        :rtype: list[SecurityScreenResultData]
+        """
+
+        result = None
+
+        value = self.data
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'data': value }
+
+        
+        return result
+        
 
     @data.setter
     def data(self, data):

@@ -64,6 +64,38 @@ class OptionChain(object):
         :rtype: Option
         """
         return self._option
+        
+    @property
+    def option_dict(self):
+        """Gets the option of this OptionChain.  # noqa: E501
+
+
+        :return: The option of this OptionChain.  # noqa: E501
+        :rtype: Option
+        """
+
+        result = None
+
+        value = self.option
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'option': value }
+
+        
+        return result
+        
 
     @option.setter
     def option(self, option):
@@ -85,6 +117,38 @@ class OptionChain(object):
         :rtype: OptionPrice
         """
         return self._price
+        
+    @property
+    def price_dict(self):
+        """Gets the price of this OptionChain.  # noqa: E501
+
+
+        :return: The price of this OptionChain.  # noqa: E501
+        :rtype: OptionPrice
+        """
+
+        result = None
+
+        value = self.price
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'price': value }
+
+        
+        return result
+        
 
     @price.setter
     def price(self, price):

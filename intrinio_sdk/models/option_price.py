@@ -122,6 +122,39 @@ class OptionPrice(object):
         :rtype: str
         """
         return self._date
+        
+    @property
+    def date_dict(self):
+        """Gets the date of this OptionPrice.  # noqa: E501
+
+        The date of the price, in the format YYYY-MM-DD as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The date of this OptionPrice.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.date
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'date': value }
+
+        
+        return result
+        
 
     @date.setter
     def date(self, date):
@@ -145,6 +178,39 @@ class OptionPrice(object):
         :rtype: float
         """
         return self._close
+        
+    @property
+    def close_dict(self):
+        """Gets the close of this OptionPrice.  # noqa: E501
+
+        The closing price of the options contract. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The close of this OptionPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.close
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'close': value }
+
+        
+        return result
+        
 
     @close.setter
     def close(self, close):
@@ -168,6 +234,39 @@ class OptionPrice(object):
         :rtype: float
         """
         return self._close_bid
+        
+    @property
+    def close_bid_dict(self):
+        """Gets the close_bid of this OptionPrice.  # noqa: E501
+
+        The closing bid price of the options contract. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The close_bid of this OptionPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.close_bid
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'close_bid': value }
+
+        
+        return result
+        
 
     @close_bid.setter
     def close_bid(self, close_bid):
@@ -191,6 +290,39 @@ class OptionPrice(object):
         :rtype: float
         """
         return self._close_ask
+        
+    @property
+    def close_ask_dict(self):
+        """Gets the close_ask of this OptionPrice.  # noqa: E501
+
+        The closing ask price of the options contract. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The close_ask of this OptionPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.close_ask
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'close_ask': value }
+
+        
+        return result
+        
 
     @close_ask.setter
     def close_ask(self, close_ask):
@@ -214,6 +346,39 @@ class OptionPrice(object):
         :rtype: int
         """
         return self._volume
+        
+    @property
+    def volume_dict(self):
+        """Gets the volume of this OptionPrice.  # noqa: E501
+
+        The cumulative volume of this options contract that traded that day. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The volume of this OptionPrice.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.volume
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'volume': value }
+
+        
+        return result
+        
 
     @volume.setter
     def volume(self, volume):
@@ -237,6 +402,39 @@ class OptionPrice(object):
         :rtype: int
         """
         return self._volume_bid
+        
+    @property
+    def volume_bid_dict(self):
+        """Gets the volume_bid of this OptionPrice.  # noqa: E501
+
+        The cumulative volume of this options contract that traded on the bid price that day. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The volume_bid of this OptionPrice.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.volume_bid
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'volume_bid': value }
+
+        
+        return result
+        
 
     @volume_bid.setter
     def volume_bid(self, volume_bid):
@@ -260,6 +458,39 @@ class OptionPrice(object):
         :rtype: int
         """
         return self._volume_ask
+        
+    @property
+    def volume_ask_dict(self):
+        """Gets the volume_ask of this OptionPrice.  # noqa: E501
+
+        The cumulative volume of this options contract that traded on the ask price that day. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The volume_ask of this OptionPrice.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.volume_ask
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'volume_ask': value }
+
+        
+        return result
+        
 
     @volume_ask.setter
     def volume_ask(self, volume_ask):
@@ -283,6 +514,39 @@ class OptionPrice(object):
         :rtype: int
         """
         return self._trades
+        
+    @property
+    def trades_dict(self):
+        """Gets the trades of this OptionPrice.  # noqa: E501
+
+        The number of trades executed that for this options contract on that day. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The trades of this OptionPrice.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.trades
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'trades': value }
+
+        
+        return result
+        
 
     @trades.setter
     def trades(self, trades):
@@ -306,6 +570,39 @@ class OptionPrice(object):
         :rtype: int
         """
         return self._open_interest
+        
+    @property
+    def open_interest_dict(self):
+        """Gets the open_interest of this OptionPrice.  # noqa: E501
+
+        The total number of this options contract that are still open. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The open_interest of this OptionPrice.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.open_interest
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'open_interest': value }
+
+        
+        return result
+        
 
     @open_interest.setter
     def open_interest(self, open_interest):
@@ -329,6 +626,39 @@ class OptionPrice(object):
         :rtype: int
         """
         return self._open_interest_change
+        
+    @property
+    def open_interest_change_dict(self):
+        """Gets the open_interest_change of this OptionPrice.  # noqa: E501
+
+        The change in the total number of this options contract that are still open from the previous day. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The open_interest_change of this OptionPrice.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.open_interest_change
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'open_interest_change': value }
+
+        
+        return result
+        
 
     @open_interest_change.setter
     def open_interest_change(self, open_interest_change):
@@ -352,6 +682,39 @@ class OptionPrice(object):
         :rtype: int
         """
         return self._next_day_open_interest
+        
+    @property
+    def next_day_open_interest_dict(self):
+        """Gets the next_day_open_interest of this OptionPrice.  # noqa: E501
+
+        The total number of this options contract that are still open at the start of the next day. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_day_open_interest of this OptionPrice.  # noqa: E501
+        :rtype: int
+        """
+
+        result = None
+
+        value = self.next_day_open_interest
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_day_open_interest': value }
+
+        
+        return result
+        
 
     @next_day_open_interest.setter
     def next_day_open_interest(self, next_day_open_interest):
@@ -375,6 +738,39 @@ class OptionPrice(object):
         :rtype: float
         """
         return self._implied_volatility
+        
+    @property
+    def implied_volatility_dict(self):
+        """Gets the implied_volatility of this OptionPrice.  # noqa: E501
+
+        The estimated volatility of the Security's price. Volatility is a statistical measure of dispersion of returns for the Security. Standard deviation of a Security's returns and a market index is an example of a measurement of volatility. Implied volatility approximates the future value of an option, and the option's current value takes this into consideration. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The implied_volatility of this OptionPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.implied_volatility
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'implied_volatility': value }
+
+        
+        return result
+        
 
     @implied_volatility.setter
     def implied_volatility(self, implied_volatility):
@@ -398,6 +794,39 @@ class OptionPrice(object):
         :rtype: float
         """
         return self._implied_volatility_change
+        
+    @property
+    def implied_volatility_change_dict(self):
+        """Gets the implied_volatility_change of this OptionPrice.  # noqa: E501
+
+        The change in implied volatility for that day. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The implied_volatility_change of this OptionPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.implied_volatility_change
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'implied_volatility_change': value }
+
+        
+        return result
+        
 
     @implied_volatility_change.setter
     def implied_volatility_change(self, implied_volatility_change):
@@ -421,6 +850,39 @@ class OptionPrice(object):
         :rtype: float
         """
         return self._delta
+        
+    @property
+    def delta_dict(self):
+        """Gets the delta of this OptionPrice.  # noqa: E501
+
+        Delta measures the degree to which an options contract is exposed to shifts in the price of the underlying Security. Values of delta range from 0.0 to 1.0 for call options and -1.0 to 0.0 for put options. For example, if a put option has a delta of -0.50, if the price of the underlying Security increases by $1, the price of the put option will decrease by $0.50. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The delta of this OptionPrice.  # noqa: E501
+        :rtype: float
+        """
+
+        result = None
+
+        value = self.delta
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'delta': value }
+
+        
+        return result
+        
 
     @delta.setter
     def delta(self, delta):
