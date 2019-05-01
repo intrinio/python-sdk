@@ -17,3 +17,4 @@ from intrinio_sdk.api.options_api import OptionsApi
 from intrinio_sdk.api.security_api import SecurityApi
 from intrinio_sdk.api.stock_exchange_api import StockExchangeApi
 from intrinio_sdk.api.technical_api import TechnicalApi
+from intrinio_sdk.api.zacks_api import ZacksApi

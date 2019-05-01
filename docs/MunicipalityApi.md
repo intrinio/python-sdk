@@ -9,12 +9,24 @@ Method | HTTP request | Description
 [**get_municipality_financials**](MunicipalityApi.md#get_municipality_financials) | **GET** /municipalities/{id}/financials | Financials for a Municipality
 
 
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/municipalities)
+
+[//]: # (DOC_LINK:MunicipalityApi.md#get_all_municipalities)
+
 # **get_all_municipalities**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_municipalities_v2)
+
 > ApiResponseMunicipalities get_all_municipalities(has_financials=has_financials, government_name=government_name, government_type=government_type, area_name=area_name, area_type=area_type, city=city, state=state, zipcode=zipcode, population_greater_than=population_greater_than, population_less_than=population_less_than, enrollment_greater_than=enrollment_greater_than, enrollment_less_than=enrollment_less_than, next_page=next_page)
 
 All Municipalities
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -48,6 +60,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -73,7 +86,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/municipalities/{id})
+
+[//]: # (DOC_LINK:MunicipalityApi.md#get_municipality_by_id)
+
 # **get_municipality_by_id**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_municipality_by_id_v2)
+
 > Municipality get_municipality_by_id(id)
 
 Municipality by ID
@@ -81,6 +106,8 @@ Municipality by ID
 Returns the Municipality with the given ID
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -102,6 +129,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -115,7 +143,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/municipalities/{id}/financials)
+
+[//]: # (DOC_LINK:MunicipalityApi.md#get_municipality_financials)
+
 # **get_municipality_financials**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_municipality_financials_v2)
+
 > ApiResponseMunicipalitiyFinancials get_municipality_financials(id, fiscal_year=fiscal_year)
 
 Financials for a Municipality
@@ -123,6 +163,8 @@ Financials for a Municipality
 Returns financial statement data for the Municipality with the given ID
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -145,6 +187,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -158,4 +201,6 @@ Name | Type | Description  | Notes
 [**ApiResponseMunicipalitiyFinancials**](ApiResponseMunicipalitiyFinancials.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+[//]: # (END_OPERATION)
 

@@ -9,7 +9,17 @@ Method | HTTP request | Description
 [**get_forex_prices**](ForexApi.md#get_forex_prices) | **GET** /forex/prices/{pair}/{timeframe} | Forex Currency Prices
 
 
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/forex/currencies)
+
+[//]: # (DOC_LINK:ForexApi.md#get_forex_currencies)
+
 # **get_forex_currencies**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_forex_currencies_v2)
+
 > ApiResponseForexCurrencies get_forex_currencies()
 
 Forex Currencies
@@ -17,6 +27,8 @@ Forex Currencies
 Returns a list of forex currencies for which prices are available.
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -37,6 +49,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -47,7 +60,19 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/forex/pairs)
+
+[//]: # (DOC_LINK:ForexApi.md#get_forex_pairs)
+
 # **get_forex_pairs**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_forex_pairs_v2)
+
 > ApiResponseForexPairs get_forex_pairs()
 
 Forex Currency Pairs
@@ -55,6 +80,8 @@ Forex Currency Pairs
 Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -75,6 +102,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -85,7 +113,19 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/forex/prices/{pair}/{timeframe})
+
+[//]: # (DOC_LINK:ForexApi.md#get_forex_prices)
+
 # **get_forex_prices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_forex_prices_v2)
+
 > ApiResponseForexPrices get_forex_prices(pair, timeframe, timezone=timezone, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
 
 Forex Currency Prices
@@ -93,6 +133,8 @@ Forex Currency Prices
 Provides a list of forex price quotes for a given forex currency pair and timeframe.
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -107,10 +149,10 @@ forex_api = intrinio_sdk.ForexApi()
 pair = 'EURUSD' # str | The Forex Currency Pair code
 timeframe = 'D1' # str | The time interval for the quotes
 timezone = 'UTC' # str | Returns trading times in this timezone (optional) (default to UTC)
-start_date = '2018-01-01' # str | Return Forex Prices on or after this date (optional)
-start_time = '14:20:00' # str | Return Forex Prices at or after this time (24-hour) (optional)
-end_date = '2019-01-01' # str | Return Forex Prices on or before this date (optional)
-end_time = '21:01:21' # str | Return Forex Prices at or before this time (24-hour) (optional)
+start_date = '' # date | Return Forex Prices on or after this date (optional)
+start_time = '' # str | Return Forex Prices at or after this time (24-hour) (optional)
+end_date = '' # date | Return Forex Prices on or before this date (optional)
+end_time = '' # str | Return Forex Prices at or before this time (24-hour) (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
@@ -122,6 +164,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -130,9 +173,9 @@ Name | Type | Description  | Notes
  **pair** | **str**| The Forex Currency Pair code | 
  **timeframe** | **str**| The time interval for the quotes | 
  **timezone** | **str**| Returns trading times in this timezone | [optional] [default to UTC]
- **start_date** | **str**| Return Forex Prices on or after this date | [optional] 
+ **start_date** | **date**| Return Forex Prices on or after this date | [optional] 
  **start_time** | **str**| Return Forex Prices at or after this time (24-hour) | [optional] 
- **end_date** | **str**| Return Forex Prices on or before this date | [optional] 
+ **end_date** | **date**| Return Forex Prices on or before this date | [optional] 
  **end_time** | **str**| Return Forex Prices at or before this time (24-hour) | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
@@ -142,4 +185,6 @@ Name | Type | Description  | Notes
 [**ApiResponseForexPrices**](ApiResponseForexPrices.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+[//]: # (END_OPERATION)
 

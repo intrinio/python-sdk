@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**time** | **str** | The date and time of the beginning of the timeframe (in UTC). The open prices would be at this time, while close prices would be at this time plus the timeframe. | [optional] 
+**time** | **datetime** | The date and time of the beginning of the timeframe (in UTC). The open prices would be at this time, while close prices would be at this time plus the timeframe. | [optional] 
 **open** | **float** | The opening price of the timeframe. | [optional] 
 **high** | **float** | The high price of the timeframe. | [optional] 
 **low** | **float** | The low price of the timeframe. | [optional] 

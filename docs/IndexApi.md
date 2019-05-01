@@ -24,12 +24,24 @@ Method | HTTP request | Description
 [**search_stock_markets_indices**](IndexApi.md#search_stock_markets_indices) | **GET** /indices/stock_market/search | Search Stock Market Indices
 
 
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/economic)
+
+[//]: # (DOC_LINK:IndexApi.md#get_all_economic_indices)
+
 # **get_all_economic_indices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_economic_indices_v2)
+
 > ApiResponseEconomicIndices get_all_economic_indices(page_size=page_size, next_page=next_page)
 
 All Economic Indices
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -41,7 +53,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-page_size = 100 # float | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
@@ -52,12 +64,13 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **float**| The number of results to return | [optional] [default to 100]
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -66,12 +79,26 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/sic)
+
+[//]: # (DOC_LINK:IndexApi.md#get_all_sic_indices)
+
 # **get_all_sic_indices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_sic_indices_v2)
+
 > ApiResponseSICIndices get_all_sic_indices(page_size=page_size, next_page=next_page)
 
 All SIC Indices
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -83,7 +110,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-page_size = 100 # float | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
@@ -94,12 +121,13 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **float**| The number of results to return | [optional] [default to 100]
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -108,12 +136,26 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/stock_market)
+
+[//]: # (DOC_LINK:IndexApi.md#get_all_stock_market_indices)
+
 # **get_all_stock_market_indices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_stock_market_indices_v2)
+
 > ApiResponseStockMarketIndices get_all_stock_market_indices(page_size=page_size, next_page=next_page)
 
 All Stock Market Indices
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -125,7 +167,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 index_api = intrinio_sdk.IndexApi()
 
-page_size = 100 # float | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
@@ -136,12 +178,13 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **float**| The number of results to return | [optional] [default to 100]
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -150,12 +193,26 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/economic/{identifier})
+
+[//]: # (DOC_LINK:IndexApi.md#get_economic_index_by_id)
+
 # **get_economic_index_by_id**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_economic_index_by_id_v2)
+
 > EconomicIndex get_economic_index_by_id(identifier)
 
 Lookup Economic Index
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -177,6 +234,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -190,7 +248,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/economic/{identifier}/data_point/{tag}/number)
+
+[//]: # (DOC_LINK:IndexApi.md#get_economic_index_data_point_number)
+
 # **get_economic_index_data_point_number**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_economic_index_data_point_number_v2)
+
 > float get_economic_index_data_point_number(identifier, tag)
 
 Data Point (Number) for an Economic Index
@@ -198,6 +268,8 @@ Data Point (Number) for an Economic Index
 Returns a numeric value for the given `tag` for the Economic Index with the given `identifier`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -210,7 +282,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 index_api = intrinio_sdk.IndexApi()
 
 identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag ID or code-name
+tag = 'level' # str | An Intrinio data tag <a href='https://data.intrinio.com/data-tags/economic'>reference</a>
 
 try:
     api_response = index_api.get_economic_index_data_point_number(identifier, tag)
@@ -220,13 +292,14 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **str**| An Intrinio data tag ID or code-name | 
+ **tag** | **str**| An Intrinio data tag &lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags/economic&#39;&gt;reference&lt;/a&gt; | 
 
 ### Return type
 
@@ -234,7 +307,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/economic/{identifier}/data_point/{tag}/text)
+
+[//]: # (DOC_LINK:IndexApi.md#get_economic_index_data_point_text)
+
 # **get_economic_index_data_point_text**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_economic_index_data_point_text_v2)
+
 > str get_economic_index_data_point_text(identifier, tag)
 
 Data Point (Text) for an Economic Index
@@ -242,6 +327,8 @@ Data Point (Text) for an Economic Index
 Returns a text value for the given `tag` for the Economic Index with the given `identifier`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -264,6 +351,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -278,7 +366,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/economic/{identifier}/historical_data/{tag})
+
+[//]: # (DOC_LINK:IndexApi.md#get_economic_index_historical_data)
+
 # **get_economic_index_historical_data**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_economic_index_historical_data_v2)
+
 > ApiResponseEconomicIndexHistoricalData get_economic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
 Historical Data for an Economic Index
@@ -286,6 +386,8 @@ Historical Data for an Economic Index
 Returns historical values for the given `tag` and the Economic Index with the given `identifier`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -298,12 +400,12 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 index_api = intrinio_sdk.IndexApi()
 
 identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag ID or code-name
+tag = 'level' # str | An Intrinio data tag <a href='https://data.intrinio.com/data-tags/economic'>reference</a>
 type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
-end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
+end_date = '' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-page_size = 100 # float | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
@@ -314,18 +416,19 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| An Index Identifier (symbol, Intrinio ID) | 
- **tag** | **str**| An Intrinio data tag ID or code-name | 
+ **tag** | **str**| An Intrinio data tag &lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags/economic&#39;&gt;reference&lt;/a&gt; | 
  **type** | **str**| Filter by type, when applicable | [optional] 
  **start_date** | **date**| Get historical data on or after this date | [optional] 
  **end_date** | **date**| Get historical data on or before this date | [optional] 
  **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
- **page_size** | **float**| The number of results to return | [optional] [default to 100]
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -334,12 +437,26 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/sic/{identifier})
+
+[//]: # (DOC_LINK:IndexApi.md#get_sic_index_by_id)
+
 # **get_sic_index_by_id**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_sic_index_by_id_v2)
+
 > SICIndex get_sic_index_by_id(identifier)
 
 Lookup SIC Index
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -361,6 +478,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -374,7 +492,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/sic/{identifier}/data_point/{tag}/number)
+
+[//]: # (DOC_LINK:IndexApi.md#get_sic_index_data_point_number)
+
 # **get_sic_index_data_point_number**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_sic_index_data_point_number_v2)
+
 > float get_sic_index_data_point_number(identifier, tag)
 
 Data Point (Number) for an SIC Index
@@ -382,6 +512,8 @@ Data Point (Number) for an SIC Index
 Returns a numeric value for the given `tag` for the SIC Index with the given `identifier`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -404,6 +536,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -418,7 +551,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/sic/{identifier}/data_point/{tag}/text)
+
+[//]: # (DOC_LINK:IndexApi.md#get_sic_index_data_point_text)
+
 # **get_sic_index_data_point_text**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_sic_index_data_point_text_v2)
+
 > str get_sic_index_data_point_text(identifier, tag)
 
 Data Point (Text) for an SIC Index
@@ -426,6 +571,8 @@ Data Point (Text) for an SIC Index
 Returns a text value for the given `tag` for the SIC Index with the given `identifier`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -448,6 +595,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -462,7 +610,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/sic/{identifier}/historical_data/{tag})
+
+[//]: # (DOC_LINK:IndexApi.md#get_sic_index_historical_data)
+
 # **get_sic_index_historical_data**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_sic_index_historical_data_v2)
+
 > ApiResponseSICIndexHistoricalData get_sic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
 Historical Data for an SIC Index
@@ -470,6 +630,8 @@ Historical Data for an SIC Index
 Returns historical values for the given `tag` and the SIC Index with the given `identifier`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -485,9 +647,9 @@ identifier = '$SIC.1' # str | An Index Identifier (symbol, Intrinio ID)
 tag = 'marketcap' # str | An Intrinio data tag ID or code-name
 type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
-end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
+end_date = '' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-page_size = 100 # float | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
@@ -498,6 +660,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -509,7 +672,7 @@ Name | Type | Description  | Notes
  **start_date** | **date**| Get historical data on or after this date | [optional] 
  **end_date** | **date**| Get historical data on or before this date | [optional] 
  **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
- **page_size** | **float**| The number of results to return | [optional] [default to 100]
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -518,12 +681,26 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/stock_market/{identifier})
+
+[//]: # (DOC_LINK:IndexApi.md#get_stock_market_index_by_id)
+
 # **get_stock_market_index_by_id**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_market_index_by_id_v2)
+
 > StockMarketIndex get_stock_market_index_by_id(identifier)
 
 Lookup Stock Market Index
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -545,6 +722,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -558,7 +736,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/stock_market/{identifier}/data_point/{tag}/number)
+
+[//]: # (DOC_LINK:IndexApi.md#get_stock_market_index_data_point_number)
+
 # **get_stock_market_index_data_point_number**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_market_index_data_point_number_v2)
+
 > float get_stock_market_index_data_point_number(identifier, tag)
 
 Data Point (Number) for Stock Market Index
@@ -566,6 +756,8 @@ Data Point (Number) for Stock Market Index
 Returns a numeric value for the given `tag` for the Stock Market Index with the given `identifier`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -588,6 +780,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -602,7 +795,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/stock_market/{identifier}/data_point/{tag}/text)
+
+[//]: # (DOC_LINK:IndexApi.md#get_stock_market_index_data_point_text)
+
 # **get_stock_market_index_data_point_text**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_market_index_data_point_text_v2)
+
 > str get_stock_market_index_data_point_text(identifier, tag)
 
 Data Point (Text) for Stock Market Index
@@ -610,6 +815,8 @@ Data Point (Text) for Stock Market Index
 Returns a text value for the given `tag` for the Stock Market Index with the given `identifier`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -632,6 +839,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -646,7 +854,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/stock_market/{identifier}/historical_data/{tag})
+
+[//]: # (DOC_LINK:IndexApi.md#get_stock_market_index_historical_data)
+
 # **get_stock_market_index_historical_data**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_market_index_historical_data_v2)
+
 > ApiResponseStockMarketIndexHistoricalData get_stock_market_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
 Historical Data for Stock Market Index
@@ -654,6 +874,8 @@ Historical Data for Stock Market Index
 Returns historical values for the given `tag` and the Stock Market Index with the given `identifier`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -669,9 +891,9 @@ identifier = '$DJI' # str | An Index Identifier (symbol, Intrinio ID)
 tag = 'level' # str | An Intrinio data tag ID or code-name
 type = '' # str | Filter by type, when applicable (optional)
 start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
-end_date = '2019-01-01' # date | Get historical data on or before this date (optional)
+end_date = '' # date | Get historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-page_size = 100 # float | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
@@ -682,6 +904,7 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
@@ -693,7 +916,7 @@ Name | Type | Description  | Notes
  **start_date** | **date**| Get historical data on or after this date | [optional] 
  **end_date** | **date**| Get historical data on or before this date | [optional] 
  **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
- **page_size** | **float**| The number of results to return | [optional] [default to 100]
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
@@ -702,7 +925,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/economic/search)
+
+[//]: # (DOC_LINK:IndexApi.md#search_economic_indices)
+
 # **search_economic_indices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_economic_indices_v2)
+
 > ApiResponseEconomicIndicesSearch search_economic_indices(query, page_size=page_size)
 
 Search Economic Indices
@@ -710,6 +945,8 @@ Search Economic Indices
 Searches for indices using the text in `query`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -722,7 +959,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 index_api = intrinio_sdk.IndexApi()
 
 query = 'GDP' # str | Search query
-page_size = 100 # float | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
 
 try:
     api_response = index_api.search_economic_indices(query, page_size=page_size)
@@ -732,13 +969,14 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Search query | 
- **page_size** | **float**| The number of results to return | [optional] [default to 100]
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
 
 ### Return type
 
@@ -746,7 +984,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/sic/search)
+
+[//]: # (DOC_LINK:IndexApi.md#search_sic_indices)
+
 # **search_sic_indices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_sic_indices_v2)
+
 > ApiResponseSICIndicesSearch search_sic_indices(query, page_size=page_size)
 
 Search SIC Indices
@@ -754,6 +1004,8 @@ Search SIC Indices
 Searches for indices using the text in `query`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -766,7 +1018,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 index_api = intrinio_sdk.IndexApi()
 
 query = 'agriculture' # str | Search query
-page_size = 100 # float | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
 
 try:
     api_response = index_api.search_sic_indices(query, page_size=page_size)
@@ -776,13 +1028,14 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Search query | 
- **page_size** | **float**| The number of results to return | [optional] [default to 100]
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
 
 ### Return type
 
@@ -790,7 +1043,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERTATION)
+
+[//]: # (ENDPOINT:/indices/stock_market/search)
+
+[//]: # (DOC_LINK:IndexApi.md#search_stock_markets_indices)
+
 # **search_stock_markets_indices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_stock_markets_indices_v2)
+
 > ApiResponseStockMarketIndicesSearch search_stock_markets_indices(query, page_size=page_size)
 
 Search Stock Market Indices
@@ -798,6 +1063,8 @@ Search Stock Market Indices
 Searches for indices using the text in `query`
 
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -810,7 +1077,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 index_api = intrinio_sdk.IndexApi()
 
 query = 'dow' # str | Search query
-page_size = 100 # float | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
 
 try:
     api_response = index_api.search_stock_markets_indices(query, page_size=page_size)
@@ -820,17 +1087,20 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Search query | 
- **page_size** | **float**| The number of results to return | [optional] [default to 100]
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
 
 ### Return type
 
 [**ApiResponseStockMarketIndicesSearch**](ApiResponseStockMarketIndicesSearch.md)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+[//]: # (END_OPERATION)
 
