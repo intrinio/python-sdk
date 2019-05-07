@@ -1,6 +1,6 @@
-# ZacksEPSSurpriseSummary
+## ZacksEPSSurpriseSummary
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID for the record | [optional] 
@@ -20,6 +20,5 @@ Name | Type | Description | Notes
 **eps_count_estimate** | **float** | The pre-earnings release number of estimates by analysts | [optional] 
 **eps_std_dev_estimate** | **float** | The pre-earnings release standard deviation of EPS estimates | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

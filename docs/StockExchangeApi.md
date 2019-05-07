@@ -13,19 +13,22 @@ Method | HTTP request | Description
 
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_all_stock_exchanges_v2)
 
 [//]: # (ENDPOINT:/stock_exchanges)
 
-[//]: # (DOC_LINK:StockExchangeApi.md#get_all_stock_exchanges)
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_all_stock_exchanges)
 
-# **get_all_stock_exchanges**
+## **get_all_stock_exchanges**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_stock_exchanges_v2)
 
 > ApiResponseStockExchanges get_all_stock_exchanges(city=city, country=country, country_code=country_code, page_size=page_size)
 
-All Stock Exchanges
+#### All Stock Exchanges
+
 
 Returns all Stock Exchanges matching the specified parameters
 
@@ -66,29 +69,30 @@ Name | Type | Description  | Notes
  **country** | **str**| Filter by country | [optional] 
  **country_code** | **str**| Filter by ISO country code | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
-
+<br/>
 ### Return type
 
 [**ApiResponseStockExchanges**](ApiResponseStockExchanges.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_stock_exchange_by_id_v2)
 
 [//]: # (ENDPOINT:/stock_exchanges/{identifier})
 
-[//]: # (DOC_LINK:StockExchangeApi.md#get_stock_exchange_by_id)
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_by_id)
 
-# **get_stock_exchange_by_id**
+## **get_stock_exchange_by_id**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_by_id_v2)
 
 > StockExchange get_stock_exchange_by_id(identifier)
 
-Lookup Stock Exchange
+#### Lookup Stock Exchange
+
 
 Returns the Stock Exchange with the given `identifier`
 
@@ -123,29 +127,30 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| A Stock Exchange identifier (MIC or Intrinio ID) | 
-
+<br/>
 ### Return type
 
 [**StockExchange**](StockExchange.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_stock_exchange_price_adjustments_v2)
 
 [//]: # (ENDPOINT:/stock_exchanges/{identifier}/prices/adjustments)
 
-[//]: # (DOC_LINK:StockExchangeApi.md#get_stock_exchange_price_adjustments)
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_price_adjustments)
 
-# **get_stock_exchange_price_adjustments**
+## **get_stock_exchange_price_adjustments**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_price_adjustments_v2)
 
 > ApiResponseStockExchangeStockPriceAdjustments get_stock_exchange_price_adjustments(identifier, date=date, page_size=page_size, next_page=next_page)
 
-Stock Price Adjustments by Exchange
+#### Stock Price Adjustments by Exchange
+
 
 Returns stock price adjustments for the Stock Exchange with the given `identifier`
 
@@ -186,29 +191,30 @@ Name | Type | Description  | Notes
  **date** | **date**| The date for which to return price adjustments | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseStockExchangeStockPriceAdjustments**](ApiResponseStockExchangeStockPriceAdjustments.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_stock_exchange_prices_v2)
 
 [//]: # (ENDPOINT:/stock_exchanges/{identifier}/prices)
 
-[//]: # (DOC_LINK:StockExchangeApi.md#get_stock_exchange_prices)
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_prices)
 
-# **get_stock_exchange_prices**
+## **get_stock_exchange_prices**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_prices_v2)
 
 > ApiResponseStockExchangeStockPrices get_stock_exchange_prices(identifier, date=date, page_size=page_size, next_page=next_page)
 
-Stock Prices by Exchange
+#### Stock Prices by Exchange
+
 
 Returns end-of-day stock prices for Securities on the Stock Exchange with `identifier` and on the `price_date` (or the latest date that prices are available)
 
@@ -249,29 +255,30 @@ Name | Type | Description  | Notes
  **date** | **date**| The date for which to return prices | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseStockExchangeStockPrices**](ApiResponseStockExchangeStockPrices.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_stock_exchange_realtime_prices_v2)
 
 [//]: # (ENDPOINT:/stock_exchanges/{identifier}/prices/realtime)
 
-[//]: # (DOC_LINK:StockExchangeApi.md#get_stock_exchange_realtime_prices)
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_realtime_prices)
 
-# **get_stock_exchange_realtime_prices**
+## **get_stock_exchange_realtime_prices**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_realtime_prices_v2)
 
 > ApiResponseStockExchangeRealtimeStockPrices get_stock_exchange_realtime_prices(identifier, source=source, page_size=page_size, next_page=next_page)
 
-Realtime Stock Prices by Exchange
+#### Realtime Stock Prices by Exchange
+
 
 Returns realtime stock prices for the Stock Exchange with the given `identifier`
 
@@ -312,29 +319,30 @@ Name | Type | Description  | Notes
  **source** | **str**| Return realtime prices from the specified data source | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseStockExchangeRealtimeStockPrices**](ApiResponseStockExchangeRealtimeStockPrices.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_stock_exchange_securities_v2)
 
 [//]: # (ENDPOINT:/stock_exchanges/{identifier}/securities)
 
-[//]: # (DOC_LINK:StockExchangeApi.md#get_stock_exchange_securities)
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_securities)
 
-# **get_stock_exchange_securities**
+## **get_stock_exchange_securities**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_securities_v2)
 
 > ApiResponseStockExchangeSecurities get_stock_exchange_securities(identifier, page_size=page_size, next_page=next_page)
 
-Securities by Exchange
+#### Securities by Exchange
+
 
 Returns Securities traded on the Stock Exchange with `identifier`
 
@@ -373,12 +381,10 @@ Name | Type | Description  | Notes
  **identifier** | **str**| A Stock Exchange identifier (MIC or Intrinio ID) | 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseStockExchangeSecurities**](ApiResponseStockExchangeSecurities.md)
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 [//]: # (END_OPERATION)
 

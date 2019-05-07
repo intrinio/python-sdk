@@ -10,19 +10,22 @@ Method | HTTP request | Description
 
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_zacks_analyst_ratings_v2)
 
 [//]: # (ENDPOINT:/zacks/analyst_ratings)
 
-[//]: # (DOC_LINK:ZacksApi.md#get_zacks_analyst_ratings)
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_analyst_ratings)
 
-# **get_zacks_analyst_ratings**
+## **get_zacks_analyst_ratings**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_zacks_analyst_ratings_v2)
 
 > ApiResponseZacksAnalystRatings get_zacks_analyst_ratings(identifier=identifier, start_date=start_date, end_date=end_date, mean_greater=mean_greater, mean_less=mean_less, strong_buys_greater=strong_buys_greater, strong_buys_less=strong_buys_less, buys_greater=buys_greater, buys_less=buys_less, holds_greater=holds_greater, holds_less=holds_less, sells_greater=sells_greater, sells_less=sells_less, strong_sells_greater=strong_sells_greater, strong_sells_less=strong_sells_less, total_greater=total_greater, total_less=total_less, page_size=page_size, next_page=next_page)
 
-Zacks Analyst Ratings
+#### Zacks Analyst Ratings
+
 
 Returns buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. Zack’s storied research team aggregates and validates the ratings from professional analysts.
 
@@ -93,29 +96,30 @@ Name | Type | Description  | Notes
  **total_less** | **int**| Return only records with fewer than this many recommendations, regardless of type | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseZacksAnalystRatings**](ApiResponseZacksAnalystRatings.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_zacks_eps_surprises_v2)
 
 [//]: # (ENDPOINT:/zacks/eps_surprises)
 
-[//]: # (DOC_LINK:ZacksApi.md#get_zacks_eps_surprises)
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_eps_surprises)
 
-# **get_zacks_eps_surprises**
+## **get_zacks_eps_surprises**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_zacks_eps_surprises_v2)
 
 > ApiResponseZacksEPSSurprises get_zacks_eps_surprises(start_date=start_date, end_date=end_date, eps_actual_greater=eps_actual_greater, eps_actual_less=eps_actual_less, eps_mean_estimate_greater=eps_mean_estimate_greater, eps_mean_estimate_less=eps_mean_estimate_less, eps_amount_diff_greater=eps_amount_diff_greater, eps_amount_diff_less=eps_amount_diff_less, eps_percent_diff_greater=eps_percent_diff_greater, eps_percent_diff_less=eps_percent_diff_less, eps_count_estimate_greater=eps_count_estimate_greater, eps_count_estimate_less=eps_count_estimate_less, eps_std_dev_estimate_greater=eps_std_dev_estimate_greater, eps_std_dev_estimate_less=eps_std_dev_estimate_less, page_size=page_size, next_page=next_page)
 
-Zacks EPS Surprises
+#### Zacks EPS Surprises
+
 
 Returns Zacks eps surprise data for all Securities.
 
@@ -180,29 +184,30 @@ Name | Type | Description  | Notes
  **eps_std_dev_estimate_less** | **float**| Return only records with an EPS standard deviation less than this value | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseZacksEPSSurprises**](ApiResponseZacksEPSSurprises.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_zacks_sales_surprises_v2)
 
 [//]: # (ENDPOINT:/zacks/sales_surprises)
 
-[//]: # (DOC_LINK:ZacksApi.md#get_zacks_sales_surprises)
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_sales_surprises)
 
-# **get_zacks_sales_surprises**
+## **get_zacks_sales_surprises**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_zacks_sales_surprises_v2)
 
 > ApiResponseZacksSalesSurprises get_zacks_sales_surprises(start_date=start_date, end_date=end_date, sales_actual_greater=sales_actual_greater, sales_actual_less=sales_actual_less, sales_mean_estimate_greater=sales_mean_estimate_greater, sales_mean_estimate_less=sales_mean_estimate_less, sales_amount_diff_greater=sales_amount_diff_greater, sales_amount_diff_less=sales_amount_diff_less, sales_percent_diff_greater=sales_percent_diff_greater, sales_percent_diff_less=sales_percent_diff_less, sales_count_estimate_greater=sales_count_estimate_greater, sales_count_estimate_less=sales_count_estimate_less, sales_std_dev_estimate_greater=sales_std_dev_estimate_greater, sales_std_dev_estimate_less=sales_std_dev_estimate_less, page_size=page_size, next_page=next_page)
 
-Zacks Sales Surprises
+#### Zacks Sales Surprises
+
 
 Returns Zacks sales surprise data for all Securities.
 
@@ -267,12 +272,10 @@ Name | Type | Description  | Notes
  **sales_std_dev_estimate_less** | **float**| Return only records with a sales standard deviation less than this value | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseZacksSalesSurprises**](ApiResponseZacksSalesSurprises.md)
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 [//]: # (END_OPERATION)
 

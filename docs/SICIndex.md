@@ -1,6 +1,6 @@
-# SICIndex
+## SICIndex
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Intrinio ID for the Index | [optional] 
@@ -9,6 +9,5 @@ Name | Type | Description | Notes
 **continent** | **str** | The continent of the country of focus for the Index | [optional] 
 **country** | **str** | The country of focus for the Index | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

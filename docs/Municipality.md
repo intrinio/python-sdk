@@ -1,6 +1,6 @@
-# Municipality
+## Municipality
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID for Municipality | [optional] 
@@ -23,6 +23,5 @@ Name | Type | Description | Notes
 **latitude** | **float** | The latitude of the location of the Municipality | [optional] 
 **longitude** | **float** | The longitude of the location of the Municipality | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

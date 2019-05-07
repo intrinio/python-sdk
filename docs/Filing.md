@@ -1,6 +1,6 @@
-# Filing
+## Filing
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID of the Filing | [optional] 
@@ -14,6 +14,5 @@ Name | Type | Description | Notes
 **instance_url** | **str** | The URL for the XBRL filing for the report | [optional] 
 **company** | [**CompanySummary**](CompanySummary.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

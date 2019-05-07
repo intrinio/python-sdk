@@ -1,6 +1,6 @@
-# IntradayStockPrice
+## IntradayStockPrice
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **time** | **datetime** | The timestamp that the &#x60;last_price&#x60; represents. | [optional] 
@@ -12,6 +12,5 @@ Name | Type | Description | Notes
 **volume** | **float** | The number of shares exchanged during the trading day on the exchange. | [optional] 
 **source** | **str** | The source of the data. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

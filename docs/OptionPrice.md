@@ -1,6 +1,6 @@
-# OptionPrice
+## OptionPrice
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **date** | **str** | The date of the price, in the format YYYY-MM-DD | [optional] 
@@ -18,6 +18,5 @@ Name | Type | Description | Notes
 **implied_volatility_change** | **float** | The change in implied volatility for that day. | [optional] 
 **delta** | **float** | Delta measures the degree to which an options contract is exposed to shifts in the price of the underlying Security. Values of delta range from 0.0 to 1.0 for call options and -1.0 to 0.0 for put options. For example, if a put option has a delta of -0.50, if the price of the underlying Security increases by $1, the price of the put option will decrease by $0.50. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

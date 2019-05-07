@@ -1,6 +1,6 @@
-# EconomicIndexSummary
+## EconomicIndexSummary
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID for the Index | [optional] 
@@ -15,6 +15,5 @@ Name | Type | Description | Notes
 **seasonal_adjustment** | **str** | Whether the data is adjusted to account for seasonality | [optional] 
 **units** | **str** | The units of the data | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

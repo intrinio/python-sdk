@@ -1,6 +1,6 @@
-# MunicipalityFinancial
+## MunicipalityFinancial
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fiscal_year** | **float** | The fiscal year from which the financial data came from | [optional] 
@@ -46,6 +46,5 @@ Name | Type | Description | Notes
 **governmental_fund_expenditures** | **float** | Decreases in financial resources attributable to any governmental fund. Governmental funds are used to account for general government activities that are financed primarily through taxes, intergovernmental revenues, and other nonexchange revenues. | [optional] 
 **governmental_fund_revenues_over_under_expenditure** | **float** | Difference between revenues and expenditures attributable to all governmental funds.  If positive, this amount is called a surplus.  If negative, it represents a deficit. Governmental funds are used to account for general government activities that are financed primarily through taxes, intergovernmental revenues, and other nonexchange revenues. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

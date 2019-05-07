@@ -1,6 +1,6 @@
-# ForexPrice
+## ForexPrice
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **occurred_at** | **str** | The timestamp of the beginning of the timeframe. The open prices would be at this time, while close prices would be at this time plus the timeframe. | [optional] 
@@ -14,6 +14,5 @@ Name | Type | Description | Notes
 **close_ask** | **float** | Close ask | [optional] 
 **total_ticks** | **int** | Total ticks | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

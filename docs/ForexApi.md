@@ -10,19 +10,22 @@ Method | HTTP request | Description
 
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_forex_currencies_v2)
 
 [//]: # (ENDPOINT:/forex/currencies)
 
-[//]: # (DOC_LINK:ForexApi.md#get_forex_currencies)
+[//]: # (DOCUMENT_LINK:ForexApi.md#get_forex_currencies)
 
-# **get_forex_currencies**
+## **get_forex_currencies**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_forex_currencies_v2)
 
 > ApiResponseForexCurrencies get_forex_currencies()
 
-Forex Currencies
+#### Forex Currencies
+
 
 Returns a list of forex currencies for which prices are available.
 
@@ -53,29 +56,30 @@ except ApiException as e:
 
 ### Parameters
 This endpoint does not need any parameter.
-
+<br/>
 ### Return type
 
 [**ApiResponseForexCurrencies**](ApiResponseForexCurrencies.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_forex_pairs_v2)
 
 [//]: # (ENDPOINT:/forex/pairs)
 
-[//]: # (DOC_LINK:ForexApi.md#get_forex_pairs)
+[//]: # (DOCUMENT_LINK:ForexApi.md#get_forex_pairs)
 
-# **get_forex_pairs**
+## **get_forex_pairs**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_forex_pairs_v2)
 
 > ApiResponseForexPairs get_forex_pairs()
 
-Forex Currency Pairs
+#### Forex Currency Pairs
+
 
 Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
 
@@ -106,29 +110,30 @@ except ApiException as e:
 
 ### Parameters
 This endpoint does not need any parameter.
-
+<br/>
 ### Return type
 
 [**ApiResponseForexPairs**](ApiResponseForexPairs.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_forex_prices_v2)
 
 [//]: # (ENDPOINT:/forex/prices/{pair}/{timeframe})
 
-[//]: # (DOC_LINK:ForexApi.md#get_forex_prices)
+[//]: # (DOCUMENT_LINK:ForexApi.md#get_forex_prices)
 
-# **get_forex_prices**
+## **get_forex_prices**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_forex_prices_v2)
 
 > ApiResponseForexPrices get_forex_prices(pair, timeframe, timezone=timezone, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
 
-Forex Currency Prices
+#### Forex Currency Prices
+
 
 Provides a list of forex price quotes for a given forex currency pair and timeframe.
 
@@ -179,12 +184,10 @@ Name | Type | Description  | Notes
  **end_time** | **str**| Return Forex Prices at or before this time (24-hour) | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseForexPrices**](ApiResponseForexPrices.md)
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 [//]: # (END_OPERATION)
 

@@ -14,19 +14,22 @@ Method | HTTP request | Description
 
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_all_filings_v2)
 
 [//]: # (ENDPOINT:/filings)
 
-[//]: # (DOC_LINK:FilingApi.md#get_all_filings)
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_all_filings)
 
-# **get_all_filings**
+## **get_all_filings**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_filings_v2)
 
 > ApiResponseFilings get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 
-All Filings
+#### All Filings
+
 
 Returns all Filings. Returns Filings matching parameters when supplied.
 
@@ -71,29 +74,30 @@ Name | Type | Description  | Notes
  **end_date** | **date**| Filed before or after the given date | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseFilings**](ApiResponseFilings.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_all_notes_v2)
 
 [//]: # (ENDPOINT:/filings/notes)
 
-[//]: # (DOC_LINK:FilingApi.md#get_all_notes)
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_all_notes)
 
-# **get_all_notes**
+## **get_all_notes**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_notes_v2)
 
 > ApiResponseFilingNotes get_all_notes(company=company, report_type=report_type, filing_start_date=filing_start_date, filing_end_date=filing_end_date, period_ended_start_date=period_ended_start_date, period_ended_end_date=period_ended_end_date, page_size=page_size, next_page=next_page)
 
-All Filing Notes
+#### All Filing Notes
+
 
 Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
 
@@ -142,29 +146,30 @@ Name | Type | Description  | Notes
  **period_ended_end_date** | **date**| Limit search to filings with a period end date on or before this date | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseFilingNotes**](ApiResponseFilingNotes.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_filing_by_id_v2)
 
 [//]: # (ENDPOINT:/filings/{id})
 
-[//]: # (DOC_LINK:FilingApi.md#get_filing_by_id)
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_filing_by_id)
 
-# **get_filing_by_id**
+## **get_filing_by_id**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_filing_by_id_v2)
 
 > Filing get_filing_by_id(id)
 
-Lookup Filing
+#### Lookup Filing
+
 
 Returns the Filing with the given `identifier`
 
@@ -199,29 +204,31 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The Intrinio ID of the Filing | 
-
+<br/>
 ### Return type
 
 [**Filing**](Filing.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_note_v2)
 
 [//]: # (ENDPOINT:/filings/notes/{identifier})
 
-[//]: # (DOC_LINK:FilingApi.md#get_note)
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_note)
 
-# **get_note**
+## **get_note**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_note_v2)
 
 > FilingNote get_note(identifier, content_format=content_format)
 
-Filing Note by ID
+#### Filing Note by ID
+
+
 
 ### Example
 [//]: # (START_CODE_EXAMPLE)
@@ -256,29 +263,31 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| The Intrinio ID of the filing note | 
  **content_format** | **str**| Returns content in html (as filed) or plain text | [optional] [default to text]
-
+<br/>
 ### Return type
 
 [**FilingNote**](FilingNote.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_note_html_v2)
 
 [//]: # (ENDPOINT:/filings/notes/{identifier}/html)
 
-[//]: # (DOC_LINK:FilingApi.md#get_note_html)
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_note_html)
 
-# **get_note_html**
+## **get_note_html**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_note_html_v2)
 
 > str get_note_html(identifier)
 
-Filing Note HTML
+#### Filing Note HTML
+
+
 
 ### Example
 [//]: # (START_CODE_EXAMPLE)
@@ -311,29 +320,31 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| The Intrinio ID of the filing note | 
-
+<br/>
 ### Return type
 
 **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_note_text_v2)
 
 [//]: # (ENDPOINT:/filings/notes/{identifier}/text)
 
-[//]: # (DOC_LINK:FilingApi.md#get_note_text)
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_note_text)
 
-# **get_note_text**
+## **get_note_text**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_note_text_v2)
 
 > str get_note_text(identifier)
 
-Filing Note Text
+#### Filing Note Text
+
+
 
 ### Example
 [//]: # (START_CODE_EXAMPLE)
@@ -366,29 +377,30 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| The Intrinio ID of the filing note | 
-
+<br/>
 ### Return type
 
 **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:search_notes_v2)
 
 [//]: # (ENDPOINT:/filings/notes/search)
 
-[//]: # (DOC_LINK:FilingApi.md#search_notes)
+[//]: # (DOCUMENT_LINK:FilingApi.md#search_notes)
 
-# **search_notes**
+## **search_notes**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_notes_v2)
 
 > ApiResponseFilingNotesSearch search_notes(query, filing_start_date=filing_start_date, filing_end_date=filing_end_date, page_size=page_size, page_size2=page_size2)
 
-Search Filing Notes
+#### Search Filing Notes
+
 
 Searches for Filing Notes using the `query`
 
@@ -431,12 +443,10 @@ Name | Type | Description  | Notes
  **filing_end_date** | **date**| Limit search to filings on or before this date | [optional] 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **page_size2** | **int**| The number of results to return | [optional] [default to 100]
-
+<br/>
 ### Return type
 
 [**ApiResponseFilingNotesSearch**](ApiResponseFilingNotesSearch.md)
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 [//]: # (END_OPERATION)
 

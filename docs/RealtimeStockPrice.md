@@ -1,6 +1,6 @@
-# RealtimeStockPrice
+## RealtimeStockPrice
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **last_price** | **float** | The price of the last trade. | [optional] 
@@ -18,6 +18,5 @@ Name | Type | Description | Notes
 **source** | **str** | The source of the data. | [optional] 
 **security** | [**RealtimeStockPriceSecurity**](RealtimeStockPriceSecurity.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

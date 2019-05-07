@@ -1,6 +1,6 @@
-# ApiResponseCryptoBook
+## ApiResponseCryptoBook
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bids** | [**list[CryptoBookEntry]**](CryptoBookEntry.md) | The bid prices and their respective sizes, in descending order of price. | [optional] 
@@ -9,6 +9,5 @@ Name | Type | Description | Notes
 **exchange** | [**CryptoExchangeSummary**](CryptoExchangeSummary.md) |  | [optional] 
 **last_updated** | **str** | The UTC timestamp of when the order book was last updated. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

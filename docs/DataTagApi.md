@@ -10,19 +10,22 @@ Method | HTTP request | Description
 
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_all_data_tags_v2)
 
 [//]: # (ENDPOINT:/data_tags)
 
-[//]: # (DOC_LINK:DataTagApi.md#get_all_data_tags)
+[//]: # (DOCUMENT_LINK:DataTagApi.md#get_all_data_tags)
 
-# **get_all_data_tags**
+## **get_all_data_tags**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_data_tags_v2)
 
 > ApiResponseDataTags get_all_data_tags(tag=tag, type=type, parent=parent, statement_code=statement_code, fs_template=fs_template, page_size=page_size, next_page=next_page)
 
-All Data Tags
+#### All Data Tags
+
 
 Returns all Data Tags. Returns Data Tags matching parameters when specified.
 
@@ -69,29 +72,30 @@ Name | Type | Description  | Notes
  **fs_template** | **str**| Template | [optional] [default to industrial]
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseDataTags**](ApiResponseDataTags.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_data_tag_by_id_v2)
 
 [//]: # (ENDPOINT:/data_tags/{identifier})
 
-[//]: # (DOC_LINK:DataTagApi.md#get_data_tag_by_id)
+[//]: # (DOCUMENT_LINK:DataTagApi.md#get_data_tag_by_id)
 
-# **get_data_tag_by_id**
+## **get_data_tag_by_id**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_data_tag_by_id_v2)
 
 > DataTag get_data_tag_by_id(identifier)
 
-Lookup Data Tag
+#### Lookup Data Tag
+
 
 Returns the Data Tag with the given `identifier`
 
@@ -126,29 +130,30 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| The Intrinio ID or the code-name of the Data Tag | 
-
+<br/>
 ### Return type
 
 [**DataTag**](DataTag.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 [//]: # (END_OPERATION)
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:search_data_tags_v2)
 
 [//]: # (ENDPOINT:/data_tags/search)
 
-[//]: # (DOC_LINK:DataTagApi.md#search_data_tags)
+[//]: # (DOCUMENT_LINK:DataTagApi.md#search_data_tags)
 
-# **search_data_tags**
+## **search_data_tags**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_data_tags_v2)
 
 > ApiResponseDataTagsSearch search_data_tags(query, page_size=page_size)
 
-Search Data Tags
+#### Search Data Tags
+
 
 Searches for Data Tags matching the text `query`
 
@@ -185,12 +190,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**|  | 
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
-
+<br/>
 ### Return type
 
 [**ApiResponseDataTagsSearch**](ApiResponseDataTagsSearch.md)
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 [//]: # (END_OPERATION)
 

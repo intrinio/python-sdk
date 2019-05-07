@@ -8,19 +8,22 @@ Method | HTTP request | Description
 
 
 
-[//]: # (START_OPERTATION)
+[//]: # (START_OPERATION)
+
+[//]: # (OPERATION:get_historical_data_v2)
 
 [//]: # (ENDPOINT:/historical_data/{identifier}/{tag})
 
-[//]: # (DOC_LINK:HistoricalDataApi.md#get_historical_data)
+[//]: # (DOCUMENT_LINK:HistoricalDataApi.md#get_historical_data)
 
-# **get_historical_data**
+## **get_historical_data**
 
 [**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_historical_data_v2)
 
 > ApiResponseHistoricalData get_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
-Historical Data
+#### Historical Data
+
 
 Returns historical values for the given `tag` and the entity represented by the given `identifier`
 
@@ -71,12 +74,10 @@ Name | Type | Description  | Notes
  **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
  **page_size** | **int**| The number of results to return | [optional] [default to 100]
  **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
-
+<br/>
 ### Return type
 
 [**ApiResponseHistoricalData**](ApiResponseHistoricalData.md)
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 [//]: # (END_OPERATION)
 

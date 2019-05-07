@@ -1,6 +1,6 @@
-# CryptoStat
+## CryptoStat
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The common name of the crypto currency. | [optional] 
@@ -12,6 +12,5 @@ Name | Type | Description | Notes
 **max_supply** | **float** | The maxmium supply of coins available to mine. | [optional] 
 **last_updated** | **str** | UTC timestamp of when the data was last updated. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

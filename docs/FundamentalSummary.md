@@ -1,6 +1,6 @@
-# FundamentalSummary
+## FundamentalSummary
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID of the Fundamental | [optional] 
@@ -12,6 +12,5 @@ Name | Type | Description | Notes
 **end_date** | **date** | The period start date | [optional] 
 **filing_date** | **datetime** | The date and time when the Fundamental was filed with the SEC | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

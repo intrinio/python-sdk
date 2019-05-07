@@ -1,6 +1,6 @@
-# EarningsRecord
+## EarningsRecord
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **quarter** | **str** | The letter “Q” followed by the quarter number the earnings information applies to | [optional] 
@@ -27,6 +27,5 @@ Name | Type | Description | Notes
 **next_earnings_fiscal_year** | **int** | The fiscal year associated with next earnings date and next earnings quarter | [optional] 
 **security** | [**SecuritySummary**](SecuritySummary.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,6 +1,6 @@
-# ZacksAnalystRatingSummary
+## ZacksAnalystRatingSummary
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID for the record | [optional] 
@@ -13,6 +13,5 @@ Name | Type | Description | Notes
 **strong_sells** | **int** | The number of analysts recommending Strong Sell. | [optional] 
 **total** | **int** | The total number of analyst recommendations. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
