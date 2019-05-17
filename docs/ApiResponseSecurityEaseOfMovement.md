@@ -1,6 +1,6 @@
-## ApiResponseSecurityEaseOfMovement
+### ApiResponseSecurityEaseOfMovement
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[EaseOfMovementTechnicalValue]**](EaseOfMovementTechnicalValue.md) |  | [optional] 

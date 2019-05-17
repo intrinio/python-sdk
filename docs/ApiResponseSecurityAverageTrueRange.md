@@ -1,6 +1,6 @@
-## ApiResponseSecurityAverageTrueRange
+### ApiResponseSecurityAverageTrueRange
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[AverageTrueRangeTechnicalValue]**](AverageTrueRangeTechnicalValue.md) |  | [optional] 

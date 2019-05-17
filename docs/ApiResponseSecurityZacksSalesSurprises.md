@@ -1,6 +1,6 @@
-## ApiResponseSecurityZacksSalesSurprises
+### ApiResponseSecurityZacksSalesSurprises
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sales_surprises** | [**list[ZacksSalesSurpriseSummary]**](ZacksSalesSurpriseSummary.md) |  | [optional] 

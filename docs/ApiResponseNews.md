@@ -1,6 +1,6 @@
-## ApiResponseNews
+### ApiResponseNews
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **news** | [**list[CompanyNews]**](CompanyNews.md) |  | [optional] 

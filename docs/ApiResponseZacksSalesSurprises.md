@@ -1,6 +1,6 @@
-## ApiResponseZacksSalesSurprises
+### ApiResponseZacksSalesSurprises
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sales_surprises** | [**list[ZacksSalesSurprise]**](ZacksSalesSurprise.md) | Zacks Sales Surprise data for a Security in descending order by actual reported date | [optional] 

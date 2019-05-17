@@ -1,6 +1,6 @@
-## ApiResponseCryptoDonchianChannel
+### ApiResponseCryptoDonchianChannel
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[DonchianChannelTechnicalValue]**](DonchianChannelTechnicalValue.md) |  | [optional] 

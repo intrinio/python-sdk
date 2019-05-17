@@ -1,6 +1,6 @@
-## DividendRecord
+### DividendRecord
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ex_dividend** | **float** | Amount of dividend in US dollars | [optional] 

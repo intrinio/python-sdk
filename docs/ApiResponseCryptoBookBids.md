@@ -1,6 +1,6 @@
-## ApiResponseCryptoBookBids
+### ApiResponseCryptoBookBids
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bids** | [**list[CryptoBookEntry]**](CryptoBookEntry.md) | The bid prices and their respective sizes, in descending order of price. | [optional] 

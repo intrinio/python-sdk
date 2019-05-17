@@ -1,6 +1,6 @@
-## ApiResponseSecurityRelativeStrengthIndex
+### ApiResponseSecurityRelativeStrengthIndex
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[RelativeStrengthIndexTechnicalValue]**](RelativeStrengthIndexTechnicalValue.md) |  | [optional] 

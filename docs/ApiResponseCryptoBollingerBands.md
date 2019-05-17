@@ -1,6 +1,6 @@
-## ApiResponseCryptoBollingerBands
+### ApiResponseCryptoBollingerBands
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[BollingerBandsTechnicalValue]**](BollingerBandsTechnicalValue.md) |  | [optional] 

@@ -1,6 +1,6 @@
-## ZacksAnalystRatingSnapshot
+### ZacksAnalystRatingSnapshot
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | The snapshot type, signifying the age of the ratings data from the snapshot date. | [optional] 

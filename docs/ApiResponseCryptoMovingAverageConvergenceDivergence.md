@@ -1,6 +1,6 @@
-## ApiResponseCryptoMovingAverageConvergenceDivergence
+### ApiResponseCryptoMovingAverageConvergenceDivergence
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[MovingAverageConvergenceDivergenceTechnicalValue]**](MovingAverageConvergenceDivergenceTechnicalValue.md) |  | [optional] 

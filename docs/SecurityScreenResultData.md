@@ -1,6 +1,6 @@
-## SecurityScreenResultData
+### SecurityScreenResultData
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag** | **str** | The data tag that was screened-for | [optional] 

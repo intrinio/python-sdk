@@ -1,6 +1,6 @@
-## ApiResponseCryptoVolumePriceTrend
+### ApiResponseCryptoVolumePriceTrend
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[VolumePriceTrendTechnicalValue]**](VolumePriceTrendTechnicalValue.md) |  | [optional] 

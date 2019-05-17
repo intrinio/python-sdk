@@ -1,6 +1,6 @@
-## ApiResponseFilings
+### ApiResponseFilings
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **filings** | [**list[Filing]**](Filing.md) |  | [optional] 

@@ -1,6 +1,6 @@
-## ApiResponseSecurityForceIndex
+### ApiResponseSecurityForceIndex
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[ForceIndexTechnicalValue]**](ForceIndexTechnicalValue.md) |  | [optional] 

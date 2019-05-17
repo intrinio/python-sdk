@@ -1,6 +1,6 @@
-## ApiResponseCryptoWilliamsR
+### ApiResponseCryptoWilliamsR
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[WilliamsRTechnicalValue]**](WilliamsRTechnicalValue.md) |  | [optional] 

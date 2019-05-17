@@ -1,6 +1,6 @@
-## MunicipalityFinancial
+### MunicipalityFinancial
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fiscal_year** | **float** | The fiscal year from which the financial data came from | [optional] 

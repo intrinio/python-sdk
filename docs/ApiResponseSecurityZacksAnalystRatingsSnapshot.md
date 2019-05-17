@@ -1,6 +1,6 @@
-## ApiResponseSecurityZacksAnalystRatingsSnapshot
+### ApiResponseSecurityZacksAnalystRatingsSnapshot
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **snapshots** | [**list[ZacksAnalystRatingSnapshot]**](ZacksAnalystRatingSnapshot.md) |  | [optional] 

@@ -1,6 +1,6 @@
-## SICIndex
+### SICIndex
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Intrinio ID for the Index | [optional] 

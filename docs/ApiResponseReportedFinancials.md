@@ -1,6 +1,6 @@
-## ApiResponseReportedFinancials
+### ApiResponseReportedFinancials
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **reported_financials** | [**list[ReportedFinancial]**](ReportedFinancial.md) |  | [optional] 

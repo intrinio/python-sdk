@@ -1,6 +1,6 @@
-## EarningsRecord
+### EarningsRecord
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **quarter** | **str** | The letter “Q” followed by the quarter number the earnings information applies to | [optional] 

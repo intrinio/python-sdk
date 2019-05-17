@@ -1,6 +1,6 @@
-## CryptoBookEntry
+### CryptoBookEntry
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **price** | **float** | The price of the book entry. | [optional] 

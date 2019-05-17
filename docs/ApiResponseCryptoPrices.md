@@ -1,6 +1,6 @@
-## ApiResponseCryptoPrices
+### ApiResponseCryptoPrices
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **prices** | [**list[CryptoPrice]**](CryptoPrice.md) | All the BAR prices, time, and volume. | [optional] 

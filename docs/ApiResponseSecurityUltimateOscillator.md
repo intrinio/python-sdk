@@ -1,6 +1,6 @@
-## ApiResponseSecurityUltimateOscillator
+### ApiResponseSecurityUltimateOscillator
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[UltimateOscillatorTechnicalValue]**](UltimateOscillatorTechnicalValue.md) |  | [optional] 

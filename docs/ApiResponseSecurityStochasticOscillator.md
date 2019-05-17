@@ -1,6 +1,6 @@
-## ApiResponseSecurityStochasticOscillator
+### ApiResponseSecurityStochasticOscillator
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[StochasticOscillatorTechnicalValue]**](StochasticOscillatorTechnicalValue.md) |  | [optional] 

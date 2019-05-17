@@ -1,6 +1,6 @@
-## IntradayStockPrice
+### IntradayStockPrice
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **time** | **datetime** | The timestamp that the &#x60;last_price&#x60; represents. | [optional] 

@@ -1,6 +1,6 @@
-## ApiResponseCryptoAverageDailyTradingVolume
+### ApiResponseCryptoAverageDailyTradingVolume
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[AverageDailyTradingVolumeTechnicalValue]**](AverageDailyTradingVolumeTechnicalValue.md) |  | [optional] 

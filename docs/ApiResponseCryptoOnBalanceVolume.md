@@ -1,6 +1,6 @@
-## ApiResponseCryptoOnBalanceVolume
+### ApiResponseCryptoOnBalanceVolume
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[OnBalanceVolumeTechnicalValue]**](OnBalanceVolumeTechnicalValue.md) |  | [optional] 

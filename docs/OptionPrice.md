@@ -1,6 +1,6 @@
-## OptionPrice
+### OptionPrice
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **date** | **str** | The date of the price, in the format YYYY-MM-DD | [optional] 

@@ -1,6 +1,6 @@
-## ForexCurrency
+### ForexCurrency
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** | The ISO 4217 currency code | [optional] 

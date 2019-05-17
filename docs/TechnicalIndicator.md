@@ -1,6 +1,6 @@
-## TechnicalIndicator
+### TechnicalIndicator
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The name of the Technical Indicator | [optional] 

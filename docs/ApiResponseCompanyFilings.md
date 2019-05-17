@@ -1,6 +1,6 @@
-## ApiResponseCompanyFilings
+### ApiResponseCompanyFilings
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **filings** | [**list[FilingSummary]**](FilingSummary.md) |  | [optional] 

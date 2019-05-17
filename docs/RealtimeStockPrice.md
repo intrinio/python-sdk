@@ -1,6 +1,6 @@
-## RealtimeStockPrice
+### RealtimeStockPrice
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **last_price** | **float** | The price of the last trade. | [optional] 

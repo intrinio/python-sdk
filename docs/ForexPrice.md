@@ -1,6 +1,6 @@
-## ForexPrice
+### ForexPrice
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **occurred_at** | **str** | The timestamp of the beginning of the timeframe. The open prices would be at this time, while close prices would be at this time plus the timeframe. | [optional] 

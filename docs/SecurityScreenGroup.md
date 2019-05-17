@@ -1,6 +1,6 @@
-## SecurityScreenGroup
+### SecurityScreenGroup
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **operator** | **str** | The logic operator for the group (AND, OR, NOT) | [optional] 

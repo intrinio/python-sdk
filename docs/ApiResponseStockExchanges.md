@@ -1,6 +1,6 @@
-## ApiResponseStockExchanges
+### ApiResponseStockExchanges
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **stock_exchanges** | [**list[StockExchange]**](StockExchange.md) |  | [optional] 

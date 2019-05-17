@@ -1,6 +1,6 @@
-## CompanyNews
+### CompanyNews
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID for the news article | [optional] 

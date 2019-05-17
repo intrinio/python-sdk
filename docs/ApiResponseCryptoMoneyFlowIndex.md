@@ -1,6 +1,6 @@
-## ApiResponseCryptoMoneyFlowIndex
+### ApiResponseCryptoMoneyFlowIndex
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[MoneyFlowIndexTechnicalValue]**](MoneyFlowIndexTechnicalValue.md) |  | [optional] 

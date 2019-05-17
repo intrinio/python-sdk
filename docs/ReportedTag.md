@@ -1,6 +1,6 @@
-## ReportedTag
+### ReportedTag
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag** | **str** | The tag code | [optional] 

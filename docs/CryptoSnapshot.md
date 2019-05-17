@@ -1,6 +1,6 @@
-## CryptoSnapshot
+### CryptoSnapshot
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **last_updated** | **str** | UTC timestamp of when the snapshot was last updated. | [optional] 

@@ -1,6 +1,6 @@
-## ApiResponseCryptoMassIndex
+### ApiResponseCryptoMassIndex
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[MassIndexTechnicalValue]**](MassIndexTechnicalValue.md) |  | [optional] 

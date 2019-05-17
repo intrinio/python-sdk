@@ -1,6 +1,6 @@
-## ApiResponseSecurityKeltnerChannel
+### ApiResponseSecurityKeltnerChannel
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[KeltnerChannelTechnicalValue]**](KeltnerChannelTechnicalValue.md) |  | [optional] 

@@ -1,6 +1,6 @@
-## ApiResponseSecurityIntradayPrices
+### ApiResponseSecurityIntradayPrices
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **intraday_prices** | [**list[IntradayStockPrice]**](IntradayStockPrice.md) | The intraday stock prices for the Security | [optional] 

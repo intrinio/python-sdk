@@ -1,6 +1,6 @@
-## ApiResponseSecuritySimpleMovingAverage
+### ApiResponseSecuritySimpleMovingAverage
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[SimpleMovingAverageTechnicalValue]**](SimpleMovingAverageTechnicalValue.md) |  | [optional] 

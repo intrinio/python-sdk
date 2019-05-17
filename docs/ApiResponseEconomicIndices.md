@@ -1,6 +1,6 @@
-## ApiResponseEconomicIndices
+### ApiResponseEconomicIndices
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **indices** | [**list[EconomicIndexSummary]**](EconomicIndexSummary.md) |  | [optional] 

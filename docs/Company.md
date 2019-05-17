@@ -1,6 +1,6 @@
-## Company
+### Company
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID of the company | [optional] 

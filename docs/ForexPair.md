@@ -1,6 +1,6 @@
-## ForexPair
+### ForexPair
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** | The common code of the currency pair | [optional] 

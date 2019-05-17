@@ -1,6 +1,6 @@
-## FilingSummary
+### FilingSummary
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID of the Filing | [optional] 

@@ -1,6 +1,6 @@
-## CryptoBid
+### CryptoBid
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **price** | **float** | The bid price of the book entry. | [optional] 

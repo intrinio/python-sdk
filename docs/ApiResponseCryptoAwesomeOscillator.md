@@ -1,6 +1,6 @@
-## ApiResponseCryptoAwesomeOscillator
+### ApiResponseCryptoAwesomeOscillator
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[AwesomeOscillatorTechnicalValue]**](AwesomeOscillatorTechnicalValue.md) |  | [optional] 

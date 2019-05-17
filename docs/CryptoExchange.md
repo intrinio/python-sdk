@@ -1,6 +1,6 @@
-## CryptoExchange
+### CryptoExchange
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The Crypto Exchange name. | [optional] 

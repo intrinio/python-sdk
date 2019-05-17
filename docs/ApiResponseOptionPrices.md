@@ -1,6 +1,6 @@
-## ApiResponseOptionPrices
+### ApiResponseOptionPrices
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **prices** | [**list[OptionPrice]**](OptionPrice.md) | A list of option prices in descending order by date | [optional] 

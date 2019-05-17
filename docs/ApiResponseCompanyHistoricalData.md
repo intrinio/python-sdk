@@ -1,6 +1,6 @@
-## ApiResponseCompanyHistoricalData
+### ApiResponseCompanyHistoricalData
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **historical_data** | [**list[HistoricalData]**](HistoricalData.md) |  | [optional] 

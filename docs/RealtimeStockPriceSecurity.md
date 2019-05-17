@@ -1,6 +1,6 @@
-## RealtimeStockPriceSecurity
+### RealtimeStockPriceSecurity
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID for Security | [optional] 

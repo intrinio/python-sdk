@@ -1,6 +1,6 @@
-## CryptoStat
+### CryptoStat
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The common name of the crypto currency. | [optional] 

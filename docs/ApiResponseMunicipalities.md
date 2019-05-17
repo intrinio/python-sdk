@@ -1,6 +1,6 @@
-## ApiResponseMunicipalities
+### ApiResponseMunicipalities
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **municipalities** | [**list[Municipality]**](Municipality.md) |  | [optional] 

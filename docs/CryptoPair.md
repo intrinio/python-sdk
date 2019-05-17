@@ -1,6 +1,6 @@
-## CryptoPair
+### CryptoPair
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The Crypto Currency Pair name. | [optional] 

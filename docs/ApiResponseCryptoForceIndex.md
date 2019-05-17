@@ -1,6 +1,6 @@
-## ApiResponseCryptoForceIndex
+### ApiResponseCryptoForceIndex
 
-### Properties
+#### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **technicals** | [**list[ForceIndexTechnicalValue]**](ForceIndexTechnicalValue.md) |  | [optional] 
