@@ -1,6 +1,6 @@
-### CryptoSnapshot
+# CryptoSnapshot
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **last_updated** | **str** | UTC timestamp of when the snapshot was last updated. | [optional] 
@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **last_trade_price** | **float** | The price of the last trade for the Crypto Currency Pair on the exchange. | [optional] 
 **last_trade_size** | **float** | The size of the last trade for the Crypto Currency Pair on the exchange. | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

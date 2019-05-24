@@ -1,6 +1,6 @@
-### StockPrice
+# StockPrice
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **date** | **date** | The calendar date that the stock price represents. For non-daily stock prices, this represents the last day in the period (end of the week, month, quarter, year, etc) | [optional] 
@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **adj_volume** | **float** | The number of shares exchanged during the period, adjusted for splits and dividends | [optional] 
 **security** | [**SecuritySummary**](SecuritySummary.md) | The Security of the stock price | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

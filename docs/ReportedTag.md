@@ -1,6 +1,6 @@
-### ReportedTag
+# ReportedTag
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag** | **str** | The tag code | [optional] 
@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **sequence** | **int** | The vertical sequence of the tag when displayed in the financial statement | [optional] 
 **depth** | **int** | The horizontal depth of the tag when displayed in the financial statement | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

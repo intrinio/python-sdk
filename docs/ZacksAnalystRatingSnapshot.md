@@ -1,6 +1,6 @@
-### ZacksAnalystRatingSnapshot
+# ZacksAnalystRatingSnapshot
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | The snapshot type, signifying the age of the ratings data from the snapshot date. | [optional] 
@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **strong_sells** | **int** | The number of analysts recommending Strong Sell. | [optional] 
 **total** | **int** | The total number of analysts recommendations. | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

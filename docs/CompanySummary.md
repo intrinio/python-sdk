@@ -1,6 +1,6 @@
-### CompanySummary
+# CompanySummary
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID of the company | [optional] 
@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **lei** | **str** | The Legal Entity Identifier (LEI) assigned to the company | [optional] 
 **cik** | **str** | The Central Index Key (CIK) assigned to the company | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

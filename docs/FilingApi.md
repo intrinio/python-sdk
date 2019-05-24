@@ -13,43 +13,14 @@ Method | HTTP request | Description
 [**search_notes**](FilingApi.md#search_notes) | **GET** /filings/notes/search | Search Filing Notes
 
 
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:FilingApi)
-
-[//]: # (METHOD:get_all_filings)
-
-[//]: # (RETURN_TYPE:ApiResponseFilings)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseFilings.md)
-
-[//]: # (OPERATION:get_all_filings_v2)
-
-[//]: # (ENDPOINT:/filings)
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#get_all_filings)
-
-## **get_all_filings**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_filings_v2)
-
-[//]: # (START_OVERVIEW)
-
+# **get_all_filings**
 > ApiResponseFilings get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 
-#### All Filings
-
+All Filings
 
 Returns all Filings. Returns Filings matching parameters when supplied.
 
-[//]: # (END_OVERVIEW)
-
 ### Example
-[//]: # (START_CODE_EXAMPLE)
-
 ```python
 from __future__ import print_function
 import time
@@ -62,7 +33,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 filing_api = intrinio_sdk.FilingApi()
 
 company = 'AAPL' # str | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
-report_type = '' # str | Filter by report type (optional)
+report_type = '' # str | Filter by report type. Separate values with commas to return multiple report types. (optional)
 start_date = '2015-01-01' # date | Filed on or after the given date (optional)
 end_date = '' # date | Filed before or after the given date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -76,70 +47,32 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
 
 ### Parameters
 
-[//]: # (START_PARAMETERS)
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company** | **str**| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **report_type** | **str**| Filter by report type | [optional]   &nbsp;
- **start_date** | **date**| Filed on or after the given date | [optional]   &nbsp;
- **end_date** | **date**| Filed before or after the given date | [optional]   &nbsp;
- **page_size** | **int**| The number of results to return | [optional] [default to 100]  &nbsp;
- **next_page** | **str**| Gets the next page of data from a previous API call | [optional]   &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
+ **company** | **str**| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | 
+ **report_type** | **str**| Filter by report type. Separate values with commas to return multiple report types. | [optional] 
+ **start_date** | **date**| Filed on or after the given date | [optional] 
+ **end_date** | **date**| Filed before or after the given date | [optional] 
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
+ **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
 
 [**ApiResponseFilings**](ApiResponseFilings.md)
 
-[//]: # (END_OPERATION)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:FilingApi)
-
-[//]: # (METHOD:get_all_notes)
-
-[//]: # (RETURN_TYPE:ApiResponseFilingNotes)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseFilingNotes.md)
-
-[//]: # (OPERATION:get_all_notes_v2)
-
-[//]: # (ENDPOINT:/filings/notes)
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#get_all_notes)
-
-## **get_all_notes**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_notes_v2)
-
-[//]: # (START_OVERVIEW)
-
+# **get_all_notes**
 > ApiResponseFilingNotes get_all_notes(company=company, report_type=report_type, filing_start_date=filing_start_date, filing_end_date=filing_end_date, period_ended_start_date=period_ended_start_date, period_ended_end_date=period_ended_end_date, page_size=page_size, next_page=next_page)
 
-#### All Filing Notes
-
+All Filing Notes
 
 Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
 
-[//]: # (END_OVERVIEW)
-
 ### Example
-[//]: # (START_CODE_EXAMPLE)
-
 ```python
 from __future__ import print_function
 import time
@@ -168,72 +101,34 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
 
 ### Parameters
 
-[//]: # (START_PARAMETERS)
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | [optional]   &nbsp;
- **report_type** | **str**| Notes contained in filings that match the given report type | [optional]   &nbsp;
- **filing_start_date** | **date**| Limit search to filings on or after this date | [optional]   &nbsp;
- **filing_end_date** | **date**| Limit search to filings on or before this date | [optional]   &nbsp;
- **period_ended_start_date** | **date**| Limit search to filings with a period end date on or after this date | [optional]   &nbsp;
- **period_ended_end_date** | **date**| Limit search to filings with a period end date on or before this date | [optional]   &nbsp;
- **page_size** | **int**| The number of results to return | [optional] [default to 100]  &nbsp;
- **next_page** | **str**| Gets the next page of data from a previous API call | [optional]   &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
+ **company** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | [optional] 
+ **report_type** | **str**| Notes contained in filings that match the given report type | [optional] 
+ **filing_start_date** | **date**| Limit search to filings on or after this date | [optional] 
+ **filing_end_date** | **date**| Limit search to filings on or before this date | [optional] 
+ **period_ended_start_date** | **date**| Limit search to filings with a period end date on or after this date | [optional] 
+ **period_ended_end_date** | **date**| Limit search to filings with a period end date on or before this date | [optional] 
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
+ **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
 
 ### Return type
 
 [**ApiResponseFilingNotes**](ApiResponseFilingNotes.md)
 
-[//]: # (END_OPERATION)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:FilingApi)
-
-[//]: # (METHOD:get_filing_by_id)
-
-[//]: # (RETURN_TYPE:Filing)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:Filing.md)
-
-[//]: # (OPERATION:get_filing_by_id_v2)
-
-[//]: # (ENDPOINT:/filings/{id})
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#get_filing_by_id)
-
-## **get_filing_by_id**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_filing_by_id_v2)
-
-[//]: # (START_OVERVIEW)
-
+# **get_filing_by_id**
 > Filing get_filing_by_id(id)
 
-#### Lookup Filing
-
+Lookup Filing
 
 Returns the Filing with the given `identifier`
 
-[//]: # (END_OVERVIEW)
-
 ### Example
-[//]: # (START_CODE_EXAMPLE)
-
 ```python
 from __future__ import print_function
 import time
@@ -255,64 +150,25 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
 
 ### Parameters
 
-[//]: # (START_PARAMETERS)
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| The Intrinio ID of the Filing |   &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
+ **id** | **str**| The Intrinio ID of the Filing | 
 
 ### Return type
 
 [**Filing**](Filing.md)
 
-[//]: # (END_OPERATION)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:FilingApi)
-
-[//]: # (METHOD:get_note)
-
-[//]: # (RETURN_TYPE:FilingNote)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:FilingNote.md)
-
-[//]: # (OPERATION:get_note_v2)
-
-[//]: # (ENDPOINT:/filings/notes/{identifier})
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#get_note)
-
-## **get_note**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_note_v2)
-
-[//]: # (START_OVERVIEW)
-
+# **get_note**
 > FilingNote get_note(identifier, content_format=content_format)
 
-#### Filing Note by ID
-
-
-
-[//]: # (END_OVERVIEW)
+Filing Note by ID
 
 ### Example
-[//]: # (START_CODE_EXAMPLE)
-
 ```python
 from __future__ import print_function
 import time
@@ -335,65 +191,26 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
 
 ### Parameters
 
-[//]: # (START_PARAMETERS)
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| The Intrinio ID of the filing note |   &nbsp;
- **content_format** | **str**| Returns content in html (as filed) or plain text | [optional] [default to text]  &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
+ **identifier** | **str**| The Intrinio ID of the filing note | 
+ **content_format** | **str**| Returns content in html (as filed) or plain text | [optional] [default to text]
 
 ### Return type
 
 [**FilingNote**](FilingNote.md)
 
-[//]: # (END_OPERATION)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:FilingApi)
-
-[//]: # (METHOD:get_note_html)
-
-[//]: # (RETURN_TYPE:str)
-
-[//]: # (RETURN_TYPE_KIND:primitive)
-
-[//]: # (RETURN_TYPE_DOC:)
-
-[//]: # (OPERATION:get_note_html_v2)
-
-[//]: # (ENDPOINT:/filings/notes/{identifier}/html)
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#get_note_html)
-
-## **get_note_html**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_note_html_v2)
-
-[//]: # (START_OVERVIEW)
-
+# **get_note_html**
 > str get_note_html(identifier)
 
-#### Filing Note HTML
-
-
-
-[//]: # (END_OVERVIEW)
+Filing Note HTML
 
 ### Example
-[//]: # (START_CODE_EXAMPLE)
-
 ```python
 from __future__ import print_function
 import time
@@ -415,64 +232,25 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
 
 ### Parameters
 
-[//]: # (START_PARAMETERS)
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| The Intrinio ID of the filing note |   &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
+ **identifier** | **str**| The Intrinio ID of the filing note | 
 
 ### Return type
 
 **str**
 
-[//]: # (END_OPERATION)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:FilingApi)
-
-[//]: # (METHOD:get_note_text)
-
-[//]: # (RETURN_TYPE:str)
-
-[//]: # (RETURN_TYPE_KIND:primitive)
-
-[//]: # (RETURN_TYPE_DOC:)
-
-[//]: # (OPERATION:get_note_text_v2)
-
-[//]: # (ENDPOINT:/filings/notes/{identifier}/text)
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#get_note_text)
-
-## **get_note_text**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_note_text_v2)
-
-[//]: # (START_OVERVIEW)
-
+# **get_note_text**
 > str get_note_text(identifier)
 
-#### Filing Note Text
-
-
-
-[//]: # (END_OVERVIEW)
+Filing Note Text
 
 ### Example
-[//]: # (START_CODE_EXAMPLE)
-
 ```python
 from __future__ import print_function
 import time
@@ -494,65 +272,27 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
 
 ### Parameters
 
-[//]: # (START_PARAMETERS)
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| The Intrinio ID of the filing note |   &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
+ **identifier** | **str**| The Intrinio ID of the filing note | 
 
 ### Return type
 
 **str**
 
-[//]: # (END_OPERATION)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:FilingApi)
-
-[//]: # (METHOD:search_notes)
-
-[//]: # (RETURN_TYPE:ApiResponseFilingNotesSearch)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseFilingNotesSearch.md)
-
-[//]: # (OPERATION:search_notes_v2)
-
-[//]: # (ENDPOINT:/filings/notes/search)
-
-[//]: # (DOCUMENT_LINK:FilingApi.md#search_notes)
-
-## **search_notes**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_notes_v2)
-
-[//]: # (START_OVERVIEW)
-
+# **search_notes**
 > ApiResponseFilingNotesSearch search_notes(query, filing_start_date=filing_start_date, filing_end_date=filing_end_date, page_size=page_size, page_size2=page_size2)
 
-#### Search Filing Notes
-
+Search Filing Notes
 
 Searches for Filing Notes using the `query`
 
-[//]: # (END_OVERVIEW)
-
 ### Example
-[//]: # (START_CODE_EXAMPLE)
-
 ```python
 from __future__ import print_function
 import time
@@ -578,29 +318,20 @@ except ApiException as e:
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
 
 ### Parameters
 
-[//]: # (START_PARAMETERS)
-
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **str**| Search for notes that contain all or parts of this text |   &nbsp;
- **filing_start_date** | **date**| Limit search to filings on or after this date | [optional]   &nbsp;
- **filing_end_date** | **date**| Limit search to filings on or before this date | [optional]   &nbsp;
- **page_size** | **int**| The number of results to return | [optional] [default to 100]  &nbsp;
- **page_size2** | **int**| The number of results to return | [optional] [default to 100]  &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
+ **query** | **str**| Search for notes that contain all or parts of this text | 
+ **filing_start_date** | **date**| Limit search to filings on or after this date | [optional] 
+ **filing_end_date** | **date**| Limit search to filings on or before this date | [optional] 
+ **page_size** | **int**| The number of results to return | [optional] [default to 100]
+ **page_size2** | **int**| The number of results to return | [optional] [default to 100]
 
 ### Return type
 
 [**ApiResponseFilingNotesSearch**](ApiResponseFilingNotesSearch.md)
 
-[//]: # (END_OPERATION)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

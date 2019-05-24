@@ -1,6 +1,6 @@
-### RealtimeStockPriceSecurity
+# RealtimeStockPriceSecurity
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID for Security | [optional] 
@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **figi** | **str** | The OpenFIGI identifier | [optional] 
 **composite_figi** | **str** | The country-composite OpenFIGI identifier | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

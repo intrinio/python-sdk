@@ -1,6 +1,6 @@
-### DividendRecord
+# DividendRecord
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ex_dividend** | **float** | Amount of dividend in US dollars | [optional] 
@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **forward_rate** | **float** | The forward dividend rate | [optional] 
 **security** | [**SecuritySummary**](SecuritySummary.md) |  | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

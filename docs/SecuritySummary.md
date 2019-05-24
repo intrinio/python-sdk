@@ -1,6 +1,6 @@
-### SecuritySummary
+# SecuritySummary
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID for Security | [optional] 
@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **composite_figi** | **str** | The country-composite OpenFIGI identifier | [optional] 
 **share_class_figi** | **str** | The global-composite OpenFIGI identifier | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

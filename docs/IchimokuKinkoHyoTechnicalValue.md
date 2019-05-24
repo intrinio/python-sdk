@@ -1,6 +1,6 @@
-### IchimokuKinkoHyoTechnicalValue
+# IchimokuKinkoHyoTechnicalValue
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **date_time** | **datetime** | The date_time of the observation | [optional] 
@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **senkou_span_b** | **float** | The Senkou Span B (Leading Span B) value of the Ichimoku Kinko Hyo calculation | [optional] 
 **tenkan_sen** | **float** | The Tenskan-sen (Conversion Line) value of the Ichimoku Kinko Hyo calculation | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

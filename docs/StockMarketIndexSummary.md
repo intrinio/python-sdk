@@ -1,6 +1,6 @@
-### StockMarketIndexSummary
+# StockMarketIndexSummary
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Intrinio ID for the Index | [optional] 
@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **observation_start** | **date** | The earliest date for which data is available | [optional] 
 **observation_end** | **date** | The latest date for which data is available | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

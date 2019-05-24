@@ -1,6 +1,6 @@
-### FilingSummary
+# FilingSummary
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID of the Filing | [optional] 
@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **report_url** | **str** | The URL to the actual report on the SEC site | [optional] 
 **instance_url** | **str** | The URL for the XBRL filing for the report | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

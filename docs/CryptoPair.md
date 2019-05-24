@@ -1,6 +1,6 @@
-### CryptoPair
+# CryptoPair
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The Crypto Currency Pair name. | [optional] 
@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **snapshot_available** | **bool** | A boolean, representing whether this pair has snapshot data available or not. | [optional] 
 **trades_available** | **bool** | A boolean, representing whether this pair has trade data available or not. | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

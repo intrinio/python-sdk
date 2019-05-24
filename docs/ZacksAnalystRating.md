@@ -1,6 +1,6 @@
-### ZacksAnalystRating
+# ZacksAnalystRating
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID for the record | [optional] 
@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **total** | **int** | The total number of analyst recommendations. | [optional] 
 **security** | [**SecuritySummary**](SecuritySummary.md) | The Security of the Zacks Analyst Rating | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

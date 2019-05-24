@@ -1,6 +1,6 @@
-### CryptoExchange
+# CryptoExchange
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The Crypto Exchange name. | [optional] 
@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **snapshot_available** | **bool** | A boolean, representing whether snpashot data is provided by this exchange or not. | [optional] 
 **trades_available** | **bool** | A boolean, representing whether trade data is provided by this exchange or not. | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

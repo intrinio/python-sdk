@@ -1,6 +1,6 @@
-### Company
+# Company
 
-#### Properties
+## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | The Intrinio ID of the company | [optional] 
@@ -40,5 +40,6 @@ Name | Type | Description | Notes
 **first_stock_price_date** | **date** | The date of the company&#39;s first stock price, based on the company&#39;s primary security, which is typically traded on US exchages | [optional] 
 **last_stock_price_date** | **date** | The date of the company&#39;s last stock price, based on the company&#39;s primary security, which is typically traded on US exchages | [optional] 
 
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
