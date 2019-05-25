@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/intrinio-sdk.svg)](https://badge.fury.io/py/intrinio-sdk)
+
 # Intrinio Python SDK
 
 To get an API key, [sign up here](https://intrinio.com/).
