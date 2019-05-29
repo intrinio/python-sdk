@@ -1,11 +1,21 @@
-# VolumePriceTrendTechnicalValue
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**date_time** | **datetime** | The date_time of the observation | [optional] 
-**vpt** | **float** | The Volume-price Trend calculation value | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:VolumePriceTrendTechnicalValue)
+
+[//]: # (KIND:object)
+
+### VolumePriceTrendTechnicalValue
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**date_time** | datetime | The date_time of the observation &nbsp;
+**vpt** | float | The Volume-price Trend calculation value &nbsp;
+
+[//]: # (END_DEFINITION)
+
 
 

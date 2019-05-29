@@ -18,14 +18,43 @@ Method | HTTP request | Description
 [**search_companies**](CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
 
 
-# **get_all_companies**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_all_companies)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanies)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanies.md)
+
+[//]: # (OPERATION:get_all_companies_v2)
+
+[//]: # (ENDPOINT:/companies)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_all_companies)
+
+## **get_all_companies**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_companies_v2)
+
+[//]: # (START_OVERVIEW)
+
 > ApiResponseCompanies get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
 
-All Companies
+#### All Companies
+
 
 Returns all Companies. When parameters are specified, returns matching companies.
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -47,41 +76,79 @@ page_size = 100 # int | The number of results to return (optional) (default to 1
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = company_api.get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
-    pprint(api_response)
+  api_response = company_api.get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_all_companies: %s\n" % e)
+  print("Exception when calling CompanyApi->get_all_companies: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **latest_filing_date** | **date**| Last filing date | [optional] 
- **sic** | **str**| Standard Industrial Classification code | [optional] 
- **template** | **str**| Template | [optional] 
- **sector** | **str**| Industry sector | [optional] 
- **industry_category** | **str**| Industry category | [optional] 
- **industry_group** | **str**| Industry group | [optional] 
- **page_size** | **int**| The number of results to return | [optional] [default to 100]
- **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
+ **latest_filing_date** | date| Last filing date | [optional]   &nbsp;
+ **sic** | str| Standard Industrial Classification code | [optional]   &nbsp;
+ **template** | str| Template | [optional]   &nbsp;
+ **sector** | str| Industry sector | [optional]   &nbsp;
+ **industry_category** | str| Industry category | [optional]   &nbsp;
+ **industry_group** | str| Industry group | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**ApiResponseCompanies**](ApiResponseCompanies.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **get_all_company_news**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_all_company_news)
+
+[//]: # (RETURN_TYPE:ApiResponseNews)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseNews.md)
+
+[//]: # (OPERATION:get_all_company_news_v2)
+
+[//]: # (ENDPOINT:/companies/news)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_all_company_news)
+
+## **get_all_company_news**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_company_news_v2)
+
+[//]: # (START_OVERVIEW)
+
 > ApiResponseNews get_all_company_news(page_size=page_size, next_page=next_page)
 
-All News
+#### All News
+
 
 Returns all News for all Companies
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -97,35 +164,73 @@ page_size = 100 # int | The number of results to return (optional) (default to 1
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = company_api.get_all_company_news(page_size=page_size, next_page=next_page)
-    pprint(api_response)
+  api_response = company_api.get_all_company_news(page_size=page_size, next_page=next_page)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_all_company_news: %s\n" % e)
+  print("Exception when calling CompanyApi->get_all_company_news: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | **int**| The number of results to return | [optional] [default to 100]
- **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**ApiResponseNews**](ApiResponseNews.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **get_company**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company)
+
+[//]: # (RETURN_TYPE:Company)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:Company.md)
+
+[//]: # (OPERATION:get_company_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier})
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company)
+
+## **get_company**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_v2)
+
+[//]: # (START_OVERVIEW)
+
 > Company get_company(identifier)
 
-Lookup Company
+#### Lookup Company
+
 
 Returns the Company with the given `identifier`
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -140,34 +245,72 @@ company_api = intrinio_sdk.CompanyApi()
 identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
 
 try:
-    api_response = company_api.get_company(identifier)
-    pprint(api_response)
+  api_response = company_api.get_company(identifier)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_company: %s\n" % e)
+  print("Exception when calling CompanyApi->get_company: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**Company**](Company.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **get_company_data_point_number**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_data_point_number)
+
+[//]: # (RETURN_TYPE:float)
+
+[//]: # (RETURN_TYPE_KIND:primitive)
+
+[//]: # (RETURN_TYPE_DOC:)
+
+[//]: # (OPERATION:get_company_data_point_number_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/data_point/{tag}/number)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_data_point_number)
+
+## **get_company_data_point_number**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_data_point_number_v2)
+
+[//]: # (START_OVERVIEW)
+
 > float get_company_data_point_number(identifier, tag)
 
-Data Point (Number) for Company
+#### Data Point (Number) for Company
+
 
 Returns a numeric value for the given `tag` for the Company with the given `identifier`
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -183,35 +326,73 @@ identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
 tag = 'marketcap' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 try:
-    api_response = company_api.get_company_data_point_number(identifier, tag)
-    pprint(api_response)
+  api_response = company_api.get_company_data_point_number(identifier, tag)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_company_data_point_number: %s\n" % e)
+  print("Exception when calling CompanyApi->get_company_data_point_number: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 **float**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **get_company_data_point_text**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_data_point_text)
+
+[//]: # (RETURN_TYPE:str)
+
+[//]: # (RETURN_TYPE_KIND:primitive)
+
+[//]: # (RETURN_TYPE_DOC:)
+
+[//]: # (OPERATION:get_company_data_point_text_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/data_point/{tag}/text)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_data_point_text)
+
+## **get_company_data_point_text**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_data_point_text_v2)
+
+[//]: # (START_OVERVIEW)
+
 > str get_company_data_point_text(identifier, tag)
 
-Data Point (Text) for Company
+#### Data Point (Text) for Company
+
 
 Returns a text value for the given `tag` for the Company with the given `identifier`
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -227,35 +408,73 @@ identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
 tag = 'ceo' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 
 try:
-    api_response = company_api.get_company_data_point_text(identifier, tag)
-    pprint(api_response)
+  api_response = company_api.get_company_data_point_text(identifier, tag)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_company_data_point_text: %s\n" % e)
+  print("Exception when calling CompanyApi->get_company_data_point_text: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 **str**
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **get_company_filings**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_filings)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanyFilings)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyFilings.md)
+
+[//]: # (OPERATION:get_company_filings_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/filings)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_filings)
+
+## **get_company_filings**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_filings_v2)
+
+[//]: # (START_OVERVIEW)
+
 > ApiResponseCompanyFilings get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 
-All Filings by Company
+#### All Filings by Company
+
 
 Returns a complete list of SEC filings for the Company with the given `identifier`
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -268,46 +487,84 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 company_api = intrinio_sdk.CompanyApi()
 
 identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-report_type = '' # str | Filter by report type. Separate values with commas to return multiple report types. (optional)
+report_type = '' # str | Filter by <a href=\"/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>. Separate values with commas to return multiple report types. (optional)
 start_date = '2015-01-01' # date | Filed on or after the given date (optional)
 end_date = '' # date | Filed before or after the given date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = company_api.get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-    pprint(api_response)
+  api_response = company_api.get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_company_filings: %s\n" % e)
+  print("Exception when calling CompanyApi->get_company_filings: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **report_type** | **str**| Filter by report type. Separate values with commas to return multiple report types. | [optional] 
- **start_date** | **date**| Filed on or after the given date | [optional] 
- **end_date** | **date**| Filed before or after the given date | [optional] 
- **page_size** | **int**| The number of results to return | [optional] [default to 100]
- **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **report_type** | str| Filter by &lt;a href&#x3D;\&quot;/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. | [optional]   &nbsp;
+ **start_date** | date| Filed on or after the given date | [optional]   &nbsp;
+ **end_date** | date| Filed before or after the given date | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**ApiResponseCompanyFilings**](ApiResponseCompanyFilings.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **get_company_fundamentals**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_fundamentals)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanyFundamentals)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyFundamentals.md)
+
+[//]: # (OPERATION:get_company_fundamentals_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/fundamentals)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_fundamentals)
+
+## **get_company_fundamentals**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_fundamentals_v2)
+
+[//]: # (START_OVERVIEW)
+
 > ApiResponseCompanyFundamentals get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 
-All Fundamentals by Company
+#### All Fundamentals by Company
+
 
 Returns all Fundamentals for the Company with the given `identifier`. Returns Fundamentals matching parameters when supplied.
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -332,44 +589,82 @@ page_size = 100 # int | The number of results to return (optional) (default to 1
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = company_api.get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-    pprint(api_response)
+  api_response = company_api.get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_company_fundamentals: %s\n" % e)
+  print("Exception when calling CompanyApi->get_company_fundamentals: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **filed_after** | **date**| Filed on or after this date | [optional] 
- **filed_before** | **date**| Filed on or before this date | [optional] 
- **reported_only** | **bool**| Only as-reported fundamentals | [optional] 
- **fiscal_year** | **int**| Only for the given fiscal year | [optional] 
- **statement_code** | **str**| Only of the given statement code | [optional] 
- **type** | **str**| Only of the given type | [optional] 
- **start_date** | **date**| Only on or after the given date | [optional] 
- **end_date** | **date**| Only on or before the given date | [optional] 
- **page_size** | **int**| The number of results to return | [optional] [default to 100]
- **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **filed_after** | date| Filed on or after this date | [optional]   &nbsp;
+ **filed_before** | date| Filed on or before this date | [optional]   &nbsp;
+ **reported_only** | bool| Only as-reported fundamentals | [optional]   &nbsp;
+ **fiscal_year** | int| Only for the given fiscal year | [optional]   &nbsp;
+ **statement_code** | str| Only of the given statement code | [optional]   &nbsp;
+ **type** | str| Only of the given type | [optional]   &nbsp;
+ **start_date** | date| Only on or after the given date | [optional]   &nbsp;
+ **end_date** | date| Only on or before the given date | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**ApiResponseCompanyFundamentals**](ApiResponseCompanyFundamentals.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **get_company_historical_data**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_historical_data)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanyHistoricalData)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyHistoricalData.md)
+
+[//]: # (OPERATION:get_company_historical_data_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/historical_data/{tag})
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_historical_data)
+
+## **get_company_historical_data**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_historical_data_v2)
+
+[//]: # (START_OVERVIEW)
+
 > ApiResponseCompanyHistoricalData get_company_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 
-Historical Data for Company
+#### Historical Data for Company
+
 
 Returns historical values for the given `tag` and the Company with the given `identifier`
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -392,42 +687,80 @@ page_size = 100 # int | The number of results to return (optional) (default to 1
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = company_api.get_company_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
-    pprint(api_response)
+  api_response = company_api.get_company_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_company_historical_data: %s\n" % e)
+  print("Exception when calling CompanyApi->get_company_historical_data: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **tag** | **str**| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) | 
- **frequency** | **str**| Return historical data in the given frequency | [optional] [default to daily]
- **type** | **str**| Filter by type, when applicable | [optional] 
- **start_date** | **date**| Get historical data on or after this date | [optional] 
- **end_date** | **date**| Get historical data on or before this date | [optional] 
- **sort_order** | **str**| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]
- **page_size** | **int**| The number of results to return | [optional] [default to 100]
- **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **frequency** | str| Return historical data in the given frequency | [optional] [default to daily]  &nbsp;
+ **type** | str| Filter by type, when applicable | [optional]   &nbsp;
+ **start_date** | date| Get historical data on or after this date | [optional]   &nbsp;
+ **end_date** | date| Get historical data on or before this date | [optional]   &nbsp;
+ **sort_order** | str| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]  &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**ApiResponseCompanyHistoricalData**](ApiResponseCompanyHistoricalData.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **get_company_news**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_news)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanyNews)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyNews.md)
+
+[//]: # (OPERATION:get_company_news_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/news)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_news)
+
+## **get_company_news**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_news_v2)
+
+[//]: # (START_OVERVIEW)
+
 > ApiResponseCompanyNews get_company_news(identifier, page_size=page_size, next_page=next_page)
 
-All News by Company
+#### All News by Company
+
 
 Returns news for the Company with the given `identifier`
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -444,36 +777,74 @@ page_size = 100 # int | The number of results to return (optional) (default to 1
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = company_api.get_company_news(identifier, page_size=page_size, next_page=next_page)
-    pprint(api_response)
+  api_response = company_api.get_company_news(identifier, page_size=page_size, next_page=next_page)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_company_news: %s\n" % e)
+  print("Exception when calling CompanyApi->get_company_news: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **page_size** | **int**| The number of results to return | [optional] [default to 100]
- **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**ApiResponseCompanyNews**](ApiResponseCompanyNews.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **get_company_securities**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_securities)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanySecurities)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanySecurities.md)
+
+[//]: # (OPERATION:get_company_securities_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/securities)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_securities)
+
+## **get_company_securities**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_securities_v2)
+
+[//]: # (START_OVERVIEW)
+
 > ApiResponseCompanySecurities get_company_securities(identifier, next_page=next_page)
 
-All Securities by Company
+#### All Securities by Company
+
 
 Returns Securities for the Company with the given `identifier`
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -489,35 +860,73 @@ identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-    api_response = company_api.get_company_securities(identifier, next_page=next_page)
-    pprint(api_response)
+  api_response = company_api.get_company_securities(identifier, next_page=next_page)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->get_company_securities: %s\n" % e)
+  print("Exception when calling CompanyApi->get_company_securities: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **next_page** | **str**| Gets the next page of data from a previous API call | [optional] 
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**ApiResponseCompanySecurities**](ApiResponseCompanySecurities.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **lookup_company_fundamental**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:lookup_company_fundamental)
+
+[//]: # (RETURN_TYPE:Fundamental)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:Fundamental.md)
+
+[//]: # (OPERATION:lookup_company_fundamental_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period})
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#lookup_company_fundamental)
+
+## **lookup_company_fundamental**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/lookup_company_fundamental_v2)
+
+[//]: # (START_OVERVIEW)
+
 > Fundamental lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
 
-Lookup Fundamental by Company
+#### Lookup Fundamental by Company
+
 
 Returns the Fundamental for the Company with the given `identifier` and with the given parameters
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -535,37 +944,75 @@ fiscal_period = 'FY' # str | The fiscal period
 fiscal_year = 2017 # int | The fiscal year
 
 try:
-    api_response = company_api.lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
-    pprint(api_response)
+  api_response = company_api.lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->lookup_company_fundamental: %s\n" % e)
+  print("Exception when calling CompanyApi->lookup_company_fundamental: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **str**| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | 
- **statement_code** | **str**| The statement code | 
- **fiscal_period** | **str**| The fiscal period | 
- **fiscal_year** | **int**| The fiscal year | 
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **statement_code** | str| The statement code |   &nbsp;
+ **fiscal_period** | str| The fiscal period |   &nbsp;
+ **fiscal_year** | int| The fiscal year |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**Fundamental**](Fundamental.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 
-# **search_companies**
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:search_companies)
+
+[//]: # (RETURN_TYPE:ApiResponseCompaniesSearch)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompaniesSearch.md)
+
+[//]: # (OPERATION:search_companies_v2)
+
+[//]: # (ENDPOINT:/companies/search)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#search_companies)
+
+## **search_companies**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_companies_v2)
+
+[//]: # (START_OVERVIEW)
+
 > ApiResponseCompaniesSearch search_companies(query, page_size=page_size)
 
-Search Companies
+#### Search Companies
+
 
 Searches for Companies matching the text `query`
 
+[//]: # (END_OVERVIEW)
+
 ### Example
+[//]: # (START_CODE_EXAMPLE)
+
 ```python
 from __future__ import print_function
 import time
@@ -581,24 +1028,33 @@ query = 'Apple' # str | Search parameters
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 
 try:
-    api_response = company_api.search_companies(query, page_size=page_size)
-    pprint(api_response)
+  api_response = company_api.search_companies(query, page_size=page_size)
+  pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompanyApi->search_companies: %s\n" % e)
+  print("Exception when calling CompanyApi->search_companies: %s\n" % e)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
 ```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
 
 ### Parameters
 
+[//]: # (START_PARAMETERS)
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **str**| Search parameters | 
- **page_size** | **int**| The number of results to return | [optional] [default to 100]
+ **query** | str| Search parameters |   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
 
 ### Return type
 
 [**ApiResponseCompaniesSearch**](ApiResponseCompaniesSearch.md)
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[//]: # (END_OPERATION)
 

@@ -1,10 +1,23 @@
-# ApiResponseStockMarketIndicesSearch
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**indices** | [**list[StockMarketIndexSummary]**](StockMarketIndexSummary.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseStockMarketIndicesSearch)
+
+[//]: # (KIND:object)
+
+### ApiResponseStockMarketIndicesSearch
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**indices** | [**list[StockMarketIndexSummary]**](StockMarketIndexSummary.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:StockMarketIndexSummary)
+
 
 

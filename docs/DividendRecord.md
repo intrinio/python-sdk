@@ -1,19 +1,32 @@
-# DividendRecord
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**ex_dividend** | **float** | Amount of dividend in US dollars | [optional] 
-**currency** | **str** | The 3-digit currency code the dividend amount was reported in | [optional] 
-**announcement_date** | **date** | Date dividend was announced | [optional] 
-**record_date** | **date** | Date before which holders-of-record will receive the dividend | [optional] 
-**pay_date** | **date** | Date the divdiend was paid | [optional] 
-**frequency** | **str** | Identifies payment frequency of announced dividend | [optional] 
-**status** | **str** | Status of the dividend | [optional] 
-**forward_yield** | **float** | The forward dividend yield | [optional] 
-**forward_rate** | **float** | The forward dividend rate | [optional] 
-**security** | [**SecuritySummary**](SecuritySummary.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:DividendRecord)
+
+[//]: # (KIND:object)
+
+### DividendRecord
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**ex_dividend** | float | Amount of dividend in US dollars &nbsp;
+**currency** | str | The 3-digit currency code the dividend amount was reported in &nbsp;
+**announcement_date** | date | Date dividend was announced &nbsp;
+**record_date** | date | Date before which holders-of-record will receive the dividend &nbsp;
+**pay_date** | date | Date the divdiend was paid &nbsp;
+**frequency** | str | Identifies payment frequency of announced dividend &nbsp;
+**status** | str | Status of the dividend &nbsp;
+**forward_yield** | float | The forward dividend yield &nbsp;
+**forward_rate** | float | The forward dividend rate &nbsp;
+**security** | [**SecuritySummary**](SecuritySummary.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:SecuritySummary)
+
 
 

@@ -1,12 +1,28 @@
-# ApiResponseReportedFinancials
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**reported_financials** | [**list[ReportedFinancial]**](ReportedFinancial.md) |  | [optional] 
-**fundamental** | [**Fundamental**](Fundamental.md) |  | [optional] 
-**next_page** | **str** | The token required to request the next page of the data | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseReportedFinancials)
+
+[//]: # (KIND:object)
+
+### ApiResponseReportedFinancials
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**reported_financials** | [**list[ReportedFinancial]**](ReportedFinancial.md) |  &nbsp;
+**fundamental** | [**Fundamental**](Fundamental.md) |  &nbsp;
+**next_page** | str | The token required to request the next page of the data &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:ReportedFinancial)
+
+
+[//]: # (CONTAINED_CLASS:Fundamental)
+
 
 

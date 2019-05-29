@@ -1,10 +1,23 @@
-# ApiResponseCryptoCurrencies
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currencies** | [**list[CryptoCurrency]**](CryptoCurrency.md) | A list of Crypto Currencies for the given Crypto Exchange sorted by alphabetically by symbol. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseCryptoCurrencies)
+
+[//]: # (KIND:object)
+
+### ApiResponseCryptoCurrencies
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**currencies** | [**list[CryptoCurrency]**](CryptoCurrency.md) | A list of Crypto Currencies for the given Crypto Exchange sorted by alphabetically by symbol. &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:CryptoCurrency)
+
 
 

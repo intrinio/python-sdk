@@ -1,12 +1,28 @@
-# ApiResponseSecurityZacksSalesSurprises
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**sales_surprises** | [**list[ZacksSalesSurpriseSummary]**](ZacksSalesSurpriseSummary.md) |  | [optional] 
-**security** | [**SecuritySummary**](SecuritySummary.md) | The Security resolved from the given identifier | [optional] 
-**next_page** | **str** | The token required to request the next page of the data | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseSecurityZacksSalesSurprises)
+
+[//]: # (KIND:object)
+
+### ApiResponseSecurityZacksSalesSurprises
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**sales_surprises** | [**list[ZacksSalesSurpriseSummary]**](ZacksSalesSurpriseSummary.md) |  &nbsp;
+**security** | [**SecuritySummary**](SecuritySummary.md) | The Security resolved from the given identifier &nbsp;
+**next_page** | str | The token required to request the next page of the data &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:ZacksSalesSurpriseSummary)
+
+
+[//]: # (CONTAINED_CLASS:SecuritySummary)
+
 
 

@@ -1,11 +1,24 @@
-# StandardizedFinancial
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data_tag** | [**DataTagSummary**](DataTagSummary.md) |  | [optional] 
-**value** | **float** | The value for the Data Tag within the scope of the Fundamental | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:StandardizedFinancial)
+
+[//]: # (KIND:object)
+
+### StandardizedFinancial
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**data_tag** | [**DataTagSummary**](DataTagSummary.md) |  &nbsp;
+**value** | float | The value for the Data Tag within the scope of the Fundamental &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:DataTagSummary)
+
 
 

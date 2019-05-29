@@ -1,12 +1,22 @@
-# ForexCurrency
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | **str** | The ISO 4217 currency code | [optional] 
-**name** | **str** | The name of the currency | [optional] 
-**country** | **str** | The country in which the currency is used | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ForexCurrency)
+
+[//]: # (KIND:object)
+
+### ForexCurrency
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**code** | str | The ISO 4217 currency code &nbsp;
+**name** | str | The name of the currency &nbsp;
+**country** | str | The country in which the currency is used &nbsp;
+
+[//]: # (END_DEFINITION)
+
 
 

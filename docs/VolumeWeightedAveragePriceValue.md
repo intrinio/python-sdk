@@ -1,11 +1,21 @@
-# VolumeWeightedAveragePriceValue
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**date_time** | **datetime** | The date and time of the observation | [optional] 
-**vwap** | **float** | The Volume Weighted Average Price calculation value | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:VolumeWeightedAveragePriceValue)
+
+[//]: # (KIND:object)
+
+### VolumeWeightedAveragePriceValue
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**date_time** | datetime | The date and time of the observation &nbsp;
+**vwap** | float | The Volume Weighted Average Price calculation value &nbsp;
+
+[//]: # (END_DEFINITION)
+
 
 

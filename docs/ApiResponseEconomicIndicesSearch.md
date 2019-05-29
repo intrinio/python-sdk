@@ -1,10 +1,23 @@
-# ApiResponseEconomicIndicesSearch
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**indices** | [**list[EconomicIndexSummary]**](EconomicIndexSummary.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseEconomicIndicesSearch)
+
+[//]: # (KIND:object)
+
+### ApiResponseEconomicIndicesSearch
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**indices** | [**list[EconomicIndexSummary]**](EconomicIndexSummary.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:EconomicIndexSummary)
+
 
 

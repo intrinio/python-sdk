@@ -1,12 +1,31 @@
-# ApiResponseCryptoSnapshot
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pair** | [**CryptoPairSummary**](CryptoPairSummary.md) |  | [optional] 
-**exchange** | [**CryptoExchangeSummary**](CryptoExchangeSummary.md) |  | [optional] 
-**snapshot** | [**CryptoSnapshot**](CryptoSnapshot.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseCryptoSnapshot)
+
+[//]: # (KIND:object)
+
+### ApiResponseCryptoSnapshot
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**pair** | [**CryptoPairSummary**](CryptoPairSummary.md) |  &nbsp;
+**exchange** | [**CryptoExchangeSummary**](CryptoExchangeSummary.md) |  &nbsp;
+**snapshot** | [**CryptoSnapshot**](CryptoSnapshot.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:CryptoPairSummary)
+
+
+[//]: # (CONTAINED_CLASS:CryptoExchangeSummary)
+
+
+[//]: # (CONTAINED_CLASS:CryptoSnapshot)
+
 
 

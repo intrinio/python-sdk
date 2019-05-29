@@ -1,10 +1,23 @@
-# ApiResponseSICIndicesSearch
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**indices** | [**list[SICIndex]**](SICIndex.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseSICIndicesSearch)
+
+[//]: # (KIND:object)
+
+### ApiResponseSICIndicesSearch
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**indices** | [**list[SICIndex]**](SICIndex.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:SICIndex)
+
 
 

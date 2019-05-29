@@ -1,17 +1,27 @@
-# IntradayStockPrice
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**time** | **datetime** | The timestamp that the &#x60;last_price&#x60; represents. | [optional] 
-**last_price** | **float** | The price of the last trade. | [optional] 
-**ask_price** | **float** | The price of the top ask order. | [optional] 
-**ask_size** | **float** | The size of the top ask order. | [optional] 
-**bid_price** | **float** | The price of the top bid order. | [optional] 
-**bid_size** | **float** | The size of the top bid order. | [optional] 
-**volume** | **float** | The number of shares exchanged during the trading day on the exchange. | [optional] 
-**source** | **str** | The source of the data. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:IntradayStockPrice)
+
+[//]: # (KIND:object)
+
+### IntradayStockPrice
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**time** | datetime | The timestamp that the &#x60;last_price&#x60; represents. &nbsp;
+**last_price** | float | The price of the last trade. &nbsp;
+**ask_price** | float | The price of the top ask order. &nbsp;
+**ask_size** | float | The size of the top ask order. &nbsp;
+**bid_price** | float | The price of the top bid order. &nbsp;
+**bid_size** | float | The size of the top bid order. &nbsp;
+**volume** | float | The number of shares exchanged during the trading day on the exchange. &nbsp;
+**source** | str | The source of the data. &nbsp;
+
+[//]: # (END_DEFINITION)
+
 
 

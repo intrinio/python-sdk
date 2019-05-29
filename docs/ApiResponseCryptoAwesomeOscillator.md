@@ -1,15 +1,37 @@
-# ApiResponseCryptoAwesomeOscillator
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**technicals** | [**list[AwesomeOscillatorTechnicalValue]**](AwesomeOscillatorTechnicalValue.md) |  | [optional] 
-**indicator** | [**TechnicalIndicator**](TechnicalIndicator.md) | The name and symbol of the technical indicator | [optional] 
-**pair** | [**CryptoPairSummary**](CryptoPairSummary.md) |  | [optional] 
-**exchange** | [**CryptoExchangeSummary**](CryptoExchangeSummary.md) |  | [optional] 
-**timeframe** | **str** | The time interval for the crypto currency prices | [optional] 
-**next_page** | **str** | The token required to request the next page of the data | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseCryptoAwesomeOscillator)
+
+[//]: # (KIND:object)
+
+### ApiResponseCryptoAwesomeOscillator
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**technicals** | [**list[AwesomeOscillatorTechnicalValue]**](AwesomeOscillatorTechnicalValue.md) |  &nbsp;
+**indicator** | [**TechnicalIndicator**](TechnicalIndicator.md) | The name and symbol of the technical indicator &nbsp;
+**pair** | [**CryptoPairSummary**](CryptoPairSummary.md) |  &nbsp;
+**exchange** | [**CryptoExchangeSummary**](CryptoExchangeSummary.md) |  &nbsp;
+**timeframe** | str | The time interval for the crypto currency prices &nbsp;
+**next_page** | str | The token required to request the next page of the data &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:AwesomeOscillatorTechnicalValue)
+
+
+[//]: # (CONTAINED_CLASS:TechnicalIndicator)
+
+
+[//]: # (CONTAINED_CLASS:CryptoPairSummary)
+
+
+[//]: # (CONTAINED_CLASS:CryptoExchangeSummary)
+
 
 

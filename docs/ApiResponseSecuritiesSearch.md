@@ -1,10 +1,23 @@
-# ApiResponseSecuritiesSearch
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**securities** | [**list[SecuritySummary]**](SecuritySummary.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseSecuritiesSearch)
+
+[//]: # (KIND:object)
+
+### ApiResponseSecuritiesSearch
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**securities** | [**list[SecuritySummary]**](SecuritySummary.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:SecuritySummary)
+
 
 

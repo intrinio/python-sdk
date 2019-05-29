@@ -1,10 +1,23 @@
-# ApiResponseForexPairs
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pairs** | [**list[ForexPair]**](ForexPair.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseForexPairs)
+
+[//]: # (KIND:object)
+
+### ApiResponseForexPairs
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**pairs** | [**list[ForexPair]**](ForexPair.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:ForexPair)
+
 
 

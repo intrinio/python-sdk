@@ -1,11 +1,21 @@
-# CryptoExchangeSummary
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **str** | The Crypto Exchange name. | [optional] 
-**code** | **str** | The Crypto Exchange code. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:CryptoExchangeSummary)
+
+[//]: # (KIND:object)
+
+### CryptoExchangeSummary
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**name** | str | The Crypto Exchange name. &nbsp;
+**code** | str | The Crypto Exchange code. &nbsp;
+
+[//]: # (END_DEFINITION)
+
 
 

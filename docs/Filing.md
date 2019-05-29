@@ -1,19 +1,32 @@
-# Filing
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **str** | The Intrinio ID of the Filing | [optional] 
-**filing_date** | **date** | The date when the filing was submitted to the SEC by the company | [optional] 
-**accepted_date** | **datetime** | The date and time when the filing was accepted by SEC | [optional] 
-**period_end_date** | **date** | The ending date of the fiscal period for the filing | [optional] 
-**report_type** | **str** | The filing report type | [optional] 
-**sec_unique_id** | **str** | A unique identifier for the filing provided by the SEC | [optional] 
-**filing_url** | **str** | The URL to the filing page on the SEC site | [optional] 
-**report_url** | **str** | The URL to the actual report on the SEC site | [optional] 
-**instance_url** | **str** | The URL for the XBRL filing for the report | [optional] 
-**company** | [**CompanySummary**](CompanySummary.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:Filing)
+
+[//]: # (KIND:object)
+
+### Filing
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | str | The Intrinio ID of the Filing &nbsp;
+**filing_date** | date | The date when the filing was submitted to the SEC by the company &nbsp;
+**accepted_date** | datetime | The date and time when the filing was accepted by SEC &nbsp;
+**period_end_date** | date | The ending date of the fiscal period for the filing &nbsp;
+**report_type** | str | The filing &lt;a href&#x3D;\&quot;/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; &nbsp;
+**sec_unique_id** | str | A unique identifier for the filing provided by the SEC &nbsp;
+**filing_url** | str | The URL to the filing page on the SEC site &nbsp;
+**report_url** | str | The URL to the actual report on the SEC site &nbsp;
+**instance_url** | str | The URL for the XBRL filing for the report &nbsp;
+**company** | [**CompanySummary**](CompanySummary.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:CompanySummary)
+
 
 

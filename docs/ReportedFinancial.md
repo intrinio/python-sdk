@@ -1,12 +1,28 @@
-# ReportedFinancial
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**xbrl_tag** | [**ReportedTag**](ReportedTag.md) |  | [optional] 
-**value** | **float** | The value reported for the XBRL Tag within the scope of the Fundamental | [optional] 
-**dimensions** | [**list[ReportedFinancialDimension]**](ReportedFinancialDimension.md) | The combination of XBRL axis and members that defines the dimensionalization of this fact (if any) | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ReportedFinancial)
+
+[//]: # (KIND:object)
+
+### ReportedFinancial
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**xbrl_tag** | [**ReportedTag**](ReportedTag.md) |  &nbsp;
+**value** | float | The value reported for the XBRL Tag within the scope of the Fundamental &nbsp;
+**dimensions** | [**list[ReportedFinancialDimension]**](ReportedFinancialDimension.md) | The combination of XBRL axis and members that defines the dimensionalization of this fact (if any) &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:ReportedTag)
+
+
+[//]: # (CONTAINED_CLASS:ReportedFinancialDimension)
+
 
 

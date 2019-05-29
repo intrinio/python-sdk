@@ -1,11 +1,24 @@
-# ApiResponseStockMarketIndices
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**indices** | [**list[StockMarketIndexSummary]**](StockMarketIndexSummary.md) |  | [optional] 
-**next_page** | **str** | The token required to request the next page of the data | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseStockMarketIndices)
+
+[//]: # (KIND:object)
+
+### ApiResponseStockMarketIndices
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**indices** | [**list[StockMarketIndexSummary]**](StockMarketIndexSummary.md) |  &nbsp;
+**next_page** | str | The token required to request the next page of the data &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:StockMarketIndexSummary)
+
 
 

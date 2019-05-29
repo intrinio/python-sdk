@@ -1,12 +1,28 @@
-# SecurityScreenGroup
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**operator** | **str** | The logic operator for the group (AND, OR, NOT) | [optional] 
-**clauses** | [**list[SecurityScreenClause]**](SecurityScreenClause.md) | The logic clauses in the group | [optional] 
-**groups** | [**list[SecurityScreenGroup]**](SecurityScreenGroup.md) | The nested groups within the group | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:SecurityScreenGroup)
+
+[//]: # (KIND:object)
+
+### SecurityScreenGroup
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**operator** | str | The logic operator for the group (AND, OR, NOT) &nbsp;
+**clauses** | [**list[SecurityScreenClause]**](SecurityScreenClause.md) | The logic clauses in the group &nbsp;
+**groups** | [**list[SecurityScreenGroup]**](SecurityScreenGroup.md) | The nested groups within the group &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:SecurityScreenClause)
+
+
+[//]: # (CONTAINED_CLASS:SecurityScreenGroup)
+
 
 

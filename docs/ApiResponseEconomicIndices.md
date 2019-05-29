@@ -1,11 +1,24 @@
-# ApiResponseEconomicIndices
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**indices** | [**list[EconomicIndexSummary]**](EconomicIndexSummary.md) |  | [optional] 
-**next_page** | **str** | The token required to request the next page of the data | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseEconomicIndices)
+
+[//]: # (KIND:object)
+
+### ApiResponseEconomicIndices
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**indices** | [**list[EconomicIndexSummary]**](EconomicIndexSummary.md) |  &nbsp;
+**next_page** | str | The token required to request the next page of the data &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:EconomicIndexSummary)
+
 
 

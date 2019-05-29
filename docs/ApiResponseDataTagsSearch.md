@@ -1,10 +1,23 @@
-# ApiResponseDataTagsSearch
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**tags** | [**list[DataTag]**](DataTag.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[//]: # (CLASS:ApiResponseDataTagsSearch)
+
+[//]: # (KIND:object)
+
+### ApiResponseDataTagsSearch
+
+#### Properties
+
+[//]: # (START_DEFINITION)
+
+Name | Type | Description
+------------ | ------------- | -------------
+**tags** | [**list[DataTag]**](DataTag.md) |  &nbsp;
+
+[//]: # (END_DEFINITION)
+
+
+[//]: # (CONTAINED_CLASS:DataTag)
+
 
 
