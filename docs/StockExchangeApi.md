@@ -33,7 +33,7 @@ Method | HTTP request | Description
 
 ## **get_all_stock_exchanges**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_stock_exchanges_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_stock_exchanges_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ## **get_stock_exchange_by_id**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_by_id_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_exchange_by_id_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ## **get_stock_exchange_price_adjustments**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_price_adjustments_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_exchange_price_adjustments_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## **get_stock_exchange_prices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_prices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_exchange_prices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ## **get_stock_exchange_realtime_prices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_realtime_prices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_exchange_realtime_prices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -399,7 +399,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
 identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-source = '' # str | Return realtime prices from the specified data source (optional)
+source = '' # str | Return realtime prices from the specified data source. If no source is specified, all sources are used. (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
@@ -423,7 +423,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
- **source** | str| Return realtime prices from the specified data source | [optional]   &nbsp;
+ **source** | str| Return realtime prices from the specified data source. If no source is specified, all sources are used. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ## **get_stock_exchange_securities**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_exchange_securities_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_exchange_securities_v2)
 
 [//]: # (START_OVERVIEW)
 

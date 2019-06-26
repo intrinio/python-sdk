@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_company_filings**](CompanyApi.md#get_company_filings) | **GET** /companies/{identifier}/filings | All Filings by Company
 [**get_company_fundamentals**](CompanyApi.md#get_company_fundamentals) | **GET** /companies/{identifier}/fundamentals | All Fundamentals by Company
 [**get_company_historical_data**](CompanyApi.md#get_company_historical_data) | **GET** /companies/{identifier}/historical_data/{tag} | Historical Data for Company
+[**get_company_ipos**](CompanyApi.md#get_company_ipos) | **GET** /companies/ipos | IPOs
 [**get_company_news**](CompanyApi.md#get_company_news) | **GET** /companies/{identifier}/news | All News by Company
 [**get_company_securities**](CompanyApi.md#get_company_securities) | **GET** /companies/{identifier}/securities | All Securities by Company
 [**lookup_company_fundamental**](CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
@@ -39,11 +40,11 @@ Method | HTTP request | Description
 
 ## **get_all_companies**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_companies_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_companies_v2)
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanies get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
+> ApiResponseCompanies get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, page_size=page_size, next_page=next_page)
 
 #### All Companies
 
@@ -67,16 +68,18 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 company_api = intrinio_sdk.CompanyApi()
 
 latest_filing_date = '' # date | Last filing date (optional)
-sic = '' # str | Standard Industrial Classification code (optional)
-template = '' # str | Template (optional)
-sector = '' # str | Industry sector (optional)
-industry_category = '' # str | Industry category (optional)
-industry_group = '' # str | Industry group (optional)
+sic = '' # str | Return companies with the given Standard Industrial Classification code (optional)
+template = '' # str | Return companies with the given financial statement template (optional)
+sector = '' # str | Return companies in the given industry sector (optional)
+industry_category = '' # str | Return companies in the given industry category (optional)
+industry_group = '' # str | Return companies in the given industry group (optional)
+has_fundamentals = true # bool | Return only companies that have fundamentals when true (optional)
+has_stock_prices = true # bool | Return only companies that have stock prices when true (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-  api_response = company_api.get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
+  api_response = company_api.get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, page_size=page_size, next_page=next_page)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling CompanyApi->get_all_companies: %s\n" % e)
@@ -95,11 +98,13 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **latest_filing_date** | date| Last filing date | [optional]   &nbsp;
- **sic** | str| Standard Industrial Classification code | [optional]   &nbsp;
- **template** | str| Template | [optional]   &nbsp;
- **sector** | str| Industry sector | [optional]   &nbsp;
- **industry_category** | str| Industry category | [optional]   &nbsp;
- **industry_group** | str| Industry group | [optional]   &nbsp;
+ **sic** | str| Return companies with the given Standard Industrial Classification code | [optional]   &nbsp;
+ **template** | str| Return companies with the given financial statement template | [optional]   &nbsp;
+ **sector** | str| Return companies in the given industry sector | [optional]   &nbsp;
+ **industry_category** | str| Return companies in the given industry category | [optional]   &nbsp;
+ **industry_group** | str| Return companies in the given industry group | [optional]   &nbsp;
+ **has_fundamentals** | bool| Return only companies that have fundamentals when true | [optional]   &nbsp;
+ **has_stock_prices** | bool| Return only companies that have stock prices when true | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -133,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## **get_all_company_news**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_company_news_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_company_news_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -215,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## **get_company**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -295,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## **get_company_data_point_number**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_data_point_number_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_data_point_number_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -377,7 +382,7 @@ Name | Type | Description  | Notes
 
 ## **get_company_data_point_text**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_data_point_text_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_data_point_text_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -459,7 +464,7 @@ Name | Type | Description  | Notes
 
 ## **get_company_filings**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_filings_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_filings_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -549,7 +554,7 @@ Name | Type | Description  | Notes
 
 ## **get_company_fundamentals**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_fundamentals_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_fundamentals_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -649,7 +654,7 @@ Name | Type | Description  | Notes
 
 ## **get_company_historical_data**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_historical_data_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_historical_data_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -679,9 +684,9 @@ company_api = intrinio_sdk.CompanyApi()
 identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
 tag = 'marketcap' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
 frequency = 'daily' # str | Return historical data in the given frequency (optional) (default to daily)
-type = '' # str | Filter by type, when applicable (optional)
-start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
-end_date = '' # date | Get historical data on or before this date (optional)
+type = '' # str | Return historical data for given fiscal period type (optional)
+start_date = '2018-01-01' # date | Return historical data on or after this date (optional)
+end_date = '' # date | Return historical data on or before this date (optional)
 sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
@@ -708,9 +713,9 @@ Name | Type | Description  | Notes
  **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
  **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
  **frequency** | str| Return historical data in the given frequency | [optional] [default to daily]  &nbsp;
- **type** | str| Filter by type, when applicable | [optional]   &nbsp;
- **start_date** | date| Get historical data on or after this date | [optional]   &nbsp;
- **end_date** | date| Get historical data on or before this date | [optional]   &nbsp;
+ **type** | str| Return historical data for given fiscal period type | [optional]   &nbsp;
+ **start_date** | date| Return historical data on or after this date | [optional]   &nbsp;
+ **end_date** | date| Return historical data on or before this date | [optional]   &nbsp;
  **sort_order** | str| Sort by date &#x60;asc&#x60; or &#x60;desc&#x60; | [optional] [default to desc]  &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
@@ -721,6 +726,88 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseCompanyHistoricalData**](ApiResponseCompanyHistoricalData.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_ipos)
+
+[//]: # (RETURN_TYPE:ApiResponseInitialPublicOfferings)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseInitialPublicOfferings.md)
+
+[//]: # (OPERATION:get_company_ipos_v2)
+
+[//]: # (ENDPOINT:/companies/ipos)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_ipos)
+
+## **get_company_ipos**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_ipos_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseInitialPublicOfferings get_company_ipos(page_size=page_size, next_page=next_page)
+
+#### IPOs
+
+
+Returns initial public offerings (IPOs). An IPO is a public offering of private company stock. The act of \"going public\" is initiated by an IPO, at which point the company's stock trades on a major stock exchange (such as NYSE or NASDAQ). Intrinio covers all upcoming and recent IPOs for US exchanges.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+company_api = intrinio_sdk.CompanyApi()
+
+page_size = 100 # int | The number of results to return (optional) (default to 100)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
+
+try:
+  api_response = company_api.get_company_ipos(page_size=page_size, next_page=next_page)
+  pprint(api_response)
+except ApiException as e:
+  print("Exception when calling CompanyApi->get_company_ipos: %s\n" % e)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseInitialPublicOfferings**](ApiResponseInitialPublicOfferings.md)
 
 [//]: # (END_OPERATION)
 
@@ -745,7 +832,7 @@ Name | Type | Description  | Notes
 
 ## **get_company_news**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_news_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_news_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -829,7 +916,7 @@ Name | Type | Description  | Notes
 
 ## **get_company_securities**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_company_securities_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_securities_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -911,7 +998,7 @@ Name | Type | Description  | Notes
 
 ## **lookup_company_fundamental**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/lookup_company_fundamental_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/lookup_company_fundamental_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -997,7 +1084,7 @@ Name | Type | Description  | Notes
 
 ## **search_companies**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_companies_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/search_companies_v2)
 
 [//]: # (START_OVERVIEW)
 

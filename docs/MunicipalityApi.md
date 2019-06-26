@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## **get_all_municipalities**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_municipalities_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_municipalities_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ## **get_municipality_by_id**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_municipality_by_id_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_municipality_by_id_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## **get_municipality_financials**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_municipality_financials_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_municipality_financials_v2)
 
 [//]: # (START_OVERVIEW)
 

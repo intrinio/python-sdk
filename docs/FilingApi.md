@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 ## **get_all_filings**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_filings_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_filings_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ## **get_all_notes**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_notes_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_notes_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ## **get_filing_by_id**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_filing_by_id_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_filing_by_id_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## **get_filing_fundamentals**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_filing_fundamentals_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_filing_fundamentals_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ## **get_note**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_note_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_note_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ## **get_note_html**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_note_html_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_note_html_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ## **get_note_text**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_note_text_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_note_text_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 
 ## **search_notes**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_notes_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/search_notes_v2)
 
 [//]: # (START_OVERVIEW)
 

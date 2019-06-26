@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 ## **get_historical_data**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_historical_data_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_historical_data_v2)
 
 [//]: # (START_OVERVIEW)
 

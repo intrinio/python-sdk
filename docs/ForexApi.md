@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## **get_forex_currencies**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_forex_currencies_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_forex_currencies_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -106,7 +106,7 @@ This endpoint does not need any parameter.
 
 ## **get_forex_pairs**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_forex_pairs_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_forex_pairs_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -182,7 +182,7 @@ This endpoint does not need any parameter.
 
 ## **get_forex_prices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_forex_prices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_forex_prices_v2)
 
 [//]: # (START_OVERVIEW)
 

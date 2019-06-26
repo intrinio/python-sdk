@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 ## **get_options**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_options_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ## **get_options_chain**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_options_chain_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_chain_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ## **get_options_expirations**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_options_expirations_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_expirations_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ## **get_options_prices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_options_prices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_prices_v2)
 
 [//]: # (START_OVERVIEW)
 

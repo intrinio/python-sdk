@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 ## **get_data_point_number**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_data_point_number_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_data_point_number_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ## **get_data_point_text**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_data_point_text_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_data_point_text_v2)
 
 [//]: # (START_OVERVIEW)
 

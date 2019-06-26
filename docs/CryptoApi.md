@@ -67,7 +67,7 @@ Method | HTTP request | Description
 
 ## **get_crypto_book_asks**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_book_asks_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_book_asks_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_book_bids**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_book_bids_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_book_bids_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_book_summary**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_book_summary_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_book_summary_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_currencies**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_currencies_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_currencies_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_exchanges**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_exchanges_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_exchanges_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_pairs**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_pairs_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_pairs_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_adi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_adi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_adi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_adtv**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_adtv_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_adtv_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -769,7 +769,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_adx**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_adx_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_adx_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -871,7 +871,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_ao**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_ao_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_ao_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -975,7 +975,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_atr**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_atr_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_atr_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_bb**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_bb_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_bb_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1183,7 +1183,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_cci**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_cci_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_cci_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1287,7 +1287,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_cmf**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_cmf_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_cmf_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1389,7 +1389,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_dc**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_dc_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_dc_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1493,7 +1493,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_dpo**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_dpo_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_dpo_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1597,7 +1597,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_eom**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_eom_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_eom_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1699,7 +1699,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_fi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_fi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_fi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1799,7 +1799,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_ichimoku**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_ichimoku_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_ichimoku_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1905,7 +1905,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_kc**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_kc_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_kc_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2007,7 +2007,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_kst**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_kst_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_kst_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2125,7 +2125,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_macd**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_macd_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_macd_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2233,7 +2233,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_mfi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_mfi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_mfi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2335,7 +2335,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_mi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_mi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_mi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2439,7 +2439,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_nvi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_nvi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_nvi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2539,7 +2539,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_obv**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_obv_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_obv_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2639,7 +2639,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_obv_mean**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_obv_mean_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_obv_mean_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2741,7 +2741,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_rsi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_rsi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_rsi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2845,7 +2845,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_sma**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_sma_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_sma_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2949,7 +2949,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_sr**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_sr_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_sr_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3053,7 +3053,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_trix**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_trix_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_trix_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3155,7 +3155,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_tsi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_tsi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_tsi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3261,7 +3261,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_uo**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_uo_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_uo_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3373,7 +3373,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_vi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_vi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_vi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3475,7 +3475,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_vpt**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_vpt_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_vpt_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3575,7 +3575,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_vwap**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_vwap_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_vwap_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3675,7 +3675,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_price_technicals_wr**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_price_technicals_wr_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_price_technicals_wr_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3777,7 +3777,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_prices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_prices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_prices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3877,7 +3877,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_snapshot**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_snapshot_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_snapshot_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3961,7 +3961,7 @@ Name | Type | Description  | Notes
 
 ## **get_crypto_stats**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_crypto_stats_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_crypto_stats_v2)
 
 [//]: # (START_OVERVIEW)
 

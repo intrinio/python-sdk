@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## **get_all_data_tags**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_data_tags_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_data_tags_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ## **get_data_tag_by_id**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_data_tag_by_id_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_data_tag_by_id_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ## **search_data_tags**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_data_tags_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/search_data_tags_v2)
 
 [//]: # (START_OVERVIEW)
 

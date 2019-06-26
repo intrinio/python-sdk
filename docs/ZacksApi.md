@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## **get_zacks_analyst_ratings**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_zacks_analyst_ratings_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_analyst_ratings_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ## **get_zacks_eps_surprises**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_zacks_eps_surprises_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_eps_surprises_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ## **get_zacks_sales_surprises**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_zacks_sales_surprises_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_sales_surprises_v2)
 
 [//]: # (START_OVERVIEW)
 

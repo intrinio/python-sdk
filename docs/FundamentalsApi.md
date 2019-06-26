@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 ## **get_fundamental_by_id**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_fundamental_by_id_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_fundamental_by_id_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ## **get_fundamental_reported_financials**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_fundamental_reported_financials_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_fundamental_reported_financials_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ## **get_fundamental_standardized_financials**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_fundamental_standardized_financials_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_fundamental_standardized_financials_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 #### Standardized Financials
 
 
-Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies fundamentals. For example, it is possible to compare total revenues between two companies as of a certain point in time, or within a single company across multiple time periods. This is not possible using the as reported financial statements because of the inherent complexity of reporting standards.
+Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies' fundamentals.
 
 [//]: # (END_OVERVIEW)
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ## **lookup_fundamental**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/lookup_fundamental_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/lookup_fundamental_v2)
 
 [//]: # (START_OVERVIEW)
 

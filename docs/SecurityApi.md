@@ -75,16 +75,16 @@ Method | HTTP request | Description
 
 ## **get_all_securities**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_securities_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_securities_v2)
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseSecurities get_all_securities(page_size=page_size, next_page=next_page)
+> ApiResponseSecurities get_all_securities(active=active, delisted=delisted, code=code, currency=currency, ticker=ticker, name=name, composite_mic=composite_mic, exchange_mic=exchange_mic, stock_prices_after=stock_prices_after, stock_prices_before=stock_prices_before, cik=cik, figi=figi, composite_figi=composite_figi, share_class_figi=share_class_figi, figi_unique_id=figi_unique_id, include_non_figi=include_non_figi, page_size=page_size, next_page=next_page)
 
 #### All Securities
 
 
-Returns all Securities to which you have access.
+Returns all Securities to which you have access. When parameters are specified, returns matching Securities.
 
 [//]: # (END_OVERVIEW)
 
@@ -102,11 +102,27 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
+active = true # bool | When true, return securities that are active. When False, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). (optional)
+delisted = False # bool | When true, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When False, return securities that have not been delisted. (optional)
+code = '' # str | Return securities classified with the given code (<a href=\"/documentation/security_codes\" target=\"_blank\">reference</a>). (optional)
+currency = '' # str | Return securities traded in the given 3-digit ISO 4217 currency code (<a href=\"https://en.wikipedia.org/wiki/ISO_4217\" target=\"_blank\">reference</a>). (optional)
+ticker = '' # str | Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity. (optional)
+name = '' # str | Return securities with the given text in their name (not case sensitive). (optional)
+composite_mic = '' # str | Return securities classified under the composite exchange with the given Market Identification Code (MIC). A composite exchange may or may not be a real exchange.  For example, the USCOMP exchange (our only composite exchange to date) is a combination of exchanges with the following MICs: ARCX, XASE, XPOR, FINR, XCIS, XNAS, XNYS, BATS.  This composite grouping is done for user convenience.  At this time, all US securities are classified under the composite exchange with MIC USCOMP.  To query for specific US exchanges, use the exchange_mic parameter below.  (optional)
+exchange_mic = '' # str | The MIC code of the exchange where the security is actually traded. (optional)
+stock_prices_after = '' # date | Return securities with end-of-day stock prices on or after this date. (optional)
+stock_prices_before = '' # date | Return securities with end-of-day stock prices on or before this date. (optional)
+cik = '' # str | Return securities belonging to the company with the given Central Index Key (CIK). (optional)
+figi = '' # str | Return securities with the given Exchange Level FIGI (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>). (optional)
+composite_figi = '' # str | Return securities with the given Country Composite FIGI (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>). (optional)
+share_class_figi = '' # str | Return securities with the given Global Share Class FIGI (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>). (optional)
+figi_unique_id = '' # str | Return securities with the given FIGI Unique ID (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>). (optional)
+include_non_figi = False # bool | When true, include securities that do not have a FIGI. By default, this is False. If this parameter is not specified, only securities with a FIGI are returned. (optional) (default to False)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-  api_response = security_api.get_all_securities(page_size=page_size, next_page=next_page)
+  api_response = security_api.get_all_securities(active=active, delisted=delisted, code=code, currency=currency, ticker=ticker, name=name, composite_mic=composite_mic, exchange_mic=exchange_mic, stock_prices_after=stock_prices_after, stock_prices_before=stock_prices_before, cik=cik, figi=figi, composite_figi=composite_figi, share_class_figi=share_class_figi, figi_unique_id=figi_unique_id, include_non_figi=include_non_figi, page_size=page_size, next_page=next_page)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling SecurityApi->get_all_securities: %s\n" % e)
@@ -124,6 +140,22 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **active** | bool| When true, return securities that are active. When False, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). | [optional]   &nbsp;
+ **delisted** | bool| When true, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When False, return securities that have not been delisted. | [optional]   &nbsp;
+ **code** | str| Return securities classified with the given code (&lt;a href&#x3D;\&quot;/documentation/security_codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
+ **currency** | str| Return securities traded in the given 3-digit ISO 4217 currency code (&lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_4217\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
+ **ticker** | str| Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity. | [optional]   &nbsp;
+ **name** | str| Return securities with the given text in their name (not case sensitive). | [optional]   &nbsp;
+ **composite_mic** | str| Return securities classified under the composite exchange with the given Market Identification Code (MIC). A composite exchange may or may not be a real exchange.  For example, the USCOMP exchange (our only composite exchange to date) is a combination of exchanges with the following MICs: ARCX, XASE, XPOR, FINR, XCIS, XNAS, XNYS, BATS.  This composite grouping is done for user convenience.  At this time, all US securities are classified under the composite exchange with MIC USCOMP.  To query for specific US exchanges, use the exchange_mic parameter below.  | [optional]   &nbsp;
+ **exchange_mic** | str| The MIC code of the exchange where the security is actually traded. | [optional]   &nbsp;
+ **stock_prices_after** | date| Return securities with end-of-day stock prices on or after this date. | [optional]   &nbsp;
+ **stock_prices_before** | date| Return securities with end-of-day stock prices on or before this date. | [optional]   &nbsp;
+ **cik** | str| Return securities belonging to the company with the given Central Index Key (CIK). | [optional]   &nbsp;
+ **figi** | str| Return securities with the given Exchange Level FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
+ **composite_figi** | str| Return securities with the given Country Composite FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
+ **share_class_figi** | str| Return securities with the given Global Share Class FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
+ **figi_unique_id** | str| Return securities with the given FIGI Unique ID (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
+ **include_non_figi** | bool| When true, include securities that do not have a FIGI. By default, this is False. If this parameter is not specified, only securities with a FIGI are returned. | [optional] [default to False]  &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -157,7 +189,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_by_id**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_by_id_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_by_id_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -237,7 +269,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_data_point_number**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_data_point_number_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_data_point_number_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -319,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_data_point_text**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_data_point_text_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_data_point_text_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -401,7 +433,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_historical_data**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_historical_data_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_historical_data_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -497,7 +529,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_intraday_prices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_intraday_prices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_intraday_prices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -587,7 +619,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_latest_dividend_record**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_latest_dividend_record_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_latest_dividend_record_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -667,7 +699,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_latest_earnings_record**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_latest_earnings_record_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_latest_earnings_record_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -747,7 +779,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_adi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_adi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_adi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -835,7 +867,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_adtv**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_adtv_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_adtv_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -925,7 +957,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_adx**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_adx_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_adx_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1015,7 +1047,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_ao**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_ao_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_ao_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1107,7 +1139,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_atr**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_atr_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_atr_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1197,7 +1229,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_bb**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_bb_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_bb_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1291,7 +1323,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_cci**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_cci_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_cci_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1383,7 +1415,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_cmf**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_cmf_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_cmf_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1473,7 +1505,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_dc**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_dc_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_dc_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1565,7 +1597,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_dpo**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_dpo_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_dpo_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1657,7 +1689,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_eom**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_eom_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_eom_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1747,7 +1779,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_fi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_fi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_fi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1835,7 +1867,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_ichimoku**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_ichimoku_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_ichimoku_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1929,7 +1961,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_kc**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_kc_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_kc_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2019,7 +2051,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_kst**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_kst_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_kst_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2125,7 +2157,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_macd**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_macd_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_macd_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2221,7 +2253,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_mfi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_mfi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_mfi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2311,7 +2343,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_mi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_mi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_mi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2403,7 +2435,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_nvi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_nvi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_nvi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2491,7 +2523,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_obv**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_obv_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_obv_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2579,7 +2611,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_obv_mean**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_obv_mean_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_obv_mean_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2669,7 +2701,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_rsi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_rsi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_rsi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2761,7 +2793,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_sma**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_sma_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_sma_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2853,7 +2885,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_sr**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_sr_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_sr_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -2945,7 +2977,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_trix**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_trix_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_trix_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3035,7 +3067,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_tsi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_tsi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_tsi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3129,7 +3161,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_uo**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_uo_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_uo_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3229,7 +3261,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_vi**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_vi_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_vi_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3319,7 +3351,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_vpt**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_vpt_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_vpt_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3407,7 +3439,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_vwap**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_vwap_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_vwap_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3495,7 +3527,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_price_technicals_wr**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_price_technicals_wr_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_price_technicals_wr_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3585,7 +3617,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_realtime_price**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_realtime_price_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_realtime_price_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3613,7 +3645,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 security_api = intrinio_sdk.SecurityApi()
 
 identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-source = '' # str | Return the realtime price from the specified data source (optional)
+source = '' # str | Return the realtime price from the specified data source. If no source is specified, the best source available is used. (optional)
 
 try:
   api_response = security_api.get_security_realtime_price(identifier, source=source)
@@ -3635,7 +3667,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
- **source** | str| Return the realtime price from the specified data source | [optional]   &nbsp;
+ **source** | str| Return the realtime price from the specified data source. If no source is specified, the best source available is used. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -3667,7 +3699,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_stock_price_adjustments**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_stock_price_adjustments_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_stock_price_adjustments_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3755,7 +3787,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_stock_prices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_stock_prices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_stock_prices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3845,7 +3877,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_zacks_analyst_ratings**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_zacks_analyst_ratings_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_zacks_analyst_ratings_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -3959,7 +3991,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_zacks_analyst_ratings_snapshot**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_zacks_analyst_ratings_snapshot_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_zacks_analyst_ratings_snapshot_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -4041,7 +4073,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_zacks_eps_surprises**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_zacks_eps_surprises_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_zacks_eps_surprises_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -4125,7 +4157,7 @@ Name | Type | Description  | Notes
 
 ## **get_security_zacks_sales_surprises**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_security_zacks_sales_surprises_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_zacks_sales_surprises_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -4209,7 +4241,7 @@ Name | Type | Description  | Notes
 
 ## **screen_securities**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/screen_securities_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/screen_securities_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -4297,7 +4329,7 @@ Name | Type | Description  | Notes
 
 ## **search_securities**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_securities_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/search_securities_v2)
 
 [//]: # (START_OVERVIEW)
 

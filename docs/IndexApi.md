@@ -45,7 +45,7 @@ Method | HTTP request | Description
 
 ## **get_all_economic_indices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_economic_indices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_economic_indices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ## **get_all_sic_indices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_sic_indices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_sic_indices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ## **get_all_stock_market_indices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_all_stock_market_indices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_stock_market_indices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 ## **get_economic_index_by_id**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_economic_index_by_id_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_economic_index_by_id_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ## **get_economic_index_data_point_number**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_economic_index_data_point_number_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_economic_index_data_point_number_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -449,7 +449,7 @@ Name | Type | Description  | Notes
 
 ## **get_economic_index_data_point_text**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_economic_index_data_point_text_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_economic_index_data_point_text_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ## **get_economic_index_historical_data**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_economic_index_historical_data_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_economic_index_historical_data_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -625,7 +625,7 @@ Name | Type | Description  | Notes
 
 ## **get_sic_index_by_id**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_sic_index_by_id_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_sic_index_by_id_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ## **get_sic_index_data_point_number**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_sic_index_data_point_number_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_sic_index_data_point_number_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -786,7 +786,7 @@ Name | Type | Description  | Notes
 
 ## **get_sic_index_data_point_text**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_sic_index_data_point_text_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_sic_index_data_point_text_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -868,7 +868,7 @@ Name | Type | Description  | Notes
 
 ## **get_sic_index_historical_data**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_sic_index_historical_data_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_sic_index_historical_data_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -962,7 +962,7 @@ Name | Type | Description  | Notes
 
 ## **get_stock_market_index_by_id**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_market_index_by_id_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_market_index_by_id_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1041,7 +1041,7 @@ Name | Type | Description  | Notes
 
 ## **get_stock_market_index_data_point_number**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_market_index_data_point_number_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_market_index_data_point_number_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1123,7 +1123,7 @@ Name | Type | Description  | Notes
 
 ## **get_stock_market_index_data_point_text**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_market_index_data_point_text_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_market_index_data_point_text_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1205,7 +1205,7 @@ Name | Type | Description  | Notes
 
 ## **get_stock_market_index_historical_data**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/get_stock_market_index_historical_data_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_market_index_historical_data_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1299,7 +1299,7 @@ Name | Type | Description  | Notes
 
 ## **search_economic_indices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_economic_indices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/search_economic_indices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1381,7 +1381,7 @@ Name | Type | Description  | Notes
 
 ## **search_sic_indices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_sic_indices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/search_sic_indices_v2)
 
 [//]: # (START_OVERVIEW)
 
@@ -1463,7 +1463,7 @@ Name | Type | Description  | Notes
 
 ## **search_stock_markets_indices**
 
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/api_v2/search_stock_markets_indices_v2)
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/search_stock_markets_indices_v2)
 
 [//]: # (START_OVERVIEW)
 
