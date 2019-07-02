@@ -957,6 +957,12 @@ class CompanyApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param str ticker: Return IPOs with the given ticker (typically the IPO for the company)
+        :param str status: Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand
+        :param date start_date: Return IPOs on or after the given date
+        :param date end_date: Return IPOs on or before the given date
+        :param int offer_amount_greater_than: Return IPOs with an offer dollar amount greater than the given amount
+        :param int offer_amount_less_than: Return IPOs with an offer dollar amount less than the given amount
         :param int page_size: The number of results to return
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseInitialPublicOfferings
@@ -980,6 +986,12 @@ class CompanyApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param str ticker: Return IPOs with the given ticker (typically the IPO for the company)
+        :param str status: Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand
+        :param date start_date: Return IPOs on or after the given date
+        :param date end_date: Return IPOs on or before the given date
+        :param int offer_amount_greater_than: Return IPOs with an offer dollar amount greater than the given amount
+        :param int offer_amount_less_than: Return IPOs with an offer dollar amount less than the given amount
         :param int page_size: The number of results to return
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseInitialPublicOfferings
@@ -987,7 +999,7 @@ class CompanyApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'next_page']  # noqa: E501
+        all_params = ['ticker', 'status', 'start_date', 'end_date', 'offer_amount_greater_than', 'offer_amount_less_than', 'page_size', 'next_page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1010,6 +1022,18 @@ class CompanyApi(object):
         path_params = {}
 
         query_params = []
+        if 'ticker' in params:
+            query_params.append(('ticker', params['ticker']))  # noqa: E501
+        if 'status' in params:
+            query_params.append(('status', params['status']))  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'offer_amount_greater_than' in params:
+            query_params.append(('offer_amount_greater_than', params['offer_amount_greater_than']))  # noqa: E501
+        if 'offer_amount_less_than' in params:
+            query_params.append(('offer_amount_less_than', params['offer_amount_less_than']))  # noqa: E501
         if 'page_size' in params:
             query_params.append(('page_size', params['page_size']))  # noqa: E501
         if 'next_page' in params:

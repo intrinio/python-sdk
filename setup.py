@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "intrinio-sdk"
-VERSION = "3.2.0"
+VERSION = "3.3.0"
 # To install the library, run the following
 #
 # python setup.py install

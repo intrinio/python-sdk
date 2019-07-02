@@ -35,25 +35,30 @@ class ApiResponseStockExchangeRealtimeStockPrices(object):
     """
     swagger_types = {
         'stock_prices': 'list[RealtimeStockPrice]',
-        'stock_exchange': 'StockExchange'
+        'stock_exchange': 'StockExchange',
+        'next_page': 'str'
     }
 
     attribute_map = {
         'stock_prices': 'stock_prices',
-        'stock_exchange': 'stock_exchange'
+        'stock_exchange': 'stock_exchange',
+        'next_page': 'next_page'
     }
 
-    def __init__(self, stock_prices=None, stock_exchange=None):  # noqa: E501
+    def __init__(self, stock_prices=None, stock_exchange=None, next_page=None):  # noqa: E501
         """ApiResponseStockExchangeRealtimeStockPrices - a model defined in Swagger"""  # noqa: E501
 
         self._stock_prices = None
         self._stock_exchange = None
+        self._next_page = None
         self.discriminator = None
 
         if stock_prices is not None:
             self.stock_prices = stock_prices
         if stock_exchange is not None:
             self.stock_exchange = stock_exchange
+        if next_page is not None:
+            self.next_page = next_page
 
     @property
     def stock_prices(self):
@@ -166,6 +171,62 @@ class ApiResponseStockExchangeRealtimeStockPrices(object):
         """
 
         self._stock_exchange = stock_exchange
+
+    @property
+    def next_page(self):
+        """Gets the next_page of this ApiResponseStockExchangeRealtimeStockPrices.  # noqa: E501
+
+        The token required to request the next page of the data  # noqa: E501
+
+        :return: The next_page of this ApiResponseStockExchangeRealtimeStockPrices.  # noqa: E501
+        :rtype: str
+        """
+        return self._next_page
+        
+    @property
+    def next_page_dict(self):
+        """Gets the next_page of this ApiResponseStockExchangeRealtimeStockPrices.  # noqa: E501
+
+        The token required to request the next page of the data as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The next_page of this ApiResponseStockExchangeRealtimeStockPrices.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.next_page
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'next_page': value }
+
+        
+        return result
+        
+
+    @next_page.setter
+    def next_page(self, next_page):
+        """Sets the next_page of this ApiResponseStockExchangeRealtimeStockPrices.
+
+        The token required to request the next page of the data  # noqa: E501
+
+        :param next_page: The next_page of this ApiResponseStockExchangeRealtimeStockPrices.  # noqa: E501
+        :type: str
+        """
+
+        self._next_page = next_page
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -754,7 +754,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseInitialPublicOfferings get_company_ipos(page_size=page_size, next_page=next_page)
+> ApiResponseInitialPublicOfferings get_company_ipos(ticker=ticker, status=status, start_date=start_date, end_date=end_date, offer_amount_greater_than=offer_amount_greater_than, offer_amount_less_than=offer_amount_less_than, page_size=page_size, next_page=next_page)
 
 #### IPOs
 
@@ -777,11 +777,17 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
+ticker = '' # str | Return IPOs with the given ticker (typically the IPO for the company) (optional)
+status = '' # str | Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)
+start_date = '' # date | Return IPOs on or after the given date (optional)
+end_date = '' # date | Return IPOs on or before the given date (optional)
+offer_amount_greater_than = "~null" # int | Return IPOs with an offer dollar amount greater than the given amount (optional)
+offer_amount_less_than = "~null" # int | Return IPOs with an offer dollar amount less than the given amount (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-  api_response = company_api.get_company_ipos(page_size=page_size, next_page=next_page)
+  api_response = company_api.get_company_ipos(ticker=ticker, status=status, start_date=start_date, end_date=end_date, offer_amount_greater_than=offer_amount_greater_than, offer_amount_less_than=offer_amount_less_than, page_size=page_size, next_page=next_page)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling CompanyApi->get_company_ipos: %s\n" % e)
@@ -799,6 +805,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ticker** | str| Return IPOs with the given ticker (typically the IPO for the company) | [optional]   &nbsp;
+ **status** | str| Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand | [optional]   &nbsp;
+ **start_date** | date| Return IPOs on or after the given date | [optional]   &nbsp;
+ **end_date** | date| Return IPOs on or before the given date | [optional]   &nbsp;
+ **offer_amount_greater_than** | int| Return IPOs with an offer dollar amount greater than the given amount | [optional]   &nbsp;
+ **offer_amount_less_than** | int| Return IPOs with an offer dollar amount less than the given amount | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

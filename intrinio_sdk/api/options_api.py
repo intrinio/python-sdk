@@ -178,6 +178,7 @@ class OptionsApi(object):
         :param async bool
         :param str symbol: The option symbol, corresponding to the underlying security. (required)
         :param str expiration: The expiration date of the options contract (required)
+        :param date date: The date of the option price. Returns option prices on this date.
         :param str type: The option contract type.
         :param float strike: The strike price of the option contract. This will return options contracts with strike price equal to this price.
         :param float strike_greater_than: The strike price of the option contract. This will return options contracts with strike prices greater than this price.
@@ -207,6 +208,7 @@ class OptionsApi(object):
         :param async bool
         :param str symbol: The option symbol, corresponding to the underlying security. (required)
         :param str expiration: The expiration date of the options contract (required)
+        :param date date: The date of the option price. Returns option prices on this date.
         :param str type: The option contract type.
         :param float strike: The strike price of the option contract. This will return options contracts with strike price equal to this price.
         :param float strike_greater_than: The strike price of the option contract. This will return options contracts with strike prices greater than this price.
@@ -218,7 +220,7 @@ class OptionsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['symbol', 'expiration', 'type', 'strike', 'strike_greater_than', 'strike_less_than', 'moneyness', 'page_size']  # noqa: E501
+        all_params = ['symbol', 'expiration', 'date', 'type', 'strike', 'strike_greater_than', 'strike_less_than', 'moneyness', 'page_size']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -253,6 +255,8 @@ class OptionsApi(object):
             path_params['expiration'] = params['expiration']  # noqa: E501
 
         query_params = []
+        if 'date' in params:
+            query_params.append(('date', params['date']))  # noqa: E501
         if 'type' in params:
             query_params.append(('type', params['type']))  # noqa: E501
         if 'strike' in params:
