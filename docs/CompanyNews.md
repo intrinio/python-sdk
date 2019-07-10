@@ -17,7 +17,7 @@ Name | Type | Description
 **publication_date** | datetime | The publication date of the news article &nbsp;
 **url** | str | The url of the news article &nbsp;
 **summary** | str | A summary of the news article &nbsp;
-**company** | [**CompanySummary**](CompanySummary.md) | The Company that the Fundamental was belongs to &nbsp;
+**company** | [**CompanySummary**](CompanySummary.md) | The Company to which the new article pertains &nbsp;
 
 [//]: # (END_DEFINITION)
 

@@ -4272,7 +4272,7 @@ logic = intrinio_sdk.SecurityScreenGroup() # SecurityScreenGroup | The logic to 
 order_column = 'order_column_example' # str | Results returned sorted by this column (optional)
 order_direction = 'asc' # str | Sort order to use with the order_column (optional) (default to asc)
 primary_only = False # bool | Return only primary securities (optional) (default to False)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
+page_size = 100 # int | The number of results to return. Maximum for this endpoint is 50000. (optional) (default to 100)
 
 try:
   api_response = security_api.screen_securities(logic=logic, order_column=order_column, order_direction=order_direction, primary_only=primary_only, page_size=page_size)
@@ -4297,7 +4297,7 @@ Name | Type | Description  | Notes
  **order_column** | str| Results returned sorted by this column | [optional]   &nbsp;
  **order_direction** | str| Sort order to use with the order_column | [optional] [default to asc]  &nbsp;
  **primary_only** | bool| Return only primary securities | [optional] [default to False]  &nbsp;
- **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **page_size** | int| The number of results to return. Maximum for this endpoint is 50000. | [optional] [default to 100]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseFilingNotesSearch search_notes(query, filing_start_date=filing_start_date, filing_end_date=filing_end_date, page_size=page_size, page_size2=page_size2)
+> ApiResponseFilingNotesSearch search_notes(query, filing_start_date=filing_start_date, filing_end_date=filing_end_date, page_size=page_size)
 
 #### Search Filing Notes
 
@@ -663,10 +663,9 @@ query = 'inflation' # str | Search for notes that contain all or parts of this t
 filing_start_date = '2018-07-15' # date | Limit search to filings on or after this date (optional)
 filing_end_date = '2018-11-30' # date | Limit search to filings on or before this date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
-page_size2 = 100 # int | The number of results to return (optional) (default to 100)
 
 try:
-  api_response = filing_api.search_notes(query, filing_start_date=filing_start_date, filing_end_date=filing_end_date, page_size=page_size, page_size2=page_size2)
+  api_response = filing_api.search_notes(query, filing_start_date=filing_start_date, filing_end_date=filing_end_date, page_size=page_size)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling FilingApi->search_notes: %s\n" % e)
@@ -688,7 +687,6 @@ Name | Type | Description  | Notes
  **filing_start_date** | date| Limit search to filings on or after this date | [optional]   &nbsp;
  **filing_end_date** | date| Limit search to filings on or before this date | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
- **page_size2** | int| The number of results to return | [optional] [default to 100]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
