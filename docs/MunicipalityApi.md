@@ -57,17 +57,17 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 municipality_api = intrinio_sdk.MunicipalityApi()
 
 has_financials = true # bool | Return municipalities with financials (optional)
-government_name = 'government_name_example' # str | Return municipalities with a government name matching the given query (optional)
-government_type = 'government_type_example' # str | Return municipalities with the given government type (optional)
-area_name = 'area_name_example' # str | Return municipalities with an area name matching the given query (optional)
-area_type = 'area_type_example' # str | Return municipalities with the given area type (optional)
-city = 'city_example' # str | Return municipalities in the given city (optional)
-state = 'state_example' # str | Return municipalities in the given state (optional)
-zipcode = 8.14 # float | Return municipalities in the given zipcode (optional)
-population_greater_than = 8.14 # float | Return municipalities with a population greater than the given number (optional)
-population_less_than = 8.14 # float | Return municipalities with a population less than the given number (optional)
-enrollment_greater_than = 8.14 # float | Return municipalities with an enrollment greater than the given number (optional)
-enrollment_less_than = 8.14 # float | Return municipalities with an enrollment less than the given number (optional)
+government_name = '' # str | Return municipalities with a government name matching the given query (optional)
+government_type = '' # str | Return municipalities with the given government type (optional)
+area_name = '' # str | Return municipalities with an area name matching the given query (optional)
+area_type = '' # str | Return municipalities with the given area type (optional)
+city = '' # str | Return municipalities in the given city (optional)
+state = '' # str | Return municipalities in the given state (optional)
+zipcode = "~null" # float | Return municipalities in the given zipcode (optional)
+population_greater_than = "~null" # float | Return municipalities with a population greater than the given number (optional)
+population_less_than = "~null" # float | Return municipalities with a population less than the given number (optional)
+enrollment_greater_than = "~null" # float | Return municipalities with an enrollment greater than the given number (optional)
+enrollment_less_than = "~null" # float | Return municipalities with an enrollment less than the given number (optional)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
@@ -241,7 +241,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 municipality_api = intrinio_sdk.MunicipalityApi()
 
 id = 'mun_Xn7x4z' # str | An Intrinio ID of a Municipality
-fiscal_year = 8.14 # float | Return financials for the given fiscal year (optional)
+fiscal_year = 2017 # float | Return financials for the given fiscal year (optional)
 
 try:
   api_response = municipality_api.get_municipality_financials(id, fiscal_year=fiscal_year)

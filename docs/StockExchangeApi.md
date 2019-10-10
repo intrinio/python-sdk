@@ -60,9 +60,9 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-city = 'city_example' # str | Filter by city (optional)
-country = 'CHINA' # str | Filter by country (optional)
-country_code = 'country_code_example' # str | Filter by ISO country code (optional)
+city = 'New York' # str | Filter by city (optional)
+country = 'UNITED STATES OF AMERICA' # str | Filter by country (optional)
+country_code = 'US' # str | Filter by ISO country code (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 
 try:

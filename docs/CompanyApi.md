@@ -492,7 +492,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 company_api = intrinio_sdk.CompanyApi()
 
 identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-report_type = '' # str | Filter by <a href=\"/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>. Separate values with commas to return multiple report types. (optional)
+report_type = '' # str | Filter by <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>. Separate values with commas to return multiple report types. (optional)
 start_date = '2015-01-01' # date | Filed on or after the given date (optional)
 end_date = '' # date | Filed before or after the given date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -518,7 +518,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **report_type** | str| Filter by &lt;a href&#x3D;\&quot;/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. | [optional]   &nbsp;
+ **report_type** | str| Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. | [optional]   &nbsp;
  **start_date** | date| Filed on or after the given date | [optional]   &nbsp;
  **end_date** | date| Filed before or after the given date | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;

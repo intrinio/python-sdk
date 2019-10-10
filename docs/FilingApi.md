@@ -63,7 +63,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 filing_api = intrinio_sdk.FilingApi()
 
 company = 'AAPL' # str | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
-report_type = '' # str | Filter by report type. Separate values with commas to return multiple The filing <a href=\"/documentation/sec_filing_report_types\" target=\"_blank\">report types</a>. (optional)
+report_type = '' # str | Filter by report type. Separate values with commas to return multiple The filing <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report types</a>. (optional)
 start_date = '2015-01-01' # date | Filed on or after the given date (optional)
 end_date = '' # date | Filed before or after the given date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -89,7 +89,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company** | str| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **report_type** | str| Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. | [optional]   &nbsp;
+ **report_type** | str| Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. | [optional]   &nbsp;
  **start_date** | date| Filed on or after the given date | [optional]   &nbsp;
  **end_date** | date| Filed before or after the given date | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
@@ -153,11 +153,11 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 filing_api = intrinio_sdk.FilingApi()
 
 company = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)
-report_type = '10-Q' # str | Notes contained in filings that match the given <a href=\"/documentation/sec_filing_report_types\" target=\"_blank\">report type</a> (optional)
-filing_start_date = '2018-07-15' # date | Limit search to filings on or after this date (optional)
-filing_end_date = '2018-11-15' # date | Limit search to filings on or before this date (optional)
-period_ended_start_date = '2018-07-15' # date | Limit search to filings with a period end date on or after this date (optional)
-period_ended_end_date = '2018-11-15' # date | Limit search to filings with a period end date on or before this date (optional)
+report_type = '10-Q' # str | Notes contained in filings that match the given <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report type</a> (optional)
+filing_start_date = '' # date | Limit search to filings on or after this date (optional)
+filing_end_date = '' # date | Limit search to filings on or before this date (optional)
+period_ended_start_date = '' # date | Limit search to filings with a period end date on or after this date (optional)
+period_ended_end_date = '' # date | Limit search to filings with a period end date on or before this date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
@@ -181,7 +181,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | [optional]   &nbsp;
- **report_type** | str| Notes contained in filings that match the given &lt;a href&#x3D;\&quot;/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; | [optional]   &nbsp;
+ **report_type** | str| Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; | [optional]   &nbsp;
  **filing_start_date** | date| Limit search to filings on or after this date | [optional]   &nbsp;
  **filing_end_date** | date| Limit search to filings on or before this date | [optional]   &nbsp;
  **period_ended_start_date** | date| Limit search to filings with a period end date on or after this date | [optional]   &nbsp;
@@ -419,7 +419,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 filing_api = intrinio_sdk.FilingApi()
 
-identifier = 'xbn_3fghz' # str | The Intrinio ID of the filing note
+identifier = 'xbn_ydK3QL' # str | The Intrinio ID of the filing note
 content_format = 'text' # str | Returns content in html (as filed) or plain text (optional) (default to text)
 
 try:
@@ -500,7 +500,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 filing_api = intrinio_sdk.FilingApi()
 
-identifier = 'xbn_3fghz' # str | The Intrinio ID of the filing note
+identifier = 'xbn_ydK3QL' # str | The Intrinio ID of the filing note
 
 try:
   api_response = filing_api.get_note_html(identifier)
@@ -579,7 +579,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 filing_api = intrinio_sdk.FilingApi()
 
-identifier = 'xbn_3fghz' # str | The Intrinio ID of the filing note
+identifier = 'xbn_ydK3QL' # str | The Intrinio ID of the filing note
 
 try:
   api_response = filing_api.get_note_text(identifier)

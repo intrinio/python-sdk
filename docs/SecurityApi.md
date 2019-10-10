@@ -104,7 +104,7 @@ security_api = intrinio_sdk.SecurityApi()
 
 active = true # bool | When true, return securities that are active. When False, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). (optional)
 delisted = False # bool | When true, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When False, return securities that have not been delisted. (optional)
-code = '' # str | Return securities classified with the given code (<a href=\"/documentation/security_codes\" target=\"_blank\">reference</a>). (optional)
+code = '' # str | Return securities classified with the given code (<a href=\"https://docs.intrinio.com/documentation/security_codes\" target=\"_blank\">reference</a>). (optional)
 currency = '' # str | Return securities traded in the given 3-digit ISO 4217 currency code (<a href=\"https://en.wikipedia.org/wiki/ISO_4217\" target=\"_blank\">reference</a>). (optional)
 ticker = '' # str | Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity. (optional)
 name = '' # str | Return securities with the given text in their name (not case sensitive). (optional)
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **active** | bool| When true, return securities that are active. When False, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). | [optional]   &nbsp;
  **delisted** | bool| When true, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When False, return securities that have not been delisted. | [optional]   &nbsp;
- **code** | str| Return securities classified with the given code (&lt;a href&#x3D;\&quot;/documentation/security_codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
+ **code** | str| Return securities classified with the given code (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/security_codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
  **currency** | str| Return securities traded in the given 3-digit ISO 4217 currency code (&lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_4217\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
  **ticker** | str| Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity. | [optional]   &nbsp;
  **name** | str| Return securities with the given text in their name (not case sensitive). | [optional]   &nbsp;
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseSecurityIntradayPrices get_security_intraday_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time)
+> ApiResponseSecurityIntradayPrices get_security_intraday_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
 
 #### Intraday Stock Prices for Security
 
@@ -558,13 +558,15 @@ security_api = intrinio_sdk.SecurityApi()
 
 identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 source = '' # str | Return intraday prices from the specified data source (optional)
-start_date = '2018-01-01' # date | Return intraday prices starting at the specified date (optional)
-start_time = '4200' # str | Return intraday prices starting at the specified time on the `start_date` (timezone is UTC) (optional)
-end_date = '2018-01-01' # date | Return intraday prices stopping at the specified date (optional)
-end_time = '4200' # str | Return intraday prices stopping at the specified time on the `end_date` (timezone is UTC) (optional)
+start_date = '' # date | Return intraday prices starting at the specified date (optional)
+start_time = '' # str | Return intraday prices starting at the specified time on the `start_date` (timezone is UTC) (optional)
+end_date = '' # date | Return intraday prices stopping at the specified date (optional)
+end_time = '' # str | Return intraday prices stopping at the specified time on the `end_date` (timezone is UTC) (optional)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-  api_response = security_api.get_security_intraday_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time)
+  api_response = security_api.get_security_intraday_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling SecurityApi->get_security_intraday_prices: %s\n" % e)
@@ -588,6 +590,8 @@ Name | Type | Description  | Notes
  **start_time** | str| Return intraday prices starting at the specified time on the &#x60;start_date&#x60; (timezone is UTC) | [optional]   &nbsp;
  **end_date** | date| Return intraday prices stopping at the specified date | [optional]   &nbsp;
  **end_time** | str| Return intraday prices stopping at the specified time on the &#x60;end_date&#x60; (timezone is UTC) | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -4268,8 +4272,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 security_api = intrinio_sdk.SecurityApi()
 
-logic = intrinio_sdk.SecurityScreenGroup() # SecurityScreenGroup | The logic to screen with, consisting of operators, clauses, and nested groups.<br/> See <a href=\"/documentation/screener_v2\" target=\"_blank\">screener documentation</a> for details on how to construct conditions. (optional)
-order_column = 'order_column_example' # str | Results returned sorted by this column (optional)
+logic = intrinio_sdk.SecurityScreenGroup() # SecurityScreenGroup | The logic to screen with, consisting of operators, clauses, and nested groups.<br/> See <a href=\"https://docs.intrinio.com/documentation/screener_v2\" target=\"_blank\">screener documentation</a> for details on how to construct conditions. (optional)
+order_column = 'marketcap' # str | Results returned sorted by this column (optional)
 order_direction = 'asc' # str | Sort order to use with the order_column (optional) (default to asc)
 primary_only = False # bool | Return only primary securities (optional) (default to False)
 page_size = 100 # int | The number of results to return. Maximum for this endpoint is 50000. (optional) (default to 100)
@@ -4293,7 +4297,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **logic** | [**SecurityScreenGroup**](SecurityScreenGroup.md)| The logic to screen with, consisting of operators, clauses, and nested groups.&lt;br/&gt; See &lt;a href&#x3D;\&quot;/documentation/screener_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;screener documentation&lt;/a&gt; for details on how to construct conditions. | [optional]   &nbsp;
+ **logic** | [**SecurityScreenGroup**](SecurityScreenGroup.md)| The logic to screen with, consisting of operators, clauses, and nested groups.&lt;br/&gt; See &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/screener_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;screener documentation&lt;/a&gt; for details on how to construct conditions. | [optional]   &nbsp;
  **order_column** | str| Results returned sorted by this column | [optional]   &nbsp;
  **order_direction** | str| Sort order to use with the order_column | [optional] [default to asc]  &nbsp;
  **primary_only** | bool| Return only primary securities | [optional] [default to False]  &nbsp;
