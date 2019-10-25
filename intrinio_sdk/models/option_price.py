@@ -31,7 +31,7 @@ class OptionPrice(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'date': 'str',
+        '_date': 'str',
         'close': 'float',
         'close_bid': 'float',
         'close_ask': 'float',
@@ -48,7 +48,7 @@ class OptionPrice(object):
     }
 
     attribute_map = {
-        'date': 'date',
+        '_date': 'date',
         'close': 'close',
         'close_bid': 'close_bid',
         'close_ask': 'close_ask',
@@ -64,10 +64,10 @@ class OptionPrice(object):
         'delta': 'delta'
     }
 
-    def __init__(self, date=None, close=None, close_bid=None, close_ask=None, volume=None, volume_bid=None, volume_ask=None, trades=None, open_interest=None, open_interest_change=None, next_day_open_interest=None, implied_volatility=None, implied_volatility_change=None, delta=None):  # noqa: E501
+    def __init__(self, _date=None, close=None, close_bid=None, close_ask=None, volume=None, volume_bid=None, volume_ask=None, trades=None, open_interest=None, open_interest_change=None, next_day_open_interest=None, implied_volatility=None, implied_volatility_change=None, delta=None):  # noqa: E501
         """OptionPrice - a model defined in Swagger"""  # noqa: E501
 
-        self._date = None
+        self.__date = None
         self._close = None
         self._close_bid = None
         self._close_ask = None
@@ -83,8 +83,8 @@ class OptionPrice(object):
         self._delta = None
         self.discriminator = None
 
-        if date is not None:
-            self.date = date
+        if _date is not None:
+            self._date = _date
         if close is not None:
             self.close = close
         if close_bid is not None:
@@ -113,29 +113,29 @@ class OptionPrice(object):
             self.delta = delta
 
     @property
-    def date(self):
-        """Gets the date of this OptionPrice.  # noqa: E501
+    def _date(self):
+        """Gets the _date of this OptionPrice.  # noqa: E501
 
         The date of the price, in the format YYYY-MM-DD  # noqa: E501
 
-        :return: The date of this OptionPrice.  # noqa: E501
+        :return: The _date of this OptionPrice.  # noqa: E501
         :rtype: str
         """
-        return self._date
+        return self.__date
         
     @property
-    def date_dict(self):
-        """Gets the date of this OptionPrice.  # noqa: E501
+    def _date_dict(self):
+        """Gets the _date of this OptionPrice.  # noqa: E501
 
         The date of the price, in the format YYYY-MM-DD as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
-        :return: The date of this OptionPrice.  # noqa: E501
+        :return: The _date of this OptionPrice.  # noqa: E501
         :rtype: str
         """
 
         result = None
 
-        value = self.date
+        value = self._date
         if isinstance(value, list):
             result = list(map(
                 lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
@@ -150,23 +150,23 @@ class OptionPrice(object):
                 value.items()
             ))
         else:
-            result = { 'date': value }
+            result = { '_date': value }
 
         
         return result
         
 
-    @date.setter
-    def date(self, date):
-        """Sets the date of this OptionPrice.
+    @_date.setter
+    def _date(self, _date):
+        """Sets the _date of this OptionPrice.
 
         The date of the price, in the format YYYY-MM-DD  # noqa: E501
 
-        :param date: The date of this OptionPrice.  # noqa: E501
+        :param _date: The _date of this OptionPrice.  # noqa: E501
         :type: str
         """
 
-        self._date = date
+        self.__date = _date
 
     @property
     def close(self):

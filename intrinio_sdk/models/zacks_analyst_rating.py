@@ -34,7 +34,7 @@ class ZacksAnalystRating(object):
     """
     swagger_types = {
         'id': 'str',
-        'date': 'date',
+        '_date': 'date',
         'mean': 'float',
         'strong_buys': 'int',
         'buys': 'int',
@@ -47,7 +47,7 @@ class ZacksAnalystRating(object):
 
     attribute_map = {
         'id': 'id',
-        'date': 'date',
+        '_date': 'date',
         'mean': 'mean',
         'strong_buys': 'strong_buys',
         'buys': 'buys',
@@ -58,11 +58,11 @@ class ZacksAnalystRating(object):
         'security': 'security'
     }
 
-    def __init__(self, id=None, date=None, mean=None, strong_buys=None, buys=None, holds=None, sells=None, strong_sells=None, total=None, security=None):  # noqa: E501
+    def __init__(self, id=None, _date=None, mean=None, strong_buys=None, buys=None, holds=None, sells=None, strong_sells=None, total=None, security=None):  # noqa: E501
         """ZacksAnalystRating - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._date = None
+        self.__date = None
         self._mean = None
         self._strong_buys = None
         self._buys = None
@@ -75,8 +75,8 @@ class ZacksAnalystRating(object):
 
         if id is not None:
             self.id = id
-        if date is not None:
-            self.date = date
+        if _date is not None:
+            self._date = _date
         if mean is not None:
             self.mean = mean
         if strong_buys is not None:
@@ -151,29 +151,29 @@ class ZacksAnalystRating(object):
         self._id = id
 
     @property
-    def date(self):
-        """Gets the date of this ZacksAnalystRating.  # noqa: E501
+    def _date(self):
+        """Gets the _date of this ZacksAnalystRating.  # noqa: E501
 
         The date of the Zacks Analyst Rating.  # noqa: E501
 
-        :return: The date of this ZacksAnalystRating.  # noqa: E501
+        :return: The _date of this ZacksAnalystRating.  # noqa: E501
         :rtype: date
         """
-        return self._date
+        return self.__date
         
     @property
-    def date_dict(self):
-        """Gets the date of this ZacksAnalystRating.  # noqa: E501
+    def _date_dict(self):
+        """Gets the _date of this ZacksAnalystRating.  # noqa: E501
 
         The date of the Zacks Analyst Rating. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
-        :return: The date of this ZacksAnalystRating.  # noqa: E501
+        :return: The _date of this ZacksAnalystRating.  # noqa: E501
         :rtype: date
         """
 
         result = None
 
-        value = self.date
+        value = self._date
         if isinstance(value, list):
             result = list(map(
                 lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
@@ -188,23 +188,23 @@ class ZacksAnalystRating(object):
                 value.items()
             ))
         else:
-            result = { 'date': value }
+            result = { '_date': value }
 
         
         return result
         
 
-    @date.setter
-    def date(self, date):
-        """Sets the date of this ZacksAnalystRating.
+    @_date.setter
+    def _date(self, _date):
+        """Sets the _date of this ZacksAnalystRating.
 
         The date of the Zacks Analyst Rating.  # noqa: E501
 
-        :param date: The date of this ZacksAnalystRating.  # noqa: E501
+        :param _date: The _date of this ZacksAnalystRating.  # noqa: E501
         :type: date
         """
 
-        self._date = date
+        self.__date = _date
 
     @property
     def mean(self):

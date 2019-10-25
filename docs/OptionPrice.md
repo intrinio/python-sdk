@@ -12,7 +12,7 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**date** | str | The date of the price, in the format YYYY-MM-DD &nbsp;
+**_date** | str | The date of the price, in the format YYYY-MM-DD &nbsp;
 **close** | float | The closing price of the options contract. &nbsp;
 **close_bid** | float | The closing bid price of the options contract. &nbsp;
 **close_ask** | float | The closing ask price of the options contract. &nbsp;

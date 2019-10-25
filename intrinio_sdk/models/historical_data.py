@@ -31,51 +31,51 @@ class HistoricalData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'date': 'date',
+        '_date': 'date',
         'value': 'float'
     }
 
     attribute_map = {
-        'date': 'date',
+        '_date': 'date',
         'value': 'value'
     }
 
-    def __init__(self, date=None, value=None):  # noqa: E501
+    def __init__(self, _date=None, value=None):  # noqa: E501
         """HistoricalData - a model defined in Swagger"""  # noqa: E501
 
-        self._date = None
+        self.__date = None
         self._value = None
         self.discriminator = None
 
-        if date is not None:
-            self.date = date
+        if _date is not None:
+            self._date = _date
         if value is not None:
             self.value = value
 
     @property
-    def date(self):
-        """Gets the date of this HistoricalData.  # noqa: E501
+    def _date(self):
+        """Gets the _date of this HistoricalData.  # noqa: E501
 
         The date that the value is present  # noqa: E501
 
-        :return: The date of this HistoricalData.  # noqa: E501
+        :return: The _date of this HistoricalData.  # noqa: E501
         :rtype: date
         """
-        return self._date
+        return self.__date
         
     @property
-    def date_dict(self):
-        """Gets the date of this HistoricalData.  # noqa: E501
+    def _date_dict(self):
+        """Gets the _date of this HistoricalData.  # noqa: E501
 
         The date that the value is present as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
-        :return: The date of this HistoricalData.  # noqa: E501
+        :return: The _date of this HistoricalData.  # noqa: E501
         :rtype: date
         """
 
         result = None
 
-        value = self.date
+        value = self._date
         if isinstance(value, list):
             result = list(map(
                 lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
@@ -90,23 +90,23 @@ class HistoricalData(object):
                 value.items()
             ))
         else:
-            result = { 'date': value }
+            result = { '_date': value }
 
         
         return result
         
 
-    @date.setter
-    def date(self, date):
-        """Sets the date of this HistoricalData.
+    @_date.setter
+    def _date(self, _date):
+        """Sets the _date of this HistoricalData.
 
         The date that the value is present  # noqa: E501
 
-        :param date: The date of this HistoricalData.  # noqa: E501
+        :param _date: The _date of this HistoricalData.  # noqa: E501
         :type: date
         """
 
-        self._date = date
+        self.__date = _date
 
     @property
     def value(self):
