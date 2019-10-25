@@ -3999,7 +3999,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseSecurityZacksAnalystRatingsSnapshot get_security_zacks_analyst_ratings_snapshot(identifier, _date=_date)
+> ApiResponseSecurityZacksAnalystRatingsSnapshot get_security_zacks_analyst_ratings_snapshot(identifier, date=date)
 
 #### Zacks Analyst Ratings Snapshot
 
@@ -4023,10 +4023,10 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 security_api = intrinio_sdk.SecurityApi()
 
 identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-_date = '' # str | Lookup a historical snapshot on the given date (optional)
+date = '' # str | Lookup a historical snapshot on the given date (optional)
 
 try:
-  api_response = security_api.get_security_zacks_analyst_ratings_snapshot(identifier, _date=_date)
+  api_response = security_api.get_security_zacks_analyst_ratings_snapshot(identifier, date=date)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling SecurityApi->get_security_zacks_analyst_ratings_snapshot: %s\n" % e)
@@ -4045,7 +4045,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
- **_date** | str| Lookup a historical snapshot on the given date | [optional]   &nbsp;
+ **date** | str| Lookup a historical snapshot on the given date | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

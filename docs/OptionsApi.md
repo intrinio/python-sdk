@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChain get_options_chain(symbol, expiration, _date=_date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, moneyness=moneyness, page_size=page_size)
+> ApiResponseOptionsChain get_options_chain(symbol, expiration, date=date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, moneyness=moneyness, page_size=page_size)
 
 #### Options Chain
 
@@ -158,7 +158,7 @@ options_api = intrinio_sdk.OptionsApi()
 
 symbol = 'MSFT' # str | The option symbol, corresponding to the underlying security.
 expiration = '2019-04-05' # str | The expiration date of the options contract
-_date = '2019-04-05' # date | The date of the option price. Returns option prices on this date. (optional)
+date = '2019-04-05' # date | The date of the option price. Returns option prices on this date. (optional)
 type = 'put' # str | The option contract type. (optional)
 strike = 170.0 # float | The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)
 strike_greater_than = 190.0 # float | The strike price of the option contract. This will return options contracts with strike prices greater than this price. (optional)
@@ -167,7 +167,7 @@ moneyness = 'in_the_money' # str | The moneyness of the options contracts to ret
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 
 try:
-  api_response = options_api.get_options_chain(symbol, expiration, _date=_date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, moneyness=moneyness, page_size=page_size)
+  api_response = options_api.get_options_chain(symbol, expiration, date=date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, moneyness=moneyness, page_size=page_size)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling OptionsApi->get_options_chain: %s\n" % e)
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | str| The option symbol, corresponding to the underlying security. |   &nbsp;
  **expiration** | str| The expiration date of the options contract |   &nbsp;
- **_date** | date| The date of the option price. Returns option prices on this date. | [optional]   &nbsp;
+ **date** | date| The date of the option price. Returns option prices on this date. | [optional]   &nbsp;
  **type** | str| The option contract type. | [optional]   &nbsp;
  **strike** | float| The strike price of the option contract. This will return options contracts with strike price equal to this price. | [optional]   &nbsp;
  **strike_greater_than** | float| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]   &nbsp;
@@ -336,7 +336,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 options_api = intrinio_sdk.OptionsApi()
 
-identifier = 'identifier_example' # str | The Intrinio ID or code of the options contract to request prices for.
+identifier = 'null' # str | The Intrinio ID or code of the options contract to request prices for.
 start_date = '2019-01-01' # str | Return option contract prices on or after this date. (optional)
 end_date = '2019-12-31' # str | Return option contract prices on or before this date. (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)

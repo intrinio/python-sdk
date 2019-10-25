@@ -33,7 +33,7 @@ class StockPrice(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        '_date': 'date',
+        'date': 'date',
         'intraperiod': 'bool',
         'frequency': 'str',
         'open': 'float',
@@ -50,7 +50,7 @@ class StockPrice(object):
     }
 
     attribute_map = {
-        '_date': 'date',
+        'date': 'date',
         'intraperiod': 'intraperiod',
         'frequency': 'frequency',
         'open': 'open',
@@ -66,10 +66,10 @@ class StockPrice(object):
         'security': 'security'
     }
 
-    def __init__(self, _date=None, intraperiod=None, frequency=None, open=None, high=None, low=None, close=None, volume=None, adj_open=None, adj_high=None, adj_low=None, adj_close=None, adj_volume=None, security=None):  # noqa: E501
+    def __init__(self, date=None, intraperiod=None, frequency=None, open=None, high=None, low=None, close=None, volume=None, adj_open=None, adj_high=None, adj_low=None, adj_close=None, adj_volume=None, security=None):  # noqa: E501
         """StockPrice - a model defined in Swagger"""  # noqa: E501
 
-        self.__date = None
+        self._date = None
         self._intraperiod = None
         self._frequency = None
         self._open = None
@@ -85,8 +85,8 @@ class StockPrice(object):
         self._security = None
         self.discriminator = None
 
-        if _date is not None:
-            self._date = _date
+        if date is not None:
+            self.date = date
         if intraperiod is not None:
             self.intraperiod = intraperiod
         if frequency is not None:
@@ -115,29 +115,29 @@ class StockPrice(object):
             self.security = security
 
     @property
-    def _date(self):
-        """Gets the _date of this StockPrice.  # noqa: E501
+    def date(self):
+        """Gets the date of this StockPrice.  # noqa: E501
 
         The calendar date that the stock price represents. For non-daily stock prices, this represents the last day in the period (end of the week, month, quarter, year, etc)  # noqa: E501
 
-        :return: The _date of this StockPrice.  # noqa: E501
+        :return: The date of this StockPrice.  # noqa: E501
         :rtype: date
         """
-        return self.__date
+        return self._date
         
     @property
-    def _date_dict(self):
-        """Gets the _date of this StockPrice.  # noqa: E501
+    def date_dict(self):
+        """Gets the date of this StockPrice.  # noqa: E501
 
         The calendar date that the stock price represents. For non-daily stock prices, this represents the last day in the period (end of the week, month, quarter, year, etc) as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
-        :return: The _date of this StockPrice.  # noqa: E501
+        :return: The date of this StockPrice.  # noqa: E501
         :rtype: date
         """
 
         result = None
 
-        value = self._date
+        value = self.date
         if isinstance(value, list):
             result = list(map(
                 lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
@@ -152,23 +152,23 @@ class StockPrice(object):
                 value.items()
             ))
         else:
-            result = { '_date': value }
+            result = { 'date': value }
 
         
         return result
         
 
-    @_date.setter
-    def _date(self, _date):
-        """Sets the _date of this StockPrice.
+    @date.setter
+    def date(self, date):
+        """Sets the date of this StockPrice.
 
         The calendar date that the stock price represents. For non-daily stock prices, this represents the last day in the period (end of the week, month, quarter, year, etc)  # noqa: E501
 
-        :param _date: The _date of this StockPrice.  # noqa: E501
+        :param date: The date of this StockPrice.  # noqa: E501
         :type: date
         """
 
-        self.__date = _date
+        self._date = date
 
     @property
     def intraperiod(self):

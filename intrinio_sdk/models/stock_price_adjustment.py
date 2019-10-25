@@ -33,7 +33,7 @@ class StockPriceAdjustment(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        '_date': 'date',
+        'date': 'date',
         'factor': 'float',
         'dividend': 'float',
         'dividend_currency': 'str',
@@ -42,7 +42,7 @@ class StockPriceAdjustment(object):
     }
 
     attribute_map = {
-        '_date': 'date',
+        'date': 'date',
         'factor': 'factor',
         'dividend': 'dividend',
         'dividend_currency': 'dividend_currency',
@@ -50,10 +50,10 @@ class StockPriceAdjustment(object):
         'security': 'security'
     }
 
-    def __init__(self, _date=None, factor=None, dividend=None, dividend_currency=None, split_ratio=None, security=None):  # noqa: E501
+    def __init__(self, date=None, factor=None, dividend=None, dividend_currency=None, split_ratio=None, security=None):  # noqa: E501
         """StockPriceAdjustment - a model defined in Swagger"""  # noqa: E501
 
-        self.__date = None
+        self._date = None
         self._factor = None
         self._dividend = None
         self._dividend_currency = None
@@ -61,8 +61,8 @@ class StockPriceAdjustment(object):
         self._security = None
         self.discriminator = None
 
-        if _date is not None:
-            self._date = _date
+        if date is not None:
+            self.date = date
         if factor is not None:
             self.factor = factor
         if dividend is not None:
@@ -75,29 +75,29 @@ class StockPriceAdjustment(object):
             self.security = security
 
     @property
-    def _date(self):
-        """Gets the _date of this StockPriceAdjustment.  # noqa: E501
+    def date(self):
+        """Gets the date of this StockPriceAdjustment.  # noqa: E501
 
         The date on which the adjustment occurred. The adjustment should be applied to all stock prices before this date.  # noqa: E501
 
-        :return: The _date of this StockPriceAdjustment.  # noqa: E501
+        :return: The date of this StockPriceAdjustment.  # noqa: E501
         :rtype: date
         """
-        return self.__date
+        return self._date
         
     @property
-    def _date_dict(self):
-        """Gets the _date of this StockPriceAdjustment.  # noqa: E501
+    def date_dict(self):
+        """Gets the date of this StockPriceAdjustment.  # noqa: E501
 
         The date on which the adjustment occurred. The adjustment should be applied to all stock prices before this date. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
-        :return: The _date of this StockPriceAdjustment.  # noqa: E501
+        :return: The date of this StockPriceAdjustment.  # noqa: E501
         :rtype: date
         """
 
         result = None
 
-        value = self._date
+        value = self.date
         if isinstance(value, list):
             result = list(map(
                 lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
@@ -112,23 +112,23 @@ class StockPriceAdjustment(object):
                 value.items()
             ))
         else:
-            result = { '_date': value }
+            result = { 'date': value }
 
         
         return result
         
 
-    @_date.setter
-    def _date(self, _date):
-        """Sets the _date of this StockPriceAdjustment.
+    @date.setter
+    def date(self, date):
+        """Sets the date of this StockPriceAdjustment.
 
         The date on which the adjustment occurred. The adjustment should be applied to all stock prices before this date.  # noqa: E501
 
-        :param _date: The _date of this StockPriceAdjustment.  # noqa: E501
+        :param date: The date of this StockPriceAdjustment.  # noqa: E501
         :type: date
         """
 
-        self.__date = _date
+        self._date = date
 
     @property
     def factor(self):

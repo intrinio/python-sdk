@@ -244,7 +244,7 @@ class StockExchangeApi(object):
 
         :param async bool
         :param str identifier: A Stock Exchange identifier (MIC or Intrinio ID) (required)
-        :param date _date: The date for which to return price adjustments
+        :param date date: The date for which to return price adjustments
         :param int page_size: The number of results to return
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseStockExchangeStockPriceAdjustments
@@ -269,7 +269,7 @@ class StockExchangeApi(object):
 
         :param async bool
         :param str identifier: A Stock Exchange identifier (MIC or Intrinio ID) (required)
-        :param date _date: The date for which to return price adjustments
+        :param date date: The date for which to return price adjustments
         :param int page_size: The number of results to return
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseStockExchangeStockPriceAdjustments
@@ -277,7 +277,7 @@ class StockExchangeApi(object):
                  returns the request thread.
         """
 
-        all_params = ['identifier', '_date', 'page_size', 'next_page']  # noqa: E501
+        all_params = ['identifier', 'date', 'page_size', 'next_page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -306,8 +306,8 @@ class StockExchangeApi(object):
             path_params['identifier'] = params['identifier']  # noqa: E501
 
         query_params = []
-        if '_date' in params:
-            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'date' in params:
+            query_params.append(('date', params['date']))  # noqa: E501
         if 'page_size' in params:
             query_params.append(('page_size', params['page_size']))  # noqa: E501
         if 'next_page' in params:
@@ -353,7 +353,7 @@ class StockExchangeApi(object):
 
         :param async bool
         :param str identifier: A Stock Exchange identifier (MIC or Intrinio ID) (required)
-        :param date _date: The date for which to return prices
+        :param date date: The date for which to return prices
         :param int page_size: The number of results to return
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseStockExchangeStockPrices
@@ -378,7 +378,7 @@ class StockExchangeApi(object):
 
         :param async bool
         :param str identifier: A Stock Exchange identifier (MIC or Intrinio ID) (required)
-        :param date _date: The date for which to return prices
+        :param date date: The date for which to return prices
         :param int page_size: The number of results to return
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseStockExchangeStockPrices
@@ -386,7 +386,7 @@ class StockExchangeApi(object):
                  returns the request thread.
         """
 
-        all_params = ['identifier', '_date', 'page_size', 'next_page']  # noqa: E501
+        all_params = ['identifier', 'date', 'page_size', 'next_page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -415,8 +415,8 @@ class StockExchangeApi(object):
             path_params['identifier'] = params['identifier']  # noqa: E501
 
         query_params = []
-        if '_date' in params:
-            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'date' in params:
+            query_params.append(('date', params['date']))  # noqa: E501
         if 'page_size' in params:
             query_params.append(('page_size', params['page_size']))  # noqa: E501
         if 'next_page' in params:

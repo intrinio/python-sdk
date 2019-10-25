@@ -204,14 +204,8 @@ class RESTClientObject(object):
                     raise ApiException(status=0, reason=msg)
             # For `GET`, `HEAD`
             else:
-                supplied_query_params = []
-
-                for param in query_params:
-                    if (param[1] != None) and (param[1] != ''):
-                        supplied_query_params.append(param)
-
                 r = self.pool_manager.request(method, url,
-                                              fields=supplied_query_params,
+                                              fields=query_params,
                                               preload_content=_preload_content,
                                               timeout=timeout,
                                               headers=headers)

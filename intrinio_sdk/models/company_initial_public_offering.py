@@ -36,7 +36,7 @@ class CompanyInitialPublicOffering(object):
     swagger_types = {
         'id': 'str',
         'ticker': 'str',
-        '_date': 'datetime',
+        'date': 'datetime',
         'status': 'str',
         'exchange': 'str',
         'offer_amount': 'float',
@@ -61,7 +61,7 @@ class CompanyInitialPublicOffering(object):
     attribute_map = {
         'id': 'id',
         'ticker': 'ticker',
-        '_date': 'date',
+        'date': 'date',
         'status': 'status',
         'exchange': 'exchange',
         'offer_amount': 'offer_amount',
@@ -83,12 +83,12 @@ class CompanyInitialPublicOffering(object):
         'security': 'security'
     }
 
-    def __init__(self, id=None, ticker=None, _date=None, status=None, exchange=None, offer_amount=None, share_price=None, share_price_lowest=None, share_price_highest=None, share_count=None, share_count_lowest=None, share_count_highest=None, announcement_url=None, sec_report_url=None, open_price=None, close_price=None, volume=None, day_change=None, week_change=None, month_change=None, company=None, security=None):  # noqa: E501
+    def __init__(self, id=None, ticker=None, date=None, status=None, exchange=None, offer_amount=None, share_price=None, share_price_lowest=None, share_price_highest=None, share_count=None, share_count_lowest=None, share_count_highest=None, announcement_url=None, sec_report_url=None, open_price=None, close_price=None, volume=None, day_change=None, week_change=None, month_change=None, company=None, security=None):  # noqa: E501
         """CompanyInitialPublicOffering - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._ticker = None
-        self.__date = None
+        self._date = None
         self._status = None
         self._exchange = None
         self._offer_amount = None
@@ -114,8 +114,8 @@ class CompanyInitialPublicOffering(object):
             self.id = id
         if ticker is not None:
             self.ticker = ticker
-        if _date is not None:
-            self._date = _date
+        if date is not None:
+            self.date = date
         if status is not None:
             self.status = status
         if exchange is not None:
@@ -268,29 +268,29 @@ class CompanyInitialPublicOffering(object):
         self._ticker = ticker
 
     @property
-    def _date(self):
-        """Gets the _date of this CompanyInitialPublicOffering.  # noqa: E501
+    def date(self):
+        """Gets the date of this CompanyInitialPublicOffering.  # noqa: E501
 
         The date of the IPO, when the stock first trades on a major exchange  # noqa: E501
 
-        :return: The _date of this CompanyInitialPublicOffering.  # noqa: E501
+        :return: The date of this CompanyInitialPublicOffering.  # noqa: E501
         :rtype: datetime
         """
-        return self.__date
+        return self._date
         
     @property
-    def _date_dict(self):
-        """Gets the _date of this CompanyInitialPublicOffering.  # noqa: E501
+    def date_dict(self):
+        """Gets the date of this CompanyInitialPublicOffering.  # noqa: E501
 
         The date of the IPO, when the stock first trades on a major exchange as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
-        :return: The _date of this CompanyInitialPublicOffering.  # noqa: E501
+        :return: The date of this CompanyInitialPublicOffering.  # noqa: E501
         :rtype: datetime
         """
 
         result = None
 
-        value = self._date
+        value = self.date
         if isinstance(value, list):
             result = list(map(
                 lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
@@ -305,23 +305,23 @@ class CompanyInitialPublicOffering(object):
                 value.items()
             ))
         else:
-            result = { '_date': value }
+            result = { 'date': value }
 
         
         return result
         
 
-    @_date.setter
-    def _date(self, _date):
-        """Sets the _date of this CompanyInitialPublicOffering.
+    @date.setter
+    def date(self, date):
+        """Sets the date of this CompanyInitialPublicOffering.
 
         The date of the IPO, when the stock first trades on a major exchange  # noqa: E501
 
-        :param _date: The _date of this CompanyInitialPublicOffering.  # noqa: E501
+        :param date: The date of this CompanyInitialPublicOffering.  # noqa: E501
         :type: datetime
         """
 
-        self.__date = _date
+        self._date = date
 
     @property
     def status(self):

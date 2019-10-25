@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseStockExchangeStockPriceAdjustments get_stock_exchange_price_adjustments(identifier, _date=_date, page_size=page_size, next_page=next_page)
+> ApiResponseStockExchangeStockPriceAdjustments get_stock_exchange_price_adjustments(identifier, date=date, page_size=page_size, next_page=next_page)
 
 #### Stock Price Adjustments by Exchange
 
@@ -227,12 +227,12 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
 identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-_date = '2018-08-14' # date | The date for which to return price adjustments (optional)
+date = '2018-08-14' # date | The date for which to return price adjustments (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-  api_response = stock_exchange_api.get_stock_exchange_price_adjustments(identifier, _date=_date, page_size=page_size, next_page=next_page)
+  api_response = stock_exchange_api.get_stock_exchange_price_adjustments(identifier, date=date, page_size=page_size, next_page=next_page)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling StockExchangeApi->get_stock_exchange_price_adjustments: %s\n" % e)
@@ -251,7 +251,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
- **_date** | date| The date for which to return price adjustments | [optional]   &nbsp;
+ **date** | date| The date for which to return price adjustments | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseStockExchangeStockPrices get_stock_exchange_prices(identifier, _date=_date, page_size=page_size, next_page=next_page)
+> ApiResponseStockExchangeStockPrices get_stock_exchange_prices(identifier, date=date, page_size=page_size, next_page=next_page)
 
 #### Stock Prices by Exchange
 
@@ -313,12 +313,12 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
 identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-_date = '2018-08-14' # date | The date for which to return prices (optional)
+date = '2018-08-14' # date | The date for which to return prices (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-  api_response = stock_exchange_api.get_stock_exchange_prices(identifier, _date=_date, page_size=page_size, next_page=next_page)
+  api_response = stock_exchange_api.get_stock_exchange_prices(identifier, date=date, page_size=page_size, next_page=next_page)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling StockExchangeApi->get_stock_exchange_prices: %s\n" % e)
@@ -337,7 +337,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
- **_date** | date| The date for which to return prices | [optional]   &nbsp;
+ **date** | date| The date for which to return prices | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

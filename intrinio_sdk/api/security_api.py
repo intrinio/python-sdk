@@ -5263,7 +5263,7 @@ class SecurityApi(object):
 
         :param async bool
         :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
-        :param str _date: Lookup a historical snapshot on the given date
+        :param str date: Lookup a historical snapshot on the given date
         :return: ApiResponseSecurityZacksAnalystRatingsSnapshot
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5286,13 +5286,13 @@ class SecurityApi(object):
 
         :param async bool
         :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
-        :param str _date: Lookup a historical snapshot on the given date
+        :param str date: Lookup a historical snapshot on the given date
         :return: ApiResponseSecurityZacksAnalystRatingsSnapshot
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['identifier', '_date']  # noqa: E501
+        all_params = ['identifier', 'date']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5319,8 +5319,8 @@ class SecurityApi(object):
             path_params['identifier'] = params['identifier']  # noqa: E501
 
         query_params = []
-        if '_date' in params:
-            query_params.append(('date', params['_date']))  # noqa: E501
+        if 'date' in params:
+            query_params.append(('date', params['date']))  # noqa: E501
 
         header_params = {}
 
