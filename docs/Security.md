@@ -29,11 +29,11 @@ Name | Type | Description
 **composite_figi** | str | The country-composite OpenFIGI identifier &nbsp;
 **share_class_figi** | str | The global-composite OpenFIGI identifier &nbsp;
 **figi_uniqueid** | str | The OpenFIGI unique ID &nbsp;
-**active** | bool | If true, the Security is active and has been recently traded &nbsp;
-**etf** | bool | If true, this Security is an ETF &nbsp;
-**delisted** | bool | If true, the Security is no longer traded on the exchange &nbsp;
-**primary_listing** | bool | If true, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange &nbsp;
-**primary_security** | bool | If true, the Security is considered by Intrinio to be the primary Security for its company &nbsp;
+**active** | bool | If True, the Security is active and has been recently traded &nbsp;
+**etf** | bool | If True, this Security is an ETF &nbsp;
+**delisted** | bool | If True, the Security is no longer traded on the exchange &nbsp;
+**primary_listing** | bool | If True, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange &nbsp;
+**primary_security** | bool | If True, the Security is considered by Intrinio to be the primary Security for its company &nbsp;
 **first_stock_price** | date | The date of the first recorded stock price &nbsp;
 **last_stock_price** | date | The date of the last recorded stock price (or the most recent trading day) &nbsp;
 **last_stock_price_adjustment** | date | The date of the last stock price adjustment (dividend, split, etc) &nbsp;

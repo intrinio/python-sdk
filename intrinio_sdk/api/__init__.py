@@ -4,7 +4,6 @@ from __future__ import absolute_import
 
 # import apis into api package
 from intrinio_sdk.api.company_api import CompanyApi
-from intrinio_sdk.api.crypto_api import CryptoApi
 from intrinio_sdk.api.data_point_api import DataPointApi
 from intrinio_sdk.api.data_tag_api import DataTagApi
 from intrinio_sdk.api.filing_api import FilingApi

@@ -56,7 +56,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 municipality_api = intrinio_sdk.MunicipalityApi()
 
-has_financials = true # bool | Return municipalities with financials (optional)
+has_financials = True # bool | Return municipalities with financials (optional)
 government_name = '' # str | Return municipalities with a government name matching the given query (optional)
 government_type = '' # str | Return municipalities with the given government type (optional)
 area_name = '' # str | Return municipalities with an area name matching the given query (optional)

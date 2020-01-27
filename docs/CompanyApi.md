@@ -67,14 +67,14 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 company_api = intrinio_sdk.CompanyApi()
 
-latest_filing_date = '' # date | Last filing date (optional)
+latest_filing_date = '' # date | Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)
 sic = '' # str | Return companies with the given Standard Industrial Classification code (optional)
 template = '' # str | Return companies with the given financial statement template (optional)
 sector = '' # str | Return companies in the given industry sector (optional)
 industry_category = '' # str | Return companies in the given industry category (optional)
 industry_group = '' # str | Return companies in the given industry group (optional)
-has_fundamentals = true # bool | Return only companies that have fundamentals when true (optional)
-has_stock_prices = true # bool | Return only companies that have stock prices when true (optional)
+has_fundamentals = True # bool | Return only companies that have fundamentals when True (optional)
+has_stock_prices = True # bool | Return only companies that have stock prices when True (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
@@ -97,14 +97,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **latest_filing_date** | date| Last filing date | [optional]   &nbsp;
+ **latest_filing_date** | date| Return companies whose latest 10-Q or 10-K was filed on or after this date | [optional]   &nbsp;
  **sic** | str| Return companies with the given Standard Industrial Classification code | [optional]   &nbsp;
  **template** | str| Return companies with the given financial statement template | [optional]   &nbsp;
  **sector** | str| Return companies in the given industry sector | [optional]   &nbsp;
  **industry_category** | str| Return companies in the given industry category | [optional]   &nbsp;
  **industry_group** | str| Return companies in the given industry group | [optional]   &nbsp;
- **has_fundamentals** | bool| Return only companies that have fundamentals when true | [optional]   &nbsp;
- **has_stock_prices** | bool| Return only companies that have stock prices when true | [optional]   &nbsp;
+ **has_fundamentals** | bool| Return only companies that have fundamentals when True | [optional]   &nbsp;
+ **has_stock_prices** | bool| Return only companies that have stock prices when True | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

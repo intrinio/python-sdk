@@ -336,7 +336,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 options_api = intrinio_sdk.OptionsApi()
 
-identifier = 'null' # str | The Intrinio ID or code of the options contract to request prices for.
+identifier = 'identifier_example' # str | The Intrinio ID or code of the options contract to request prices for.
 start_date = '2019-01-01' # str | Return option contract prices on or after this date. (optional)
 end_date = '2019-12-31' # str | Return option contract prices on or before this date. (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
