@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.8.8
-- Package version: 5.1.0
+- API version: 2.9.0
+- Package version: 5.2.0
 
 
 ## Requirements.
@@ -91,6 +91,7 @@ A listing of classes and methods is also provided below:
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*BulkDownloadsApi* | [**get_bulk_download_links**](docs/BulkDownloadsApi.md#get_bulk_download_links) | **GET** /bulk_downloads/links | Bulk Downloads
 *CompanyApi* | [**get_all_companies**](docs/CompanyApi.md#get_all_companies) | **GET** /companies | All Companies
 *CompanyApi* | [**get_all_company_news**](docs/CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 *CompanyApi* | [**get_company**](docs/CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
@@ -243,6 +244,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccumulationDistributionIndexTechnicalValue](docs/AccumulationDistributionIndexTechnicalValue.md)
+ - [ApiResponseBulkDownloadLinks](docs/ApiResponseBulkDownloadLinks.md)
  - [ApiResponseCompanies](docs/ApiResponseCompanies.md)
  - [ApiResponseCompaniesSearch](docs/ApiResponseCompaniesSearch.md)
  - [ApiResponseCompanyFilings](docs/ApiResponseCompanyFilings.md)
@@ -333,6 +335,8 @@ Class | Method | HTTP request | Description
  - [AverageTrueRangeTechnicalValue](docs/AverageTrueRangeTechnicalValue.md)
  - [AwesomeOscillatorTechnicalValue](docs/AwesomeOscillatorTechnicalValue.md)
  - [BollingerBandsTechnicalValue](docs/BollingerBandsTechnicalValue.md)
+ - [BulkDownloadLinks](docs/BulkDownloadLinks.md)
+ - [BulkDownloadSummary](docs/BulkDownloadSummary.md)
  - [ChaikinMoneyFlowTechnicalValue](docs/ChaikinMoneyFlowTechnicalValue.md)
  - [CommodityChannelIndexTechnicalValue](docs/CommodityChannelIndexTechnicalValue.md)
  - [Company](docs/Company.md)
