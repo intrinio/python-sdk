@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**get_all_notes**](FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
 [**get_filing_by_id**](FilingApi.md#get_filing_by_id) | **GET** /filings/{id} | Lookup Filing
 [**get_filing_fundamentals**](FilingApi.md#get_filing_fundamentals) | **GET** /filings/{identifier}/fundamentals | All Fundamentals by Filing
+[**get_filing_html**](FilingApi.md#get_filing_html) | **GET** /filings/{identifier}/html | Filing Html
+[**get_filing_text**](FilingApi.md#get_filing_text) | **GET** /filings/{identifier}/text | Filing Text
 [**get_note**](FilingApi.md#get_note) | **GET** /filings/notes/{identifier} | Filing Note by ID
 [**get_note_html**](FilingApi.md#get_note_html) | **GET** /filings/notes/{identifier}/html | Filing Note HTML
 [**get_note_text**](FilingApi.md#get_note_text) | **GET** /filings/notes/{identifier}/text | Filing Note Text
@@ -39,7 +41,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseFilings get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+> ApiResponseFilings get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
 
 #### All Filings
 
@@ -66,11 +68,13 @@ company = 'AAPL' # str | Filings for the given `company` identifier (ticker, CIK
 report_type = '' # str | Filter by report type. Separate values with commas to return multiple The filing <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report types</a>. (optional)
 start_date = '2015-01-01' # date | Filed on or after the given date (optional)
 end_date = '' # date | Filed before or after the given date (optional)
+industry_category = '' # str | Return companies in the given industry category (optional)
+industry_group = '' # str | Return companies in the given industry group (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
 try:
-  api_response = filing_api.get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+  api_response = filing_api.get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
   pprint(api_response)
 except ApiException as e:
   print("Exception when calling FilingApi->get_all_filings: %s\n" % e)
@@ -92,6 +96,8 @@ Name | Type | Description  | Notes
  **report_type** | str| Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. | [optional]   &nbsp;
  **start_date** | date| Filed on or after the given date | [optional]   &nbsp;
  **end_date** | date| Filed before or after the given date | [optional]   &nbsp;
+ **industry_category** | str| Return companies in the given industry category | [optional]   &nbsp;
+ **industry_group** | str| Return companies in the given industry group | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -369,6 +375,164 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseFilingFundamentals**](ApiResponseFilingFundamentals.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:FilingApi)
+
+[//]: # (METHOD:get_filing_html)
+
+[//]: # (RETURN_TYPE:str)
+
+[//]: # (RETURN_TYPE_KIND:primitive)
+
+[//]: # (RETURN_TYPE_DOC:)
+
+[//]: # (OPERATION:get_filing_html_v2)
+
+[//]: # (ENDPOINT:/filings/{identifier}/html)
+
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_filing_html)
+
+## **get_filing_html**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_filing_html_v2)
+
+[//]: # (START_OVERVIEW)
+
+> str get_filing_html(identifier)
+
+#### Filing Html
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+filing_api = intrinio_sdk.FilingApi()
+
+identifier = 'fil_B73xBG' # str | A Filing identifier
+
+try:
+  api_response = filing_api.get_filing_html(identifier)
+  pprint(api_response)
+except ApiException as e:
+  print("Exception when calling FilingApi->get_filing_html: %s\n" % e)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Filing identifier |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+**str**
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:FilingApi)
+
+[//]: # (METHOD:get_filing_text)
+
+[//]: # (RETURN_TYPE:str)
+
+[//]: # (RETURN_TYPE_KIND:primitive)
+
+[//]: # (RETURN_TYPE_DOC:)
+
+[//]: # (OPERATION:get_filing_text_v2)
+
+[//]: # (ENDPOINT:/filings/{identifier}/text)
+
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_filing_text)
+
+## **get_filing_text**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_filing_text_v2)
+
+[//]: # (START_OVERVIEW)
+
+> str get_filing_text(identifier)
+
+#### Filing Text
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+filing_api = intrinio_sdk.FilingApi()
+
+identifier = 'fil_B73xBG' # str | A Filing identifier
+
+try:
+  api_response = filing_api.get_filing_text(identifier)
+  pprint(api_response)
+except ApiException as e:
+  print("Exception when calling FilingApi->get_filing_text: %s\n" % e)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Filing identifier |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+**str**
 
 [//]: # (END_OPERATION)
 

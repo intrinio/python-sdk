@@ -21,6 +21,9 @@ Name | Type | Description
 **filing_url** | str | The URL to the filing page on the SEC site &nbsp;
 **report_url** | str | The URL to the actual report on the SEC site &nbsp;
 **instance_url** | str | The URL for the XBRL filing for the report &nbsp;
+**industry_category** | str | The company&#39;s operating industry category &nbsp;
+**industry_group** | str | The company&#39;s operating industry group &nbsp;
+**word_count** | int | The number of words in the filing &nbsp;
 **company** | [**CompanySummary**](CompanySummary.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
