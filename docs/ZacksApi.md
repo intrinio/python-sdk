@@ -5,8 +5,12 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_zacks_analyst_ratings**](ZacksApi.md#get_zacks_analyst_ratings) | **GET** /zacks/analyst_ratings | Zacks Analyst Ratings
+[**get_zacks_eps_estimates**](ZacksApi.md#get_zacks_eps_estimates) | **GET** /zacks/eps_estimates | Zacks EPS Estimates
+[**get_zacks_eps_growth_rates**](ZacksApi.md#get_zacks_eps_growth_rates) | **GET** /zacks/eps_growth_rates | Zacks EPS Growth Rates
 [**get_zacks_eps_surprises**](ZacksApi.md#get_zacks_eps_surprises) | **GET** /zacks/eps_surprises | Zacks EPS Surprises
+[**get_zacks_long_term_growth_rates**](ZacksApi.md#get_zacks_long_term_growth_rates) | **GET** /zacks/long_term_growth_rates | Zacks Long Term Growth Rates
 [**get_zacks_sales_surprises**](ZacksApi.md#get_zacks_sales_surprises) | **GET** /zacks/sales_surprises | Zacks Sales Surprises
+[**get_zacks_target_price_consensuses**](ZacksApi.md#get_zacks_target_price_consensuses) | **GET** /zacks/target_price_consensuses | Zacks Target Price Consensuses
 
 
 
@@ -58,8 +62,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 zacks_api = intrinio_sdk.ZacksApi()
 
 identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)
-start_date = '' # str | Limit ratings to those on or after this date (optional)
-end_date = '' # str | Limit ratings to those on or before this date (optional)
+start_date = '' # date | Limit ratings to those on or after this date (optional)
+end_date = '' # date | Limit ratings to those on or before this date (optional)
 mean_greater = "~null" # float | Return only records with a mean (average) higher than this value (optional)
 mean_less = "~null" # float | Return only records with a mean (average) lower than this value (optional)
 strong_buys_greater = "~null" # int | Return only records with more than this many Strong Buy recommendations (optional)
@@ -97,8 +101,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | [optional]   &nbsp;
- **start_date** | str| Limit ratings to those on or after this date | [optional]   &nbsp;
- **end_date** | str| Limit ratings to those on or before this date | [optional]   &nbsp;
+ **start_date** | date| Limit ratings to those on or after this date | [optional]   &nbsp;
+ **end_date** | date| Limit ratings to those on or before this date | [optional]   &nbsp;
  **mean_greater** | float| Return only records with a mean (average) higher than this value | [optional]   &nbsp;
  **mean_less** | float| Return only records with a mean (average) lower than this value | [optional]   &nbsp;
  **strong_buys_greater** | int| Return only records with more than this many Strong Buy recommendations | [optional]   &nbsp;
@@ -122,6 +126,190 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksAnalystRatings**](ApiResponseZacksAnalystRatings.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:ZacksApi)
+
+[//]: # (METHOD:get_zacks_eps_estimates)
+
+[//]: # (RETURN_TYPE:ApiResponseZacksEPSEstimates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksEPSEstimates.md)
+
+[//]: # (OPERATION:get_zacks_eps_estimates_v2)
+
+[//]: # (ENDPOINT:/zacks/eps_estimates)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_eps_estimates)
+
+## **get_zacks_eps_estimates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_eps_estimates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksEPSEstimates get_zacks_eps_estimates(identifier=identifier, start_date=start_date, end_date=end_date, fiscal_year=fiscal_year, fiscal_period=fiscal_period, calendar_year=calendar_year, calendar_period=calendar_period, page_size=page_size, next_page=next_page)
+
+#### Zacks EPS Estimates
+
+
+Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+zacks_api = intrinio_sdk.ZacksApi()
+
+identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)
+start_date = '' # date | Limit EPS estimates to those on or after this date (optional)
+end_date = '' # date | Limit EPS estimates to those on or before this date (optional)
+fiscal_year = "~null" # int | Only for the given fiscal year (optional)
+fiscal_period = '' # str | The fiscal period (optional)
+calendar_year = "~null" # int | Only for the given calendar year (optional)
+calendar_period = '' # str | The calendar period (optional)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
+
+try:
+  api_response = zacks_api.get_zacks_eps_estimates(identifier=identifier, start_date=start_date, end_date=end_date, fiscal_year=fiscal_year, fiscal_period=fiscal_period, calendar_year=calendar_year, calendar_period=calendar_period, page_size=page_size, next_page=next_page)
+  pprint(api_response)
+except ApiException as e:
+  print("Exception when calling ZacksApi->get_zacks_eps_estimates: %s\n" % e)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | [optional]   &nbsp;
+ **start_date** | date| Limit EPS estimates to those on or after this date | [optional]   &nbsp;
+ **end_date** | date| Limit EPS estimates to those on or before this date | [optional]   &nbsp;
+ **fiscal_year** | int| Only for the given fiscal year | [optional]   &nbsp;
+ **fiscal_period** | str| The fiscal period | [optional]   &nbsp;
+ **calendar_year** | int| Only for the given calendar year | [optional]   &nbsp;
+ **calendar_period** | str| The calendar period | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksEPSEstimates**](ApiResponseZacksEPSEstimates.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:ZacksApi)
+
+[//]: # (METHOD:get_zacks_eps_growth_rates)
+
+[//]: # (RETURN_TYPE:ApiResponseZacksEPSGrowthRates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksEPSGrowthRates.md)
+
+[//]: # (OPERATION:get_zacks_eps_growth_rates_v2)
+
+[//]: # (ENDPOINT:/zacks/eps_growth_rates)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_eps_growth_rates)
+
+## **get_zacks_eps_growth_rates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_eps_growth_rates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksEPSGrowthRates get_zacks_eps_growth_rates(company=company, industry_group_name=industry_group_name, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
+
+#### Zacks EPS Growth Rates
+
+
+Returns the latest Zacks EPS growth rates
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+zacks_api = intrinio_sdk.ZacksApi()
+
+company = 'AAPL' # str | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID) (optional)
+industry_group_name = '' # str | Return only growth rates for companies in the given Zacks industry group name (optional)
+industry_group_number = '' # str | Return only growth rates for companies in the given Zacks industry group number (optional)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
+
+try:
+  api_response = zacks_api.get_zacks_eps_growth_rates(company=company, industry_group_name=industry_group_name, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
+  pprint(api_response)
+except ApiException as e:
+  print("Exception when calling ZacksApi->get_zacks_eps_growth_rates: %s\n" % e)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company** | str| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | [optional]   &nbsp;
+ **industry_group_name** | str| Return only growth rates for companies in the given Zacks industry group name | [optional]   &nbsp;
+ **industry_group_number** | str| Return only growth rates for companies in the given Zacks industry group number | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksEPSGrowthRates**](ApiResponseZacksEPSGrowthRates.md)
 
 [//]: # (END_OPERATION)
 
@@ -173,8 +361,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 zacks_api = intrinio_sdk.ZacksApi()
 
-start_date = '' # str | Limit EPS surprises to those on or after this date (optional)
-end_date = '' # str | Limit EPS surprises to those on or before this date (optional)
+start_date = '' # date | Limit EPS surprises to those on or after this date (optional)
+end_date = '' # date | Limit EPS surprises to those on or before this date (optional)
 eps_actual_greater = "~null" # float | Return only records with an actual EPS higher than this value (optional)
 eps_actual_less = "~null" # float | Return only records with an actual EPS lower than this value (optional)
 eps_mean_estimate_greater = "~null" # float | Return only records with an EPS mean estimate greater than this value (optional)
@@ -209,8 +397,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date** | str| Limit EPS surprises to those on or after this date | [optional]   &nbsp;
- **end_date** | str| Limit EPS surprises to those on or before this date | [optional]   &nbsp;
+ **start_date** | date| Limit EPS surprises to those on or after this date | [optional]   &nbsp;
+ **end_date** | date| Limit EPS surprises to those on or before this date | [optional]   &nbsp;
  **eps_actual_greater** | float| Return only records with an actual EPS higher than this value | [optional]   &nbsp;
  **eps_actual_less** | float| Return only records with an actual EPS lower than this value | [optional]   &nbsp;
  **eps_mean_estimate_greater** | float| Return only records with an EPS mean estimate greater than this value | [optional]   &nbsp;
@@ -232,6 +420,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksEPSSurprises**](ApiResponseZacksEPSSurprises.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:ZacksApi)
+
+[//]: # (METHOD:get_zacks_long_term_growth_rates)
+
+[//]: # (RETURN_TYPE:ApiResponseZacksLongTermGrowthRates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksLongTermGrowthRates.md)
+
+[//]: # (OPERATION:get_zacks_long_term_growth_rates_v2)
+
+[//]: # (ENDPOINT:/zacks/long_term_growth_rates)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_long_term_growth_rates)
+
+## **get_zacks_long_term_growth_rates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_long_term_growth_rates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksLongTermGrowthRates get_zacks_long_term_growth_rates(identifier=identifier, page_size=page_size, next_page=next_page)
+
+#### Zacks Long Term Growth Rates
+
+
+Returns the latest Zacks long term growth rates
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+zacks_api = intrinio_sdk.ZacksApi()
+
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
+
+try:
+  api_response = zacks_api.get_zacks_long_term_growth_rates(identifier=identifier, page_size=page_size, next_page=next_page)
+  pprint(api_response)
+except ApiException as e:
+  print("Exception when calling ZacksApi->get_zacks_long_term_growth_rates: %s\n" % e)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksLongTermGrowthRates**](ApiResponseZacksLongTermGrowthRates.md)
 
 [//]: # (END_OPERATION)
 
@@ -283,8 +555,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 zacks_api = intrinio_sdk.ZacksApi()
 
-start_date = '' # str | Limit sales surprises to those on or after this date (optional)
-end_date = '' # str | Limit sales surprises to those on or before this date (optional)
+start_date = '' # date | Limit sales surprises to those on or after this date (optional)
+end_date = '' # date | Limit sales surprises to those on or before this date (optional)
 sales_actual_greater = "~null" # float | Return only records with an actual sales higher than this value (optional)
 sales_actual_less = "~null" # float | Return only records with an actual sales lower than this value (optional)
 sales_mean_estimate_greater = "~null" # float | Return only records with a sales mean estimate greater than this value (optional)
@@ -319,8 +591,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date** | str| Limit sales surprises to those on or after this date | [optional]   &nbsp;
- **end_date** | str| Limit sales surprises to those on or before this date | [optional]   &nbsp;
+ **start_date** | date| Limit sales surprises to those on or after this date | [optional]   &nbsp;
+ **end_date** | date| Limit sales surprises to those on or before this date | [optional]   &nbsp;
  **sales_actual_greater** | float| Return only records with an actual sales higher than this value | [optional]   &nbsp;
  **sales_actual_less** | float| Return only records with an actual sales lower than this value | [optional]   &nbsp;
  **sales_mean_estimate_greater** | float| Return only records with a sales mean estimate greater than this value | [optional]   &nbsp;
@@ -342,6 +614,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksSalesSurprises**](ApiResponseZacksSalesSurprises.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:ZacksApi)
+
+[//]: # (METHOD:get_zacks_target_price_consensuses)
+
+[//]: # (RETURN_TYPE:ApiResponseZacksTargetPriceConsensuses)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksTargetPriceConsensuses.md)
+
+[//]: # (OPERATION:get_zacks_target_price_consensuses_v2)
+
+[//]: # (ENDPOINT:/zacks/target_price_consensuses)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_target_price_consensuses)
+
+## **get_zacks_target_price_consensuses**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_target_price_consensuses_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksTargetPriceConsensuses get_zacks_target_price_consensuses(identifier=identifier, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
+
+#### Zacks Target Price Consensuses
+
+
+Returns the latest Zacks target price consensus data
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk
+from intrinio_sdk.rest import ApiException
+from pprint import pprint
+
+intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+zacks_api = intrinio_sdk.ZacksApi()
+
+identifier = 'AAPL' # str | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID) (optional)
+industry_group_number = '' # str | Return only growth rates for companies in the given Zacks industry group number (optional)
+page_size = 100 # int | The number of results to return (optional) (default to 100)
+next_page = '' # str | Gets the next page of data from a previous API call (optional)
+
+try:
+  api_response = zacks_api.get_zacks_target_price_consensuses(identifier=identifier, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
+  pprint(api_response)
+except ApiException as e:
+  print("Exception when calling ZacksApi->get_zacks_target_price_consensuses: %s\n" % e)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | [optional]   &nbsp;
+ **industry_group_number** | str| Return only growth rates for companies in the given Zacks industry group number | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksTargetPriceConsensuses**](ApiResponseZacksTargetPriceConsensuses.md)
 
 [//]: # (END_OPERATION)
 
