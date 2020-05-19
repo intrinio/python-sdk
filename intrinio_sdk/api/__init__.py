@@ -7,6 +7,7 @@ from intrinio_sdk.api.bulk_downloads_api import BulkDownloadsApi
 from intrinio_sdk.api.company_api import CompanyApi
 from intrinio_sdk.api.data_point_api import DataPointApi
 from intrinio_sdk.api.data_tag_api import DataTagApi
+from intrinio_sdk.api.et_fs_api import ETFsApi
 from intrinio_sdk.api.filing_api import FilingApi
 from intrinio_sdk.api.forex_api import ForexApi
 from intrinio_sdk.api.fundamentals_api import FundamentalsApi

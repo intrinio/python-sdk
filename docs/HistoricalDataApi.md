@@ -37,7 +37,7 @@ Method | HTTP request | Description
 #### Historical Data
 
 
-Returns historical values for the given `tag` and the entity represented by the given `identifier`
+$$v2_historical_data_description$$
 
 [//]: # (END_OVERVIEW)
 
@@ -55,8 +55,8 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 historical_data_api = intrinio_sdk.HistoricalDataApi()
 
-identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
+identifier = '$$v2_historical_data_identifier_default$$' # str | $$v2_historical_data_identifier_description$$
+tag = '$$v2_historical_data_item_default$$' # str | $$v2_historical_data_item_description$$
 frequency = 'daily' # str | Return historical data in the given frequency (optional) (default to daily)
 type = '' # str | Filter by type, when applicable (optional)
 start_date = '2015-01-01' # date | Get historical data on or after this date (optional)
@@ -84,8 +84,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) |   &nbsp;
- **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **identifier** | str| $$v2_historical_data_identifier_description$$ |   &nbsp;
+ **tag** | str| $$v2_historical_data_item_description$$ |   &nbsp;
  **frequency** | str| Return historical data in the given frequency | [optional] [default to daily]  &nbsp;
  **type** | str| Filter by type, when applicable | [optional]   &nbsp;
  **start_date** | date| Get historical data on or after this date | [optional]   &nbsp;

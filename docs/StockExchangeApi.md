@@ -146,7 +146,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 
 try:
   api_response = stock_exchange_api.get_stock_exchange_by_id(identifier)
@@ -226,7 +226,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 date = '2018-08-14' # date | The date for which to return price adjustments (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
@@ -312,7 +312,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 date = '2018-08-14' # date | The date for which to return prices (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
@@ -398,7 +398,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 source = '' # str | Return realtime prices from the specified data source. If no source is specified, all sources are used. (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
@@ -484,7 +484,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 stock_exchange_api = intrinio_sdk.StockExchangeApi()
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
+identifier = '$$v2_mic_default$$' # str | A Stock Exchange identifier (MIC or Intrinio ID)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
 next_page = '' # str | Gets the next page of data from a previous API call (optional)
 
