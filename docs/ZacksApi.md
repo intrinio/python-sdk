@@ -65,7 +65,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 zacks_api = intrinio_sdk.ZacksApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)
 start_date = '' # date | Limit ratings to those on or after this date (optional)
 end_date = '' # date | Limit ratings to those on or before this date (optional)
 mean_greater = "~null" # float | Return only records with a mean (average) higher than this value (optional)

@@ -85,7 +85,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -173,7 +173,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 22 # int | The number of observations, per period, to calculate Average Daily Trading Volume (optional) (default to 22)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -263,7 +263,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Average Directional Index (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -353,7 +353,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 short_period = 5 # int | The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional) (default to 5)
 long_period = 34 # int | The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional) (default to 34)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -445,7 +445,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Average True Range (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -535,7 +535,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Bollinger Bands (optional) (default to 20)
 standard_deviations = 2.0 # float | The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional) (default to 2.0)
 price_key = 'close' # str | The Stock Price field to use when calculating Bollinger Bands (optional) (default to close)
@@ -629,7 +629,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Commodity Channel Index (optional) (default to 20)
 constant = 0.015 # float | The number of observations, per period, to calculate Commodity Channel Index (optional) (default to 0.015)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -721,7 +721,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Chaikin Money Flow (optional) (default to 20)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -811,7 +811,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Donchian Channel (optional) (default to 20)
 price_key = 'close' # str | The Stock Price field to use when calculating Donchian Channel (optional) (default to close)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -903,7 +903,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Detrended Price Oscillator (optional) (default to 20)
 price_key = 'close' # str | The Stock Price field to use when calculating Detrended Price Oscillator (optional) (default to close)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -995,7 +995,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Ease of Movement (optional) (default to 20)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -1085,7 +1085,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -1173,7 +1173,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 low_period = 9 # int | The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional) (default to 9)
 medium_period = 26 # int | The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional) (default to 26)
 high_period = 52 # int | The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo (optional) (default to 52)
@@ -1267,7 +1267,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 10 # int | The number of observations, per period, to calculate Kelter Channel (optional) (default to 10)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -1357,7 +1357,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 roc1 = 10 # int | The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional) (default to 10)
 roc2 = 15 # int | The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional) (default to 15)
 roc3 = 20 # int | The number of observations, per period, to calculate the rate-of-change for RCMA3 (optional) (default to 20)
@@ -1463,7 +1463,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 fast_period = 12 # int | The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional) (default to 12)
 slow_period = 26 # int | The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional) (default to 26)
 signal_period = 9 # int | The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence (optional) (default to 9)
@@ -1559,7 +1559,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Money Flow Index (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -1649,7 +1649,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 ema_period = 9 # int | The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional) (default to 9)
 sum_period = 25 # int | The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional) (default to 25)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -1741,7 +1741,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -1829,7 +1829,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -1917,7 +1917,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 10 # int | The number of observations, per period, to calculate On-balance Volume Mean (optional) (default to 10)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -2007,7 +2007,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Relative Strength Index (optional) (default to 14)
 price_key = 'close' # str | The Stock Price field to use when calculating Relative Strength Index (optional) (default to close)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -2099,7 +2099,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 20 # int | The number of observations, per period, to calculate Simple Moving Average (optional) (default to 20)
 price_key = 'close' # str | The Stock Price field to use when calculating Simple Moving Average (optional) (default to close)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -2191,7 +2191,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate %K of Stochastic Oscillator (optional) (default to 14)
 signal_period = 3 # int | The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional) (default to 3)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
@@ -2283,7 +2283,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 15 # int | The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional) (default to 15)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -2373,7 +2373,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 low_period = 13 # int | The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional) (default to 13)
 high_period = 25 # int | The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional) (default to 25)
 price_key = 'close' # str | The Stock Price field to use when calculating True Strength Index (optional) (default to close)
@@ -2467,7 +2467,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 short_period = 7 # int | The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional) (default to 7)
 medium_period = 14 # int | The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional) (default to 14)
 long_period = 28 # int | The number of observations, per period, to calculate the long period for Ultimate Oscillator (optional) (default to 28)
@@ -2567,7 +2567,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to calculate Vortex Indicator (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
@@ -2657,7 +2657,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -2745,7 +2745,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
 page_size = 100 # int | The number of results to return (optional) (default to 100)
@@ -2833,7 +2833,7 @@ intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 technical_api = intrinio_sdk.TechnicalApi()
 
-identifier = '$$v2_ticker_default$$' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
+identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
 period = 14 # int | The number of observations, per period, to look-back when calculating Williams %R (optional) (default to 14)
 start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
 end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)

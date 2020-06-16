@@ -36,15 +36,15 @@ class DataPointApi(object):
     def get_data_point_number(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Number)  # noqa: E501
 
-        $$v2_data_point_number_description$$  # noqa: E501
+        Returns a numeric value for the given `tag` and the entity with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_data_point_number(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_data_point_identifier_description$$ (required)
-        :param str tag: $$v2_data_point_item_description$$ (required)
+        :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: float
                  If the method is called asynchronously,
                  returns the request thread.
@@ -59,15 +59,15 @@ class DataPointApi(object):
     def get_data_point_number_with_http_info(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Number)  # noqa: E501
 
-        $$v2_data_point_number_description$$  # noqa: E501
+        Returns a numeric value for the given `tag` and the entity with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_data_point_number_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_data_point_identifier_description$$ (required)
-        :param str tag: $$v2_data_point_item_description$$ (required)
+        :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: float
                  If the method is called asynchronously,
                  returns the request thread.
@@ -139,15 +139,15 @@ class DataPointApi(object):
     def get_data_point_text(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Text)  # noqa: E501
 
-        $$v2_data_point_text_description$$  # noqa: E501
+        Returns a text value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_data_point_text(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_data_point_identifier_description$$ (required)
-        :param str tag: $$v2_data_point_item_description$$ (required)
+        :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -162,15 +162,15 @@ class DataPointApi(object):
     def get_data_point_text_with_http_info(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Text)  # noqa: E501
 
-        $$v2_data_point_text_description$$  # noqa: E501
+        Returns a text value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_data_point_text_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_data_point_identifier_description$$ (required)
-        :param str tag: $$v2_data_point_item_description$$ (required)
+        :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
