@@ -49,29 +49,23 @@ Returns all Data Tags. Returns Data Tags matching parameters when specified.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-data_tag_api = intrinio_sdk.DataTagApi()
+tag = ''
+type = ''
+parent = ''
+statement_code = 'income_statement'
+fs_template = 'industrial'
+page_size = 100
+next_page = ''
 
-tag = '' # str | Tag (optional)
-type = '' # str | Type (optional)
-parent = '' # str | ID of tag parent (optional)
-statement_code = 'income_statement' # str | Statement Code (optional)
-fs_template = 'industrial' # str | Template (optional) (default to industrial)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = data_tag_api.get_all_data_tags(tag=tag, type=type, parent=parent, statement_code=statement_code, fs_template=fs_template, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling DataTagApi->get_all_data_tags: %s\n" % e)
+response = intrinio.DataTagApi().get_all_data_tags(tag=tag, type=type, parent=parent, statement_code=statement_code, fs_template=fs_template, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -141,23 +135,17 @@ Returns the Data Tag with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-data_tag_api = intrinio_sdk.DataTagApi()
+identifier = 'marketcap'
 
-identifier = 'marketcap' # str | The Intrinio ID or the code-name of the Data Tag
-
-try:
-  api_response = data_tag_api.get_data_tag_by_id(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling DataTagApi->get_data_tag_by_id: %s\n" % e)
+response = intrinio.DataTagApi().get_data_tag_by_id(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -221,24 +209,18 @@ Searches for Data Tags matching the text `query`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-data_tag_api = intrinio_sdk.DataTagApi()
+query = 'revenue'
+page_size = 100
 
-query = 'revenue' # str | 
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = data_tag_api.search_data_tags(query, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling DataTagApi->search_data_tags: %s\n" % e)
+response = intrinio.DataTagApi().search_data_tags(query, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

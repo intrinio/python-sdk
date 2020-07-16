@@ -94,40 +94,34 @@ Returns all Securities to which you have access. When parameters are specified, 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+active = True
+delisted = False
+code = ''
+currency = ''
+ticker = ''
+name = ''
+composite_mic = ''
+exchange_mic = ''
+stock_prices_after = ''
+stock_prices_before = ''
+cik = ''
+figi = ''
+composite_figi = ''
+share_class_figi = ''
+figi_unique_id = ''
+include_non_figi = False
+page_size = 100
+next_page = ''
 
-active = True # bool | When True, return securities that are active. When False, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). (optional)
-delisted = False # bool | When True, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When False, return securities that have not been delisted. (optional)
-code = '' # str | Return securities classified with the given code (<a href=\"https://docs.intrinio.com/documentation/security_codes\" target=\"_blank\">reference</a>). (optional)
-currency = '' # str | Return securities traded in the given 3-digit ISO 4217 currency code (<a href=\"https://en.wikipedia.org/wiki/ISO_4217\" target=\"_blank\">reference</a>). (optional)
-ticker = '' # str | Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity. (optional)
-name = '' # str | Return securities with the given text in their name (not case sensitive). (optional)
-composite_mic = '' # str | Return securities classified under the composite exchange with the given Market Identification Code (MIC). A composite exchange may or may not be a real exchange.  For example, the USCOMP exchange (our only composite exchange to date) is a combination of exchanges with the following MICs: ARCX, XASE, XPOR, FINR, XCIS, XNAS, XNYS, BATS.  This composite grouping is done for user convenience.  At this time, all US securities are classified under the composite exchange with MIC USCOMP.  To query for specific US exchanges, use the exchange_mic parameter below.  (optional)
-exchange_mic = '' # str | The MIC code of the exchange where the security is actually traded. (optional)
-stock_prices_after = '' # date | Return securities with end-of-day stock prices on or after this date. (optional)
-stock_prices_before = '' # date | Return securities with end-of-day stock prices on or before this date. (optional)
-cik = '' # str | Return securities belonging to the company with the given Central Index Key (CIK). (optional)
-figi = '' # str | Return securities with the given Exchange Level FIGI (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>). (optional)
-composite_figi = '' # str | Return securities with the given Country Composite FIGI (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>). (optional)
-share_class_figi = '' # str | Return securities with the given Global Share Class FIGI (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>). (optional)
-figi_unique_id = '' # str | Return securities with the given FIGI Unique ID (<a href=\"https://www.openfigi.com/about\" target=\"_blank\">reference</a>). (optional)
-include_non_figi = False # bool | When True, include securities that do not have a FIGI. By default, this is False. If this parameter is not specified, only securities with a FIGI are returned. (optional) (default to False)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_all_securities(active=active, delisted=delisted, code=code, currency=currency, ticker=ticker, name=name, composite_mic=composite_mic, exchange_mic=exchange_mic, stock_prices_after=stock_prices_after, stock_prices_before=stock_prices_before, cik=cik, figi=figi, composite_figi=composite_figi, share_class_figi=share_class_figi, figi_unique_id=figi_unique_id, include_non_figi=include_non_figi, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_all_securities: %s\n" % e)
+response = intrinio.SecurityApi().get_all_securities(active=active, delisted=delisted, code=code, currency=currency, ticker=ticker, name=name, composite_mic=composite_mic, exchange_mic=exchange_mic, stock_prices_after=stock_prices_after, stock_prices_before=stock_prices_before, cik=cik, figi=figi, composite_figi=composite_figi, share_class_figi=share_class_figi, figi_unique_id=figi_unique_id, include_non_figi=include_non_figi, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -208,23 +202,17 @@ Returns the Security with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-
-try:
-  api_response = security_api.get_security_by_id(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_by_id: %s\n" % e)
+response = intrinio.SecurityApi().get_security_by_id(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -288,24 +276,18 @@ Returns a numeric value for the given `tag` for the Security with the given `ide
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+tag = 'close_price'
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-tag = 'close_price' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
-
-try:
-  api_response = security_api.get_security_data_point_number(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_data_point_number: %s\n" % e)
+response = intrinio.SecurityApi().get_security_data_point_number(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -370,24 +352,18 @@ Returns a text value for the given `tag` for the Security with the given `identi
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+tag = 'figi'
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-tag = 'figi' # str | An Intrinio data tag ID or code-name
-
-try:
-  api_response = security_api.get_security_data_point_text(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_data_point_text: %s\n" % e)
+response = intrinio.SecurityApi().get_security_data_point_text(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -452,31 +428,25 @@ Returns historical values for the given `tag` and the Security with the given `i
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+tag = 'adj_close_price'
+frequency = 'daily'
+type = ''
+start_date = '2018-01-01'
+end_date = ''
+sort_order = 'desc'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-tag = 'adj_close_price' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
-frequency = 'daily' # str | Return historical data in the given frequency (optional) (default to daily)
-type = '' # str | Filter by type, when applicable (optional)
-start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
-end_date = '' # date | Get historical date on or before this date (optional)
-sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_historical_data: %s\n" % e)
+response = intrinio.SecurityApi().get_security_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -548,30 +518,24 @@ Return intraday stock prices for the Security with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+source = ''
+start_date = ''
+start_time = ''
+end_date = ''
+end_time = ''
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-source = '' # str | Return intraday prices from the specified data source (optional)
-start_date = '' # date | Return intraday prices starting at the specified date (optional)
-start_time = '' # str | Return intraday prices starting at the specified time on the `start_date` (timezone is UTC) (optional)
-end_date = '' # date | Return intraday prices stopping at the specified date (optional)
-end_time = '' # str | Return intraday prices stopping at the specified time on the `end_date` (timezone is UTC) (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_intraday_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_intraday_prices: %s\n" % e)
+response = intrinio.SecurityApi().get_security_intraday_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -642,23 +606,17 @@ Returns the latest available dividend information for the Security with the give
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-
-try:
-  api_response = security_api.get_security_latest_dividend_record(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_latest_dividend_record: %s\n" % e)
+response = intrinio.SecurityApi().get_security_latest_dividend_record(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -722,23 +680,17 @@ Returns latest available earnings information for the Security with the given `i
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-
-try:
-  api_response = security_api.get_security_latest_earnings_record(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_latest_earnings_record: %s\n" % e)
+response = intrinio.SecurityApi().get_security_latest_earnings_record(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -802,27 +754,21 @@ Returns the Accumulation/Distribution Index values of Stock Prices for the Secur
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_adi(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_adi: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_adi(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -890,28 +836,22 @@ Returns the Average Daily Trading Volume values of Stock Prices for the Security
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 22
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 22 # int | The number of observations, per period, to calculate Average Daily Trading Volume (optional) (default to 22)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_adtv(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_adtv: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_adtv(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -980,28 +920,22 @@ Returns the Average Directional Index values of Stock Prices for the Security wi
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 14
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 14 # int | The number of observations, per period, to calculate Average Directional Index (optional) (default to 14)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_adx(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_adx: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_adx(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1070,29 +1004,23 @@ Returns the Awesome Oscillator values of Stock Prices for the Security with the 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+short_period = 5
+long_period = 34
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-short_period = 5 # int | The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional) (default to 5)
-long_period = 34 # int | The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional) (default to 34)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_ao(identifier, short_period=short_period, long_period=long_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_ao: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_ao(identifier, short_period=short_period, long_period=long_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1162,28 +1090,22 @@ Returns the Average True Range values of Stock Prices for the Security with the 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 14
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 14 # int | The number of observations, per period, to calculate Average True Range (optional) (default to 14)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_atr(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_atr: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_atr(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1252,30 +1174,24 @@ Returns the Bollinger Bands values of Stock Prices for the Security with the giv
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 20
+standard_deviations = 2.0
+price_key = 'close'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 20 # int | The number of observations, per period, to calculate Bollinger Bands (optional) (default to 20)
-standard_deviations = 2.0 # float | The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional) (default to 2.0)
-price_key = 'close' # str | The Stock Price field to use when calculating Bollinger Bands (optional) (default to close)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_bb(identifier, period=period, standard_deviations=standard_deviations, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_bb: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_bb(identifier, period=period, standard_deviations=standard_deviations, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1346,29 +1262,23 @@ Returns the Commodity Channel Index values of Stock Prices for the Security with
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 20
+constant = 0.015
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 20 # int | The number of observations, per period, to calculate Commodity Channel Index (optional) (default to 20)
-constant = 0.015 # float | The number of observations, per period, to calculate Commodity Channel Index (optional) (default to 0.015)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_cci(identifier, period=period, constant=constant, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_cci: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_cci(identifier, period=period, constant=constant, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1438,28 +1348,22 @@ Returns the Chaikin Money Flow values of Stock Prices for the Security with the 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 20
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 20 # int | The number of observations, per period, to calculate Chaikin Money Flow (optional) (default to 20)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_cmf(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_cmf: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_cmf(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1528,29 +1432,23 @@ Returns the Donchian Channel values of Stock Prices for the Security with the gi
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 20
+price_key = 'close'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 20 # int | The number of observations, per period, to calculate Donchian Channel (optional) (default to 20)
-price_key = 'close' # str | The Stock Price field to use when calculating Donchian Channel (optional) (default to close)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_dc(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_dc: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_dc(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1620,29 +1518,23 @@ Returns the Detrended Price Oscillator values of Stock Prices for the Security w
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 20
+price_key = 'close'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 20 # int | The number of observations, per period, to calculate Detrended Price Oscillator (optional) (default to 20)
-price_key = 'close' # str | The Stock Price field to use when calculating Detrended Price Oscillator (optional) (default to close)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_dpo(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_dpo: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_dpo(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1712,28 +1604,22 @@ Returns the Ease of Movement values of Stock Prices for the Security with the gi
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 20
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 20 # int | The number of observations, per period, to calculate Ease of Movement (optional) (default to 20)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_eom(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_eom: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_eom(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1802,27 +1688,21 @@ Returns the Force Index values of Stock Prices for the Security with the given `
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_fi(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_fi: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_fi(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1890,30 +1770,24 @@ Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+low_period = 9
+medium_period = 26
+high_period = 52
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-low_period = 9 # int | The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional) (default to 9)
-medium_period = 26 # int | The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional) (default to 26)
-high_period = 52 # int | The number of observations, per period, to calculate Senkou Span B (Leading Span B) of Ichimoku Kinko Hyo (optional) (default to 52)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_ichimoku(identifier, low_period=low_period, medium_period=medium_period, high_period=high_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_ichimoku: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_ichimoku(identifier, low_period=low_period, medium_period=medium_period, high_period=high_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1984,28 +1858,22 @@ Returns the Keltner Channel values of Stock Prices for the Security with the giv
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 10
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 10 # int | The number of observations, per period, to calculate Kelter Channel (optional) (default to 10)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_kc(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_kc: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_kc(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2074,36 +1942,30 @@ Returns the Know Sure Thing values of Stock Prices for the Security with the giv
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+roc1 = 10
+roc2 = 15
+roc3 = 20
+roc4 = 30
+sma1 = 10
+sma2 = 10
+sma3 = 10
+sma4 = 15
+price_key = 'close'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-roc1 = 10 # int | The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional) (default to 10)
-roc2 = 15 # int | The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional) (default to 15)
-roc3 = 20 # int | The number of observations, per period, to calculate the rate-of-change for RCMA3 (optional) (default to 20)
-roc4 = 30 # int | The number of observations, per period, to calculate the rate-of-change for RCMA4 (optional) (default to 30)
-sma1 = 10 # int | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA1 (optional) (default to 10)
-sma2 = 10 # int | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA2 (optional) (default to 10)
-sma3 = 10 # int | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA3 (optional) (default to 10)
-sma4 = 15 # int | The number of observations, per period, to calculate the Simple Moving Average of the rate-of-change for RCMA4 (optional) (default to 15)
-price_key = 'close' # str | The Stock Price field to use when calculating Know Sure Thing (optional) (default to close)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_kst(identifier, roc1=roc1, roc2=roc2, roc3=roc3, roc4=roc4, sma1=sma1, sma2=sma2, sma3=sma3, sma4=sma4, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_kst: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_kst(identifier, roc1=roc1, roc2=roc2, roc3=roc3, roc4=roc4, sma1=sma1, sma2=sma2, sma3=sma3, sma4=sma4, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2180,31 +2042,25 @@ Returns the Moving Average Convergence Divergence values of Stock Prices for the
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+fast_period = 12
+slow_period = 26
+signal_period = 9
+price_key = 'close'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-fast_period = 12 # int | The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional) (default to 12)
-slow_period = 26 # int | The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional) (default to 26)
-signal_period = 9 # int | The number of observations, per period, to calculate the signal line for Moving Average Convergence Divergence (optional) (default to 9)
-price_key = 'close' # str | The Stock Price field to use when calculating Moving Average Convergence Divergence (optional) (default to close)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_macd(identifier, fast_period=fast_period, slow_period=slow_period, signal_period=signal_period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_macd: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_macd(identifier, fast_period=fast_period, slow_period=slow_period, signal_period=signal_period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2276,28 +2132,22 @@ Returns the Money Flow Index values of Stock Prices for the Security with the gi
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 14
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 14 # int | The number of observations, per period, to calculate Money Flow Index (optional) (default to 14)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_mfi(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_mfi: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_mfi(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2366,29 +2216,23 @@ Returns the Mass Index values of Stock Prices for the Security with the given `i
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+ema_period = 9
+sum_period = 25
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-ema_period = 9 # int | The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional) (default to 9)
-sum_period = 25 # int | The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional) (default to 25)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_mi(identifier, ema_period=ema_period, sum_period=sum_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_mi: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_mi(identifier, ema_period=ema_period, sum_period=sum_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2458,27 +2302,21 @@ Returns the Negative Volume Index values of Stock Prices for the Security with t
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_nvi(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_nvi: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_nvi(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2546,27 +2384,21 @@ Returns the On-balance Volume values of Stock Prices for the Security with the g
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_obv(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_obv: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_obv(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2634,28 +2466,22 @@ Returns the On-balance Volume Mean values of Stock Prices for the Security with 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 10
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 10 # int | The number of observations, per period, to calculate On-balance Volume Mean (optional) (default to 10)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_obv_mean(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_obv_mean: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_obv_mean(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2724,29 +2550,23 @@ Returns the Relative Strength Index values of Stock Prices for the Security with
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 14
+price_key = 'close'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 14 # int | The number of observations, per period, to calculate Relative Strength Index (optional) (default to 14)
-price_key = 'close' # str | The Stock Price field to use when calculating Relative Strength Index (optional) (default to close)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_rsi(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_rsi: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_rsi(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2816,29 +2636,23 @@ Returns the Simple Moving Average values of Stock Prices for the Security with t
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 20
+price_key = 'close'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 20 # int | The number of observations, per period, to calculate Simple Moving Average (optional) (default to 20)
-price_key = 'close' # str | The Stock Price field to use when calculating Simple Moving Average (optional) (default to close)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_sma(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_sma: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_sma(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -2908,29 +2722,23 @@ Returns the Stochastic Oscillator values of Stock Prices for the Security with t
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 14
+signal_period = 3
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 14 # int | The number of observations, per period, to calculate %K of Stochastic Oscillator (optional) (default to 14)
-signal_period = 3 # int | The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional) (default to 3)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_sr(identifier, period=period, signal_period=signal_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_sr: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_sr(identifier, period=period, signal_period=signal_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3000,28 +2808,22 @@ Returns the Simple Moving Average values of Stock Prices for the Security with t
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 15
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 15 # int | The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional) (default to 15)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_trix(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_trix: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_trix(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3090,30 +2892,24 @@ Returns the True Strength Index values of Stock Prices for the Security with the
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+low_period = 13
+high_period = 25
+price_key = 'close'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-low_period = 13 # int | The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional) (default to 13)
-high_period = 25 # int | The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional) (default to 25)
-price_key = 'close' # str | The Stock Price field to use when calculating True Strength Index (optional) (default to close)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_tsi(identifier, low_period=low_period, high_period=high_period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_tsi: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_tsi(identifier, low_period=low_period, high_period=high_period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3184,33 +2980,27 @@ Returns the Ultimate Oscillator values of Stock Prices for the Security with the
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+short_period = 7
+medium_period = 14
+long_period = 28
+short_weight = 4.0
+medium_weight = 2.0
+long_weight = 1.0
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-short_period = 7 # int | The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional) (default to 7)
-medium_period = 14 # int | The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional) (default to 14)
-long_period = 28 # int | The number of observations, per period, to calculate the long period for Ultimate Oscillator (optional) (default to 28)
-short_weight = 4.0 # float | The weight of short Buying Pressure average for Ultimate Oscillator (optional) (default to 4.0)
-medium_weight = 2.0 # float | The weight of medium Buying Pressure average for Ultimate Oscillator (optional) (default to 2.0)
-long_weight = 1.0 # float | The weight of long Buying Pressure average for Ultimate Oscillator (optional) (default to 1.0)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_uo(identifier, short_period=short_period, medium_period=medium_period, long_period=long_period, short_weight=short_weight, medium_weight=medium_weight, long_weight=long_weight, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_uo: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_uo(identifier, short_period=short_period, medium_period=medium_period, long_period=long_period, short_weight=short_weight, medium_weight=medium_weight, long_weight=long_weight, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3284,28 +3074,22 @@ Returns the Vortex Indicator values of Stock Prices for the Security with the gi
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 14
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 14 # int | The number of observations, per period, to calculate Vortex Indicator (optional) (default to 14)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_vi(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_vi: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_vi(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3374,27 +3158,21 @@ Returns the Volume-price Trend values of Stock Prices for the Security with the 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_vpt(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_vpt: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_vpt(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3462,27 +3240,21 @@ Returns the Volume Weighted Average Price values of Stock Prices for the Securit
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_vwap(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_vwap: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_vwap(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3550,28 +3322,22 @@ Returns the Williams %R values of Stock Prices for the Security with the given `
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+period = 14
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-period = 14 # int | The number of observations, per period, to look-back when calculating Williams %R (optional) (default to 14)
-start_date = '2018-01-01' # str | Return technical indicator values on or after the date (optional)
-end_date = '2019-01-01' # str | Return technical indicator values on or before the date (optional)
-page_size = 100 # float | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_price_technicals_wr(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_price_technicals_wr: %s\n" % e)
+response = intrinio.SecurityApi().get_security_price_technicals_wr(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3640,24 +3406,18 @@ Return the realtime stock price for the Security with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+source = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-source = '' # str | Return the realtime price from the specified data source. If no source is specified, the best source available is used. (optional)
-
-try:
-  api_response = security_api.get_security_realtime_price(identifier, source=source)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_realtime_price: %s\n" % e)
+response = intrinio.SecurityApi().get_security_realtime_price(identifier, source=source)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3722,27 +3482,21 @@ Returns stock price adjustments for the Security with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2018-01-01' # date | Return price adjustments on or after the date (optional)
-end_date = '2019-01-01' # date | Return price adjustments on or before the date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_stock_price_adjustments(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_stock_price_adjustments: %s\n" % e)
+response = intrinio.SecurityApi().get_security_stock_price_adjustments(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3810,28 +3564,22 @@ Return end-of-day stock prices for the Security with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+start_date = '2018-01-01'
+end_date = '2019-01-01'
+frequency = 'daily'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '2018-01-01' # date | Return prices on or after the date (optional)
-end_date = '2019-01-01' # date | Return prices on or before the date (optional)
-frequency = 'daily' # str | Return stock prices in the given frequency (optional) (default to daily)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_stock_prices(identifier, start_date=start_date, end_date=end_date, frequency=frequency, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_stock_prices: %s\n" % e)
+response = intrinio.SecurityApi().get_security_stock_prices(identifier, start_date=start_date, end_date=end_date, frequency=frequency, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -3900,40 +3648,34 @@ Returns buy, sell, and hold recommendations from analysts at brokerages for the 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+start_date = ''
+end_date = ''
+mean_greater = ''
+mean_less = ''
+strong_buys_greater = ''
+strong_buys_less = ''
+buys_greater = ''
+buys_less = ''
+holds_greater = ''
+holds_less = ''
+sells_greater = ''
+sells_less = ''
+strong_sells_greater = ''
+strong_sells_less = ''
+total_greater = ''
+total_less = ''
+page_size = 100
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-start_date = '' # str | Limit ratings to those on or after this date (optional)
-end_date = '' # str | Limit ratings to those on or before this date (optional)
-mean_greater = "~null" # float | Return only records with a mean (average) higher than this value (optional)
-mean_less = "~null" # float | Return only records with a mean (average) lower than this value (optional)
-strong_buys_greater = "~null" # int | Return only records with more than this many Strong Buy recommendations (optional)
-strong_buys_less = "~null" # int | Return only records with fewer than this many Strong Buy recommendations (optional)
-buys_greater = "~null" # int | Return only records with more than this many Buy recommendations (optional)
-buys_less = "~null" # int | Return only records with fewer than this many Buy recommendations (optional)
-holds_greater = "~null" # int | Return only records with more than this many Hold recommendations (optional)
-holds_less = "~null" # int | Return only records with fewer than this many Hold recommendations (optional)
-sells_greater = "~null" # int | Return only records with more than this many Sell recommendations (optional)
-sells_less = "~null" # int | Return only records with fewer than this many Sell recommendations (optional)
-strong_sells_greater = "~null" # int | Return only records with more than this many Strong Sell recommendations (optional)
-strong_sells_less = "~null" # int | Return only records with fewer than this many Strong Sell recommendations (optional)
-total_greater = "~null" # int | Return only records with more than this many recommendations, regardless of type (optional)
-total_less = "~null" # int | Return only records with fewer than this many recommendations, regardless of type (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = security_api.get_security_zacks_analyst_ratings(identifier, start_date=start_date, end_date=end_date, mean_greater=mean_greater, mean_less=mean_less, strong_buys_greater=strong_buys_greater, strong_buys_less=strong_buys_less, buys_greater=buys_greater, buys_less=buys_less, holds_greater=holds_greater, holds_less=holds_less, sells_greater=sells_greater, sells_less=sells_less, strong_sells_greater=strong_sells_greater, strong_sells_less=strong_sells_less, total_greater=total_greater, total_less=total_less, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_zacks_analyst_ratings: %s\n" % e)
+response = intrinio.SecurityApi().get_security_zacks_analyst_ratings(identifier, start_date=start_date, end_date=end_date, mean_greater=mean_greater, mean_less=mean_less, strong_buys_greater=strong_buys_greater, strong_buys_less=strong_buys_less, buys_greater=buys_greater, buys_less=buys_less, holds_greater=holds_greater, holds_less=holds_less, sells_greater=sells_greater, sells_less=sells_less, strong_sells_greater=strong_sells_greater, strong_sells_less=strong_sells_less, total_greater=total_greater, total_less=total_less, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -4014,24 +3756,18 @@ Returns a snapshot of ratings data compared with previous timeframes for the Sec
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+date = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-date = '' # str | Lookup a historical snapshot on the given date (optional)
-
-try:
-  api_response = security_api.get_security_zacks_analyst_ratings_snapshot(identifier, date=date)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_zacks_analyst_ratings_snapshot: %s\n" % e)
+response = intrinio.SecurityApi().get_security_zacks_analyst_ratings_snapshot(identifier, date=date)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -4096,25 +3832,19 @@ Return Zacks EPS surprises for the Security with the given `identifier`.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_zacks_eps_surprises(identifier, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_zacks_eps_surprises: %s\n" % e)
+response = intrinio.SecurityApi().get_security_zacks_eps_surprises(identifier, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -4180,25 +3910,19 @@ Return Zacks sales surprises for the Security with the given `identifier`.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+identifier = 'AAPL'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = security_api.get_security_zacks_sales_surprises(identifier, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->get_security_zacks_sales_surprises: %s\n" % e)
+response = intrinio.SecurityApi().get_security_zacks_sales_surprises(identifier, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -4264,27 +3988,34 @@ Screen Securities using complex logic
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+clauses = [
+  {
+    "field": "marketcap",
+    "operator": "gt",
+    "value": "10000000"
+  },
+  {
+    "field": "beta",
+    "operator": "lt",
+    "value": "5"
+  }
+]
 
-logic = intrinio_sdk.SecurityScreenGroup() # SecurityScreenGroup | The logic to screen with, consisting of operators, clauses, and nested groups.<br/> See <a href=\"https://docs.intrinio.com/documentation/screener_v2\" target=\"_blank\">screener documentation</a> for details on how to construct conditions. (optional)
-order_column = 'marketcap' # str | Results returned sorted by this column (optional)
-order_direction = 'asc' # str | Sort order to use with the order_column (optional) (default to asc)
-primary_only = False # bool | Return only primary securities (optional) (default to False)
-page_size = 100 # int | The number of results to return. Maximum for this endpoint is 50000. (optional) (default to 100)
+logic = intrinio.SecurityScreenGroup(operator="AND", clauses=clauses)
+order_column = 'marketcap'
+order_direction = 'asc'
+primary_only = False
+page_size = 100
 
-try:
-  api_response = security_api.screen_securities(logic=logic, order_column=order_column, order_direction=order_direction, primary_only=primary_only, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->screen_securities: %s\n" % e)
+response = intrinio.SecurityApi().screen_securities(logic=logic, order_column=order_column, order_direction=order_direction, primary_only=primary_only, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -4352,24 +4083,18 @@ Searches for Securities matching the text `query`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-security_api = intrinio_sdk.SecurityApi()
+query = 'Apple'
+page_size = 100
 
-query = 'Apple' # str | 
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = security_api.search_securities(query, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling SecurityApi->search_securities: %s\n" % e)
+response = intrinio.SecurityApi().search_securities(query, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

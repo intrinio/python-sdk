@@ -50,32 +50,26 @@ Returns the master list of option contracts for a given symbol.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-options_api = intrinio_sdk.OptionsApi()
+symbol = 'MSFT'
+type = 'put'
+strike = 170.0
+strike_greater_than = 190.0
+strike_less_than = 150.0
+expiration = '2019-03-01'
+expiration_after = '2019-01-01'
+expiration_before = '2019-12-31'
+page_size = 100
+next_page = ''
 
-symbol = 'MSFT' # str | The option symbol, corresponding to the underlying security.
-type = 'put' # str | The option contract type. (optional)
-strike = 170.0 # float | The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)
-strike_greater_than = 190.0 # float | The strike price of the option contract. This will return options contracts with strike prices greater than this price. (optional)
-strike_less_than = 150.0 # float | The strike price of the option contract. This will return options contracts with strike prices less than this price. (optional)
-expiration = '2019-03-01' # str | The expiration date of the option contract. This will return options contracts with expiration dates on this date. (optional)
-expiration_after = '2019-01-01' # str | The expiration date of the option contract. This will return options contracts with expiration dates after this date. (optional)
-expiration_before = '2019-12-31' # str | The expiration date of the option contract. This will return options contracts with expiration dates before this date. (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = options_api.get_options(symbol, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, expiration=expiration, expiration_after=expiration_after, expiration_before=expiration_before, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling OptionsApi->get_options: %s\n" % e)
+response = intrinio.OptionsApi().get_options(symbol, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, expiration=expiration, expiration_after=expiration_after, expiration_before=expiration_before, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -148,31 +142,25 @@ Returns all options contracts and their prices for the given symbol and expirati
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-options_api = intrinio_sdk.OptionsApi()
+symbol = 'MSFT'
+expiration = '2019-04-05'
+date = '2019-04-05'
+type = 'put'
+strike = 170.0
+strike_greater_than = 190.0
+strike_less_than = 150.0
+moneyness = 'in_the_money'
+page_size = 100
 
-symbol = 'MSFT' # str | The option symbol, corresponding to the underlying security.
-expiration = '2019-04-05' # str | The expiration date of the options contract
-date = '2019-04-05' # date | The date of the option price. Returns option prices on this date. (optional)
-type = 'put' # str | The option contract type. (optional)
-strike = 170.0 # float | The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)
-strike_greater_than = 190.0 # float | The strike price of the option contract. This will return options contracts with strike prices greater than this price. (optional)
-strike_less_than = 150.0 # float | The strike price of the option contract. This will return options contracts with strike prices less than this price. (optional)
-moneyness = 'in_the_money' # str | The moneyness of the options contracts to return. 'all' will return all options contracts. 'in_the_money' will return options contracts that are in the money (call options with strike prices below the current price, put options with strike prices above the current price). 'out_of_they_money' will return options contracts that are out of the money (call options with strike prices above the current price, put options with strike prices below the current price). 'near_the_money' will return options contracts that are $0.50 or less away from being in the money. (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = options_api.get_options_chain(symbol, expiration, date=date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, moneyness=moneyness, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling OptionsApi->get_options_chain: %s\n" % e)
+response = intrinio.OptionsApi().get_options_chain(symbol, expiration, date=date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, moneyness=moneyness, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -244,25 +232,19 @@ Returns all option contract expiration dates for a given symbol.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-options_api = intrinio_sdk.OptionsApi()
+symbol = 'MSFT'
+after = '2019-01-01'
+before = '2019-12-31'
 
-symbol = 'MSFT' # str | The option symbol, corresponding to the underlying security.
-after = '2019-01-01' # str | Return option contract expiration dates after this date. (optional)
-before = '2019-12-31' # str | Return option contract expiration dates before this date. (optional)
-
-try:
-  api_response = options_api.get_options_expirations(symbol, after=after, before=before)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling OptionsApi->get_options_expirations: %s\n" % e)
+response = intrinio.OptionsApi().get_options_expirations(symbol, after=after, before=before)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -328,27 +310,21 @@ Returns all option prices for a given option contract identifier.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-options_api = intrinio_sdk.OptionsApi()
+identifier = 'identifier_example'
+start_date = '2019-01-01'
+end_date = '2019-12-31'
+page_size = 100
+next_page = ''
 
-identifier = 'identifier_example' # str | The Intrinio ID or code of the options contract to request prices for.
-start_date = '2019-01-01' # str | Return option contract prices on or after this date. (optional)
-end_date = '2019-12-31' # str | Return option contract prices on or before this date. (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = options_api.get_options_prices(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling OptionsApi->get_options_prices: %s\n" % e)
+response = intrinio.OptionsApi().get_options_prices(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

@@ -52,26 +52,20 @@ Returns all Stock Exchanges matching the specified parameters
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-stock_exchange_api = intrinio_sdk.StockExchangeApi()
+city = 'New York'
+country = 'UNITED STATES OF AMERICA'
+country_code = 'US'
+page_size = 100
 
-city = 'New York' # str | Filter by city (optional)
-country = 'UNITED STATES OF AMERICA' # str | Filter by country (optional)
-country_code = 'US' # str | Filter by ISO country code (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = stock_exchange_api.get_all_stock_exchanges(city=city, country=country, country_code=country_code, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling StockExchangeApi->get_all_stock_exchanges: %s\n" % e)
+response = intrinio.StockExchangeApi().get_all_stock_exchanges(city=city, country=country, country_code=country_code, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -138,23 +132,17 @@ Returns the Stock Exchange with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-stock_exchange_api = intrinio_sdk.StockExchangeApi()
+identifier = 'USCOMP'
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-
-try:
-  api_response = stock_exchange_api.get_stock_exchange_by_id(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling StockExchangeApi->get_stock_exchange_by_id: %s\n" % e)
+response = intrinio.StockExchangeApi().get_stock_exchange_by_id(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -218,26 +206,20 @@ Returns stock price adjustments for the Stock Exchange with the given `identifie
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-stock_exchange_api = intrinio_sdk.StockExchangeApi()
+identifier = 'USCOMP'
+date = '2018-08-14'
+page_size = 100
+next_page = ''
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-date = '2018-08-14' # date | The date for which to return price adjustments (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = stock_exchange_api.get_stock_exchange_price_adjustments(identifier, date=date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling StockExchangeApi->get_stock_exchange_price_adjustments: %s\n" % e)
+response = intrinio.StockExchangeApi().get_stock_exchange_price_adjustments(identifier, date=date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -304,26 +286,20 @@ Returns end-of-day stock prices for Securities on the Stock Exchange with `ident
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-stock_exchange_api = intrinio_sdk.StockExchangeApi()
+identifier = 'USCOMP'
+date = '2018-08-14'
+page_size = 100
+next_page = ''
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-date = '2018-08-14' # date | The date for which to return prices (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = stock_exchange_api.get_stock_exchange_prices(identifier, date=date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling StockExchangeApi->get_stock_exchange_prices: %s\n" % e)
+response = intrinio.StockExchangeApi().get_stock_exchange_prices(identifier, date=date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -390,26 +366,20 @@ Returns realtime stock prices for the Stock Exchange with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-stock_exchange_api = intrinio_sdk.StockExchangeApi()
+identifier = 'USCOMP'
+source = ''
+page_size = 100
+next_page = ''
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-source = '' # str | Return realtime prices from the specified data source. If no source is specified, all sources are used. (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = stock_exchange_api.get_stock_exchange_realtime_prices(identifier, source=source, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling StockExchangeApi->get_stock_exchange_realtime_prices: %s\n" % e)
+response = intrinio.StockExchangeApi().get_stock_exchange_realtime_prices(identifier, source=source, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -476,25 +446,19 @@ Returns Securities traded on the Stock Exchange with `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-stock_exchange_api = intrinio_sdk.StockExchangeApi()
+identifier = 'USCOMP'
+page_size = 100
+next_page = ''
 
-identifier = 'USCOMP' # str | A Stock Exchange identifier (MIC or Intrinio ID)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = stock_exchange_api.get_stock_exchange_securities(identifier, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling StockExchangeApi->get_stock_exchange_securities: %s\n" % e)
+response = intrinio.StockExchangeApi().get_stock_exchange_securities(identifier, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

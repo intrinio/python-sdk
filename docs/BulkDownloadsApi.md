@@ -47,22 +47,16 @@ Returns all active bulk downloads for your account with links to download.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
-
-bulk_downloads_api = intrinio_sdk.BulkDownloadsApi()
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 
-try:
-  api_response = bulk_downloads_api.get_bulk_download_links()
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling BulkDownloadsApi->get_bulk_download_links: %s\n" % e)
+response = intrinio.BulkDownloadsApi().get_bulk_download_links()
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

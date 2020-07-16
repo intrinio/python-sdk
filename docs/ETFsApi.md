@@ -52,25 +52,19 @@ Returns a list of Exchange Traded Funds (ETFs) sourced from FirstBridge
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-et_fs_api = intrinio_sdk.ETFsApi()
+exchange = 'XNAS'
+page_size = 100
+next_page = ''
 
-exchange = 'XNAS' # str |  (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = et_fs_api.get_all_etfs(exchange=exchange, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ETFsApi->get_all_etfs: %s\n" % e)
+response = intrinio.ETFsApi().get_all_etfs(exchange=exchange, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -136,23 +130,17 @@ Returns the Exchange Traded Fund (ETF) with the given identifier
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-et_fs_api = intrinio_sdk.ETFsApi()
+identifier = 'SPY'
 
-identifier = 'SPY' # str | An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)
-
-try:
-  api_response = et_fs_api.get_etf(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ETFsApi->get_etf: %s\n" % e)
+response = intrinio.ETFsApi().get_etf(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -216,23 +204,17 @@ Returns analytics for the Exchange Traded Fund (ETF) including volume, market ca
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-et_fs_api = intrinio_sdk.ETFsApi()
+identifier = 'SPY'
 
-identifier = 'SPY' # str | An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)
-
-try:
-  api_response = et_fs_api.get_etf_analytics(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ETFsApi->get_etf_analytics: %s\n" % e)
+response = intrinio.ETFsApi().get_etf_analytics(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -296,25 +278,19 @@ Returns the holdings sorted by weight descending and the Exchange Traded Fund (E
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-et_fs_api = intrinio_sdk.ETFsApi()
+identifier = 'SPY'
+page_size = 100
+next_page = ''
 
-identifier = 'SPY' # str | An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = et_fs_api.get_etf_holdings(identifier, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ETFsApi->get_etf_holdings: %s\n" % e)
+response = intrinio.ETFsApi().get_etf_holdings(identifier, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -380,23 +356,17 @@ Returns daily stats for the Exchange Traded Fund (ETF) including net asset value
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-et_fs_api = intrinio_sdk.ETFsApi()
+identifier = 'SPY'
 
-identifier = 'SPY' # str | An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)
-
-try:
-  api_response = et_fs_api.get_etf_stats(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ETFsApi->get_etf_stats: %s\n" % e)
+response = intrinio.ETFsApi().get_etf_stats(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -460,23 +430,17 @@ Searches for Exchange Traded Funds (ETFs) matching the text `query`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-et_fs_api = intrinio_sdk.ETFsApi()
+query = 'iShares'
 
-query = 'iShares' # str | 
-
-try:
-  api_response = et_fs_api.search_etfs(query)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ETFsApi->search_etfs: %s\n" % e)
+response = intrinio.ETFsApi().search_etfs(query)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

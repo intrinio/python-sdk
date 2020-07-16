@@ -48,35 +48,29 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-municipality_api = intrinio_sdk.MunicipalityApi()
+has_financials = True
+government_name = ''
+government_type = ''
+area_name = ''
+area_type = ''
+city = ''
+state = ''
+zipcode = ''
+population_greater_than = ''
+population_less_than = ''
+enrollment_greater_than = ''
+enrollment_less_than = ''
+next_page = ''
 
-has_financials = True # bool | Return municipalities with financials (optional)
-government_name = '' # str | Return municipalities with a government name matching the given query (optional)
-government_type = '' # str | Return municipalities with the given government type (optional)
-area_name = '' # str | Return municipalities with an area name matching the given query (optional)
-area_type = '' # str | Return municipalities with the given area type (optional)
-city = '' # str | Return municipalities in the given city (optional)
-state = '' # str | Return municipalities in the given state (optional)
-zipcode = "~null" # float | Return municipalities in the given zipcode (optional)
-population_greater_than = "~null" # float | Return municipalities with a population greater than the given number (optional)
-population_less_than = "~null" # float | Return municipalities with a population less than the given number (optional)
-enrollment_greater_than = "~null" # float | Return municipalities with an enrollment greater than the given number (optional)
-enrollment_less_than = "~null" # float | Return municipalities with an enrollment less than the given number (optional)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = municipality_api.get_all_municipalities(has_financials=has_financials, government_name=government_name, government_type=government_type, area_name=area_name, area_type=area_type, city=city, state=state, zipcode=zipcode, population_greater_than=population_greater_than, population_less_than=population_less_than, enrollment_greater_than=enrollment_greater_than, enrollment_less_than=enrollment_less_than, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling MunicipalityApi->get_all_municipalities: %s\n" % e)
+response = intrinio.MunicipalityApi().get_all_municipalities(has_financials=has_financials, government_name=government_name, government_type=government_type, area_name=area_name, area_type=area_type, city=city, state=state, zipcode=zipcode, population_greater_than=population_greater_than, population_less_than=population_less_than, enrollment_greater_than=enrollment_greater_than, enrollment_less_than=enrollment_less_than, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -152,23 +146,17 @@ Returns the Municipality with the given ID
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-municipality_api = intrinio_sdk.MunicipalityApi()
+id = 'mun_Xn7x4z'
 
-id = 'mun_Xn7x4z' # str | An Intrinio ID of a Municipality
-
-try:
-  api_response = municipality_api.get_municipality_by_id(id)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling MunicipalityApi->get_municipality_by_id: %s\n" % e)
+response = intrinio.MunicipalityApi().get_municipality_by_id(id)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -232,24 +220,18 @@ Returns financial statement data for the Municipality with the given ID
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-municipality_api = intrinio_sdk.MunicipalityApi()
+id = 'mun_Xn7x4z'
+fiscal_year = 2017
 
-id = 'mun_Xn7x4z' # str | An Intrinio ID of a Municipality
-fiscal_year = 2017 # float | Return financials for the given fiscal year (optional)
-
-try:
-  api_response = municipality_api.get_municipality_financials(id, fiscal_year=fiscal_year)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling MunicipalityApi->get_municipality_financials: %s\n" % e)
+response = intrinio.MunicipalityApi().get_municipality_financials(id, fiscal_year=fiscal_year)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

@@ -57,41 +57,35 @@ Returns buy, sell, and hold recommendations from analysts at brokerages for all 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+identifier = 'AAPL'
+start_date = ''
+end_date = ''
+mean_greater = ''
+mean_less = ''
+strong_buys_greater = ''
+strong_buys_less = ''
+buys_greater = ''
+buys_less = ''
+holds_greater = ''
+holds_less = ''
+sells_greater = ''
+sells_less = ''
+strong_sells_greater = ''
+strong_sells_less = ''
+total_greater = ''
+total_less = ''
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)
-start_date = '' # date | Limit ratings to those on or after this date (optional)
-end_date = '' # date | Limit ratings to those on or before this date (optional)
-mean_greater = "~null" # float | Return only records with a mean (average) higher than this value (optional)
-mean_less = "~null" # float | Return only records with a mean (average) lower than this value (optional)
-strong_buys_greater = "~null" # int | Return only records with more than this many Strong Buy recommendations (optional)
-strong_buys_less = "~null" # int | Return only records with fewer than this many Strong Buy recommendations (optional)
-buys_greater = "~null" # int | Return only records with more than this many Buy recommendations (optional)
-buys_less = "~null" # int | Return only records with fewer than this many Buy recommendations (optional)
-holds_greater = "~null" # int | Return only records with more than this many Hold recommendations (optional)
-holds_less = "~null" # int | Return only records with fewer than this many Hold recommendations (optional)
-sells_greater = "~null" # int | Return only records with more than this many Sell recommendations (optional)
-sells_less = "~null" # int | Return only records with fewer than this many Sell recommendations (optional)
-strong_sells_greater = "~null" # int | Return only records with more than this many Strong Sell recommendations (optional)
-strong_sells_less = "~null" # int | Return only records with fewer than this many Strong Sell recommendations (optional)
-total_greater = "~null" # int | Return only records with more than this many recommendations, regardless of type (optional)
-total_less = "~null" # int | Return only records with fewer than this many recommendations, regardless of type (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_analyst_ratings(identifier=identifier, start_date=start_date, end_date=end_date, mean_greater=mean_greater, mean_less=mean_less, strong_buys_greater=strong_buys_greater, strong_buys_less=strong_buys_less, buys_greater=buys_greater, buys_less=buys_less, holds_greater=holds_greater, holds_less=holds_less, sells_greater=sells_greater, sells_less=sells_less, strong_sells_greater=strong_sells_greater, strong_sells_less=strong_sells_less, total_greater=total_greater, total_less=total_less, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_analyst_ratings: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_analyst_ratings(identifier=identifier, start_date=start_date, end_date=end_date, mean_greater=mean_greater, mean_less=mean_less, strong_buys_greater=strong_buys_greater, strong_buys_less=strong_buys_less, buys_greater=buys_greater, buys_less=buys_less, holds_greater=holds_greater, holds_less=holds_less, sells_greater=sells_greater, sells_less=sells_less, strong_sells_greater=strong_sells_greater, strong_sells_less=strong_sells_less, total_greater=total_greater, total_less=total_less, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -173,31 +167,25 @@ Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+identifier = 'AAPL'
+start_date = ''
+end_date = ''
+fiscal_year = ''
+fiscal_period = ''
+calendar_year = ''
+calendar_period = ''
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)
-start_date = '' # date | Limit EPS estimates to those on or after this date (optional)
-end_date = '' # date | Limit EPS estimates to those on or before this date (optional)
-fiscal_year = "~null" # int | Only for the given fiscal year (optional)
-fiscal_period = '' # str | The fiscal period (optional)
-calendar_year = "~null" # int | Only for the given calendar year (optional)
-calendar_period = '' # str | The calendar period (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_eps_estimates(identifier=identifier, start_date=start_date, end_date=end_date, fiscal_year=fiscal_year, fiscal_period=fiscal_period, calendar_year=calendar_year, calendar_period=calendar_period, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_eps_estimates: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_eps_estimates(identifier=identifier, start_date=start_date, end_date=end_date, fiscal_year=fiscal_year, fiscal_period=fiscal_period, calendar_year=calendar_year, calendar_period=calendar_period, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -269,27 +257,21 @@ Returns the latest Zacks EPS growth rates
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+company = 'AAPL'
+industry_group_name = ''
+industry_group_number = ''
+page_size = 100
+next_page = ''
 
-company = 'AAPL' # str | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID) (optional)
-industry_group_name = '' # str | Return only growth rates for companies in the given Zacks industry group name (optional)
-industry_group_number = '' # str | Return only growth rates for companies in the given Zacks industry group number (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_eps_growth_rates(company=company, industry_group_name=industry_group_name, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_eps_growth_rates: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_eps_growth_rates(company=company, industry_group_name=industry_group_name, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -357,38 +339,32 @@ Returns Zacks eps surprise data for all Securities.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+start_date = ''
+end_date = ''
+eps_actual_greater = ''
+eps_actual_less = ''
+eps_mean_estimate_greater = ''
+eps_mean_estimate_less = ''
+eps_amount_diff_greater = ''
+eps_amount_diff_less = ''
+eps_percent_diff_greater = ''
+eps_percent_diff_less = ''
+eps_count_estimate_greater = ''
+eps_count_estimate_less = ''
+eps_std_dev_estimate_greater = ''
+eps_std_dev_estimate_less = ''
+page_size = 100
+next_page = ''
 
-start_date = '' # date | Limit EPS surprises to those on or after this date (optional)
-end_date = '' # date | Limit EPS surprises to those on or before this date (optional)
-eps_actual_greater = "~null" # float | Return only records with an actual EPS higher than this value (optional)
-eps_actual_less = "~null" # float | Return only records with an actual EPS lower than this value (optional)
-eps_mean_estimate_greater = "~null" # float | Return only records with an EPS mean estimate greater than this value (optional)
-eps_mean_estimate_less = "~null" # float | Return only records with an EPS mean estimate lower than this value (optional)
-eps_amount_diff_greater = "~null" # float | Return only records with an EPS amount difference greater than this value (optional)
-eps_amount_diff_less = "~null" # float | Return only records with an EPS amount difference less than this value (optional)
-eps_percent_diff_greater = "~null" # float | Return only records with an EPS percent difference greater than this value (optional)
-eps_percent_diff_less = "~null" # float | Return only records with an EPS percent difference less than this value (optional)
-eps_count_estimate_greater = "~null" # float | Return only records with an EPS count estimate greater than this value (optional)
-eps_count_estimate_less = "~null" # float | Return only records with an EPS count estimate less than this value (optional)
-eps_std_dev_estimate_greater = "~null" # float | Return only records with an EPS standard deviation greater than this value (optional)
-eps_std_dev_estimate_less = "~null" # float | Return only records with an EPS standard deviation less than this value (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_eps_surprises(start_date=start_date, end_date=end_date, eps_actual_greater=eps_actual_greater, eps_actual_less=eps_actual_less, eps_mean_estimate_greater=eps_mean_estimate_greater, eps_mean_estimate_less=eps_mean_estimate_less, eps_amount_diff_greater=eps_amount_diff_greater, eps_amount_diff_less=eps_amount_diff_less, eps_percent_diff_greater=eps_percent_diff_greater, eps_percent_diff_less=eps_percent_diff_less, eps_count_estimate_greater=eps_count_estimate_greater, eps_count_estimate_less=eps_count_estimate_less, eps_std_dev_estimate_greater=eps_std_dev_estimate_greater, eps_std_dev_estimate_less=eps_std_dev_estimate_less, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_eps_surprises: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_eps_surprises(start_date=start_date, end_date=end_date, eps_actual_greater=eps_actual_greater, eps_actual_less=eps_actual_less, eps_mean_estimate_greater=eps_mean_estimate_greater, eps_mean_estimate_less=eps_mean_estimate_less, eps_amount_diff_greater=eps_amount_diff_greater, eps_amount_diff_less=eps_amount_diff_less, eps_percent_diff_greater=eps_percent_diff_greater, eps_percent_diff_less=eps_percent_diff_less, eps_count_estimate_greater=eps_count_estimate_greater, eps_count_estimate_less=eps_count_estimate_less, eps_std_dev_estimate_greater=eps_std_dev_estimate_greater, eps_std_dev_estimate_less=eps_std_dev_estimate_less, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -467,28 +443,22 @@ Returns Zacks ETF holdings data
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+etf_ticker = ''
+holding_symbol = ''
+weight_greater = ''
+weight_less = ''
+page_size = 100
+next_page = ''
 
-etf_ticker = '' # str | Return holdings of the ETF with the given ticker (optional)
-holding_symbol = '' # str | Return holdings where the instrument being held has the given trading symbol (optional)
-weight_greater = "~null" # float | Return on the holdings with a weight greater than (optional)
-weight_less = "~null" # float | Return on the holdings with a weight less than (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_etf_holdings(etf_ticker=etf_ticker, holding_symbol=holding_symbol, weight_greater=weight_greater, weight_less=weight_less, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_etf_holdings: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_etf_holdings(etf_ticker=etf_ticker, holding_symbol=holding_symbol, weight_greater=weight_greater, weight_less=weight_less, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -557,25 +527,19 @@ Returns Zacks institutional holding companies data
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+ticker = ''
+page_size = 100
+next_page = ''
 
-ticker = '' # str | Return companies with the given ticker (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_institutional_holding_companies(ticker=ticker, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_institutional_holding_companies: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_institutional_holding_companies(ticker=ticker, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -641,25 +605,19 @@ Returns Zacks institutional holding owners data
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+cik = ''
+page_size = 100
+next_page = ''
 
-cik = '' # str | Return owners with the given Central Index Key (CIK) (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_institutional_holding_owners(cik=cik, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_institutional_holding_owners: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_institutional_holding_owners(cik=cik, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -725,26 +683,20 @@ Returns Zacks institutional holdings data
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+ticker = ''
+owner_cik = ''
+page_size = 100
+next_page = ''
 
-ticker = '' # str | Return holdings where the company being held has the given ticker (optional)
-owner_cik = '' # str | Return holdings where the owner/holder has the given Central Index Key (CIK) (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_institutional_holdings(ticker=ticker, owner_cik=owner_cik, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_institutional_holdings: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_institutional_holdings(ticker=ticker, owner_cik=owner_cik, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -811,25 +763,19 @@ Returns the latest Zacks long term growth rates
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+identifier = 'AAPL'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_long_term_growth_rates(identifier=identifier, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_long_term_growth_rates: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_long_term_growth_rates(identifier=identifier, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -895,38 +841,32 @@ Returns Zacks sales surprise data for all Securities.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+start_date = ''
+end_date = ''
+sales_actual_greater = ''
+sales_actual_less = ''
+sales_mean_estimate_greater = ''
+sales_mean_estimate_less = ''
+sales_amount_diff_greater = ''
+sales_amount_diff_less = ''
+sales_percent_diff_greater = ''
+sales_percent_diff_less = ''
+sales_count_estimate_greater = ''
+sales_count_estimate_less = ''
+sales_std_dev_estimate_greater = ''
+sales_std_dev_estimate_less = ''
+page_size = 100
+next_page = ''
 
-start_date = '' # date | Limit sales surprises to those on or after this date (optional)
-end_date = '' # date | Limit sales surprises to those on or before this date (optional)
-sales_actual_greater = "~null" # float | Return only records with an actual sales higher than this value (optional)
-sales_actual_less = "~null" # float | Return only records with an actual sales lower than this value (optional)
-sales_mean_estimate_greater = "~null" # float | Return only records with a sales mean estimate greater than this value (optional)
-sales_mean_estimate_less = "~null" # float | Return only records with a sales mean estimate lower than this value (optional)
-sales_amount_diff_greater = "~null" # float | Return only records with a sales amount difference greater than this value (optional)
-sales_amount_diff_less = "~null" # float | Return only records with a sales amount difference less than this value (optional)
-sales_percent_diff_greater = "~null" # float | Return only records with a sales percent difference greater than this value (optional)
-sales_percent_diff_less = "~null" # float | Return only records with a sales percent difference less than this value (optional)
-sales_count_estimate_greater = "~null" # float | Return only records with a sales count estimate greater than this value (optional)
-sales_count_estimate_less = "~null" # float | Return only records with a sales count estimate less than this value (optional)
-sales_std_dev_estimate_greater = "~null" # float | Return only records with a sales standard deviation greater than this value (optional)
-sales_std_dev_estimate_less = "~null" # float | Return only records with a sales standard deviation less than this value (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_sales_surprises(start_date=start_date, end_date=end_date, sales_actual_greater=sales_actual_greater, sales_actual_less=sales_actual_less, sales_mean_estimate_greater=sales_mean_estimate_greater, sales_mean_estimate_less=sales_mean_estimate_less, sales_amount_diff_greater=sales_amount_diff_greater, sales_amount_diff_less=sales_amount_diff_less, sales_percent_diff_greater=sales_percent_diff_greater, sales_percent_diff_less=sales_percent_diff_less, sales_count_estimate_greater=sales_count_estimate_greater, sales_count_estimate_less=sales_count_estimate_less, sales_std_dev_estimate_greater=sales_std_dev_estimate_greater, sales_std_dev_estimate_less=sales_std_dev_estimate_less, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_sales_surprises: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_sales_surprises(start_date=start_date, end_date=end_date, sales_actual_greater=sales_actual_greater, sales_actual_less=sales_actual_less, sales_mean_estimate_greater=sales_mean_estimate_greater, sales_mean_estimate_less=sales_mean_estimate_less, sales_amount_diff_greater=sales_amount_diff_greater, sales_amount_diff_less=sales_amount_diff_less, sales_percent_diff_greater=sales_percent_diff_greater, sales_percent_diff_less=sales_percent_diff_less, sales_count_estimate_greater=sales_count_estimate_greater, sales_count_estimate_less=sales_count_estimate_less, sales_std_dev_estimate_greater=sales_std_dev_estimate_greater, sales_std_dev_estimate_less=sales_std_dev_estimate_less, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1005,26 +945,20 @@ Returns the latest Zacks target price consensus data
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-zacks_api = intrinio_sdk.ZacksApi()
+identifier = 'AAPL'
+industry_group_number = ''
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID) (optional)
-industry_group_number = '' # str | Return only growth rates for companies in the given Zacks industry group number (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = zacks_api.get_zacks_target_price_consensuses(identifier=identifier, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ZacksApi->get_zacks_target_price_consensuses: %s\n" % e)
+response = intrinio.ZacksApi().get_zacks_target_price_consensuses(identifier=identifier, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

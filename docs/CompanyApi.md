@@ -59,32 +59,26 @@ Returns all Companies. When parameters are specified, returns matching companies
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+latest_filing_date = ''
+sic = ''
+template = ''
+sector = ''
+industry_category = ''
+industry_group = ''
+has_fundamentals = True
+has_stock_prices = True
+page_size = 100
+next_page = ''
 
-latest_filing_date = '' # date | Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)
-sic = '' # str | Return companies with the given Standard Industrial Classification code (optional)
-template = '' # str | Return companies with the given financial statement template (optional)
-sector = '' # str | Return companies in the given industry sector (optional)
-industry_category = '' # str | Return companies in the given industry category (optional)
-industry_group = '' # str | Return companies in the given industry group (optional)
-has_fundamentals = True # bool | Return only companies that have fundamentals when True (optional)
-has_stock_prices = True # bool | Return only companies that have stock prices when True (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = company_api.get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_all_companies: %s\n" % e)
+response = intrinio.CompanyApi().get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -157,24 +151,18 @@ Returns all News for all Companies
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+page_size = 100
+next_page = ''
 
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = company_api.get_all_company_news(page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_all_company_news: %s\n" % e)
+response = intrinio.CompanyApi().get_all_company_news(page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -239,23 +227,17 @@ Returns the Company with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+identifier = 'AAPL'
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-
-try:
-  api_response = company_api.get_company(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_company: %s\n" % e)
+response = intrinio.CompanyApi().get_company(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -319,24 +301,18 @@ Returns a numeric value for the given `tag` for the Company with the given `iden
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+identifier = 'AAPL'
+tag = 'marketcap'
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
-
-try:
-  api_response = company_api.get_company_data_point_number(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_company_data_point_number: %s\n" % e)
+response = intrinio.CompanyApi().get_company_data_point_number(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -401,24 +377,18 @@ Returns a text value for the given `tag` for the Company with the given `identif
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+identifier = 'AAPL'
+tag = 'ceo'
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag = 'ceo' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
-
-try:
-  api_response = company_api.get_company_data_point_text(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_company_data_point_text: %s\n" % e)
+response = intrinio.CompanyApi().get_company_data_point_text(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -483,28 +453,22 @@ Returns a complete list of SEC filings for the Company with the given `identifie
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+identifier = 'AAPL'
+report_type = ''
+start_date = '2015-01-01'
+end_date = ''
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-report_type = '' # str | Filter by <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report type</a>. Separate values with commas to return multiple report types. (optional)
-start_date = '2015-01-01' # date | Filed on or after the given date (optional)
-end_date = '' # date | Filed before or after the given date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = company_api.get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_company_filings: %s\n" % e)
+response = intrinio.CompanyApi().get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -573,33 +537,27 @@ Returns all Fundamentals for the Company with the given `identifier`. Returns Fu
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+identifier = 'AAPL'
+filed_after = ''
+filed_before = ''
+reported_only = False
+fiscal_year = ''
+statement_code = ''
+type = ''
+start_date = ''
+end_date = ''
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-filed_after = '' # date | Filed on or after this date (optional)
-filed_before = '' # date | Filed on or before this date (optional)
-reported_only = False # bool | Only as-reported fundamentals (optional)
-fiscal_year = "~null" # int | Only for the given fiscal year (optional)
-statement_code = '' # str | Only of the given statement code (optional)
-type = '' # str | Only of the given type (optional)
-start_date = '' # date | Only on or after the given date (optional)
-end_date = '' # date | Only on or before the given date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = company_api.get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_company_fundamentals: %s\n" % e)
+response = intrinio.CompanyApi().get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -673,31 +631,25 @@ Returns historical values for the given `tag` and the Company with the given `id
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+identifier = 'AAPL'
+tag = 'marketcap'
+frequency = 'daily'
+type = ''
+start_date = '2018-01-01'
+end_date = ''
+sort_order = 'desc'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
-frequency = 'daily' # str | Return historical data in the given frequency (optional) (default to daily)
-type = '' # str | Return historical data for given fiscal period type (optional)
-start_date = '2018-01-01' # date | Return historical data on or after this date (optional)
-end_date = '' # date | Return historical data on or before this date (optional)
-sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = company_api.get_company_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_company_historical_data: %s\n" % e)
+response = intrinio.CompanyApi().get_company_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -769,30 +721,24 @@ Returns initial public offerings (IPOs). An IPO is a public offering of private 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+ticker = ''
+status = ''
+start_date = ''
+end_date = ''
+offer_amount_greater_than = ''
+offer_amount_less_than = ''
+page_size = 100
+next_page = ''
 
-ticker = '' # str | Return IPOs with the given ticker (typically the IPO for the company) (optional)
-status = '' # str | Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)
-start_date = '' # date | Return IPOs on or after the given date (optional)
-end_date = '' # date | Return IPOs on or before the given date (optional)
-offer_amount_greater_than = "~null" # int | Return IPOs with an offer dollar amount greater than the given amount (optional)
-offer_amount_less_than = "~null" # int | Return IPOs with an offer dollar amount less than the given amount (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = company_api.get_company_ipos(ticker=ticker, status=status, start_date=start_date, end_date=end_date, offer_amount_greater_than=offer_amount_greater_than, offer_amount_less_than=offer_amount_less_than, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_company_ipos: %s\n" % e)
+response = intrinio.CompanyApi().get_company_ipos(ticker=ticker, status=status, start_date=start_date, end_date=end_date, offer_amount_greater_than=offer_amount_greater_than, offer_amount_less_than=offer_amount_less_than, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -863,25 +809,19 @@ Returns news for the Company with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+identifier = 'AAPL'
+page_size = 100
+next_page = ''
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = company_api.get_company_news(identifier, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_company_news: %s\n" % e)
+response = intrinio.CompanyApi().get_company_news(identifier, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -947,24 +887,18 @@ Returns Securities for the Company with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+identifier = 'AAPL'
+next_page = ''
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = company_api.get_company_securities(identifier, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->get_company_securities: %s\n" % e)
+response = intrinio.CompanyApi().get_company_securities(identifier, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1029,26 +963,20 @@ Returns the Fundamental for the Company with the given `identifier` and with the
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+identifier = 'AAPL'
+statement_code = 'income_statement'
+fiscal_period = 'FY'
+fiscal_year = 2017
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-statement_code = 'income_statement' # str | The statement code
-fiscal_period = 'FY' # str | The fiscal period
-fiscal_year = 2017 # int | The fiscal year
-
-try:
-  api_response = company_api.lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->lookup_company_fundamental: %s\n" % e)
+response = intrinio.CompanyApi().lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1115,24 +1043,18 @@ Searches for Companies matching the text `query`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-company_api = intrinio_sdk.CompanyApi()
+query = 'Apple'
+page_size = 100
 
-query = 'Apple' # str | Search parameters
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = company_api.search_companies(query, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling CompanyApi->search_companies: %s\n" % e)
+response = intrinio.CompanyApi().search_companies(query, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

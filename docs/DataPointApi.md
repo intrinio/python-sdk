@@ -48,24 +48,18 @@ Returns a numeric value for the given `tag` and the entity with the given `ident
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-data_point_api = intrinio_sdk.DataPointApi()
+identifier = 'AAPL'
+tag = 'marketcap'
 
-identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
-
-try:
-  api_response = data_point_api.get_data_point_number(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling DataPointApi->get_data_point_number: %s\n" % e)
+response = intrinio.DataPointApi().get_data_point_number(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -130,24 +124,18 @@ Returns a text value for the given `tag` for the Security with the given `identi
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-data_point_api = intrinio_sdk.DataPointApi()
+identifier = 'AAPL'
+tag = 'ceo'
 
-identifier = 'AAPL' # str | An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)
-tag = 'ceo' # str | An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>)
-
-try:
-  api_response = data_point_api.get_data_point_text(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling DataPointApi->get_data_point_text: %s\n" % e)
+response = intrinio.DataPointApi().get_data_point_text(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

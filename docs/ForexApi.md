@@ -49,22 +49,16 @@ Returns a list of forex currencies for which prices are available.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
-
-forex_api = intrinio_sdk.ForexApi()
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 
-try:
-  api_response = forex_api.get_forex_currencies()
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ForexApi->get_forex_currencies: %s\n" % e)
+response = intrinio.ForexApi().get_forex_currencies()
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -125,22 +119,16 @@ Returns a list of currency pairs used to request foreign exchange (forex) market
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
-
-forex_api = intrinio_sdk.ForexApi()
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
 
-try:
-  api_response = forex_api.get_forex_pairs()
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ForexApi->get_forex_pairs: %s\n" % e)
+response = intrinio.ForexApi().get_forex_pairs()
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -201,31 +189,25 @@ Provides a list of forex price quotes for a given forex currency pair and timefr
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-forex_api = intrinio_sdk.ForexApi()
+pair = 'EURUSD'
+timeframe = 'D1'
+timezone = 'UTC'
+start_date = ''
+start_time = ''
+end_date = ''
+end_time = ''
+page_size = 100
+next_page = ''
 
-pair = 'EURUSD' # str | The Forex Currency Pair code
-timeframe = 'D1' # str | The time interval for the quotes
-timezone = 'UTC' # str | Returns trading times in this timezone (optional) (default to UTC)
-start_date = '' # date | Return Forex Prices on or after this date (optional)
-start_time = '' # str | Return Forex Prices at or after this time (24-hour) (optional)
-end_date = '' # date | Return Forex Prices on or before this date (optional)
-end_time = '' # str | Return Forex Prices at or before this time (24-hour) (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = forex_api.get_forex_prices(pair, timeframe, timezone=timezone, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling ForexApi->get_forex_prices: %s\n" % e)
+response = intrinio.ForexApi().get_forex_prices(pair, timeframe, timezone=timezone, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

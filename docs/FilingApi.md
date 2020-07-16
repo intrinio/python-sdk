@@ -56,30 +56,24 @@ Returns all Filings. Returns Filings matching parameters when supplied.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+company = 'AAPL'
+report_type = ''
+start_date = '2015-01-01'
+end_date = ''
+industry_category = ''
+industry_group = ''
+page_size = 100
+next_page = ''
 
-company = 'AAPL' # str | Filings for the given `company` identifier (ticker, CIK, LEI, Intrinio ID)
-report_type = '' # str | Filter by report type. Separate values with commas to return multiple The filing <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report types</a>. (optional)
-start_date = '2015-01-01' # date | Filed on or after the given date (optional)
-end_date = '' # date | Filed before or after the given date (optional)
-industry_category = '' # str | Return companies in the given industry category (optional)
-industry_group = '' # str | Return companies in the given industry group (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = filing_api.get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->get_all_filings: %s\n" % e)
+response = intrinio.FilingApi().get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -150,30 +144,24 @@ Return all Notes from all Filings, most-recent first. Returns notes matching par
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+company = 'AAPL'
+report_type = '10-Q'
+filing_start_date = ''
+filing_end_date = ''
+period_ended_start_date = ''
+period_ended_end_date = ''
+page_size = 100
+next_page = ''
 
-company = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)
-report_type = '10-Q' # str | Notes contained in filings that match the given <a href=\"https://docs.intrinio.com/documentation/sec_filing_report_types\" target=\"_blank\">report type</a> (optional)
-filing_start_date = '' # date | Limit search to filings on or after this date (optional)
-filing_end_date = '' # date | Limit search to filings on or before this date (optional)
-period_ended_start_date = '' # date | Limit search to filings with a period end date on or after this date (optional)
-period_ended_end_date = '' # date | Limit search to filings with a period end date on or before this date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = filing_api.get_all_notes(company=company, report_type=report_type, filing_start_date=filing_start_date, filing_end_date=filing_end_date, period_ended_start_date=period_ended_start_date, period_ended_end_date=period_ended_end_date, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->get_all_notes: %s\n" % e)
+response = intrinio.FilingApi().get_all_notes(company=company, report_type=report_type, filing_start_date=filing_start_date, filing_end_date=filing_end_date, period_ended_start_date=period_ended_start_date, period_ended_end_date=period_ended_end_date, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -244,23 +232,17 @@ Returns the Filing with the given `identifier`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+id = 'fil_7Kn2P6'
 
-id = 'fil_7Kn2P6' # str | The Intrinio ID of the Filing
-
-try:
-  api_response = filing_api.get_filing_by_id(id)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->get_filing_by_id: %s\n" % e)
+response = intrinio.FilingApi().get_filing_by_id(id)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -324,30 +306,24 @@ Returns all Fundamentals for the SEC Filing with the given `identifier`. Returns
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+identifier = 'fil_B73xBG'
+statement_code = ''
+type = ''
+fiscal_year = ''
+fiscal_period = ''
+start_date = ''
+end_date = ''
+next_page = ''
 
-identifier = 'fil_B73xBG' # str | A Filing identifier
-statement_code = '' # str | Filters fundamentals by statement code (optional)
-type = '' # str | Filters fundamentals by type (optional)
-fiscal_year = "~null" # int | Filters fundamentals by fiscal year (optional)
-fiscal_period = '' # str | Filters fundamentals by fiscal period (optional)
-start_date = '' # date | Returns fundamentals on or after the given date (optional)
-end_date = '' # date | Returns fundamentals on or before the given date (optional)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = filing_api.get_filing_fundamentals(identifier, statement_code=statement_code, type=type, fiscal_year=fiscal_year, fiscal_period=fiscal_period, start_date=start_date, end_date=end_date, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->get_filing_fundamentals: %s\n" % e)
+response = intrinio.FilingApi().get_filing_fundamentals(identifier, statement_code=statement_code, type=type, fiscal_year=fiscal_year, fiscal_period=fiscal_period, start_date=start_date, end_date=end_date, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -417,23 +393,17 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+identifier = 'fil_B73xBG'
 
-identifier = 'fil_B73xBG' # str | A Filing identifier
-
-try:
-  api_response = filing_api.get_filing_html(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->get_filing_html: %s\n" % e)
+response = intrinio.FilingApi().get_filing_html(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -496,23 +466,17 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+identifier = 'fil_B73xBG'
 
-identifier = 'fil_B73xBG' # str | A Filing identifier
-
-try:
-  api_response = filing_api.get_filing_text(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->get_filing_text: %s\n" % e)
+response = intrinio.FilingApi().get_filing_text(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -575,24 +539,18 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+identifier = 'xbn_ydK3QL'
+content_format = 'text'
 
-identifier = 'xbn_ydK3QL' # str | The Intrinio ID of the filing note
-content_format = 'text' # str | Returns content in html (as filed) or plain text (optional) (default to text)
-
-try:
-  api_response = filing_api.get_note(identifier, content_format=content_format)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->get_note: %s\n" % e)
+response = intrinio.FilingApi().get_note(identifier, content_format=content_format)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -656,23 +614,17 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+identifier = 'xbn_ydK3QL'
 
-identifier = 'xbn_ydK3QL' # str | The Intrinio ID of the filing note
-
-try:
-  api_response = filing_api.get_note_html(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->get_note_html: %s\n" % e)
+response = intrinio.FilingApi().get_note_html(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -735,23 +687,17 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+identifier = 'xbn_ydK3QL'
 
-identifier = 'xbn_ydK3QL' # str | The Intrinio ID of the filing note
-
-try:
-  api_response = filing_api.get_note_text(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->get_note_text: %s\n" % e)
+response = intrinio.FilingApi().get_note_text(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -815,26 +761,20 @@ Searches for Filing Notes using the `query`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-filing_api = intrinio_sdk.FilingApi()
+query = 'inflation'
+filing_start_date = '2018-07-15'
+filing_end_date = '2018-11-30'
+page_size = 100
 
-query = 'inflation' # str | Search for notes that contain all or parts of this text
-filing_start_date = '2018-07-15' # date | Limit search to filings on or after this date (optional)
-filing_end_date = '2018-11-30' # date | Limit search to filings on or before this date (optional)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = filing_api.search_notes(query, filing_start_date=filing_start_date, filing_end_date=filing_end_date, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FilingApi->search_notes: %s\n" % e)
+response = intrinio.FilingApi().search_notes(query, filing_start_date=filing_start_date, filing_end_date=filing_end_date, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

@@ -50,23 +50,17 @@ Returns detailed fundamental data for the given `id`.
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-fundamentals_api = intrinio_sdk.FundamentalsApi()
+id = 'fun_ge9LlE'
 
-id = 'fun_ge9LlE' # str | The Intrinio ID for the Fundamental
-
-try:
-  api_response = fundamentals_api.get_fundamental_by_id(id)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FundamentalsApi->get_fundamental_by_id: %s\n" % e)
+response = intrinio.FundamentalsApi().get_fundamental_by_id(id)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -130,23 +124,17 @@ Returns the As-Reported Financials directly from the financial statements of the
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-fundamentals_api = intrinio_sdk.FundamentalsApi()
+id = 'AAPL-income_statement-2018-Q1'
 
-id = 'AAPL-income_statement-2018-Q1' # str | The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental
-
-try:
-  api_response = fundamentals_api.get_fundamental_reported_financials(id)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FundamentalsApi->get_fundamental_reported_financials: %s\n" % e)
+response = intrinio.FundamentalsApi().get_fundamental_reported_financials(id)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -210,23 +198,17 @@ Returns professional-grade historical financial data. This data is standardized,
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-fundamentals_api = intrinio_sdk.FundamentalsApi()
+id = 'AAPL-income_statement-2018-Q1'
 
-id = 'AAPL-income_statement-2018-Q1' # str | The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental
-
-try:
-  api_response = fundamentals_api.get_fundamental_standardized_financials(id)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FundamentalsApi->get_fundamental_standardized_financials: %s\n" % e)
+response = intrinio.FundamentalsApi().get_fundamental_standardized_financials(id)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -290,26 +272,20 @@ Returns the Fundamental for the Company with the given `identifier` and with the
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-fundamentals_api = intrinio_sdk.FundamentalsApi()
+identifier = 'AAPL'
+statement_code = 'income_statement'
+fiscal_year = 2017
+fiscal_period = 'FY'
 
-identifier = 'AAPL' # str | A Company identifier (Ticker, CIK, LEI, Intrinio ID)
-statement_code = 'income_statement' # str | The statement code
-fiscal_year = 2017 # int | The fiscal year
-fiscal_period = 'FY' # str | The fiscal period
-
-try:
-  api_response = fundamentals_api.lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling FundamentalsApi->lookup_fundamental: %s\n" % e)
+response = intrinio.FundamentalsApi().lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 

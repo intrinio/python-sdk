@@ -63,24 +63,18 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+page_size = 100
+next_page = ''
 
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = index_api.get_all_economic_indices(page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_all_economic_indices: %s\n" % e)
+response = intrinio.IndexApi().get_all_economic_indices(page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -144,24 +138,18 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+page_size = 100
+next_page = ''
 
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = index_api.get_all_sic_indices(page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_all_sic_indices: %s\n" % e)
+response = intrinio.IndexApi().get_all_sic_indices(page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -225,24 +213,18 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+page_size = 100
+next_page = ''
 
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = index_api.get_all_stock_market_indices(page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_all_stock_market_indices: %s\n" % e)
+response = intrinio.IndexApi().get_all_stock_market_indices(page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -306,23 +288,17 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$GDP'
 
-identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
-
-try:
-  api_response = index_api.get_economic_index_by_id(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_economic_index_by_id: %s\n" % e)
+response = intrinio.IndexApi().get_economic_index_by_id(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -386,24 +362,18 @@ Returns a numeric value for the given `tag` for the Economic Index with the give
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$GDP'
+tag = 'level'
 
-identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag <a href='https://data.intrinio.com/data-tags/economic'>reference</a>
-
-try:
-  api_response = index_api.get_economic_index_data_point_number(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_economic_index_data_point_number: %s\n" % e)
+response = intrinio.IndexApi().get_economic_index_data_point_number(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -468,24 +438,18 @@ Returns a text value for the given `tag` for the Economic Index with the given `
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$GDP'
+tag = 'level'
 
-identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag ID or code-name
-
-try:
-  api_response = index_api.get_economic_index_data_point_text(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_economic_index_data_point_text: %s\n" % e)
+response = intrinio.IndexApi().get_economic_index_data_point_text(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -550,30 +514,24 @@ Returns historical values for the given `tag` and the Economic Index with the gi
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$GDP'
+tag = 'level'
+type = ''
+start_date = '2018-01-01'
+end_date = ''
+sort_order = 'desc'
+page_size = 100
+next_page = ''
 
-identifier = '$GDP' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag <a href='https://data.intrinio.com/data-tags/economic'>reference</a>
-type = '' # str | Filter by type, when applicable (optional)
-start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
-end_date = '' # date | Get historical data on or before this date (optional)
-sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = index_api.get_economic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_economic_index_historical_data: %s\n" % e)
+response = intrinio.IndexApi().get_economic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -643,23 +601,17 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$SIC.1'
 
-identifier = '$SIC.1' # str | An Index Identifier (symbol, Intrinio ID)
-
-try:
-  api_response = index_api.get_sic_index_by_id(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_sic_index_by_id: %s\n" % e)
+response = intrinio.IndexApi().get_sic_index_by_id(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -723,24 +675,18 @@ Returns a numeric value for the given `tag` for the SIC Index with the given `id
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$SIC.1'
+tag = 'level'
 
-identifier = '$SIC.1' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag ID or code-name
-
-try:
-  api_response = index_api.get_sic_index_data_point_number(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_sic_index_data_point_number: %s\n" % e)
+response = intrinio.IndexApi().get_sic_index_data_point_number(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -805,24 +751,18 @@ Returns a text value for the given `tag` for the SIC Index with the given `ident
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$SIC.1'
+tag = 'level'
 
-identifier = '$SIC.1' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag ID or code-name
-
-try:
-  api_response = index_api.get_sic_index_data_point_text(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_sic_index_data_point_text: %s\n" % e)
+response = intrinio.IndexApi().get_sic_index_data_point_text(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -887,30 +827,24 @@ Returns historical values for the given `tag` and the SIC Index with the given `
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$SIC.1'
+tag = 'marketcap'
+type = ''
+start_date = '2018-01-01'
+end_date = ''
+sort_order = 'desc'
+page_size = 100
+next_page = ''
 
-identifier = '$SIC.1' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'marketcap' # str | An Intrinio data tag ID or code-name
-type = '' # str | Filter by type, when applicable (optional)
-start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
-end_date = '' # date | Get historical data on or before this date (optional)
-sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = index_api.get_sic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_sic_index_historical_data: %s\n" % e)
+response = intrinio.IndexApi().get_sic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -980,23 +914,17 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$DJI'
 
-identifier = '$DJI' # str | An Index Identifier (symbol, Intrinio ID)
-
-try:
-  api_response = index_api.get_stock_market_index_by_id(identifier)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_stock_market_index_by_id: %s\n" % e)
+response = intrinio.IndexApi().get_stock_market_index_by_id(identifier)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1060,24 +988,18 @@ Returns a numeric value for the given `tag` for the Stock Market Index with the 
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$DJI'
+tag = 'level'
 
-identifier = '$DJI' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag ID or code-name
-
-try:
-  api_response = index_api.get_stock_market_index_data_point_number(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_stock_market_index_data_point_number: %s\n" % e)
+response = intrinio.IndexApi().get_stock_market_index_data_point_number(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1142,24 +1064,18 @@ Returns a text value for the given `tag` for the Stock Market Index with the giv
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$DJI'
+tag = 'level'
 
-identifier = '$DJI' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag ID or code-name
-
-try:
-  api_response = index_api.get_stock_market_index_data_point_text(identifier, tag)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_stock_market_index_data_point_text: %s\n" % e)
+response = intrinio.IndexApi().get_stock_market_index_data_point_text(identifier, tag)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1224,30 +1140,24 @@ Returns historical values for the given `tag` and the Stock Market Index with th
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+identifier = '$DJI'
+tag = 'level'
+type = ''
+start_date = '2018-01-01'
+end_date = ''
+sort_order = 'desc'
+page_size = 100
+next_page = ''
 
-identifier = '$DJI' # str | An Index Identifier (symbol, Intrinio ID)
-tag = 'level' # str | An Intrinio data tag ID or code-name
-type = '' # str | Filter by type, when applicable (optional)
-start_date = '2018-01-01' # date | Get historical data on or after this date (optional)
-end_date = '' # date | Get historical data on or before this date (optional)
-sort_order = 'desc' # str | Sort by date `asc` or `desc` (optional) (default to desc)
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-next_page = '' # str | Gets the next page of data from a previous API call (optional)
-
-try:
-  api_response = index_api.get_stock_market_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->get_stock_market_index_historical_data: %s\n" % e)
+response = intrinio.IndexApi().get_stock_market_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1318,24 +1228,18 @@ Searches for indices using the text in `query`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+query = 'GDP'
+page_size = 100
 
-query = 'GDP' # str | Search query
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = index_api.search_economic_indices(query, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->search_economic_indices: %s\n" % e)
+response = intrinio.IndexApi().search_economic_indices(query, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1400,24 +1304,18 @@ Searches for indices using the text in `query`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+query = 'agriculture'
+page_size = 100
 
-query = 'agriculture' # str | Search query
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = index_api.search_sic_indices(query, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->search_sic_indices: %s\n" % e)
+response = intrinio.IndexApi().search_sic_indices(query, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
@@ -1482,24 +1380,18 @@ Searches for indices using the text in `query`
 ```python
 from __future__ import print_function
 import time
-import intrinio_sdk
+import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
-from pprint import pprint
 
-intrinio_sdk.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
-index_api = intrinio_sdk.IndexApi()
+query = 'dow'
+page_size = 100
 
-query = 'dow' # str | Search query
-page_size = 100 # int | The number of results to return (optional) (default to 100)
-
-try:
-  api_response = index_api.search_stock_markets_indices(query, page_size=page_size)
-  pprint(api_response)
-except ApiException as e:
-  print("Exception when calling IndexApi->search_stock_markets_indices: %s\n" % e)
+response = intrinio.IndexApi().search_stock_markets_indices(query, page_size=page_size)
+print(response)
     
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(api_response.property_name_dict) 
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
 ```
 [//]: # (END_CODE_EXAMPLE)
 
