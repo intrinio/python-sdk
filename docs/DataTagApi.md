@@ -52,7 +52,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 tag = ''
 type = ''
@@ -138,7 +139,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'marketcap'
 
@@ -212,7 +214,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 query = 'revenue'
 page_size = 100

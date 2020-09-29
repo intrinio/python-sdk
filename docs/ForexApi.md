@@ -52,7 +52,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 
 response = intrinio.ForexApi().get_forex_currencies()
@@ -122,7 +123,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 
 response = intrinio.ForexApi().get_forex_pairs()
@@ -192,14 +194,15 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 pair = 'EURUSD'
 timeframe = 'D1'
 timezone = 'UTC'
-start_date = ''
+start_date = '2018-01-01'
 start_time = ''
-end_date = ''
+end_date = '2019-01-01'
 end_time = ''
 page_size = 100
 next_page = ''
@@ -224,9 +227,9 @@ Name | Type | Description  | Notes
  **timeframe** | str| The time interval for the quotes |   &nbsp;
  **timezone** | str| Returns trading times in this timezone | [optional] [default to UTC]  &nbsp;
  **start_date** | date| Return Forex Prices on or after this date | [optional]   &nbsp;
- **start_time** | str| Return Forex Prices at or after this time (24-hour) | [optional]   &nbsp;
+ **start_time** | str| Return Forex Prices at or after this time (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]   &nbsp;
  **end_date** | date| Return Forex Prices on or before this date | [optional]   &nbsp;
- **end_time** | str| Return Forex Prices at or before this time (24-hour) | [optional]   &nbsp;
+ **end_time** | str| Return Forex Prices at or before this time (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

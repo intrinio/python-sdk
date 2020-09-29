@@ -53,20 +53,15 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
-symbol = 'MSFT'
+symbol = 'AAPL'
 type = 'put'
-strike = 170.0
-strike_greater_than = 190.0
-strike_less_than = 150.0
-expiration = '2019-03-01'
-expiration_after = '2019-01-01'
-expiration_before = '2019-12-31'
 page_size = 100
 next_page = ''
 
-response = intrinio.OptionsApi().get_options(symbol, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, expiration=expiration, expiration_after=expiration_after, expiration_before=expiration_before, page_size=page_size, next_page=next_page)
+response = intrinio.OptionsApi().get_options(symbol, type=type, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -145,19 +140,17 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 symbol = 'MSFT'
 expiration = '2019-04-05'
-date = '2019-04-05'
-type = 'put'
-strike = 170.0
-strike_greater_than = 190.0
-strike_less_than = 150.0
-moneyness = 'in_the_money'
+date = ''
+type = ''
+moneyness = ''
 page_size = 100
 
-response = intrinio.OptionsApi().get_options_chain(symbol, expiration, date=date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, moneyness=moneyness, page_size=page_size)
+response = intrinio.OptionsApi().get_options_chain(symbol, expiration, date=date, type=type, moneyness=moneyness, page_size=page_size)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -235,7 +228,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 symbol = 'MSFT'
 after = '2019-01-01'
@@ -313,9 +307,10 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
-identifier = 'identifier_example'
+identifier = 'MSFT190405C00118000'
 start_date = '2019-01-01'
 end_date = '2019-12-31'
 page_size = 100

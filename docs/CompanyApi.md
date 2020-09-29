@@ -62,7 +62,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 latest_filing_date = ''
 sic = ''
@@ -154,7 +155,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 page_size = 100
 next_page = ''
@@ -230,7 +232,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 
@@ -304,7 +307,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 tag = 'marketcap'
@@ -380,7 +384,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 tag = 'ceo'
@@ -456,7 +461,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 report_type = ''
@@ -540,7 +546,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 filed_after = ''
@@ -634,7 +641,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 tag = 'marketcap'
@@ -724,9 +732,10 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
-ticker = ''
+ticker = 'UBER'
 status = ''
 start_date = ''
 end_date = ''
@@ -812,7 +821,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 page_size = 100
@@ -890,7 +900,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 next_page = ''
@@ -966,7 +977,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 statement_code = 'income_statement'
@@ -1046,7 +1058,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 query = 'Apple'
 page_size = 100

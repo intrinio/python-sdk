@@ -53,7 +53,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 id = 'fun_ge9LlE'
 
@@ -127,7 +128,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 id = 'AAPL-income_statement-2018-Q1'
 
@@ -201,7 +203,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 id = 'AAPL-income_statement-2018-Q1'
 
@@ -275,7 +278,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 statement_code = 'income_statement'

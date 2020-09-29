@@ -39,6 +39,7 @@ Method | HTTP request | Description
 #### All Municipalities
 
 
+Returns all Municipalities. When parameters are specified, returns matching municipalities.
 
 [//]: # (END_OVERVIEW)
 
@@ -51,9 +52,10 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
-has_financials = True
+has_financials = ''
 government_name = ''
 government_type = ''
 area_name = ''
@@ -149,7 +151,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 id = 'mun_Xn7x4z'
 
@@ -223,7 +226,8 @@ import time
 import intrinio_sdk as intrinio
 from intrinio_sdk.rest import ApiException
 
-intrinio.ApiClient().configuration.api_key['api_key'] = 'YOUR_API_KEY'
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
 
 id = 'mun_Xn7x4z'
 fiscal_year = 2017
