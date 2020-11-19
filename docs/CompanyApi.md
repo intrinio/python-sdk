@@ -1040,7 +1040,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompaniesSearch search_companies(query, page_size=page_size)
+> ApiResponseCompaniesSearch search_companies(query, active=active, page_size=page_size)
 
 #### Search Companies
 
@@ -1062,9 +1062,10 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 query = 'Apple'
+active = True
 page_size = 100
 
-response = intrinio.CompanyApi().search_companies(query, page_size=page_size)
+response = intrinio.CompanyApi().search_companies(query, active=active, page_size=page_size)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1081,6 +1082,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | str| Search parameters |   &nbsp;
+ **active** | bool| When True, return companies that are actively traded (having stock prices within the past 14 days). When False, return companies that are not actively traded or never have been traded. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
 <br/>
 
