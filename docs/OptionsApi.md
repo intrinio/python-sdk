@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 [**get_options_prices**](OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
+[**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 
 
 
@@ -234,7 +235,7 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 symbol = 'MSFT'
-expiration = '2021-01-08'
+expiration = '2023-01-20'
 source = ''
 type = ''
 moneyness = ''
@@ -446,11 +447,11 @@ Name | Type | Description  | Notes
 
 [//]: # (METHOD:get_options_prices_realtime)
 
-[//]: # (RETURN_TYPE:ApiResponseOptionPricesRealtime)
+[//]: # (RETURN_TYPE:ApiResponseOptionsPriceRealtime)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
-[//]: # (RETURN_TYPE_DOC:ApiResponseOptionPricesRealtime.md)
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsPriceRealtime.md)
 
 [//]: # (OPERATION:get_options_prices_realtime_v2)
 
@@ -464,7 +465,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionPricesRealtime get_options_prices_realtime(identifier, source=source)
+> ApiResponseOptionsPriceRealtime get_options_prices_realtime(identifier, source=source)
 
 #### Option Prices Realtime
 
@@ -512,7 +513,84 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponseOptionPricesRealtime**](ApiResponseOptionPricesRealtime.md)
+[**ApiResponseOptionsPriceRealtime**](ApiResponseOptionsPriceRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_stats_realtime)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsStatsRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsStatsRealtime.md)
+
+[//]: # (OPERATION:get_options_stats_realtime_v2)
+
+[//]: # (ENDPOINT:/options/prices/{identifier}/realtime/stats)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_stats_realtime)
+
+## **get_options_stats_realtime**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_stats_realtime_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsStatsRealtime get_options_stats_realtime(identifier, source=source)
+
+#### Option Stats Realtime
+
+
+Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL230120C00090000'
+source = ''
+
+response = intrinio.OptionsApi().get_options_stats_realtime(identifier, source=source)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| The Intrinio ID or code of the options contract to request prices for. |   &nbsp;
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsStatsRealtime**](ApiResponseOptionsStatsRealtime.md)
 
 [//]: # (END_OPERATION)
 

@@ -79,7 +79,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseSecurities get_all_securities(active=active, delisted=delisted, code=code, currency=currency, ticker=ticker, name=name, composite_mic=composite_mic, exchange_mic=exchange_mic, stock_prices_after=stock_prices_after, stock_prices_before=stock_prices_before, cik=cik, figi=figi, composite_figi=composite_figi, share_class_figi=share_class_figi, figi_unique_id=figi_unique_id, include_non_figi=include_non_figi, page_size=page_size, next_page=next_page)
+> ApiResponseSecurities get_all_securities(active=active, delisted=delisted, code=code, currency=currency, ticker=ticker, name=name, composite_mic=composite_mic, exchange_mic=exchange_mic, stock_prices_after=stock_prices_after, stock_prices_before=stock_prices_before, cik=cik, figi=figi, composite_figi=composite_figi, share_class_figi=share_class_figi, figi_unique_id=figi_unique_id, include_non_figi=include_non_figi, page_size=page_size, primary_listing=primary_listing, next_page=next_page)
 
 #### All Securities
 
@@ -117,9 +117,10 @@ share_class_figi = ''
 figi_unique_id = ''
 include_non_figi = False
 page_size = 100
+primary_listing = ''
 next_page = ''
 
-response = intrinio.SecurityApi().get_all_securities(active=active, delisted=delisted, code=code, currency=currency, ticker=ticker, name=name, composite_mic=composite_mic, exchange_mic=exchange_mic, stock_prices_after=stock_prices_after, stock_prices_before=stock_prices_before, cik=cik, figi=figi, composite_figi=composite_figi, share_class_figi=share_class_figi, figi_unique_id=figi_unique_id, include_non_figi=include_non_figi, page_size=page_size, next_page=next_page)
+response = intrinio.SecurityApi().get_all_securities(active=active, delisted=delisted, code=code, currency=currency, ticker=ticker, name=name, composite_mic=composite_mic, exchange_mic=exchange_mic, stock_prices_after=stock_prices_after, stock_prices_before=stock_prices_before, cik=cik, figi=figi, composite_figi=composite_figi, share_class_figi=share_class_figi, figi_unique_id=figi_unique_id, include_non_figi=include_non_figi, page_size=page_size, primary_listing=primary_listing, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -152,6 +153,7 @@ Name | Type | Description  | Notes
  **figi_unique_id** | str| Return securities with the given FIGI Unique ID (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
  **include_non_figi** | bool| When True, include securities that do not have a FIGI. By default, this is False. If this parameter is not specified, only securities with a FIGI are returned. | [optional] [default to False]  &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **primary_listing** | bool| If True, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
@@ -3452,7 +3454,7 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
-source = ''
+source = 'bats'
 
 response = intrinio.SecurityApi().get_security_realtime_price(identifier, source=source)
 print(response)
