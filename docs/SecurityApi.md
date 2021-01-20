@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_security_data_point_number**](SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Data Point (Number) for Security
 [**get_security_data_point_text**](SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
 [**get_security_historical_data**](SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
+[**get_security_interval_prices**](SecurityApi.md#get_security_interval_prices) | **GET** /securities/{identifier}/prices/intervals | Interval Stock Prices for Security
 [**get_security_intraday_prices**](SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
 [**get_security_latest_dividend_record**](SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Latest Dividend Record for Security
 [**get_security_latest_earnings_record**](SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Latest Earnings Record for Security
@@ -153,7 +154,7 @@ Name | Type | Description  | Notes
  **figi_unique_id** | str| Return securities with the given FIGI Unique ID (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
  **include_non_figi** | bool| When True, include securities that do not have a FIGI. By default, this is False. If this parameter is not specified, only securities with a FIGI are returned. | [optional] [default to False]  &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
- **primary_listing** | bool| If True, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange | [optional]   &nbsp;
+ **primary_listing** | bool| If True, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange.  Returns both if omitted. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
@@ -482,6 +483,99 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseSecurityHistoricalData**](ApiResponseSecurityHistoricalData.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_security_interval_prices)
+
+[//]: # (RETURN_TYPE:ApiResponseSecurityIntervalPrices)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseSecurityIntervalPrices.md)
+
+[//]: # (OPERATION:get_security_interval_prices_v2)
+
+[//]: # (ENDPOINT:/securities/{identifier}/prices/intervals)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_interval_prices)
+
+## **get_security_interval_prices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_interval_prices_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseSecurityIntervalPrices get_security_interval_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, interval_size=interval_size, page_size=page_size, next_page=next_page)
+
+#### Interval Stock Prices for Security
+
+
+Return Open, High, Low, Close, and Volume for a particular interval for the Security with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL'
+source = ''
+start_date = '2018-01-01'
+start_time = ''
+end_date = '2019-01-01'
+end_time = ''
+timezone = 'UTC'
+interval_size = '1d'
+page_size = 100
+next_page = ''
+
+response = intrinio.SecurityApi().get_security_interval_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, interval_size=interval_size, page_size=page_size, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
+ **source** | str| Return intervals from the specified data source | [optional]   &nbsp;
+ **start_date** | date| Return intervals starting at the specified date | [optional]   &nbsp;
+ **start_time** | str| Return intervals starting at the specified time on the &#x60;start_date&#x60; (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]   &nbsp;
+ **end_date** | date| Return intervals stopping at the specified date | [optional]   &nbsp;
+ **end_time** | str| Return intervals stopping at the specified time on the &#x60;end_date&#x60; (24-hour in &#39;hh:mm&#39; format, UTC timezone) | [optional]   &nbsp;
+ **timezone** | str| Returns trading times in this timezone | [optional] [default to UTC]  &nbsp;
+ **interval_size** | str| The interval for which to return stock prices | [optional] [default to 1d]  &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseSecurityIntervalPrices**](ApiResponseSecurityIntervalPrices.md)
 
 [//]: # (END_OPERATION)
 
