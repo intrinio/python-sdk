@@ -13,8 +13,10 @@ from intrinio_sdk.api.forex_api import ForexApi
 from intrinio_sdk.api.fundamentals_api import FundamentalsApi
 from intrinio_sdk.api.historical_data_api import HistoricalDataApi
 from intrinio_sdk.api.index_api import IndexApi
+from intrinio_sdk.api.insider_transaction_filings_api import InsiderTransactionFilingsApi
 from intrinio_sdk.api.municipality_api import MunicipalityApi
 from intrinio_sdk.api.options_api import OptionsApi
+from intrinio_sdk.api.owners_api import OwnersApi
 from intrinio_sdk.api.security_api import SecurityApi
 from intrinio_sdk.api.stock_exchange_api import StockExchangeApi
 from intrinio_sdk.api.technical_api import TechnicalApi
