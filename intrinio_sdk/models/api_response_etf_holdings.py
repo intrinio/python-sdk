@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from intrinio_sdk.models.etf_holding import ETFHolding  # noqa: F401,E501
 from intrinio_sdk.models.etf_summary import ETFSummary  # noqa: F401,E501
 
 
@@ -33,7 +34,7 @@ class ApiResponseETFHoldings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'holdings': 'object',
+        'holdings': 'list[ETFHolding]',
         'etf': 'ETFSummary',
         'next_page': 'str'
     }
@@ -65,7 +66,7 @@ class ApiResponseETFHoldings(object):
 
 
         :return: The holdings of this ApiResponseETFHoldings.  # noqa: E501
-        :rtype: object
+        :rtype: list[ETFHolding]
         """
         return self._holdings
         
@@ -75,7 +76,7 @@ class ApiResponseETFHoldings(object):
 
 
         :return: The holdings of this ApiResponseETFHoldings.  # noqa: E501
-        :rtype: object
+        :rtype: list[ETFHolding]
         """
 
         result = None
@@ -107,7 +108,7 @@ class ApiResponseETFHoldings(object):
 
 
         :param holdings: The holdings of this ApiResponseETFHoldings.  # noqa: E501
-        :type: object
+        :type: list[ETFHolding]
         """
 
         self._holdings = holdings
