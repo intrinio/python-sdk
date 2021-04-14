@@ -1046,7 +1046,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> InsiderTransactionFiling latest_insider_transaction_filing_by_company(identifier, start_date=start_date, end_date=end_date, ownership_type=ownership_type, page_size=page_size, next_page=next_page)
+> InsiderTransactionFiling latest_insider_transaction_filing_by_company(identifier, next_page=next_page)
 
 #### Latest Insider Transaction Filing by Company
 
@@ -1068,13 +1068,9 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
-ownership_type = 'D'
-page_size = 100
 next_page = ''
 
-response = intrinio.CompanyApi().latest_insider_transaction_filing_by_company(identifier, start_date=start_date, end_date=end_date, ownership_type=ownership_type, page_size=page_size, next_page=next_page)
+response = intrinio.CompanyApi().latest_insider_transaction_filing_by_company(identifier, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1091,10 +1087,6 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **start_date** | date| Return Company&#39;s insider transaction filings on or after this date | [optional]   &nbsp;
- **end_date** | date| Return Company&#39;s insider transaction filings on or before this date | [optional]   &nbsp;
- **ownership_type** | str| The type of ownership to return transaction filings for. &#39;D&#39; is for direct transactions. &#39;I&#39; is for indirect transactions. Omit for both types. | [optional]   &nbsp;
- **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 

@@ -4,7 +4,9 @@ All URIs are relative to *https://api-v2.intrinio.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Option Expirations Realtime
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
+[**get_options_by_symbol_realtime**](OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
 [**get_options_chain**](OptionsApi.md#get_options_chain) | **GET** /options/chain/{symbol}/{expiration} | Options Chain
 [**get_options_chain_realtime**](OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
@@ -12,6 +14,87 @@ Method | HTTP request | Description
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_option_expirations_realtime)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsExpirations)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsExpirations.md)
+
+[//]: # (OPERATION:get_option_expirations_realtime_v2)
+
+[//]: # (ENDPOINT:/options/expirations/{symbol}/realtime)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_expirations_realtime)
+
+## **get_option_expirations_realtime**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_option_expirations_realtime_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsExpirations get_option_expirations_realtime(symbol, after=after, before=before, source=source)
+
+#### Option Expirations Realtime
+
+
+Returns all realtime option contract expiration dates for a given symbol.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+symbol = 'MSFT'
+after = '2022-01-01'
+before = '2023-04-01'
+source = ''
+
+response = intrinio.OptionsApi().get_option_expirations_realtime(symbol, after=after, before=before, source=source)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | str| The option symbol, corresponding to the underlying security. |   &nbsp;
+ **after** | str| Return option contract expiration dates after this date. | [optional]   &nbsp;
+ **before** | str| Return option contract expiration dates before this date. | [optional]   &nbsp;
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsExpirations**](ApiResponseOptionsExpirations.md)
+
+[//]: # (END_OPERATION)
 
 
 [//]: # (START_OPERATION)
@@ -97,6 +180,91 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptions**](ApiResponseOptions.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_by_symbol_realtime)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsRealtime.md)
+
+[//]: # (OPERATION:get_options_by_symbol_realtime_v2)
+
+[//]: # (ENDPOINT:/options/{symbol}/realtime)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_by_symbol_realtime)
+
+## **get_options_by_symbol_realtime**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_by_symbol_realtime_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsRealtime get_options_by_symbol_realtime(symbol, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, expiration=expiration, expiration_after=expiration_after, expiration_before=expiration_before, source=source)
+
+#### Options by Symbol Realtime
+
+
+Returns the master list of realtime option contracts for a given symbol.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+symbol = 'AAPL'
+type = 'put'
+source = ''
+
+response = intrinio.OptionsApi().get_options_by_symbol_realtime(symbol, type=type, source=source)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | str| The option symbol, corresponding to the underlying security. |   &nbsp;
+ **type** | str| The option contract type. | [optional]   &nbsp;
+ **strike** | float| The strike price of the option contract. This will return options contracts with strike price equal to this price. | [optional]   &nbsp;
+ **strike_greater_than** | float| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]   &nbsp;
+ **strike_less_than** | float| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]   &nbsp;
+ **expiration** | str| The expiration date of the option contract. This will return options contracts with expiration dates on this date. | [optional]   &nbsp;
+ **expiration_after** | str| The expiration date of the option contract. This will return options contracts with expiration dates after this date. | [optional]   &nbsp;
+ **expiration_before** | str| The expiration date of the option contract. This will return options contracts with expiration dates before this date. | [optional]   &nbsp;
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsRealtime**](ApiResponseOptionsRealtime.md)
 
 [//]: # (END_OPERATION)
 
