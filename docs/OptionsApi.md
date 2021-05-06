@@ -655,8 +655,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-body = intrinio_sdk.OptionContractsList()
 source = ''
+body = {
+  "contracts": [
+    "A220121P00055000",
+    "A220121P00057500",
+    "A220121P00060000"
+  ]
+}
 
 response = intrinio.OptionsApi().get_options_prices_batch_realtime(body, source=source)
 print(response)
