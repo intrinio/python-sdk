@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.20.0
-- Package version: 5.10.0
+- API version: 2.21.1
+- Package version: 5.11.0
 
 
 ## Requirements.
@@ -114,6 +114,7 @@ Class | Method | HTTP request | Description
 *CompanyApi* | [**latest_insider_transaction_filing_by_company**](docs/CompanyApi.md#latest_insider_transaction_filing_by_company) | **GET** /companies/{identifier}/insider_transaction_filings/latest | Latest Insider Transaction Filing by Company
 *CompanyApi* | [**lookup_company_fundamental**](docs/CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
 *CompanyApi* | [**search_companies**](docs/CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
+*CompanyApi* | [**shares_outstanding_by_company**](docs/CompanyApi.md#shares_outstanding_by_company) | **GET** /companies/{identifier}/shares_outstanding | Shares Outstanding by Company
 *DataPointApi* | [**get_data_point_number**](docs/DataPointApi.md#get_data_point_number) | **GET** /data_point/{identifier}/{tag}/number | Data Point (Number)
 *DataPointApi* | [**get_data_point_text**](docs/DataPointApi.md#get_data_point_text) | **GET** /data_point/{identifier}/{tag}/text | Data Point (Text)
 *DataTagApi* | [**get_all_data_tags**](docs/DataTagApi.md#get_all_data_tags) | **GET** /data_tags | All Data Tags
@@ -172,6 +173,7 @@ Class | Method | HTTP request | Description
 *OptionsApi* | [**get_options_chain_realtime**](docs/OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 *OptionsApi* | [**get_options_expirations**](docs/OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 *OptionsApi* | [**get_options_prices**](docs/OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
+*OptionsApi* | [**get_options_prices_batch_realtime**](docs/OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 *OptionsApi* | [**get_options_prices_realtime**](docs/OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 *OptionsApi* | [**get_options_stats_realtime**](docs/OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 *OwnersApi* | [**get_all_owners**](docs/OwnersApi.md#get_all_owners) | **GET** /owners | All Owners
@@ -291,6 +293,7 @@ Class | Method | HTTP request | Description
  - [ApiResponseCompanyInsiderTransactionFilings](docs/ApiResponseCompanyInsiderTransactionFilings.md)
  - [ApiResponseCompanyNews](docs/ApiResponseCompanyNews.md)
  - [ApiResponseCompanySecurities](docs/ApiResponseCompanySecurities.md)
+ - [ApiResponseCompanySharesOutstanding](docs/ApiResponseCompanySharesOutstanding.md)
  - [ApiResponseDataTags](docs/ApiResponseDataTags.md)
  - [ApiResponseDataTagsSearch](docs/ApiResponseDataTagsSearch.md)
  - [ApiResponseETFHoldings](docs/ApiResponseETFHoldings.md)
@@ -317,6 +320,7 @@ Class | Method | HTTP request | Description
  - [ApiResponseOptionsChainRealtime](docs/ApiResponseOptionsChainRealtime.md)
  - [ApiResponseOptionsExpirations](docs/ApiResponseOptionsExpirations.md)
  - [ApiResponseOptionsPriceRealtime](docs/ApiResponseOptionsPriceRealtime.md)
+ - [ApiResponseOptionsPricesBatchRealtime](docs/ApiResponseOptionsPricesBatchRealtime.md)
  - [ApiResponseOptionsRealtime](docs/ApiResponseOptionsRealtime.md)
  - [ApiResponseOptionsStatsRealtime](docs/ApiResponseOptionsStatsRealtime.md)
  - [ApiResponseOwnerInsiderTransactionFilings](docs/ApiResponseOwnerInsiderTransactionFilings.md)
@@ -403,6 +407,7 @@ Class | Method | HTTP request | Description
  - [CompanyInitialPublicOffering](docs/CompanyInitialPublicOffering.md)
  - [CompanyNews](docs/CompanyNews.md)
  - [CompanyNewsSummary](docs/CompanyNewsSummary.md)
+ - [CompanySharesOutstanding](docs/CompanySharesOutstanding.md)
  - [CompanySummary](docs/CompanySummary.md)
  - [DataTag](docs/DataTag.md)
  - [DataTagSummary](docs/DataTagSummary.md)
@@ -449,8 +454,10 @@ Class | Method | HTTP request | Description
  - [Option](docs/Option.md)
  - [OptionChain](docs/OptionChain.md)
  - [OptionChainRealtime](docs/OptionChainRealtime.md)
+ - [OptionContractsList](docs/OptionContractsList.md)
  - [OptionFactorsRealtime](docs/OptionFactorsRealtime.md)
  - [OptionPrice](docs/OptionPrice.md)
+ - [OptionPriceBatchRealtime](docs/OptionPriceBatchRealtime.md)
  - [OptionPriceRealtime](docs/OptionPriceRealtime.md)
  - [OptionRealtime](docs/OptionRealtime.md)
  - [OptionStatsRealtime](docs/OptionStatsRealtime.md)
