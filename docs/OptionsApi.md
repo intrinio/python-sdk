@@ -4,6 +4,7 @@ All URIs are relative to *https://api-v2.intrinio.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_all_options_tickers**](OptionsApi.md#get_all_options_tickers) | **GET** /options/tickers | Options Tickers
 [**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Option Expirations Realtime
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 [**get_options_by_symbol_realtime**](OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
@@ -15,6 +16,77 @@ Method | HTTP request | Description
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_all_options_tickers)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsTickers)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsTickers.md)
+
+[//]: # (OPERATION:get_all_options_tickers_v2)
+
+[//]: # (ENDPOINT:/options/tickers)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_all_options_tickers)
+
+## **get_all_options_tickers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_options_tickers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsTickers get_all_options_tickers()
+
+#### Options Tickers
+
+
+Returns all tickers that have existing options contracts.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+
+response = intrinio.OptionsApi().get_all_options_tickers()
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+This endpoint does not need any parameter.
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsTickers**](ApiResponseOptionsTickers.md)
+
+[//]: # (END_OPERATION)
 
 
 [//]: # (START_OPERATION)

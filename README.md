@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.21.1
-- Package version: 5.11.0
+- API version: 2.22.0
+- Package version: 5.12.0
 
 
 ## Requirements.
@@ -166,6 +166,7 @@ Class | Method | HTTP request | Description
 *MunicipalityApi* | [**get_all_municipalities**](docs/MunicipalityApi.md#get_all_municipalities) | **GET** /municipalities | All Municipalities
 *MunicipalityApi* | [**get_municipality_by_id**](docs/MunicipalityApi.md#get_municipality_by_id) | **GET** /municipalities/{id} | Municipality by ID
 *MunicipalityApi* | [**get_municipality_financials**](docs/MunicipalityApi.md#get_municipality_financials) | **GET** /municipalities/{id}/financials | Financials for a Municipality
+*OptionsApi* | [**get_all_options_tickers**](docs/OptionsApi.md#get_all_options_tickers) | **GET** /options/tickers | Options Tickers
 *OptionsApi* | [**get_option_expirations_realtime**](docs/OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Option Expirations Realtime
 *OptionsApi* | [**get_options**](docs/OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 *OptionsApi* | [**get_options_by_symbol_realtime**](docs/OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
@@ -323,6 +324,7 @@ Class | Method | HTTP request | Description
  - [ApiResponseOptionsPricesBatchRealtime](docs/ApiResponseOptionsPricesBatchRealtime.md)
  - [ApiResponseOptionsRealtime](docs/ApiResponseOptionsRealtime.md)
  - [ApiResponseOptionsStatsRealtime](docs/ApiResponseOptionsStatsRealtime.md)
+ - [ApiResponseOptionsTickers](docs/ApiResponseOptionsTickers.md)
  - [ApiResponseOwnerInsiderTransactionFilings](docs/ApiResponseOwnerInsiderTransactionFilings.md)
  - [ApiResponseOwnerInstitutionalHoldings](docs/ApiResponseOwnerInstitutionalHoldings.md)
  - [ApiResponseOwners](docs/ApiResponseOwners.md)
