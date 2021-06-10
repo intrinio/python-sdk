@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from intrinio_sdk.models.definitions_company_summary import DefinitionsCompanySummary  # noqa: F401,E501
+from intrinio_sdk.models.company_summary import CompanySummary  # noqa: F401,E501
 
 
 class ApiResponseCompanyRecognize(object):
@@ -33,7 +33,7 @@ class ApiResponseCompanyRecognize(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'companies': 'list[DefinitionsCompanySummary]'
+        'companies': 'list[CompanySummary]'
     }
 
     attribute_map = {
@@ -55,7 +55,7 @@ class ApiResponseCompanyRecognize(object):
 
 
         :return: The companies of this ApiResponseCompanyRecognize.  # noqa: E501
-        :rtype: list[DefinitionsCompanySummary]
+        :rtype: list[CompanySummary]
         """
         return self._companies
         
@@ -65,7 +65,7 @@ class ApiResponseCompanyRecognize(object):
 
 
         :return: The companies of this ApiResponseCompanyRecognize.  # noqa: E501
-        :rtype: list[DefinitionsCompanySummary]
+        :rtype: list[CompanySummary]
         """
 
         result = None
@@ -97,7 +97,7 @@ class ApiResponseCompanyRecognize(object):
 
 
         :param companies: The companies of this ApiResponseCompanyRecognize.  # noqa: E501
-        :type: list[DefinitionsCompanySummary]
+        :type: list[CompanySummary]
         """
 
         self._companies = companies

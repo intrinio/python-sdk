@@ -1245,7 +1245,7 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | str| The text sent to the Thea API to analyze | [default to Apple]  &nbsp;
+ **text** | str| The text sent to the Thea API to analyze |   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
