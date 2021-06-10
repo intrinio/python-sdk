@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**get_all_companies**](CompanyApi.md#get_all_companies) | **GET** /companies | All Companies
 [**get_all_company_news**](CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 [**get_company**](CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
+[**get_company_answers**](CompanyApi.md#get_company_answers) | **GET** /companies/{identifier}/answers | Company Answers
 [**get_company_data_point_number**](CompanyApi.md#get_company_data_point_number) | **GET** /companies/{identifier}/data_point/{tag}/number | Data Point (Number) for Company
 [**get_company_data_point_text**](CompanyApi.md#get_company_data_point_text) | **GET** /companies/{identifier}/data_point/{tag}/text | Data Point (Text) for Company
 [**get_company_filings**](CompanyApi.md#get_company_filings) | **GET** /companies/{identifier}/filings | All Filings by Company
@@ -265,6 +266,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Company**](Company.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_answers)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanyAnswers)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyAnswers.md)
+
+[//]: # (OPERATION:get_company_answers_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/answers)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_answers)
+
+## **get_company_answers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_answers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseCompanyAnswers get_company_answers(identifier, query)
+
+#### Company Answers
+
+
+Returns answers for a question about the Company with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL'
+query = 'Where is the company headquartered?'
+
+response = intrinio.CompanyApi().get_company_answers(identifier, query)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **query** | str| The query to ask the Thea API |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseCompanyAnswers**](ApiResponseCompanyAnswers.md)
 
 [//]: # (END_OPERATION)
 

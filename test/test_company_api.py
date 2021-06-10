@@ -50,6 +50,13 @@ class TestCompanyApi(unittest.TestCase):
         """
         pass
 
+    def test_get_company_answers(self):
+        """Test case for get_company_answers
+
+        Company Answers  # noqa: E501
+        """
+        pass
+
     def test_get_company_data_point_number(self):
         """Test case for get_company_data_point_number
 

@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
 *CompanyApi* | [**get_all_companies**](docs/CompanyApi.md#get_all_companies) | **GET** /companies | All Companies
 *CompanyApi* | [**get_all_company_news**](docs/CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 *CompanyApi* | [**get_company**](docs/CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
+*CompanyApi* | [**get_company_answers**](docs/CompanyApi.md#get_company_answers) | **GET** /companies/{identifier}/answers | Company Answers
 *CompanyApi* | [**get_company_data_point_number**](docs/CompanyApi.md#get_company_data_point_number) | **GET** /companies/{identifier}/data_point/{tag}/number | Data Point (Number) for Company
 *CompanyApi* | [**get_company_data_point_text**](docs/CompanyApi.md#get_company_data_point_text) | **GET** /companies/{identifier}/data_point/{tag}/text | Data Point (Text) for Company
 *CompanyApi* | [**get_company_filings**](docs/CompanyApi.md#get_company_filings) | **GET** /companies/{identifier}/filings | All Filings by Company
@@ -289,6 +290,7 @@ Class | Method | HTTP request | Description
  - [ApiResponseBulkDownloadLinks](docs/ApiResponseBulkDownloadLinks.md)
  - [ApiResponseCompanies](docs/ApiResponseCompanies.md)
  - [ApiResponseCompaniesSearch](docs/ApiResponseCompaniesSearch.md)
+ - [ApiResponseCompanyAnswers](docs/ApiResponseCompanyAnswers.md)
  - [ApiResponseCompanyFilings](docs/ApiResponseCompanyFilings.md)
  - [ApiResponseCompanyFundamentals](docs/ApiResponseCompanyFundamentals.md)
  - [ApiResponseCompanyHistoricalData](docs/ApiResponseCompanyHistoricalData.md)
@@ -492,6 +494,9 @@ Class | Method | HTTP request | Description
  - [StockPriceInterval](docs/StockPriceInterval.md)
  - [StockPriceSummary](docs/StockPriceSummary.md)
  - [TechnicalIndicator](docs/TechnicalIndicator.md)
+ - [TheaEntityAnswer](docs/TheaEntityAnswer.md)
+ - [TheaSourceDocument](docs/TheaSourceDocument.md)
+ - [TheaSourceDocumentTags](docs/TheaSourceDocumentTags.md)
  - [TripleExponentialAverageTechnicalValue](docs/TripleExponentialAverageTechnicalValue.md)
  - [TrueStrengthIndexTechnicalValue](docs/TrueStrengthIndexTechnicalValue.md)
  - [UltimateOscillatorTechnicalValue](docs/UltimateOscillatorTechnicalValue.md)
