@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**insider_transaction_filings_by_company**](CompanyApi.md#insider_transaction_filings_by_company) | **GET** /companies/{identifier}/insider_transaction_filings | Insider Transaction Filings by Company
 [**latest_insider_transaction_filing_by_company**](CompanyApi.md#latest_insider_transaction_filing_by_company) | **GET** /companies/{identifier}/insider_transaction_filings/latest | Latest Insider Transaction Filing by Company
 [**lookup_company_fundamental**](CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
+[**recognize_company**](CompanyApi.md#recognize_company) | **GET** /companies/recognize | Recognize Company
 [**search_companies**](CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
 [**shares_outstanding_by_company**](CompanyApi.md#shares_outstanding_by_company) | **GET** /companies/{identifier}/shares_outstanding | Shares Outstanding by Company
 
@@ -1177,6 +1178,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Fundamental**](Fundamental.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:recognize_company)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanyRecognize)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyRecognize.md)
+
+[//]: # (OPERATION:recognize_company_v2)
+
+[//]: # (ENDPOINT:/companies/recognize)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#recognize_company)
+
+## **recognize_company**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/recognize_company_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseCompanyRecognize recognize_company(text)
+
+#### Recognize Company
+
+
+Returns a list of companies recognized by the Thea API in the given `text` query string parameter.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+text = 'Apple'
+
+response = intrinio.CompanyApi().recognize_company(text)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | str| The text sent to the Thea API to analyze | [default to Apple]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseCompanyRecognize**](ApiResponseCompanyRecognize.md)
 
 [//]: # (END_OPERATION)
 

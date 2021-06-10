@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.22.0
-- Package version: 5.12.0
+- API version: 2.23.0
+- Package version: 5.13.0
 
 
 ## Requirements.
@@ -113,6 +113,7 @@ Class | Method | HTTP request | Description
 *CompanyApi* | [**insider_transaction_filings_by_company**](docs/CompanyApi.md#insider_transaction_filings_by_company) | **GET** /companies/{identifier}/insider_transaction_filings | Insider Transaction Filings by Company
 *CompanyApi* | [**latest_insider_transaction_filing_by_company**](docs/CompanyApi.md#latest_insider_transaction_filing_by_company) | **GET** /companies/{identifier}/insider_transaction_filings/latest | Latest Insider Transaction Filing by Company
 *CompanyApi* | [**lookup_company_fundamental**](docs/CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
+*CompanyApi* | [**recognize_company**](docs/CompanyApi.md#recognize_company) | **GET** /companies/recognize | Recognize Company
 *CompanyApi* | [**search_companies**](docs/CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
 *CompanyApi* | [**shares_outstanding_by_company**](docs/CompanyApi.md#shares_outstanding_by_company) | **GET** /companies/{identifier}/shares_outstanding | Shares Outstanding by Company
 *DataPointApi* | [**get_data_point_number**](docs/DataPointApi.md#get_data_point_number) | **GET** /data_point/{identifier}/{tag}/number | Data Point (Number)
@@ -293,6 +294,7 @@ Class | Method | HTTP request | Description
  - [ApiResponseCompanyHistoricalData](docs/ApiResponseCompanyHistoricalData.md)
  - [ApiResponseCompanyInsiderTransactionFilings](docs/ApiResponseCompanyInsiderTransactionFilings.md)
  - [ApiResponseCompanyNews](docs/ApiResponseCompanyNews.md)
+ - [ApiResponseCompanyRecognize](docs/ApiResponseCompanyRecognize.md)
  - [ApiResponseCompanySecurities](docs/ApiResponseCompanySecurities.md)
  - [ApiResponseCompanySharesOutstanding](docs/ApiResponseCompanySharesOutstanding.md)
  - [ApiResponseDataTags](docs/ApiResponseDataTags.md)
