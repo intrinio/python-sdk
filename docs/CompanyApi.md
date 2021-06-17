@@ -316,7 +316,7 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
-query = 'Where is the company headquartered?'
+query = 'What do they believe in?'
 
 response = intrinio.CompanyApi().get_company_answers(identifier, query)
 print(response)

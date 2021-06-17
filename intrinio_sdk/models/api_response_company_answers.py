@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from intrinio_sdk.models.company_summary import CompanySummary  # noqa: F401,E501
 from intrinio_sdk.models.thea_entity_answer import TheaEntityAnswer  # noqa: F401,E501
 
 
@@ -35,21 +36,24 @@ class ApiResponseCompanyAnswers(object):
     swagger_types = {
         'source': 'str',
         'query': 'str',
-        'answers': 'list[TheaEntityAnswer]'
+        'answers': 'list[TheaEntityAnswer]',
+        'companies': 'list[CompanySummary]'
     }
 
     attribute_map = {
         'source': 'source',
         'query': 'query',
-        'answers': 'answers'
+        'answers': 'answers',
+        'companies': 'companies'
     }
 
-    def __init__(self, source=None, query=None, answers=None):  # noqa: E501
+    def __init__(self, source=None, query=None, answers=None, companies=None):  # noqa: E501
         """ApiResponseCompanyAnswers - a model defined in Swagger"""  # noqa: E501
 
         self._source = None
         self._query = None
         self._answers = None
+        self._companies = None
         self.discriminator = None
 
         if source is not None:
@@ -58,6 +62,8 @@ class ApiResponseCompanyAnswers(object):
             self.query = query
         if answers is not None:
             self.answers = answers
+        if companies is not None:
+            self.companies = companies
 
     @property
     def source(self):
@@ -223,6 +229,59 @@ class ApiResponseCompanyAnswers(object):
         """
 
         self._answers = answers
+
+    @property
+    def companies(self):
+        """Gets the companies of this ApiResponseCompanyAnswers.  # noqa: E501
+
+
+        :return: The companies of this ApiResponseCompanyAnswers.  # noqa: E501
+        :rtype: list[CompanySummary]
+        """
+        return self._companies
+        
+    @property
+    def companies_dict(self):
+        """Gets the companies of this ApiResponseCompanyAnswers.  # noqa: E501
+
+
+        :return: The companies of this ApiResponseCompanyAnswers.  # noqa: E501
+        :rtype: list[CompanySummary]
+        """
+
+        result = None
+
+        value = self.companies
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'companies': value }
+
+        
+        return result
+        
+
+    @companies.setter
+    def companies(self, companies):
+        """Sets the companies of this ApiResponseCompanyAnswers.
+
+
+        :param companies: The companies of this ApiResponseCompanyAnswers.  # noqa: E501
+        :type: list[CompanySummary]
+        """
+
+        self._companies = companies
 
     def to_dict(self):
         """Returns the model properties as a dict"""
