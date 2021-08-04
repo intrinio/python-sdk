@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanyFilings get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+> ApiResponseCompanyFilings get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
 
 #### All Filings by Company
 
@@ -550,10 +550,11 @@ identifier = 'AAPL'
 report_type = ''
 start_date = '2015-01-01'
 end_date = ''
+thea_enabled = ''
 page_size = 100
 next_page = ''
 
-response = intrinio.CompanyApi().get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+response = intrinio.CompanyApi().get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -573,6 +574,7 @@ Name | Type | Description  | Notes
  **report_type** | str| Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. | [optional]   &nbsp;
  **start_date** | date| Filed on or after the given date | [optional]   &nbsp;
  **end_date** | date| Filed before or after the given date | [optional]   &nbsp;
+ **thea_enabled** | bool| Return filings that have been read by our Thea NLP and are ready for our answers endpoint | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_filings**](FilingApi.md#get_all_filings) | **GET** /filings | All Filings
 [**get_all_notes**](FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
+[**get_filing_answers**](FilingApi.md#get_filing_answers) | **GET** /filings/{identifier}/answers | Filing Answers
 [**get_filing_by_id**](FilingApi.md#get_filing_by_id) | **GET** /filings/{id} | Lookup Filing
 [**get_filing_fundamentals**](FilingApi.md#get_filing_fundamentals) | **GET** /filings/{identifier}/fundamentals | All Fundamentals by Filing
 [**get_filing_html**](FilingApi.md#get_filing_html) | **GET** /filings/{identifier}/html | Filing Html
@@ -41,7 +42,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseFilings get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
+> ApiResponseFilings get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
 
 #### All Filings
 
@@ -68,10 +69,11 @@ start_date = '2015-01-01'
 end_date = ''
 industry_category = ''
 industry_group = ''
+thea_enabled = ''
 page_size = 100
 next_page = ''
 
-response = intrinio.FilingApi().get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, page_size=page_size, next_page=next_page)
+response = intrinio.FilingApi().get_all_filings(company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -93,6 +95,7 @@ Name | Type | Description  | Notes
  **end_date** | date| Filed before or after the given date | [optional]   &nbsp;
  **industry_category** | str| Return companies in the given industry category | [optional]   &nbsp;
  **industry_group** | str| Return companies in the given industry group | [optional]   &nbsp;
+ **thea_enabled** | bool| Return filings that have been read by our Thea NLP and are ready for our answers endpoint | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -191,6 +194,82 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseFilingNotes**](ApiResponseFilingNotes.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:FilingApi)
+
+[//]: # (METHOD:get_filing_answers)
+
+[//]: # (RETURN_TYPE:ApiResponseFilingAnswers)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseFilingAnswers.md)
+
+[//]: # (OPERATION:get_filing_answers_v2)
+
+[//]: # (ENDPOINT:/filings/{identifier}/answers)
+
+[//]: # (DOCUMENT_LINK:FilingApi.md#get_filing_answers)
+
+## **get_filing_answers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_filing_answers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseFilingAnswers get_filing_answers(identifier, query)
+
+#### Filing Answers
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'fil_B73xBG'
+query = 'What do they believe in?'
+
+response = intrinio.FilingApi().get_filing_answers(identifier, query)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Filing identifier |   &nbsp;
+ **query** | str| The query to ask the Thea API |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseFilingAnswers**](ApiResponseFilingAnswers.md)
 
 [//]: # (END_OPERATION)
 
