@@ -49,7 +49,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanies get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, page_size=page_size, next_page=next_page)
+> ApiResponseCompanies get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
 
 #### All Companies
 
@@ -78,10 +78,11 @@ industry_category = ''
 industry_group = ''
 has_fundamentals = True
 has_stock_prices = True
+thea_enabled = ''
 page_size = 100
 next_page = ''
 
-response = intrinio.CompanyApi().get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, page_size=page_size, next_page=next_page)
+response = intrinio.CompanyApi().get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -105,6 +106,7 @@ Name | Type | Description  | Notes
  **industry_group** | str| Return companies in the given industry group | [optional]   &nbsp;
  **has_fundamentals** | bool| Return only companies that have fundamentals when True | [optional]   &nbsp;
  **has_stock_prices** | bool| Return only companies that have stock prices when True | [optional]   &nbsp;
+ **thea_enabled** | bool| Return companies whose have been read by our Thea NLP and are ready for our company answers endpoint | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

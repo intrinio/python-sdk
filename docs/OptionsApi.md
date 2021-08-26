@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_options_tickers**](OptionsApi.md#get_all_options_tickers) | **GET** /options/tickers | Options Tickers
 [**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Option Expirations Realtime
+[**get_option_strikes_realtime**](OptionsApi.md#get_option_strikes_realtime) | **GET** /options/strikes/{symbol}/{strike}/realtime | Option Strikes Realtime
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 [**get_options_by_symbol_realtime**](OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
 [**get_options_chain**](OptionsApi.md#get_options_chain) | **GET** /options/chain/{symbol}/{expiration} | Options Chain
@@ -16,6 +17,7 @@ Method | HTTP request | Description
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 [**get_unusual_activity**](OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
+[**get_unusual_activity_universal**](OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
 
 
 
@@ -167,6 +169,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsExpirations**](ApiResponseOptionsExpirations.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_option_strikes_realtime)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsChainRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsChainRealtime.md)
+
+[//]: # (OPERATION:get_option_strikes_realtime_v2)
+
+[//]: # (ENDPOINT:/options/strikes/{symbol}/{strike}/realtime)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_strikes_realtime)
+
+## **get_option_strikes_realtime**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_option_strikes_realtime_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike)
+
+#### Option Strikes Realtime
+
+
+Returns all realtime options contracts and their prices for the given symbol and strike.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+symbol = 'MSFT'
+strike = 95
+
+response = intrinio.OptionsApi().get_option_strikes_realtime(symbol, strike)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | str| The option symbol, corresponding to the underlying security. |   &nbsp;
+ **strike** | float| The strike price of the option contract. This will return options contracts with strike price equal to this price. |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsChainRealtime**](ApiResponseOptionsChainRealtime.md)
 
 [//]: # (END_OPERATION)
 
@@ -985,6 +1064,81 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | str| The option symbol, corresponding to the underlying security. |   &nbsp;
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsUnusualActivity**](ApiResponseOptionsUnusualActivity.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_unusual_activity_universal)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsUnusualActivity)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsUnusualActivity.md)
+
+[//]: # (OPERATION:get_unusual_activity_universal_v2)
+
+[//]: # (ENDPOINT:/options/unusual_activity)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_unusual_activity_universal)
+
+## **get_unusual_activity_universal**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_unusual_activity_universal_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsUnusualActivity get_unusual_activity_universal(source=source)
+
+#### Options Unusual Activity Universal
+
+
+Returns nusual trades for all underlying security symbols.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+source = ''
+
+response = intrinio.OptionsApi().get_unusual_activity_universal(source=source)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
 <br/>
 
