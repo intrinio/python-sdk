@@ -3852,7 +3852,7 @@ Name | Type | Description  | Notes
 #### Zacks Analyst Ratings for Security
 
 
-Returns buy, sell, and hold recommendations from analysts at brokerages for the Security with the given `identifier`. Zack’s storied research team aggregates and validates the ratings from professional analysts.
+This database offers consensus analyst recommendations for over 5,000 US and Canadian listed companies.
 
 [//]: # (END_OVERVIEW)
 
