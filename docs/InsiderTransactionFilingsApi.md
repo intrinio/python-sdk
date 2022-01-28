@@ -32,7 +32,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOwnerInsiderTransactionFilings get_all_insider_transaction_filings(start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+> ApiResponseOwnerInsiderTransactionFilings get_all_insider_transaction_filings(start_date=start_date, end_date=end_date, page_size=page_size, sort_by=sort_by, next_page=next_page)
 
 #### All Insider Transactions Filings
 
@@ -56,9 +56,10 @@ intrinio.ApiClient().allow_retries(True)
 start_date = '2015-01-01'
 end_date = ''
 page_size = 100
+sort_by = 'updated_on'
 next_page = ''
 
-response = intrinio.InsiderTransactionFilingsApi().get_all_insider_transaction_filings(start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
+response = intrinio.InsiderTransactionFilingsApi().get_all_insider_transaction_filings(start_date=start_date, end_date=end_date, page_size=page_size, sort_by=sort_by, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -77,6 +78,7 @@ Name | Type | Description  | Notes
  **start_date** | date| Filed on or after the given date | [optional]   &nbsp;
  **end_date** | date| Filed before or after the given date | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **sort_by** | str| The field to sort by.  Default is &#39;filing_date&#39;.  Valid values are - &#39;filing_date&#39;, &#39;updated_on&#39;. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 

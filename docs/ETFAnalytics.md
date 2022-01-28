@@ -12,6 +12,7 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
+**date** | date | The calendar date these analytics represent. &nbsp;
 **fifty_two_week_high** | float | Highest trading price for the security in the preceding 52 weeks &nbsp;
 **fifty_two_week_low** | float | Lowest trading price for the security in the preceding 52 weeks &nbsp;
 **volume_traded** | float | The total quantity of shares traded on the latest trading day &nbsp;
