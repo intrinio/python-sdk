@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.27.2
-- Package version: 5.19.0
+- API version: 2.27.5
+- Package version: 5.20.0
 
 
 ## Requirements.
@@ -185,7 +185,9 @@ Class | Method | HTTP request | Description
 *OptionsApi* | [**get_options_prices_realtime**](docs/OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 *OptionsApi* | [**get_options_stats_realtime**](docs/OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 *OptionsApi* | [**get_unusual_activity**](docs/OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
+*OptionsApi* | [**get_unusual_activity_intraday**](docs/OptionsApi.md#get_unusual_activity_intraday) | **GET** /options/unusual_activity/{symbol}/intraday | Options Unusual Activity Intraday
 *OptionsApi* | [**get_unusual_activity_universal**](docs/OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
+*OptionsApi* | [**get_unusual_activity_universal_intraday**](docs/OptionsApi.md#get_unusual_activity_universal_intraday) | **GET** /options/unusual_activity/intraday | Options Unusual Activity Universal Intraday
 *OwnersApi* | [**get_all_owners**](docs/OwnersApi.md#get_all_owners) | **GET** /owners | All Owners
 *OwnersApi* | [**get_owner_by_id**](docs/OwnersApi.md#get_owner_by_id) | **GET** /owners/{identifier} | Owner by ID
 *OwnersApi* | [**insider_transaction_filings_by_owner**](docs/OwnersApi.md#insider_transaction_filings_by_owner) | **GET** /owners/{identifier}/insider_transaction_filings | Insider Transaction Filings by Owner

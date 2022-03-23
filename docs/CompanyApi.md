@@ -1045,7 +1045,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseInsiderTransactionFilings insider_transaction_filings_by_company(identifier, start_date=start_date, end_date=end_date, ownership_type=ownership_type, page_size=page_size, sort_by=sort_by, next_page=next_page)
+> ApiResponseInsiderTransactionFilings insider_transaction_filings_by_company(identifier, start_date=start_date, end_date=end_date, ownership_type=ownership_type, next_page=next_page, page_size=page_size, sort_by=sort_by, next_page2=next_page2)
 
 #### Insider Transaction Filings by Company
 
@@ -1070,11 +1070,12 @@ identifier = 'AAPL'
 start_date = '2018-01-01'
 end_date = '2019-01-01'
 ownership_type = 'D'
-page_size = 100
-sort_by = 'updated_on'
 next_page = ''
+page_size = 1000
+sort_by = 'updated_on'
+next_page2 = ''
 
-response = intrinio.CompanyApi().insider_transaction_filings_by_company(identifier, start_date=start_date, end_date=end_date, ownership_type=ownership_type, page_size=page_size, sort_by=sort_by, next_page=next_page)
+response = intrinio.CompanyApi().insider_transaction_filings_by_company(identifier, start_date=start_date, end_date=end_date, ownership_type=ownership_type, next_page=next_page, page_size=page_size, sort_by=sort_by, next_page2=next_page2)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1094,9 +1095,10 @@ Name | Type | Description  | Notes
  **start_date** | date| Return Company&#39;s insider transaction filings on or after this date | [optional]   &nbsp;
  **end_date** | date| Return Company&#39;s insider transaction filings on or before this date | [optional]   &nbsp;
  **ownership_type** | str| The type of ownership to return transaction filings for. &#39;D&#39; is for direct transactions. &#39;I&#39; is for indirect transactions. Omit for both types. | [optional]   &nbsp;
- **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
- **sort_by** | str| The field to sort by.  Default is &#39;filing_date&#39;.  Valid values are - &#39;filing_date&#39;, &#39;updated_on&#39;. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 1000]  &nbsp;
+ **sort_by** | str| The field to sort by.  Default is &#39;filing_date&#39;. | [optional]   &nbsp;
+ **next_page2** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
