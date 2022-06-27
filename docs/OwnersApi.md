@@ -296,7 +296,7 @@ intrinio.ApiClient().allow_retries(True)
 
 identifier = '430692'
 page_size = 100
-as_of_date = "2021-01-05"
+as_of_date = '2021-01-05'
 next_page = ''
 
 response = intrinio.OwnersApi().institutional_holdings_by_owner(identifier, page_size=page_size, as_of_date=as_of_date, next_page=next_page)
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| The Central Index Key issued by the SEC, which is the unique identifier all owner filings are issued under. |   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
- **as_of_date** | [**object**](.md)| Return only holdings filed before this date. | [optional]   &nbsp;
+ **as_of_date** | date| Return only holdings filed before this date. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 

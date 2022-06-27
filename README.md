@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.27.5
-- Package version: 5.20.0
+- API version: 2.28.0
+- Package version: 5.21.0
 
 
 ## Requirements.
@@ -122,6 +122,9 @@ Class | Method | HTTP request | Description
 *DataTagApi* | [**get_all_data_tags**](docs/DataTagApi.md#get_all_data_tags) | **GET** /data_tags | All Data Tags
 *DataTagApi* | [**get_data_tag_by_id**](docs/DataTagApi.md#get_data_tag_by_id) | **GET** /data_tags/{identifier} | Lookup Data Tag
 *DataTagApi* | [**search_data_tags**](docs/DataTagApi.md#search_data_tags) | **GET** /data_tags/search | Search Data Tags
+*ESGApi* | [**get_esg_companies**](docs/ESGApi.md#get_esg_companies) | **GET** /esg/companies | ESG Companies
+*ESGApi* | [**get_esg_company_ratings**](docs/ESGApi.md#get_esg_company_ratings) | **GET** /esg/{identifier} | ESG Company Ratings History
+*ESGApi* | [**get_esg_latest**](docs/ESGApi.md#get_esg_latest) | **GET** /esg | ESG Latest
 *ETFsApi* | [**get_all_etfs**](docs/ETFsApi.md#get_all_etfs) | **GET** /etfs | All ETFs
 *ETFsApi* | [**get_etf**](docs/ETFsApi.md#get_etf) | **GET** /etfs/{identifier} | Lookup ETF
 *ETFsApi* | [**get_etf_analytics**](docs/ETFsApi.md#get_etf_analytics) | **GET** /etfs/{identifier}/analytics | ETF Analytics
@@ -142,6 +145,7 @@ Class | Method | HTTP request | Description
 *ForexApi* | [**get_forex_currencies**](docs/ForexApi.md#get_forex_currencies) | **GET** /forex/currencies | Forex Currencies
 *ForexApi* | [**get_forex_pairs**](docs/ForexApi.md#get_forex_pairs) | **GET** /forex/pairs | Forex Currency Pairs
 *ForexApi* | [**get_forex_prices**](docs/ForexApi.md#get_forex_prices) | **GET** /forex/prices/{pair}/{timeframe} | Forex Currency Prices
+*FundamentalsApi* | [**filter_fundamental**](docs/FundamentalsApi.md#filter_fundamental) | **GET** /fundamentals | Filter Fundamental
 *FundamentalsApi* | [**get_fundamental_by_id**](docs/FundamentalsApi.md#get_fundamental_by_id) | **GET** /fundamentals/{id} | Fundamental by ID
 *FundamentalsApi* | [**get_fundamental_reported_financials**](docs/FundamentalsApi.md#get_fundamental_reported_financials) | **GET** /fundamentals/{id}/reported_financials | Reported Financials
 *FundamentalsApi* | [**get_fundamental_standardized_financials**](docs/FundamentalsApi.md#get_fundamental_standardized_financials) | **GET** /fundamentals/{id}/standardized_financials | Standardized Financials
@@ -310,6 +314,9 @@ Class | Method | HTTP request | Description
  - [ApiResponseCompanySharesOutstanding](docs/ApiResponseCompanySharesOutstanding.md)
  - [ApiResponseDataTags](docs/ApiResponseDataTags.md)
  - [ApiResponseDataTagsSearch](docs/ApiResponseDataTagsSearch.md)
+ - [ApiResponseESGCompanies](docs/ApiResponseESGCompanies.md)
+ - [ApiResponseESGCompanyRatingHistory](docs/ApiResponseESGCompanyRatingHistory.md)
+ - [ApiResponseESGLatest](docs/ApiResponseESGLatest.md)
  - [ApiResponseETFHoldings](docs/ApiResponseETFHoldings.md)
  - [ApiResponseETFs](docs/ApiResponseETFs.md)
  - [ApiResponseEconomicIndexHistoricalData](docs/ApiResponseEconomicIndexHistoricalData.md)
@@ -434,6 +441,9 @@ Class | Method | HTTP request | Description
  - [DetrendedPriceOscillatorTechnicalValue](docs/DetrendedPriceOscillatorTechnicalValue.md)
  - [DividendRecord](docs/DividendRecord.md)
  - [DonchianChannelTechnicalValue](docs/DonchianChannelTechnicalValue.md)
+ - [ESGCompanySummary](docs/ESGCompanySummary.md)
+ - [ESGRating](docs/ESGRating.md)
+ - [ESGRatingWithCompany](docs/ESGRatingWithCompany.md)
  - [ETF](docs/ETF.md)
  - [ETFAnalytics](docs/ETFAnalytics.md)
  - [ETFHolding](docs/ETFHolding.md)
