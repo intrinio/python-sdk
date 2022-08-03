@@ -46,6 +46,7 @@ Method | HTTP request | Description
 [**get_security_price_technicals_vwap**](SecurityApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
 [**get_security_price_technicals_wr**](SecurityApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
 [**get_security_realtime_price**](SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
+[**get_security_snapshots**](SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
 [**get_security_stock_price_adjustments**](SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Stock Price Adjustments by Security
 [**get_security_stock_prices**](SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Stock Prices by Security
 [**get_security_zacks_analyst_ratings**](SecurityApi.md#get_security_zacks_analyst_ratings) | **GET** /securities/{identifier}/zacks/analyst_ratings | Zacks Analyst Ratings for Security
@@ -3651,6 +3652,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RealtimeStockPrice**](RealtimeStockPrice.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_security_snapshots)
+
+[//]: # (RETURN_TYPE:SecuritySnapshotsResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:SecuritySnapshotsResult.md)
+
+[//]: # (OPERATION:get_security_snapshots_v2)
+
+[//]: # (ENDPOINT:/securities/snapshots)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_snapshots)
+
+## **get_security_snapshots**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_snapshots_v2)
+
+[//]: # (START_OVERVIEW)
+
+> SecuritySnapshotsResult get_security_snapshots(at_datetime=at_datetime)
+
+#### Realtime Stock Prices Snapshot
+
+
+Returns all security snapshots for the queried interval with links to download.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+at_datetime = ''
+
+response = intrinio.SecurityApi().get_security_snapshots(at_datetime=at_datetime)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **at_datetime** | datetime| The UTC date and time (with url-encoded spaces) the snapshot will cover. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**SecuritySnapshotsResult**](SecuritySnapshotsResult.md)
 
 [//]: # (END_OPERATION)
 

@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
+[**get_security_snapshots**](OptionsApi.md#get_security_snapshots) | **GET** /options/snapshots | Option Prices Realtime Snapshot
 [**get_unusual_activity**](OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
 [**get_unusual_activity_intraday**](OptionsApi.md#get_unusual_activity_intraday) | **GET** /options/unusual_activity/{symbol}/intraday | Options Unusual Activity Intraday
 [**get_unusual_activity_universal**](OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
@@ -1157,6 +1158,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsStatsRealtime**](ApiResponseOptionsStatsRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_security_snapshots)
+
+[//]: # (RETURN_TYPE:OptionSnapshotsResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionSnapshotsResult.md)
+
+[//]: # (OPERATION:get_security_snapshots_v2)
+
+[//]: # (ENDPOINT:/options/snapshots)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_security_snapshots)
+
+## **get_security_snapshots**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_snapshots_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionSnapshotsResult get_security_snapshots(source=source, at_datetime=at_datetime)
+
+#### Option Prices Realtime Snapshot
+
+
+Returns all options snapshots for the queried interval with links to download.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+source = ''
+at_datetime = ''
+
+response = intrinio.OptionsApi().get_security_snapshots(source=source, at_datetime=at_datetime)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **at_datetime** | datetime| The UTC date and time (with url-encoded spaces) the snapshot will cover. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionSnapshotsResult**](OptionSnapshotsResult.md)
 
 [//]: # (END_OPERATION)
 
