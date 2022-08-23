@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseStockExchangeRealtimeStockPrices get_stock_exchange_realtime_prices(identifier, source=source, page_size=page_size, next_page=next_page)
+> ApiResponseStockExchangeRealtimeStockPrices get_stock_exchange_realtime_prices(identifier, source=source, active_only=active_only, page_size=page_size, next_page=next_page)
 
 #### Realtime Stock Prices by Exchange
 
@@ -378,10 +378,11 @@ intrinio.ApiClient().allow_retries(True)
 
 identifier = 'USCOMP'
 source = ''
+active_only = ''
 page_size = 100
 next_page = ''
 
-response = intrinio.StockExchangeApi().get_stock_exchange_realtime_prices(identifier, source=source, page_size=page_size, next_page=next_page)
+response = intrinio.StockExchangeApi().get_stock_exchange_realtime_prices(identifier, source=source, active_only=active_only, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -399,6 +400,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
  **source** | str| Return realtime prices from the specified data source. If no source is specified, all sources are used. | [optional]   &nbsp;
+ **active_only** | bool| Returns prices only from the most recent trading day. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
