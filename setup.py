@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "intrinio-sdk"
-VERSION = "6.21.2"
+VERSION = "6.22.2"
 # To install the library, run the following
 #
 # python setup.py install
@@ -29,7 +29,7 @@ setup(
     version=VERSION,
     description="Intrinio API",
     author_email="",
-    url="https://github.com/intrinio/python-sdk/releases/tag/6.21.2",
+    url="https://github.com/intrinio/python-sdk/releases/tag/6.22.2",
     keywords=["Swagger", "Intrinio API"],
     install_requires=REQUIRES,
     packages=find_packages(),
