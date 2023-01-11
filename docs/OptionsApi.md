@@ -13,6 +13,10 @@ Method | HTTP request | Description
 [**get_options_chain_eod**](OptionsApi.md#get_options_chain_eod) | **GET** /options/chain/{symbol}/{expiration}/eod | Options Chain EOD
 [**get_options_chain_realtime**](OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
+[**get_options_interval_by_contract**](OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options intervals by contract
+[**get_options_interval_movers**](OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
+[**get_options_interval_movers_change**](OptionsApi.md#get_options_interval_movers_change) | **GET** /options/interval/movers/change | Options Intervals Movers By Change
+[**get_options_interval_movers_volume**](OptionsApi.md#get_options_interval_movers_volume) | **GET** /options/interval/movers/volume | Options Intervals Movers By Volume
 [**get_options_prices**](OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 [**get_options_prices_batch_realtime**](OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 [**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
@@ -763,6 +767,320 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsExpirations**](ApiResponseOptionsExpirations.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_interval_by_contract)
+
+[//]: # (RETURN_TYPE:OptionIntervalsResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionIntervalsResult.md)
+
+[//]: # (OPERATION:get_options_interval_by_contract_v2)
+
+[//]: # (ENDPOINT:/options/interval/{identifier})
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_interval_by_contract)
+
+## **get_options_interval_by_contract**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_interval_by_contract_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionIntervalsResult get_options_interval_by_contract(identifier, interval_size, source=source, page_size=page_size, end_time=end_time)
+
+#### Options intervals by contract
+
+
+Returns a list of interval data points for a contract.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'SPY___230103P00380000'
+interval_size = '5m'
+source = ''
+page_size = 100
+end_time = ''
+
+response = intrinio.OptionsApi().get_options_interval_by_contract(identifier, interval_size, source=source, page_size=page_size, end_time=end_time)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| The Intrinio ID or code of the options contract to request intervals for. |   &nbsp;
+ **interval_size** | str| The time length of the interval. |   &nbsp;
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **end_time** | datetime| The inclusive UTC date and time the intervals end at. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionIntervalsResult**](OptionIntervalsResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_interval_movers)
+
+[//]: # (RETURN_TYPE:OptionIntervalsMoversResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionIntervalsMoversResult.md)
+
+[//]: # (OPERATION:get_options_interval_movers_v2)
+
+[//]: # (ENDPOINT:/options/interval/movers)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_interval_movers)
+
+## **get_options_interval_movers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_interval_movers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionIntervalsMoversResult get_options_interval_movers(source=source, open_time=open_time)
+
+#### Options Intervals Movers
+
+
+Returns a list of intervals for the biggest movers over the last hour interval.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+source = ''
+open_time = ''
+
+response = intrinio.OptionsApi().get_options_interval_movers(source=source, open_time=open_time)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **open_time** | datetime| The inclusive UTC date and time the interval opens at. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionIntervalsMoversResult**](OptionIntervalsMoversResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_interval_movers_change)
+
+[//]: # (RETURN_TYPE:OptionIntervalsMoversResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionIntervalsMoversResult.md)
+
+[//]: # (OPERATION:get_options_interval_movers_change_v2)
+
+[//]: # (ENDPOINT:/options/interval/movers/change)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_interval_movers_change)
+
+## **get_options_interval_movers_change**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_interval_movers_change_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionIntervalsMoversResult get_options_interval_movers_change(source=source, open_time=open_time)
+
+#### Options Intervals Movers By Change
+
+
+Returns a list of intervals for the biggest movers by change over the last hour interval.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+source = ''
+open_time = ''
+
+response = intrinio.OptionsApi().get_options_interval_movers_change(source=source, open_time=open_time)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **open_time** | datetime| The inclusive UTC date and time the interval opens at. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionIntervalsMoversResult**](OptionIntervalsMoversResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_interval_movers_volume)
+
+[//]: # (RETURN_TYPE:OptionIntervalsMoversResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionIntervalsMoversResult.md)
+
+[//]: # (OPERATION:get_options_interval_movers_volume_v2)
+
+[//]: # (ENDPOINT:/options/interval/movers/volume)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_interval_movers_volume)
+
+## **get_options_interval_movers_volume**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_interval_movers_volume_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionIntervalsMoversResult get_options_interval_movers_volume(source=source, open_time=open_time)
+
+#### Options Intervals Movers By Volume
+
+
+Returns a list of intervals for the biggest movers by volume over the last hour interval.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+source = ''
+open_time = ''
+
+response = intrinio.OptionsApi().get_options_interval_movers_volume(source=source, open_time=open_time)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **open_time** | datetime| The inclusive UTC date and time the interval opens at. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionIntervalsMoversResult**](OptionIntervalsMoversResult.md)
 
 [//]: # (END_OPERATION)
 

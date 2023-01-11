@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.30.0
-- Package version: 6.22.2
+- API version: 2.34.0
+- Package version: 6.22.3
 
 
 ## Requirements.
@@ -185,6 +185,10 @@ Class | Method | HTTP request | Description
 *OptionsApi* | [**get_options_chain_eod**](docs/OptionsApi.md#get_options_chain_eod) | **GET** /options/chain/{symbol}/{expiration}/eod | Options Chain EOD
 *OptionsApi* | [**get_options_chain_realtime**](docs/OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 *OptionsApi* | [**get_options_expirations**](docs/OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
+*OptionsApi* | [**get_options_interval_by_contract**](docs/OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options intervals by contract
+*OptionsApi* | [**get_options_interval_movers**](docs/OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
+*OptionsApi* | [**get_options_interval_movers_change**](docs/OptionsApi.md#get_options_interval_movers_change) | **GET** /options/interval/movers/change | Options Intervals Movers By Change
+*OptionsApi* | [**get_options_interval_movers_volume**](docs/OptionsApi.md#get_options_interval_movers_volume) | **GET** /options/interval/movers/volume | Options Intervals Movers By Volume
 *OptionsApi* | [**get_options_prices**](docs/OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 *OptionsApi* | [**get_options_prices_batch_realtime**](docs/OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 *OptionsApi* | [**get_options_prices_eod**](docs/OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
@@ -496,6 +500,10 @@ Class | Method | HTTP request | Description
  - [OptionContractsList](docs/OptionContractsList.md)
  - [OptionEod](docs/OptionEod.md)
  - [OptionFactorsRealtime](docs/OptionFactorsRealtime.md)
+ - [OptionInterval](docs/OptionInterval.md)
+ - [OptionIntervalMover](docs/OptionIntervalMover.md)
+ - [OptionIntervalsMoversResult](docs/OptionIntervalsMoversResult.md)
+ - [OptionIntervalsResult](docs/OptionIntervalsResult.md)
  - [OptionPrice](docs/OptionPrice.md)
  - [OptionPriceBatchRealtime](docs/OptionPriceBatchRealtime.md)
  - [OptionPriceEod](docs/OptionPriceEod.md)
