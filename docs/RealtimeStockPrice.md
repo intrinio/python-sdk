@@ -27,6 +27,11 @@ Name | Type | Description
 **market_volume** | float | The number of shares exchanged during the trading day for the whole market. &nbsp;
 **updated_on** | datetime | The date and time when the data was last updated. &nbsp;
 **source** | str | The source of the data. &nbsp;
+**listing_venue** | str | The venue the price came from. &nbsp;
+**sales_conditions** | str | The condition for the sale. &nbsp;
+**quote_conditions** | str | The condition for the quote. &nbsp;
+**market_center_code** | str | The market center character code. &nbsp;
+**is_darkpool** | bool | Whether or not the current trade is from a darkpool or not. &nbsp;
 **security** | [**RealtimeStockPriceSecurity**](RealtimeStockPriceSecurity.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)

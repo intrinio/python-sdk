@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.34.0
-- Package version: 6.22.3
+- API version: 2.39.0
+- Package version: 6.23.0
 
 
 ## Requirements.
@@ -185,7 +185,7 @@ Class | Method | HTTP request | Description
 *OptionsApi* | [**get_options_chain_eod**](docs/OptionsApi.md#get_options_chain_eod) | **GET** /options/chain/{symbol}/{expiration}/eod | Options Chain EOD
 *OptionsApi* | [**get_options_chain_realtime**](docs/OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 *OptionsApi* | [**get_options_expirations**](docs/OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
-*OptionsApi* | [**get_options_interval_by_contract**](docs/OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options intervals by contract
+*OptionsApi* | [**get_options_interval_by_contract**](docs/OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options Intervals By Contract
 *OptionsApi* | [**get_options_interval_movers**](docs/OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
 *OptionsApi* | [**get_options_interval_movers_change**](docs/OptionsApi.md#get_options_interval_movers_change) | **GET** /options/interval/movers/change | Options Intervals Movers By Change
 *OptionsApi* | [**get_options_interval_movers_volume**](docs/OptionsApi.md#get_options_interval_movers_volume) | **GET** /options/interval/movers/volume | Options Intervals Movers By Volume
@@ -210,6 +210,9 @@ Class | Method | HTTP request | Description
 *SecurityApi* | [**get_security_data_point_text**](docs/SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
 *SecurityApi* | [**get_security_historical_data**](docs/SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
 *SecurityApi* | [**get_security_insider_ownership**](docs/SecurityApi.md#get_security_insider_ownership) | **GET** /securities/{identifier}/institutional_ownership | Institutional Ownership by Security
+*SecurityApi* | [**get_security_interval_movers**](docs/SecurityApi.md#get_security_interval_movers) | **GET** /securities/market_movers | Security Intervals Movers
+*SecurityApi* | [**get_security_interval_movers_change**](docs/SecurityApi.md#get_security_interval_movers_change) | **GET** /securities/market_movers/change | Security Intervals Movers By Change
+*SecurityApi* | [**get_security_interval_movers_volume**](docs/SecurityApi.md#get_security_interval_movers_volume) | **GET** /securities/market_movers/volume | Security Intervals Movers By Volume
 *SecurityApi* | [**get_security_interval_prices**](docs/SecurityApi.md#get_security_interval_prices) | **GET** /securities/{identifier}/prices/intervals | Interval Stock Prices for Security
 *SecurityApi* | [**get_security_intraday_prices**](docs/SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
 *SecurityApi* | [**get_security_latest_dividend_record**](docs/SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Latest Dividend Record for Security
@@ -523,6 +526,8 @@ Class | Method | HTTP request | Description
  - [ReportedTag](docs/ReportedTag.md)
  - [SICIndex](docs/SICIndex.md)
  - [Security](docs/Security.md)
+ - [SecurityIntervalMover](docs/SecurityIntervalMover.md)
+ - [SecurityIntervalsMoversResult](docs/SecurityIntervalsMoversResult.md)
  - [SecurityScreenClause](docs/SecurityScreenClause.md)
  - [SecurityScreenGroup](docs/SecurityScreenGroup.md)
  - [SecurityScreenResult](docs/SecurityScreenResult.md)
