@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseSecurityInstitutionalOwnership get_security_insider_ownership(identifier)
+> ApiResponseSecurityInstitutionalOwnership get_security_insider_ownership(identifier, next_page=next_page)
 
 #### Institutional Ownership by Security
 
@@ -541,8 +541,9 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
+next_page = ''
 
-response = intrinio.SecurityApi().get_security_insider_ownership(identifier)
+response = intrinio.SecurityApi().get_security_insider_ownership(identifier, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -559,6 +560,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

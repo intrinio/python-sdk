@@ -1446,7 +1446,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanySharesOutstanding shares_outstanding_by_company(identifier)
+> ApiResponseCompanySharesOutstanding shares_outstanding_by_company(identifier, end_date_greater_than=end_date_greater_than, end_date_less_than=end_date_less_than)
 
 #### Shares Outstanding by Company
 
@@ -1468,8 +1468,10 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
+end_date_greater_than = ''
+end_date_less_than = ''
 
-response = intrinio.CompanyApi().shares_outstanding_by_company(identifier)
+response = intrinio.CompanyApi().shares_outstanding_by_company(identifier, end_date_greater_than=end_date_greater_than, end_date_less_than=end_date_less_than)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1486,6 +1488,8 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **end_date_greater_than** | date| Returns shares outstanding after this date. | [optional]   &nbsp;
+ **end_date_less_than** | date| Returns shares outstanding before this date. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
