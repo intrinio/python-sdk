@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike, stock_price_source=stock_price_source, model=model)
+> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model)
 
 #### Option Strikes Realtime
 
@@ -230,10 +230,11 @@ intrinio.ApiClient().allow_retries(True)
 
 symbol = 'MSFT'
 strike = 95
+source = ''
 stock_price_source = ''
 model = ''
 
-response = intrinio.OptionsApi().get_option_strikes_realtime(symbol, strike, stock_price_source=stock_price_source, model=model)
+response = intrinio.OptionsApi().get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -251,6 +252,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | str| The option symbol, corresponding to the underlying security. |   &nbsp;
  **strike** | float| The strike price of the option contract. This will return options contracts with strike price equal to this price. |   &nbsp;
+ **source** | str| Realtime or delayed. | [optional]   &nbsp;
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
 <br/>
@@ -595,7 +597,7 @@ Name | Type | Description  | Notes
  **strike** | float| The strike price of the option contract. This will return options contracts with strike price equal to this price. | [optional]   &nbsp;
  **strike_greater_than** | float| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]   &nbsp;
  **strike_less_than** | float| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]   &nbsp;
- **date** | date| The the date to retrieve prices for | [optional]   &nbsp;
+ **date** | date| The date to retrieve prices for | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1280,7 +1282,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPricesBatchRealtime get_options_prices_batch_realtime(body, source=source, stock_price_source=stock_price_source, model=model)
+> ApiResponseOptionsPricesBatchRealtime get_options_prices_batch_realtime(body, source=source, show_stats=show_stats, stock_price_source=stock_price_source, model=model)
 
 #### Option Prices Batch Realtime
 
@@ -1302,6 +1304,7 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 source = ''
+show_stats = ''
 stock_price_source = ''
 model = ''
 body = {
@@ -1312,7 +1315,7 @@ body = {
   ]
 }
 
-response = intrinio.OptionsApi().get_options_prices_batch_realtime(body, source=source, stock_price_source=stock_price_source, model=model)
+response = intrinio.OptionsApi().get_options_prices_batch_realtime(body, source=source, show_stats=show_stats, stock_price_source=stock_price_source, model=model)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1330,6 +1333,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**OptionContractsList**](OptionContractsList.md)| The contract symbols for which to return options prices for. |   &nbsp;
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **show_stats** | bool| Whether to include Greek calculations or not. | [optional]   &nbsp;
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
 <br/>
@@ -1367,7 +1371,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPricesEod get_options_prices_eod(identifier)
+> ApiResponseOptionsPricesEod get_options_prices_eod(identifier, next_page=next_page, start_date=start_date, end_date=end_date)
 
 #### Option Prices EOD
 
@@ -1389,8 +1393,9 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL230616P00190000'
+next_page = ''
 
-response = intrinio.OptionsApi().get_options_prices_eod(identifier)
+response = intrinio.OptionsApi().get_options_prices_eod(identifier, next_page=next_page, )
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1407,6 +1412,9 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| The Intrinio ID or code of the options contract to request prices for. |   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+ **start_date** | date| The start date to retrieve prices for | [optional]   &nbsp;
+ **end_date** | date| The end date to retrieve prices for | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
