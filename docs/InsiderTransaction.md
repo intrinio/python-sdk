@@ -21,9 +21,13 @@ Name | Type | Description
 **ticker** | str | The ticker symbol for the company’s common stock &nbsp;
 **security_title** | str | The name of the derivative security transacted &nbsp;
 **conversion_exercise_price** | float | The conversion or exercise price of the derivative security transacted &nbsp;
+**transaction_date** | date | The date of the transaction &nbsp;
+**deemed_execution_date** | date | The date of the transaction had it not a directly identifiable date &nbsp;
 **transaction_type_code** | str | A symbol representing the transaction type; P &#x3D; Purchase | S &#x3D; Sale | A  &#x3D; Award | M &#x3D; Conversion to Common | C &#x3D; Conversion | X &#x3D; Exercise of Derivative More Transaction Codes &nbsp;
 **acquisition_disposition_code** | str | A symbol representing whether or not the derivative securities are Acquired or Disposed; A &#x3D; Acquisition | D &#x3D; Disposition &nbsp;
 **amount_of_shares** | float | The number of derivative securities involved in the subject transaction &nbsp;
+**exercise_date** | date | The exercise date of the derivative securities &nbsp;
+**expiration_date** | date | The expiration date of the derivative securities &nbsp;
 **underlying_security_title** | str | The name of the underlying non-derivative security related to this derivative transaction &nbsp;
 **underlying_shares** | float | The number of non-derivative shares involved in the subject transaction &nbsp;
 **transaction_price** | float | The price of the derivative securities &nbsp;

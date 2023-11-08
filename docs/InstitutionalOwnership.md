@@ -14,6 +14,7 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **owner_cik** | str | The Central Index Key issued by the SEC, which is the unique identifier all owner filings &nbsp;
 **owner_name** | str | The name of the institutional owner &nbsp;
+**period_ended** | date | The date of the latest 13-F filing on record with the SEC. &nbsp;
 **value** | float | The market value in amount of dollars of the holding in the listed security &nbsp;
 **amount** | float | The number of shares held in the listed security &nbsp;
 **sole_voting_authority** | float | The number of shares where the insitutional holder has sole voting authority &nbsp;

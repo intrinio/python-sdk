@@ -18,6 +18,7 @@ Name | Type | Description
 **security_type** | str | The type of the security &nbsp;
 **title_of_class** | str | The class of stock held &nbsp;
 **stock_exchange** | str | The stock exchange where the security is traded &nbsp;
+**period_ended** | date | The date of the latest 13-F filing on record with the SEC. &nbsp;
 **filing_date** | date | The date when the filing was submitted to the SEC by the company &nbsp;
 **value** | float | The market value in amount of dollars of the holding in the listed security &nbsp;
 **amount** | float | The number of shares held in the listed security &nbsp;

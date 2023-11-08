@@ -851,9 +851,9 @@ intrinio.ApiClient().allow_retries(True)
 identifier = 'AAPL'
 interval_size = '15m'
 source = ''
-start_date = '2018-01-01'
+start_date = '2023-01-01'
 start_time = ''
-end_date = '2019-01-01'
+end_date = '2023-02-01'
 end_time = ''
 timezone = 'UTC'
 page_size = 100
@@ -4328,7 +4328,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> SecurityTradesResult get_security_trades_by_symbol(source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
+> SecurityTradesResult get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
 
 #### Security Trades By Symbol
 
@@ -4349,6 +4349,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
+identifier = 'AAPL'
 source = ''
 start_date = ''
 start_time = ''
@@ -4358,7 +4359,7 @@ timezone = 'UTC'
 page_size = 100
 next_page = ''
 
-response = intrinio.SecurityApi().get_security_trades_by_symbol(source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
+response = intrinio.SecurityApi().get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -4374,6 +4375,7 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **identifier** | str| The ticker symbol for which trades are being requested. |   &nbsp;
  **source** | str| The specific source of the data being requested. |   &nbsp;
  **start_date** | date| The start date for the data being requested. | [optional]   &nbsp;
  **start_time** | str| The start time for the data being requested. | [optional]   &nbsp;
