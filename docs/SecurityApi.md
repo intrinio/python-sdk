@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**get_security_data_point_number**](SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Data Point (Number) for Security
 [**get_security_data_point_text**](SecurityApi.md#get_security_data_point_text) | **GET** /securities/{identifier}/data_point/{tag}/text | Data Point (Text) for Security
 [**get_security_historical_data**](SecurityApi.md#get_security_historical_data) | **GET** /securities/{identifier}/historical_data/{tag} | Historical Data for Security
+[**get_security_history_by_identifier**](SecurityApi.md#get_security_history_by_identifier) | **GET** /securities/history-by-identifier/{identifier} | Security History By Identifier
+[**get_security_history_by_ticker**](SecurityApi.md#get_security_history_by_ticker) | **GET** /securities/history-by-ticker/{ticker} | Security History By Ticker
 [**get_security_insider_ownership**](SecurityApi.md#get_security_insider_ownership) | **GET** /securities/{identifier}/institutional_ownership | Institutional Ownership by Security
 [**get_security_interval_movers**](SecurityApi.md#get_security_interval_movers) | **GET** /securities/market_movers | Security Intervals Movers
 [**get_security_interval_movers_change**](SecurityApi.md#get_security_interval_movers_change) | **GET** /securities/market_movers/change | Security Intervals Movers By Change
@@ -491,6 +493,156 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseSecurityHistoricalData**](ApiResponseSecurityHistoricalData.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_security_history_by_identifier)
+
+[//]: # (RETURN_TYPE:SecurityHistoryListResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:SecurityHistoryListResult.md)
+
+[//]: # (OPERATION:get_security_history_by_identifier_v2)
+
+[//]: # (ENDPOINT:/securities/history-by-identifier/{identifier})
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_history_by_identifier)
+
+## **get_security_history_by_identifier**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_history_by_identifier_v2)
+
+[//]: # (START_OVERVIEW)
+
+> SecurityHistoryListResult get_security_history_by_identifier(identifier)
+
+#### Security History By Identifier
+
+
+Lists the tickers a company has used over time.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = '037833100'
+
+response = intrinio.SecurityApi().get_security_history_by_identifier(identifier)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Security identifier (FIGI, COMPOSITE FIGI, SHARE CLASS FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**SecurityHistoryListResult**](SecurityHistoryListResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_security_history_by_ticker)
+
+[//]: # (RETURN_TYPE:SecurityHistoryListResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:SecurityHistoryListResult.md)
+
+[//]: # (OPERATION:get_security_history_by_ticker_v2)
+
+[//]: # (ENDPOINT:/securities/history-by-ticker/{ticker})
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_history_by_ticker)
+
+## **get_security_history_by_ticker**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_history_by_ticker_v2)
+
+[//]: # (START_OVERVIEW)
+
+> SecurityHistoryListResult get_security_history_by_ticker(ticker)
+
+#### Security History By Ticker
+
+
+Lists the tickers a company has used over time.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+ticker = 'AAPL'
+
+response = intrinio.SecurityApi().get_security_history_by_ticker(ticker)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticker** | str| A Security ticker symbol |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**SecurityHistoryListResult**](SecurityHistoryListResult.md)
 
 [//]: # (END_OPERATION)
 
