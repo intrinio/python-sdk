@@ -15,6 +15,7 @@ Name | Type | Description
 **price** | [**OptionPriceRealtime**](OptionPriceRealtime.md) |  &nbsp;
 **stats** | [**OptionStatsRealtime**](OptionStatsRealtime.md) |  &nbsp;
 **option** | [**OptionRealtime**](OptionRealtime.md) |  &nbsp;
+**extended_price** | [**OptionPriceRealtimeExtended**](OptionPriceRealtimeExtended.md) |  &nbsp;
 
 [//]: # (END_DEFINITION)
 
@@ -26,6 +27,9 @@ Name | Type | Description
 
 
 [//]: # (CONTAINED_CLASS:OptionRealtime)
+
+
+[//]: # (CONTAINED_CLASS:OptionPriceRealtimeExtended)
 
 
 

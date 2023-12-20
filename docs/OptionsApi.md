@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model)
+> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
 
 #### Option Strikes Realtime
 
@@ -233,8 +233,9 @@ strike = 95
 source = ''
 stock_price_source = ''
 model = ''
+show_extended_price = ''
 
-response = intrinio.OptionsApi().get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model)
+response = intrinio.OptionsApi().get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -255,6 +256,7 @@ Name | Type | Description  | Notes
  **source** | str| Realtime or delayed. | [optional]   &nbsp;
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
+ **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -633,7 +635,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChainRealtime get_options_chain_realtime(symbol, expiration, source=source, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, volume_greater_than=volume_greater_than, volume_less_than=volume_less_than, open_interest_greater_than=open_interest_greater_than, open_interest_less_than=open_interest_less_than, moneyness=moneyness, stock_price_source=stock_price_source, model=model)
+> ApiResponseOptionsChainRealtime get_options_chain_realtime(symbol, expiration, source=source, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, volume_greater_than=volume_greater_than, volume_less_than=volume_less_than, open_interest_greater_than=open_interest_greater_than, open_interest_less_than=open_interest_less_than, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
 
 #### Options Chain Realtime
 
@@ -661,8 +663,9 @@ type = ''
 moneyness = ''
 stock_price_source = ''
 model = ''
+show_extended_price = ''
 
-response = intrinio.OptionsApi().get_options_chain_realtime(symbol, expiration, source=source, type=type, moneyness=moneyness, stock_price_source=stock_price_source, model=model)
+response = intrinio.OptionsApi().get_options_chain_realtime(symbol, expiration, source=source, type=type, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -692,6 +695,7 @@ Name | Type | Description  | Notes
  **moneyness** | str| The moneyness of the options contracts to return. &#39;all&#39; will return all options contracts. &#39;in_the_money&#39; will return options contracts that are in the money (call options with strike prices below the current price, put options with strike prices above the current price). &#39;out_of_they_money&#39; will return options contracts that are out of the money (call options with strike prices above the current price, put options with strike prices below the current price). &#39;near_the_money&#39; will return options contracts that are $0.50 or less away from being in the money.  Requires subscription to realtime stock price data. | [optional]   &nbsp;
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
+ **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1282,7 +1286,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPricesBatchRealtime get_options_prices_batch_realtime(body, source=source, show_stats=show_stats, stock_price_source=stock_price_source, model=model)
+> ApiResponseOptionsPricesBatchRealtime get_options_prices_batch_realtime(body, source=source, show_extended_price=show_extended_price, stock_price_source=stock_price_source, model=model, show_extended_price2=show_extended_price2)
 
 #### Option Prices Batch Realtime
 
@@ -1304,9 +1308,10 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 source = ''
-show_stats = ''
+show_extended_price = ''
 stock_price_source = ''
 model = ''
+show_extended_price2 = ''
 body = {
   "contracts": [
     "A220121P00055000",
@@ -1315,7 +1320,7 @@ body = {
   ]
 }
 
-response = intrinio.OptionsApi().get_options_prices_batch_realtime(body, source=source, show_stats=show_stats, stock_price_source=stock_price_source, model=model)
+response = intrinio.OptionsApi().get_options_prices_batch_realtime(body, source=source, show_extended_price=show_extended_price, stock_price_source=stock_price_source, model=model, show_extended_price2=show_extended_price2)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1333,9 +1338,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**OptionContractsList**](OptionContractsList.md)| The contract symbols for which to return options prices for. |   &nbsp;
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
- **show_stats** | bool| Whether to include Greek calculations or not. | [optional]   &nbsp;
+ **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
+ **show_extended_price2** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1450,7 +1456,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPriceRealtime get_options_prices_realtime(identifier, source=source, stock_price_source=stock_price_source, model=model)
+> ApiResponseOptionsPriceRealtime get_options_prices_realtime(identifier, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
 
 #### Option Prices Realtime
 
@@ -1475,8 +1481,9 @@ identifier = 'AAPL230120C00090000'
 source = ''
 stock_price_source = ''
 model = ''
+show_extended_price = ''
 
-response = intrinio.OptionsApi().get_options_prices_realtime(identifier, source=source, stock_price_source=stock_price_source, model=model)
+response = intrinio.OptionsApi().get_options_prices_realtime(identifier, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1496,6 +1503,7 @@ Name | Type | Description  | Notes
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
+ **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1608,7 +1616,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsStatsRealtime get_options_stats_realtime(identifier, source=source)
+> ApiResponseOptionsStatsRealtime get_options_stats_realtime(identifier, source=source, show_extended_price=show_extended_price)
 
 #### Option Stats Realtime
 
@@ -1631,8 +1639,9 @@ intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL230120C00090000'
 source = ''
+show_extended_price = ''
 
-response = intrinio.OptionsApi().get_options_stats_realtime(identifier, source=source)
+response = intrinio.OptionsApi().get_options_stats_realtime(identifier, source=source, show_extended_price=show_extended_price)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1650,6 +1659,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| The Intrinio ID or code of the options contract to request prices for. |   &nbsp;
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
