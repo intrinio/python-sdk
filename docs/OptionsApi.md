@@ -1286,7 +1286,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPricesBatchRealtime get_options_prices_batch_realtime(body, source=source, show_extended_price=show_extended_price, stock_price_source=stock_price_source, model=model, show_extended_price2=show_extended_price2)
+> ApiResponseOptionsPricesBatchRealtime get_options_prices_batch_realtime(body, source=source, show_stats=show_stats, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
 
 #### Option Prices Batch Realtime
 
@@ -1308,10 +1308,10 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 source = ''
-show_extended_price = ''
+show_stats = ''
 stock_price_source = ''
 model = ''
-show_extended_price2 = ''
+show_extended_price = ''
 body = {
   "contracts": [
     "A220121P00055000",
@@ -1320,7 +1320,7 @@ body = {
   ]
 }
 
-response = intrinio.OptionsApi().get_options_prices_batch_realtime(body, source=source, show_extended_price=show_extended_price, stock_price_source=stock_price_source, model=model, show_extended_price2=show_extended_price2)
+response = intrinio.OptionsApi().get_options_prices_batch_realtime(body, source=source, show_stats=show_stats, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1338,10 +1338,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**OptionContractsList**](OptionContractsList.md)| The contract symbols for which to return options prices for. |   &nbsp;
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
- **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
+ **show_stats** | bool| Whether to include Greek calculations or not. | [optional]   &nbsp;
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
- **show_extended_price2** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
+ **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

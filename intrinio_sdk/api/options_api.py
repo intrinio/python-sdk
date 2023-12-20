@@ -1750,10 +1750,10 @@ class OptionsApi(object):
         :param async bool
         :param OptionContractsList body: The contract symbols for which to return options prices for. (required)
         :param str source: Realtime or 15-minute delayed contracts.
-        :param bool show_extended_price: Whether to include open close high low type fields.
+        :param bool show_stats: Whether to include Greek calculations or not.
         :param str stock_price_source: Source for underlying price for calculating Greeks.
         :param str model: Model for calculating Greek values. Default is black_scholes.
-        :param bool show_extended_price2: Whether to include open close high low type fields.
+        :param bool show_extended_price: Whether to include open close high low type fields.
         :return: ApiResponseOptionsPricesBatchRealtime
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1777,16 +1777,16 @@ class OptionsApi(object):
         :param async bool
         :param OptionContractsList body: The contract symbols for which to return options prices for. (required)
         :param str source: Realtime or 15-minute delayed contracts.
-        :param bool show_extended_price: Whether to include open close high low type fields.
+        :param bool show_stats: Whether to include Greek calculations or not.
         :param str stock_price_source: Source for underlying price for calculating Greeks.
         :param str model: Model for calculating Greek values. Default is black_scholes.
-        :param bool show_extended_price2: Whether to include open close high low type fields.
+        :param bool show_extended_price: Whether to include open close high low type fields.
         :return: ApiResponseOptionsPricesBatchRealtime
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'source', 'show_extended_price', 'stock_price_source', 'model', 'show_extended_price2']  # noqa: E501
+        all_params = ['body', 'source', 'show_stats', 'stock_price_source', 'model', 'show_extended_price']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1813,14 +1813,14 @@ class OptionsApi(object):
         query_params = []
         if 'source' in params:
             query_params.append(('source', params['source']))  # noqa: E501
-        if 'show_extended_price' in params:
-            query_params.append(('show_extended_price', params['show_extended_price']))  # noqa: E501
+        if 'show_stats' in params:
+            query_params.append(('show_stats', params['show_stats']))  # noqa: E501
         if 'stock_price_source' in params:
             query_params.append(('stock_price_source', params['stock_price_source']))  # noqa: E501
         if 'model' in params:
             query_params.append(('model', params['model']))  # noqa: E501
-        if 'show_extended_price2' in params:
-            query_params.append(('show_extended_price', params['show_extended_price2']))  # noqa: E501
+        if 'show_extended_price' in params:
+            query_params.append(('show_extended_price', params['show_extended_price']))  # noqa: E501
 
         header_params = {}
 
