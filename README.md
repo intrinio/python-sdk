@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.48.1
-- Package version: 6.26.5
+- API version: 2.52.0
+- Package version: 6.26.6
 
 
 ## Requirements.
@@ -103,6 +103,7 @@ Class | Method | HTTP request | Description
 *CompanyApi* | [**get_all_company_news**](docs/CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 *CompanyApi* | [**get_company**](docs/CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
 *CompanyApi* | [**get_company_answers**](docs/CompanyApi.md#get_company_answers) | **GET** /companies/{identifier}/answers | Company Answers
+*CompanyApi* | [**get_company_daily_metrics**](docs/CompanyApi.md#get_company_daily_metrics) | **GET** /companies/{identifier}/daily_metrics | Company metrics by Company
 *CompanyApi* | [**get_company_data_point_number**](docs/CompanyApi.md#get_company_data_point_number) | **GET** /companies/{identifier}/data_point/{tag}/number | Data Point (Number) for Company
 *CompanyApi* | [**get_company_data_point_text**](docs/CompanyApi.md#get_company_data_point_text) | **GET** /companies/{identifier}/data_point/{tag}/text | Data Point (Text) for Company
 *CompanyApi* | [**get_company_filings**](docs/CompanyApi.md#get_company_filings) | **GET** /companies/{identifier}/filings | All Filings by Company
@@ -324,6 +325,7 @@ Class | Method | HTTP request | Description
  - [ApiResponseCompanies](docs/ApiResponseCompanies.md)
  - [ApiResponseCompaniesSearch](docs/ApiResponseCompaniesSearch.md)
  - [ApiResponseCompanyAnswers](docs/ApiResponseCompanyAnswers.md)
+ - [ApiResponseCompanyDailyMetrics](docs/ApiResponseCompanyDailyMetrics.md)
  - [ApiResponseCompanyFilings](docs/ApiResponseCompanyFilings.md)
  - [ApiResponseCompanyFundamentals](docs/ApiResponseCompanyFundamentals.md)
  - [ApiResponseCompanyHistoricalData](docs/ApiResponseCompanyHistoricalData.md)
@@ -453,6 +455,7 @@ Class | Method | HTTP request | Description
  - [ChaikinMoneyFlowTechnicalValue](docs/ChaikinMoneyFlowTechnicalValue.md)
  - [CommodityChannelIndexTechnicalValue](docs/CommodityChannelIndexTechnicalValue.md)
  - [Company](docs/Company.md)
+ - [CompanyDailyMetric](docs/CompanyDailyMetric.md)
  - [CompanyFiling](docs/CompanyFiling.md)
  - [CompanyInitialPublicOffering](docs/CompanyInitialPublicOffering.md)
  - [CompanyNews](docs/CompanyNews.md)

@@ -4480,7 +4480,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> SecurityTradesResult get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
+> SecurityTradesResult get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, darkpool_only=darkpool_only, page_size=page_size, next_page=next_page)
 
 #### Security Trades By Symbol
 
@@ -4508,10 +4508,11 @@ start_time = ''
 end_date = ''
 end_time = ''
 timezone = 'UTC'
+darkpool_only = False
 page_size = 100
 next_page = ''
 
-response = intrinio.SecurityApi().get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
+response = intrinio.SecurityApi().get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, darkpool_only=darkpool_only, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -4528,12 +4529,13 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| The ticker symbol for which trades are being requested. |   &nbsp;
- **source** | str| The specific source of the data being requested. |   &nbsp;
+ **source** | str| The specific source of the data being requested.  Specifying delayed sip will result in the system automatically determining which delayed sip source (cta_delayed, cta_b_delayed, utp_delayed) to use. |   &nbsp;
  **start_date** | date| The start date for the data being requested. | [optional]   &nbsp;
  **start_time** | str| The start time for the data being requested. | [optional]   &nbsp;
  **end_date** | date| The end date for the data being requested. | [optional]   &nbsp;
  **end_time** | str| The end time for the data being requested. | [optional]   &nbsp;
  **timezone** | str| The timezone the start and end date/times use. | [optional] [default to UTC]  &nbsp;
+ **darkpool_only** | bool| Set to True to show only darkpool trades | [optional] [default to False]  &nbsp;
  **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

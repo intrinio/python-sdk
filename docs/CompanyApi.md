@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_all_company_news**](CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 [**get_company**](CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
 [**get_company_answers**](CompanyApi.md#get_company_answers) | **GET** /companies/{identifier}/answers | Company Answers
+[**get_company_daily_metrics**](CompanyApi.md#get_company_daily_metrics) | **GET** /companies/{identifier}/daily_metrics | Company metrics by Company
 [**get_company_data_point_number**](CompanyApi.md#get_company_data_point_number) | **GET** /companies/{identifier}/data_point/{tag}/number | Data Point (Number) for Company
 [**get_company_data_point_text**](CompanyApi.md#get_company_data_point_text) | **GET** /companies/{identifier}/data_point/{tag}/text | Data Point (Text) for Company
 [**get_company_filings**](CompanyApi.md#get_company_filings) | **GET** /companies/{identifier}/filings | All Filings by Company
@@ -346,6 +347,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseCompanyAnswers**](ApiResponseCompanyAnswers.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_company_daily_metrics)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanyDailyMetrics)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyDailyMetrics.md)
+
+[//]: # (OPERATION:get_company_daily_metrics_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/daily_metrics)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_daily_metrics)
+
+## **get_company_daily_metrics**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_daily_metrics_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseCompanyDailyMetrics get_company_daily_metrics(identifier, page_size=page_size, next_page=next_page, next_page2=next_page2)
+
+#### Company metrics by Company
+
+
+Returns the latest company metrics.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL'
+page_size = 100
+next_page = ''
+next_page2 = ''
+
+response = intrinio.CompanyApi().get_company_daily_metrics(identifier, page_size=page_size, next_page=next_page, next_page2=next_page2)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+ **next_page2** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseCompanyDailyMetrics**](ApiResponseCompanyDailyMetrics.md)
 
 [//]: # (END_OPERATION)
 

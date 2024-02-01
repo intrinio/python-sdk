@@ -19,6 +19,7 @@ Name | Type | Description
 **total_volume** | float | The total volume of the symbol for the day up to the timestamp point in time. &nbsp;
 **market_center** | str | The market center for the trade. &nbsp;
 **condition** | str | The condition of the trade. &nbsp;
+**is_darkpool** | bool | If the trade was darkpool or not. &nbsp;
 
 [//]: # (END_DEFINITION)
 
