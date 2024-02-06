@@ -5,6 +5,7 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_companies**](CompanyApi.md#get_all_companies) | **GET** /companies | All Companies
+[**get_all_companies_daily_metrics**](CompanyApi.md#get_all_companies_daily_metrics) | **GET** /companies/daily_metrics | All Companies daily metrics
 [**get_all_company_news**](CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 [**get_company**](CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
 [**get_company_answers**](CompanyApi.md#get_company_answers) | **GET** /companies/{identifier}/answers | Company Answers
@@ -118,6 +119,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseCompanies**](ApiResponseCompanies.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:get_all_companies_daily_metrics)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanyDailyMetrics)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyDailyMetrics.md)
+
+[//]: # (OPERATION:get_all_companies_daily_metrics_v2)
+
+[//]: # (ENDPOINT:/companies/daily_metrics)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#get_all_companies_daily_metrics)
+
+## **get_all_companies_daily_metrics**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_companies_daily_metrics_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseCompanyDailyMetrics get_all_companies_daily_metrics(on_date=on_date, page_size=page_size, next_page=next_page, next_page2=next_page2)
+
+#### All Companies daily metrics
+
+
+Returns the company metrics for a date.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+on_date = '2013-10-20'
+page_size = 100
+next_page = ''
+next_page2 = ''
+
+response = intrinio.CompanyApi().get_all_companies_daily_metrics(on_date=on_date, page_size=page_size, next_page=next_page, next_page2=next_page2)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **on_date** | date| Date of the metric | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+ **next_page2** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseCompanyDailyMetrics**](ApiResponseCompanyDailyMetrics.md)
 
 [//]: # (END_OPERATION)
 
@@ -375,7 +457,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanyDailyMetrics get_company_daily_metrics(identifier, page_size=page_size, next_page=next_page, next_page2=next_page2)
+> ApiResponseCompanyDailyMetrics get_company_daily_metrics(identifier, on_date=on_date, page_size=page_size, next_page=next_page, next_page2=next_page2)
 
 #### Company metrics by Company
 
@@ -397,11 +479,12 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
+on_date = '2013-10-20'
 page_size = 100
 next_page = ''
 next_page2 = ''
 
-response = intrinio.CompanyApi().get_company_daily_metrics(identifier, page_size=page_size, next_page=next_page, next_page2=next_page2)
+response = intrinio.CompanyApi().get_company_daily_metrics(identifier, on_date=on_date, page_size=page_size, next_page=next_page, next_page2=next_page2)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -418,6 +501,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **on_date** | date| Date of the metric | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
  **next_page2** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
