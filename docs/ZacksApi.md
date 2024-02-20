@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_zacks_institutional_holding_owners**](ZacksApi.md#get_zacks_institutional_holding_owners) | **GET** /zacks/institutional_holdings/owners | Zacks Institutional Holding Owners
 [**get_zacks_institutional_holdings**](ZacksApi.md#get_zacks_institutional_holdings) | **GET** /zacks/institutional_holdings | Zacks Institutional Holdings
 [**get_zacks_long_term_growth_rates**](ZacksApi.md#get_zacks_long_term_growth_rates) | **GET** /zacks/long_term_growth_rates | Zacks Long Term Growth Rates
+[**get_zacks_sales_estimates**](ZacksApi.md#get_zacks_sales_estimates) | **GET** /zacks/sales_estimates | Zacks Sales Estimates
 [**get_zacks_sales_surprises**](ZacksApi.md#get_zacks_sales_surprises) | **GET** /zacks/sales_surprises | Zacks Sales Surprises
 [**get_zacks_target_price_consensuses**](ZacksApi.md#get_zacks_target_price_consensuses) | **GET** /zacks/target_price_consensuses | Zacks Target Price Consensuses
 
@@ -791,6 +792,99 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksLongTermGrowthRates**](ApiResponseZacksLongTermGrowthRates.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:ZacksApi)
+
+[//]: # (METHOD:get_zacks_sales_estimates)
+
+[//]: # (RETURN_TYPE:ApiResponseZacksSalesEstimates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksSalesEstimates.md)
+
+[//]: # (OPERATION:get_zacks_sales_estimates_v2)
+
+[//]: # (ENDPOINT:/zacks/sales_estimates)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_sales_estimates)
+
+## **get_zacks_sales_estimates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_sales_estimates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksSalesEstimates get_zacks_sales_estimates(identifier=identifier, start_date=start_date, end_date=end_date, fiscal_year=fiscal_year, fiscal_period=fiscal_period, calendar_year=calendar_year, calendar_period=calendar_period, next_page=next_page, page_size=page_size, next_page2=next_page2)
+
+#### Zacks Sales Estimates
+
+
+This database offers consensus sales estimates for over 5,000 US and Canadian listed companies.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL'
+start_date = ''
+end_date = ''
+fiscal_year = ''
+fiscal_period = ''
+calendar_year = ''
+calendar_period = ''
+next_page = ''
+page_size = 100
+next_page2 = ''
+
+response = intrinio.ZacksApi().get_zacks_sales_estimates(identifier=identifier, start_date=start_date, end_date=end_date, fiscal_year=fiscal_year, fiscal_period=fiscal_period, calendar_year=calendar_year, calendar_period=calendar_period, next_page=next_page, page_size=page_size, next_page2=next_page2)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | [optional]   &nbsp;
+ **start_date** | date| Limit Sales estimates to those on or after this date | [optional]   &nbsp;
+ **end_date** | date| Limit Sales estimates to those on or before this date | [optional]   &nbsp;
+ **fiscal_year** | int| Only for the given fiscal year | [optional]   &nbsp;
+ **fiscal_period** | str| The fiscal period | [optional]   &nbsp;
+ **calendar_year** | int| Only for the given calendar year | [optional]   &nbsp;
+ **calendar_period** | str| The calendar period | [optional]   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page2** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksSalesEstimates**](ApiResponseZacksSalesEstimates.md)
 
 [//]: # (END_OPERATION)
 
