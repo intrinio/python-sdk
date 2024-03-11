@@ -37,7 +37,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> Fundamental filter_fundamental(filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, fiscal_period=fiscal_period, start_date=start_date, end_date=end_date, next_page=next_page)
+> Fundamental filter_fundamental(filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, fiscal_period=fiscal_period, start_date=start_date, end_date=end_date, updated_after=updated_after, updated_before=updated_before, next_page=next_page)
 
 #### Filter Fundamental
 
@@ -67,9 +67,11 @@ type = 'False'
 fiscal_period = 'FY'
 start_date = '2022-01-01'
 end_date = '2022-12-01'
+updated_after = '2022-12-01'
+updated_before = '2022-12-01'
 next_page = ''
 
-response = intrinio.FundamentalsApi().filter_fundamental(filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, fiscal_period=fiscal_period, start_date=start_date, end_date=end_date, next_page=next_page)
+response = intrinio.FundamentalsApi().filter_fundamental(filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, fiscal_period=fiscal_period, start_date=start_date, end_date=end_date, updated_after=updated_after, updated_before=updated_before, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -94,6 +96,8 @@ Name | Type | Description  | Notes
  **fiscal_period** | str| The fiscal period | [optional]   &nbsp;
  **start_date** | date| Only include fundamentals where covered period is on or after this date. | [optional]   &nbsp;
  **end_date** | date| Only include fundamentals where covered period is on or before this date. | [optional]   &nbsp;
+ **updated_after** | date| Only include fundamentals where it was updated after this date. | [optional]   &nbsp;
+ **updated_before** | date| Only include fundamentals where it was updated before this date. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
