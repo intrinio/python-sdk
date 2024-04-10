@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseNews get_all_company_news(page_size=page_size, next_page=next_page)
+> ApiResponseNews get_all_company_news(specific_source=specific_source, page_size=page_size, sentiment=sentiment, topic=topic, company=company, security=security, start_date=start_date, end_date=end_date, language=language, word_count_greater_than=word_count_greater_than, word_count_less_than=word_count_less_than, is_spam=is_spam, business_relevance_greater_than=business_relevance_greater_than, business_relevance_less_than=business_relevance_less_than, next_page=next_page)
 
 #### All News
 
@@ -249,10 +249,23 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
+specific_source = ''
 page_size = 100
+sentiment = ''
+topic = ''
+company = 'AAPL'
+security = 'AAPL'
+start_date = ''
+end_date = ''
+language = ''
+word_count_greater_than = ''
+word_count_less_than = ''
+is_spam = ''
+business_relevance_greater_than = ''
+business_relevance_less_than = ''
 next_page = ''
 
-response = intrinio.CompanyApi().get_all_company_news(page_size=page_size, next_page=next_page)
+response = intrinio.CompanyApi().get_all_company_news(specific_source=specific_source, page_size=page_size, sentiment=sentiment, topic=topic, company=company, security=security, start_date=start_date, end_date=end_date, language=language, word_count_greater_than=word_count_greater_than, word_count_less_than=word_count_less_than, is_spam=is_spam, business_relevance_greater_than=business_relevance_greater_than, business_relevance_less_than=business_relevance_less_than, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -268,7 +281,20 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **specific_source** | str| Only news from this source. | [optional]   &nbsp;
+ **page_size** | int| The maximum number of results to return. | [optional] [default to 100]  &nbsp;
+ **sentiment** | str| Filter by sentiment.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **topic** | str| Filter by topic.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **company** | str| Filter by &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | [optional]   &nbsp;
+ **security** | str| Filter by &#x60;security&#x60; identifier (ticker, figi, isin, cusip, Intrinio ID).  Unsupported for yahoo source. | [optional]   &nbsp;
+ **start_date** | date| Limit news stories to those on or after this date. | [optional]   &nbsp;
+ **end_date** | date| Limit news stories to those on or before this date. | [optional]   &nbsp;
+ **language** | str| Filter by language.  Unsupported for yahoo source.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **word_count_greater_than** | int| News stories will have a word count greater than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **word_count_less_than** | int| News stories will have a word count less than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **is_spam** | bool| Filter whether it is marked as spam or not.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **business_relevance_greater_than** | float| News stories will have a business relevance score more than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **business_relevance_less_than** | float| News stories will have a business relevance score less than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
@@ -1060,7 +1086,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanyNews get_company_news(identifier, page_size=page_size, next_page=next_page)
+> ApiResponseCompanyNews get_company_news(identifier, specific_source=specific_source, page_size=page_size, sentiment=sentiment, topic=topic, security=security, start_date=start_date, end_date=end_date, language=language, word_count_greater_than=word_count_greater_than, word_count_less_than=word_count_less_than, is_spam=is_spam, business_relevance_greater_than=business_relevance_greater_than, business_relevance_less_than=business_relevance_less_than, next_page=next_page)
 
 #### All News by Company
 
@@ -1082,10 +1108,22 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
+specific_source = ''
 page_size = 100
+sentiment = ''
+topic = ''
+security = 'AAPL'
+start_date = ''
+end_date = ''
+language = ''
+word_count_greater_than = ''
+word_count_less_than = ''
+is_spam = ''
+business_relevance_greater_than = ''
+business_relevance_less_than = ''
 next_page = ''
 
-response = intrinio.CompanyApi().get_company_news(identifier, page_size=page_size, next_page=next_page)
+response = intrinio.CompanyApi().get_company_news(identifier, specific_source=specific_source, page_size=page_size, sentiment=sentiment, topic=topic, security=security, start_date=start_date, end_date=end_date, language=language, word_count_greater_than=word_count_greater_than, word_count_less_than=word_count_less_than, is_spam=is_spam, business_relevance_greater_than=business_relevance_greater_than, business_relevance_less_than=business_relevance_less_than, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1102,7 +1140,19 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **specific_source** | str| Only news from this source | [optional]   &nbsp;
+ **page_size** | int| The maximum number of results to return | [optional] [default to 100]  &nbsp;
+ **sentiment** | str| Filter by sentiment.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **topic** | str| Filter by topic.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **security** | str| Filter by &#x60;security&#x60; identifier (ticker, figi, isin, cusip, Intrinio ID).  Unsupported for yahoo source. | [optional]   &nbsp;
+ **start_date** | date| Limit news stories to those on or after this date | [optional]   &nbsp;
+ **end_date** | date| Limit news stories to those on or before this date | [optional]   &nbsp;
+ **language** | str| Filter by language.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **word_count_greater_than** | int| News stories will have a word count greater than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **word_count_less_than** | int| News stories will have a word count less than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **is_spam** | bool| Filter whether it is marked as spam or not.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **business_relevance_greater_than** | float| News stories will have a business relevance score more than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **business_relevance_less_than** | float| News stories will have a business relevance score less than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 

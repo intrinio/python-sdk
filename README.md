@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.53.1
-- Package version: 6.27.0
+- API version: 2.56.5
+- Package version: 6.27.1
 
 
 ## Requirements.
@@ -512,6 +512,7 @@ Class | Method | HTTP request | Description
  - [Municipality](docs/Municipality.md)
  - [MunicipalityFinancial](docs/MunicipalityFinancial.md)
  - [NegativeVolumeIndexTechnicalValue](docs/NegativeVolumeIndexTechnicalValue.md)
+ - [NewsTopic](docs/NewsTopic.md)
  - [OnBalanceVolumeMeanTechnicalValue](docs/OnBalanceVolumeMeanTechnicalValue.md)
  - [OnBalanceVolumeTechnicalValue](docs/OnBalanceVolumeTechnicalValue.md)
  - [Option](docs/Option.md)

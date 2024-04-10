@@ -126,7 +126,7 @@ This endpoint does not need any parameter.
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsExpirations get_option_expirations_realtime(symbol, after=after, before=before, source=source)
+> ApiResponseOptionsExpirations get_option_expirations_realtime(symbol, after=after, before=before, source=source, include_related_symbols=include_related_symbols)
 
 #### Options Expirations
 
@@ -151,8 +151,9 @@ symbol = 'MSFT'
 after = '2022-01-01'
 before = '2023-04-01'
 source = ''
+include_related_symbols = False
 
-response = intrinio.OptionsApi().get_option_expirations_realtime(symbol, after=after, before=before, source=source)
+response = intrinio.OptionsApi().get_option_expirations_realtime(symbol, after=after, before=before, source=source, include_related_symbols=include_related_symbols)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -172,6 +173,7 @@ Name | Type | Description  | Notes
  **after** | str| Return option contract expiration dates after this date. | [optional]   &nbsp;
  **before** | str| Return option contract expiration dates before this date. | [optional]   &nbsp;
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -207,7 +209,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
+> ApiResponseOptionsChainRealtime get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols)
 
 #### Option Strikes Realtime
 
@@ -234,8 +236,9 @@ source = ''
 stock_price_source = ''
 model = ''
 show_extended_price = ''
+include_related_symbols = False
 
-response = intrinio.OptionsApi().get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
+response = intrinio.OptionsApi().get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -257,6 +260,7 @@ Name | Type | Description  | Notes
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
  **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
+ **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -379,7 +383,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsRealtime get_options_by_symbol_realtime(symbol, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, expiration=expiration, expiration_after=expiration_after, expiration_before=expiration_before, source=source)
+> ApiResponseOptionsRealtime get_options_by_symbol_realtime(symbol, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, expiration=expiration, expiration_after=expiration_after, expiration_before=expiration_before, source=source, include_related_symbols=include_related_symbols)
 
 #### Options by Symbol Realtime
 
@@ -403,8 +407,9 @@ intrinio.ApiClient().allow_retries(True)
 symbol = 'AAPL'
 type = 'put'
 source = ''
+include_related_symbols = False
 
-response = intrinio.OptionsApi().get_options_by_symbol_realtime(symbol, type=type, source=source)
+response = intrinio.OptionsApi().get_options_by_symbol_realtime(symbol, type=type, source=source, include_related_symbols=include_related_symbols)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -429,6 +434,7 @@ Name | Type | Description  | Notes
  **expiration_after** | str| The expiration date of the option contract. This will return options contracts with expiration dates after this date. | [optional]   &nbsp;
  **expiration_before** | str| The expiration date of the option contract. This will return options contracts with expiration dates before this date. | [optional]   &nbsp;
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -552,7 +558,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChainEod get_options_chain_eod(symbol, expiration, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, date=date)
+> ApiResponseOptionsChainEod get_options_chain_eod(symbol, expiration, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, date=date, include_related_symbols=include_related_symbols)
 
 #### Options Chain EOD
 
@@ -576,8 +582,9 @@ intrinio.ApiClient().allow_retries(True)
 symbol = 'AAPL'
 expiration = '2023-01-20'
 type = ''
+include_related_symbols = False
 
-response = intrinio.OptionsApi().get_options_chain_eod(symbol, expiration, type=type, )
+response = intrinio.OptionsApi().get_options_chain_eod(symbol, expiration, type=type, include_related_symbols=include_related_symbols)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -600,6 +607,7 @@ Name | Type | Description  | Notes
  **strike_greater_than** | float| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]   &nbsp;
  **strike_less_than** | float| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]   &nbsp;
  **date** | date| The date to retrieve prices for | [optional]   &nbsp;
+ **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -635,7 +643,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChainRealtime get_options_chain_realtime(symbol, expiration, source=source, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, volume_greater_than=volume_greater_than, volume_less_than=volume_less_than, open_interest_greater_than=open_interest_greater_than, open_interest_less_than=open_interest_less_than, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
+> ApiResponseOptionsChainRealtime get_options_chain_realtime(symbol, expiration, source=source, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, volume_greater_than=volume_greater_than, volume_less_than=volume_less_than, open_interest_greater_than=open_interest_greater_than, open_interest_less_than=open_interest_less_than, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols)
 
 #### Options Chain Realtime
 
@@ -664,8 +672,9 @@ moneyness = ''
 stock_price_source = ''
 model = ''
 show_extended_price = ''
+include_related_symbols = False
 
-response = intrinio.OptionsApi().get_options_chain_realtime(symbol, expiration, source=source, type=type, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
+response = intrinio.OptionsApi().get_options_chain_realtime(symbol, expiration, source=source, type=type, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -696,6 +705,7 @@ Name | Type | Description  | Notes
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
  **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
+ **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -810,7 +820,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsExpirations get_options_expirations_eod(symbol, after=after, before=before)
+> ApiResponseOptionsExpirations get_options_expirations_eod(symbol, after=after, before=before, include_related_symbols=include_related_symbols)
 
 #### Options Expirations
 
@@ -834,8 +844,9 @@ intrinio.ApiClient().allow_retries(True)
 symbol = 'MSFT'
 after = '2019-01-01'
 before = '2019-12-31'
+include_related_symbols = False
 
-response = intrinio.OptionsApi().get_options_expirations_eod(symbol, after=after, before=before)
+response = intrinio.OptionsApi().get_options_expirations_eod(symbol, after=after, before=before, include_related_symbols=include_related_symbols)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -854,6 +865,7 @@ Name | Type | Description  | Notes
  **symbol** | str| The option symbol, corresponding to the underlying security. |   &nbsp;
  **after** | str| Return option contract expiration dates after this date. | [optional]   &nbsp;
  **before** | str| Return option contract expiration dates before this date. | [optional]   &nbsp;
+ **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

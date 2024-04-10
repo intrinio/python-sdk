@@ -4391,7 +4391,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> SecurityTradesResult get_security_trades(source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
+> SecurityTradesResult get_security_trades(source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, darkpool_only=darkpool_only, min_size=min_size, next_page=next_page)
 
 #### Security Trades
 
@@ -4419,9 +4419,11 @@ end_date = ''
 end_time = ''
 timezone = 'UTC'
 page_size = 100
+darkpool_only = False
+min_size = 100
 next_page = ''
 
-response = intrinio.SecurityApi().get_security_trades(source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
+response = intrinio.SecurityApi().get_security_trades(source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, darkpool_only=darkpool_only, min_size=min_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -4444,6 +4446,8 @@ Name | Type | Description  | Notes
  **end_time** | str| The end time for the data being requested. | [optional]   &nbsp;
  **timezone** | str| The timezone the start and end date/times use. | [optional] [default to UTC]  &nbsp;
  **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
+ **darkpool_only** | bool| Set to True to show only darkpool trades | [optional] [default to False]  &nbsp;
+ **min_size** | int| Trades must be larger or equal to this size. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
@@ -4480,7 +4484,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> SecurityTradesResult get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, darkpool_only=darkpool_only, page_size=page_size, next_page=next_page)
+> SecurityTradesResult get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, darkpool_only=darkpool_only, page_size=page_size, min_size=min_size, next_page=next_page)
 
 #### Security Trades By Symbol
 
@@ -4510,9 +4514,10 @@ end_time = ''
 timezone = 'UTC'
 darkpool_only = False
 page_size = 100
+min_size = 100
 next_page = ''
 
-response = intrinio.SecurityApi().get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, darkpool_only=darkpool_only, page_size=page_size, next_page=next_page)
+response = intrinio.SecurityApi().get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, darkpool_only=darkpool_only, page_size=page_size, min_size=min_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -4537,6 +4542,7 @@ Name | Type | Description  | Notes
  **timezone** | str| The timezone the start and end date/times use. | [optional] [default to UTC]  &nbsp;
  **darkpool_only** | bool| Set to True to show only darkpool trades | [optional] [default to False]  &nbsp;
  **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
+ **min_size** | int| Trades must be larger or equal to this size. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
