@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseETFs search_etfs(query)
+> ApiResponseETFs search_etfs(query, mode=mode)
 
 #### Search ETFs
 
@@ -442,8 +442,9 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 query = 'iShares'
+mode = ''
 
-response = intrinio.ETFsApi().search_etfs(query)
+response = intrinio.ETFsApi().search_etfs(query, mode=mode)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -460,6 +461,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | str|  |   &nbsp;
+ **mode** | str| When set, changes search mode to the specified mode. Paging is not available in rank_order. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

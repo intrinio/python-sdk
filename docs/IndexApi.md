@@ -5,13 +5,18 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_economic_indices**](IndexApi.md#get_all_economic_indices) | **GET** /indices/economic | All Economic Indices
+[**get_all_eod_index_prices**](IndexApi.md#get_all_eod_index_prices) | **GET** /indices/prices/eod | All End of Day Index Prices
+[**get_all_index_summaries**](IndexApi.md#get_all_index_summaries) | **GET** /indices | All Index Summaries
+[**get_all_realtime_index_prices**](IndexApi.md#get_all_realtime_index_prices) | **GET** /indices/prices/realtime | All Realtime Index Prices
 [**get_all_sic_indices**](IndexApi.md#get_all_sic_indices) | **GET** /indices/sic | All SIC Indices
 [**get_all_stock_market_indices**](IndexApi.md#get_all_stock_market_indices) | **GET** /indices/stock_market | All Stock Market Indices
 [**get_economic_index_by_id**](IndexApi.md#get_economic_index_by_id) | **GET** /indices/economic/{identifier} | Lookup Economic Index
 [**get_economic_index_data_point_number**](IndexApi.md#get_economic_index_data_point_number) | **GET** /indices/economic/{identifier}/data_point/{tag}/number | Data Point (Number) for an Economic Index
 [**get_economic_index_data_point_text**](IndexApi.md#get_economic_index_data_point_text) | **GET** /indices/economic/{identifier}/data_point/{tag}/text | Data Point (Text) for an Economic Index
 [**get_economic_index_historical_data**](IndexApi.md#get_economic_index_historical_data) | **GET** /indices/economic/{identifier}/historical_data/{tag} | Historical Data for an Economic Index
-[**get_realtime_index_price_by_id**](IndexApi.md#get_realtime_index_price_by_id) | **GET** /indices/{identifier}/realtime | Realtime Index Price
+[**get_eod_index_price_by_id**](IndexApi.md#get_eod_index_price_by_id) | **GET** /indices/{identifier}/eod | End of Day Index Prices By Identifier
+[**get_index_summary_by_id**](IndexApi.md#get_index_summary_by_id) | **GET** /indices/{identifier} | Index Summary By Identifier
+[**get_realtime_index_price_by_id**](IndexApi.md#get_realtime_index_price_by_id) | **GET** /indices/{identifier}/realtime | Realtime Index Price By Identifier
 [**get_sic_index_by_id**](IndexApi.md#get_sic_index_by_id) | **GET** /indices/sic/{identifier} | Lookup SIC Index
 [**get_sic_index_data_point_number**](IndexApi.md#get_sic_index_data_point_number) | **GET** /indices/sic/{identifier}/data_point/{tag}/number | Data Point (Number) for an SIC Index
 [**get_sic_index_data_point_text**](IndexApi.md#get_sic_index_data_point_text) | **GET** /indices/sic/{identifier}/data_point/{tag}/text | Data Point (Text) for an SIC Index
@@ -99,6 +104,232 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseEconomicIndices**](ApiResponseEconomicIndices.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IndexApi)
+
+[//]: # (METHOD:get_all_eod_index_prices)
+
+[//]: # (RETURN_TYPE:ApiResponseEodIndexPricesAll)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseEodIndexPricesAll.md)
+
+[//]: # (OPERATION:get_all_eod_index_prices_v2)
+
+[//]: # (ENDPOINT:/indices/prices/eod)
+
+[//]: # (DOCUMENT_LINK:IndexApi.md#get_all_eod_index_prices)
+
+## **get_all_eod_index_prices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_eod_index_prices_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseEodIndexPricesAll get_all_eod_index_prices(page_size=page_size, start_date=start_date, end_date=end_date)
+
+#### All End of Day Index Prices
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+page_size = 100
+start_date = ''
+end_date = ''
+
+response = intrinio.IndexApi().get_all_eod_index_prices(page_size=page_size, start_date=start_date, end_date=end_date)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **start_date** | date| Limit prices to those on or after this date | [optional]   &nbsp;
+ **end_date** | date| Limit prices to those on or before this date | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseEodIndexPricesAll**](ApiResponseEodIndexPricesAll.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IndexApi)
+
+[//]: # (METHOD:get_all_index_summaries)
+
+[//]: # (RETURN_TYPE:ApiResponseIndices)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseIndices.md)
+
+[//]: # (OPERATION:get_all_index_summaries_v2)
+
+[//]: # (ENDPOINT:/indices)
+
+[//]: # (DOCUMENT_LINK:IndexApi.md#get_all_index_summaries)
+
+## **get_all_index_summaries**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_index_summaries_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseIndices get_all_index_summaries(page_size=page_size)
+
+#### All Index Summaries
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+page_size = 100
+
+response = intrinio.IndexApi().get_all_index_summaries(page_size=page_size)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseIndices**](ApiResponseIndices.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IndexApi)
+
+[//]: # (METHOD:get_all_realtime_index_prices)
+
+[//]: # (RETURN_TYPE:ApiResponseRealtimeIndexPrices)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseRealtimeIndexPrices.md)
+
+[//]: # (OPERATION:get_all_realtime_index_prices_v2)
+
+[//]: # (ENDPOINT:/indices/prices/realtime)
+
+[//]: # (DOCUMENT_LINK:IndexApi.md#get_all_realtime_index_prices)
+
+## **get_all_realtime_index_prices**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_all_realtime_index_prices_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseRealtimeIndexPrices get_all_realtime_index_prices(page_size=page_size)
+
+#### All Realtime Index Prices
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+page_size = 100
+
+response = intrinio.IndexApi().get_all_realtime_index_prices(page_size=page_size)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseRealtimeIndexPrices**](ApiResponseRealtimeIndexPrices.md)
 
 [//]: # (END_OPERATION)
 
@@ -577,6 +808,160 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:IndexApi)
 
+[//]: # (METHOD:get_eod_index_price_by_id)
+
+[//]: # (RETURN_TYPE:ApiResponseEodIndexPrices)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseEodIndexPrices.md)
+
+[//]: # (OPERATION:get_eod_index_price_by_id_v2)
+
+[//]: # (ENDPOINT:/indices/{identifier}/eod)
+
+[//]: # (DOCUMENT_LINK:IndexApi.md#get_eod_index_price_by_id)
+
+## **get_eod_index_price_by_id**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_eod_index_price_by_id_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseEodIndexPrices get_eod_index_price_by_id(identifier, page_size=page_size, start_date=start_date, end_date=end_date)
+
+#### End of Day Index Prices By Identifier
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'SPX'
+page_size = 100
+start_date = ''
+end_date = ''
+
+response = intrinio.IndexApi().get_eod_index_price_by_id(identifier, page_size=page_size, start_date=start_date, end_date=end_date)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| The index symbol |   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **start_date** | date| Limit prices to those on or after this date | [optional]   &nbsp;
+ **end_date** | date| Limit prices to those on or before this date | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseEodIndexPrices**](ApiResponseEodIndexPrices.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IndexApi)
+
+[//]: # (METHOD:get_index_summary_by_id)
+
+[//]: # (RETURN_TYPE:ApiResponseIndex)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseIndex.md)
+
+[//]: # (OPERATION:get_index_summary_by_id_v2)
+
+[//]: # (ENDPOINT:/indices/{identifier})
+
+[//]: # (DOCUMENT_LINK:IndexApi.md#get_index_summary_by_id)
+
+## **get_index_summary_by_id**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_index_summary_by_id_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseIndex get_index_summary_by_id(identifier)
+
+#### Index Summary By Identifier
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'SPX'
+
+response = intrinio.IndexApi().get_index_summary_by_id(identifier)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| The index symbol |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseIndex**](ApiResponseIndex.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IndexApi)
+
 [//]: # (METHOD:get_realtime_index_price_by_id)
 
 [//]: # (RETURN_TYPE:RealtimeIndexPrice)
@@ -599,7 +984,7 @@ Name | Type | Description  | Notes
 
 > RealtimeIndexPrice get_realtime_index_price_by_id(identifier)
 
-#### Realtime Index Price
+#### Realtime Index Price By Identifier
 
 
 
@@ -635,7 +1020,7 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| The ticker symbol of the currently trading index |   &nbsp;
+ **identifier** | str| The index symbol |   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

@@ -5,6 +5,7 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_options_tickers**](OptionsApi.md#get_all_options_tickers) | **GET** /options/tickers | Options Tickers
+[**get_option_aggregates**](OptionsApi.md#get_option_aggregates) | **GET** /options/aggregates | Total open interest and volume aggregated by ticker
 [**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Options Expirations
 [**get_option_strikes_realtime**](OptionsApi.md#get_option_strikes_realtime) | **GET** /options/strikes/{symbol}/{strike}/realtime | Option Strikes Realtime
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
@@ -98,6 +99,81 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**ApiResponseOptionsTickers**](ApiResponseOptionsTickers.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_option_aggregates)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsAggregates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsAggregates.md)
+
+[//]: # (OPERATION:get_option_aggregates_v2)
+
+[//]: # (ENDPOINT:/options/aggregates)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_aggregates)
+
+## **get_option_aggregates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_option_aggregates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsAggregates get_option_aggregates(date=date)
+
+#### Total open interest and volume aggregated by ticker
+
+
+Returns total open interest and volume by ticker
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+date = "2024-04-24"
+
+response = intrinio.OptionsApi().get_option_aggregates(date=date)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **date** | [**object**](.md)| Return aggregated data for this date | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsAggregates**](ApiResponseOptionsAggregates.md)
 
 [//]: # (END_OPERATION)
 

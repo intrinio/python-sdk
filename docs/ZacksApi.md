@@ -5,10 +5,13 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_zacks_analyst_ratings**](ZacksApi.md#get_zacks_analyst_ratings) | **GET** /zacks/analyst_ratings | Zacks Analyst Ratings
+[**get_zacks_ebitda_consensus**](ZacksApi.md#get_zacks_ebitda_consensus) | **GET** /zacks/ebitda_consensus | Zacks EBITDA Consensus
 [**get_zacks_eps_estimates**](ZacksApi.md#get_zacks_eps_estimates) | **GET** /zacks/eps_estimates | Zacks EPS Estimates
 [**get_zacks_eps_growth_rates**](ZacksApi.md#get_zacks_eps_growth_rates) | **GET** /zacks/eps_growth_rates | Zacks EPS Growth Rates
 [**get_zacks_eps_surprises**](ZacksApi.md#get_zacks_eps_surprises) | **GET** /zacks/eps_surprises | Zacks EPS Surprises
 [**get_zacks_etf_holdings**](ZacksApi.md#get_zacks_etf_holdings) | **GET** /zacks/etf_holdings | Zacks ETF Holdings
+[**get_zacks_forward_pe**](ZacksApi.md#get_zacks_forward_pe) | **GET** /zacks/forward_pe | Zacks Forward PE Estimates
+[**get_zacks_forward_pe_by_identifier**](ZacksApi.md#get_zacks_forward_pe_by_identifier) | **GET** /zacks/forward_pe/{identifier} | Zacks Forward PE by identifer
 [**get_zacks_institutional_holding_companies**](ZacksApi.md#get_zacks_institutional_holding_companies) | **GET** /zacks/institutional_holdings/companies | Zacks Institutional Holding Companies
 [**get_zacks_institutional_holding_owners**](ZacksApi.md#get_zacks_institutional_holding_owners) | **GET** /zacks/institutional_holdings/owners | Zacks Institutional Holding Owners
 [**get_zacks_institutional_holdings**](ZacksApi.md#get_zacks_institutional_holdings) | **GET** /zacks/institutional_holdings | Zacks Institutional Holdings
@@ -110,6 +113,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksAnalystRatings**](ApiResponseZacksAnalystRatings.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:ZacksApi)
+
+[//]: # (METHOD:get_zacks_ebitda_consensus)
+
+[//]: # (RETURN_TYPE:ApiResponseZacksEBITDAConsensus)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksEBITDAConsensus.md)
+
+[//]: # (OPERATION:get_zacks_ebitda_consensus_v2)
+
+[//]: # (ENDPOINT:/zacks/ebitda_consensus)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_ebitda_consensus)
+
+## **get_zacks_ebitda_consensus**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_ebitda_consensus_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksEBITDAConsensus get_zacks_ebitda_consensus(identifier=identifier, type=type, next_page=next_page)
+
+#### Zacks EBITDA Consensus
+
+
+This database offers consensus EBITDA-related estimates for over 4,000 US and Canadian listed companies.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL'
+type = ''
+next_page = ''
+
+response = intrinio.ZacksApi().get_zacks_ebitda_consensus(identifier=identifier, type=type, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) | [optional]   &nbsp;
+ **type** | str| Limit EBITDA estimates to this type | [optional]   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksEBITDAConsensus**](ApiResponseZacksEBITDAConsensus.md)
 
 [//]: # (END_OPERATION)
 
@@ -474,6 +556,156 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseZacksETFHoldings**](ApiResponseZacksETFHoldings.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:ZacksApi)
+
+[//]: # (METHOD:get_zacks_forward_pe)
+
+[//]: # (RETURN_TYPE:ApiResponseZacksForwardPEs)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseZacksForwardPEs.md)
+
+[//]: # (OPERATION:get_zacks_forward_pe_v2)
+
+[//]: # (ENDPOINT:/zacks/forward_pe)
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_forward_pe)
+
+## **get_zacks_forward_pe**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_forward_pe_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseZacksForwardPEs get_zacks_forward_pe(next_page=next_page)
+
+#### Zacks Forward PE Estimates
+
+
+This database offers price-to-earning ratio estimates for over 4,000 US and Canadian listed companies.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+next_page = ''
+
+response = intrinio.ZacksApi().get_zacks_forward_pe(next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseZacksForwardPEs**](ApiResponseZacksForwardPEs.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:ZacksApi)
+
+[//]: # (METHOD:get_zacks_forward_pe_by_identifier)
+
+[//]: # (RETURN_TYPE:ZacksForwardPE)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ZacksForwardPE.md)
+
+[//]: # (OPERATION:get_zacks_forward_pe_by_identifier_v2)
+
+[//]: # (ENDPOINT:/zacks/forward_pe/{identifier})
+
+[//]: # (DOCUMENT_LINK:ZacksApi.md#get_zacks_forward_pe_by_identifier)
+
+## **get_zacks_forward_pe_by_identifier**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_zacks_forward_pe_by_identifier_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ZacksForwardPE get_zacks_forward_pe_by_identifier(identifier)
+
+#### Zacks Forward PE by identifer
+
+
+Returns the forward PE estimates for the identifier
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'MSFT'
+
+response = intrinio.ZacksApi().get_zacks_forward_pe_by_identifier(identifier)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| An Intrinio ID or ticker for a Security |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ZacksForwardPE**](ZacksForwardPE.md)
 
 [//]: # (END_OPERATION)
 

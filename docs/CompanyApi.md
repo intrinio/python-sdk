@@ -281,7 +281,7 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **specific_source** | str| Only news from this source. | [optional]   &nbsp;
+ **specific_source** | str| Only news from this source. Defaults to highest available if not present. | [optional]   &nbsp;
  **page_size** | int| The maximum number of results to return. | [optional] [default to 100]  &nbsp;
  **sentiment** | str| Filter by sentiment.  Unsupported for yahoo source. | [optional]   &nbsp;
  **topic** | str| Filter by topic.  Unsupported for yahoo source. | [optional]   &nbsp;
@@ -1140,7 +1140,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **specific_source** | str| Only news from this source | [optional]   &nbsp;
+ **specific_source** | str| Only news from this source. Defaults to highest available if not present. | [optional]   &nbsp;
  **page_size** | int| The maximum number of results to return | [optional] [default to 100]  &nbsp;
  **sentiment** | str| Filter by sentiment.  Unsupported for yahoo source. | [optional]   &nbsp;
  **topic** | str| Filter by topic.  Unsupported for yahoo source. | [optional]   &nbsp;
@@ -1671,7 +1671,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompaniesSearch search_companies(query, active=active, page_size=page_size)
+> ApiResponseCompaniesSearch search_companies(query, active=active, mode=mode, page_size=page_size)
 
 #### Search Companies
 
@@ -1694,9 +1694,10 @@ intrinio.ApiClient().allow_retries(True)
 
 query = 'Apple'
 active = True
+mode = ''
 page_size = 100
 
-response = intrinio.CompanyApi().search_companies(query, active=active, page_size=page_size)
+response = intrinio.CompanyApi().search_companies(query, active=active, mode=mode, page_size=page_size)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1713,7 +1714,8 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | str| Search parameters |   &nbsp;
- **active** | bool| When True, return companies that are actively traded (having stock prices within the past 14 days). When False, return companies that are not actively traded or never have been traded. | [optional]   &nbsp;
+ **active** | bool| When True, return companies that are actively traded (having stock prices within the past 14 days). When False, return companies that are not actively traded or never have been traded. Not setting this value returns all. Not used when mode is set. | [optional]   &nbsp;
+ **mode** | str| When set, changes search mode to the specified mode. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
 <br/>
 
