@@ -465,6 +465,7 @@ class StockExchangeApi(object):
         :param str source: Return realtime prices from the specified data source. If no source is specified, all sources are used.
         :param bool active_only: Returns prices only from the most recent trading day.
         :param int page_size: The number of results to return
+        :param list[str] tickers: The list of ticker symbols to filter to.
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseStockExchangeRealtimeStockPrices
                  If the method is called asynchronously,
@@ -491,13 +492,14 @@ class StockExchangeApi(object):
         :param str source: Return realtime prices from the specified data source. If no source is specified, all sources are used.
         :param bool active_only: Returns prices only from the most recent trading day.
         :param int page_size: The number of results to return
+        :param list[str] tickers: The list of ticker symbols to filter to.
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseStockExchangeRealtimeStockPrices
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['identifier', 'source', 'active_only', 'page_size', 'next_page']  # noqa: E501
+        all_params = ['identifier', 'source', 'active_only', 'page_size', 'tickers', 'next_page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -532,6 +534,9 @@ class StockExchangeApi(object):
             query_params.append(('active_only', params['active_only']))  # noqa: E501
         if 'page_size' in params:
             query_params.append(('page_size', params['page_size']))  # noqa: E501
+        if 'tickers' in params:
+            query_params.append(('tickers', params['tickers']))  # noqa: E501
+            collection_formats['tickers'] = 'csv'  # noqa: E501
         if 'next_page' in params:
             query_params.append(('next_page', params['next_page']))  # noqa: E501
 

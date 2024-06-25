@@ -979,7 +979,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseSecurityIntervalPrices get_security_interval_prices(identifier, interval_size, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
+> ApiResponseSecurityIntervalPrices get_security_interval_prices(identifier, interval_size, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, split_adjusted=split_adjusted, next_page=next_page)
 
 #### Interval Stock Prices for Security
 
@@ -1009,9 +1009,10 @@ end_date = '2023-02-01'
 end_time = ''
 timezone = 'UTC'
 page_size = 100
+split_adjusted = False
 next_page = ''
 
-response = intrinio.SecurityApi().get_security_interval_prices(identifier, interval_size, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, next_page=next_page)
+response = intrinio.SecurityApi().get_security_interval_prices(identifier, interval_size, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, split_adjusted=split_adjusted, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1036,6 +1037,7 @@ Name | Type | Description  | Notes
  **end_time** | str| Return intervals stopping at the specified time on the &#x60;end_date&#x60; (24-hour in &#39;hh:mm:ss&#39; format) | [optional]   &nbsp;
  **timezone** | str| Returns trading times in this timezone | [optional] [default to UTC]  &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **split_adjusted** | bool| Whether to return the values adjusted for splits or not. Default is False. | [optional] [default to False]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 

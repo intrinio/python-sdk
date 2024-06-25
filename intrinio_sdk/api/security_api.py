@@ -1225,6 +1225,7 @@ class SecurityApi(object):
         :param str end_time: Return intervals stopping at the specified time on the `end_date` (24-hour in 'hh:mm:ss' format)
         :param str timezone: Returns trading times in this timezone
         :param int page_size: The number of results to return
+        :param bool split_adjusted: Whether to return the values adjusted for splits or not. Default is false.
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseSecurityIntervalPrices
                  If the method is called asynchronously,
@@ -1256,13 +1257,14 @@ class SecurityApi(object):
         :param str end_time: Return intervals stopping at the specified time on the `end_date` (24-hour in 'hh:mm:ss' format)
         :param str timezone: Returns trading times in this timezone
         :param int page_size: The number of results to return
+        :param bool split_adjusted: Whether to return the values adjusted for splits or not. Default is false.
         :param str next_page: Gets the next page of data from a previous API call
         :return: ApiResponseSecurityIntervalPrices
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['identifier', 'interval_size', 'source', 'start_date', 'start_time', 'end_date', 'end_time', 'timezone', 'page_size', 'next_page']  # noqa: E501
+        all_params = ['identifier', 'interval_size', 'source', 'start_date', 'start_time', 'end_date', 'end_time', 'timezone', 'page_size', 'split_adjusted', 'next_page']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1309,6 +1311,8 @@ class SecurityApi(object):
             query_params.append(('interval_size', params['interval_size']))  # noqa: E501
         if 'page_size' in params:
             query_params.append(('page_size', params['page_size']))  # noqa: E501
+        if 'split_adjusted' in params:
+            query_params.append(('split_adjusted', params['split_adjusted']))  # noqa: E501
         if 'next_page' in params:
             query_params.append(('next_page', params['next_page']))  # noqa: E501
 
