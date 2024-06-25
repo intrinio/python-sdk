@@ -62,7 +62,3 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
-
-#jetbrains
-*.DS_Store
-.idea
