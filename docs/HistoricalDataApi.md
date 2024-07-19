@@ -53,15 +53,15 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"AAPL\"'
-tag = '\"marketcap\"'
+identifier = 'AAPL'
+tag = 'marketcap'
 frequency = 'daily'
-type = '\"~null\"'
-start_date = '\"2015-01-01\"'
-end_date = '\"~null\"'
+type = ''
+start_date = '2015-01-01'
+end_date = ''
 sort_order = 'desc'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.HistoricalDataApi().get_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 print(response)

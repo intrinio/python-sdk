@@ -58,9 +58,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-exchange = '\"XNAS\"'
+exchange = 'XNAS'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.ETFsApi().get_all_etfs(exchange=exchange, page_size=page_size, next_page=next_page)
 print(response)
@@ -137,7 +137,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"SPY\"'
+identifier = 'SPY'
 
 response = intrinio.ETFsApi().get_etf(identifier)
 print(response)
@@ -212,7 +212,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"SPY\"'
+identifier = 'SPY'
 
 response = intrinio.ETFsApi().get_etf_analytics(identifier)
 print(response)
@@ -287,9 +287,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"SPY\"'
+identifier = 'SPY'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.ETFsApi().get_etf_holdings(identifier, page_size=page_size, next_page=next_page)
 print(response)
@@ -366,7 +366,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"SPY\"'
+identifier = 'SPY'
 
 response = intrinio.ETFsApi().get_etf_stats(identifier)
 print(response)
@@ -441,8 +441,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-query = '\"iShares\"'
-mode = '\"~null\"'
+query = 'iShares'
+mode = ''
 
 response = intrinio.ETFsApi().search_etfs(query, mode=mode)
 print(response)

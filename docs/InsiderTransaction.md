@@ -12,12 +12,12 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**director** | bool | (true/false) A boolean indicating whether or not the owner is a director in the company &nbsp;
-**officer** | bool | (true/false) A boolean indicating whether or not the owner is a officer in the company &nbsp;
-**ten_percent_owner** | bool | (true/false) A boolean indicating whether or not the owner has a ten percent or greater interest in the company &nbsp;
-**other_relation** | bool | (true/false) A boolean indicating whether or not the owner has another relationship with the company beside, direct, officer, or significant owner in the company &nbsp;
+**director** | bool | (True/False) A boolean indicating whether or not the owner is a director in the company &nbsp;
+**officer** | bool | (True/False) A boolean indicating whether or not the owner is a officer in the company &nbsp;
+**ten_percent_owner** | bool | (True/False) A boolean indicating whether or not the owner has a ten percent or greater interest in the company &nbsp;
+**other_relation** | bool | (True/False) A boolean indicating whether or not the owner has another relationship with the company beside, direct, officer, or significant owner in the company &nbsp;
 **officer_title** | str | The officer title of the owner in the company &nbsp;
-**derivative_transaction** | bool | (true) A boolean indicating the transaction is a derivative transaction, which may or may not become common stock due to various possible exercise or conversion requirements &nbsp;
+**derivative_transaction** | bool | (True) A boolean indicating the transaction is a derivative transaction, which may or may not become common stock due to various possible exercise or conversion requirements &nbsp;
 **ticker** | str | The ticker symbol for the company’s common stock &nbsp;
 **security_title** | str | The name of the derivative security transacted &nbsp;
 **conversion_exercise_price** | float | The conversion or exercise price of the derivative security transacted &nbsp;

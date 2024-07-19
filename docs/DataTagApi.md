@@ -55,13 +55,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-tag = '\"~null\"'
-type = '\"~null\"'
-parent = '\"~null\"'
-statement_code = '\"income_statement\"'
+tag = ''
+type = ''
+parent = ''
+statement_code = 'income_statement'
 fs_template = 'industrial'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.DataTagApi().get_all_data_tags(tag=tag, type=type, parent=parent, statement_code=statement_code, fs_template=fs_template, page_size=page_size, next_page=next_page)
 print(response)
@@ -142,7 +142,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"marketcap\"'
+identifier = 'marketcap'
 
 response = intrinio.DataTagApi().get_data_tag_by_id(identifier)
 print(response)
@@ -217,7 +217,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-query = '\"revenue\"'
+query = 'revenue'
 page_size = 100
 
 response = intrinio.DataTagApi().search_data_tags(query, page_size=page_size)

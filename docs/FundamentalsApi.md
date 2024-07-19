@@ -58,19 +58,19 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-filed_after = '\"2022-01-01\"'
-filed_before = '\"2022-12-01\"'
-reported_only = false
+filed_after = '2022-01-01'
+filed_before = '2022-12-01'
+reported_only = False
 fiscal_year = 2017
-statement_code = '\"~null\"'
-type = 'false'
-fiscal_period = '\"FY\"'
-start_date = '\"2022-01-01\"'
-end_date = '\"2022-12-01\"'
-updated_after = '\"2022-12-01\"'
-updated_before = '\"2022-12-01\"'
-template = '\"indu\"'
-next_page = '\"~null\"'
+statement_code = ''
+type = 'False'
+fiscal_period = 'FY'
+start_date = '2022-01-01'
+end_date = '2022-12-01'
+updated_after = '2022-12-01'
+updated_before = '2022-12-01'
+template = 'indu'
+next_page = ''
 
 response = intrinio.FundamentalsApi().filter_fundamental(filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, fiscal_period=fiscal_period, start_date=start_date, end_date=end_date, updated_after=updated_after, updated_before=updated_before, template=template, next_page=next_page)
 print(response)
@@ -157,7 +157,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-id = '\"fun_ge9LlE\"'
+id = 'fun_ge9LlE'
 
 response = intrinio.FundamentalsApi().get_fundamental_by_id(id)
 print(response)
@@ -232,7 +232,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-id = '\"AAPL-income_statement-2018-Q1\"'
+id = 'AAPL-income_statement-2018-Q1'
 
 response = intrinio.FundamentalsApi().get_fundamental_reported_financials(id)
 print(response)
@@ -307,7 +307,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-id = '\"AAPL-income_statement-2018-Q1\"'
+id = 'AAPL-income_statement-2018-Q1'
 
 response = intrinio.FundamentalsApi().get_fundamental_standardized_financials(id)
 print(response)
@@ -382,8 +382,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-id = '\"AAPL-income_statement-2020-FY\"'
-tag = '\"ceo\"'
+id = 'AAPL-income_statement-2020-FY'
+tag = 'ceo'
 
 response = intrinio.FundamentalsApi().get_fundamental_standardized_financials_dimensions(id, tag)
 print(response)
@@ -459,10 +459,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"AAPL\"'
-statement_code = '\"income_statement\"'
+identifier = 'AAPL'
+statement_code = 'income_statement'
 fiscal_year = 2017
-fiscal_period = '\"FY\"'
+fiscal_period = 'FY'
 
 response = intrinio.FundamentalsApi().lookup_fundamental(identifier, statement_code, fiscal_year, fiscal_period)
 print(response)

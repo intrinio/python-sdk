@@ -77,7 +77,7 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.IndexApi().get_all_economic_indices(page_size=page_size, next_page=next_page)
 print(response)
@@ -153,8 +153,8 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 page_size = 100
-start_date = '\"~null\"'
-end_date = '\"~null\"'
+start_date = ''
+end_date = ''
 
 response = intrinio.IndexApi().get_all_eod_index_prices(page_size=page_size, start_date=start_date, end_date=end_date)
 print(response)
@@ -379,7 +379,7 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.IndexApi().get_all_sic_indices(page_size=page_size, next_page=next_page)
 print(response)
@@ -455,7 +455,7 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.IndexApi().get_all_stock_market_indices(page_size=page_size, next_page=next_page)
 print(response)
@@ -531,7 +531,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$GDP\"'
+identifier = '$GDP'
 
 response = intrinio.IndexApi().get_economic_index_by_id(identifier)
 print(response)
@@ -606,8 +606,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$GDP\"'
-tag = '\"level\"'
+identifier = '$GDP'
+tag = 'level'
 
 response = intrinio.IndexApi().get_economic_index_data_point_number(identifier, tag)
 print(response)
@@ -683,8 +683,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$GDP\"'
-tag = '\"level\"'
+identifier = '$GDP'
+tag = 'level'
 
 response = intrinio.IndexApi().get_economic_index_data_point_text(identifier, tag)
 print(response)
@@ -760,14 +760,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$GDP\"'
-tag = '\"level\"'
-type = '\"~null\"'
-start_date = '\"2018-01-01\"'
-end_date = '\"~null\"'
+identifier = '$GDP'
+tag = 'level'
+type = ''
+start_date = '2018-01-01'
+end_date = ''
 sort_order = 'desc'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.IndexApi().get_economic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 print(response)
@@ -848,10 +848,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"SPX\"'
+identifier = 'SPX'
 page_size = 100
-start_date = '\"~null\"'
-end_date = '\"~null\"'
+start_date = ''
+end_date = ''
 
 response = intrinio.IndexApi().get_eod_index_price_by_id(identifier, page_size=page_size, start_date=start_date, end_date=end_date)
 print(response)
@@ -928,7 +928,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"SPX\"'
+identifier = 'SPX'
 
 response = intrinio.IndexApi().get_index_summary_by_id(identifier)
 print(response)
@@ -1002,7 +1002,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"SPX\"'
+identifier = 'SPX'
 
 response = intrinio.IndexApi().get_realtime_index_price_by_id(identifier)
 print(response)
@@ -1076,7 +1076,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$SIC.2911\"'
+identifier = '$SIC.2911'
 
 response = intrinio.IndexApi().get_sic_index_by_id(identifier)
 print(response)
@@ -1151,8 +1151,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$SIC.2911\"'
-tag = '\"marketcap\"'
+identifier = '$SIC.2911'
+tag = 'marketcap'
 
 response = intrinio.IndexApi().get_sic_index_data_point_number(identifier, tag)
 print(response)
@@ -1228,8 +1228,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$SIC.2911\"'
-tag = '\"marketcap\"'
+identifier = '$SIC.2911'
+tag = 'marketcap'
 
 response = intrinio.IndexApi().get_sic_index_data_point_text(identifier, tag)
 print(response)
@@ -1305,14 +1305,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$SIC.1\"'
-tag = '\"marketcap\"'
-type = '\"~null\"'
-start_date = '\"2018-01-01\"'
-end_date = '\"~null\"'
+identifier = '$SIC.1'
+tag = 'marketcap'
+type = ''
+start_date = '2018-01-01'
+end_date = ''
 sort_order = 'desc'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.IndexApi().get_sic_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 print(response)
@@ -1393,7 +1393,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$DJI\"'
+identifier = '$DJI'
 
 response = intrinio.IndexApi().get_stock_market_index_by_id(identifier)
 print(response)
@@ -1468,8 +1468,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$DJI\"'
-tag = '\"level\"'
+identifier = '$DJI'
+tag = 'level'
 
 response = intrinio.IndexApi().get_stock_market_index_data_point_number(identifier, tag)
 print(response)
@@ -1545,8 +1545,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$DJI\"'
-tag = '\"level\"'
+identifier = '$DJI'
+tag = 'level'
 
 response = intrinio.IndexApi().get_stock_market_index_data_point_text(identifier, tag)
 print(response)
@@ -1622,14 +1622,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"$DJI\"'
-tag = '\"level\"'
-type = '\"~null\"'
-start_date = '\"2018-01-01\"'
-end_date = '\"~null\"'
+identifier = '$DJI'
+tag = 'level'
+type = ''
+start_date = '2018-01-01'
+end_date = ''
 sort_order = 'desc'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.IndexApi().get_stock_market_index_historical_data(identifier, tag, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 print(response)
@@ -1711,7 +1711,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-query = '\"GDP\"'
+query = 'GDP'
 page_size = 100
 
 response = intrinio.IndexApi().search_economic_indices(query, page_size=page_size)
@@ -1788,7 +1788,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-query = '\"agriculture\"'
+query = 'agriculture'
 page_size = 100
 
 response = intrinio.IndexApi().search_sic_indices(query, page_size=page_size)
@@ -1865,7 +1865,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-query = '\"dow\"'
+query = 'dow'
 page_size = 100
 
 response = intrinio.IndexApi().search_stock_markets_indices(query, page_size=page_size)

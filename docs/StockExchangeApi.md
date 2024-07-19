@@ -58,9 +58,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-city = '\"New York\"'
-country = '\"UNITED STATES OF AMERICA\"'
-country_code = '\"US\"'
+city = 'New York'
+country = 'UNITED STATES OF AMERICA'
+country_code = 'US'
 page_size = 100
 
 response = intrinio.StockExchangeApi().get_all_stock_exchanges(city=city, country=country, country_code=country_code, page_size=page_size)
@@ -139,7 +139,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"USCOMP\"'
+identifier = 'USCOMP'
 
 response = intrinio.StockExchangeApi().get_stock_exchange_by_id(identifier)
 print(response)
@@ -214,10 +214,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"USCOMP\"'
-date = '\"2018-08-14\"'
+identifier = 'USCOMP'
+date = '2018-08-14'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.StockExchangeApi().get_stock_exchange_price_adjustments(identifier, date=date, page_size=page_size, next_page=next_page)
 print(response)
@@ -295,10 +295,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"USCOMP\"'
-date = '\"2018-08-14\"'
+identifier = 'USCOMP'
+date = '2018-08-14'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.StockExchangeApi().get_stock_exchange_prices(identifier, date=date, page_size=page_size, next_page=next_page)
 print(response)
@@ -376,12 +376,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"USCOMP\"'
-source = ['\"~null\"']
-active_only = "~null"
+identifier = 'USCOMP'
+source = ['']
+active_only = ''
 page_size = 100
-tickers = ['\"~null\"']
-next_page = '\"~null\"'
+tickers = ['']
+next_page = ''
 
 response = intrinio.StockExchangeApi().get_stock_exchange_realtime_prices(identifier, source=source, active_only=active_only, page_size=page_size, tickers=tickers, next_page=next_page)
 print(response)
@@ -461,9 +461,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '\"USCOMP\"'
+identifier = 'USCOMP'
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.StockExchangeApi().get_stock_exchange_securities(identifier, page_size=page_size, next_page=next_page)
 print(response)

@@ -53,11 +53,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-start_date = '\"2015-01-01\"'
-end_date = '\"~null\"'
+start_date = '2015-01-01'
+end_date = ''
 page_size = 100
-sort_by = '\"updated_on\"'
-next_page = '\"~null\"'
+sort_by = 'updated_on'
+next_page = ''
 
 response = intrinio.InsiderTransactionFilingsApi().get_all_insider_transaction_filings(start_date=start_date, end_date=end_date, page_size=page_size, sort_by=sort_by, next_page=next_page)
 print(response)

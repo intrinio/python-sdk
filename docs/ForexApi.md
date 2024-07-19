@@ -197,15 +197,15 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-pair = '\"EURUSD\"'
-timeframe = '\"D1\"'
+pair = 'EURUSD'
+timeframe = 'D1'
 timezone = 'UTC'
-start_date = '\"2018-01-01\"'
-start_time = '\"~null\"'
-end_date = '\"2019-01-01\"'
-end_time = '\"~null\"'
+start_date = '2018-01-01'
+start_time = ''
+end_date = '2019-01-01'
+end_time = ''
 page_size = 100
-next_page = '\"~null\"'
+next_page = ''
 
 response = intrinio.ForexApi().get_forex_prices(pair, timeframe, timezone=timezone, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
 print(response)
