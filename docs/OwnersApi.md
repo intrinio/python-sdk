@@ -57,9 +57,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-institutional = ''
+institutional = "~null"
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.OwnersApi().get_all_owners(institutional=institutional, page_size=page_size, next_page=next_page)
 print(response)
@@ -77,7 +77,7 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **institutional** | bool| Returns insider owners who have filed forms 3, 4, or 5 with the SEC only. Possible values are True, False, or omit for both. | [optional]   &nbsp;
+ **institutional** | bool| Returns insider owners who have filed forms 3, 4, or 5 with the SEC only. Possible values are true, false, or omit for both. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -136,7 +136,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '0000001800'
+identifier = '\"0000001800\"'
 
 response = intrinio.OwnersApi().get_owner_by_id(identifier)
 print(response)
@@ -211,11 +211,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '0001494730'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+identifier = '\"0001494730\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.OwnersApi().insider_transaction_filings_by_owner(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -296,8 +296,8 @@ intrinio.ApiClient().allow_retries(True)
 
 identifier = '430692'
 page_size = 100
-as_of_date = '2021-01-05'
-next_page = ''
+as_of_date = '\"2021-01-05\"'
+next_page = '\"~null\"'
 
 response = intrinio.OwnersApi().institutional_holdings_by_owner(identifier, page_size=page_size, as_of_date=as_of_date, next_page=next_page)
 print(response)
@@ -375,10 +375,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-query = 'Cook'
-institutional = ''
+query = '\"Cook\"'
+institutional = "~null"
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.OwnersApi().search_owners(query, institutional=institutional, page_size=page_size, next_page=next_page)
 print(response)
@@ -397,7 +397,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | str|  |   &nbsp;
- **institutional** | bool| Returns insider owners who have filed forms 3, 4, or 5 with the SEC only. Possible values are True, False, or omit for both. | [optional]   &nbsp;
+ **institutional** | bool| Returns insider owners who have filed forms 3, 4, or 5 with the SEC only. Possible values are true, false, or omit for both. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

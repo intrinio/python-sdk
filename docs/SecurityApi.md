@@ -111,25 +111,25 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-active = True
-delisted = False
-code = ''
-currency = ''
-ticker = ''
-name = ''
-composite_mic = ''
-exchange_mic = ''
-stock_prices_after = ''
-stock_prices_before = ''
-cik = ''
-figi = ''
-composite_figi = ''
-share_class_figi = ''
-figi_unique_id = ''
-include_non_figi = False
+active = true
+delisted = false
+code = '\"~null\"'
+currency = '\"~null\"'
+ticker = '\"~null\"'
+name = '\"~null\"'
+composite_mic = '\"~null\"'
+exchange_mic = '\"~null\"'
+stock_prices_after = '\"~null\"'
+stock_prices_before = '\"~null\"'
+cik = '\"~null\"'
+figi = '\"~null\"'
+composite_figi = '\"~null\"'
+share_class_figi = '\"~null\"'
+figi_unique_id = '\"~null\"'
+include_non_figi = false
 page_size = 100
-primary_listing = ''
-next_page = ''
+primary_listing = "~null"
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_all_securities(active=active, delisted=delisted, code=code, currency=currency, ticker=ticker, name=name, composite_mic=composite_mic, exchange_mic=exchange_mic, stock_prices_after=stock_prices_after, stock_prices_before=stock_prices_before, cik=cik, figi=figi, composite_figi=composite_figi, share_class_figi=share_class_figi, figi_unique_id=figi_unique_id, include_non_figi=include_non_figi, page_size=page_size, primary_listing=primary_listing, next_page=next_page)
 print(response)
@@ -147,8 +147,8 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **active** | bool| When True, return securities that are active. When False, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). | [optional]   &nbsp;
- **delisted** | bool| When True, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When False, return securities that have not been delisted. | [optional]   &nbsp;
+ **active** | bool| When true, return securities that are active. When false, return securities that are not active. A security is considered active if it has traded or has had a corporate action in the past 30 days, and has not been merged into another security (such as due to ticker changes or corporate restructurings). | [optional]   &nbsp;
+ **delisted** | bool| When true, return securities that have been delisted from their exchange. Note that there may be a newer security for the same company that has been relisted on a differente exchange. When false, return securities that have not been delisted. | [optional]   &nbsp;
  **code** | str| Return securities classified with the given code (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/security_codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
  **currency** | str| Return securities traded in the given 3-digit ISO 4217 currency code (&lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_4217\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
  **ticker** | str| Return securities traded with the given ticker. Note that securities across the world (and through time) may trade with the same ticker but represent different companies. Use this in conjuction with other parameters for more specificity. | [optional]   &nbsp;
@@ -162,9 +162,9 @@ Name | Type | Description  | Notes
  **composite_figi** | str| Return securities with the given Country Composite FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
  **share_class_figi** | str| Return securities with the given Global Share Class FIGI (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
  **figi_unique_id** | str| Return securities with the given FIGI Unique ID (&lt;a href&#x3D;\&quot;https://www.openfigi.com/about\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;). | [optional]   &nbsp;
- **include_non_figi** | bool| When True, include securities that do not have a FIGI. By default, this is False. If this parameter is not specified, only securities with a FIGI are returned. | [optional] [default to False]  &nbsp;
+ **include_non_figi** | bool| When true, include securities that do not have a FIGI. By default, this is false. If this parameter is not specified, only securities with a FIGI are returned. | [optional] [default to false]  &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
- **primary_listing** | bool| If True, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange.  Returns both if omitted. | [optional]   &nbsp;
+ **primary_listing** | bool| If true, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange.  Returns both if omitted. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
@@ -222,7 +222,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 
 response = intrinio.SecurityApi().get_security_by_id(identifier)
 print(response)
@@ -297,8 +297,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'close_price'
+identifier = '\"AAPL\"'
+tag = '\"close_price\"'
 
 response = intrinio.SecurityApi().get_security_data_point_number(identifier, tag)
 print(response)
@@ -374,8 +374,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'figi'
+identifier = '\"AAPL\"'
+tag = '\"figi\"'
 
 response = intrinio.SecurityApi().get_security_data_point_text(identifier, tag)
 print(response)
@@ -451,15 +451,15 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'adj_close_price'
+identifier = '\"AAPL\"'
+tag = '\"adj_close_price\"'
 frequency = 'daily'
-type = ''
-start_date = '2018-01-01'
-end_date = ''
+type = '\"~null\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"~null\"'
 sort_order = 'desc'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 print(response)
@@ -542,7 +542,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '037833100'
+identifier = '\"037833100\"'
 
 response = intrinio.SecurityApi().get_security_history_by_identifier(identifier)
 print(response)
@@ -617,7 +617,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-ticker = 'AAPL'
+ticker = '\"AAPL\"'
 
 response = intrinio.SecurityApi().get_security_history_by_ticker(ticker)
 print(response)
@@ -692,8 +692,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-next_page = ''
+identifier = '\"AAPL\"'
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_insider_ownership(identifier, next_page=next_page)
 print(response)
@@ -769,8 +769,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
-open_time = ''
+source = '\"~null\"'
+open_time = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_interval_movers(source=source, open_time=open_time)
 print(response)
@@ -846,8 +846,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
-open_time = ''
+source = '\"~null\"'
+open_time = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_interval_movers_change(source=source, open_time=open_time)
 print(response)
@@ -923,8 +923,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
-open_time = ''
+source = '\"~null\"'
+open_time = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_interval_movers_volume(source=source, open_time=open_time)
 print(response)
@@ -1000,17 +1000,17 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 interval_size = '15m'
-source = ''
-start_date = '2023-01-01'
-start_time = ''
-end_date = '2023-02-01'
-end_time = ''
+source = '\"~null\"'
+start_date = '\"2023-01-01\"'
+start_time = '\"~null\"'
+end_date = '\"2023-02-01\"'
+end_time = '\"~null\"'
 timezone = 'UTC'
 page_size = 100
-split_adjusted = False
-next_page = ''
+split_adjusted = false
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_interval_prices(identifier, interval_size, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, split_adjusted=split_adjusted, next_page=next_page)
 print(response)
@@ -1037,7 +1037,7 @@ Name | Type | Description  | Notes
  **end_time** | str| Return intervals stopping at the specified time on the &#x60;end_date&#x60; (24-hour in &#39;hh:mm:ss&#39; format) | [optional]   &nbsp;
  **timezone** | str| Returns trading times in this timezone | [optional] [default to UTC]  &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
- **split_adjusted** | bool| Whether to return the values adjusted for splits or not. Default is False. | [optional] [default to False]  &nbsp;
+ **split_adjusted** | bool| Whether to return the values adjusted for splits or not. Default is false. | [optional] [default to false]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
@@ -1095,14 +1095,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-source = ''
-start_date = '2018-01-01'
-start_time = ''
-end_date = '2019-01-01'
-end_time = ''
+identifier = '\"AAPL\"'
+source = '\"~null\"'
+start_date = '\"2018-01-01\"'
+start_time = '\"~null\"'
+end_date = '\"2019-01-01\"'
+end_time = '\"~null\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_intraday_prices(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, page_size=page_size, next_page=next_page)
 print(response)
@@ -1184,7 +1184,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 
 response = intrinio.SecurityApi().get_security_latest_dividend_record(identifier)
 print(response)
@@ -1259,7 +1259,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 
 response = intrinio.SecurityApi().get_security_latest_earnings_record(identifier)
 print(response)
@@ -1334,11 +1334,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+identifier = '\"AAPL\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_adi(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -1417,12 +1417,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 22
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_adtv(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -1502,12 +1502,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 14
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_adx(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -1587,13 +1587,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 short_period = 5
 long_period = 34
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_ao(identifier, short_period=short_period, long_period=long_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -1674,12 +1674,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 14
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_atr(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -1759,14 +1759,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 20
 standard_deviations = 2.0
 price_key = 'close'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_bb(identifier, period=period, standard_deviations=standard_deviations, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -1848,13 +1848,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 20
 constant = 0.015
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_cci(identifier, period=period, constant=constant, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -1935,12 +1935,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 20
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_cmf(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2020,13 +2020,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 20
 price_key = 'close'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_dc(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2107,13 +2107,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 20
 price_key = 'close'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_dpo(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2194,12 +2194,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 20
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_eom(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2279,11 +2279,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+identifier = '\"AAPL\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_fi(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2362,14 +2362,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 low_period = 9
 medium_period = 26
 high_period = 52
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_ichimoku(identifier, low_period=low_period, medium_period=medium_period, high_period=high_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2451,12 +2451,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 10
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_kc(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2536,7 +2536,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 roc1 = 10
 roc2 = 15
 roc3 = 20
@@ -2546,10 +2546,10 @@ sma2 = 10
 sma3 = 10
 sma4 = 15
 price_key = 'close'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_kst(identifier, roc1=roc1, roc2=roc2, roc3=roc3, roc4=roc4, sma1=sma1, sma2=sma2, sma3=sma3, sma4=sma4, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2637,15 +2637,15 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 fast_period = 12
 slow_period = 26
 signal_period = 9
 price_key = 'close'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_macd(identifier, fast_period=fast_period, slow_period=slow_period, signal_period=signal_period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2728,12 +2728,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 14
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_mfi(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2813,13 +2813,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 ema_period = 9
 sum_period = 25
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_mi(identifier, ema_period=ema_period, sum_period=sum_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2900,11 +2900,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+identifier = '\"AAPL\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_nvi(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -2983,11 +2983,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+identifier = '\"AAPL\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_obv(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3066,12 +3066,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 10
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_obv_mean(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3151,13 +3151,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 14
 price_key = 'close'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_rsi(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3238,13 +3238,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 20
 price_key = 'close'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_sma(identifier, period=period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3325,13 +3325,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 14
 signal_period = 3
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_sr(identifier, period=period, signal_period=signal_period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3412,12 +3412,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 15
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_trix(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3497,14 +3497,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 low_period = 13
 high_period = 25
 price_key = 'close'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_tsi(identifier, low_period=low_period, high_period=high_period, price_key=price_key, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3586,17 +3586,17 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 short_period = 7
 medium_period = 14
 long_period = 28
 short_weight = 4.0
 medium_weight = 2.0
 long_weight = 1.0
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_uo(identifier, short_period=short_period, medium_period=medium_period, long_period=long_period, short_weight=short_weight, medium_weight=medium_weight, long_weight=long_weight, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3681,12 +3681,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 14
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_vi(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3766,11 +3766,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+identifier = '\"AAPL\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_vpt(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3849,11 +3849,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+identifier = '\"AAPL\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_vwap(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -3932,12 +3932,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 period = 14
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_price_technicals_wr(identifier, period=period, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -4017,8 +4017,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-source = 'bats'
+identifier = '\"AAPL\"'
+source = ['\"iex\"']
 
 response = intrinio.SecurityApi().get_security_realtime_price(identifier, source=source)
 print(response)
@@ -4037,7 +4037,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
- **source** | str| Return the realtime price from the specified data source. If no source is specified, the best source available is used. | [optional]   &nbsp;
+ **source** | [**list[str]**](str.md)| Return the realtime price from the specified data source. If no source is specified, the best source available is used. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -4094,8 +4094,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-subsource = ''
-date = ''
+subsource = '\"~null\"'
+date = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_replay_file(subsource, date)
 print(response)
@@ -4171,7 +4171,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-at_datetime = ''
+at_datetime = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_snapshots(at_datetime=at_datetime)
 print(response)
@@ -4246,11 +4246,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+identifier = '\"AAPL\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_stock_price_adjustments(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -4329,12 +4329,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
+identifier = '\"AAPL\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
 frequency = 'daily'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_stock_prices(identifier, start_date=start_date, end_date=end_date, frequency=frequency, page_size=page_size, next_page=next_page)
 print(response)
@@ -4414,16 +4414,16 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
-start_date = ''
-start_time = ''
-end_date = ''
-end_time = ''
+source = '\"~null\"'
+start_date = '\"~null\"'
+start_time = '\"~null\"'
+end_date = '\"~null\"'
+end_time = '\"~null\"'
 timezone = 'UTC'
 page_size = 100
-darkpool_only = False
+darkpool_only = false
 min_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_trades(source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, darkpool_only=darkpool_only, min_size=min_size, next_page=next_page)
 print(response)
@@ -4448,7 +4448,7 @@ Name | Type | Description  | Notes
  **end_time** | str| The end time for the data being requested. | [optional]   &nbsp;
  **timezone** | str| The timezone the start and end date/times use. | [optional] [default to UTC]  &nbsp;
  **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
- **darkpool_only** | bool| Set to True to show only darkpool trades | [optional] [default to False]  &nbsp;
+ **darkpool_only** | bool| Set to true to show only darkpool trades | [optional] [default to false]  &nbsp;
  **min_size** | int| Trades must be larger or equal to this size. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -4507,17 +4507,17 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-source = ''
-start_date = ''
-start_time = ''
-end_date = ''
-end_time = ''
+identifier = '\"AAPL\"'
+source = '\"~null\"'
+start_date = '\"~null\"'
+start_time = '\"~null\"'
+end_date = '\"~null\"'
+end_time = '\"~null\"'
 timezone = 'UTC'
-darkpool_only = False
+darkpool_only = false
 page_size = 100
 min_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_trades_by_symbol(identifier, source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, darkpool_only=darkpool_only, page_size=page_size, min_size=min_size, next_page=next_page)
 print(response)
@@ -4536,13 +4536,13 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| The ticker symbol for which trades are being requested. |   &nbsp;
- **source** | str| The specific source of the data being requested.  Specifying delayed sip will result in the system automatically determining which delayed sip source (cta_delayed, cta_b_delayed, utp_delayed) to use. |   &nbsp;
+ **source** | str| The specific source of the data being requested.  Specifying delayed sip will result in the system automatically determining which delayed sip source (cta_delayed, cta_b_delayed, utp_delayed, otc_delayed) to use. |   &nbsp;
  **start_date** | date| The start date for the data being requested. | [optional]   &nbsp;
  **start_time** | str| The start time for the data being requested. | [optional]   &nbsp;
  **end_date** | date| The end date for the data being requested. | [optional]   &nbsp;
  **end_time** | str| The end time for the data being requested. | [optional]   &nbsp;
  **timezone** | str| The timezone the start and end date/times use. | [optional] [default to UTC]  &nbsp;
- **darkpool_only** | bool| Set to True to show only darkpool trades | [optional] [default to False]  &nbsp;
+ **darkpool_only** | bool| Set to true to show only darkpool trades | [optional] [default to false]  &nbsp;
  **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
  **min_size** | int| Trades must be larger or equal to this size. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
@@ -4602,7 +4602,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 page_size = 100
 
 response = intrinio.SecurityApi().get_security_zacks_analyst_ratings(identifier, page_size=page_size)
@@ -4695,8 +4695,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-date = ''
+identifier = '\"AAPL\"'
+date = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_zacks_analyst_ratings_snapshot(identifier, date=date)
 print(response)
@@ -4772,9 +4772,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_zacks_eps_surprises(identifier, page_size=page_size, next_page=next_page)
 print(response)
@@ -4851,9 +4851,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.SecurityApi().get_security_zacks_sales_surprises(identifier, page_size=page_size, next_page=next_page)
 print(response)
@@ -4944,9 +4944,9 @@ clauses = [
 ]
 
 logic = intrinio.SecurityScreenGroup(operator="AND", clauses=clauses)
-order_column = 'marketcap'
+order_column = '\"marketcap\"'
 order_direction = 'asc'
-primary_only = False
+primary_only = false
 page_size = 100
 
 response = intrinio.SecurityApi().screen_securities(logic=logic, order_column=order_column, order_direction=order_direction, primary_only=primary_only, page_size=page_size)
@@ -4968,7 +4968,7 @@ Name | Type | Description  | Notes
  **logic** | [**SecurityScreenGroup**](SecurityScreenGroup.md)| The logic to screen with, consisting of operators, clauses, and nested groups. &lt;/br&gt; See &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/screener_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;screener documentation&lt;/a&gt; for details on how to construct conditions. | [optional]   &nbsp;
  **order_column** | str| Results returned sorted by this column | [optional]   &nbsp;
  **order_direction** | str| Sort order to use with the order_column | [optional] [default to asc]  &nbsp;
- **primary_only** | bool| Return only primary securities | [optional] [default to False]  &nbsp;
+ **primary_only** | bool| Return only primary securities | [optional] [default to false]  &nbsp;
  **page_size** | int| The number of results to return. Maximum for this endpoint is 50000. | [optional] [default to 100]  &nbsp;
 <br/>
 
@@ -5026,7 +5026,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-query = 'Apple'
+query = '\"Apple\"'
 page_size = 100
 
 response = intrinio.SecurityApi().search_securities(query, page_size=page_size)

@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**get_options_prices_batch_realtime**](OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 [**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
+[**get_options_prices_realtime_by_ticker**](OptionsApi.md#get_options_prices_realtime_by_ticker) | **GET** /options/prices/by_ticker/{symbol}/realtime | Option Prices Realtime By Ticker
 [**get_options_snapshots**](OptionsApi.md#get_options_snapshots) | **GET** /options/snapshots | Option Prices Realtime Snapshot
 [**get_options_stats_realtime**](OptionsApi.md#get_options_stats_realtime) | **GET** /options/prices/{identifier}/realtime/stats | Option Stats Realtime
 [**get_unusual_activity**](OptionsApi.md#get_unusual_activity) | **GET** /options/unusual_activity/{symbol} | Options Unusual Activity
@@ -223,11 +224,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'MSFT'
-after = '2022-01-01'
-before = '2023-04-01'
-source = ''
-include_related_symbols = False
+symbol = '\"MSFT\"'
+after = '\"2022-01-01\"'
+before = '\"2023-04-01\"'
+source = '\"~null\"'
+include_related_symbols = false
 
 response = intrinio.OptionsApi().get_option_expirations_realtime(symbol, after=after, before=before, source=source, include_related_symbols=include_related_symbols)
 print(response)
@@ -306,13 +307,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'MSFT'
+symbol = '\"MSFT\"'
 strike = 95
-source = ''
-stock_price_source = ''
-model = ''
-show_extended_price = ''
-include_related_symbols = False
+source = '\"~null\"'
+stock_price_source = '\"~null\"'
+model = '\"~null\"'
+show_extended_price = "~null"
+include_related_symbols = false
 
 response = intrinio.OptionsApi().get_option_strikes_realtime(symbol, strike, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols)
 print(response)
@@ -393,10 +394,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'AAPL'
-type = 'put'
+symbol = '\"AAPL\"'
+type = '\"put\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.OptionsApi().get_options(symbol, type=type, page_size=page_size, next_page=next_page)
 print(response)
@@ -480,10 +481,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'AAPL'
-type = 'put'
-source = ''
-include_related_symbols = False
+symbol = '\"AAPL\"'
+type = '\"put\"'
+source = '\"~null\"'
+include_related_symbols = false
 
 response = intrinio.OptionsApi().get_options_by_symbol_realtime(symbol, type=type, source=source, include_related_symbols=include_related_symbols)
 print(response)
@@ -567,11 +568,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'MSFT'
-expiration = '2019-04-05'
-date = ''
-type = ''
-moneyness = ''
+symbol = '\"MSFT\"'
+expiration = '\"2019-04-05\"'
+date = '\"~null\"'
+type = '\"~null\"'
+moneyness = '\"~null\"'
 page_size = 100
 
 response = intrinio.OptionsApi().get_options_chain(symbol, expiration, date=date, type=type, moneyness=moneyness, page_size=page_size)
@@ -655,10 +656,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'AAPL'
-expiration = '2023-01-20'
-type = ''
-include_related_symbols = False
+symbol = '\"AAPL\"'
+expiration = '\"2023-01-20\"'
+type = '\"~null\"'
+include_related_symbols = false
 
 response = intrinio.OptionsApi().get_options_chain_eod(symbol, expiration, type=type, include_related_symbols=include_related_symbols)
 print(response)
@@ -740,15 +741,15 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'MSFT'
-expiration = '2023-01-20'
-source = ''
-type = ''
-moneyness = ''
-stock_price_source = ''
-model = ''
-show_extended_price = ''
-include_related_symbols = False
+symbol = '\"MSFT\"'
+expiration = '\"2023-01-20\"'
+source = '\"~null\"'
+type = '\"~null\"'
+moneyness = '\"~null\"'
+stock_price_source = '\"~null\"'
+model = '\"~null\"'
+show_extended_price = "~null"
+include_related_symbols = false
 
 response = intrinio.OptionsApi().get_options_chain_realtime(symbol, expiration, source=source, type=type, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols)
 print(response)
@@ -838,9 +839,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'MSFT'
-after = '2019-01-01'
-before = '2019-12-31'
+symbol = '\"MSFT\"'
+after = '\"2019-01-01\"'
+before = '\"2019-12-31\"'
 
 response = intrinio.OptionsApi().get_options_expirations(symbol, after=after, before=before)
 print(response)
@@ -917,10 +918,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'MSFT'
-after = '2019-01-01'
-before = '2019-12-31'
-include_related_symbols = False
+symbol = '\"MSFT\"'
+after = '\"2019-01-01\"'
+before = '\"2019-12-31\"'
+include_related_symbols = false
 
 response = intrinio.OptionsApi().get_options_expirations_eod(symbol, after=after, before=before, include_related_symbols=include_related_symbols)
 print(response)
@@ -998,11 +999,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'SPY___230103P00380000'
-interval_size = '5m'
-source = ''
+identifier = '\"SPY___230103P00380000\"'
+interval_size = '\"5m\"'
+source = '\"~null\"'
 page_size = 100
-end_time = ''
+end_time = '\"~null\"'
 
 response = intrinio.OptionsApi().get_options_interval_by_contract(identifier, interval_size, source=source, page_size=page_size, end_time=end_time)
 print(response)
@@ -1081,8 +1082,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
-open_time = ''
+source = '\"~null\"'
+open_time = '\"~null\"'
 
 response = intrinio.OptionsApi().get_options_interval_movers(source=source, open_time=open_time)
 print(response)
@@ -1158,8 +1159,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
-open_time = ''
+source = '\"~null\"'
+open_time = '\"~null\"'
 
 response = intrinio.OptionsApi().get_options_interval_movers_change(source=source, open_time=open_time)
 print(response)
@@ -1235,8 +1236,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
-open_time = ''
+source = '\"~null\"'
+open_time = '\"~null\"'
 
 response = intrinio.OptionsApi().get_options_interval_movers_volume(source=source, open_time=open_time)
 print(response)
@@ -1312,11 +1313,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'MSFT190405C00118000'
-start_date = '2019-01-01'
-end_date = '2019-12-31'
+identifier = '\"MSFT190405C00118000\"'
+start_date = '\"2019-01-01\"'
+end_date = '\"2019-12-31\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.OptionsApi().get_options_prices(identifier, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -1395,11 +1396,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
-show_stats = ''
-stock_price_source = ''
-model = ''
-show_extended_price = ''
+source = '\"~null\"'
+show_stats = "~null"
+stock_price_source = '\"~null\"'
+model = '\"~null\"'
+show_extended_price = "~null"
 body = {
   "contracts": [
     "A220121P00055000",
@@ -1486,8 +1487,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL230616P00190000'
-next_page = ''
+identifier = '\"AAPL230616P00190000\"'
+next_page = '\"~null\"'
 
 response = intrinio.OptionsApi().get_options_prices_eod(identifier, next_page=next_page, )
 print(response)
@@ -1565,11 +1566,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL230120C00090000'
-source = ''
-stock_price_source = ''
-model = ''
-show_extended_price = ''
+identifier = '\"AAPL230120C00090000\"'
+source = '\"~null\"'
+stock_price_source = '\"~null\"'
+model = '\"~null\"'
+show_extended_price = "~null"
 
 response = intrinio.OptionsApi().get_options_prices_realtime(identifier, source=source, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
 print(response)
@@ -1599,6 +1600,95 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsPriceRealtime**](ApiResponseOptionsPriceRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_prices_realtime_by_ticker)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsPricesByTickerRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsPricesByTickerRealtime.md)
+
+[//]: # (OPERATION:get_options_prices_realtime_by_ticker_v2)
+
+[//]: # (ENDPOINT:/options/prices/by_ticker/{symbol}/realtime)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_prices_realtime_by_ticker)
+
+## **get_options_prices_realtime_by_ticker**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_prices_realtime_by_ticker_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsPricesByTickerRealtime get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
+
+#### Option Prices Realtime By Ticker
+
+
+Returns a list of the latest National Best Bid & Offer (NBBO) top of the order book size and premium (bid / ask), the latest trade size and premium as well as the greeks and implied volatility for all option contracts currently associated with the ticker.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+symbol = '\"MSFT\"'
+source = '\"~null\"'
+iv_mode = '\"~null\"'
+next_page = '\"~null\"'
+page_size = 250
+stock_price_source = '\"~null\"'
+model = '\"~null\"'
+show_extended_price = "~null"
+
+response = intrinio.OptionsApi().get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | str| The equities ticker symbol, corresponding to the underlying security. |   &nbsp;
+ **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+ **iv_mode** | str| Change the mode for the implied volatility calculation to out of the money. | [optional]   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 250]  &nbsp;
+ **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
+ **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
+ **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsPricesByTickerRealtime**](ApiResponseOptionsPricesByTickerRealtime.md)
 
 [//]: # (END_OPERATION)
 
@@ -1648,8 +1738,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
-at_datetime = ''
+source = '\"~null\"'
+at_datetime = '\"~null\"'
 
 response = intrinio.OptionsApi().get_options_snapshots(source=source, at_datetime=at_datetime)
 print(response)
@@ -1725,9 +1815,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL230120C00090000'
-source = ''
-show_extended_price = ''
+identifier = '\"AAPL230120C00090000\"'
+source = '\"~null\"'
+show_extended_price = "~null"
 
 response = intrinio.OptionsApi().get_options_stats_realtime(identifier, source=source, show_extended_price=show_extended_price)
 print(response)
@@ -1804,8 +1894,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'AAPL'
-source = ''
+symbol = '\"AAPL\"'
+source = '\"~null\"'
 
 response = intrinio.OptionsApi().get_unusual_activity(symbol, source=source)
 print(response)
@@ -1881,13 +1971,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-symbol = 'AAPL'
-next_page = ''
+symbol = '\"AAPL\"'
+next_page = '\"~null\"'
 page_size = 1000
-activity_type = ''
-sentiment = ''
-start_date = '2022-02-01'
-end_date = '2022-02-03'
+activity_type = '\"~null\"'
+sentiment = '\"~null\"'
+start_date = '\"2022-02-01\"'
+end_date = '\"2022-02-03\"'
 minimum_total_value = 100000.0
 maximum_total_value = 200000.0
 
@@ -1972,7 +2062,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-source = ''
+source = '\"~null\"'
 
 response = intrinio.OptionsApi().get_unusual_activity_universal(source=source)
 print(response)
@@ -2047,12 +2137,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-next_page = ''
+next_page = '\"~null\"'
 page_size = 1000
-activity_type = ''
-sentiment = ''
-start_date = '2022-02-01'
-end_date = '2022-02-03'
+activity_type = '\"~null\"'
+sentiment = '\"~null\"'
+start_date = '\"2022-02-01\"'
+end_date = '\"2022-02-03\"'
 minimum_total_value = 100000.0
 maximum_total_value = 200000.0
 

@@ -67,9 +67,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_analyst_ratings(identifier=identifier, page_size=page_size, next_page=next_page)
 print(response)
@@ -162,9 +162,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-type = ''
-next_page = ''
+identifier = '\"AAPL\"'
+type = '\"~null\"'
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_ebitda_consensus(identifier=identifier, type=type, next_page=next_page)
 print(response)
@@ -241,15 +241,15 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = ''
-end_date = ''
-fiscal_year = ''
-fiscal_period = ''
-calendar_year = ''
-calendar_period = ''
+identifier = '\"AAPL\"'
+start_date = '\"~null\"'
+end_date = '\"~null\"'
+fiscal_year = "~null"
+fiscal_period = '\"~null\"'
+calendar_year = "~null"
+calendar_period = '\"~null\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_eps_estimates(identifier=identifier, start_date=start_date, end_date=end_date, fiscal_year=fiscal_year, fiscal_period=fiscal_period, calendar_year=calendar_year, calendar_period=calendar_period, page_size=page_size, next_page=next_page)
 print(response)
@@ -332,11 +332,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-company = 'AAPL'
-industry_group_name = ''
-industry_group_number = ''
+company = '\"AAPL\"'
+industry_group_name = '\"~null\"'
+industry_group_number = '\"~null\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_eps_growth_rates(company=company, industry_group_name=industry_group_name, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
 print(response)
@@ -415,22 +415,22 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-start_date = ''
-end_date = ''
-eps_actual_greater = ''
-eps_actual_less = ''
-eps_mean_estimate_greater = ''
-eps_mean_estimate_less = ''
-eps_amount_diff_greater = ''
-eps_amount_diff_less = ''
-eps_percent_diff_greater = ''
-eps_percent_diff_less = ''
-eps_count_estimate_greater = ''
-eps_count_estimate_less = ''
-eps_std_dev_estimate_greater = ''
-eps_std_dev_estimate_less = ''
+start_date = '\"~null\"'
+end_date = '\"~null\"'
+eps_actual_greater = "~null"
+eps_actual_less = "~null"
+eps_mean_estimate_greater = "~null"
+eps_mean_estimate_less = "~null"
+eps_amount_diff_greater = "~null"
+eps_amount_diff_less = "~null"
+eps_percent_diff_greater = "~null"
+eps_percent_diff_less = "~null"
+eps_count_estimate_greater = "~null"
+eps_count_estimate_less = "~null"
+eps_std_dev_estimate_greater = "~null"
+eps_std_dev_estimate_less = "~null"
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_eps_surprises(start_date=start_date, end_date=end_date, eps_actual_greater=eps_actual_greater, eps_actual_less=eps_actual_less, eps_mean_estimate_greater=eps_mean_estimate_greater, eps_mean_estimate_less=eps_mean_estimate_less, eps_amount_diff_greater=eps_amount_diff_greater, eps_amount_diff_less=eps_amount_diff_less, eps_percent_diff_greater=eps_percent_diff_greater, eps_percent_diff_less=eps_percent_diff_less, eps_count_estimate_greater=eps_count_estimate_greater, eps_count_estimate_less=eps_count_estimate_less, eps_std_dev_estimate_greater=eps_std_dev_estimate_greater, eps_std_dev_estimate_less=eps_std_dev_estimate_less, page_size=page_size, next_page=next_page)
 print(response)
@@ -520,12 +520,12 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-etf_ticker = 'SPY'
-holding_symbol = 'AAPL'
-weight_greater = ''
-weight_less = ''
+etf_ticker = '\"SPY\"'
+holding_symbol = '\"AAPL\"'
+weight_greater = "~null"
+weight_less = "~null"
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_etf_holdings(etf_ticker=etf_ticker, holding_symbol=holding_symbol, weight_greater=weight_greater, weight_less=weight_less, page_size=page_size, next_page=next_page)
 print(response)
@@ -605,7 +605,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_forward_pe(next_page=next_page)
 print(response)
@@ -680,7 +680,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'MSFT'
+identifier = '\"MSFT\"'
 
 response = intrinio.ZacksApi().get_zacks_forward_pe_by_identifier(identifier)
 print(response)
@@ -755,9 +755,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-ticker = ''
+ticker = '\"~null\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_institutional_holding_companies(ticker=ticker, page_size=page_size, next_page=next_page)
 print(response)
@@ -834,9 +834,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-cik = ''
+cik = '\"~null\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_institutional_holding_owners(cik=cik, page_size=page_size, next_page=next_page)
 print(response)
@@ -913,10 +913,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-ticker = ''
-owner_cik = ''
+ticker = '\"~null\"'
+owner_cik = '\"~null\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_institutional_holdings(ticker=ticker, owner_cik=owner_cik, page_size=page_size, next_page=next_page)
 print(response)
@@ -994,9 +994,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_long_term_growth_rates(identifier=identifier, page_size=page_size, next_page=next_page)
 print(response)
@@ -1073,16 +1073,16 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = ''
-end_date = ''
-fiscal_year = ''
-fiscal_period = ''
-calendar_year = ''
-calendar_period = ''
-next_page = ''
+identifier = '\"AAPL\"'
+start_date = '\"~null\"'
+end_date = '\"~null\"'
+fiscal_year = "~null"
+fiscal_period = '\"~null\"'
+calendar_year = "~null"
+calendar_period = '\"~null\"'
+next_page = '\"~null\"'
 page_size = 100
-next_page2 = ''
+next_page2 = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_sales_estimates(identifier=identifier, start_date=start_date, end_date=end_date, fiscal_year=fiscal_year, fiscal_period=fiscal_period, calendar_year=calendar_year, calendar_period=calendar_period, next_page=next_page, page_size=page_size, next_page2=next_page2)
 print(response)
@@ -1166,22 +1166,22 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-start_date = ''
-end_date = ''
-sales_actual_greater = ''
-sales_actual_less = ''
-sales_mean_estimate_greater = ''
-sales_mean_estimate_less = ''
-sales_amount_diff_greater = ''
-sales_amount_diff_less = ''
-sales_percent_diff_greater = ''
-sales_percent_diff_less = ''
-sales_count_estimate_greater = ''
-sales_count_estimate_less = ''
-sales_std_dev_estimate_greater = ''
-sales_std_dev_estimate_less = ''
+start_date = '\"~null\"'
+end_date = '\"~null\"'
+sales_actual_greater = "~null"
+sales_actual_less = "~null"
+sales_mean_estimate_greater = "~null"
+sales_mean_estimate_less = "~null"
+sales_amount_diff_greater = "~null"
+sales_amount_diff_less = "~null"
+sales_percent_diff_greater = "~null"
+sales_percent_diff_less = "~null"
+sales_count_estimate_greater = "~null"
+sales_count_estimate_less = "~null"
+sales_std_dev_estimate_greater = "~null"
+sales_std_dev_estimate_less = "~null"
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_sales_surprises(start_date=start_date, end_date=end_date, sales_actual_greater=sales_actual_greater, sales_actual_less=sales_actual_less, sales_mean_estimate_greater=sales_mean_estimate_greater, sales_mean_estimate_less=sales_mean_estimate_less, sales_amount_diff_greater=sales_amount_diff_greater, sales_amount_diff_less=sales_amount_diff_less, sales_percent_diff_greater=sales_percent_diff_greater, sales_percent_diff_less=sales_percent_diff_less, sales_count_estimate_greater=sales_count_estimate_greater, sales_count_estimate_less=sales_count_estimate_less, sales_std_dev_estimate_greater=sales_std_dev_estimate_greater, sales_std_dev_estimate_less=sales_std_dev_estimate_less, page_size=page_size, next_page=next_page)
 print(response)
@@ -1271,10 +1271,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-industry_group_number = ''
+identifier = '\"AAPL\"'
+industry_group_number = '\"~null\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.ZacksApi().get_zacks_target_price_consensuses(identifier=identifier, industry_group_number=industry_group_number, page_size=page_size, next_page=next_page)
 print(response)

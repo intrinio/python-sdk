@@ -55,19 +55,19 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-has_financials = ''
-government_name = ''
-government_type = ''
-area_name = ''
-area_type = ''
-city = ''
-state = ''
-zipcode = ''
-population_greater_than = ''
-population_less_than = ''
-enrollment_greater_than = ''
-enrollment_less_than = ''
-next_page = ''
+has_financials = "~null"
+government_name = '\"~null\"'
+government_type = '\"~null\"'
+area_name = '\"~null\"'
+area_type = '\"~null\"'
+city = '\"~null\"'
+state = '\"~null\"'
+zipcode = "~null"
+population_greater_than = "~null"
+population_less_than = "~null"
+enrollment_greater_than = "~null"
+enrollment_less_than = "~null"
+next_page = '\"~null\"'
 
 response = intrinio.MunicipalityApi().get_all_municipalities(has_financials=has_financials, government_name=government_name, government_type=government_type, area_name=area_name, area_type=area_type, city=city, state=state, zipcode=zipcode, population_greater_than=population_greater_than, population_less_than=population_less_than, enrollment_greater_than=enrollment_greater_than, enrollment_less_than=enrollment_less_than, next_page=next_page)
 print(response)
@@ -154,7 +154,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-id = 'mun_Xn7x4z'
+id = '\"mun_Xn7x4z\"'
 
 response = intrinio.MunicipalityApi().get_municipality_by_id(id)
 print(response)
@@ -229,7 +229,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-id = 'mun_Xn7x4z'
+id = '\"mun_Xn7x4z\"'
 fiscal_year = 2017
 
 response = intrinio.MunicipalityApi().get_municipality_financials(id, fiscal_year=fiscal_year)

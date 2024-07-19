@@ -54,8 +54,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'marketcap'
+identifier = '\"AAPL\"'
+tag = '\"marketcap\"'
 
 response = intrinio.DataPointApi().get_data_point_number(identifier, tag)
 print(response)
@@ -131,8 +131,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'ceo'
+identifier = '\"AAPL\"'
+tag = '\"ceo\"'
 
 response = intrinio.DataPointApi().get_data_point_text(identifier, tag)
 print(response)

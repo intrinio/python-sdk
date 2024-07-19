@@ -63,15 +63,15 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-company = 'AAPL'
-report_type = '10-Q'
-start_date = '2015-01-01'
-end_date = ''
-industry_category = ''
-industry_group = ''
-thea_enabled = ''
+company = '\"AAPL\"'
+report_type = '\"10-Q\"'
+start_date = '\"2015-01-01\"'
+end_date = '\"~null\"'
+industry_category = '\"~null\"'
+industry_group = '\"~null\"'
+thea_enabled = "~null"
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.FilingApi().get_all_filings(company=company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
 print(response)
@@ -154,14 +154,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-company = 'AAPL'
-report_type = '10-Q'
-filing_start_date = ''
-filing_end_date = ''
-period_ended_start_date = ''
-period_ended_end_date = ''
+company = '\"AAPL\"'
+report_type = '\"10-Q\"'
+filing_start_date = '\"~null\"'
+filing_end_date = '\"~null\"'
+period_ended_start_date = '\"~null\"'
+period_ended_end_date = '\"~null\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.FilingApi().get_all_notes(company=company, report_type=report_type, filing_start_date=filing_start_date, filing_end_date=filing_end_date, period_ended_start_date=period_ended_start_date, period_ended_end_date=period_ended_end_date, page_size=page_size, next_page=next_page)
 print(response)
@@ -242,8 +242,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'fil_B73xBG'
-query = 'What do they believe in?'
+identifier = '\"fil_B73xBG\"'
+query = '\"What do they believe in?\"'
 
 response = intrinio.FilingApi().get_filing_answers(identifier, query)
 print(response)
@@ -319,7 +319,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-id = 'fil_7Kn2P6'
+id = '\"fil_7Kn2P6\"'
 
 response = intrinio.FilingApi().get_filing_by_id(id)
 print(response)
@@ -394,14 +394,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'fil_B73xBG'
-statement_code = ''
-type = ''
-fiscal_year = ''
-fiscal_period = ''
-start_date = ''
-end_date = ''
-next_page = ''
+identifier = '\"fil_B73xBG\"'
+statement_code = '\"~null\"'
+type = '\"~null\"'
+fiscal_year = "~null"
+fiscal_period = '\"~null\"'
+start_date = '\"~null\"'
+end_date = '\"~null\"'
+next_page = '\"~null\"'
 
 response = intrinio.FilingApi().get_filing_fundamentals(identifier, statement_code=statement_code, type=type, fiscal_year=fiscal_year, fiscal_period=fiscal_period, start_date=start_date, end_date=end_date, next_page=next_page)
 print(response)
@@ -483,7 +483,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'fil_B73xBG'
+identifier = '\"fil_B73xBG\"'
 
 response = intrinio.FilingApi().get_filing_html(identifier)
 print(response)
@@ -557,7 +557,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'fil_B73xBG'
+identifier = '\"fil_B73xBG\"'
 
 response = intrinio.FilingApi().get_filing_text(identifier)
 print(response)
@@ -632,7 +632,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'xbn_ydK3QL'
+identifier = '\"xbn_ydK3QL\"'
 content_format = 'text'
 
 response = intrinio.FilingApi().get_note(identifier, content_format=content_format)
@@ -708,7 +708,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'xbn_ydK3QL'
+identifier = '\"xbn_ydK3QL\"'
 
 response = intrinio.FilingApi().get_note_html(identifier)
 print(response)
@@ -782,7 +782,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'xbn_ydK3QL'
+identifier = '\"xbn_ydK3QL\"'
 
 response = intrinio.FilingApi().get_note_text(identifier)
 print(response)
@@ -857,9 +857,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-query = 'inflation'
-filing_start_date = '2018-07-15'
-filing_end_date = '2018-11-30'
+query = '\"inflation\"'
+filing_start_date = '\"2018-07-15\"'
+filing_end_date = '\"2018-11-30\"'
 page_size = 100
 
 response = intrinio.FilingApi().search_notes(query, filing_start_date=filing_start_date, filing_end_date=filing_end_date, page_size=page_size)

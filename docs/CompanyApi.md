@@ -74,17 +74,17 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-latest_filing_date = ''
-sic = ''
-template = ''
-sector = ''
-industry_category = ''
-industry_group = ''
-has_fundamentals = True
-has_stock_prices = True
-thea_enabled = ''
+latest_filing_date = '\"~null\"'
+sic = '\"~null\"'
+template = '\"~null\"'
+sector = '\"~null\"'
+industry_category = '\"~null\"'
+industry_group = '\"~null\"'
+has_fundamentals = true
+has_stock_prices = true
+thea_enabled = "~null"
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
 print(response)
@@ -108,8 +108,8 @@ Name | Type | Description  | Notes
  **sector** | str| Return companies in the given industry sector | [optional]   &nbsp;
  **industry_category** | str| Return companies in the given industry category | [optional]   &nbsp;
  **industry_group** | str| Return companies in the given industry group | [optional]   &nbsp;
- **has_fundamentals** | bool| Return only companies that have fundamentals when True | [optional]   &nbsp;
- **has_stock_prices** | bool| Return only companies that have stock prices when True | [optional]   &nbsp;
+ **has_fundamentals** | bool| Return only companies that have fundamentals when true | [optional]   &nbsp;
+ **has_stock_prices** | bool| Return only companies that have stock prices when true | [optional]   &nbsp;
  **thea_enabled** | bool| Return companies whose have been read by our Thea NLP and are ready for our company answers endpoint | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
@@ -171,8 +171,8 @@ intrinio.ApiClient().allow_retries(True)
 
 on_date = '2013-10-20'
 page_size = 100
-next_page = ''
-next_page2 = ''
+next_page = '\"~null\"'
+next_page2 = '\"~null\"'
 
 response = intrinio.CompanyApi().get_all_companies_daily_metrics(on_date=on_date, page_size=page_size, next_page=next_page, next_page2=next_page2)
 print(response)
@@ -250,21 +250,21 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-specific_source = ''
+specific_source = '\"~null\"'
 page_size = 100
-sentiment = ''
-topic = ''
-company = 'AAPL'
-security = 'AAPL'
-start_date = ''
-end_date = ''
-language = ''
-word_count_greater_than = ''
-word_count_less_than = ''
-is_spam = ''
-business_relevance_greater_than = ''
-business_relevance_less_than = ''
-next_page = ''
+sentiment = '\"~null\"'
+topic = '\"~null\"'
+company = '\"AAPL\"'
+security = '\"AAPL\"'
+start_date = '\"~null\"'
+end_date = '\"~null\"'
+language = '\"~null\"'
+word_count_greater_than = "~null"
+word_count_less_than = "~null"
+is_spam = "~null"
+business_relevance_greater_than = "~null"
+business_relevance_less_than = "~null"
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().get_all_company_news(specific_source=specific_source, page_size=page_size, sentiment=sentiment, topic=topic, company=company, security=security, start_date=start_date, end_date=end_date, language=language, word_count_greater_than=word_count_greater_than, word_count_less_than=word_count_less_than, is_spam=is_spam, business_relevance_greater_than=business_relevance_greater_than, business_relevance_less_than=business_relevance_less_than, next_page=next_page)
 print(response)
@@ -288,9 +288,9 @@ Name | Type | Description  | Notes
  **topic** | str| Filter by topic.  Unsupported for yahoo source. | [optional]   &nbsp;
  **company** | str| Filter by &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) | [optional]   &nbsp;
  **security** | str| Filter by &#x60;security&#x60; identifier (ticker, figi, isin, cusip, Intrinio ID).  Unsupported for yahoo source. | [optional]   &nbsp;
- **start_date** | date| Limit news stories to those on or after this date. | [optional]   &nbsp;
+ **start_date** | date| Limit news stories to those on or after this date. Defaults to yesterday if unspecified. | [optional]   &nbsp;
  **end_date** | date| Limit news stories to those on or before this date. | [optional]   &nbsp;
- **language** | str| Filter by language.  Unsupported for yahoo source.  Unsupported for yahoo source. | [optional]   &nbsp;
+ **language** | str| Filter by language.  Unsupported for yahoo source. | [optional]   &nbsp;
  **word_count_greater_than** | int| News stories will have a word count greater than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
  **word_count_less_than** | int| News stories will have a word count less than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
  **is_spam** | bool| Filter whether it is marked as spam or not.  Unsupported for yahoo source. | [optional]   &nbsp;
@@ -353,7 +353,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 
 response = intrinio.CompanyApi().get_company(identifier)
 print(response)
@@ -428,8 +428,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-query = 'What do they believe in?'
+identifier = '\"AAPL\"'
+query = '\"What do they believe in?\"'
 
 response = intrinio.CompanyApi().get_company_answers(identifier, query)
 print(response)
@@ -505,11 +505,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
+identifier = '\"AAPL\"'
 on_date = '2013-10-20'
 page_size = 100
-next_page = ''
-next_page2 = ''
+next_page = '\"~null\"'
+next_page2 = '\"~null\"'
 
 response = intrinio.CompanyApi().get_company_daily_metrics(identifier, on_date=on_date, page_size=page_size, next_page=next_page, next_page2=next_page2)
 print(response)
@@ -588,8 +588,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'marketcap'
+identifier = '\"AAPL\"'
+tag = '\"marketcap\"'
 
 response = intrinio.CompanyApi().get_company_data_point_number(identifier, tag)
 print(response)
@@ -665,8 +665,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'ceo'
+identifier = '\"AAPL\"'
+tag = '\"ceo\"'
 
 response = intrinio.CompanyApi().get_company_data_point_text(identifier, tag)
 print(response)
@@ -742,13 +742,13 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-report_type = ''
-start_date = '2015-01-01'
-end_date = ''
-thea_enabled = ''
+identifier = '\"AAPL\"'
+report_type = '\"~null\"'
+start_date = '\"2015-01-01\"'
+end_date = '\"~null\"'
+thea_enabled = "~null"
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
 print(response)
@@ -829,19 +829,19 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-filed_after = ''
-filed_before = ''
-reported_only = False
-fiscal_year = ''
-statement_code = ''
-type = ''
-start_date = ''
-end_date = ''
-updated_after = '2022-12-01'
-updated_before = '2022-12-01'
+identifier = '\"AAPL\"'
+filed_after = '\"~null\"'
+filed_before = '\"~null\"'
+reported_only = false
+fiscal_year = "~null"
+statement_code = '\"~null\"'
+type = '\"~null\"'
+start_date = '\"~null\"'
+end_date = '\"~null\"'
+updated_after = '\"2022-12-01\"'
+updated_before = '\"2022-12-01\"'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, start_date=start_date, end_date=end_date, updated_after=updated_after, updated_before=updated_before, page_size=page_size, next_page=next_page)
 print(response)
@@ -928,15 +928,15 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'marketcap'
+identifier = '\"AAPL\"'
+tag = '\"marketcap\"'
 frequency = 'daily'
-type = ''
-start_date = '2018-01-01'
-end_date = ''
+type = '\"~null\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"~null\"'
 sort_order = 'desc'
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().get_company_historical_data(identifier, tag, frequency=frequency, type=type, start_date=start_date, end_date=end_date, sort_order=sort_order, page_size=page_size, next_page=next_page)
 print(response)
@@ -1019,14 +1019,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-ticker = 'UBER'
-status = ''
-start_date = ''
-end_date = ''
-offer_amount_greater_than = ''
-offer_amount_less_than = ''
+ticker = '\"UBER\"'
+status = '\"~null\"'
+start_date = '\"~null\"'
+end_date = '\"~null\"'
+offer_amount_greater_than = "~null"
+offer_amount_less_than = "~null"
 page_size = 100
-next_page = ''
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().get_company_ipos(ticker=ticker, status=status, start_date=start_date, end_date=end_date, offer_amount_greater_than=offer_amount_greater_than, offer_amount_less_than=offer_amount_less_than, page_size=page_size, next_page=next_page)
 print(response)
@@ -1108,21 +1108,21 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-specific_source = ''
+identifier = '\"AAPL\"'
+specific_source = '\"~null\"'
 page_size = 100
-sentiment = ''
-topic = ''
-security = 'AAPL'
-start_date = ''
-end_date = ''
-language = ''
-word_count_greater_than = ''
-word_count_less_than = ''
-is_spam = ''
-business_relevance_greater_than = ''
-business_relevance_less_than = ''
-next_page = ''
+sentiment = '\"~null\"'
+topic = '\"~null\"'
+security = '\"AAPL\"'
+start_date = '\"~null\"'
+end_date = '\"~null\"'
+language = '\"~null\"'
+word_count_greater_than = "~null"
+word_count_less_than = "~null"
+is_spam = "~null"
+business_relevance_greater_than = "~null"
+business_relevance_less_than = "~null"
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().get_company_news(identifier, specific_source=specific_source, page_size=page_size, sentiment=sentiment, topic=topic, security=security, start_date=start_date, end_date=end_date, language=language, word_count_greater_than=word_count_greater_than, word_count_less_than=word_count_less_than, is_spam=is_spam, business_relevance_greater_than=business_relevance_greater_than, business_relevance_less_than=business_relevance_less_than, next_page=next_page)
 print(response)
@@ -1146,7 +1146,7 @@ Name | Type | Description  | Notes
  **sentiment** | str| Filter by sentiment.  Unsupported for yahoo source. | [optional]   &nbsp;
  **topic** | str| Filter by topic.  Unsupported for yahoo source. | [optional]   &nbsp;
  **security** | str| Filter by &#x60;security&#x60; identifier (ticker, figi, isin, cusip, Intrinio ID).  Unsupported for yahoo source. | [optional]   &nbsp;
- **start_date** | date| Limit news stories to those on or after this date | [optional]   &nbsp;
+ **start_date** | date| Limit news stories to those on or after this date. Defaults to yesterday if unspecified. | [optional]   &nbsp;
  **end_date** | date| Limit news stories to those on or before this date | [optional]   &nbsp;
  **language** | str| Filter by language.  Unsupported for yahoo source. | [optional]   &nbsp;
  **word_count_greater_than** | int| News stories will have a word count greater than this value.  Unsupported for yahoo source. | [optional]   &nbsp;
@@ -1211,10 +1211,10 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-news_story_id = 'new_aBcDef'
-publication_date = ''
-specific_source = ''
-next_page = ''
+news_story_id = '\"new_aBcDef\"'
+publication_date = '\"~null\"'
+specific_source = '\"~null\"'
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().get_company_news_body(news_story_id, publication_date, specific_source=specific_source, next_page=next_page)
 print(response)
@@ -1292,11 +1292,11 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-float_date_greater_than = ''
-float_date_less_than = ''
-next_page = ''
-next_page2 = ''
+identifier = '\"AAPL\"'
+float_date_greater_than = '\"~null\"'
+float_date_less_than = '\"~null\"'
+next_page = '\"~null\"'
+next_page2 = '\"~null\"'
 
 response = intrinio.CompanyApi().get_company_public_float(identifier, float_date_greater_than=float_date_greater_than, float_date_less_than=float_date_less_than, next_page=next_page, next_page2=next_page2)
 print(response)
@@ -1375,8 +1375,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-next_page = ''
+identifier = '\"AAPL\"'
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().get_company_securities(identifier, next_page=next_page)
 print(response)
@@ -1452,14 +1452,14 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-start_date = '2018-01-01'
-end_date = '2019-01-01'
-ownership_type = 'D'
-next_page = ''
+identifier = '\"AAPL\"'
+start_date = '\"2018-01-01\"'
+end_date = '\"2019-01-01\"'
+ownership_type = '\"D\"'
+next_page = '\"~null\"'
 page_size = 1000
-sort_by = 'updated_on'
-next_page2 = ''
+sort_by = '\"updated_on\"'
+next_page2 = '\"~null\"'
 
 response = intrinio.CompanyApi().insider_transaction_filings_by_company(identifier, start_date=start_date, end_date=end_date, ownership_type=ownership_type, next_page=next_page, page_size=page_size, sort_by=sort_by, next_page2=next_page2)
 print(response)
@@ -1541,8 +1541,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-next_page = ''
+identifier = '\"AAPL\"'
+next_page = '\"~null\"'
 
 response = intrinio.CompanyApi().latest_insider_transaction_filing_by_company(identifier, next_page=next_page)
 print(response)
@@ -1618,9 +1618,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-statement_code = 'income_statement'
-fiscal_period = 'FY'
+identifier = '\"AAPL\"'
+statement_code = '\"income_statement\"'
+fiscal_period = '\"FY\"'
 fiscal_year = 2017
 
 response = intrinio.CompanyApi().lookup_company_fundamental(identifier, statement_code, fiscal_period, fiscal_year)
@@ -1699,7 +1699,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-text = 'Apple'
+text = '\"Apple\"'
 
 response = intrinio.CompanyApi().recognize_company(text)
 print(response)
@@ -1774,9 +1774,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-query = 'Apple'
-active = True
-mode = ''
+query = '\"Apple\"'
+active = true
+mode = '\"~null\"'
 page_size = 100
 
 response = intrinio.CompanyApi().search_companies(query, active=active, mode=mode, page_size=page_size)
@@ -1796,7 +1796,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | str| Search parameters |   &nbsp;
- **active** | bool| When True, return companies that are actively traded (having stock prices within the past 14 days). When False, return companies that are not actively traded or never have been traded. Not setting this value returns all. Not used when mode is set. | [optional]   &nbsp;
+ **active** | bool| When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. Not setting this value returns all. Not used when mode is set. | [optional]   &nbsp;
  **mode** | str| When set, changes search mode to the specified mode. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
 <br/>
@@ -1855,9 +1855,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-end_date_greater_than = ''
-end_date_less_than = ''
+identifier = '\"AAPL\"'
+end_date_greater_than = '\"~null\"'
+end_date_less_than = '\"~null\"'
 
 response = intrinio.CompanyApi().shares_outstanding_by_company(identifier, end_date_greater_than=end_date_greater_than, end_date_less_than=end_date_less_than)
 print(response)

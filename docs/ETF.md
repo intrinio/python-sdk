@@ -26,7 +26,7 @@ Name | Type | Description
 **inception_date** | date | Inception Date for the ETF as published by the ETF sponsor &nbsp;
 **data_change_date** | date | The last date on which there was a change in a classifications data field for this ETF &nbsp;
 **close_date** | date | The date on which this ETF was de-listed if it is no longer listed &nbsp;
-**is_live_listed** | bool | If True, the ETF is still listed on an exchange; if False, the ETF is no longer listed &nbsp;
+**is_live_listed** | bool | If true, the ETF is still listed on an exchange; if false, the ETF is no longer listed &nbsp;
 **legal_structure** | str | The legal structure as defined in the prospectus &nbsp;
 **intraday_nav_ticker** | str | Intra-day NAV ticker for the Exchange Traded Fund (ETF) &nbsp;
 **primary_ticker** | str | The primary ticker field is used for Exchange Traded Products (ETPs) that have multiple listings and share classes. If an ETP has multiple listings or share classes, the same primary ticker is assigned to all the listings and share classes &nbsp;
@@ -36,8 +36,8 @@ Name | Type | Description
 **asset_class** | str | Captures the underlying nature of the securities in the Exchanged Traded Product (ETP) &nbsp;
 **other_asset_types** | str | If &#39;asset_class&#39; field is classified as &#39;Other Asset Types&#39; this field captures the specific category of the underlying assets &nbsp;
 **market_cap_range** | str | Equity ETFs are classified as falling into categories based on the description of their investment strategy in the prospectus.  Examples (&#39;Mega Cap&#39;, &#39;Large Cap&#39;, &#39;Mid Cap&#39;, etc.) &nbsp;
-**holds_only_nyse_stocks** | bool | If True, the ETF is an equity ETF and holds only stocks listed on NYSE &nbsp;
-**holds_only_nasdaq_stocks** | bool | If False, the ETF is an equity ETF and holds only stocks listed on Nasdaq &nbsp;
+**holds_only_nyse_stocks** | bool | If true, the ETF is an equity ETF and holds only stocks listed on NYSE &nbsp;
+**holds_only_nasdaq_stocks** | bool | If false, the ETF is an equity ETF and holds only stocks listed on Nasdaq &nbsp;
 **growth_value_tilt** | str | Classifies equity ETFs as either &#39;Growth&#39; or Value&#39; based on the stated style tilt in the ETF prospectus. Equity ETFs that do not have a stated style tilt are classified as &#39;Core / Blend&#39; &nbsp;
 **growth_type** | str | For ETFs that are classified as &#39;Growth&#39; in &#39;growth_value_tilt&#39;, this field further identifies those where the stocks in the ETF are both selected and weighted based on their growth (style factor) scores &nbsp;
 **value_type** | str | For ETFs that are classified as &#39;Value&#39; in &#39;growth_value_tilt&#39;, this field further identifies those where the stocks in the ETF are both selected and weighted based on their value (style factor) scores &nbsp;
@@ -89,14 +89,14 @@ Name | Type | Description
 **clean_energy_type** | str | This field is populated if the ETF has a value of &#39;Clean Energy&#39; in the &#39;social_environmental_type&#39; field. &nbsp;
 **dividend_type** | str | This field is populated if the ETF has an intended investment objective of holding dividend-oriented stocks as stated in the prospectus &nbsp;
 **regular_dividend_payor_type** | str | This field is populated if the ETF has a value of &#39;Dividend – Regular Payors&#39; in the &#39;dividend_type&#39; field &nbsp;
-**holds_ml_ps** | bool | If True, the ETF’s investment objective explicitly specifies that it holds MLPs as an intended part of its investment strategy &nbsp;
-**holds_preferred_stock** | bool | If True, the ETF’s investment objective explicitly specifies that it holds preferred stock as an intended part of its investment strategy &nbsp;
-**holds_closed_end_funds** | bool | IF True, if the ETF’s investment objective explicitly specifies that it holds closed end funds as an intended part of its investment strategy &nbsp;
+**holds_ml_ps** | bool | If true, the ETF’s investment objective explicitly specifies that it holds MLPs as an intended part of its investment strategy &nbsp;
+**holds_preferred_stock** | bool | If true, the ETF’s investment objective explicitly specifies that it holds preferred stock as an intended part of its investment strategy &nbsp;
+**holds_closed_end_funds** | bool | IF true, if the ETF’s investment objective explicitly specifies that it holds closed end funds as an intended part of its investment strategy &nbsp;
 **quant_strategies_type** | str | This field is populated if the ETF has either an index-linked or active strategy that is based on a proprietary quantitative strategy &nbsp;
 **other_quant_models** | str | For ETFs where &#39;quant_strategies_type&#39; is &#39;Other Quant Model&#39;, this field provides the name of the specific proprietary quant model used as the underlying strategy for the ETF &nbsp;
 **hedge_fund_type** | str | For ETFs where &#39;other_asset_types&#39; is &#39;Hedge Fund Replication&#39;, this field provides detail on the type of hedge fund replication strategy &nbsp;
 **derivatives_based** | str | This field is populated if the ETF holds either listed or over-the-counter derivatives in its portfolio &nbsp;
-**holds_ad_rs** | bool | If True, he ETF’s investment objective explicitly specifies that it holds American Depositary Receipts (ADRs) as an intended part of its investment strategy &nbsp;
+**holds_ad_rs** | bool | If true, he ETF’s investment objective explicitly specifies that it holds American Depositary Receipts (ADRs) as an intended part of its investment strategy &nbsp;
 **index_linked** | str | This field identifies whether an ETF is index linked or active &nbsp;
 **includes_short_exposure** | bool | This field is populated if the ETF has short exposure in any of its holdings e.g. in a long/short or inverse ETF &nbsp;
 **index_name** | str | This field identifies the name of the underlying index tracked by the ETF, if applicable &nbsp;
@@ -114,7 +114,7 @@ Name | Type | Description
 **single_category_designation** | str | This categorization is created for those users who want every ETF to be ‘forced’ into a single bucket, so that the assets for all categories will always sum to the total market &nbsp;
 **registered_countries** | str | The list of countries where the ETF is legally registered for sale. This may differ from where the ETF is domiciled or traded, particularly in Europe &nbsp;
 **issuing_entity_country_code** | str | The name of the legal entity that issued the Exchange Traded Product (ETP) &nbsp;
-**ucits** | bool | If True, the Exchange Traded Product (ETP) is Undertakings for the Collective Investment in Transferable Securities (UCITS) compliant &nbsp;
+**ucits** | bool | If true, the Exchange Traded Product (ETP) is Undertakings for the Collective Investment in Transferable Securities (UCITS) compliant &nbsp;
 **replication_structure** | str | The replication structure of the Exchange Traded Product (ETP) &nbsp;
 **domicile** | str | 2 letter ISO country code for the country where the ETP is domiciled &nbsp;
 **base_currency** | str | Base currency of the Exchange Traded Product (ETP) in which the net asset value (NAV) is calculated. Reported using the 3-digit ISO currency code &nbsp;

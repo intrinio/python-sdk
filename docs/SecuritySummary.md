@@ -22,7 +22,7 @@ Name | Type | Description
 **figi** | str | The OpenFIGI identifier &nbsp;
 **composite_figi** | str | The country-composite OpenFIGI identifier &nbsp;
 **share_class_figi** | str | The global-composite OpenFIGI identifier &nbsp;
-**primary_listing** | bool | If True, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange &nbsp;
+**primary_listing** | bool | If true, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange &nbsp;
 
 [//]: # (END_DEFINITION)
 
