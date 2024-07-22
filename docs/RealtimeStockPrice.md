@@ -17,8 +17,10 @@ Name | Type | Description
 **last_size** | float | The size of the last trade. &nbsp;
 **bid_price** | float | The price of the top bid order. &nbsp;
 **bid_size** | float | The size of the top bid order. &nbsp;
+**bid_time** | datetime | The date and time when the last bid occurred. &nbsp;
 **ask_price** | float | The price of the top ask order. &nbsp;
 **ask_size** | float | The size of the top ask order. &nbsp;
+**ask_time** | datetime | The date and time when the last ask occurred. &nbsp;
 **open_price** | float | The price at the open of the trading day. &nbsp;
 **close_price** | float | The price at the close of the trading day. (IEX only) &nbsp;
 **high_price** | float | The high price for the trading day. &nbsp;
