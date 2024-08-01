@@ -50,6 +50,7 @@ Method | HTTP request | Description
 [**get_security_price_technicals_vpt**](SecurityApi.md#get_security_price_technicals_vpt) | **GET** /securities/{identifier}/prices/technicals/vpt | Volume-price Trend
 [**get_security_price_technicals_vwap**](SecurityApi.md#get_security_price_technicals_vwap) | **GET** /securities/{identifier}/prices/technicals/vwap | Volume Weighted Average Price
 [**get_security_price_technicals_wr**](SecurityApi.md#get_security_price_technicals_wr) | **GET** /securities/{identifier}/prices/technicals/wr | Williams %R
+[**get_security_quote**](SecurityApi.md#get_security_quote) | **GET** /securities/{identifier}/quote | Quote for a Security
 [**get_security_realtime_price**](SecurityApi.md#get_security_realtime_price) | **GET** /securities/{identifier}/prices/realtime | Realtime Stock Price for Security
 [**get_security_replay_file**](SecurityApi.md#get_security_replay_file) | **GET** /securities/replay | Security Replay File
 [**get_security_snapshots**](SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
@@ -3968,6 +3969,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseSecurityWilliamsR**](ApiResponseSecurityWilliamsR.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_security_quote)
+
+[//]: # (RETURN_TYPE:ApiResponseSecurityQuote)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseSecurityQuote.md)
+
+[//]: # (OPERATION:get_security_quote_v2)
+
+[//]: # (ENDPOINT:/securities/{identifier}/quote)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_quote)
+
+## **get_security_quote**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_quote_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseSecurityQuote get_security_quote(identifier, active_only=active_only, next_page=next_page)
+
+#### Quote for a Security
+
+
+Return a current pricing quote for a security across multiple sources.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL'
+active_only = False
+next_page = ''
+
+response = intrinio.SecurityApi().get_security_quote(identifier, active_only=active_only, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
+ **active_only** | bool| Whether to return only realtime prices from today. | [optional] [default to False]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseSecurityQuote**](ApiResponseSecurityQuote.md)
 
 [//]: # (END_OPERATION)
 

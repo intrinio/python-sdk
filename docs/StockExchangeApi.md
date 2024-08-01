@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseStockExchangeStockPrices get_stock_exchange_prices(identifier, date=date, page_size=page_size, next_page=next_page)
+> ApiResponseStockExchangeStockPrices get_stock_exchange_prices(identifier, date=date, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page, tickers=tickers, next_page2=next_page2)
 
 #### Stock Prices by Exchange
 
@@ -297,10 +297,14 @@ intrinio.ApiClient().allow_retries(True)
 
 identifier = 'USCOMP'
 date = '2018-08-14'
+start_date = '2020-08-14'
+end_date = '2022-08-14'
 page_size = 100
 next_page = ''
+tickers = ['']
+next_page2 = ''
 
-response = intrinio.StockExchangeApi().get_stock_exchange_prices(identifier, date=date, page_size=page_size, next_page=next_page)
+response = intrinio.StockExchangeApi().get_stock_exchange_prices(identifier, date=date, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page, tickers=tickers, next_page2=next_page2)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -317,9 +321,13 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
- **date** | date| The date for which to return prices | [optional]   &nbsp;
+ **date** | date| The date for which to return prices. May not be used with the start_date and end_date parameters. | [optional]   &nbsp;
+ **start_date** | date| The start of the date range you&#39;re querying. May not be used with date parameter. | [optional]   &nbsp;
+ **end_date** | date| The end of the date range you&#39;re querying. May not be used with date parameter. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+ **tickers** | [**list[str]**](str.md)| The list of ticker symbols to filter to. | [optional]   &nbsp;
+ **next_page2** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
