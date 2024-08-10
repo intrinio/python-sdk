@@ -301,7 +301,7 @@ start_date = '2020-08-14'
 end_date = '2022-08-14'
 page_size = 100
 next_page = ''
-tickers = ['']
+tickers = ['AAPL,MSFT,NVDA']
 next_page2 = ''
 
 response = intrinio.StockExchangeApi().get_stock_exchange_prices(identifier, date=date, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page, tickers=tickers, next_page2=next_page2)
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
  **end_date** | date| The end of the date range you&#39;re querying. May not be used with date parameter. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
- **tickers** | [**list[str]**](str.md)| The list of ticker symbols to filter to. | [optional]   &nbsp;
+ **tickers** | [**list[str]**](str.md)| The comma-delimited list of ticker symbols to filter down to. If not provided, the entire stock exchange is returned. | [optional]   &nbsp;
  **next_page2** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
@@ -385,10 +385,10 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'USCOMP'
-source = ['']
+source = ['iex,delayed_sip']
 active_only = ''
 page_size = 100
-tickers = ['']
+tickers = ['AAPL,MSFT,NVDA']
 next_page = ''
 
 response = intrinio.StockExchangeApi().get_stock_exchange_realtime_prices(identifier, source=source, active_only=active_only, page_size=page_size, tickers=tickers, next_page=next_page)
@@ -408,10 +408,10 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
- **source** | [**list[str]**](str.md)| Return realtime prices from the specified data source. If no source is specified, all sources are used. | [optional]   &nbsp;
+ **source** | [**list[str]**](str.md)| Return realtime prices from the specified comma-delimited data sources. If no source is specified, all sources available to user are used. | [optional]   &nbsp;
  **active_only** | bool| Returns prices only from the most recent trading day. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
- **tickers** | [**list[str]**](str.md)| The list of ticker symbols to filter to. | [optional]   &nbsp;
+ **tickers** | [**list[str]**](str.md)| The comma-delimited list of ticker symbols to filter to. If not provided, the entire stock exchange is returned. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 

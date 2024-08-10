@@ -20,6 +20,7 @@ Name | Type | Description
 **high** | float | The highest price from the latest day of trading. &nbsp;
 **low** | float | The lowest price from the latest day of trading. &nbsp;
 **exchange_volume** | float | The volume of the security from the source. &nbsp;
+**market_volume** | float | The volume of the security for the entire market. &nbsp;
 **eod_fifty_two_week_high** | float | The 52 week high price. &nbsp;
 **eod_fifty_two_week_low** | float | The 52 week low price. &nbsp;
 **marketcap** | float | The current market cap. &nbsp;

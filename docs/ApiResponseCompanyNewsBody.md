@@ -12,7 +12,7 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**body** | str | The article body. Requires additional access. &nbsp;
+**body** | str | The article body. &nbsp;
 
 [//]: # (END_DEFINITION)
 

@@ -4098,7 +4098,7 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
-source = ['iex']
+source = ['iex,delayed_sip']
 
 response = intrinio.SecurityApi().get_security_realtime_price(identifier, source=source)
 print(response)
@@ -4117,7 +4117,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
- **source** | [**list[str]**](str.md)| Return the realtime price from the specified data source. If no source is specified, the best source available is used. | [optional]   &nbsp;
+ **source** | [**list[str]**](str.md)| Return the realtime price from the specified comma-delimited data sources. If no source is specified, the best source available is used. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
