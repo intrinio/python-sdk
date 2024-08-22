@@ -980,7 +980,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseSecurityIntervalPrices get_security_interval_prices(identifier, interval_size, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, split_adjusted=split_adjusted, next_page=next_page)
+> ApiResponseSecurityIntervalPrices get_security_interval_prices(identifier, interval_size, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, split_adjusted=split_adjusted, include_quote_only_bars=include_quote_only_bars, next_page=next_page)
 
 #### Interval Stock Prices for Security
 
@@ -1005,15 +1005,16 @@ identifier = 'AAPL'
 interval_size = '15m'
 source = ''
 start_date = '2023-01-01'
-start_time = ''
+start_time = '33300'
 end_date = '2023-02-01'
-end_time = ''
+end_time = '33300'
 timezone = 'UTC'
 page_size = 100
 split_adjusted = False
+include_quote_only_bars = False
 next_page = ''
 
-response = intrinio.SecurityApi().get_security_interval_prices(identifier, interval_size, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, split_adjusted=split_adjusted, next_page=next_page)
+response = intrinio.SecurityApi().get_security_interval_prices(identifier, interval_size, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, split_adjusted=split_adjusted, include_quote_only_bars=include_quote_only_bars, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1039,6 +1040,7 @@ Name | Type | Description  | Notes
  **timezone** | str| Returns trading times in this timezone | [optional] [default to UTC]  &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **split_adjusted** | bool| Whether to return the values adjusted for splits or not. Default is False. | [optional] [default to False]  &nbsp;
+ **include_quote_only_bars** | bool| If True, also include bars where no trades occurred but quotes did. | [optional] [default to False]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
@@ -1080,7 +1082,7 @@ Name | Type | Description  | Notes
 #### Intraday Stock Prices for Security
 
 
-Return intraday stock prices for the Security with the given `identifier`
+Deprecated.  Return intraday stock prices for the Security with the given `identifier`
 
 [//]: # (END_OVERVIEW)
 
@@ -3997,7 +3999,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseSecurityQuote get_security_quote(identifier, active_only=active_only, next_page=next_page)
+> ApiResponseSecurityQuote get_security_quote(identifier, active_only=active_only, source=source, next_page=next_page)
 
 #### Quote for a Security
 
@@ -4020,9 +4022,10 @@ intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL'
 active_only = False
+source = 'delayed_sip'
 next_page = ''
 
-response = intrinio.SecurityApi().get_security_quote(identifier, active_only=active_only, next_page=next_page)
+response = intrinio.SecurityApi().get_security_quote(identifier, active_only=active_only, source=source, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -4040,6 +4043,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
  **active_only** | bool| Whether to return only realtime prices from today. | [optional] [default to False]  &nbsp;
+ **source** | str| Return the realtime price from the specified source instead of the most recent. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 

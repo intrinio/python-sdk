@@ -22,6 +22,20 @@ Name | Type | Description
 **interval** | str | The size of the interval. &nbsp;
 **average** | float | The average trade price of an individual stock during the interval. &nbsp;
 **change** | float | The change ratio from open to close.  ((Close - Open)/Open). &nbsp;
+**bid_high** | float | The highest bid price from the interval. &nbsp;
+**bid_low** | float | The lowest bid price from the interval. &nbsp;
+**bid_close** | float | The last bid price from the interval. &nbsp;
+**bid_open** | float | The first bid price from the interval. &nbsp;
+**bid_first_time** | datetime | The timestamp that represents the first bid time from the interval span. &nbsp;
+**bid_last_time** | datetime | The timestamp that represents the last bid time from the interval span. &nbsp;
+**bid_change_percent** | float | The ratio of the close to open bid difference, in percent. &nbsp;
+**ask_high** | float | The highest ask price from the interval. &nbsp;
+**ask_low** | float | The lowest ask price from the interval. &nbsp;
+**ask_close** | float | The last ask price from the interval. &nbsp;
+**ask_open** | float | The first ask price from the interval. &nbsp;
+**ask_first_time** | datetime | The timestamp that represents the first ask time from the interval span. &nbsp;
+**ask_last_time** | datetime | The timestamp that represents the last ask time from the interval span. &nbsp;
+**ask_change_percent** | float | The ratio of the close to open ask difference, in percent. &nbsp;
 
 [//]: # (END_DEFINITION)
 
