@@ -47,7 +47,7 @@ class ApiResponseSecurityQuote(object):
         'marketcap': 'float',
         'pricetoearnings': 'float',
         'previous_close': 'float',
-        'previous_close_date': 'float',
+        'previous_close_date': 'date',
         'change': 'float',
         'change_percent': 'float',
         'adj_close_5_days_ago': 'float',
@@ -970,7 +970,7 @@ class ApiResponseSecurityQuote(object):
         The date of the previous close.  # noqa: E501
 
         :return: The previous_close_date of this ApiResponseSecurityQuote.  # noqa: E501
-        :rtype: float
+        :rtype: date
         """
         return self._previous_close_date
         
@@ -981,7 +981,7 @@ class ApiResponseSecurityQuote(object):
         The date of the previous close. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
         :return: The previous_close_date of this ApiResponseSecurityQuote.  # noqa: E501
-        :rtype: float
+        :rtype: date
         """
 
         result = None
@@ -1014,7 +1014,7 @@ class ApiResponseSecurityQuote(object):
         The date of the previous close.  # noqa: E501
 
         :param previous_close_date: The previous_close_date of this ApiResponseSecurityQuote.  # noqa: E501
-        :type: float
+        :type: date
         """
 
         self._previous_close_date = previous_close_date
