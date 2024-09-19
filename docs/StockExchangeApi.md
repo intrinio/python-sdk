@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_stock_exchange_by_id**](StockExchangeApi.md#get_stock_exchange_by_id) | **GET** /stock_exchanges/{identifier} | Lookup Stock Exchange
 [**get_stock_exchange_price_adjustments**](StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
 [**get_stock_exchange_prices**](StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
+[**get_stock_exchange_quote**](StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
 [**get_stock_exchange_realtime_prices**](StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
 [**get_stock_exchange_securities**](StockExchangeApi.md#get_stock_exchange_securities) | **GET** /stock_exchanges/{identifier}/securities | Securities by Exchange
 
@@ -343,6 +344,87 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:StockExchangeApi)
 
+[//]: # (METHOD:get_stock_exchange_quote)
+
+[//]: # (RETURN_TYPE:ApiResponseStockExchangeQuote)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseStockExchangeQuote.md)
+
+[//]: # (OPERATION:get_stock_exchange_quote_v2)
+
+[//]: # (ENDPOINT:/stock_exchanges/{identifier}/quote)
+
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_quote)
+
+## **get_stock_exchange_quote**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_exchange_quote_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseStockExchangeQuote get_stock_exchange_quote(identifier, tickers, source=source, active_only=active_only)
+
+#### Realtime Quote Prices by Exchange
+
+
+Returns quote prices for the Stock Exchange with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'USCOMP'
+tickers = ['AAPL,MSFT,NVDA']
+source = 'delayed_sip'
+active_only = ''
+
+response = intrinio.StockExchangeApi().get_stock_exchange_quote(identifier, tickers, source=source, active_only=active_only)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
+ **tickers** | [**list[str]**](str.md)| The comma-delimited list of ticker symbols to return quotes for. |   &nbsp;
+ **source** | str| Return the realtime price from the specified source instead of the most recent. | [optional]   &nbsp;
+ **active_only** | bool| Returns prices only from the most recent trading day. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseStockExchangeQuote**](ApiResponseStockExchangeQuote.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:StockExchangeApi)
+
 [//]: # (METHOD:get_stock_exchange_realtime_prices)
 
 [//]: # (RETURN_TYPE:ApiResponseStockExchangeRealtimeStockPrices)
@@ -363,7 +445,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseStockExchangeRealtimeStockPrices get_stock_exchange_realtime_prices(identifier, source=source, active_only=active_only, page_size=page_size, tickers=tickers, next_page=next_page)
+> ApiResponseStockExchangeRealtimeStockPrices get_stock_exchange_realtime_prices(identifier, source=source, active_only=active_only, traded_today=traded_today, page_size=page_size, tickers=tickers, next_page=next_page)
 
 #### Realtime Stock Prices by Exchange
 
@@ -387,11 +469,12 @@ intrinio.ApiClient().allow_retries(True)
 identifier = 'USCOMP'
 source = ['iex,delayed_sip']
 active_only = ''
+traded_today = ''
 page_size = 100
 tickers = ['AAPL,MSFT,NVDA']
 next_page = ''
 
-response = intrinio.StockExchangeApi().get_stock_exchange_realtime_prices(identifier, source=source, active_only=active_only, page_size=page_size, tickers=tickers, next_page=next_page)
+response = intrinio.StockExchangeApi().get_stock_exchange_realtime_prices(identifier, source=source, active_only=active_only, traded_today=traded_today, page_size=page_size, tickers=tickers, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -410,6 +493,7 @@ Name | Type | Description  | Notes
  **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
  **source** | [**list[str]**](str.md)| Return realtime prices from the specified comma-delimited data sources. If no source is specified, all sources available to user are used. | [optional]   &nbsp;
  **active_only** | bool| Returns prices only from the most recent trading day. | [optional]   &nbsp;
+ **traded_today** | bool| Returns prices only from securities which have traded on the most recent trading day. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **tickers** | [**list[str]**](str.md)| The comma-delimited list of ticker symbols to filter to. If not provided, the entire stock exchange is returned. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;

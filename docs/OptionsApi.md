@@ -128,7 +128,7 @@ This endpoint does not need any parameter.
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsAggregates get_option_aggregates(date=date)
+> ApiResponseOptionsAggregates get_option_aggregates(date=date, page_size=page_size, next_page=next_page)
 
 #### Total open interest and volume aggregated by ticker
 
@@ -150,8 +150,10 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 date = "2024-04-24"
+page_size = 100
+next_page = ''
 
-response = intrinio.OptionsApi().get_option_aggregates(date=date)
+response = intrinio.OptionsApi().get_option_aggregates(date=date, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -168,6 +170,8 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | [**object**](.md)| Return aggregated data for this date | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

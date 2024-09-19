@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.66.2
-- Package version: 6.30.0
+- API version: 2.70.0
+- Package version: 6.31.0
 
 
 ## Requirements.
@@ -112,7 +112,7 @@ Class | Method | HTTP request | Description
 *CompanyApi* | [**get_company_historical_data**](docs/CompanyApi.md#get_company_historical_data) | **GET** /companies/{identifier}/historical_data/{tag} | Historical Data for Company
 *CompanyApi* | [**get_company_ipos**](docs/CompanyApi.md#get_company_ipos) | **GET** /companies/ipos | IPOs
 *CompanyApi* | [**get_company_news**](docs/CompanyApi.md#get_company_news) | **GET** /companies/{identifier}/news | All News by Company
-*CompanyApi* | [**get_company_news_body**](docs/CompanyApi.md#get_company_news_body) | **GET** /companies/news/body | The body of a news article.  This endpoint requires additional authorization beyond basic news access. Please see a representative for details.
+*CompanyApi* | [**get_company_news_body**](docs/CompanyApi.md#get_company_news_body) | **GET** /companies/news/body | News Article Body
 *CompanyApi* | [**get_company_public_float**](docs/CompanyApi.md#get_company_public_float) | **GET** /companies/{identifier}/public_float | Get Company&#39;s public float
 *CompanyApi* | [**get_company_securities**](docs/CompanyApi.md#get_company_securities) | **GET** /companies/{identifier}/securities | All Securities by Company
 *CompanyApi* | [**insider_transaction_filings_by_company**](docs/CompanyApi.md#insider_transaction_filings_by_company) | **GET** /companies/{identifier}/insider_transaction_filings | Insider Transaction Filings by Company
@@ -282,6 +282,7 @@ Class | Method | HTTP request | Description
 *StockExchangeApi* | [**get_stock_exchange_by_id**](docs/StockExchangeApi.md#get_stock_exchange_by_id) | **GET** /stock_exchanges/{identifier} | Lookup Stock Exchange
 *StockExchangeApi* | [**get_stock_exchange_price_adjustments**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
 *StockExchangeApi* | [**get_stock_exchange_prices**](docs/StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
+*StockExchangeApi* | [**get_stock_exchange_quote**](docs/StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
 *StockExchangeApi* | [**get_stock_exchange_realtime_prices**](docs/StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
 *StockExchangeApi* | [**get_stock_exchange_securities**](docs/StockExchangeApi.md#get_stock_exchange_securities) | **GET** /stock_exchanges/{identifier}/securities | Securities by Exchange
 *TechnicalApi* | [**get_security_price_technicals_adi**](docs/TechnicalApi.md#get_security_price_technicals_adi) | **GET** /securities/{identifier}/prices/technicals/adi | Accumulation/Distribution Index
@@ -449,6 +450,7 @@ Class | Method | HTTP request | Description
  - [ApiResponseSecurityZacksSalesSurprises](docs/ApiResponseSecurityZacksSalesSurprises.md)
  - [ApiResponseStandardizedFinancials](docs/ApiResponseStandardizedFinancials.md)
  - [ApiResponseStandardizedFinancialsDimensions](docs/ApiResponseStandardizedFinancialsDimensions.md)
+ - [ApiResponseStockExchangeQuote](docs/ApiResponseStockExchangeQuote.md)
  - [ApiResponseStockExchangeRealtimeStockPrices](docs/ApiResponseStockExchangeRealtimeStockPrices.md)
  - [ApiResponseStockExchangeSecurities](docs/ApiResponseStockExchangeSecurities.md)
  - [ApiResponseStockExchangeStockPriceAdjustments](docs/ApiResponseStockExchangeStockPriceAdjustments.md)
