@@ -28,6 +28,14 @@ Name | Type | Description
 **exchange_volume** | float | The number of shares exchanged during the trading day on the exchange. &nbsp;
 **market_volume** | float | The number of shares exchanged during the trading day for the whole market. &nbsp;
 **updated_on** | datetime | The date and time when the data was last updated. &nbsp;
+**eod_close_price** | float | The previous trading session&#39;s closing price. &nbsp;
+**eod_close_date** | date | The date of the previous trading session&#39;s closing price. &nbsp;
+**normal_market_hours_last_time** | datetime | The date and time of the last trade that qualifies for last price consideration during normal market hours according to exchange rules on trade conditions. &nbsp;
+**normal_market_hours_last_price** | float | The price of the last that qualifies for last price consideration during normal market hours according to exchange rules on trade conditions. &nbsp;
+**normal_market_hours_last_size** | float | The size of the last trade that qualifies for last price consideration during normal market hours according to exchange rules on trade conditions. &nbsp;
+**qualified_last_price** | float | The price of the last trade that qualifies for last price consideration according to exchange rules on trade conditions. &nbsp;
+**qualified_last_time** | datetime | The date and time of the last trade that qualifies for last price consideration according to exchange rules on trade conditions. &nbsp;
+**qualified_last_size** | float | The size of the last trade that qualifies for last price consideration according to exchange rules on trade conditions. &nbsp;
 **source** | str | The source of the data. &nbsp;
 **listing_venue** | str | The listing venue where the trade took place. Available only where source is SIP. Listing Venue Modifiers include: Q – Nasdaq | N – NYSE | A – NYSE American | P – NYSE Arca | u – Other OTC Markets | V – Investors Exchange LLC  &nbsp;
 **sales_conditions** | str | When applicable, indicates any sales condition modifiers associated with the trade. Sales Condition Modifers include: @ – Regular Sale | A – Acquisition | B – Bunched Trade | C – Cash Sale | D – Distribution | E – Placeholder | F – Intermarket Sweep | G – Bunched Sold Trade  | H – Priced Variation Trade | I – Odd Lot Trade | K – Rule 155 Trade (AMEX) | L – Sold Last | M – Market Center Official Close | N – Next Day | O – Opening Prints  | P – Prior Reference Price | Q – Market Center Official Open | R – Seller | S – Split Trade | T – Form T | U – Extended Trading Hours (Sold Out of Sequence)  | V – Contingent Trade | W – Average Price Trade | X – Cross/Periodic Auction Trade | Y – Yellow Flag Regular Trade | Z – Sold (Out of Sequence)  | 1 – Stopped Stock (Regular Trade) | 4 – Derivatively Priced | 5 – Re-Opening Prints | 6 – Closing Prints | 7 – Qualified Contingent Trade (QCT)  | 8 – Placeholder for 611 Exempt | 9 – Corrected Consolidated Close (Per Listing Market)  &nbsp;

@@ -1632,7 +1632,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPricesByTickerRealtime get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
+> ApiResponseOptionsPricesByTickerRealtime get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date)
 
 #### Option Prices Realtime By Ticker
 
@@ -1661,8 +1661,10 @@ page_size = 250
 stock_price_source = ''
 model = ''
 show_extended_price = ''
+expiration_start_date = "2024-01-01"
+expiration_end_date = "2024-02-02"
 
-response = intrinio.OptionsApi().get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price)
+response = intrinio.OptionsApi().get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1686,6 +1688,8 @@ Name | Type | Description  | Notes
  **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
  **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
+ **expiration_start_date** | [**object**](.md)| Filter out contracts that expire before this date. | [optional]   &nbsp;
+ **expiration_end_date** | [**object**](.md)| Filter out contracts that expire after this date. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.70.0
-- Package version: 6.31.0
+- API version: 2.72.2
+- Package version: 6.32.0
 
 
 ## Requirements.
@@ -280,6 +280,8 @@ Class | Method | HTTP request | Description
 *SecurityApi* | [**search_securities**](docs/SecurityApi.md#search_securities) | **GET** /securities/search | Search Securities
 *StockExchangeApi* | [**get_all_stock_exchanges**](docs/StockExchangeApi.md#get_all_stock_exchanges) | **GET** /stock_exchanges | All Stock Exchanges
 *StockExchangeApi* | [**get_stock_exchange_by_id**](docs/StockExchangeApi.md#get_stock_exchange_by_id) | **GET** /stock_exchanges/{identifier} | Lookup Stock Exchange
+*StockExchangeApi* | [**get_stock_exchange_gainers**](docs/StockExchangeApi.md#get_stock_exchange_gainers) | **GET** /stock_exchanges/{identifier}/gainers | Top Gainers by Exchange
+*StockExchangeApi* | [**get_stock_exchange_losers**](docs/StockExchangeApi.md#get_stock_exchange_losers) | **GET** /stock_exchanges/{identifier}/losers | Top Losers by Exchange
 *StockExchangeApi* | [**get_stock_exchange_price_adjustments**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
 *StockExchangeApi* | [**get_stock_exchange_prices**](docs/StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
 *StockExchangeApi* | [**get_stock_exchange_quote**](docs/StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
@@ -450,6 +452,7 @@ Class | Method | HTTP request | Description
  - [ApiResponseSecurityZacksSalesSurprises](docs/ApiResponseSecurityZacksSalesSurprises.md)
  - [ApiResponseStandardizedFinancials](docs/ApiResponseStandardizedFinancials.md)
  - [ApiResponseStandardizedFinancialsDimensions](docs/ApiResponseStandardizedFinancialsDimensions.md)
+ - [ApiResponseStockExchangeMovers](docs/ApiResponseStockExchangeMovers.md)
  - [ApiResponseStockExchangeQuote](docs/ApiResponseStockExchangeQuote.md)
  - [ApiResponseStockExchangeRealtimeStockPrices](docs/ApiResponseStockExchangeRealtimeStockPrices.md)
  - [ApiResponseStockExchangeSecurities](docs/ApiResponseStockExchangeSecurities.md)
@@ -595,6 +598,7 @@ Class | Method | HTTP request | Description
  - [StandardizedFinancialsDimension](docs/StandardizedFinancialsDimension.md)
  - [StochasticOscillatorTechnicalValue](docs/StochasticOscillatorTechnicalValue.md)
  - [StockExchange](docs/StockExchange.md)
+ - [StockExchangeMover](docs/StockExchangeMover.md)
  - [StockMarketIndex](docs/StockMarketIndex.md)
  - [StockMarketIndexSummary](docs/StockMarketIndexSummary.md)
  - [StockPrice](docs/StockPrice.md)
