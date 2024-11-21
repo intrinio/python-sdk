@@ -42,7 +42,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseFilings get_all_filings(company=company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
+> ApiResponseFilings get_all_filings(company=company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, thea_enabled=thea_enabled, earnings_release=earnings_release, page_size=page_size, next_page=next_page)
 
 #### All Filings
 
@@ -70,10 +70,11 @@ end_date = ''
 industry_category = ''
 industry_group = ''
 thea_enabled = ''
+earnings_release = ''
 page_size = 100
 next_page = ''
 
-response = intrinio.FilingApi().get_all_filings(company=company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
+response = intrinio.FilingApi().get_all_filings(company=company, report_type=report_type, start_date=start_date, end_date=end_date, industry_category=industry_category, industry_group=industry_group, thea_enabled=thea_enabled, earnings_release=earnings_release, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -96,6 +97,7 @@ Name | Type | Description  | Notes
  **industry_category** | str| Return companies in the given industry category | [optional]   &nbsp;
  **industry_group** | str| Return companies in the given industry group | [optional]   &nbsp;
  **thea_enabled** | bool| Return filings that have been read by our Thea NLP and are ready for our answers endpoint | [optional]   &nbsp;
+ **earnings_release** | bool| Return filings that have been tagged as having Results of Operations and Financial Conditions | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

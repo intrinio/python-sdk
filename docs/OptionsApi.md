@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**get_option_aggregates**](OptionsApi.md#get_option_aggregates) | **GET** /options/aggregates | Total open interest and volume aggregated by ticker
 [**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Options Expirations
 [**get_option_strikes_realtime**](OptionsApi.md#get_option_strikes_realtime) | **GET** /options/strikes/{symbol}/{strike}/realtime | Option Strikes Realtime
+[**get_option_trades**](OptionsApi.md#get_option_trades) | **GET** /options/trades | Option Trades
+[**get_option_trades_by_contract**](OptionsApi.md#get_option_trades_by_contract) | **GET** /options/{identifier}/trades | Option Trades By Contract
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
 [**get_options_by_symbol_realtime**](OptionsApi.md#get_options_by_symbol_realtime) | **GET** /options/{symbol}/realtime | Options by Symbol Realtime
 [**get_options_chain**](OptionsApi.md#get_options_chain) | **GET** /options/chain/{symbol}/{expiration} | Options Chain
@@ -22,6 +24,7 @@ Method | HTTP request | Description
 [**get_options_prices**](OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 [**get_options_prices_batch_realtime**](OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 [**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
+[**get_options_prices_eod_by_ticker**](OptionsApi.md#get_options_prices_eod_by_ticker) | **GET** /options/prices/by_ticker/{symbol}/eod | Option Prices End of Day By Ticker
 [**get_options_prices_realtime**](OptionsApi.md#get_options_prices_realtime) | **GET** /options/prices/{identifier}/realtime | Option Prices Realtime
 [**get_options_prices_realtime_by_ticker**](OptionsApi.md#get_options_prices_realtime_by_ticker) | **GET** /options/prices/by_ticker/{symbol}/realtime | Option Prices Realtime By Ticker
 [**get_options_snapshots**](OptionsApi.md#get_options_snapshots) | **GET** /options/snapshots | Option Prices Realtime Snapshot
@@ -349,6 +352,192 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsChainRealtime**](ApiResponseOptionsChainRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_option_trades)
+
+[//]: # (RETURN_TYPE:OptionTradesResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionTradesResult.md)
+
+[//]: # (OPERATION:get_option_trades_v2)
+
+[//]: # (ENDPOINT:/options/trades)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_trades)
+
+## **get_option_trades**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_option_trades_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionTradesResult get_option_trades(source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, min_size=min_size, security=security, next_page=next_page)
+
+#### Option Trades
+
+
+Returns all trades between start time and end time, up to seven days ago for the specified source.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+source = ''
+start_date = ''
+start_time = ''
+end_date = ''
+end_time = ''
+timezone = 'UTC'
+page_size = 100
+min_size = 100
+security = 'AAPL'
+next_page = ''
+
+response = intrinio.OptionsApi().get_option_trades(source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, min_size=min_size, security=security, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | str| The specific source of the data being requested. | [optional]   &nbsp;
+ **start_date** | date| The start date for the data being requested. | [optional]   &nbsp;
+ **start_time** | str| The start time for the data being requested. | [optional]   &nbsp;
+ **end_date** | date| The end date for the data being requested. | [optional]   &nbsp;
+ **end_time** | str| The end time for the data being requested. | [optional]   &nbsp;
+ **timezone** | str| The timezone the start and end date/times use. | [optional] [default to UTC]  &nbsp;
+ **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
+ **min_size** | int| Trades must be larger or equal to this size. | [optional]   &nbsp;
+ **security** | str| The ticker symbol for which trades are being requested. | [optional]   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionTradesResult**](OptionTradesResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_option_trades_by_contract)
+
+[//]: # (RETURN_TYPE:OptionTradesResult)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:OptionTradesResult.md)
+
+[//]: # (OPERATION:get_option_trades_by_contract_v2)
+
+[//]: # (ENDPOINT:/options/{identifier}/trades)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_trades_by_contract)
+
+## **get_option_trades_by_contract**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_option_trades_by_contract_v2)
+
+[//]: # (START_OVERVIEW)
+
+> OptionTradesResult get_option_trades_by_contract(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, min_size=min_size, next_page=next_page)
+
+#### Option Trades By Contract
+
+
+Returns all trades for a contract between start time and end time, up to seven days ago for the specified source.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL__261218C00230000'
+source = ''
+start_date = ''
+start_time = ''
+end_date = ''
+end_time = ''
+timezone = 'UTC'
+page_size = 100
+min_size = 100
+next_page = ''
+
+response = intrinio.OptionsApi().get_option_trades_by_contract(identifier, source=source, start_date=start_date, start_time=start_time, end_date=end_date, end_time=end_time, timezone=timezone, page_size=page_size, min_size=min_size, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| The option contract for which trades are being requested. |   &nbsp;
+ **source** | str| The specific source of the data being requested. | [optional]   &nbsp;
+ **start_date** | date| The start date for the data being requested. | [optional]   &nbsp;
+ **start_time** | str| The start time for the data being requested. | [optional]   &nbsp;
+ **end_date** | date| The end date for the data being requested. | [optional]   &nbsp;
+ **end_time** | str| The end time for the data being requested. | [optional]   &nbsp;
+ **timezone** | str| The timezone the start and end date/times use. | [optional] [default to UTC]  &nbsp;
+ **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
+ **min_size** | int| Trades must be larger or equal to this size. | [optional]   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**OptionTradesResult**](OptionTradesResult.md)
 
 [//]: # (END_OPERATION)
 
@@ -1529,6 +1718,94 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:OptionsApi)
 
+[//]: # (METHOD:get_options_prices_eod_by_ticker)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsPricesByTickerEod)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsPricesByTickerEod.md)
+
+[//]: # (OPERATION:get_options_prices_eod_by_ticker_v2)
+
+[//]: # (ENDPOINT:/options/prices/by_ticker/{symbol}/eod)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_prices_eod_by_ticker)
+
+## **get_options_prices_eod_by_ticker**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_prices_eod_by_ticker_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsPricesByTickerEod get_options_prices_eod_by_ticker(symbol, page_size=page_size, date=date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, include_related_symbols=include_related_symbols, next_page=next_page)
+
+#### Option Prices End of Day By Ticker
+
+
+Returns a list of end of day pricing information for all option contracts currently associated with the ticker.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+symbol = 'MSFT'
+page_size = 250
+date = "2024-01-01"
+type = ''
+include_related_symbols = False
+next_page = ''
+
+response = intrinio.OptionsApi().get_options_prices_eod_by_ticker(symbol, page_size=page_size, date=date, type=type, include_related_symbols=include_related_symbols, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | str| The equities ticker symbol, corresponding to the underlying security. |   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 250]  &nbsp;
+ **date** | [**object**](.md)| The date to get pricing data for. Defaults to today in Eastern time zone. | [optional]   &nbsp;
+ **type** | str| The option contract type. | [optional]   &nbsp;
+ **strike** | float| The strike price of the option contract. This will return options contracts with strike price equal to this price. | [optional]   &nbsp;
+ **strike_greater_than** | float| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]   &nbsp;
+ **strike_less_than** | float| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]   &nbsp;
+ **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsPricesByTickerEod**](ApiResponseOptionsPricesByTickerEod.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
 [//]: # (METHOD:get_options_prices_realtime)
 
 [//]: # (RETURN_TYPE:ApiResponseOptionsPriceRealtime)
@@ -1570,7 +1847,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL230120C00090000'
+identifier = 'AAPL__261218C00230000'
 source = ''
 stock_price_source = ''
 model = ''

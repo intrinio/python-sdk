@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_economic_index_data_point_text**](IndexApi.md#get_economic_index_data_point_text) | **GET** /indices/economic/{identifier}/data_point/{tag}/text | Data Point (Text) for an Economic Index
 [**get_economic_index_historical_data**](IndexApi.md#get_economic_index_historical_data) | **GET** /indices/economic/{identifier}/historical_data/{tag} | Historical Data for an Economic Index
 [**get_eod_index_price_by_id**](IndexApi.md#get_eod_index_price_by_id) | **GET** /indices/{identifier}/eod | End of Day Index Prices By Identifier
+[**get_index_constituents_by_id**](IndexApi.md#get_index_constituents_by_id) | **GET** /indices/{identifier}/constituents | Index Constituents By Index Identifier
 [**get_index_summary_by_id**](IndexApi.md#get_index_summary_by_id) | **GET** /indices/{identifier} | Index Summary By Identifier
 [**get_realtime_index_price_by_id**](IndexApi.md#get_realtime_index_price_by_id) | **GET** /indices/{identifier}/realtime | Realtime Index Price By Identifier
 [**get_sic_index_by_id**](IndexApi.md#get_sic_index_by_id) | **GET** /indices/sic/{identifier} | Lookup SIC Index
@@ -880,6 +881,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseEodIndexPrices**](ApiResponseEodIndexPrices.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:IndexApi)
+
+[//]: # (METHOD:get_index_constituents_by_id)
+
+[//]: # (RETURN_TYPE:ApiResponseIndexConstituents)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseIndexConstituents.md)
+
+[//]: # (OPERATION:get_index_constituents_by_id_v2)
+
+[//]: # (ENDPOINT:/indices/{identifier}/constituents)
+
+[//]: # (DOCUMENT_LINK:IndexApi.md#get_index_constituents_by_id)
+
+## **get_index_constituents_by_id**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_index_constituents_by_id_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseIndexConstituents get_index_constituents_by_id(identifier)
+
+#### Index Constituents By Index Identifier
+
+
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'DJI'
+
+response = intrinio.IndexApi().get_index_constituents_by_id(identifier)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| The index symbol |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseIndexConstituents**](ApiResponseIndexConstituents.md)
 
 [//]: # (END_OPERATION)
 
