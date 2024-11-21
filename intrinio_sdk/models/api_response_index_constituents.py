@@ -17,7 +17,7 @@ import re  # noqa: F401
 import six
 
 from intrinio_sdk.models.api_response_index import ApiResponseIndex  # noqa: F401,E501
-from intrinio_sdk.models.index_constituents import IndexConstituents  # noqa: F401,E501
+from intrinio_sdk.models.security_summary import SecuritySummary  # noqa: F401,E501
 
 
 class ApiResponseIndexConstituents(object):
@@ -36,7 +36,7 @@ class ApiResponseIndexConstituents(object):
     swagger_types = {
         'index': 'ApiResponseIndex',
         'date': 'date',
-        'constituents': 'IndexConstituents'
+        'constituents': 'list[SecuritySummary]'
     }
 
     attribute_map = {
@@ -178,7 +178,7 @@ class ApiResponseIndexConstituents(object):
 
 
         :return: The constituents of this ApiResponseIndexConstituents.  # noqa: E501
-        :rtype: IndexConstituents
+        :rtype: list[SecuritySummary]
         """
         return self._constituents
         
@@ -188,7 +188,7 @@ class ApiResponseIndexConstituents(object):
 
 
         :return: The constituents of this ApiResponseIndexConstituents.  # noqa: E501
-        :rtype: IndexConstituents
+        :rtype: list[SecuritySummary]
         """
 
         result = None
@@ -220,7 +220,7 @@ class ApiResponseIndexConstituents(object):
 
 
         :param constituents: The constituents of this ApiResponseIndexConstituents.  # noqa: E501
-        :type: IndexConstituents
+        :type: list[SecuritySummary]
         """
 
         self._constituents = constituents

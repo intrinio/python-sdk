@@ -83,7 +83,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 start_date = '2018-01-01'
 end_date = '2019-01-01'
 page_size = 100
@@ -166,7 +166,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 22
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -251,7 +251,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 14
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -336,7 +336,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 short_period = 5
 long_period = 34
 start_date = '2018-01-01'
@@ -423,7 +423,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 14
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -508,7 +508,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 20
 standard_deviations = 2.0
 price_key = 'close'
@@ -597,7 +597,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 20
 constant = 0.015
 start_date = '2018-01-01'
@@ -684,7 +684,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 20
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -769,7 +769,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 20
 price_key = 'close'
 start_date = '2018-01-01'
@@ -856,7 +856,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 20
 price_key = 'close'
 start_date = '2018-01-01'
@@ -943,7 +943,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 20
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -1028,7 +1028,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 start_date = '2018-01-01'
 end_date = '2019-01-01'
 page_size = 100
@@ -1111,7 +1111,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 low_period = 9
 medium_period = 26
 high_period = 52
@@ -1200,7 +1200,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 10
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -1285,7 +1285,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 roc1 = 10
 roc2 = 15
 roc3 = 20
@@ -1386,7 +1386,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 fast_period = 12
 slow_period = 26
 signal_period = 9
@@ -1477,7 +1477,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 14
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -1562,7 +1562,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 ema_period = 9
 sum_period = 25
 start_date = '2018-01-01'
@@ -1649,7 +1649,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 start_date = '2018-01-01'
 end_date = '2019-01-01'
 page_size = 100
@@ -1732,7 +1732,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 start_date = '2018-01-01'
 end_date = '2019-01-01'
 page_size = 100
@@ -1815,7 +1815,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 10
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -1900,7 +1900,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 14
 price_key = 'close'
 start_date = '2018-01-01'
@@ -1987,7 +1987,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 20
 price_key = 'close'
 start_date = '2018-01-01'
@@ -2074,7 +2074,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 14
 signal_period = 3
 start_date = '2018-01-01'
@@ -2161,7 +2161,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 15
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -2246,7 +2246,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 low_period = 13
 high_period = 25
 price_key = 'close'
@@ -2335,7 +2335,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 short_period = 7
 medium_period = 14
 long_period = 28
@@ -2430,7 +2430,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 14
 start_date = '2018-01-01'
 end_date = '2019-01-01'
@@ -2515,7 +2515,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 start_date = '2018-01-01'
 end_date = '2019-01-01'
 page_size = 100
@@ -2598,7 +2598,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 start_date = '2018-01-01'
 end_date = '2019-01-01'
 page_size = 100
@@ -2681,7 +2681,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 period = 14
 start_date = '2018-01-01'
 end_date = '2019-01-01'

@@ -208,7 +208,6 @@ from intrinio_sdk.models.fundamental import Fundamental
 from intrinio_sdk.models.fundamental_summary import FundamentalSummary
 from intrinio_sdk.models.historical_data import HistoricalData
 from intrinio_sdk.models.ichimoku_kinko_hyo_technical_value import IchimokuKinkoHyoTechnicalValue
-from intrinio_sdk.models.index_constituents import IndexConstituents
 from intrinio_sdk.models.insider_transaction import InsiderTransaction
 from intrinio_sdk.models.insider_transaction_filing import InsiderTransactionFiling
 from intrinio_sdk.models.institutional_holding import InstitutionalHolding

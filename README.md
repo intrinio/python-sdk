@@ -534,7 +534,6 @@ Class | Method | HTTP request | Description
  - [FundamentalSummary](docs/FundamentalSummary.md)
  - [HistoricalData](docs/HistoricalData.md)
  - [IchimokuKinkoHyoTechnicalValue](docs/IchimokuKinkoHyoTechnicalValue.md)
- - [IndexConstituents](docs/IndexConstituents.md)
  - [InsiderTransaction](docs/InsiderTransaction.md)
  - [InsiderTransactionFiling](docs/InsiderTransactionFiling.md)
  - [InstitutionalHolding](docs/InstitutionalHolding.md)

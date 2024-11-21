@@ -468,7 +468,7 @@ class FundamentalsApi(object):
 
         :param async bool
         :param str id: The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental (required)
-        :param str tag: $$v2_data_point_item_description$$ (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: ApiResponseStandardizedFinancialsDimensions
                  If the method is called asynchronously,
                  returns the request thread.
@@ -491,7 +491,7 @@ class FundamentalsApi(object):
 
         :param async bool
         :param str id: The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental (required)
-        :param str tag: $$v2_data_point_item_description$$ (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: ApiResponseStandardizedFinancialsDimensions
                  If the method is called asynchronously,
                  returns the request thread.

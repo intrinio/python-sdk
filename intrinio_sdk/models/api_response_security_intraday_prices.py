@@ -230,7 +230,7 @@ class ApiResponseSecurityIntradayPrices(object):
         :param source: The source of this ApiResponseSecurityIntradayPrices.  # noqa: E501
         :type: str
         """
-        allowed_values = ["$$v2_stock_price_intraday_sources_enum$$"]  # noqa: E501
+        allowed_values = ["iex", "bats"]  # noqa: E501
         if source not in allowed_values:
             raise ValueError(
                 "Invalid value for `source` ({0}), must be one of {1}"  # noqa: E501
