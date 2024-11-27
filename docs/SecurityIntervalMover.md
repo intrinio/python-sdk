@@ -18,8 +18,9 @@ Name | Type | Description
 **high** | float | The highest traded price in this interval. &nbsp;
 **low** | float | The lowest traded price in this interval. &nbsp;
 **close** | float | The last traded price in this interval. &nbsp;
-**volume** | float | The volume of trades in this interval. &nbsp;
+**volume** | float | The volume of shares in this interval. &nbsp;
 **average** | float | The volume weighted average price of trades in this interval. &nbsp;
+**trade_count** | float | The of trades in this interval. &nbsp;
 
 [//]: # (END_DEFINITION)
 

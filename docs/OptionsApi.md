@@ -60,7 +60,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsTickers get_all_options_tickers()
+> ApiResponseOptionsTickers get_all_options_tickers(use_underlying_symbols=use_underlying_symbols)
 
 #### Options Tickers
 
@@ -81,8 +81,9 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
+use_underlying_symbols = False
 
-response = intrinio.OptionsApi().get_all_options_tickers()
+response = intrinio.OptionsApi().get_all_options_tickers(use_underlying_symbols=use_underlying_symbols)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -95,7 +96,10 @@ print(response)
 
 [//]: # (START_PARAMETERS)
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **use_underlying_symbols** | bool| Use underlying symbol vs contract symbol | [optional] [default to False]  &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
