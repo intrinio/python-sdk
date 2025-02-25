@@ -808,7 +808,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanyFundamentals get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, start_date=start_date, end_date=end_date, updated_after=updated_after, updated_before=updated_before, page_size=page_size, next_page=next_page)
+> ApiResponseCompanyFundamentals get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, fundamental_type=fundamental_type, start_date=start_date, end_date=end_date, updated_after=updated_after, latest_only=latest_only, updated_before=updated_before, page_size=page_size, next_page=next_page)
 
 #### All Fundamentals by Company
 
@@ -836,14 +836,16 @@ reported_only = False
 fiscal_year = ''
 statement_code = ''
 type = ''
+fundamental_type = ''
 start_date = ''
 end_date = ''
 updated_after = '2022-12-01'
+latest_only = True
 updated_before = '2022-12-01'
 page_size = 100
 next_page = ''
 
-response = intrinio.CompanyApi().get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, start_date=start_date, end_date=end_date, updated_after=updated_after, updated_before=updated_before, page_size=page_size, next_page=next_page)
+response = intrinio.CompanyApi().get_company_fundamentals(identifier, filed_after=filed_after, filed_before=filed_before, reported_only=reported_only, fiscal_year=fiscal_year, statement_code=statement_code, type=type, fundamental_type=fundamental_type, start_date=start_date, end_date=end_date, updated_after=updated_after, latest_only=latest_only, updated_before=updated_before, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -866,9 +868,11 @@ Name | Type | Description  | Notes
  **fiscal_year** | int| Only for the given fiscal year | [optional]   &nbsp;
  **statement_code** | str| Only of the given statement code | [optional]   &nbsp;
  **type** | str| Only of the given type | [optional]   &nbsp;
+ **fundamental_type** | str| Only of the given fundamental type | [optional]   &nbsp;
  **start_date** | date| Only on or after the given date | [optional]   &nbsp;
  **end_date** | date| Only on or before the given date | [optional]   &nbsp;
  **updated_after** | date| Only include fundamentals where it was updated after this date. | [optional]   &nbsp;
+ **latest_only** | bool| Only the most-recently reported fundamental for the period | [optional]   &nbsp;
  **updated_before** | date| Only include fundamentals where it was updated before this date. | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
