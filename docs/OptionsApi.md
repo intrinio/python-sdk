@@ -2006,7 +2006,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> OptionSnapshotsResult get_options_snapshots(source=source, at_datetime=at_datetime)
+> OptionSnapshotsResult get_options_snapshots(source=source, at_datetime=at_datetime, with_greeks=with_greeks, stock_price_source=stock_price_source, with_underlying_price=with_underlying_price)
 
 #### Option Prices Realtime Snapshot
 
@@ -2029,8 +2029,11 @@ intrinio.ApiClient().allow_retries(True)
 
 source = ''
 at_datetime = ''
+with_greeks = ''
+stock_price_source = ''
+with_underlying_price = ''
 
-response = intrinio.OptionsApi().get_options_snapshots(source=source, at_datetime=at_datetime)
+response = intrinio.OptionsApi().get_options_snapshots(source=source, at_datetime=at_datetime, with_greeks=with_greeks, stock_price_source=stock_price_source, with_underlying_price=with_underlying_price)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -2048,6 +2051,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
  **at_datetime** | datetime| The UTC date and time (with url-encoded spaces) the snapshot will cover. | [optional]   &nbsp;
+ **with_greeks** | bool| Whether to include Greek calculations fields when available. | [optional]   &nbsp;
+ **stock_price_source** | str| Source for underlying price for calculating Greeks. | [optional]   &nbsp;
+ **with_underlying_price** | bool| Whether to include the underlying price of the security in the file. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
