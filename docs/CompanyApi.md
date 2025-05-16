@@ -588,8 +588,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'marketcap'
+identifier = '$$v2_company_data_point_identifier_default$$'
+tag = '$$v2_company_data_point_item_number_default$$'
 
 response = intrinio.CompanyApi().get_company_data_point_number(identifier, tag)
 print(response)
@@ -607,8 +607,8 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **identifier** | str| $$v2_company_data_point_identifier_description$$ |   &nbsp;
+ **tag** | str| $$v2_company_data_point_item_description$$ |   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -665,8 +665,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'ceo'
+identifier = '$$v2_company_data_point_identifier_default$$'
+tag = '$$v2_company_data_point_item_text_default$$'
 
 response = intrinio.CompanyApi().get_company_data_point_text(identifier, tag)
 print(response)
@@ -684,8 +684,8 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **identifier** | str| $$v2_company_data_point_identifier_description$$ |   &nbsp;
+ **tag** | str| $$v2_company_data_point_item_description$$ |   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -916,7 +916,7 @@ Name | Type | Description  | Notes
 #### Historical Data for Company
 
 
-Returns historical values for the given `tag` and the Company with the given `identifier`
+$$v2_company_historical_data_description$$
 
 [//]: # (END_OVERVIEW)
 
@@ -932,8 +932,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'marketcap'
+identifier = '$$v2_company_historical_data_identifier_default$$'
+tag = '$$v2_company_historical_data_item_default$$'
 frequency = 'daily'
 type = ''
 start_date = '2018-01-01'
@@ -958,8 +958,8 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **identifier** | str| $$v2_company_historical_data_identifier_description$$ |   &nbsp;
+ **tag** | str| $$v2_company_historical_data_item_description$$ |   &nbsp;
  **frequency** | str| Return historical data in the given frequency | [optional] [default to daily]  &nbsp;
  **type** | str| Return historical data for given fiscal period type | [optional]   &nbsp;
  **start_date** | date| Return historical data on or after this date | [optional]   &nbsp;
