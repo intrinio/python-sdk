@@ -14,6 +14,7 @@ from intrinio_sdk.api.forex_api import ForexApi
 from intrinio_sdk.api.fundamentals_api import FundamentalsApi
 from intrinio_sdk.api.historical_data_api import HistoricalDataApi
 from intrinio_sdk.api.index_api import IndexApi
+from intrinio_sdk.api.indices_api import IndicesApi
 from intrinio_sdk.api.insider_transaction_filings_api import InsiderTransactionFilingsApi
 from intrinio_sdk.api.market_api import MarketApi
 from intrinio_sdk.api.municipality_api import MunicipalityApi

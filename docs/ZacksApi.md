@@ -67,7 +67,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_ticker_default$$'
+identifier = 'AAPL'
 page_size = 100
 next_page = ''
 

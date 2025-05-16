@@ -230,7 +230,7 @@ class ApiResponseSecurityIntervalPrices(object):
         :param source: The source of this ApiResponseSecurityIntervalPrices.  # noqa: E501
         :type: str
         """
-        allowed_values = ["$$v2_stock_price_interval_sources_enum$$"]  # noqa: E501
+        allowed_values = ["realtime", "delayed", "nasdaq_basic", "nasdaq_basic_filtered", "nasdaq_basic_last_sale"]  # noqa: E501
         if source not in allowed_values:
             raise ValueError(
                 "Invalid value for `source` ({0}), must be one of {1}"  # noqa: E501

@@ -36,15 +36,15 @@ class HistoricalDataApi(object):
     def get_historical_data(self, identifier, tag, **kwargs):  # noqa: E501
         """Historical Data  # noqa: E501
 
-        $$v2_historical_data_description$$  # noqa: E501
+        Returns historical values for the given `tag` and the entity represented by the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_historical_data(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_historical_data_identifier_description$$ (required)
-        :param str tag: $$v2_historical_data_item_description$$ (required)
+        :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :param str frequency: Return historical data in the given frequency
         :param str type: Filter by type, when applicable
         :param date start_date: Get historical data on or after this date
@@ -66,15 +66,15 @@ class HistoricalDataApi(object):
     def get_historical_data_with_http_info(self, identifier, tag, **kwargs):  # noqa: E501
         """Historical Data  # noqa: E501
 
-        $$v2_historical_data_description$$  # noqa: E501
+        Returns historical values for the given `tag` and the entity represented by the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_historical_data_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_historical_data_identifier_description$$ (required)
-        :param str tag: $$v2_historical_data_item_description$$ (required)
+        :param str identifier: An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :param str frequency: Return historical data in the given frequency
         :param str type: Filter by type, when applicable
         :param date start_date: Get historical data on or after this date

@@ -143,7 +143,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_mic_default$$'
+identifier = 'USCOMP'
 type = 'weekly'
 date = "2024-04-24"
 page_size = 100
@@ -226,7 +226,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_mic_default$$'
+identifier = 'USCOMP'
 
 response = intrinio.StockExchangeApi().get_stock_exchange_by_id(identifier)
 print(response)
@@ -301,7 +301,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_mic_default$$'
+identifier = 'USCOMP'
 min_price = 8.14
 page_size = 100
 source = 'delayed_sip'
@@ -382,7 +382,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_mic_default$$'
+identifier = 'USCOMP'
 min_price = 8.14
 page_size = 100
 source = 'delayed_sip'
@@ -463,7 +463,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_mic_default$$'
+identifier = 'USCOMP'
 date = '2018-08-14'
 page_size = 100
 next_page = ''
@@ -544,7 +544,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_mic_default$$'
+identifier = 'USCOMP'
 date = '2018-08-14'
 start_date = '2020-08-14'
 end_date = '2022-08-14'
@@ -633,7 +633,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_mic_default$$'
+identifier = 'USCOMP'
 tickers = ['AAPL,MSFT,NVDA']
 source = 'delayed_sip'
 active_only = ''
@@ -714,7 +714,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_mic_default$$'
+identifier = 'USCOMP'
 source = ['iex,delayed_sip']
 active_only = ''
 traded_today = ''
@@ -801,7 +801,7 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = '$$v2_mic_default$$'
+identifier = 'USCOMP'
 page_size = 100
 next_page = ''
 
