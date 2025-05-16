@@ -4,7 +4,7 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.99.0
+- API version: 2.100.0
 - Package version: 6.36.0
 
 
@@ -237,7 +237,6 @@ Class | Method | HTTP request | Description
 *SecurityApi* | [**get_security_interval_movers_change**](docs/SecurityApi.md#get_security_interval_movers_change) | **GET** /securities/market_movers/change | Security Intervals Movers By Change
 *SecurityApi* | [**get_security_interval_movers_volume**](docs/SecurityApi.md#get_security_interval_movers_volume) | **GET** /securities/market_movers/volume | Security Intervals Movers By Volume
 *SecurityApi* | [**get_security_interval_prices**](docs/SecurityApi.md#get_security_interval_prices) | **GET** /securities/{identifier}/prices/intervals | Interval Stock Prices for Security
-*SecurityApi* | [**get_security_intraday_prices**](docs/SecurityApi.md#get_security_intraday_prices) | **GET** /securities/{identifier}/prices/intraday | Intraday Stock Prices for Security
 *SecurityApi* | [**get_security_latest_dividend_record**](docs/SecurityApi.md#get_security_latest_dividend_record) | **GET** /securities/{identifier}/dividends/latest | Latest Dividend Record for Security
 *SecurityApi* | [**get_security_latest_earnings_record**](docs/SecurityApi.md#get_security_latest_earnings_record) | **GET** /securities/{identifier}/earnings/latest | Latest Earnings Record for Security
 *SecurityApi* | [**get_security_price_technicals_adi**](docs/SecurityApi.md#get_security_price_technicals_adi) | **GET** /securities/{identifier}/prices/technicals/adi | Accumulation/Distribution Index
@@ -438,7 +437,6 @@ Class | Method | HTTP request | Description
  - [ApiResponseSecurityIchimokuKinkoHyo](docs/ApiResponseSecurityIchimokuKinkoHyo.md)
  - [ApiResponseSecurityInstitutionalOwnership](docs/ApiResponseSecurityInstitutionalOwnership.md)
  - [ApiResponseSecurityIntervalPrices](docs/ApiResponseSecurityIntervalPrices.md)
- - [ApiResponseSecurityIntradayPrices](docs/ApiResponseSecurityIntradayPrices.md)
  - [ApiResponseSecurityKeltnerChannel](docs/ApiResponseSecurityKeltnerChannel.md)
  - [ApiResponseSecurityKnowSureThing](docs/ApiResponseSecurityKnowSureThing.md)
  - [ApiResponseSecurityMassIndex](docs/ApiResponseSecurityMassIndex.md)
@@ -549,7 +547,6 @@ Class | Method | HTTP request | Description
  - [InsiderTransactionFiling](docs/InsiderTransactionFiling.md)
  - [InstitutionalHolding](docs/InstitutionalHolding.md)
  - [InstitutionalOwnership](docs/InstitutionalOwnership.md)
- - [IntradayStockPrice](docs/IntradayStockPrice.md)
  - [KeltnerChannelTechnicalValue](docs/KeltnerChannelTechnicalValue.md)
  - [KnowSureThingTechnicalValue](docs/KnowSureThingTechnicalValue.md)
  - [MarketStatusResult](docs/MarketStatusResult.md)
