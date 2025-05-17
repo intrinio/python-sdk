@@ -113,6 +113,13 @@ class TestIndexApi(unittest.TestCase):
         """
         pass
 
+    def test_get_index_intervals(self):
+        """Test case for get_index_intervals
+
+        Index Intervals  # noqa: E501
+        """
+        pass
+
     def test_get_index_summary_by_id(self):
         """Test case for get_index_summary_by_id
 

@@ -1231,6 +1231,133 @@ class IndexApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_index_intervals(self, identifier, interval_size, **kwargs):  # noqa: E501
+        """Index Intervals  # noqa: E501
+
+        Returns a list of interval data points for a specified index, including open, close, high, low, volume, and average price. Intervals are available in 60-minute, 30-minute, 15-minute, 10-minute, 5-minute, and 1-minute increments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_index_intervals(identifier, interval_size, _async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str identifier: The index identifier (required)
+        :param str interval_size: The interval size to return in minutes (m) or hour (h). (required)
+        :param date start_date: Return intervals starting at the specified date
+        :param str start_time: Return intervals starting at the specified time on the `start_date` (24-hour in 'hh:mm:ss' format)
+        :param date end_date: Return intervals stopping at the specified date
+        :param str end_time: Return intervals stopping at the specified time on the `end_date` (24-hour in 'hh:mm:ss' format)
+        :param str timezone: Interprets the input times in this time zone, as well as returns times in this timezone.
+        :param int page_size: The number of results to return per page.
+        :return: ApiResponseIndexIntervals
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.get_index_intervals_with_http_info(identifier, interval_size, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_index_intervals_with_http_info(identifier, interval_size, **kwargs)  # noqa: E501
+            return data
+
+    def get_index_intervals_with_http_info(self, identifier, interval_size, **kwargs):  # noqa: E501
+        """Index Intervals  # noqa: E501
+
+        Returns a list of interval data points for a specified index, including open, close, high, low, volume, and average price. Intervals are available in 60-minute, 30-minute, 15-minute, 10-minute, 5-minute, and 1-minute increments.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_index_intervals_with_http_info(identifier, interval_size, _async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str identifier: The index identifier (required)
+        :param str interval_size: The interval size to return in minutes (m) or hour (h). (required)
+        :param date start_date: Return intervals starting at the specified date
+        :param str start_time: Return intervals starting at the specified time on the `start_date` (24-hour in 'hh:mm:ss' format)
+        :param date end_date: Return intervals stopping at the specified date
+        :param str end_time: Return intervals stopping at the specified time on the `end_date` (24-hour in 'hh:mm:ss' format)
+        :param str timezone: Interprets the input times in this time zone, as well as returns times in this timezone.
+        :param int page_size: The number of results to return per page.
+        :return: ApiResponseIndexIntervals
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['identifier', 'interval_size', 'start_date', 'start_time', 'end_date', 'end_time', 'timezone', 'page_size']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_index_intervals" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'identifier' is set
+        if ('identifier' not in params or
+                params['identifier'] is None):
+            raise ValueError("Missing the required parameter `identifier` when calling `get_index_intervals`")  # noqa: E501
+        # verify the required parameter 'interval_size' is set
+        if ('interval_size' not in params or
+                params['interval_size'] is None):
+            raise ValueError("Missing the required parameter `interval_size` when calling `get_index_intervals`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'identifier' in params:
+            path_params['identifier'] = params['identifier']  # noqa: E501
+
+        query_params = []
+        if 'interval_size' in params:
+            query_params.append(('interval_size', params['interval_size']))  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+        if 'start_time' in params:
+            query_params.append(('start_time', params['start_time']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'end_time' in params:
+            query_params.append(('end_time', params['end_time']))  # noqa: E501
+        if 'timezone' in params:
+            query_params.append(('timezone', params['timezone']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/indices/{identifier}/intervals', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ApiResponseIndexIntervals',  # noqa: E501
+            auth_settings=auth_settings,
+            _async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_index_summary_by_id(self, identifier, **kwargs):  # noqa: E501
         """Index Summary By Identifier  # noqa: E501
 
@@ -1327,6 +1454,7 @@ class IndexApi(object):
     def get_realtime_index_price_by_id(self, identifier, **kwargs):  # noqa: E501
         """Realtime Index Price By Identifier  # noqa: E501
 
+        Returns the realtime price for an index.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_realtime_index_price_by_id(identifier, _async=True)
@@ -1348,6 +1476,7 @@ class IndexApi(object):
     def get_realtime_index_price_by_id_with_http_info(self, identifier, **kwargs):  # noqa: E501
         """Realtime Index Price By Identifier  # noqa: E501
 
+        Returns the realtime price for an index.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_realtime_index_price_by_id_with_http_info(identifier, _async=True)
