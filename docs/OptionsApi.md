@@ -17,6 +17,8 @@ Method | HTTP request | Description
 [**get_options_chain_realtime**](OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 [**get_options_expirations_eod**](OptionsApi.md#get_options_expirations_eod) | **GET** /options/expirations/{symbol}/eod | Options Expirations
+[**get_options_greeks_by_contract**](OptionsApi.md#get_options_greeks_by_contract) | **GET** /options/greeks/{contract}/realtime | Get realtime options greeks for a specific contract
+[**get_options_greeks_by_ticker**](OptionsApi.md#get_options_greeks_by_ticker) | **GET** /options/greeks/by_ticker/{identifier}/realtime | Get realtime options greeks by ticker
 [**get_options_implied_move_by_symbol**](OptionsApi.md#get_options_implied_move_by_symbol) | **GET** /options/implied_move/{symbol}/{expiration_date} | Options Implied Move By Symbol
 [**get_options_interval_by_contract**](OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options Intervals By Contract
 [**get_options_interval_movers**](OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
@@ -34,8 +36,6 @@ Method | HTTP request | Description
 [**get_unusual_activity_intraday**](OptionsApi.md#get_unusual_activity_intraday) | **GET** /options/unusual_activity/{symbol}/intraday | Options Unusual Activity Intraday
 [**get_unusual_activity_universal**](OptionsApi.md#get_unusual_activity_universal) | **GET** /options/unusual_activity | Options Unusual Activity Universal
 [**get_unusual_activity_universal_intraday**](OptionsApi.md#get_unusual_activity_universal_intraday) | **GET** /options/unusual_activity/intraday | Options Unusual Activity Universal Intraday
-[**options_greeks_by_ticker_identifier_realtime_get**](OptionsApi.md#options_greeks_by_ticker_identifier_realtime_get) | **GET** /options/greeks/by_ticker/{identifier}/realtime | Get realtime options greeks by ticker
-[**options_greeks_contract_realtime_get**](OptionsApi.md#options_greeks_contract_realtime_get) | **GET** /options/greeks/{contract}/realtime | Get realtime options greeks for a specific contract
 
 
 
@@ -1150,6 +1150,184 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsExpirations**](ApiResponseOptionsExpirations.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_greeks_by_contract)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsGreekContractRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsGreekContractRealtime.md)
+
+[//]: # (OPERATION:get_options_greeks_by_contract_v2)
+
+[//]: # (ENDPOINT:/options/greeks/{contract}/realtime)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_greeks_by_contract)
+
+## **get_options_greeks_by_contract**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_greeks_by_contract_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsGreekContractRealtime get_options_greeks_by_contract(contract, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source)
+
+#### Get realtime options greeks for a specific contract
+
+
+Retrieves realtime options greeks data for a specific options contract
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+contract = 'contract_example'
+source = 'source_example'
+model = 'black_scholes'
+iv_mode = 'iv_mode_example'
+stock_price_source = 'stock_price_source_example'
+
+response = intrinio.OptionsApi().get_options_greeks_by_contract(contract, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contract** | str| The options contract identifier |   &nbsp;
+ **source** | str| The data source to use for options data | [optional]   &nbsp;
+ **model** | str| The options pricing model to use for greeks calculations | [optional] [default to black_scholes]  &nbsp;
+ **iv_mode** | str| The implied volatility calculation mode | [optional]   &nbsp;
+ **stock_price_source** | str| The data source to use for underlying stock prices | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsGreekContractRealtime**](ApiResponseOptionsGreekContractRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_greeks_by_ticker)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsGreeksByTickerRealtime)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsGreeksByTickerRealtime.md)
+
+[//]: # (OPERATION:get_options_greeks_by_ticker_v2)
+
+[//]: # (ENDPOINT:/options/greeks/by_ticker/{identifier}/realtime)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_greeks_by_ticker)
+
+## **get_options_greeks_by_ticker**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_greeks_by_ticker_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsGreeksByTickerRealtime get_options_greeks_by_ticker(identifier, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, page_size=page_size)
+
+#### Get realtime options greeks by ticker
+
+
+Retrieves realtime options greeks data for all contracts of a given ticker symbol
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'identifier_example'
+source = 'source_example'
+model = 'black_scholes'
+iv_mode = 'iv_mode_example'
+stock_price_source = 'stock_price_source_example'
+expiration_start_date = '2013-10-20'
+expiration_end_date = '2013-10-20'
+strike = 3.4
+strike_greater_than = 3.4
+strike_less_than = 3.4
+page_size = 250
+
+response = intrinio.OptionsApi().get_options_greeks_by_ticker(identifier, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, page_size=page_size)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| The ticker symbol to get options greeks for |   &nbsp;
+ **source** | str| The data source to use for options data | [optional]   &nbsp;
+ **model** | str| The options pricing model to use for greeks calculations | [optional] [default to black_scholes]  &nbsp;
+ **iv_mode** | str| The implied volatility calculation mode | [optional]   &nbsp;
+ **stock_price_source** | str| The data source to use for underlying stock prices | [optional]   &nbsp;
+ **expiration_start_date** | date| Filter options by expiration date (start) | [optional]   &nbsp;
+ **expiration_end_date** | date| Filter options by expiration date (end) | [optional]   &nbsp;
+ **strike** | float| Filter options by strike price | [optional]   &nbsp;
+ **strike_greater_than** | float| Filter options by minimum strike price | [optional]   &nbsp;
+ **strike_less_than** | float| Filter options by maximum strike price | [optional]   &nbsp;
+ **page_size** | int| Number of results to return per page | [optional] [default to 250]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsGreeksByTickerRealtime**](ApiResponseOptionsGreeksByTickerRealtime.md)
 
 [//]: # (END_OPERATION)
 
@@ -2558,184 +2736,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsUnusualActivity**](ApiResponseOptionsUnusualActivity.md)
-
-[//]: # (END_OPERATION)
-
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:OptionsApi)
-
-[//]: # (METHOD:options_greeks_by_ticker_identifier_realtime_get)
-
-[//]: # (RETURN_TYPE:ApiResponseOptionsGreeksByTickerRealtime)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsGreeksByTickerRealtime.md)
-
-[//]: # (OPERATION:options_greeks_by_ticker_identifier_realtime_get_v2)
-
-[//]: # (ENDPOINT:/options/greeks/by_ticker/{identifier}/realtime)
-
-[//]: # (DOCUMENT_LINK:OptionsApi.md#options_greeks_by_ticker_identifier_realtime_get)
-
-## **options_greeks_by_ticker_identifier_realtime_get**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/options_greeks_by_ticker_identifier_realtime_get_v2)
-
-[//]: # (START_OVERVIEW)
-
-> ApiResponseOptionsGreeksByTickerRealtime options_greeks_by_ticker_identifier_realtime_get(identifier, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, page_size=page_size)
-
-#### Get realtime options greeks by ticker
-
-
-Retrieves realtime options greeks data for all contracts of a given ticker symbol
-
-[//]: # (END_OVERVIEW)
-
-### Example
-[//]: # (START_CODE_EXAMPLE)
-
-```python
-from __future__ import print_function
-import time
-import intrinio_sdk as intrinio
-from intrinio_sdk.rest import ApiException
-
-intrinio.ApiClient().set_api_key('YOUR_API_KEY')
-intrinio.ApiClient().allow_retries(True)
-
-identifier = 'identifier_example'
-source = 'source_example'
-model = 'black_scholes'
-iv_mode = 'iv_mode_example'
-stock_price_source = 'stock_price_source_example'
-expiration_start_date = '2013-10-20'
-expiration_end_date = '2013-10-20'
-strike = 3.4
-strike_greater_than = 3.4
-strike_less_than = 3.4
-page_size = 250
-
-response = intrinio.OptionsApi().options_greeks_by_ticker_identifier_realtime_get(identifier, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, page_size=page_size)
-print(response)
-    
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
-```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
-
-### Parameters
-
-[//]: # (START_PARAMETERS)
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identifier** | str| The ticker symbol to get options greeks for |   &nbsp;
- **source** | str| The data source to use for options data | [optional]   &nbsp;
- **model** | str| The options pricing model to use for greeks calculations | [optional] [default to black_scholes]  &nbsp;
- **iv_mode** | str| The implied volatility calculation mode | [optional]   &nbsp;
- **stock_price_source** | str| The data source to use for underlying stock prices | [optional]   &nbsp;
- **expiration_start_date** | date| Filter options by expiration date (start) | [optional]   &nbsp;
- **expiration_end_date** | date| Filter options by expiration date (end) | [optional]   &nbsp;
- **strike** | float| Filter options by strike price | [optional]   &nbsp;
- **strike_greater_than** | float| Filter options by minimum strike price | [optional]   &nbsp;
- **strike_less_than** | float| Filter options by maximum strike price | [optional]   &nbsp;
- **page_size** | int| Number of results to return per page | [optional] [default to 250]  &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
-
-### Return type
-
-[**ApiResponseOptionsGreeksByTickerRealtime**](ApiResponseOptionsGreeksByTickerRealtime.md)
-
-[//]: # (END_OPERATION)
-
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:OptionsApi)
-
-[//]: # (METHOD:options_greeks_contract_realtime_get)
-
-[//]: # (RETURN_TYPE:ApiResponseOptionsGreekContractRealtime)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsGreekContractRealtime.md)
-
-[//]: # (OPERATION:options_greeks_contract_realtime_get_v2)
-
-[//]: # (ENDPOINT:/options/greeks/{contract}/realtime)
-
-[//]: # (DOCUMENT_LINK:OptionsApi.md#options_greeks_contract_realtime_get)
-
-## **options_greeks_contract_realtime_get**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/options_greeks_contract_realtime_get_v2)
-
-[//]: # (START_OVERVIEW)
-
-> ApiResponseOptionsGreekContractRealtime options_greeks_contract_realtime_get(contract, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source)
-
-#### Get realtime options greeks for a specific contract
-
-
-Retrieves realtime options greeks data for a specific options contract
-
-[//]: # (END_OVERVIEW)
-
-### Example
-[//]: # (START_CODE_EXAMPLE)
-
-```python
-from __future__ import print_function
-import time
-import intrinio_sdk as intrinio
-from intrinio_sdk.rest import ApiException
-
-intrinio.ApiClient().set_api_key('YOUR_API_KEY')
-intrinio.ApiClient().allow_retries(True)
-
-contract = 'contract_example'
-source = 'source_example'
-model = 'black_scholes'
-iv_mode = 'iv_mode_example'
-stock_price_source = 'stock_price_source_example'
-
-response = intrinio.OptionsApi().options_greeks_contract_realtime_get(contract, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source)
-print(response)
-    
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
-```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
-
-### Parameters
-
-[//]: # (START_PARAMETERS)
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contract** | str| The options contract identifier |   &nbsp;
- **source** | str| The data source to use for options data | [optional]   &nbsp;
- **model** | str| The options pricing model to use for greeks calculations | [optional] [default to black_scholes]  &nbsp;
- **iv_mode** | str| The implied volatility calculation mode | [optional]   &nbsp;
- **stock_price_source** | str| The data source to use for underlying stock prices | [optional]   &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
-
-### Return type
-
-[**ApiResponseOptionsGreekContractRealtime**](ApiResponseOptionsGreekContractRealtime.md)
 
 [//]: # (END_OPERATION)
 
