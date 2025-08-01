@@ -34,7 +34,7 @@ class ETFHistoricalStats(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'messages': 'list[ERRORUNKNOWN]',
+        'messages': 'list[str]',
         'etf': 'ETFSummary',
         'stats': 'list[ETFStats]',
         'next_page': 'str'
@@ -72,7 +72,7 @@ class ETFHistoricalStats(object):
         A list of messages related to the request, such as warnings or errors.  # noqa: E501
 
         :return: The messages of this ETFHistoricalStats.  # noqa: E501
-        :rtype: list[ERRORUNKNOWN]
+        :rtype: list[str]
         """
         return self._messages
         
@@ -83,7 +83,7 @@ class ETFHistoricalStats(object):
         A list of messages related to the request, such as warnings or errors. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
         :return: The messages of this ETFHistoricalStats.  # noqa: E501
-        :rtype: list[ERRORUNKNOWN]
+        :rtype: list[str]
         """
 
         result = None
@@ -116,7 +116,7 @@ class ETFHistoricalStats(object):
         A list of messages related to the request, such as warnings or errors.  # noqa: E501
 
         :param messages: The messages of this ETFHistoricalStats.  # noqa: E501
-        :type: list[ERRORUNKNOWN]
+        :type: list[str]
         """
 
         self._messages = messages
