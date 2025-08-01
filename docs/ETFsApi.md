@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**get_all_etfs**](ETFsApi.md#get_all_etfs) | **GET** /etfs | All ETFs
 [**get_etf**](ETFsApi.md#get_etf) | **GET** /etfs/{identifier} | Lookup ETF
 [**get_etf_analytics**](ETFsApi.md#get_etf_analytics) | **GET** /etfs/{identifier}/analytics | ETF Analytics
+[**get_etf_historical_stats**](ETFsApi.md#get_etf_historical_stats) | **GET** /etfs/{identifier}/historical_stats | Exchange Traded Fund (ETF) stats
 [**get_etf_holdings**](ETFsApi.md#get_etf_holdings) | **GET** /etfs/{identifier}/holdings | ETF Holdings
 [**get_etf_stats**](ETFsApi.md#get_etf_stats) | **GET** /etfs/{identifier}/stats | Exchange Traded Fund (ETF) stats
 [**search_etfs**](ETFsApi.md#search_etfs) | **GET** /etfs/search | Search ETFs
@@ -238,6 +239,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ETFAnalytics**](ETFAnalytics.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:ETFsApi)
+
+[//]: # (METHOD:get_etf_historical_stats)
+
+[//]: # (RETURN_TYPE:ETFHistoricalStats)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ETFHistoricalStats.md)
+
+[//]: # (OPERATION:get_etf_historical_stats_v2)
+
+[//]: # (ENDPOINT:/etfs/{identifier}/historical_stats)
+
+[//]: # (DOCUMENT_LINK:ETFsApi.md#get_etf_historical_stats)
+
+## **get_etf_historical_stats**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_etf_historical_stats_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ETFHistoricalStats get_etf_historical_stats(identifier, start_date=start_date, end_date=end_date, page_size=page_size)
+
+#### Exchange Traded Fund (ETF) stats
+
+
+Returns comprehensive key US ETF historical performance statistics, including prices, NAVs, flows, returns, and much more for both trailing and calendar year periods.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'SPY'
+start_date = '2020-01-01'
+end_date = '2020-12-31'
+page_size = 100
+
+response = intrinio.ETFsApi().get_etf_historical_stats(identifier, start_date=start_date, end_date=end_date, page_size=page_size)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID) |   &nbsp;
+ **start_date** | date| The start date for the historical stats data in YYYY-MM-DD format. | [optional]   &nbsp;
+ **end_date** | date| The end date for the historical stats data in YYYY-MM-DD format. | [optional]   &nbsp;
+ **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ETFHistoricalStats**](ETFHistoricalStats.md)
 
 [//]: # (END_OPERATION)
 

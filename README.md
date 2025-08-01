@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.103.0
-- Package version: 6.39.0
+- API version: 2.107.0
+- Package version: 6.40.0
 
 
 ## Requirements.
@@ -134,6 +134,7 @@ Class | Method | HTTP request | Description
 *ETFsApi* | [**get_all_etfs**](docs/ETFsApi.md#get_all_etfs) | **GET** /etfs | All ETFs
 *ETFsApi* | [**get_etf**](docs/ETFsApi.md#get_etf) | **GET** /etfs/{identifier} | Lookup ETF
 *ETFsApi* | [**get_etf_analytics**](docs/ETFsApi.md#get_etf_analytics) | **GET** /etfs/{identifier}/analytics | ETF Analytics
+*ETFsApi* | [**get_etf_historical_stats**](docs/ETFsApi.md#get_etf_historical_stats) | **GET** /etfs/{identifier}/historical_stats | Exchange Traded Fund (ETF) stats
 *ETFsApi* | [**get_etf_holdings**](docs/ETFsApi.md#get_etf_holdings) | **GET** /etfs/{identifier}/holdings | ETF Holdings
 *ETFsApi* | [**get_etf_stats**](docs/ETFsApi.md#get_etf_stats) | **GET** /etfs/{identifier}/stats | Exchange Traded Fund (ETF) stats
 *ETFsApi* | [**search_etfs**](docs/ETFsApi.md#search_etfs) | **GET** /etfs/search | Search ETFs
@@ -276,6 +277,8 @@ Class | Method | HTTP request | Description
 *SecurityApi* | [**get_security_replay_file**](docs/SecurityApi.md#get_security_replay_file) | **GET** /securities/replay | Security Replay File
 *SecurityApi* | [**get_security_snapshots**](docs/SecurityApi.md#get_security_snapshots) | **GET** /securities/snapshots | Realtime Stock Prices Snapshot
 *SecurityApi* | [**get_security_stock_price_adjustments**](docs/SecurityApi.md#get_security_stock_price_adjustments) | **GET** /securities/{identifier}/prices/adjustments | Stock Price Adjustments by Security
+*SecurityApi* | [**get_security_stock_price_adjustments_dividends**](docs/SecurityApi.md#get_security_stock_price_adjustments_dividends) | **GET** /securities/{identifier}/prices/adjustments/dividends | Dividends by Security
+*SecurityApi* | [**get_security_stock_price_adjustments_splits**](docs/SecurityApi.md#get_security_stock_price_adjustments_splits) | **GET** /securities/{identifier}/prices/adjustments/splits | Splits by Security
 *SecurityApi* | [**get_security_stock_prices**](docs/SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Stock Prices by Security
 *SecurityApi* | [**get_security_trades**](docs/SecurityApi.md#get_security_trades) | **GET** /securities/trades | Security Trades
 *SecurityApi* | [**get_security_trades_by_symbol**](docs/SecurityApi.md#get_security_trades_by_symbol) | **GET** /securities/{identifier}/trades | Security Trades By Symbol
@@ -291,6 +294,8 @@ Class | Method | HTTP request | Description
 *StockExchangeApi* | [**get_stock_exchange_gainers**](docs/StockExchangeApi.md#get_stock_exchange_gainers) | **GET** /stock_exchanges/{identifier}/gainers | Top Gainers by Exchange
 *StockExchangeApi* | [**get_stock_exchange_losers**](docs/StockExchangeApi.md#get_stock_exchange_losers) | **GET** /stock_exchanges/{identifier}/losers | Top Losers by Exchange
 *StockExchangeApi* | [**get_stock_exchange_price_adjustments**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
+*StockExchangeApi* | [**get_stock_exchange_price_adjustments_dividends**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments_dividends) | **GET** /stock_exchanges/{identifier}/prices/adjustments/dividends | Dividends by date for exchange
+*StockExchangeApi* | [**get_stock_exchange_price_adjustments_splits**](docs/StockExchangeApi.md#get_stock_exchange_price_adjustments_splits) | **GET** /stock_exchanges/{identifier}/prices/adjustments/splits | Splits by date for exchange
 *StockExchangeApi* | [**get_stock_exchange_prices**](docs/StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
 *StockExchangeApi* | [**get_stock_exchange_quote**](docs/StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
 *StockExchangeApi* | [**get_stock_exchange_realtime_prices**](docs/StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
@@ -521,6 +526,7 @@ Class | Method | HTTP request | Description
  - [ESGRatingWithCompany](docs/ESGRatingWithCompany.md)
  - [ETF](docs/ETF.md)
  - [ETFAnalytics](docs/ETFAnalytics.md)
+ - [ETFHistoricalStats](docs/ETFHistoricalStats.md)
  - [ETFHolding](docs/ETFHolding.md)
  - [ETFStats](docs/ETFStats.md)
  - [ETFSummary](docs/ETFSummary.md)

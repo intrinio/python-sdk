@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**get_stock_exchange_gainers**](StockExchangeApi.md#get_stock_exchange_gainers) | **GET** /stock_exchanges/{identifier}/gainers | Top Gainers by Exchange
 [**get_stock_exchange_losers**](StockExchangeApi.md#get_stock_exchange_losers) | **GET** /stock_exchanges/{identifier}/losers | Top Losers by Exchange
 [**get_stock_exchange_price_adjustments**](StockExchangeApi.md#get_stock_exchange_price_adjustments) | **GET** /stock_exchanges/{identifier}/prices/adjustments | Stock Price Adjustments by Exchange
+[**get_stock_exchange_price_adjustments_dividends**](StockExchangeApi.md#get_stock_exchange_price_adjustments_dividends) | **GET** /stock_exchanges/{identifier}/prices/adjustments/dividends | Dividends by date for exchange
+[**get_stock_exchange_price_adjustments_splits**](StockExchangeApi.md#get_stock_exchange_price_adjustments_splits) | **GET** /stock_exchanges/{identifier}/prices/adjustments/splits | Splits by date for exchange
 [**get_stock_exchange_prices**](StockExchangeApi.md#get_stock_exchange_prices) | **GET** /stock_exchanges/{identifier}/prices | Stock Prices by Exchange
 [**get_stock_exchange_quote**](StockExchangeApi.md#get_stock_exchange_quote) | **GET** /stock_exchanges/{identifier}/quote | Realtime Quote Prices by Exchange
 [**get_stock_exchange_realtime_prices**](StockExchangeApi.md#get_stock_exchange_realtime_prices) | **GET** /stock_exchanges/{identifier}/prices/realtime | Realtime Stock Prices by Exchange
@@ -486,6 +488,168 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
  **date** | date| The date for which to return price adjustments | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseStockExchangeStockPriceAdjustments**](ApiResponseStockExchangeStockPriceAdjustments.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:StockExchangeApi)
+
+[//]: # (METHOD:get_stock_exchange_price_adjustments_dividends)
+
+[//]: # (RETURN_TYPE:ApiResponseStockExchangeStockPriceAdjustments)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseStockExchangeStockPriceAdjustments.md)
+
+[//]: # (OPERATION:get_stock_exchange_price_adjustments_dividends_v2)
+
+[//]: # (ENDPOINT:/stock_exchanges/{identifier}/prices/adjustments/dividends)
+
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_price_adjustments_dividends)
+
+## **get_stock_exchange_price_adjustments_dividends**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_exchange_price_adjustments_dividends_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseStockExchangeStockPriceAdjustments get_stock_exchange_price_adjustments_dividends(identifier, date=date, page_size=page_size, next_page=next_page)
+
+#### Dividends by date for exchange
+
+
+Returns dividend adjustments for the Stock Exchange with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'USCOMP'
+date = '2025-06-01'
+page_size = 100
+next_page = ''
+
+response = intrinio.StockExchangeApi().get_stock_exchange_price_adjustments_dividends(identifier, date=date, page_size=page_size, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
+ **date** | date| The date for which to return dividends | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseStockExchangeStockPriceAdjustments**](ApiResponseStockExchangeStockPriceAdjustments.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:StockExchangeApi)
+
+[//]: # (METHOD:get_stock_exchange_price_adjustments_splits)
+
+[//]: # (RETURN_TYPE:ApiResponseStockExchangeStockPriceAdjustments)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseStockExchangeStockPriceAdjustments.md)
+
+[//]: # (OPERATION:get_stock_exchange_price_adjustments_splits_v2)
+
+[//]: # (ENDPOINT:/stock_exchanges/{identifier}/prices/adjustments/splits)
+
+[//]: # (DOCUMENT_LINK:StockExchangeApi.md#get_stock_exchange_price_adjustments_splits)
+
+## **get_stock_exchange_price_adjustments_splits**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_stock_exchange_price_adjustments_splits_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseStockExchangeStockPriceAdjustments get_stock_exchange_price_adjustments_splits(identifier, date=date, page_size=page_size, next_page=next_page)
+
+#### Splits by date for exchange
+
+
+Returns split adjustments for the Stock Exchange with the given `identifier`
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'USCOMP'
+date = '2025-06-01'
+page_size = 100
+next_page = ''
+
+response = intrinio.StockExchangeApi().get_stock_exchange_price_adjustments_splits(identifier, date=date, page_size=page_size, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Stock Exchange identifier (MIC or Intrinio ID) |   &nbsp;
+ **date** | date| The date for which to return splits | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>

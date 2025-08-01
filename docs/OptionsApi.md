@@ -920,7 +920,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChainRealtime get_options_chain_realtime(symbol, expiration, source=source, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, volume_greater_than=volume_greater_than, volume_less_than=volume_less_than, open_interest_greater_than=open_interest_greater_than, open_interest_less_than=open_interest_less_than, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols)
+> ApiResponseOptionsChainRealtime get_options_chain_realtime(symbol, expiration, source=source, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, volume_greater_than=volume_greater_than, volume_less_than=volume_less_than, open_interest_greater_than=open_interest_greater_than, open_interest_less_than=open_interest_less_than, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols, show_stats=show_stats)
 
 #### Options Chain Realtime
 
@@ -950,8 +950,9 @@ stock_price_source = ''
 model = ''
 show_extended_price = ''
 include_related_symbols = False
+show_stats = ''
 
-response = intrinio.OptionsApi().get_options_chain_realtime(symbol, expiration, source=source, type=type, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols)
+response = intrinio.OptionsApi().get_options_chain_realtime(symbol, expiration, source=source, type=type, moneyness=moneyness, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, include_related_symbols=include_related_symbols, show_stats=show_stats)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -983,6 +984,7 @@ Name | Type | Description  | Notes
  **model** | str| Model for calculating Greek values. Default is black_scholes. | [optional]   &nbsp;
  **show_extended_price** | bool| Whether to include open close high low type fields. | [optional]   &nbsp;
  **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
+ **show_stats** | bool| Whether to include Greek calculations or not. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -1261,7 +1263,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsGreeksByTickerRealtime get_options_greeks_by_ticker(identifier, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, page_size=page_size)
+> ApiResponseOptionsGreeksByTickerRealtime get_options_greeks_by_ticker(identifier, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, page_size=page_size, next_page=next_page)
 
 #### Options Realtime Greeks & Derived Price by Ticker
 
@@ -1293,8 +1295,9 @@ strike = 3.4
 strike_greater_than = 3.4
 strike_less_than = 3.4
 page_size = 250
+next_page = ''
 
-response = intrinio.OptionsApi().get_options_greeks_by_ticker(identifier, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, page_size=page_size)
+response = intrinio.OptionsApi().get_options_greeks_by_ticker(identifier, source=source, model=model, iv_mode=iv_mode, stock_price_source=stock_price_source, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -1321,6 +1324,7 @@ Name | Type | Description  | Notes
  **strike_greater_than** | float| Filter options by minimum strike price | [optional]   &nbsp;
  **strike_less_than** | float| Filter options by maximum strike price | [optional]   &nbsp;
  **page_size** | int| Number of results to return per page | [optional] [default to 250]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -2175,7 +2179,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPricesByTickerRealtime get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike)
+> ApiResponseOptionsPricesByTickerRealtime get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, show_stats=show_stats, next_page2=next_page2)
 
 #### Option Prices Realtime By Ticker
 
@@ -2207,8 +2211,10 @@ show_extended_price = ''
 expiration_start_date = "2024-01-01"
 expiration_end_date = "2024-02-02"
 strike = 100.0
+show_stats = ''
+next_page2 = ''
 
-response = intrinio.OptionsApi().get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike)
+response = intrinio.OptionsApi().get_options_prices_realtime_by_ticker(symbol, source=source, iv_mode=iv_mode, next_page=next_page, page_size=page_size, stock_price_source=stock_price_source, model=model, show_extended_price=show_extended_price, expiration_start_date=expiration_start_date, expiration_end_date=expiration_end_date, strike=strike, show_stats=show_stats, next_page2=next_page2)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -2235,6 +2241,8 @@ Name | Type | Description  | Notes
  **expiration_start_date** | [**object**](.md)| Filter out contracts that expire before this date. | [optional]   &nbsp;
  **expiration_end_date** | [**object**](.md)| Filter out contracts that expire after this date. | [optional]   &nbsp;
  **strike** | float| Filter out contracts that have this strike price. | [optional]   &nbsp;
+ **show_stats** | bool| Whether to include Greek calculations or not. | [optional]   &nbsp;
+ **next_page2** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

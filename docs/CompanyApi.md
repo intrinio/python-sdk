@@ -1199,7 +1199,7 @@ Name | Type | Description  | Notes
 #### News Article Body
 
 
-Returns the body of a news article.  This endpoint requires additional authorization beyond basic news access. Please see a representative for details.
+Returns the body of a news article for moody sources.  This endpoint requires additional authorization beyond basic news access and is for your internal use only - no display. Please see a representative for details.
 
 [//]: # (END_OVERVIEW)
 

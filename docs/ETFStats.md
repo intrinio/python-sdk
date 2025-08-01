@@ -42,7 +42,7 @@ Name | Type | Description
 **calendar_year_1_return_split_only** | float | One year ago calendar year return excluding dividends &nbsp;
 **calendar_year_to_date_return_split_and_dividend** | float | Calendar year to date (YTD) return including dividends &nbsp;
 **calendar_year_to_date_return_split_only** | float | Calendar year to date (YTD) return excluding dividends &nbsp;
-**etf** | [**ETFSummary**](ETFSummary.md) |  &nbsp;
+**etf** | [**ETFSummary**](ETFSummary.md) | A brief summary of the ETF to which these stats refer.  Not included when part of historical stats. &nbsp;
 
 [//]: # (END_DEFINITION)
 
