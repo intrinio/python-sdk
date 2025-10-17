@@ -18,7 +18,9 @@ Name | Type | Description
 **url** | str | The url of the news article &nbsp;
 **summary** | str | A summary of the news article &nbsp;
 **source** | str | The news source. &nbsp;
-**company** | [**CompanySummary**](CompanySummary.md) | The Company to which the new article pertains &nbsp;
+**company** | [**CompanySummary**](CompanySummary.md) | The Company to which the new article pertains. &nbsp;
+**companies** | [**list[CompanySummary]**](CompanySummary.md) | The Companies to which the new article pertains &nbsp;
+**securities** | [**list[SecuritySummary]**](SecuritySummary.md) | The Securities to which the new article pertains &nbsp;
 **topics** | [**list[NewsTopic]**](NewsTopic.md) |  &nbsp;
 **copyright** | str | The copyright of the news article &nbsp;
 **language** | str | The language code of the news article &nbsp;
@@ -27,6 +29,10 @@ Name | Type | Description
 **business_relevance** | float | How strongly correlated the news article is to the business &nbsp;
 **article_sentiment** | str | The news sentiment. &nbsp;
 **article_sentiment_confidence** | float | The confidence score of the sentiment rating &nbsp;
+**issuer** | str | The issuer of the story. &nbsp;
+**issuer_name** | str | The issuer of the story. &nbsp;
+**issuer_company** | [**CompanySummary**](CompanySummary.md) | The company that issued the story. &nbsp;
+**issuer_security** | [**SecuritySummary**](SecuritySummary.md) | The security that issued the story. &nbsp;
 
 [//]: # (END_DEFINITION)
 
@@ -34,7 +40,19 @@ Name | Type | Description
 [//]: # (CONTAINED_CLASS:CompanySummary)
 
 
+[//]: # (CONTAINED_CLASS:CompanySummary)
+
+
+[//]: # (CONTAINED_CLASS:SecuritySummary)
+
+
 [//]: # (CONTAINED_CLASS:NewsTopic)
+
+
+[//]: # (CONTAINED_CLASS:CompanySummary)
+
+
+[//]: # (CONTAINED_CLASS:SecuritySummary)
 
 
 
