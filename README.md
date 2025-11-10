@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.108.0
-- Package version: 6.41.0
+- API version: 2.112.0
+- Package version: 6.42.0
 
 
 ## Requirements.
@@ -228,6 +228,8 @@ Class | Method | HTTP request | Description
 *OwnersApi* | [**institutional_holdings_by_owner**](docs/OwnersApi.md#institutional_holdings_by_owner) | **GET** /owners/{identifier}/institutional_holdings | Institutional Holdings by Owner
 *OwnersApi* | [**search_owners**](docs/OwnersApi.md#search_owners) | **GET** /owners/search | Search Owners
 *SecurityApi* | [**get_all_securities**](docs/SecurityApi.md#get_all_securities) | **GET** /securities | All Securities
+*SecurityApi* | [**get_securities_latest_dividend_records**](docs/SecurityApi.md#get_securities_latest_dividend_records) | **GET** /securities/dividends/latest | Latest Dividend Records for All Securities
+*SecurityApi* | [**get_securities_latest_earnings_records**](docs/SecurityApi.md#get_securities_latest_earnings_records) | **GET** /securities/earnings/latest | Latest Earnings Records for All Securities
 *SecurityApi* | [**get_securities_short_interest**](docs/SecurityApi.md#get_securities_short_interest) | **GET** /securities/short_interest | Latest Short Interest
 *SecurityApi* | [**get_security_by_id**](docs/SecurityApi.md#get_security_by_id) | **GET** /securities/{identifier} | Lookup Security
 *SecurityApi* | [**get_security_data_point_number**](docs/SecurityApi.md#get_security_data_point_number) | **GET** /securities/{identifier}/data_point/{tag}/number | Data Point (Number) for Security
@@ -428,6 +430,8 @@ Class | Method | HTTP request | Description
  - [ApiResponseSICIndices](docs/ApiResponseSICIndices.md)
  - [ApiResponseSICIndicesSearch](docs/ApiResponseSICIndicesSearch.md)
  - [ApiResponseSecurities](docs/ApiResponseSecurities.md)
+ - [ApiResponseSecuritiesDividendLatest](docs/ApiResponseSecuritiesDividendLatest.md)
+ - [ApiResponseSecuritiesEarningsLatest](docs/ApiResponseSecuritiesEarningsLatest.md)
  - [ApiResponseSecuritiesSearch](docs/ApiResponseSecuritiesSearch.md)
  - [ApiResponseSecuritiesShortInterest](docs/ApiResponseSecuritiesShortInterest.md)
  - [ApiResponseSecurityAccumulationDistributionIndex](docs/ApiResponseSecurityAccumulationDistributionIndex.md)
