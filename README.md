@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.112.0
-- Package version: 6.42.0
+- API version: 2.115.0
+- Package version: 6.43.0
 
 
 ## Requirements.
@@ -99,6 +99,8 @@ A listing of classes and methods is also provided below:
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BulkDownloadsApi* | [**get_bulk_download_links**](docs/BulkDownloadsApi.md#get_bulk_download_links) | **GET** /bulk_downloads/links | All Links
+*CompanyApi* | [**all_expected_earnings_dates**](docs/CompanyApi.md#all_expected_earnings_dates) | **GET** /companies/upcoming_earnings | All Expected Earnings Dates
+*CompanyApi* | [**expected_earnings_dates_by_company**](docs/CompanyApi.md#expected_earnings_dates_by_company) | **GET** /companies/{identifier}/upcoming_earnings | Expected Earnings Dates by Company
 *CompanyApi* | [**get_all_companies**](docs/CompanyApi.md#get_all_companies) | **GET** /companies | All Companies
 *CompanyApi* | [**get_all_companies_daily_metrics**](docs/CompanyApi.md#get_all_companies_daily_metrics) | **GET** /companies/daily_metrics | All Companies daily metrics
 *CompanyApi* | [**get_all_company_news**](docs/CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
@@ -134,9 +136,12 @@ Class | Method | HTTP request | Description
 *ETFsApi* | [**get_all_etfs**](docs/ETFsApi.md#get_all_etfs) | **GET** /etfs | All ETFs
 *ETFsApi* | [**get_etf**](docs/ETFsApi.md#get_etf) | **GET** /etfs/{identifier} | Lookup ETF
 *ETFsApi* | [**get_etf_analytics**](docs/ETFsApi.md#get_etf_analytics) | **GET** /etfs/{identifier}/analytics | ETF Analytics
+*ETFsApi* | [**get_etf_historical_nav_flows**](docs/ETFsApi.md#get_etf_historical_nav_flows) | **GET** /etfs/{identifier}/nav_flows/historical | Exchange Traded Fund (ETF) Historical NAV Flows
 *ETFsApi* | [**get_etf_historical_stats**](docs/ETFsApi.md#get_etf_historical_stats) | **GET** /etfs/{identifier}/historical_stats | Exchange Traded Fund (ETF) Historical Stats
 *ETFsApi* | [**get_etf_holdings**](docs/ETFsApi.md#get_etf_holdings) | **GET** /etfs/{identifier}/holdings | ETF Holdings
+*ETFsApi* | [**get_etf_nav_flows**](docs/ETFsApi.md#get_etf_nav_flows) | **GET** /etfs/{identifier}/nav_flows | Exchange Traded Fund (ETF) NAV Flows
 *ETFsApi* | [**get_etf_stats**](docs/ETFsApi.md#get_etf_stats) | **GET** /etfs/{identifier}/stats | Exchange Traded Fund (ETF) Stats
+*ETFsApi* | [**get_etfs_nav_flows**](docs/ETFsApi.md#get_etfs_nav_flows) | **GET** /etfs/nav_flows | Exchange Traded Funds (ETFs) Latest NAV Flows
 *ETFsApi* | [**search_etfs**](docs/ETFsApi.md#search_etfs) | **GET** /etfs/search | Search ETFs
 *FilingApi* | [**get_all_filings**](docs/FilingApi.md#get_all_filings) | **GET** /filings | All Filings
 *FilingApi* | [**get_all_notes**](docs/FilingApi.md#get_all_notes) | **GET** /filings/notes | All Filing Notes
@@ -355,11 +360,13 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccumulationDistributionIndexTechnicalValue](docs/AccumulationDistributionIndexTechnicalValue.md)
+ - [ApiResponseAllExpectedEarningsDates](docs/ApiResponseAllExpectedEarningsDates.md)
  - [ApiResponseBulkDownloadLinks](docs/ApiResponseBulkDownloadLinks.md)
  - [ApiResponseCompanies](docs/ApiResponseCompanies.md)
  - [ApiResponseCompaniesSearch](docs/ApiResponseCompaniesSearch.md)
  - [ApiResponseCompanyAnswers](docs/ApiResponseCompanyAnswers.md)
  - [ApiResponseCompanyDailyMetrics](docs/ApiResponseCompanyDailyMetrics.md)
+ - [ApiResponseCompanyExpectedEarningsDates](docs/ApiResponseCompanyExpectedEarningsDates.md)
  - [ApiResponseCompanyFilings](docs/ApiResponseCompanyFilings.md)
  - [ApiResponseCompanyFundamentals](docs/ApiResponseCompanyFundamentals.md)
  - [ApiResponseCompanyHistoricalData](docs/ApiResponseCompanyHistoricalData.md)
@@ -536,8 +543,13 @@ Class | Method | HTTP request | Description
  - [ETFAnalytics](docs/ETFAnalytics.md)
  - [ETFHistoricalStats](docs/ETFHistoricalStats.md)
  - [ETFHolding](docs/ETFHolding.md)
+ - [ETFNavFlow](docs/ETFNavFlow.md)
+ - [ETFNavFlowsAll](docs/ETFNavFlowsAll.md)
+ - [ETFNavFlowsHistorical](docs/ETFNavFlowsHistorical.md)
  - [ETFStats](docs/ETFStats.md)
  - [ETFSummary](docs/ETFSummary.md)
+ - [EarningsDateEstimate](docs/EarningsDateEstimate.md)
+ - [EarningsDateEstimateConfidenceIntervals](docs/EarningsDateEstimateConfidenceIntervals.md)
  - [EarningsRecord](docs/EarningsRecord.md)
  - [EaseOfMovementTechnicalValue](docs/EaseOfMovementTechnicalValue.md)
  - [EconomicIndex](docs/EconomicIndex.md)
@@ -673,4 +685,6 @@ Class | Method | HTTP request | Description
  - [ZacksSalesSurprise](docs/ZacksSalesSurprise.md)
  - [ZacksSalesSurpriseSummary](docs/ZacksSalesSurpriseSummary.md)
  - [ZacksTargetPriceConsensus](docs/ZacksTargetPriceConsensus.md)
+ - [ETFNavFlows](docs/ETFNavFlows.md)
+ - [EarningsDateEstimateWithCompany](docs/EarningsDateEstimateWithCompany.md)
 

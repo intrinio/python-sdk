@@ -4,6 +4,8 @@ All URIs are relative to *https://api-v2.intrinio.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**all_expected_earnings_dates**](CompanyApi.md#all_expected_earnings_dates) | **GET** /companies/upcoming_earnings | All Expected Earnings Dates
+[**expected_earnings_dates_by_company**](CompanyApi.md#expected_earnings_dates_by_company) | **GET** /companies/{identifier}/upcoming_earnings | Expected Earnings Dates by Company
 [**get_all_companies**](CompanyApi.md#get_all_companies) | **GET** /companies | All Companies
 [**get_all_companies_daily_metrics**](CompanyApi.md#get_all_companies_daily_metrics) | **GET** /companies/daily_metrics | All Companies daily metrics
 [**get_all_company_news**](CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
@@ -27,6 +29,180 @@ Method | HTTP request | Description
 [**search_companies**](CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
 [**shares_outstanding_by_company**](CompanyApi.md#shares_outstanding_by_company) | **GET** /companies/{identifier}/shares_outstanding | Shares Outstanding by Company
 
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:all_expected_earnings_dates)
+
+[//]: # (RETURN_TYPE:ApiResponseAllExpectedEarningsDates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseAllExpectedEarningsDates.md)
+
+[//]: # (OPERATION:all_expected_earnings_dates_v2)
+
+[//]: # (ENDPOINT:/companies/upcoming_earnings)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#all_expected_earnings_dates)
+
+## **all_expected_earnings_dates**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/all_expected_earnings_dates_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseAllExpectedEarningsDates all_expected_earnings_dates(tickers=tickers, fiscal_year=fiscal_year, fiscal_period=fiscal_period, expected_date_after=expected_date_after, expected_date_before=expected_date_before, page_size=page_size, next_page=next_page)
+
+#### All Expected Earnings Dates
+
+
+Returns expected earnings announcement dates for all companies, optionally filtered by tickers. Results are always sorted by expected date ascending and include company identification.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+tickers = ''
+fiscal_year = ''
+fiscal_period = ''
+expected_date_after = 'today'
+expected_date_before = ''
+page_size = 100
+next_page = ''
+
+response = intrinio.CompanyApi().all_expected_earnings_dates(tickers=tickers, fiscal_year=fiscal_year, fiscal_period=fiscal_period, expected_date_after=expected_date_after, expected_date_before=expected_date_before, page_size=page_size, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tickers** | str| Comma-delimited list of tickers to filter results | [optional]   &nbsp;
+ **fiscal_year** | int| Filter by fiscal year | [optional]   &nbsp;
+ **fiscal_period** | str| Filter by fiscal period (Q1, Q2, Q3, FY) | [optional]   &nbsp;
+ **expected_date_after** | date| Returns expected dates on or after this date. Defaults to today if not provided. | [optional] [default to today]  &nbsp;
+ **expected_date_before** | date| Returns expected dates before this date. | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseAllExpectedEarningsDates**](ApiResponseAllExpectedEarningsDates.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:CompanyApi)
+
+[//]: # (METHOD:expected_earnings_dates_by_company)
+
+[//]: # (RETURN_TYPE:ApiResponseCompanyExpectedEarningsDates)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyExpectedEarningsDates.md)
+
+[//]: # (OPERATION:expected_earnings_dates_by_company_v2)
+
+[//]: # (ENDPOINT:/companies/{identifier}/upcoming_earnings)
+
+[//]: # (DOCUMENT_LINK:CompanyApi.md#expected_earnings_dates_by_company)
+
+## **expected_earnings_dates_by_company**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/expected_earnings_dates_by_company_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseCompanyExpectedEarningsDates expected_earnings_dates_by_company(identifier, fiscal_year=fiscal_year, fiscal_period=fiscal_period, expected_date_after=expected_date_after, expected_date_before=expected_date_before, page_size=page_size, next_page=next_page)
+
+#### Expected Earnings Dates by Company
+
+
+Returns expected earnings announcement dates for a company's fiscal periods with confidence intervals and historical filing date ranges.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL'
+fiscal_year = ''
+fiscal_period = ''
+expected_date_after = 'today'
+expected_date_before = ''
+page_size = 100
+next_page = ''
+
+response = intrinio.CompanyApi().expected_earnings_dates_by_company(identifier, fiscal_year=fiscal_year, fiscal_period=fiscal_period, expected_date_after=expected_date_after, expected_date_before=expected_date_before, page_size=page_size, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
+ **fiscal_year** | int| Filter by fiscal year | [optional]   &nbsp;
+ **fiscal_period** | str| Filter by fiscal period (Q1, Q2, Q3, FY) | [optional]   &nbsp;
+ **expected_date_after** | date| Returns expected dates on or after this date. Defaults to today if not provided. | [optional] [default to today]  &nbsp;
+ **expected_date_before** | date| Returns expected dates before this date. | [optional]   &nbsp;
+ **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseCompanyExpectedEarningsDates**](ApiResponseCompanyExpectedEarningsDates.md)
+
+[//]: # (END_OPERATION)
 
 
 [//]: # (START_OPERATION)
@@ -588,8 +764,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'marketcap'
+identifier = '$$v2_company_data_point_identifier_default$$'
+tag = '$$v2_company_data_point_item_number_default$$'
 
 response = intrinio.CompanyApi().get_company_data_point_number(identifier, tag)
 print(response)
@@ -607,8 +783,8 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **identifier** | str| $$v2_company_data_point_identifier_description$$ |   &nbsp;
+ **tag** | str| $$v2_company_data_point_item_description$$ |   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -665,8 +841,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'ceo'
+identifier = '$$v2_company_data_point_identifier_default$$'
+tag = '$$v2_company_data_point_item_text_default$$'
 
 response = intrinio.CompanyApi().get_company_data_point_text(identifier, tag)
 print(response)
@@ -684,8 +860,8 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **identifier** | str| $$v2_company_data_point_identifier_description$$ |   &nbsp;
+ **tag** | str| $$v2_company_data_point_item_description$$ |   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -916,7 +1092,7 @@ Name | Type | Description  | Notes
 #### Historical Data for Company
 
 
-Returns historical values for the given `tag` and the Company with the given `identifier`
+$$v2_company_historical_data_description$$
 
 [//]: # (END_OVERVIEW)
 
@@ -932,8 +1108,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'marketcap'
+identifier = '$$v2_company_historical_data_identifier_default$$'
+tag = '$$v2_company_historical_data_item_default$$'
 frequency = 'daily'
 type = ''
 start_date = '2018-01-01'
@@ -958,8 +1134,8 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **identifier** | str| $$v2_company_historical_data_identifier_description$$ |   &nbsp;
+ **tag** | str| $$v2_company_historical_data_item_description$$ |   &nbsp;
  **frequency** | str| Return historical data in the given frequency | [optional] [default to daily]  &nbsp;
  **type** | str| Return historical data for given fiscal period type | [optional]   &nbsp;
  **start_date** | date| Return historical data on or after this date | [optional]   &nbsp;

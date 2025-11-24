@@ -38,7 +38,7 @@ Method | HTTP request | Description
 #### Data Point (Number)
 
 
-Returns a numeric value for the given `tag` and the entity with the given `identifier`
+$$v2_data_point_number_description$$
 
 [//]: # (END_OVERVIEW)
 
@@ -54,8 +54,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'marketcap'
+identifier = '$$v2_data_point_identifier_default$$'
+tag = '$$v2_data_point_item_number_default$$'
 
 response = intrinio.DataPointApi().get_data_point_number(identifier, tag)
 print(response)
@@ -73,8 +73,8 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) |   &nbsp;
- **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **identifier** | str| $$v2_data_point_identifier_description$$ |   &nbsp;
+ **tag** | str| $$v2_data_point_item_description$$ |   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 #### Data Point (Text)
 
 
-Returns a text value for the given `tag` for the Security with the given `identifier`
+$$v2_data_point_text_description$$
 
 [//]: # (END_OVERVIEW)
 
@@ -131,8 +131,8 @@ from intrinio_sdk.rest import ApiException
 intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
-identifier = 'AAPL'
-tag = 'ceo'
+identifier = '$$v2_data_point_identifier_default$$'
+tag = '$$v2_data_point_item_text_default$$'
 
 response = intrinio.DataPointApi().get_data_point_text(identifier, tag)
 print(response)
@@ -150,8 +150,8 @@ print(response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | str| An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID) |   &nbsp;
- **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
+ **identifier** | str| $$v2_data_point_identifier_description$$ |   &nbsp;
+ **tag** | str| $$v2_data_point_item_description$$ |   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
