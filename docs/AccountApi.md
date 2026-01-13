@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 [//]: # (METHOD:get_account_current_usage)
 
-[//]: # (RETURN_TYPE:ApiResponseAccountCurrentUsages)
+[//]: # (RETURN_TYPE:ApiResponseAccountUsages)
 
 [//]: # (RETURN_TYPE_KIND:object)
 
-[//]: # (RETURN_TYPE_DOC:ApiResponseAccountCurrentUsages.md)
+[//]: # (RETURN_TYPE_DOC:ApiResponseAccountUsages.md)
 
 [//]: # (OPERATION:get_account_current_usage_v2)
 
@@ -32,7 +32,7 @@ Method | HTTP request | Description
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseAccountCurrentUsages get_account_current_usage()
+> ApiResponseAccountUsages get_account_current_usage()
 
 #### Account Current Usage
 
@@ -74,7 +74,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApiResponseAccountCurrentUsages**](ApiResponseAccountCurrentUsages.md)
+[**ApiResponseAccountUsages**](ApiResponseAccountUsages.md)
 
 [//]: # (END_OPERATION)
 

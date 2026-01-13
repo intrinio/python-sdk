@@ -43,7 +43,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :return: ApiResponseAccountCurrentUsages
+        :return: ApiResponseAccountUsages
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -64,7 +64,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :return: ApiResponseAccountCurrentUsages
+        :return: ApiResponseAccountUsages
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -112,7 +112,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ApiResponseAccountCurrentUsages',  # noqa: E501
+            response_type='ApiResponseAccountUsages',  # noqa: E501
             auth_settings=auth_settings,
             _async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

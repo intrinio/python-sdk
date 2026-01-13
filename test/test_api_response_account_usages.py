@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import intrinio_sdk
-from intrinio_sdk.models.api_response_account_current_usages import ApiResponseAccountCurrentUsages  # noqa: E501
+from intrinio_sdk.models.api_response_account_usages import ApiResponseAccountUsages  # noqa: E501
 from intrinio_sdk.rest import ApiException
 
 
-class TestApiResponseAccountCurrentUsages(unittest.TestCase):
-    """ApiResponseAccountCurrentUsages unit test stubs"""
+class TestApiResponseAccountUsages(unittest.TestCase):
+    """ApiResponseAccountUsages unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestApiResponseAccountCurrentUsages(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testApiResponseAccountCurrentUsages(self):
-        """Test ApiResponseAccountCurrentUsages"""
+    def testApiResponseAccountUsages(self):
+        """Test ApiResponseAccountUsages"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = intrinio_sdk.models.api_response_account_current_usages.ApiResponseAccountCurrentUsages()  # noqa: E501
+        # model = intrinio_sdk.models.api_response_account_usages.ApiResponseAccountUsages()  # noqa: E501
         pass
 
 

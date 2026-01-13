@@ -362,8 +362,8 @@ Class | Method | HTTP request | Description
 
  - [AccountCurrentUsage](docs/AccountCurrentUsage.md)
  - [AccumulationDistributionIndexTechnicalValue](docs/AccumulationDistributionIndexTechnicalValue.md)
- - [ApiResponseAccountCurrentUsages](docs/ApiResponseAccountCurrentUsages.md)
- - [ApiResponseAccountCurrentUsagesAccount](docs/ApiResponseAccountCurrentUsagesAccount.md)
+ - [ApiResponseAccountUsages](docs/ApiResponseAccountUsages.md)
+ - [ApiResponseAccountUsagesAccount](docs/ApiResponseAccountUsagesAccount.md)
  - [ApiResponseAllExpectedEarningsDates](docs/ApiResponseAllExpectedEarningsDates.md)
  - [ApiResponseBulkDownloadLinks](docs/ApiResponseBulkDownloadLinks.md)
  - [ApiResponseCompanies](docs/ApiResponseCompanies.md)
