@@ -12,6 +12,8 @@
 
 Name | Type | Description
 ------------ | ------------- | -------------
+**company_id** | str | The Intrinio ID for the company &nbsp;
+**ticker** | str | The ticker symbol of the company &nbsp;
 **fiscal_year** | int | The fiscal year for the earnings report &nbsp;
 **fiscal_period** | str | The fiscal period for the earnings report (Q1, Q2, Q3, Q4, or FY) &nbsp;
 **expected_date** | date | The expected date of the earnings announcement &nbsp;
@@ -19,8 +21,6 @@ Name | Type | Description
 **historically_earliest** | str | The earliest date (MM-DD format) this company has historically announced earnings for this fiscal period &nbsp;
 **historically_latest** | str | The latest date (MM-DD format) this company has historically announced earnings for this fiscal period &nbsp;
 **confidence_intervals** | [**dict(str, EarningsDateEstimateConfidenceIntervals)**](EarningsDateEstimateConfidenceIntervals.md) | Confidence intervals for the expected date, sorted by confidence level (descending) &nbsp;
-**company_id** | str | The Intrinio ID for the company &nbsp;
-**ticker** | str | The ticker symbol of the company &nbsp;
 
 [//]: # (END_DEFINITION)
 

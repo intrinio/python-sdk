@@ -64,6 +64,7 @@ class ApiResponseCompanyExpectedEarningsDates(object):
     def expected_earnings_dates(self):
         """Gets the expected_earnings_dates of this ApiResponseCompanyExpectedEarningsDates.  # noqa: E501
 
+        Expected earnings dates.  # noqa: E501
 
         :return: The expected_earnings_dates of this ApiResponseCompanyExpectedEarningsDates.  # noqa: E501
         :rtype: list[EarningsDateEstimate]
@@ -74,6 +75,7 @@ class ApiResponseCompanyExpectedEarningsDates(object):
     def expected_earnings_dates_dict(self):
         """Gets the expected_earnings_dates of this ApiResponseCompanyExpectedEarningsDates.  # noqa: E501
 
+        Expected earnings dates. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
         :return: The expected_earnings_dates of this ApiResponseCompanyExpectedEarningsDates.  # noqa: E501
         :rtype: list[EarningsDateEstimate]
@@ -106,6 +108,7 @@ class ApiResponseCompanyExpectedEarningsDates(object):
     def expected_earnings_dates(self, expected_earnings_dates):
         """Sets the expected_earnings_dates of this ApiResponseCompanyExpectedEarningsDates.
 
+        Expected earnings dates.  # noqa: E501
 
         :param expected_earnings_dates: The expected_earnings_dates of this ApiResponseCompanyExpectedEarningsDates.  # noqa: E501
         :type: list[EarningsDateEstimate]
