@@ -605,15 +605,15 @@ class SecurityApi(object):
     def get_security_data_point_number(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Number) for Security  # noqa: E501
 
-        $$v2_security_data_point_number_description$$  # noqa: E501
+        Returns a numeric value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_data_point_number(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_data_point_identifier_description$$ (required)
-        :param str tag: $$v2_security_data_point_item_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: float
                  If the method is called asynchronously,
                  returns the request thread.
@@ -628,15 +628,15 @@ class SecurityApi(object):
     def get_security_data_point_number_with_http_info(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Number) for Security  # noqa: E501
 
-        $$v2_security_data_point_number_description$$  # noqa: E501
+        Returns a numeric value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_data_point_number_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_data_point_identifier_description$$ (required)
-        :param str tag: $$v2_security_data_point_item_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :return: float
                  If the method is called asynchronously,
                  returns the request thread.
@@ -708,14 +708,14 @@ class SecurityApi(object):
     def get_security_data_point_text(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Text) for Security  # noqa: E501
 
-        $$v2_security_data_point_text_description$$  # noqa: E501
+        Returns a text value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_data_point_text(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_data_point_identifier_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
         :param str tag: An Intrinio data tag ID or code-name (required)
         :return: str
                  If the method is called asynchronously,
@@ -731,14 +731,14 @@ class SecurityApi(object):
     def get_security_data_point_text_with_http_info(self, identifier, tag, **kwargs):  # noqa: E501
         """Data Point (Text) for Security  # noqa: E501
 
-        $$v2_security_data_point_text_description$$  # noqa: E501
+        Returns a text value for the given `tag` for the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_data_point_text_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_data_point_identifier_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
         :param str tag: An Intrinio data tag ID or code-name (required)
         :return: str
                  If the method is called asynchronously,
@@ -811,15 +811,15 @@ class SecurityApi(object):
     def get_security_historical_data(self, identifier, tag, **kwargs):  # noqa: E501
         """Historical Data for Security  # noqa: E501
 
-        $$v2_security_historical_data_description$$  # noqa: E501
+        Returns historical values for the given `tag` and the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_historical_data(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_historical_data_identifier_description$$ (required)
-        :param str tag: $$v2_security_data_point_item_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :param str frequency: Return historical data in the given frequency
         :param str type: Filter by type, when applicable
         :param date start_date: Get historical data on or after this date
@@ -841,15 +841,15 @@ class SecurityApi(object):
     def get_security_historical_data_with_http_info(self, identifier, tag, **kwargs):  # noqa: E501
         """Historical Data for Security  # noqa: E501
 
-        $$v2_security_historical_data_description$$  # noqa: E501
+        Returns historical values for the given `tag` and the Security with the given `identifier`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_security_historical_data_with_http_info(identifier, tag, _async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str identifier: $$v2_security_historical_data_identifier_description$$ (required)
-        :param str tag: $$v2_security_data_point_item_description$$ (required)
+        :param str identifier: A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (required)
+        :param str tag: An Intrinio data tag ID or code (<a href='https://data.intrinio.com/data-tags'>reference</a>) (required)
         :param str frequency: Return historical data in the given frequency
         :param str type: Filter by type, when applicable
         :param date start_date: Get historical data on or after this date

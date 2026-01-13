@@ -383,7 +383,7 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 id = 'AAPL-income_statement-2020-FY'
-tag = '$$v2_data_point_item_text_default$$'
+tag = 'ceo'
 
 response = intrinio.FundamentalsApi().get_fundamental_standardized_financials_dimensions(id, tag)
 print(response)
@@ -402,7 +402,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | str| The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental |   &nbsp;
- **tag** | str| $$v2_data_point_item_description$$ |   &nbsp;
+ **tag** | str| An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;) |   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
