@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from intrinio_sdk.models.earnings_date_estimate import EarningsDateEstimate  # noqa: F401,E501
 from intrinio_sdk.models.earnings_date_estimate_confidence_intervals import EarningsDateEstimateConfidenceIntervals  # noqa: F401,E501
 
 
@@ -33,34 +34,32 @@ class EarningsDateEstimateWithCompany(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'company_id': 'str',
-        'ticker': 'str',
         'fiscal_year': 'int',
         'fiscal_period': 'str',
         'expected_date': 'date',
         'expected_8k_at': 'datetime',
         'historically_earliest': 'str',
         'historically_latest': 'str',
-        'confidence_intervals': 'dict(str, EarningsDateEstimateConfidenceIntervals)'
+        'confidence_intervals': 'dict(str, EarningsDateEstimateConfidenceIntervals)',
+        'company_id': 'str',
+        'ticker': 'str'
     }
 
     attribute_map = {
-        'company_id': 'company_id',
-        'ticker': 'ticker',
         'fiscal_year': 'fiscal_year',
         'fiscal_period': 'fiscal_period',
         'expected_date': 'expected_date',
         'expected_8k_at': 'expected_8k_at',
         'historically_earliest': 'historically_earliest',
         'historically_latest': 'historically_latest',
-        'confidence_intervals': 'confidence_intervals'
+        'confidence_intervals': 'confidence_intervals',
+        'company_id': 'company_id',
+        'ticker': 'ticker'
     }
 
-    def __init__(self, company_id=None, ticker=None, fiscal_year=None, fiscal_period=None, expected_date=None, expected_8k_at=None, historically_earliest=None, historically_latest=None, confidence_intervals=None):  # noqa: E501
+    def __init__(self, fiscal_year=None, fiscal_period=None, expected_date=None, expected_8k_at=None, historically_earliest=None, historically_latest=None, confidence_intervals=None, company_id=None, ticker=None):  # noqa: E501
         """EarningsDateEstimateWithCompany - a model defined in Swagger"""  # noqa: E501
 
-        self._company_id = None
-        self._ticker = None
         self._fiscal_year = None
         self._fiscal_period = None
         self._expected_date = None
@@ -68,12 +67,10 @@ class EarningsDateEstimateWithCompany(object):
         self._historically_earliest = None
         self._historically_latest = None
         self._confidence_intervals = None
+        self._company_id = None
+        self._ticker = None
         self.discriminator = None
 
-        if company_id is not None:
-            self.company_id = company_id
-        if ticker is not None:
-            self.ticker = ticker
         if fiscal_year is not None:
             self.fiscal_year = fiscal_year
         if fiscal_period is not None:
@@ -88,118 +85,10 @@ class EarningsDateEstimateWithCompany(object):
             self.historically_latest = historically_latest
         if confidence_intervals is not None:
             self.confidence_intervals = confidence_intervals
-
-    @property
-    def company_id(self):
-        """Gets the company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
-
-        The Intrinio ID for the company  # noqa: E501
-
-        :return: The company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
-        :rtype: str
-        """
-        return self._company_id
-        
-    @property
-    def company_id_dict(self):
-        """Gets the company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
-
-        The Intrinio ID for the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
-
-        :return: The company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
-        :rtype: str
-        """
-
-        result = None
-
-        value = self.company_id
-        if isinstance(value, list):
-            result = list(map(
-                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                value
-            ))
-        elif hasattr(value, "to_dict"):
-            result = value.to_dict()
-        elif isinstance(value, dict):
-            result = dict(map(
-                lambda item: (item[0], item[1].to_dict())
-                if hasattr(item[1], "to_dict") else item,
-                value.items()
-            ))
-        else:
-            result = { 'company_id': value }
-
-        
-        return result
-        
-
-    @company_id.setter
-    def company_id(self, company_id):
-        """Sets the company_id of this EarningsDateEstimateWithCompany.
-
-        The Intrinio ID for the company  # noqa: E501
-
-        :param company_id: The company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
-        :type: str
-        """
-
-        self._company_id = company_id
-
-    @property
-    def ticker(self):
-        """Gets the ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
-
-        The ticker symbol of the company  # noqa: E501
-
-        :return: The ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
-        :rtype: str
-        """
-        return self._ticker
-        
-    @property
-    def ticker_dict(self):
-        """Gets the ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
-
-        The ticker symbol of the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
-
-        :return: The ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
-        :rtype: str
-        """
-
-        result = None
-
-        value = self.ticker
-        if isinstance(value, list):
-            result = list(map(
-                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                value
-            ))
-        elif hasattr(value, "to_dict"):
-            result = value.to_dict()
-        elif isinstance(value, dict):
-            result = dict(map(
-                lambda item: (item[0], item[1].to_dict())
-                if hasattr(item[1], "to_dict") else item,
-                value.items()
-            ))
-        else:
-            result = { 'ticker': value }
-
-        
-        return result
-        
-
-    @ticker.setter
-    def ticker(self, ticker):
-        """Sets the ticker of this EarningsDateEstimateWithCompany.
-
-        The ticker symbol of the company  # noqa: E501
-
-        :param ticker: The ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
-        :type: str
-        """
-
-        self._ticker = ticker
+        if company_id is not None:
+            self.company_id = company_id
+        if ticker is not None:
+            self.ticker = ticker
 
     @property
     def fiscal_year(self):
@@ -592,6 +481,118 @@ class EarningsDateEstimateWithCompany(object):
         """
 
         self._confidence_intervals = confidence_intervals
+
+    @property
+    def company_id(self):
+        """Gets the company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
+
+        The Intrinio ID for the company  # noqa: E501
+
+        :return: The company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_id
+        
+    @property
+    def company_id_dict(self):
+        """Gets the company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
+
+        The Intrinio ID for the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.company_id
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'company_id': value }
+
+        
+        return result
+        
+
+    @company_id.setter
+    def company_id(self, company_id):
+        """Sets the company_id of this EarningsDateEstimateWithCompany.
+
+        The Intrinio ID for the company  # noqa: E501
+
+        :param company_id: The company_id of this EarningsDateEstimateWithCompany.  # noqa: E501
+        :type: str
+        """
+
+        self._company_id = company_id
+
+    @property
+    def ticker(self):
+        """Gets the ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
+
+        The ticker symbol of the company  # noqa: E501
+
+        :return: The ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
+        :rtype: str
+        """
+        return self._ticker
+        
+    @property
+    def ticker_dict(self):
+        """Gets the ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
+
+        The ticker symbol of the company as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
+        :rtype: str
+        """
+
+        result = None
+
+        value = self.ticker
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'ticker': value }
+
+        
+        return result
+        
+
+    @ticker.setter
+    def ticker(self, ticker):
+        """Sets the ticker of this EarningsDateEstimateWithCompany.
+
+        The ticker symbol of the company  # noqa: E501
+
+        :param ticker: The ticker of this EarningsDateEstimateWithCompany.  # noqa: E501
+        :type: str
+        """
+
+        self._ticker = ticker
 
     def to_dict(self):
         """Returns the model properties as a dict"""

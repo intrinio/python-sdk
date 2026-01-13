@@ -209,7 +209,6 @@ from intrinio_sdk.models.etf_stats import ETFStats
 from intrinio_sdk.models.etf_summary import ETFSummary
 from intrinio_sdk.models.earnings_date_estimate import EarningsDateEstimate
 from intrinio_sdk.models.earnings_date_estimate_confidence_intervals import EarningsDateEstimateConfidenceIntervals
-from intrinio_sdk.models.earnings_date_estimate_with_company import EarningsDateEstimateWithCompany
 from intrinio_sdk.models.earnings_record import EarningsRecord
 from intrinio_sdk.models.ease_of_movement_technical_value import EaseOfMovementTechnicalValue
 from intrinio_sdk.models.economic_index import EconomicIndex
@@ -346,3 +345,4 @@ from intrinio_sdk.models.zacks_sales_surprise import ZacksSalesSurprise
 from intrinio_sdk.models.zacks_sales_surprise_summary import ZacksSalesSurpriseSummary
 from intrinio_sdk.models.zacks_target_price_consensus import ZacksTargetPriceConsensus
 from intrinio_sdk.models.etf_nav_flows import ETFNavFlows
+from intrinio_sdk.models.earnings_date_estimate_with_company import EarningsDateEstimateWithCompany
