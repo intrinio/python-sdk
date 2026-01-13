@@ -4,8 +4,8 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.115.0
-- Package version: 6.43.0
+- API version: 2.122.0
+- Package version: 6.44.0
 
 
 ## Requirements.
@@ -98,6 +98,7 @@ A listing of classes and methods is also provided below:
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountApi* | [**get_account_current_usage**](docs/AccountApi.md#get_account_current_usage) | **GET** /account | Account Current Usage
 *BulkDownloadsApi* | [**get_bulk_download_links**](docs/BulkDownloadsApi.md#get_bulk_download_links) | **GET** /bulk_downloads/links | All Links
 *CompanyApi* | [**all_expected_earnings_dates**](docs/CompanyApi.md#all_expected_earnings_dates) | **GET** /companies/upcoming_earnings | All Expected Earnings Dates
 *CompanyApi* | [**expected_earnings_dates_by_company**](docs/CompanyApi.md#expected_earnings_dates_by_company) | **GET** /companies/{identifier}/upcoming_earnings | Expected Earnings Dates by Company
@@ -359,7 +360,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AccountCurrentUsage](docs/AccountCurrentUsage.md)
  - [AccumulationDistributionIndexTechnicalValue](docs/AccumulationDistributionIndexTechnicalValue.md)
+ - [ApiResponseAccountCurrentUsages](docs/ApiResponseAccountCurrentUsages.md)
+ - [ApiResponseAccountCurrentUsagesAccount](docs/ApiResponseAccountCurrentUsagesAccount.md)
  - [ApiResponseAllExpectedEarningsDates](docs/ApiResponseAllExpectedEarningsDates.md)
  - [ApiResponseBulkDownloadLinks](docs/ApiResponseBulkDownloadLinks.md)
  - [ApiResponseCompanies](docs/ApiResponseCompanies.md)

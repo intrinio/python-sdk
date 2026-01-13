@@ -3,6 +3,7 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from intrinio_sdk.api.account_api import AccountApi
 from intrinio_sdk.api.bulk_downloads_api import BulkDownloadsApi
 from intrinio_sdk.api.company_api import CompanyApi
 from intrinio_sdk.api.data_point_api import DataPointApi
