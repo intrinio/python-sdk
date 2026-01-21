@@ -33,7 +33,7 @@ class OptionRealtime(object):
     swagger_types = {
         'code': 'str',
         'ticker': 'str',
-        'expiration': 'date',
+        'expiration': 'datetime',
         'strike': 'float',
         'type': 'str'
     }
@@ -186,7 +186,7 @@ class OptionRealtime(object):
         The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised.  # noqa: E501
 
         :return: The expiration of this OptionRealtime.  # noqa: E501
-        :rtype: date
+        :rtype: datetime
         """
         return self._expiration
         
@@ -197,7 +197,7 @@ class OptionRealtime(object):
         The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
         :return: The expiration of this OptionRealtime.  # noqa: E501
-        :rtype: date
+        :rtype: datetime
         """
 
         result = None
@@ -230,7 +230,7 @@ class OptionRealtime(object):
         The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised.  # noqa: E501
 
         :param expiration: The expiration of this OptionRealtime.  # noqa: E501
-        :type: date
+        :type: datetime
         """
 
         self._expiration = expiration
