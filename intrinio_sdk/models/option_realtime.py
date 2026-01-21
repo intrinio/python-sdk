@@ -33,7 +33,8 @@ class OptionRealtime(object):
     swagger_types = {
         'code': 'str',
         'ticker': 'str',
-        'expiration': 'datetime',
+        'expiration': 'date',
+        'expiration_time': 'datetime',
         'strike': 'float',
         'type': 'str'
     }
@@ -42,16 +43,18 @@ class OptionRealtime(object):
         'code': 'code',
         'ticker': 'ticker',
         'expiration': 'expiration',
+        'expiration_time': 'expiration_time',
         'strike': 'strike',
         'type': 'type'
     }
 
-    def __init__(self, code=None, ticker=None, expiration=None, strike=None, type=None):  # noqa: E501
+    def __init__(self, code=None, ticker=None, expiration=None, expiration_time=None, strike=None, type=None):  # noqa: E501
         """OptionRealtime - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
         self._ticker = None
         self._expiration = None
+        self._expiration_time = None
         self._strike = None
         self._type = None
         self.discriminator = None
@@ -62,6 +65,8 @@ class OptionRealtime(object):
             self.ticker = ticker
         if expiration is not None:
             self.expiration = expiration
+        if expiration_time is not None:
+            self.expiration_time = expiration_time
         if strike is not None:
             self.strike = strike
         if type is not None:
@@ -186,7 +191,7 @@ class OptionRealtime(object):
         The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised.  # noqa: E501
 
         :return: The expiration of this OptionRealtime.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
         return self._expiration
         
@@ -197,7 +202,7 @@ class OptionRealtime(object):
         The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
 
         :return: The expiration of this OptionRealtime.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
 
         result = None
@@ -230,10 +235,66 @@ class OptionRealtime(object):
         The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised.  # noqa: E501
 
         :param expiration: The expiration of this OptionRealtime.  # noqa: E501
-        :type: datetime
+        :type: date
         """
 
         self._expiration = expiration
+
+    @property
+    def expiration_time(self):
+        """Gets the expiration_time of this OptionRealtime.  # noqa: E501
+
+        The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised.  # noqa: E501
+
+        :return: The expiration_time of this OptionRealtime.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration_time
+        
+    @property
+    def expiration_time_dict(self):
+        """Gets the expiration_time of this OptionRealtime.  # noqa: E501
+
+        The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised. as a dictionary. Useful for Panda Dataframes.  # noqa: E501
+
+        :return: The expiration_time of this OptionRealtime.  # noqa: E501
+        :rtype: datetime
+        """
+
+        result = None
+
+        value = self.expiration_time
+        if isinstance(value, list):
+            result = list(map(
+                lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                value
+            ))
+        elif hasattr(value, "to_dict"):
+            result = value.to_dict()
+        elif isinstance(value, dict):
+            result = dict(map(
+                lambda item: (item[0], item[1].to_dict())
+                if hasattr(item[1], "to_dict") else item,
+                value.items()
+            ))
+        else:
+            result = { 'expiration_time': value }
+
+        
+        return result
+        
+
+    @expiration_time.setter
+    def expiration_time(self, expiration_time):
+        """Sets the expiration_time of this OptionRealtime.
+
+        The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised.  # noqa: E501
+
+        :param expiration_time: The expiration_time of this OptionRealtime.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expiration_time = expiration_time
 
     @property
     def strike(self):
