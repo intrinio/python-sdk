@@ -20,7 +20,7 @@ VERSION = "6.47.0"
 # python setup.py install
 #
 # prerequisite: setuptools
-# http://pypi.python.org/pypi/setuptools
+# http://pypi.python.org/pypi/setuptools 
 
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil", "retrying >= 1.3.3"]
 
