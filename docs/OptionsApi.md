@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**get_options_chain_realtime**](OptionsApi.md#get_options_chain_realtime) | **GET** /options/chain/{symbol}/{expiration}/realtime | Options Chain Realtime
 [**get_options_expirations**](OptionsApi.md#get_options_expirations) | **GET** /options/expirations/{symbol} | Options Expirations
 [**get_options_expirations_eod**](OptionsApi.md#get_options_expirations_eod) | **GET** /options/expirations/{symbol}/eod | Options Expirations
+[**get_options_gainers**](OptionsApi.md#get_options_gainers) | **GET** /options/gainers | Options Top Gainers
 [**get_options_greeks_by_contract**](OptionsApi.md#get_options_greeks_by_contract) | **GET** /options/greeks/{contract}/realtime | Option Greeks &amp; Derived Price by Contract
 [**get_options_greeks_by_ticker**](OptionsApi.md#get_options_greeks_by_ticker) | **GET** /options/greeks/by_ticker/{identifier}/realtime | Options Realtime Greeks &amp; Derived Price by Ticker
 [**get_options_implied_move_by_symbol**](OptionsApi.md#get_options_implied_move_by_symbol) | **GET** /options/implied_move/{symbol}/{expiration_date} | Options Implied Move By Symbol
@@ -24,6 +25,7 @@ Method | HTTP request | Description
 [**get_options_interval_movers**](OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
 [**get_options_interval_movers_change**](OptionsApi.md#get_options_interval_movers_change) | **GET** /options/interval/movers/change | Options Intervals Movers By Change
 [**get_options_interval_movers_volume**](OptionsApi.md#get_options_interval_movers_volume) | **GET** /options/interval/movers/volume | Options Intervals Movers By Volume
+[**get_options_losers**](OptionsApi.md#get_options_losers) | **GET** /options/losers | Options Top Losers
 [**get_options_prices**](OptionsApi.md#get_options_prices) | **GET** /options/prices/{identifier} | Option Prices
 [**get_options_prices_batch_realtime**](OptionsApi.md#get_options_prices_batch_realtime) | **POST** /options/prices/realtime/batch | Option Prices Batch Realtime
 [**get_options_prices_eod**](OptionsApi.md#get_options_prices_eod) | **GET** /options/prices/{identifier}/eod | Option Prices EOD
@@ -1160,6 +1162,83 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:OptionsApi)
 
+[//]: # (METHOD:get_options_gainers)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionMovers)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionMovers.md)
+
+[//]: # (OPERATION:get_options_gainers_v2)
+
+[//]: # (ENDPOINT:/options/gainers)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_gainers)
+
+## **get_options_gainers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_gainers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionMovers get_options_gainers(mode, next_page=next_page)
+
+#### Options Top Gainers
+
+
+Returns a list of top gainers since last close.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+mode = ''
+next_page = ''
+
+response = intrinio.OptionsApi().get_options_gainers(mode, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mode** | str| Which metric to sort by - change, percent change, or volume. |   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionMovers**](ApiResponseOptionMovers.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
 [//]: # (METHOD:get_options_greeks_by_contract)
 
 [//]: # (RETURN_TYPE:ApiResponseOptionsGreekContractRealtime)
@@ -1727,6 +1806,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OptionIntervalsMoversResult**](OptionIntervalsMoversResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_losers)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionMovers)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionMovers.md)
+
+[//]: # (OPERATION:get_options_losers_v2)
+
+[//]: # (ENDPOINT:/options/losers)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_losers)
+
+## **get_options_losers**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_losers_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionMovers get_options_losers(mode, next_page=next_page)
+
+#### Options Top Losers
+
+
+Returns a list of top losers since last close.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+mode = ''
+next_page = ''
+
+response = intrinio.OptionsApi().get_options_losers(mode, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mode** | str| Which metric to sort by - change, percent change, or volume. |   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionMovers**](ApiResponseOptionMovers.md)
 
 [//]: # (END_OPERATION)
 
