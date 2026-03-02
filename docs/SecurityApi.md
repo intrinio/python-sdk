@@ -63,6 +63,10 @@ Method | HTTP request | Description
 [**get_security_stock_prices**](SecurityApi.md#get_security_stock_prices) | **GET** /securities/{identifier}/prices | Stock Prices by Security
 [**get_security_trades**](SecurityApi.md#get_security_trades) | **GET** /securities/trades | Security Trades
 [**get_security_trades_by_symbol**](SecurityApi.md#get_security_trades_by_symbol) | **GET** /securities/{identifier}/trades | Security Trades By Symbol
+[**get_security_trading_status**](SecurityApi.md#get_security_trading_status) | **GET** /securities/{identifier}/trading_status | Security Trading Status By Security
+[**get_security_trading_status_quotes_only**](SecurityApi.md#get_security_trading_status_quotes_only) | **GET** /securities/trading_status/quotes_only | Security Trading Status Quotes Only
+[**get_security_trading_status_stopped**](SecurityApi.md#get_security_trading_status_stopped) | **GET** /securities/trading_status/stopped | Security Trading Status Stopped
+[**get_security_trading_status_trading**](SecurityApi.md#get_security_trading_status_trading) | **GET** /securities/trading_status/trading | Security Trading Status Trading
 [**get_security_zacks_analyst_ratings**](SecurityApi.md#get_security_zacks_analyst_ratings) | **GET** /securities/{identifier}/zacks/analyst_ratings | Zacks Analyst Ratings for Security
 [**get_security_zacks_analyst_ratings_snapshot**](SecurityApi.md#get_security_zacks_analyst_ratings_snapshot) | **GET** /securities/{identifier}/zacks/analyst_ratings/snapshot | Zacks Analyst Ratings Snapshot
 [**get_security_zacks_eps_surprises**](SecurityApi.md#get_security_zacks_eps_surprises) | **GET** /securities/{identifier}/zacks/eps_surprises | Zacks EPS Surprises for Security
@@ -5037,6 +5041,320 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SecurityTradesResult**](SecurityTradesResult.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_security_trading_status)
+
+[//]: # (RETURN_TYPE:ApiResponseSecurityTradingStatus)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseSecurityTradingStatus.md)
+
+[//]: # (OPERATION:get_security_trading_status_v2)
+
+[//]: # (ENDPOINT:/securities/{identifier}/trading_status)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_trading_status)
+
+## **get_security_trading_status**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_trading_status_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseSecurityTradingStatus get_security_trading_status(identifier, source)
+
+#### Security Trading Status By Security
+
+
+Returns trading status for the specified security.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL'
+source = ''
+
+response = intrinio.SecurityApi().get_security_trading_status(identifier, source)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) |   &nbsp;
+ **source** | str| The specific source of the data being requested. |   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseSecurityTradingStatus**](ApiResponseSecurityTradingStatus.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_security_trading_status_quotes_only)
+
+[//]: # (RETURN_TYPE:ApiResponseSecurityTradingStatuses)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseSecurityTradingStatuses.md)
+
+[//]: # (OPERATION:get_security_trading_status_quotes_only_v2)
+
+[//]: # (ENDPOINT:/securities/trading_status/quotes_only)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_trading_status_quotes_only)
+
+## **get_security_trading_status_quotes_only**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_trading_status_quotes_only_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseSecurityTradingStatuses get_security_trading_status_quotes_only(source, page_size=page_size, next_page=next_page)
+
+#### Security Trading Status Quotes Only
+
+
+Returns all securities where the current trading status is quotes_only for the specified source.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+source = ''
+page_size = 100
+next_page = ''
+
+response = intrinio.SecurityApi().get_security_trading_status_quotes_only(source, page_size=page_size, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | str| The specific source of the data being requested. |   &nbsp;
+ **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseSecurityTradingStatuses**](ApiResponseSecurityTradingStatuses.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_security_trading_status_stopped)
+
+[//]: # (RETURN_TYPE:ApiResponseSecurityTradingStatuses)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseSecurityTradingStatuses.md)
+
+[//]: # (OPERATION:get_security_trading_status_stopped_v2)
+
+[//]: # (ENDPOINT:/securities/trading_status/stopped)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_trading_status_stopped)
+
+## **get_security_trading_status_stopped**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_trading_status_stopped_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseSecurityTradingStatuses get_security_trading_status_stopped(source, page_size=page_size, next_page=next_page)
+
+#### Security Trading Status Stopped
+
+
+Returns all securities where the current trading status is stopped for the specified source.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+source = ''
+page_size = 100
+next_page = ''
+
+response = intrinio.SecurityApi().get_security_trading_status_stopped(source, page_size=page_size, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | str| The specific source of the data being requested. |   &nbsp;
+ **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseSecurityTradingStatuses**](ApiResponseSecurityTradingStatuses.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_security_trading_status_trading)
+
+[//]: # (RETURN_TYPE:ApiResponseSecurityTradingStatuses)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseSecurityTradingStatuses.md)
+
+[//]: # (OPERATION:get_security_trading_status_trading_v2)
+
+[//]: # (ENDPOINT:/securities/trading_status/trading)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_security_trading_status_trading)
+
+## **get_security_trading_status_trading**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_security_trading_status_trading_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseSecurityTradingStatuses get_security_trading_status_trading(source, page_size=page_size, next_page=next_page)
+
+#### Security Trading Status Trading
+
+
+Returns all securities where the current trading status is trading for the specified source.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+source = ''
+page_size = 100
+next_page = ''
+
+response = intrinio.SecurityApi().get_security_trading_status_trading(source, page_size=page_size, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | str| The specific source of the data being requested. |   &nbsp;
+ **page_size** | int| The maximum number of results to return per page. | [optional] [default to 100]  &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseSecurityTradingStatuses**](ApiResponseSecurityTradingStatuses.md)
 
 [//]: # (END_OPERATION)
 

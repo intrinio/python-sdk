@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**get_all_companies_daily_metrics**](CompanyApi.md#get_all_companies_daily_metrics) | **GET** /companies/daily_metrics | All Companies daily metrics
 [**get_all_company_news**](CompanyApi.md#get_all_company_news) | **GET** /companies/news | All News
 [**get_company**](CompanyApi.md#get_company) | **GET** /companies/{identifier} | Lookup Company
-[**get_company_answers**](CompanyApi.md#get_company_answers) | **GET** /companies/{identifier}/answers | Company Answers
 [**get_company_daily_metrics**](CompanyApi.md#get_company_daily_metrics) | **GET** /companies/{identifier}/daily_metrics | Company metrics by Company
 [**get_company_data_point_number**](CompanyApi.md#get_company_data_point_number) | **GET** /companies/{identifier}/data_point/{tag}/number | Data Point (Number) for Company
 [**get_company_data_point_text**](CompanyApi.md#get_company_data_point_text) | **GET** /companies/{identifier}/data_point/{tag}/text | Data Point (Text) for Company
@@ -25,7 +24,6 @@ Method | HTTP request | Description
 [**insider_transaction_filings_by_company**](CompanyApi.md#insider_transaction_filings_by_company) | **GET** /companies/{identifier}/insider_transaction_filings | Insider Transaction Filings by Company
 [**latest_insider_transaction_filing_by_company**](CompanyApi.md#latest_insider_transaction_filing_by_company) | **GET** /companies/{identifier}/insider_transaction_filings/latest | Latest Insider Transaction Filing by Company
 [**lookup_company_fundamental**](CompanyApi.md#lookup_company_fundamental) | **GET** /companies/{identifier}/fundamentals/lookup/{statement_code}/{fiscal_year}/{fiscal_period} | Lookup Fundamental by Company
-[**recognize_company**](CompanyApi.md#recognize_company) | **GET** /companies/recognize | Recognize Company
 [**search_companies**](CompanyApi.md#search_companies) | **GET** /companies/search | Search Companies
 [**shares_outstanding_by_company**](CompanyApi.md#shares_outstanding_by_company) | **GET** /companies/{identifier}/shares_outstanding | Shares Outstanding by Company
 
@@ -229,7 +227,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanies get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
+> ApiResponseCompanies get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, page_size=page_size, next_page=next_page)
 
 #### All Companies
 
@@ -258,11 +256,10 @@ industry_category = ''
 industry_group = ''
 has_fundamentals = True
 has_stock_prices = True
-thea_enabled = ''
 page_size = 100
 next_page = ''
 
-response = intrinio.CompanyApi().get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
+response = intrinio.CompanyApi().get_all_companies(latest_filing_date=latest_filing_date, sic=sic, template=template, sector=sector, industry_category=industry_category, industry_group=industry_group, has_fundamentals=has_fundamentals, has_stock_prices=has_stock_prices, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -286,7 +283,6 @@ Name | Type | Description  | Notes
  **industry_group** | str| Return companies in the given industry group | [optional]   &nbsp;
  **has_fundamentals** | bool| Return only companies that have fundamentals when True | [optional]   &nbsp;
  **has_stock_prices** | bool| Return only companies that have stock prices when True | [optional]   &nbsp;
- **thea_enabled** | bool| Return companies whose have been read by our Thea NLP and are ready for our company answers endpoint | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -563,83 +559,6 @@ Name | Type | Description  | Notes
 
 [//]: # (CLASS:CompanyApi)
 
-[//]: # (METHOD:get_company_answers)
-
-[//]: # (RETURN_TYPE:ApiResponseCompanyAnswers)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyAnswers.md)
-
-[//]: # (OPERATION:get_company_answers_v2)
-
-[//]: # (ENDPOINT:/companies/{identifier}/answers)
-
-[//]: # (DOCUMENT_LINK:CompanyApi.md#get_company_answers)
-
-## **get_company_answers**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_company_answers_v2)
-
-[//]: # (START_OVERVIEW)
-
-> ApiResponseCompanyAnswers get_company_answers(identifier, query)
-
-#### Company Answers
-
-
-Returns answers for a question about the Company with the given `identifier`
-
-[//]: # (END_OVERVIEW)
-
-### Example
-[//]: # (START_CODE_EXAMPLE)
-
-```python
-from __future__ import print_function
-import time
-import intrinio_sdk as intrinio
-from intrinio_sdk.rest import ApiException
-
-intrinio.ApiClient().set_api_key('YOUR_API_KEY')
-intrinio.ApiClient().allow_retries(True)
-
-identifier = 'AAPL'
-query = 'What do they believe in?'
-
-response = intrinio.CompanyApi().get_company_answers(identifier, query)
-print(response)
-    
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
-```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
-
-### Parameters
-
-[//]: # (START_PARAMETERS)
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **identifier** | str| A Company identifier (Ticker, CIK, LEI, Intrinio ID) |   &nbsp;
- **query** | str| The query to ask the Thea API |   &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
-
-### Return type
-
-[**ApiResponseCompanyAnswers**](ApiResponseCompanyAnswers.md)
-
-[//]: # (END_OPERATION)
-
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:CompanyApi)
-
 [//]: # (METHOD:get_company_daily_metrics)
 
 [//]: # (RETURN_TYPE:ApiResponseCompanyDailyMetrics)
@@ -897,7 +816,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseCompanyFilings get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
+> ApiResponseCompanyFilings get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 
 #### All Filings by Company
 
@@ -922,11 +841,10 @@ identifier = 'AAPL'
 report_type = ''
 start_date = '2015-01-01'
 end_date = ''
-thea_enabled = ''
 page_size = 100
 next_page = ''
 
-response = intrinio.CompanyApi().get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, thea_enabled=thea_enabled, page_size=page_size, next_page=next_page)
+response = intrinio.CompanyApi().get_company_filings(identifier, report_type=report_type, start_date=start_date, end_date=end_date, page_size=page_size, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -946,7 +864,6 @@ Name | Type | Description  | Notes
  **report_type** | str| Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. | [optional]   &nbsp;
  **start_date** | date| Filed on or after the given date | [optional]   &nbsp;
  **end_date** | date| Filed before or after the given date | [optional]   &nbsp;
- **thea_enabled** | bool| Return filings that have been read by our Thea NLP and are ready for our answers endpoint | [optional]   &nbsp;
  **page_size** | int| The number of results to return | [optional] [default to 100]  &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
@@ -1830,81 +1747,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Fundamental**](Fundamental.md)
-
-[//]: # (END_OPERATION)
-
-
-[//]: # (START_OPERATION)
-
-[//]: # (CLASS:CompanyApi)
-
-[//]: # (METHOD:recognize_company)
-
-[//]: # (RETURN_TYPE:ApiResponseCompanyRecognize)
-
-[//]: # (RETURN_TYPE_KIND:object)
-
-[//]: # (RETURN_TYPE_DOC:ApiResponseCompanyRecognize.md)
-
-[//]: # (OPERATION:recognize_company_v2)
-
-[//]: # (ENDPOINT:/companies/recognize)
-
-[//]: # (DOCUMENT_LINK:CompanyApi.md#recognize_company)
-
-## **recognize_company**
-
-[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/recognize_company_v2)
-
-[//]: # (START_OVERVIEW)
-
-> ApiResponseCompanyRecognize recognize_company(text)
-
-#### Recognize Company
-
-
-Returns a list of companies recognized by the Thea API in the given `text` query string parameter.
-
-[//]: # (END_OVERVIEW)
-
-### Example
-[//]: # (START_CODE_EXAMPLE)
-
-```python
-from __future__ import print_function
-import time
-import intrinio_sdk as intrinio
-from intrinio_sdk.rest import ApiException
-
-intrinio.ApiClient().set_api_key('YOUR_API_KEY')
-intrinio.ApiClient().allow_retries(True)
-
-text = 'Apple'
-
-response = intrinio.CompanyApi().recognize_company(text)
-print(response)
-    
-# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
-```
-[//]: # (END_CODE_EXAMPLE)
-
-[//]: # (START_DEFINITION)
-
-### Parameters
-
-[//]: # (START_PARAMETERS)
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | str| The text sent to the Thea API to analyze |   &nbsp;
-<br/>
-
-[//]: # (END_PARAMETERS)
-
-### Return type
-
-[**ApiResponseCompanyRecognize**](ApiResponseCompanyRecognize.md)
 
 [//]: # (END_OPERATION)
 
