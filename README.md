@@ -8,7 +8,7 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 - Package version: 7.0.0
 
 
-## Requirements.
+## Requirements. 
 
 Python 2.7 and 3.4+
 
