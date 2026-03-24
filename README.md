@@ -4,11 +4,11 @@ To get an API key, [sign up here](https://intrinio.com/).
 
 Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a wide selection of financial data feed APIs sourced by our own proprietary processes as well as from many data vendors. For a complete API request / response reference please view the [Intrinio API documentation](https://docs.intrinio.com/documentation/api_v2). If you need additional help in using the API, please visit the [Intrinio website](https://intrinio.com) and click on the chat icon in the lower right corner.
 
-- API version: 2.127.0
-- Package version: 7.0.0
+- API version: 2.129.0
+- Package version: 7.1.0
 
 
-## Requirements. 
+## Requirements.
 
 Python 2.7 and 3.4+
 
@@ -558,6 +558,7 @@ Class | Method | HTTP request | Description
  - [ETFSummary](docs/ETFSummary.md)
  - [EarningsDateEstimate](docs/EarningsDateEstimate.md)
  - [EarningsDateEstimateConfidenceIntervals](docs/EarningsDateEstimateConfidenceIntervals.md)
+ - [EarningsDateEstimateWithCompany](docs/EarningsDateEstimateWithCompany.md)
  - [EarningsRecord](docs/EarningsRecord.md)
  - [EaseOfMovementTechnicalValue](docs/EaseOfMovementTechnicalValue.md)
  - [EconomicIndex](docs/EconomicIndex.md)
@@ -696,5 +697,4 @@ Class | Method | HTTP request | Description
  - [ZacksSalesSurpriseSummary](docs/ZacksSalesSurpriseSummary.md)
  - [ZacksTargetPriceConsensus](docs/ZacksTargetPriceConsensus.md)
  - [ETFNavFlows](docs/ETFNavFlows.md)
- - [EarningsDateEstimateWithCompany](docs/EarningsDateEstimateWithCompany.md)
 

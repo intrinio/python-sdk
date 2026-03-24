@@ -837,7 +837,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsChainEod get_options_chain_eod(symbol, expiration, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, date=date, include_related_symbols=include_related_symbols)
+> ApiResponseOptionsChainEod get_options_chain_eod(symbol, expiration, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, date=date, include_related_symbols=include_related_symbols, recalculate_stats=recalculate_stats, model=model, iv_mode=iv_mode)
 
 #### Options Chain EOD
 
@@ -862,8 +862,11 @@ symbol = 'AAPL'
 expiration = '2023-01-20'
 type = ''
 include_related_symbols = False
+recalculate_stats = False
+model = 'black_scholes'
+iv_mode = 'iv_mode_example'
 
-response = intrinio.OptionsApi().get_options_chain_eod(symbol, expiration, type=type, include_related_symbols=include_related_symbols)
+response = intrinio.OptionsApi().get_options_chain_eod(symbol, expiration, type=type, include_related_symbols=include_related_symbols, recalculate_stats=recalculate_stats, model=model, iv_mode=iv_mode)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -887,6 +890,9 @@ Name | Type | Description  | Notes
  **strike_less_than** | float| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]   &nbsp;
  **date** | date| The date to retrieve prices for | [optional]   &nbsp;
  **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
+ **recalculate_stats** | bool| Recalculate implied volatility and greeks on the fly using end-of-day underlying prices. | [optional] [default to False]  &nbsp;
+ **model** | str| The options pricing model to use when recalculating stats. | [optional] [default to black_scholes]  &nbsp;
+ **iv_mode** | str| The implied volatility calculation mode to use when recalculating stats. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -2085,7 +2091,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPricesEod get_options_prices_eod(identifier, next_page=next_page, start_date=start_date, end_date=end_date)
+> ApiResponseOptionsPricesEod get_options_prices_eod(identifier, next_page=next_page, start_date=start_date, end_date=end_date, recalculate_stats=recalculate_stats, model=model, iv_mode=iv_mode)
 
 #### Option Prices EOD
 
@@ -2108,8 +2114,11 @@ intrinio.ApiClient().allow_retries(True)
 
 identifier = 'AAPL230616P00190000'
 next_page = ''
+recalculate_stats = False
+model = 'black_scholes'
+iv_mode = 'iv_mode_example'
 
-response = intrinio.OptionsApi().get_options_prices_eod(identifier, next_page=next_page, )
+response = intrinio.OptionsApi().get_options_prices_eod(identifier, next_page=next_page, recalculate_stats=recalculate_stats, model=model, iv_mode=iv_mode)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -2129,6 +2138,9 @@ Name | Type | Description  | Notes
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
  **start_date** | date| The start date to retrieve prices for | [optional]   &nbsp;
  **end_date** | date| The end date to retrieve prices for | [optional]   &nbsp;
+ **recalculate_stats** | bool| Recalculate implied volatility and greeks on the fly using end-of-day underlying prices. | [optional] [default to False]  &nbsp;
+ **model** | str| The options pricing model to use when recalculating stats. | [optional] [default to black_scholes]  &nbsp;
+ **iv_mode** | str| The implied volatility calculation mode to use when recalculating stats. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
@@ -2164,7 +2176,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> ApiResponseOptionsPricesByTickerEod get_options_prices_eod_by_ticker(symbol, page_size=page_size, date=date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, include_related_symbols=include_related_symbols, next_page=next_page)
+> ApiResponseOptionsPricesByTickerEod get_options_prices_eod_by_ticker(symbol, page_size=page_size, date=date, type=type, strike=strike, strike_greater_than=strike_greater_than, strike_less_than=strike_less_than, include_related_symbols=include_related_symbols, recalculate_stats=recalculate_stats, model=model, iv_mode=iv_mode, next_page=next_page)
 
 #### Option Prices End of Day By Ticker
 
@@ -2190,9 +2202,12 @@ page_size = 250
 date = "2024-01-01"
 type = ''
 include_related_symbols = False
+recalculate_stats = False
+model = 'black_scholes'
+iv_mode = 'iv_mode_example'
 next_page = ''
 
-response = intrinio.OptionsApi().get_options_prices_eod_by_ticker(symbol, page_size=page_size, date=date, type=type, include_related_symbols=include_related_symbols, next_page=next_page)
+response = intrinio.OptionsApi().get_options_prices_eod_by_ticker(symbol, page_size=page_size, date=date, type=type, include_related_symbols=include_related_symbols, recalculate_stats=recalculate_stats, model=model, iv_mode=iv_mode, next_page=next_page)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -2216,6 +2231,9 @@ Name | Type | Description  | Notes
  **strike_greater_than** | float| The strike price of the option contract. This will return options contracts with strike prices greater than this price. | [optional]   &nbsp;
  **strike_less_than** | float| The strike price of the option contract. This will return options contracts with strike prices less than this price. | [optional]   &nbsp;
  **include_related_symbols** | bool| Include related symbols that end in a 1 or 2 because of a corporate action. | [optional]   &nbsp;
+ **recalculate_stats** | bool| Recalculate implied volatility and greeks on the fly using end-of-day underlying prices. | [optional] [default to False]  &nbsp;
+ **model** | str| The options pricing model to use when recalculating stats. | [optional] [default to black_scholes]  &nbsp;
+ **iv_mode** | str| The implied volatility calculation mode to use when recalculating stats. | [optional]   &nbsp;
  **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
 <br/>
 
