@@ -5,6 +5,8 @@ All URIs are relative to *https://api-v2.intrinio.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_all_securities**](SecurityApi.md#get_all_securities) | **GET** /securities | All Securities
+[**get_securities_daily_short_volume**](SecurityApi.md#get_securities_daily_short_volume) | **GET** /securities/daily_short_volume | Daily Short Volume
+[**get_securities_daily_short_volume_consolidated**](SecurityApi.md#get_securities_daily_short_volume_consolidated) | **GET** /securities/daily_short_volume/consolidated | Daily Short Volume Consolidated
 [**get_securities_latest_dividend_records**](SecurityApi.md#get_securities_latest_dividend_records) | **GET** /securities/dividends/latest | Latest Dividend Records for All Securities
 [**get_securities_latest_earnings_records**](SecurityApi.md#get_securities_latest_earnings_records) | **GET** /securities/earnings/latest | Latest Earnings Records for All Securities
 [**get_securities_short_interest**](SecurityApi.md#get_securities_short_interest) | **GET** /securities/short_interest | Latest Short Interest
@@ -183,6 +185,170 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseSecurities**](ApiResponseSecurities.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_securities_daily_short_volume)
+
+[//]: # (RETURN_TYPE:ApiResponseSecuritiesDailyShortVolume)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseSecuritiesDailyShortVolume.md)
+
+[//]: # (OPERATION:get_securities_daily_short_volume_v2)
+
+[//]: # (ENDPOINT:/securities/daily_short_volume)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_securities_daily_short_volume)
+
+## **get_securities_daily_short_volume**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_securities_daily_short_volume_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseSecuritiesDailyShortVolume get_securities_daily_short_volume(tickers=tickers, start_date=start_date, end_date=end_date, sort_by=sort_by, next_page=next_page)
+
+#### Daily Short Volume
+
+
+Returns FINRA daily short volume data for securities, reported by individual market centers and reporting facilities.  ## Data Coverage This endpoint provides **off-exchange activity** data aggregated from FINRA's Short Sale Volume files. The data represents short selling activity reported by market centers and third-party reporting facilities, including both exchange and off-exchange venues.  ## Use as Market Proxy Short volume data can serve as a meaningful proxy for overall market sentiment and activity: - **Market Structure Insight**: Tracks short selling intensity across different trading venues and market centers - **Liquidity Indicator**: Higher short volume often correlates with increased market activity and liquidity - **Sentiment Analysis**: Can indicate bearish positioning, though short volume alone doesn't determine market direction - **Cross-Venue Analysis**: Compare short volume patterns across different reporting facilities to understand how activity varies by venue type  ## Data Characteristics - Data is reported at the facility level for granular analysis - Use the `/securities/daily_short_volume/consolidated` endpoint for a single aggregated view across all facilities - Short exempt volume reflects pre-borrow arrangements and other regulated short selling exemptions - Each data point represents a full trading day's accumulated short volume 
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+tickers = ['[ \"AAPL\", \"MSFT\" ]']
+start_date = '2024-01-01'
+end_date = '2024-12-31'
+sort_by = 'date'
+next_page = ''
+
+response = intrinio.SecurityApi().get_securities_daily_short_volume(tickers=tickers, start_date=start_date, end_date=end_date, sort_by=sort_by, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tickers** | [**list[str]**](str.md)| A list of one or more security tickers to filter results | [optional]   &nbsp;
+ **start_date** | date| The start date for the data (inclusive) in YYYY-MM-DD format | [optional]   &nbsp;
+ **end_date** | date| The end date for the data (inclusive) in YYYY-MM-DD format | [optional]   &nbsp;
+ **sort_by** | str| Specifies how to sort the data. Valid values are \&quot;date\&quot; (default, descending) or \&quot;ticker\&quot; (ascending) | [optional]   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseSecuritiesDailyShortVolume**](ApiResponseSecuritiesDailyShortVolume.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:SecurityApi)
+
+[//]: # (METHOD:get_securities_daily_short_volume_consolidated)
+
+[//]: # (RETURN_TYPE:ApiResponseSecuritiesDailyShortVolumeConsolidated)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseSecuritiesDailyShortVolumeConsolidated.md)
+
+[//]: # (OPERATION:get_securities_daily_short_volume_consolidated_v2)
+
+[//]: # (ENDPOINT:/securities/daily_short_volume/consolidated)
+
+[//]: # (DOCUMENT_LINK:SecurityApi.md#get_securities_daily_short_volume_consolidated)
+
+## **get_securities_daily_short_volume_consolidated**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_securities_daily_short_volume_consolidated_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseSecuritiesDailyShortVolumeConsolidated get_securities_daily_short_volume_consolidated(tickers=tickers, start_date=start_date, end_date=end_date, next_page=next_page)
+
+#### Daily Short Volume Consolidated
+
+
+Returns FINRA daily short volume data aggregated across all reporting facilities for each security and date.  ## Data Aggregation This endpoint consolidates all short volume activity reported across different market centers and reporting facilities into a single daily view per security: - **Volume Summation**: Total, short, and short exempt volumes are summed across all facilities - **Ratio Recalculation**: The short volume ratio is recalculated on the aggregated totals for accurate market-wide percentages - **Facility Tracking**: Included `sources` field lists all reporting facilities that contributed to each daily aggregate  ## Market-Wide Perspective Consolidated short volume serves as an excellent proxy for off-exchange market activity: - **Complete Market View**: Aggregates activity from all FINRA-reporting venues into a single metric - **Comparable Across Securities**: Normalized short volume ratios allow fair comparison between different stocks regardless of absolute trading volume - **Trend Analysis**: Daily consolidated data enables tracking of short selling trends and patterns across the entire market - **Venue-Agnostic**: Eliminates the need to aggregate across multiple facilities manually  ## Use Cases - Monitor overall short selling sentiment across your portfolio or watchlist - Identify unusual short volume spikes that may precede price moves - Compare short volume ratios between securities to identify relative short interest positioning - Analyze temporal patterns in short selling behavior across trading days 
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+tickers = ['[ \"AAPL\", \"MSFT\" ]']
+start_date = '2024-01-01'
+end_date = '2024-12-31'
+next_page = ''
+
+response = intrinio.SecurityApi().get_securities_daily_short_volume_consolidated(tickers=tickers, start_date=start_date, end_date=end_date, next_page=next_page)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tickers** | [**list[str]**](str.md)| A list of one or more security tickers to filter results | [optional]   &nbsp;
+ **start_date** | date| The start date for the data (inclusive) in YYYY-MM-DD format | [optional]   &nbsp;
+ **end_date** | date| The end date for the data (inclusive) in YYYY-MM-DD format | [optional]   &nbsp;
+ **next_page** | str| Gets the next page of data from a previous API call | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseSecuritiesDailyShortVolumeConsolidated**](ApiResponseSecuritiesDailyShortVolumeConsolidated.md)
 
 [//]: # (END_OPERATION)
 
@@ -4472,7 +4638,7 @@ Name | Type | Description  | Notes
 
 [//]: # (START_OVERVIEW)
 
-> SecuritySnapshotsResult get_security_snapshots(at_datetime=at_datetime)
+> SecuritySnapshotsResult get_security_snapshots(at_datetime=at_datetime, source=source)
 
 #### Realtime Stock Prices Snapshot
 
@@ -4494,8 +4660,9 @@ intrinio.ApiClient().set_api_key('YOUR_API_KEY')
 intrinio.ApiClient().allow_retries(True)
 
 at_datetime = ''
+source = 'iex_delayed'
 
-response = intrinio.SecurityApi().get_security_snapshots(at_datetime=at_datetime)
+response = intrinio.SecurityApi().get_security_snapshots(at_datetime=at_datetime, source=source)
 print(response)
     
 # Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
@@ -4512,6 +4679,7 @@ print(response)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **at_datetime** | datetime| The UTC date and time (with url-encoded spaces) the snapshot will cover. | [optional]   &nbsp;
+ **source** | str| Return the snapshot from the specified source. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)

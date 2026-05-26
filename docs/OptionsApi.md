@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**get_option_aggregates**](OptionsApi.md#get_option_aggregates) | **GET** /options/aggregates | Total open interest and volume aggregated by ticker
 [**get_option_expirations_realtime**](OptionsApi.md#get_option_expirations_realtime) | **GET** /options/expirations/{symbol}/realtime | Options Expirations
 [**get_option_strikes_realtime**](OptionsApi.md#get_option_strikes_realtime) | **GET** /options/strikes/{symbol}/{strike}/realtime | Option Strikes Realtime
+[**get_option_surface**](OptionsApi.md#get_option_surface) | **GET** /options/surface/{identifier} | Option Surface
+[**get_option_surface_0**](OptionsApi.md#get_option_surface_0) | **GET** /options/surface/{identifier}/interpolate_iv | Option Surface
 [**get_option_trades**](OptionsApi.md#get_option_trades) | **GET** /options/trades | Option Trades
 [**get_option_trades_by_contract**](OptionsApi.md#get_option_trades_by_contract) | **GET** /options/{identifier}/trades | Option Trades By Contract
 [**get_options**](OptionsApi.md#get_options) | **GET** /options/{symbol} | Options
@@ -20,7 +22,8 @@ Method | HTTP request | Description
 [**get_options_gainers**](OptionsApi.md#get_options_gainers) | **GET** /options/gainers | Options Top Gainers
 [**get_options_greeks_by_contract**](OptionsApi.md#get_options_greeks_by_contract) | **GET** /options/greeks/{contract}/realtime | Option Greeks &amp; Derived Price by Contract
 [**get_options_greeks_by_ticker**](OptionsApi.md#get_options_greeks_by_ticker) | **GET** /options/greeks/by_ticker/{identifier}/realtime | Options Realtime Greeks &amp; Derived Price by Ticker
-[**get_options_implied_move_by_symbol**](OptionsApi.md#get_options_implied_move_by_symbol) | **GET** /options/implied_move/{symbol}/{expiration_date} | Options Implied Move By Symbol
+[**get_options_implied_move_by_symbol**](OptionsApi.md#get_options_implied_move_by_symbol) | **GET** /options/implied_move/{symbol}/{expiration_date} | Options Implied Move (Expected) Realtime
+[**get_options_implied_move_historical_by_symbol**](OptionsApi.md#get_options_implied_move_historical_by_symbol) | **GET** /options/implied_move/{symbol}/{expiration_date}/historical/{as_of_date} | Options Implied Move (Expected) Historical
 [**get_options_interval_by_contract**](OptionsApi.md#get_options_interval_by_contract) | **GET** /options/interval/{identifier} | Options Intervals By Contract
 [**get_options_interval_movers**](OptionsApi.md#get_options_interval_movers) | **GET** /options/interval/movers | Options Intervals Movers
 [**get_options_interval_movers_change**](OptionsApi.md#get_options_interval_movers_change) | **GET** /options/interval/movers/change | Options Intervals Movers By Change
@@ -361,6 +364,168 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOptionsChainRealtime**](ApiResponseOptionsChainRealtime.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_option_surface)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsSurface)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsSurface.md)
+
+[//]: # (OPERATION:get_option_surface_v2)
+
+[//]: # (ENDPOINT:/options/surface/{identifier})
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_surface)
+
+## **get_option_surface**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_option_surface_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsSurface get_option_surface(identifier, surface_type, source=source)
+
+#### Option Surface
+
+
+Returns the implied volatility surface for a ticker symbol.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'AAPL'
+surface_type = ''
+source = ''
+
+response = intrinio.OptionsApi().get_option_surface(identifier, surface_type, source=source)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| The ticker symbol for the surface data being requested. |   &nbsp;
+ **surface_type** | str| The form of the surface being requested. |   &nbsp;
+ **source** | str| The specific source of the data being requested. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsSurface**](ApiResponseOptionsSurface.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_option_surface_0)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsSurfaceInterpolatedIv)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsSurfaceInterpolatedIv.md)
+
+[//]: # (OPERATION:get_option_surface_0_v2)
+
+[//]: # (ENDPOINT:/options/surface/{identifier}/interpolate_iv)
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_option_surface_0)
+
+## **get_option_surface_0**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_option_surface_0_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsSurfaceInterpolatedIv get_option_surface_0(identifier, expiration, strike, source=source, as_of=as_of)
+
+#### Option Surface
+
+
+The interpolated implied volatility is the implied volatility calculated from an arbitrary point on the smoothed volatility surface.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+identifier = 'SPY'
+expiration = ''
+strike = 715
+source = ''
+as_of = ''
+
+response = intrinio.OptionsApi().get_option_surface_0(identifier, expiration, strike, source=source, as_of=as_of)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | str| The ticker symbol for the surface data being requested. |   &nbsp;
+ **expiration** | datetime| The DateTime of the expiration for the contract to calculate implied volatility from the surface. |   &nbsp;
+ **strike** | float| The strike for the contract to calculate implied volatility from the surface. |   &nbsp;
+ **source** | str| The specific source of the data being requested. | [optional]   &nbsp;
+ **as_of** | datetime| The time to use in calculating time until expiration.  Defaults to the current time. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsSurfaceInterpolatedIv**](ApiResponseOptionsSurfaceInterpolatedIv.md)
 
 [//]: # (END_OPERATION)
 
@@ -1447,7 +1612,7 @@ Name | Type | Description  | Notes
 
 > ApiResponseOptionsImpliedMove get_options_implied_move_by_symbol(symbol, expiration_date, percentage=percentage, source=source)
 
-#### Options Implied Move By Symbol
+#### Options Implied Move (Expected) Realtime
 
 
 Returns the implied move data points for a ticker symbol.
@@ -1491,6 +1656,89 @@ Name | Type | Description  | Notes
  **expiration_date** | date| The expiration date for the contracts to consider. |   &nbsp;
  **percentage** | [**object**](.md)| Percentage to multiply the straddle by. Defaults to 0.85. | [optional]   &nbsp;
  **source** | str| Realtime or 15-minute delayed contracts. | [optional]   &nbsp;
+<br/>
+
+[//]: # (END_PARAMETERS)
+
+### Return type
+
+[**ApiResponseOptionsImpliedMove**](ApiResponseOptionsImpliedMove.md)
+
+[//]: # (END_OPERATION)
+
+
+[//]: # (START_OPERATION)
+
+[//]: # (CLASS:OptionsApi)
+
+[//]: # (METHOD:get_options_implied_move_historical_by_symbol)
+
+[//]: # (RETURN_TYPE:ApiResponseOptionsImpliedMove)
+
+[//]: # (RETURN_TYPE_KIND:object)
+
+[//]: # (RETURN_TYPE_DOC:ApiResponseOptionsImpliedMove.md)
+
+[//]: # (OPERATION:get_options_implied_move_historical_by_symbol_v2)
+
+[//]: # (ENDPOINT:/options/implied_move/{symbol}/{expiration_date}/historical/{as_of_date})
+
+[//]: # (DOCUMENT_LINK:OptionsApi.md#get_options_implied_move_historical_by_symbol)
+
+## **get_options_implied_move_historical_by_symbol**
+
+[**View Intrinio API Documentation**](https://docs.intrinio.com/documentation/python/get_options_implied_move_historical_by_symbol_v2)
+
+[//]: # (START_OVERVIEW)
+
+> ApiResponseOptionsImpliedMove get_options_implied_move_historical_by_symbol(symbol, expiration_date, as_of_date, percentage=percentage, source=source)
+
+#### Options Implied Move (Expected) Historical
+
+
+Returns historical implied move data points for a ticker symbol on a specific date.
+
+[//]: # (END_OVERVIEW)
+
+### Example
+[//]: # (START_CODE_EXAMPLE)
+
+```python
+from __future__ import print_function
+import time
+import intrinio_sdk as intrinio
+from intrinio_sdk.rest import ApiException
+
+intrinio.ApiClient().set_api_key('YOUR_API_KEY')
+intrinio.ApiClient().allow_retries(True)
+
+symbol = 'TSLA'
+expiration_date = '2025-05-30'
+as_of_date = '2025-05-15'
+percentage = 0.85
+source = ''
+
+response = intrinio.OptionsApi().get_options_implied_move_historical_by_symbol(symbol, expiration_date, as_of_date, percentage=percentage, source=source)
+print(response)
+    
+# Note: For a Pandas DataFrame, import Pandas and use pd.DataFrame(response.property_name_dict) 
+```
+[//]: # (END_CODE_EXAMPLE)
+
+[//]: # (START_DEFINITION)
+
+### Parameters
+
+[//]: # (START_PARAMETERS)
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | str| The ticker symbol for the contracts. |   &nbsp;
+ **expiration_date** | date| The expiration date for the contracts to consider. |   &nbsp;
+ **as_of_date** | date| The historical date to evaluate implied move on. |   &nbsp;
+ **percentage** | [**object**](.md)| Percentage to multiply the straddle by. Defaults to 0.85. | [optional]   &nbsp;
+ **source** | str| Realtime or 15-minute delayed contracts used for underlying mapping. | [optional]   &nbsp;
 <br/>
 
 [//]: # (END_PARAMETERS)
