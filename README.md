@@ -1,4 +1,4 @@
-# Intrinio Python SDK
+# Intrinio Python SDK 
 
 To get an API key, [sign up here](https://intrinio.com/).
 
